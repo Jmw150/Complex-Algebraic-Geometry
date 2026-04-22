@@ -1,0 +1,12 @@
+(library
+ (name complex)
+ (wrapped false)
+
+ (modules complexocaml complexrocq converters fno_impl fnorocq fno)
+ (libraries base zarith stdio)
+
+ (inline_tests)
+ (preprocess
+  (pps ppx_inline_test
+       ppx_assert))
+)

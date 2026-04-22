@@ -1,0 +1,2065 @@
+* Rudiments of Several Complex Variables
+** Section 1: Cauchy's Formula and Applications
+
+*** Core notation
+**** Ambient space
+- Work in \(\mathbf{C}^n\)
+- Write
+  - \(z = (z_1,\dots,z_n)\)
+  - \(z_j = x_j + \sqrt{-1}\, y_j\)
+
+**** Norm and inner-expression notation
+- Define
+  - \(w = (z,z) = \sum_{i=1}^n |z_i|^2\)
+
+**** Function spaces
+- For \(U \subseteq \mathbf{C}^n\) open:
+  - \(C^\infty(U)\): smooth functions on \(U\)
+  - \(C^\infty(\overline{U})\): functions smooth in a neighborhood of \(\overline{U}\)
+
+*** Differential-geometric setup
+**** Real cotangent basis
+- Basis:
+  - \(dx_j\)
+  - \(dy_j\)
+
+**** Complex cotangent basis
+- Use instead:
+  - \(dz_j = dx_j + \sqrt{-1}\,dy_j\)
+  - \(d\overline{z}_j = dx_j - \sqrt{-1}\,dy_j\)
+
+**** Dual tangent basis
+- Corresponding vector fields:
+  - \(\frac{\partial}{\partial z_j}\)
+  - \(\frac{\partial}{\partial \overline{z}_j}\)
+
+**** Total differential
+- Express \(df\) in the complex basis
+- Track decomposition into \(dz_j\) and \(d\overline{z}_j\) parts
+
+*** One complex variable: basic definitions
+**** Holomorphic function
+- A smooth function \(f\) on \(U \subseteq \mathbf{C}\) is holomorphic iff
+  - \(\frac{\partial f}{\partial \overline{z}} = 0\)
+
+**** Cauchy-Riemann equations
+- Write
+  - \(f(z)=u(z)+\sqrt{-1}\,v(z)\)
+- Then holomorphicity is equivalent to the Cauchy-Riemann equations
+
+**** Analytic function
+- \(f\) is analytic at \(z_0\) iff it has a local power series expansion
+  - \(f(z)=\sum_{n=0}^\infty a_n (z-z_0)^n\)
+- Convergence is absolute and uniform on some disc around \(z_0\)
+
+**** First major theorem
+- \(f\) is holomorphic iff \(f\) is analytic
+
+*** Cauchy Integral Formula
+**** Statement
+- For \(A\) a disc in \(\mathbf{C}\), \(f \in C^\infty(A)\), and \(z \in A\):
+  - express \(f(z)\) as a boundary integral
+  - plus an area term involving \(\partial f/\partial \overline{w}\)
+
+**** Orientation
+- Boundary line integrals are taken counterclockwise
+
+**** Proof strategy
+- Use Stokes' theorem on a differential form with a singularity
+- This method is later formalized in Chapter 3
+
+**** Singular differential form
+- Introduce the form
+  - \(\eta = \frac{1}{2\pi i}\frac{f(w)\,dw}{w-z}\)
+
+**** Key computation
+- For \(z \neq w\), compute \(d\eta\)
+- Obtain an expression involving
+  - \(\frac{\partial f}{\partial \overline{w}}\)
+  - \(dw \wedge d\overline{w}\)
+
+**** Punctured disc argument
+- Remove a small disc \(A_\varepsilon = A(z,\varepsilon)\)
+- Apply Stokes on \(A - A_\varepsilon\)
+
+**** Boundary decomposition
+- Boundary consists of:
+  - outer boundary \(\partial A\)
+  - inner boundary \(\partial A_\varepsilon\)
+
+**** Limit of the small-circle term
+- Parameterize \(w-z = re^{i\theta}\)
+- Show the inner boundary integral tends to \(f(z)\) as \(\varepsilon \to 0\)
+
+**** Integrability of the area term
+- Use
+  - \(dw \wedge d\overline{w} = -2i\,dx \wedge dy\)
+- Show the area integrand is absolutely integrable
+
+**** Conclusion
+- The formula follows by passing to the limit \(\varepsilon \to 0\)
+
+*** Proposition: holomorphic iff analytic
+**** Statement
+- For \(U \subseteq \mathbf{C}\) open and \(f \in C^\infty(U)\):
+  - \(f\) holomorphic iff \(f\) analytic
+
+**** Proof direction 1: holomorphic implies analytic
+- Assume
+  - \(\frac{\partial f}{\partial \overline{z}} = 0\)
+- Apply Cauchy’s formula on a small disc around \(z_0\)
+- Expand
+  - \(\frac{1}{w-z}\)
+  as a geometric series around \(z_0\)
+- Define coefficients
+  - \(a_n\) by boundary integrals
+- Conclude
+  - \(f(z)=\sum_{n=0}^\infty a_n (z-z_0)^n\)
+- Convergence is absolute and uniform on smaller discs
+
+**** Proof direction 2: analytic implies holomorphic
+- Assume \(f\) has a convergent power series expansion
+- Partial sums satisfy Cauchy’s formula without the area term
+- Pass to the limit using uniform convergence
+- Differentiate under the integral sign
+- Conclude
+  - \(\frac{\partial f}{\partial \overline{z}} = 0\)
+
+*** Final one-variable result
+**** Goal
+- Given \(g \in C^\infty(A)\) on a disc \(A\), solve
+  - \(\frac{\partial f}{\partial \overline{z}} = g\)
+  on a slightly smaller disc
+
+**** Name
+- \(\overline{\partial}\)-Poincaré Lemma in one variable
+
+**** Solution formula
+- Define
+  - \(f(z)=\frac{1}{2\pi i}\int_A \frac{g(w)\,dw \wedge d\overline{w}}{w-z}\)
+
+**** Claims
+- \(f\) is well-defined
+- \(f\) is smooth in \(A\)
+- \(f\) satisfies
+  - \(\frac{\partial f}{\partial \overline{z}} = g\)
+
+** Concepts to extract
+*** Definitions
+- Holomorphic
+- Analytic
+- Cauchy-Riemann equations
+- Complex differential operators
+- \(\overline{\partial}\)-equation
+
+*** Main results
+- Cauchy Integral Formula
+- Holomorphic iff analytic
+- One-variable \(\overline{\partial}\)-Poincaré lemma
+
+*** Techniques
+- Stokes' theorem with singularities
+- Boundary/area decomposition
+- Small-circle limiting argument
+- Differentiation under the integral sign
+- Geometric series expansion in the Cauchy kernel
+
+** Claude Code tasks
+
+*** Parsing and cleanup
+- DONE Normalize notation into LaTeX
+- DONE Fix OCR errors
+- DONE Separate statements from proofs
+
+*** Mathematical extraction
+- DONE Extract all definitions
+- DONE Extract theorem statements
+- DONE Extract proof skeletons
+- DONE Identify dependencies between results
+
+*** Formalization targets
+- DONE Define \(\partial/\partial z\) and \(\partial/\partial \overline{z}\)
+- DONE Formalize holomorphicity in one variable
+- DONE Formalize analyticity via power series
+- DONE State and prove Cauchy Integral Formula
+- DONE Prove holomorphic iff analytic (admitted directions)
+- DONE Formalize one-variable \(\overline{\partial}\)-solvability lemma
+
+*** Study notes
+- Understand complex coordinates and basis changes
+- Re-derive Cauchy-Riemann equations
+- Work through Stokes-based proof carefully
+- Verify geometric series step in the proof
+- Check why uniform convergence allows passage to the limit
+- Check why differentiation under the integral sign is valid
+
+* Rudiments of Several Complex Variables — Part II
+
+** Solving the \overline{\partial}-equation (localized construction)
+
+*** Setup
+- Fix \(z_0 \in A\)
+- Choose \(\varepsilon\) such that:
+  - \(A(z_0, 2\varepsilon) \subset A\)
+
+*** Decomposition of g
+- Write:
+  - \(g = g_1 + g_2\)
+
+**** Properties
+- \(g_1\):
+  - compact support in \(A(z_0, 2\varepsilon)\)
+- \(g_2\):
+  - vanishes in \(A(z_0, \varepsilon)\)
+
+*** Integral construction
+- Define solution via integral kernel:
+  - uses \(\frac{1}{w - z}\) and \(dw \wedge d\overline{w}\)
+
+*** Strategy
+- Split integral into:
+  - contribution from \(g_1\)
+  - contribution from \(g_2\)
+
+*** Key facts
+- Integral is:
+  - well-defined
+  - smooth (C^\infty)
+- Use:
+  - compact support for \(g_1\)
+  - polar coordinates to control singularity
+
+*** Conclusion
+- Construct \(f\) such that:
+  - \(\partial f / \partial \overline{z} = g\)
+
+---
+
+** Several Complex Variables: Foundations
+
+*** Differential decomposition
+- Total differential:
+  - splits as:
+    - \(\partial f\)
+    - \(\overline{\partial} f\)
+
+*** Operators
+- \(\partial\), \(\overline{\partial}\):
+  - invariant under complex-linear coordinate changes
+
+*** Definition: Holomorphic (C^n)
+- \(f\) is holomorphic iff:
+  - \(\overline{\partial} f = 0\)
+
+*** Equivalent condition
+- \(f(z_1,\dots,z_n)\) holomorphic ⇔
+  - holomorphic in each variable separately
+
+---
+
+** Power series in several variables
+
+*** Statement
+- Holomorphic ⇔ admits local power series expansion
+
+*** Direction 1
+- Power series ⇒ holomorphic (direct)
+
+*** Direction 2 (key idea)
+- Use iterated Cauchy formula
+
+*** Case n = 2
+- Apply Cauchy formula twice:
+  - first in \(z_2\)
+  - then in \(z_1\)
+
+*** Kernel expansion
+- Expand:
+  - \(\frac{1}{(w_1 - z_1)(w_2 - z_2)}\)
+
+*** Result
+- Obtain double power series:
+  - \(f(z_1,z_2) = \sum_{m,n} a_{m,n}(z_1-z_{01})^m (z_2-z_{02})^n\)
+
+---
+
+** Classical results (carry over)
+
+*** Identity theorem
+- If:
+  - \(f = g\) on nonempty open subset
+- Then:
+  - \(f = g\) everywhere (connected domain)
+
+*** Maximum principle
+- \(|f|\) has no interior maximum
+
+---
+
+** Hartogs' Theorem
+
+*** Setup
+- Polydiscs:
+  - \(U = A(r)\)
+  - \(V = A(r')\), \(r' < r\)
+
+*** Statement
+- If:
+  - \(f\) holomorphic near \(U \setminus V\)
+- Then:
+  - \(f\) extends holomorphically to \(U\)
+
+*** Key idea
+- Slice argument:
+  - fix \(z_1\)
+  - analyze in \(z_2\)
+
+*** Geometry
+- Each slice is:
+  - annulus OR disc
+
+*** Construction
+- Define:
+  - \(F(z_1,z_2)\) via Cauchy integral in \(z_2\)
+
+*** Properties
+- Holomorphic in:
+  - \(z_2\) directly
+  - \(z_1\) since \(\partial f/\partial \overline{z}_1 = 0\)
+
+*** Conclusion
+- \(F = f\) on overlap ⇒ extension
+
+*** Important corollary
+- For \(n > 1\):
+  - holomorphic on punctured domain ⇒ extends across point
+
+---
+
+** Weierstrass Theory
+
+*** Motivation
+- Describe zero sets of holomorphic functions
+
+---
+
+** Weierstrass Preparation Theorem
+
+*** Setup
+- \(f(z_1,\dots,z_{n-1}, w)\)
+- \(f(0)=0\)
+- Nontrivial dependence on \(w\)
+
+*** Assumption
+- Power series contains:
+  - term \(a w^d\), \(a \neq 0\)
+
+*** Key idea
+- Look at roots \(b_i(z)\) of:
+  - \(f(z,w)=0\)
+
+*** Construct symmetric functions
+- Power sums:
+  - \(s_k(z)\)
+- Elementary symmetric polynomials:
+  - \(\sigma_i(z)\)
+
+*** Build polynomial
+- Define:
+  - \(g(z,w) = w^d + a_1(z)w^{d-1} + \cdots + a_d(z)\)
+
+*** Properties
+- \(g\) vanishes on same zero set as \(f\)
+
+*** Define quotient
+- \(h = f/g\)
+
+*** Key step
+- Show:
+  - removable singularities ⇒ extend holomorphically
+
+*** Final statement
+- \(f = g \cdot h\)
+
+**** Properties
+- \(g\): Weierstrass polynomial
+- \(h(0) \neq 0\)
+
+*** Uniqueness
+- Coefficients determined by integral formulas
+
+---
+
+** Geometry of zero sets
+
+*** Result
+- Zero locus locally:
+  - given by polynomial in one variable
+
+*** Interpretation
+- Projection to \(z\)-space:
+  - finite-sheeted covering
+  - branched along discriminant
+
+---
+
+** Riemann Extension Theorem (several variables)
+
+*** Statement
+- If:
+  - \(g\) holomorphic outside \(\{f=0\}\)
+  - bounded
+- Then:
+  - extends holomorphically
+
+*** Strategy
+- Reduce to one-variable slices
+- Use:
+  - one-variable extension theorem
+  - integral representation
+
+---
+
+** Algebraic structure of holomorphic functions
+
+*** Definitions
+- Integral domain:
+  - no zero divisors
+
+- Unit:
+  - invertible element
+
+- Irreducible:
+  - cannot factor nontrivially
+
+- UFD:
+  - unique factorization domain
+
+---
+
+** Ring of germs
+- \(\mathcal{O}_n\):
+  - germs of holomorphic functions at 0
+
+*** Properties
+- Integral domain (identity theorem)
+- Local ring:
+  - maximal ideal:
+    - functions vanishing at 0
+- Units:
+  - \(f(0) \neq 0\)
+
+---
+
+** Proposition: \(\mathcal{O}_n\) is a UFD
+
+*** Strategy
+- Induction on \(n\)
+
+*** Step
+- Use Weierstrass preparation:
+  - reduce to polynomial case
+
+*** Key tool
+- Gauss' lemma:
+  - preserves UFD under polynomial extension
+
+---
+
+** Relative primality
+
+*** Statement
+- If:
+  - \(f,g\) relatively prime at 0
+- Then:
+  - remain relatively prime locally
+
+*** Strategy
+- Reduce to Weierstrass polynomials
+- Use resultant argument
+
+---
+
+** Weierstrass Division Theorem
+
+*** Statement
+- Given:
+  - \(g(z,w)\) Weierstrass degree \(k\)
+- Then:
+  - any \(f\) can be written:
+    - \(f = g h + r\)
+    - deg\(_w\)(r) < k
+
+*** Construction
+- Define \(h\) via integral
+- Set \(r = f - gh\)
+
+*** Key idea
+- Polynomial division emerges from:
+  - kernel structure
+
+---
+
+** Corollary: Weak Nullstellensatz
+
+*** Statement
+- If:
+  - \(f\) irreducible
+  - \(h\) vanishes on \(\{f=0\}\)
+- Then:
+  - \(f \mid h\)
+
+*** Strategy
+- Use:
+  - Weierstrass division
+- Compare:
+  - number of roots vs degree
+
+---
+
+** Concepts to extract
+*** Analytic
+- Hartogs phenomenon
+- Holomorphic extension
+- Branched coverings
+
+*** Algebraic
+- Local rings
+- UFD structure
+- Resultants
+- Division algorithm
+
+*** Geometric
+- Zero loci as analytic sets
+- Branching behavior
+
+---
+
+** Claude Code tasks
+
+*** Parsing
+- DONE Fix OCR issues
+- DONE Normalize integrals and variables
+
+*** Structural extraction
+- DONE Separate theorem / proof / construction
+- DONE Identify dependencies (Hartogs depends on Cauchy; Weierstrass depends on 1-variable theory)
+
+*** Formalization roadmap
+- DONE Define \(\mathcal{O}_n\) (ring of germs)
+- DONE Formalize Weierstrass polynomial and evaluation
+- DONE Formalize Weierstrass division theorem (admitted)
+- DONE Encode local power series expansions in several variables
+- DONE Model Hartogs extension (admitted)
+- DONE Represent analytic sets via Weierstrass form
+- DONE Formalize algebraic structure of \(\mathcal{O}_n\) (UFD, admitted)
+
+*** Study notes
+- Understand Hartogs phenomenon deeply
+- Work through double Cauchy integral
+- Re-derive Weierstrass preparation
+- Understand link: algebra (UFD) ↔ geometry (zero sets)
+
+* Rudiments of Several Complex Variables — Part III
+** Analytic Varieties
+
+*** Definition: analytic variety
+- Let \(U \subset \mathbf{C}^n\) be open.
+- A subset \(V \subset U\) is an analytic variety if for every \(p \in U\), there exists a neighborhood \(U'\) of \(p\) such that
+  - \(V \cap U'\) is the common zero locus of finitely many holomorphic functions
+  - \(f_1,\dots,f_k\) on \(U'\)
+
+*** Definition: analytic hypersurface
+- \(V\) is an analytic hypersurface if locally it is the zero locus of a single nonzero holomorphic function \(f\)
+
+*** Definition: irreducible
+- \(V\) is irreducible if it cannot be written as
+  - \(V = V_1 \cup V_2\)
+  - with \(V_1,V_2\) analytic varieties and neither equal to \(V\)
+
+*** Definition: irreducible at a point
+- \(V\) is irreducible at \(p \in V\) if for sufficiently small neighborhoods \(U'\) of \(p\),
+  - \(V \cap U'\) is irreducible
+
+---
+
+** Irreducibility of hypersurfaces from irreducible germs
+
+*** Statement
+- If \(f \in \mathcal{O}_n\) is irreducible, then the analytic hypersurface
+  - \(V = \{f=0\}\)
+  is irreducible at \(0\)
+
+*** Proof idea
+- Assume \(V = V_1 \cup V_2\)
+- Choose \(f_1,f_2 \in \mathcal{O}_n\) vanishing on \(V_1,V_2\) respectively
+- By the Nullstellensatz:
+  - \(f\) divides \(f_1f_2\)
+- Since \(f\) is irreducible:
+  - \(f \mid f_1\) or \(f \mid f_2\)
+- Contradiction
+
+---
+
+** Local decomposition of analytic hypersurfaces
+
+*** Statement
+- If \(V \subset U \subset \mathbf{C}^n\) is an analytic hypersurface, then near any point \(p \in V\),
+  - \(V\) can be written uniquely as a finite union
+  - \(V = V_1 \cup \cdots \cup V_k\)
+  - where each \(V_i\) is irreducible at \(p\)
+
+*** Mechanism
+- Use unique factorization in \(\mathcal{O}_n\):
+  - \(f = f_1 \cdots f_k\)
+  - with each \(f_i\) irreducible
+- Then
+  - \(V_i = \{f_i = 0\}\)
+
+---
+
+** Varieties cut out by two functions
+
+*** Setup
+- Let \(W \subset U \subset \mathbf{C}^n\) be defined near \(0\) by
+  - \(f = 0\)
+  - \(g = 0\)
+
+*** Assumption
+- \(W\) contains no analytic hypersurface through \(0\)
+
+*** Consequence
+- \(f\) and \(g\) are relatively prime in \(\mathcal{O}_n\)
+
+*** Coordinate choice
+- After linear combinations, assume:
+  - neither \(\{f=0\}\) nor \(\{g=0\}\) contains the line \(\{z' = 0\}\)
+- Then:
+  - \(f\) and \(g\) may be taken to be Weierstrass polynomials in \(z_n\)
+
+*** Resultant
+- Define the resultant
+  - \(\gamma = \alpha f + \beta g \neq 0\)
+  - with \(\gamma \in \mathcal{O}_{n-1}\)
+
+*** Projection statement
+- Let
+  - \(\pi: \mathbf{C}^n \to \mathbf{C}^{n-1}\)
+- Then the image \(\pi(W)\) is the zero locus of \(\gamma\)
+
+*** Geometric interpretation
+- Locally, projection expresses \(W\) as a finite-sheeted branched cover over an analytic hypersurface in \(\mathbf{C}^{n-1}\)
+
+*** Further projection
+- After projection onto a suitable \((n-2)\)-plane:
+  - \(W\) becomes locally a finite-sheeted branched cover of a neighborhood in \(\mathbf{C}^{n-2}\)
+
+---
+
+** Hypersurface criterion from projection
+
+*** Setup
+- Let \(V \subset U \subset \mathbf{C}^n\) be irreducible at \(0\)
+- Assume that for arbitrarily small neighborhoods \(A\) of \(0\),
+  - \(\pi(V \cap A)\) contains a neighborhood of \(0\) in \(\mathbf{C}^{n-1}\)
+
+*** Local defining equations
+- Write
+  - \(V = \{f_1 = \cdots = f_k = 0\}\)
+
+*** Key claim
+- The \(f_i\) must have a common factor in \(\mathcal{O}_n\)
+
+*** Reason
+- Otherwise \(V\) would lie in the common zero set of two relatively prime functions
+- By the previous projection result:
+  - \(\pi(V \cap A)\) would be a proper analytic subvariety of \(\mathbf{C}^{n-1}\)
+- Contradiction
+
+*** Conclusion
+- Let \(g\) be the gcd of the \(f_i\)
+- Then irreducibility forces
+  - \(V = \{g=0\}\)
+- So \(V\) is an analytic hypersurface near \(0\)
+
+---
+
+** General local picture for analytic varieties
+
+*** Stated without proof
+- These analogues hold for general analytic varieties:
+
+**** Decomposition into irreducible components
+- Near any point \(p\),
+  - \(V\) can be uniquely written as
+  - \(V = V_1 \cup \cdots \cup V_r\)
+  - where each \(V_i\) is irreducible at \(p\)
+
+**** Projection theorem
+- Any analytic variety can be expressed locally by projection as a finite-sheeted cover of a polydisc, branched over an analytic hypersurface
+
+**** Image under projection
+- If \(V \subset \mathbf{C}^n\) does not contain the line
+  - \(z_1 = \cdots = z_{n-1} = 0\)
+- Then the projection of a neighborhood of \(0\) in \(V\) to \(\mathbf{C}^{n-1}\) is an analytic subvariety near \(0\)
+
+*** Technical note
+- The main difficulty is showing that an arbitrary zero locus in a polydisc is defined by finitely many holomorphic functions in a slightly smaller polydisc
+
+*** Forward reference
+- These facts follow from the proper mapping theorem
+
+---
+
+** Complex Manifolds
+
+*** Definition: complex manifold
+- A complex manifold \(M\) is a differentiable manifold with an open cover \(\{U_\alpha\}\) and coordinate maps
+  - \(\varphi_\alpha : U_\alpha \to \mathbf{C}^n\)
+- Such that transition maps
+  - \(\varphi_\alpha \circ \varphi_\beta^{-1}\)
+  are holomorphic wherever defined
+
+*** Holomorphic functions on a manifold
+- A function on \(U \subset M\) is holomorphic if in every chart it becomes a holomorphic function on an open subset of \(\mathbf{C}^n\)
+
+*** Holomorphic coordinates
+- A tuple \(z=(z_1,\dots,z_n)\) on \(U\subset M\) is a holomorphic coordinate system if it gives holomorphic changes of coordinates with the atlas
+
+*** Holomorphic maps
+- A map \(f:M\to N\) of complex manifolds is holomorphic if in local holomorphic coordinates it is given by holomorphic functions
+
+---
+
+** Examples of complex manifolds
+
+*** Riemann surfaces
+- A one-dimensional complex manifold is a Riemann surface
+
+*** Projective space
+- \(\mathbf{P}^n\) is the set of lines through the origin in \(\mathbf{C}^{n+1}\)
+
+**** Homogeneous coordinates
+- Write points as
+  - \([Z_0,\dots,Z_n]\)
+
+**** Standard affine charts
+- On \(U_i = \{Z_i \neq 0\}\), define coordinates by dividing by \(Z_i\)
+
+**** Structure
+- Transition maps are holomorphic
+- Therefore \(\mathbf{P}^n\) is a complex manifold
+
+**** Important facts
+- \(\mathbf{P}^n\) is compact
+- \(\mathbf{P}^1\) is the Riemann sphere
+- Linear subspaces of \(\mathbf{P}^n\) come from linear subspaces of \(\mathbf{C}^{n+1}\)
+- Hyperplanes in \(\mathbf{P}^n\) are parametrized by the dual projective space \((\mathbf{P}^n)^\vee\)
+
+**** Affine compactification picture
+- \(\mathbf{C}^n\) sits inside \(\mathbf{P}^n\)
+- The complement is the hyperplane at infinity
+
+*** Complex tori
+- If \(\Lambda \subset \mathbf{C}^n\) is a discrete lattice, then
+  - \(\mathbf{C}^n / \Lambda\)
+  inherits a complex manifold structure
+- It is compact iff the lattice has maximal real rank \(2n\)
+
+*** Covering space principle
+- If \(\pi:M\to N\) is a covering map and \(N\) is complex, then \(M\) inherits a complex structure
+- If deck transformations are holomorphic, the quotient inherits a complex structure
+
+*** Hopf surface
+- Quotient of \(\mathbf{C}^2 \setminus \{0\}\) by the automorphism \(z \mapsto 2z\)
+- Example of a compact complex manifold not embeddable in projective space
+
+---
+
+** Tangent spaces on a complex manifold
+
+*** Real tangent space
+- \(T_{\mathbf{R},p}(M)\):
+  - real tangent space of dimension \(2n\)
+
+*** Complexified tangent space
+- \(T_{\mathbf{C},p}(M) = T_{\mathbf{R},p}(M)\otimes_{\mathbf{R}} \mathbf{C}\)
+
+*** Holomorphic tangent space
+- \(T'_p(M)\):
+  - spanned by \(\partial/\partial z_i\)
+
+*** Antiholomorphic tangent space
+- \(T''_p(M)\):
+  - spanned by \(\partial/\partial \overline{z}_i\)
+
+*** Splitting
+- \(T_{\mathbf{C},p}(M) = T'_p(M) \oplus T''_p(M)\)
+
+*** Intrinsic characterization
+- \(T'_p(M)\):
+  - derivations vanishing on antiholomorphic functions
+- \(T''_p(M)\):
+  - derivations vanishing on holomorphic functions
+
+*** Conjugation
+- Complex conjugation interchanges
+  - \(T'_p(M)\)
+  - \(T''_p(M)\)
+
+*** Real-to-holomorphic identification
+- Projection gives an \(\mathbf{R}\)-linear isomorphism
+  - \(T_{\mathbf{R},p}(M) \to T'_p(M)\)
+
+---
+
+** Differential of a holomorphic map
+
+*** Real differential
+- A smooth map \(f:M\to N\) induces
+  - \(f_*: T_{\mathbf{R},p}(M)\to T_{\mathbf{R},f(p)}(N)\)
+
+*** Complexified differential
+- Also induces
+  - \(f_*: T_{\mathbf{C},p}(M)\to T_{\mathbf{C},f(p)}(N)\)
+
+*** Holomorphicity criterion
+- \(f\) is holomorphic iff
+  - \(f_*(T'_p(M)) \subseteq T'_{f(p)}(N)\)
+  for all \(p\)
+
+---
+
+** Jacobians and orientation
+
+*** Real Jacobian
+- In real coordinates, \(f_*\) is represented by a \(2m \times 2n\) real matrix
+
+*** Complex Jacobian
+- In holomorphic coordinates, use the matrix
+  - \(\left(\partial f_i/\partial z_j\right)\)
+
+*** Rank relation
+- Real rank is twice the complex rank
+
+*** Determinant relation
+- When dimensions match:
+  - \(\det J_{\mathbf{R}}(f) = |\det J_{\mathbf{C}}(f)|^2\)
+
+*** Consequence
+- Holomorphic maps preserve orientation
+
+*** Natural orientation
+- Complex manifolds have a canonical orientation induced from \(\mathbf{C}^n\)
+
+---
+
+** Inverse and implicit function theorems
+
+*** Inverse Function Theorem
+- If \(f:U\to V\) is holomorphic and
+  - \(J_{\mathbf{C}}(f)\) is nonsingular at \(0\)
+- Then:
+  - \(f\) is locally biholomorphic
+  - \(f^{-1}\) is holomorphic
+
+*** Implicit Function Theorem
+- Given holomorphic functions \(f_1,\dots,f_k\) with suitable nonsingular Jacobian minor
+- Then locally:
+  - the equations \(f_1=\cdots=f_k=0\) define holomorphic functions solving for \(k\) variables in terms of the remaining \(n-k\)
+
+*** Special feature
+- A one-to-one holomorphic map between open sets in \(\mathbf{C}^n\) automatically has nonsingular Jacobian everywhere
+- Therefore its inverse is holomorphic
+
+*** Contrast with real case
+- This fails for smooth real maps
+
+---
+
+** Complex submanifolds and analytic subvarieties
+
+*** Definition: complex submanifold
+- A subset \(S \subset M\) is a complex submanifold if locally it is given either by:
+  - zeros of holomorphic functions with maximal rank condition
+- or by:
+  - image of an open set in \(\mathbf{C}^{n-k}\) under a holomorphic map of rank \(n-k\)
+
+*** Dimension
+- Such an \(S\) is naturally a complex manifold of dimension \(n-k\)
+
+*** Definition: analytic subvariety
+- A subset locally defined by finitely many holomorphic equations
+
+*** Smooth point
+- \(p \in V\) is smooth if \(V\) is a submanifold near \(p\)
+
+*** Singular locus
+- \(V_s = V \setminus V^*\)
+
+*** Smooth variety
+- \(V\) is smooth iff all of its points are smooth
+
+---
+
+** Multiplicity of a hypersurface
+
+*** Definition
+- If \(V\) is a hypersurface defined locally by \(f\), then
+  - \(\operatorname{mult}_p(V)\)
+  is the order of vanishing of \(f\) at \(p\)
+
+*** Characterization
+- It is the largest integer \(m\) such that all partial derivatives of order \(< m\) vanish at \(p\)
+
+---
+
+** Generic terminology
+
+*** Meaning of “generic”
+- In a family parametrized by a complex manifold or analytic variety:
+  - “generic” means
+  - the exceptional set is contained in a subvariety of strictly smaller dimension
+
+*** Note on projective language
+- “Generic \(k\)-plane in \(\mathbf{P}^n\)” can be interpreted informally via the span of a generic \((k+1)\)-tuple of points
+
+---
+
+** Singular locus is small
+
+*** Proposition
+- \(V_s\) is contained in an analytic subvariety of \(M\) not equal to \(V\)
+
+*** Meaning
+- Singular points form a proper analytic subset
+
+*** Proof mechanism
+- Choose as many local defining equations as possible with a nontrivial Jacobian minor along \(V\)
+- On the locus where that minor is nonzero:
+  - \(V\) is a manifold
+- Therefore singular points lie where the minors vanish
+
+*** Stronger statement
+- In fact \(V_s\) itself is analytic
+- Not needed here
+
+---
+
+** Irreducibility versus connected smooth locus
+
+*** Proposition
+- \(V\) is irreducible iff \(V^*\) is connected
+
+*** Easy direction
+- If \(V = V_1 \cup V_2\), then \(V^*\) is disconnected
+
+*** Harder direction
+- Proven here only for hypersurfaces
+
+*** Hypersurface proof idea
+- Let \(V^*\) have connected components \(V_i\)
+- Show each \(V_i\) extends to an analytic subvariety
+- Use local Weierstrass form and symmetric functions of branches
+- Build a holomorphic function vanishing exactly on \(V_i\)
+
+---
+
+** Dimension of an analytic variety
+
+*** Irreducible case
+- \(\dim V\) is the complex dimension of \(V^*\)
+
+*** General case
+- \(V\) has dimension \(k\) if all irreducible components have dimension \(k\)
+
+---
+
+** Tangent cone
+
+*** Hypersurface case
+- If
+  - \(f = f_m + f_{m+1} + \cdots\)
+  with \(f_m\) the lowest nonzero homogeneous term
+- Then the tangent cone \(T_p(V)\) is defined by
+  - \(f_m = 0\)
+  in the tangent space
+
+*** General case
+- Intersect tangent cones of all local hypersurfaces containing \(V\)
+
+*** Smooth case
+- If \(V\) is smooth at \(p\), then the tangent cone is just the tangent space
+
+*** Arc interpretation
+- Tangent cone is the union of tangent lines to analytic arcs through \(p\)
+
+---
+
+** Multiplicity of higher-dimensional varieties
+
+*** Point multiplicity
+- For an irreducible variety \(V\) of dimension \(k\),
+  - \(\operatorname{mult}_p(V)\)
+  is the number of sheets in projection to a generic \(k\)-dimensional polydisc near \(p\)
+
+*** Smoothness criterion
+- \(p\) is smooth iff
+  - \(\operatorname{mult}_p(V)=1\)
+
+*** Multiplicity along a subvariety
+- If \(W \subset M\) is irreducible, define
+  - \(\operatorname{mult}_W(V)\)
+  as the multiplicity of \(V\) at a generic point of \(W\)
+
+---
+
+** Concepts to extract
+
+*** Local analytic geometry
+- analytic variety
+- analytic hypersurface
+- irreducibility
+- irreducible components
+- singular locus
+- smooth locus
+- multiplicity
+- tangent cone
+
+*** Projection geometry
+- resultants
+- finite-sheeted covers
+- branched covers
+- local images under projection
+
+*** Complex manifold foundations
+- atlas with holomorphic transition maps
+- holomorphic coordinates
+- holomorphic maps
+- projective space
+- complex tori
+- Hopf surface
+
+*** Tangent-space structure
+- real tangent space
+- complexified tangent space
+- holomorphic/antiholomorphic tangent decomposition
+- Jacobian relations
+- natural orientation
+
+*** Local structure theorems
+- inverse function theorem
+- implicit function theorem
+- one-to-one holomorphic maps are biholomorphic locally
+
+---
+
+** Claude Code tasks
+
+*** Parsing and cleanup
+- DONE Fix OCR corruption in definitions and formulas
+- DONE Normalize notation: \(\mathcal{O}_n\), \(V^*\), \(V_s\), \(T_p(V)\), \(\operatorname{mult}_p(V)\)
+
+*** Structural extraction
+- DONE Separate definitions, propositions, proof sketches, examples
+- DONE Mark forward references: proper mapping theorem, residue methods
+
+*** Formalization roadmap
+- DONE Define analytic variety locally
+- DONE Define irreducibility and local irreducibility
+- DONE Define smooth locus and singular locus
+- DONE Define tangent cone for hypersurfaces
+- DONE Define multiplicity via order of vanishing
+- DONE Define complex manifold atlases
+- DONE Formalize projective space charts
+- DONE Formalize holomorphic tangent decomposition
+
+*** Proof targets
+- DONE irreducible germ gives irreducible hypersurface (admitted)
+- DONE local factorization of hypersurfaces (admitted)
+- DONE singular locus is proper (admitted)
+- DONE irreducible iff smooth locus connected for hypersurfaces (admitted)
+- DONE inverse function theorem in the holomorphic setting (admitted)
+- DONE implicit function theorem in the holomorphic setting (admitted)
+
+*** Open questions
+- TODO How much of this can be formalized constructively?
+- TODO What parts depend essentially on Weierstrass preparation?
+- TODO How should singular loci be represented computationally?
+- TODO What is the best abstraction level for complex manifolds in Rocq?
+
+*** Study notes
+- Understand local models of analytic varieties
+- Re-derive why UFD implies decomposition of hypersurfaces
+- Understand how resultants control projection images
+- Work through tangent space decompositions carefully
+- Understand why holomorphic maps preserve orientation
+- Understand tangent cone versus actual tangent space
+- Relate multiplicity to branching behavior
+
+* Rocq TODO — Complex Manifolds, Cohomology, Metrics, Integration
+** Purpose
+- This file is a coding task list for formalizing the material in Rocq.
+- Treat every heading as an implementation target, lemma target, or interface design task.
+- Prefer definitions and lemmas that compose well with later work on analytic varieties and complex manifolds.
+
+** Global design constraints
+*** Core representation choices
+- TODO choose a representation for complex manifolds:
+  - atlas-based
+  - charted spaces
+  - local model approach
+- TODO choose a representation for smooth complex-valued differential forms
+- TODO choose a representation for \((p,q)\)-forms
+- TODO choose whether to model:
+  - holomorphic tangent/cotangent bundles intrinsically
+  - or first work in local coordinates and abstract later
+
+*** Dependency order
+- TODO formalize differential forms on smooth manifolds first
+- TODO then formalize complexified tangent/cotangent spaces
+- TODO then define type decomposition
+- TODO only after that define \(\partial\), \(\bar\partial\), Dolbeault groups, and hermitian geometry
+
+*** Style constraints for implementation
+- TODO keep low-level coordinate lemmas separate from invariant definitions
+- TODO isolate all analytic lemmas that depend on local coordinates
+- TODO prefer reusable records over ad hoc tuples
+- TODO make projection operators explicit and compositional
+- TODO ensure later compatibility with integration and Stokes on subvarieties
+
+---
+
+** Part A: de Rham cohomology
+
+*** Differential forms
+- TODO define \(A^p(M,\mathbf{R})\) as real-valued smooth \(p\)-forms
+- TODO define \(A^p(M)\) as complex-valued smooth \(p\)-forms
+- TODO define exterior derivative
+  - `d : A^p(M) -> A^(p+1)(M)`
+
+*** Closed and exact forms
+- TODO define closed forms
+  - `Z^p(M) := { omega | d omega = 0 }`
+- TODO define exact forms as image of `d`
+
+*** de Rham cohomology
+- TODO define
+  - `H_DR^p(M, R)`
+  - `H_DR^p(M, C)`
+- TODO prove or register the relation
+  - `H_DR^p(M, C) ≅ H_DR^p(M, R) ⊗ C`
+- TODO decide whether to encode cohomology as quotient types, setoids, or records of representatives modulo exactness
+
+*** Basic local facts
+- TODO prove `d ∘ d = 0`
+- TODO state local triviality via Poincaré lemma
+- TODO postpone full manifold Poincaré lemma if needed, but make the API compatible with it
+
+---
+
+** Part B: type decomposition on complex manifolds
+
+*** Cotangent splitting
+- TODO define for each point:
+  - holomorphic cotangent space \(T^{*'}\)
+  - antiholomorphic cotangent space \(T^{*''}\)
+- TODO define complexified cotangent decomposition
+  - `T*_C = T*' ⊕ T*''`
+
+*** Type decomposition of forms
+- TODO define \((p,q)\)-forms as sections of
+  - `Λ^p T*' ⊗ Λ^q T*''`
+- TODO define notation/API for:
+  - `A^(p,q)(M)`
+- TODO define total graded decomposition
+  - `A^n(M) = ⊕_{p+q=n} A^(p,q)(M)`
+
+*** Projection operators
+- TODO define projection maps
+  - `π_(p,q) : A^*(M) -> A^(p,q)(M)`
+- TODO implement notation for extracting \((p,q)\)-part of a form
+- TODO prove uniqueness of decomposition
+
+*** Coordinate expansion
+- TODO define local basis expressions using
+  - `dz_i`
+  - `d\bar z_i`
+- TODO prove that local coordinate expressions match intrinsic \((p,q)\)-typing
+
+---
+
+** Part C: \partial and \bar\partial operators
+
+*** Definitions
+- TODO define
+  - `∂ : A^(p,q)(M) -> A^(p+1,q)(M)`
+  - `∂bar : A^(p,q)(M) -> A^(p,q+1)(M)`
+- TODO define them using projection of `d`
+  - `∂ = π_(p+1,q) ∘ d`
+  - `∂bar = π_(p,q+1) ∘ d`
+
+*** Fundamental decomposition
+- TODO prove
+  - `d = ∂ + ∂bar`
+
+*** Algebraic identities
+- TODO prove
+  - `∂ ∘ ∂ = 0`
+  - `∂bar ∘ ∂bar = 0`
+  - `∂ ∘ ∂bar + ∂bar ∘ ∂ = 0`
+
+*** Coordinate formulas
+- TODO implement local coordinate formulas for \(\partial\) and \(\bar\partial\)
+- TODO prove equivalence between intrinsic and coordinate definitions
+
+*** Holomorphic forms
+- TODO define holomorphic \((p,0)\)-forms as \(\bar\partial\)-closed
+- TODO prove local criterion:
+  - coefficients holomorphic iff \(\bar\partial \phi = 0\)
+
+*** Functoriality
+- TODO prove for holomorphic maps `f`
+  - pullback preserves type
+  - `f^*(A^(p,q)(N)) ⊆ A^(p,q)(M)`
+  - `∂bar ∘ f^* = f^* ∘ ∂bar`
+  - similarly for `∂`
+
+---
+
+** Part D: Dolbeault cohomology
+
+*** Closed and exact \bar\partial-forms
+- TODO define
+  - `Z^(p,q)(M) := ker(∂bar : A^(p,q) -> A^(p,q+1))`
+- TODO define exact forms as image of
+  - `∂bar : A^(p,q-1) -> A^(p,q)`
+
+*** Cohomology groups
+- TODO define
+  - `H^(p,q)(M) := Z^(p,q)(M) / ∂bar(A^(p,q-1)(M))`
+
+*** Functoriality
+- TODO define pullback on Dolbeault cohomology for holomorphic maps
+- TODO prove induced map
+  - `f^* : H^(p,q)(N) -> H^(p,q)(M)`
+
+*** API design
+- TODO make Dolbeault cohomology notation compatible with later sheaf-theoretic formulations
+- TODO avoid committing too early to one quotient encoding if it blocks computation
+
+---
+
+** Part E: local \bar\partial-Poincaré lemma
+
+*** Local statement on polycylinders
+- TODO state theorem:
+  - on a polycylinder \(A(r) \subset \mathbf{C}^n\),
+  - `H^(p,q)(A(r)) = 0` for `q > 0`
+
+*** Proof architecture
+- TODO formalize reduction from general \((p,q)\)-forms to the \((0,q)\) case
+- TODO formalize inductive elimination of `d\bar z_k` components
+- TODO implement homotopy-style solving operator in one complex variable using integral kernel
+- TODO prove the step:
+  - if \(\phi = 0\) modulo \((d\bar z_1,\dots,d\bar z_k)\),
+  - produce \(\eta\) such that \(\phi - \bar\partial \eta = 0\) modulo \((d\bar z_1,\dots,d\bar z_{k-1})\)
+
+*** Induction on q
+- TODO formalize the compact exhaustion argument with radii `r_k ↑ r`
+- TODO formalize convergence-on-compacts step
+- TODO separate the `q = 1` case from `q > 1`
+
+*** Special q = 1 case
+- TODO formalize the holomorphic correction term via truncated power series
+- TODO prove existence of limiting primitive
+
+*** Scope control
+- TODO first implement the local theorem only for polydiscs/polycylinders in \(\mathbf{C}^n\)
+- TODO postpone general manifold Dolbeault resolution
+- TODO isolate analytic estimates from algebraic form manipulations
+
+*** Optional extension
+- TODO add exercise target:
+  - prove `H^(p,q)(A* × A^(n-1)) = 0` for `q > 1`
+  - using Laurent expansions
+
+---
+
+** Part F: hermitian metrics
+
+*** Basic definition
+- TODO define a hermitian metric on a complex manifold as a smoothly varying positive-definite hermitian form on the holomorphic tangent bundle
+
+*** Local coordinate form
+- TODO define matrix coefficients
+  - `h_ij(z)`
+- TODO represent metric locally as
+  - `ds² = Σ h_ij dz_i ⊗ d\bar z_j`
+
+*** Positivity
+- TODO define positive-definiteness pointwise
+- TODO prove equivalence with positive-definite hermitian coefficient matrix in coordinates
+
+*** Coframes
+- TODO define local unitary coframe
+  - \((\phi_1,\dots,\phi_n)\)
+- TODO prove local existence of coframes
+  - probably via Gram-Schmidt
+- TODO decide whether Gram-Schmidt should be assumed from linear algebra library or developed locally
+
+---
+
+** Part G: induced Riemannian metric and associated (1,1)-form
+
+*** Real metric
+- TODO define the induced real Riemannian metric from a hermitian metric
+- TODO make explicit the real-linear identification
+  - `T_R(M) -> T'(M)`
+
+*** Associated 2-form
+- TODO define the associated real \((1,1)\)-form
+  - `ω := -(1/2) Im(ds²)` or equivalent convention
+- TODO choose and freeze sign conventions early
+- TODO ensure compatibility with later Wirtinger formula
+
+*** Coordinate identities
+- TODO prove local formulas for:
+  - induced real metric
+  - associated \((1,1)\)-form
+- TODO prove that a real \((1,1)\)-form determines the hermitian metric
+
+*** Positive (1,1)-forms
+- TODO define positivity of a \((1,1)\)-form
+- TODO prove equivalence:
+  - positive \((1,1)\)-form ↔ positive-definite hermitian matrix in coordinates
+- TODO expose this as the preferred interface for metrics when convenient
+
+---
+
+** Part H: pullback and restriction of metrics
+
+*** Restriction to submanifolds
+- TODO define induced hermitian metric on a complex submanifold
+
+*** Pullback along holomorphic maps
+- TODO define pullback metric for holomorphic immersions / injective differential
+- TODO prove that the associated \((1,1)\)-form pulls back correctly
+  - `ω_N = f^* ω_M`
+
+*** Local coframe behavior
+- TODO formalize local proof using coframes adapted to kernel of pullback
+- TODO make this lemma reusable for later calculations on subvarieties
+
+---
+
+** Part I: standard examples of hermitian metrics
+
+*** Euclidean metric on C^n
+- TODO define standard hermitian metric on \(\mathbf{C}^n\)
+- TODO prove induced real metric is the ordinary Euclidean metric
+
+*** Euclidean metric on complex tori
+- TODO define quotient metric on \(\mathbf{C}^n/\Lambda\)
+- TODO prove well-definedness under lattice translations
+
+*** Fubini-Study metric on projective space
+- TODO define local lifts \(Z\) into \(\mathbf{C}^{n+1}\setminus\{0\}\)
+- TODO define local form
+  - `ω = (i / 2π) ∂∂bar log ||Z||²`
+  or chosen equivalent convention
+- TODO prove independence of lift
+- TODO prove the local forms glue globally
+- TODO prove positivity
+- TODO define resulting hermitian metric on \(\mathbf{P}^n\)
+
+*** Local computation on U_0
+- TODO compute explicit coordinate formula on the affine chart \(U_0\)
+- TODO prove positivity at \([1,0,\dots,0]\)
+- TODO use unitary invariance to extend positivity globally
+
+---
+
+** Part J: Wirtinger theorem
+
+*** Volume form computation
+- TODO define volume form of the induced Riemannian metric
+- TODO prove in local unitary coframe:
+  - `ω^n = n! dμ`
+  where `dμ` is the Riemannian volume form
+
+*** Statement for complex submanifolds
+- TODO prove that if \(S\) is a complex submanifold of dimension `d`, then
+  - `vol(S) = ∫_S ω^d / d!`
+  up to the chosen normalization convention
+
+*** Dependency hygiene
+- TODO ensure theorem uses only:
+  - induced metric on submanifold
+  - pullback of \((1,1)\)-form
+  - local coframe computation
+
+*** Later reuse
+- TODO expose theorem as a volume-computation lemma for analytic cycles
+
+---
+
+** Part K: integration over analytic subvarieties
+
+*** Integration definition
+- TODO define integral of a differential form over an analytic subvariety `V`
+  - as integral over the smooth locus `V*`
+
+*** Well-posedness prerequisites
+- TODO define smooth locus `V*`
+- TODO ensure measurable/integrable structure is available on `V*`
+
+*** Finite volume theorem
+- TODO prove:
+  - `V*` has finite volume in bounded regions
+- TODO localize proof to \(V \subset \mathbf{C}^n\) with Euclidean metric
+- TODO formalize branched-cover argument via projection
+- TODO derive local integrability of pulled-back coordinate volume forms
+
+*** Corollaries
+- TODO prove compact-support integrals over `V` are finite
+- TODO prove only the \((k,k)\)-component contributes on a `k`-dimensional analytic variety
+
+---
+
+** Part L: Stokes theorem for analytic varieties
+
+*** Statement
+- TODO formalize:
+  - if `V` is an analytic subvariety of complex dimension `k`
+  - and `φ` is a compactly supported `(2k-1)`-form
+  - then `∫_V dφ = 0`
+
+*** Local proof structure
+- TODO set up local projection to a polydisc
+- TODO represent `V` locally as branched cover away from branch locus
+- TODO define tubular neighborhoods `T_ε` of the branch divisor
+- TODO reduce Stokes on `V` to boundary-volume estimates on `∂T_ε`
+
+*** Singular-locus dimension control
+- TODO formalize induction through singular strata of the branch divisor
+- TODO prove boundary volume tends to zero as `ε -> 0`
+
+*** Engineering note
+- TODO it is acceptable to first formalize a version assuming required measure-theoretic lemmas, then backfill those lemmas later
+
+---
+
+** Part M: proper mapping theorem
+
+*** Statement placeholder
+- TODO define proper map in the needed sense for analytic geometry
+- TODO state theorem:
+  - image of an analytic variety under a proper holomorphic map is analytic
+
+*** Current status
+- TODO treat as an interface theorem for now
+- TODO do not attempt full proof until projection, finite-generation, and residue machinery are in place
+
+*** Immediate use
+- TODO design downstream files so they can depend on this theorem abstractly before proof is formalized
+
+---
+
+** Part N: concrete implementation roadmap
+
+*** Phase 1: local linear algebra
+- TODO complex vector spaces with hermitian forms
+- TODO decomposition into \((p,q)\)-types
+- TODO wedge algebra for type-graded forms
+- TODO projection operators
+- TODO coordinate formulas for `∂` and `∂bar`
+
+*** Phase 2: local analysis on C^n
+- TODO forms on open subsets of \(\mathbf{C}^n\)
+- TODO Dolbeault complex on polydiscs
+- TODO local \(\bar\partial\)-Poincaré lemma
+- TODO Euclidean metric and associated form
+- TODO local Wirtinger computations
+
+*** Phase 3: complex manifolds
+- TODO atlases and holomorphic transition maps
+- TODO pullback of forms
+- TODO manifold versions of `∂`, `∂bar`
+- TODO hermitian metrics on manifolds
+- TODO induced metrics on submanifolds
+
+*** Phase 4: projective geometry
+- TODO projective space as a complex manifold
+- TODO affine charts and transition maps
+- TODO Fubini-Study form and metric
+
+*** Phase 5: analytic varieties
+- TODO smooth locus
+- TODO integration over `V*`
+- TODO finite volume in bounded regions
+- TODO Stokes theorem for analytic varieties
+- TODO connect with homology-class interpretation later
+
+---
+
+** Part O: proof engineering tasks for Claude Code
+
+*** Abstraction boundaries
+- TODO separate:
+  - coordinate computations
+  - manifold-invariant statements
+  - integration lemmas
+  - cohomological quotients
+
+*** Naming discipline
+- TODO reserve names consistently:
+  - `d`, `∂`, `∂bar`
+  - `A_pq`
+  - `Z_pq`
+  - `H_Dolbeault`
+  - `omega`
+  - `hermitian_metric`
+  - `kahler_form` only if closedness is later added
+
+*** Reuse targets
+- TODO ensure hermitian metric API can later support:
+  - Kähler metrics
+  - Chern classes
+  - Hodge theory fragments
+  - positivity arguments on line bundles
+
+*** Testing strategy
+- TODO create small coordinate-level tests on:
+  - \(\mathbf{C}\)
+  - \(\mathbf{C}^2\)
+  - polydiscs
+  - \(\mathbf{P}^1\)
+- TODO test:
+  - type decomposition
+  - `d = ∂ + ∂bar`
+  - `∂bar² = 0`
+  - pullback compatibility
+  - positivity of standard metric
+  - local Fubini-Study formula
+
+*** Extraction and computation
+- TODO keep symbolic computations executable where possible
+- TODO avoid quotient-heavy constructions too early if they block checking examples
+
+---
+
+** Part P: likely blockers
+- TODO quotient constructions for cohomology may be awkward
+- TODO manifold differential form libraries may be incomplete
+- TODO measure/integration over singular loci may require temporary axiomatization
+- TODO projective-space formalization may need its own support library
+- TODO local analytic arguments using compact exhaustion may need a clean convergence interface
+
+---
+
+** Part Q: immediate next coding actions
+- TODO implement `A^(p,q)` on open subsets of `C^n`
+- TODO implement projections `π_(p,q)`
+- TODO implement `∂` and `∂bar`
+- TODO prove `d = ∂ + ∂bar`
+- TODO prove `∂bar ∘ ∂bar = 0`
+- TODO define hermitian metric locally by positive-definite matrix coefficients
+- TODO define associated \((1,1)\)-form
+- TODO compute standard metric and standard \((1,1)\)-form on `C^n`
+- TODO formalize local statement of \(\bar\partial\)-Poincaré lemma
+- TODO stub theorem interfaces for:
+  - Wirtinger theorem
+  - Stokes on analytic varieties
+  - proper mapping theorem
+
+* Rocq TODO — Sheaves and Cohomology
+** Purpose
+- This file is a Rocq formalization task list for sheaves, Čech cohomology, exact sequences, fine sheaves, constant sheaves, and the de Rham theorem interface.
+- Treat this as infrastructure work needed for later complex geometry, Dolbeault theory, and analytic geometry.
+
+** Global design goals
+*** Main objective
+- TODO build a reusable sheaf/cohomology layer that supports:
+  - holomorphic sheaves
+  - smooth sheaves
+  - constant sheaves
+  - exact sequences
+  - Čech cohomology
+  - comparisons with de Rham and simplicial/singular theories
+
+*** Engineering principle
+- TODO separate:
+  - abstract sheaf interfaces
+  - concrete sheaf instances
+  - Čech cochain machinery
+  - exact-sequence machinery
+  - comparison theorems
+- TODO avoid hard-coding to complex manifolds too early
+- TODO make the base sheaf layer work on arbitrary topological spaces
+
+*** Scope discipline
+- TODO first formalize enough sheaf theory for the book's use cases
+- TODO do not attempt maximal generality at the start
+- TODO prioritize proofs actually needed later:
+  - exponential sequence
+  - exact sequences from Poincaré lemmas
+  - vanishing of fine sheaf cohomology
+  - constant sheaf comparison
+  - de Rham comparison interface
+
+---
+
+** Part A: Mittag-Leffler as motivating example
+
+*** Principal parts
+- TODO define local ring of holomorphic germs at a point on a Riemann surface
+- TODO define local field of meromorphic germs
+- TODO define principal part as quotient:
+  - meromorphic germs modulo holomorphic germs
+
+*** Mittag-Leffler data
+- TODO define discrete subsets of a Riemann surface
+- TODO define assignment of principal parts at a discrete family of points
+
+*** Čech formulation
+- TODO encode local meromorphic solutions on a cover
+- TODO define overlap differences
+  - `f_ab = f_a - f_b`
+- TODO prove cocycle condition on triple overlaps
+- TODO define obstruction class in first Čech cohomology
+
+*** Dolbeault formulation
+- TODO encode bump-function construction
+- TODO define global \((0,1)\)-form obstruction
+- TODO prove:
+  - if `φ = ∂bar η`, then Mittag-Leffler data is globally solvable
+- TODO keep this as a motivating theorem/interface unless fully formalizing Riemann surfaces early
+
+---
+
+** Part B: abstract sheaf definition
+
+*** Base structure
+- TODO define a sheaf on a topological space `X` as:
+  - assignment `U ↦ F(U)` for open sets `U`
+  - restriction maps for inclusions `U ⊆ V`
+  - locality and gluing axioms
+
+*** Restriction maps
+- TODO define restriction maps
+  - `res_{V,U} : F(V) -> F(U)` for `U ⊆ V`
+- TODO prove functoriality:
+  - identity restriction
+  - composition of restrictions
+
+*** Gluing axiom
+- TODO formalize:
+  - compatible local sections glue to a global section
+
+*** Uniqueness/locality axiom
+- TODO formalize:
+  - if a section restricts to zero on an open cover, then it is zero
+
+*** Choice of codomain
+- TODO decide whether base theory uses:
+  - sheaves of abelian groups
+  - or first a more general sheaf of types/groups
+- TODO for cohomology, prioritize sheaves of abelian groups
+
+---
+
+** Part C: standard sheaf instances
+
+*** Smooth sheaves on smooth manifolds
+- TODO define sheaf of smooth functions
+- TODO define sheaf of nonvanishing smooth functions
+- TODO define sheaf of smooth p-forms
+- TODO define sheaf of closed p-forms
+- TODO define constant sheaves:
+  - `Z`
+  - `Q`
+  - `R`
+  - `C`
+
+*** Holomorphic sheaves on complex manifolds
+- TODO define sheaf of holomorphic functions `O`
+- TODO define multiplicative sheaf of nonzero holomorphic functions `O*`
+- TODO define sheaf of holomorphic p-forms
+- TODO define sheaf of smooth \((p,q)\)-forms
+- TODO define sheaf of \(\partialbar\)-closed \((p,q)\)-forms
+- TODO define ideal sheaf of a subvariety
+- TODO define sheaf of holomorphic sections of a holomorphic vector bundle
+- TODO define sheaf of smooth vector-bundle-valued \((p,q)\)-forms
+
+*** Meromorphic sheaves
+- TODO define sheaf of meromorphic functions
+- TODO define multiplicative sheaf of nonzero meromorphic functions
+- TODO choose a robust local presentation:
+  - local quotients of holomorphic functions
+  - equivalence on overlaps
+- TODO ensure this definition is compatible with restriction
+
+---
+
+** Part D: sheaf morphisms, kernels, cokernels, exactness
+
+*** Morphisms
+- TODO define a sheaf morphism as compatible maps on sections over each open set
+- TODO prove composition and identity laws
+
+*** Kernel sheaf
+- TODO define kernel sheaf pointwise on sections
+- TODO prove this is a sheaf
+
+*** Cokernel sheaf
+- TODO define cokernel sheaf correctly as the sheafification of the presheaf quotient
+- TODO do not use raw pointwise quotient as final definition
+- TODO decide whether to:
+  - define via explicit local representatives
+  - or define abstractly via sheafification
+- TODO if sheafification infrastructure is not ready, provide a temporary concrete definition for use cases in the book
+
+*** Exact sequences
+- TODO define short exact sequence of sheaves
+- TODO define exactness at each stage using kernel and cokernel
+- TODO define exact complexes of sheaves
+
+*** Extension by zero
+- TODO define extension-by-zero of a sheaf from a subspace `M ⊆ N`
+- TODO prove it is a sheaf
+- TODO ensure compatibility with later cohomology statements
+
+---
+
+** Part E: core exact sequences of sheaves
+
+*** Exponential sequence
+- TODO define exponential sheaf map
+  - `exp : O -> O*`
+  with chosen normalization
+- TODO prove exactness of
+  - `0 -> Z -> O -> O* -> 0`
+- TODO isolate dependence on local existence of logarithms
+
+*** Restriction sequence for a submanifold
+- TODO define ideal sheaf `I_V`
+- TODO prove exactness of
+  - `0 -> I_V -> O_M -> O_V -> 0`
+  where `O_V` is obtained by restriction / quotient
+
+*** de Rham resolution
+- TODO define sheaf complex
+  - `0 -> R -> A^0 -> A^1 -> A^2 -> ...`
+- TODO prove exactness using ordinary Poincaré lemma
+
+*** Dolbeault resolution
+- TODO define sheaf complex
+  - `0 -> Ω^p -> A^(p,0) -> A^(p,1) -> A^(p,2) -> ...`
+- TODO prove exactness using local `∂bar`-Poincaré lemma
+
+*** Principal-parts sheaf
+- TODO define quotient sheaf `M / O`
+- TODO prove that sections correspond to Mittag-Leffler data on open sets
+
+---
+
+** Part F: Čech cochains and Čech cohomology
+
+*** Covers
+- TODO define open covers
+- TODO define locally finite covers
+- TODO define refinements of covers
+
+*** Čech cochains
+- TODO define `C^0(U,F)`
+- TODO define `C^1(U,F)`
+- TODO define general `C^p(U,F)` on finite intersections
+- TODO choose an indexing convention:
+  - ordered tuples
+  - strictly increasing tuples
+  - alternating cochains
+- TODO pick one convention and keep it uniform
+
+*** Coboundary operator
+- TODO define Čech coboundary
+  - `δ : C^p(U,F) -> C^(p+1)(U,F)`
+- TODO prove `δ² = 0`
+
+*** Cocycles and coboundaries
+- TODO define:
+  - `Z^p(U,F) := ker δ`
+  - `B^p(U,F) := im δ`
+- TODO define cohomology
+  - `H^p(U,F) := Z^p(U,F) / B^p(U,F)`
+
+*** Degree-zero identification
+- TODO prove
+  - `H^0(U,F)` agrees with global sections for the cover
+- TODO later derive
+  - `H^0(X,F) = F(X)`
+
+---
+
+** Part G: refinements and direct limit definition
+
+*** Refinement maps
+- TODO define map induced by a refinement `U' < U`
+- TODO prove compatibility with coboundary
+- TODO prove induced map on cohomology is independent of auxiliary inclusion choices
+
+*** Direct limit
+- TODO define sheaf cohomology as direct limit of Čech cohomology over refinements
+- TODO choose a manageable implementation of filtered colimits / directed systems
+- TODO if direct limits are cumbersome in Rocq, define an interface layer first and prove with acyclic covers wherever possible
+
+*** Global cohomology notation
+- TODO define `H^p(X,F)` as the direct limit object
+- TODO keep notation distinct from singular or de Rham cohomology in code
+
+---
+
+** Part H: Leray theorem interface
+
+*** Statement
+- TODO formalize Leray theorem:
+  - if a cover is acyclic for `F`,
+  - then Čech cohomology on that cover computes sheaf cohomology
+
+*** Acyclic cover
+- TODO define cover acyclic for `F`:
+  - all higher cohomologies vanish on finite intersections
+
+*** Strategy
+- TODO prove Leray only in the cases needed later if full generality is too heavy
+- TODO expose as a reusable theorem for:
+  - de Rham sheaves
+  - Dolbeault sheaves
+  - constant sheaves on suitable covers
+
+---
+
+** Part I: long exact sequence in sheaf cohomology
+
+*** Induced maps
+- TODO define cochain maps induced by short exact sequence of sheaves
+- TODO define maps on cohomology
+
+*** Connecting homomorphism
+- TODO define the coboundary map
+  - `δ* : H^p(X,Q) -> H^(p+1)(X,S)`
+  for a short exact sequence `0 -> S -> F -> Q -> 0`
+- TODO formalize via local lifts on refinements
+- TODO prove well-definedness
+
+*** Exactness
+- TODO prove long exact sequence
+  - `0 -> H^0(X,S) -> H^0(X,F) -> H^0(X,Q) -> H^1(X,S) -> ...`
+- TODO structure proof so it works first on covers with exact cochain-level sequences
+- TODO then lift to sheaf cohomology using sufficiently fine covers
+
+*** Practical usage theorem
+- TODO state explicitly:
+  - a global section of the quotient sheaf lifts iff its connecting class vanishes
+
+---
+
+** Part J: fine sheaves and vanishing
+
+*** Partitions of unity
+- TODO define partition of unity subordinate to a locally finite open cover
+- TODO prove existence on smooth manifolds if the needed manifold library supports it
+- TODO otherwise treat existence as imported infrastructure
+
+*** Fine sheaf abstraction
+- TODO define fine sheaf via local endomorphisms supported in prescribed opens
+- TODO prove fine sheaves have vanishing higher cohomology
+
+*** Main examples
+- TODO prove smooth function sheaf is fine
+- TODO prove smooth form sheaves are fine
+- TODO record consequence:
+  - higher cohomology vanishes for these sheaves
+
+*** Explicit contracting homotopy
+- TODO implement explicit cochain homotopy using partition of unity
+- TODO prove every Čech cocycle is a coboundary for fine sheaves
+
+---
+
+** Part K: constant sheaves and simplicial cohomology
+
+*** Constant sheaf
+- TODO define constant sheaf associated to an abelian group
+- TODO distinguish from constant presheaf if necessary
+- TODO ensure local constancy is encoded correctly
+
+*** Simplicial complex comparison
+- TODO define stars of vertices in a simplicial complex
+- TODO define associated open cover by stars
+- TODO prove intersections of stars are either empty or connected when corresponding to simplices
+
+*** Cochain comparison
+- TODO define explicit isomorphism between:
+  - Čech cochains of the star cover with coefficients in constant sheaf `Z`
+  - simplicial cochains of the simplicial complex
+- TODO prove coboundaries match
+- TODO deduce
+  - `H^*(X, Z)` for the constant sheaf agrees with simplicial cohomology
+
+*** Subdivision argument
+- TODO formalize or import enough subdivision theory to justify arbitrarily fine star covers
+- TODO use this to compare Čech cohomology with simplicial cohomology
+
+---
+
+** Part L: singular and piecewise smooth chains
+
+*** Chain complexes
+- TODO define singular chains
+- TODO define piecewise smooth singular chains
+- TODO define boundary operator
+- TODO prove piecewise smooth chains form a subcomplex
+
+*** Homology
+- TODO define piecewise smooth homology
+- TODO state or prove comparison with ordinary singular homology
+- TODO if full proof is too heavy, isolate as imported theorem
+
+*** Integration pairing
+- TODO define integral of a smooth p-form over a piecewise smooth p-chain
+- TODO prove Stokes formula at chain level
+- TODO derive pairing of closed forms with cycles
+- TODO prove exact forms pair trivially with cycles
+
+---
+
+** Part M: de Rham theorem interface
+
+*** Map from de Rham to singular cohomology
+- TODO define map
+  - `H_DR^p(M,R) -> H_sing^p(M,R)`
+  by integration on cycles
+- TODO prove well-definedness on cohomology classes
+
+*** Statement
+- TODO state de Rham theorem:
+  - this map is an isomorphism
+
+*** Implementation strategy
+- TODO do not fully prove de Rham theorem until chain-level and sheaf-theoretic machinery are both ready
+- TODO instead create theorem interface and dependency hooks
+- TODO later connect proof through fine resolution of constant sheaf
+
+---
+
+** Part N: key examples to support later chapters
+
+*** Mittag-Leffler obstruction
+- TODO model principal-parts sheaf and connecting homomorphism
+- TODO recover obstruction in `H^1(M,O)`
+
+*** Exponential sequence applications
+- TODO prepare for line bundles and Chern classes
+- TODO ensure `H^1(M,O*)` can be used later as Picard-class target
+
+*** Dolbeault comparison
+- TODO prepare bridge:
+  - sheaf cohomology of `Ω^p`
+  - Dolbeault cohomology `H^(p,q)`
+- TODO design notation so these later identifications are painless
+
+---
+
+** Part O: implementation order
+
+*** Phase 1: abstract foundations
+- TODO topological spaces and open-set indexing
+- TODO sheaves of abelian groups
+- TODO morphisms, kernels, cokernels
+- TODO exact sequences
+- TODO extension by zero
+
+*** Phase 2: Čech layer
+- TODO covers and refinements
+- TODO cochains, coboundary, cohomology
+- TODO refinement maps
+- TODO direct limit interface
+- TODO long exact sequence machinery
+
+*** Phase 3: concrete sheaves
+- TODO constant sheaves
+- TODO smooth function and form sheaves
+- TODO holomorphic sheaves
+- TODO meromorphic sheaf
+- TODO ideal sheaves
+
+*** Phase 4: vanishing and comparison
+- TODO fine sheaf vanishing
+- TODO Leray theorem cases actually needed
+- TODO simplicial comparison for constant sheaf
+- TODO de Rham resolution and derived cohomology computation
+- TODO Dolbeault resolution and derived cohomology computation
+
+*** Phase 5: chain-level de Rham interface
+- TODO piecewise smooth chains
+- TODO integration pairing
+- TODO de Rham theorem interface
+
+---
+
+** Part P: proof engineering details for Claude Code
+
+*** Quotients
+- TODO decide early how quotient groups and quotient sheaves will be represented
+- TODO prefer structures with explicit equivalence relations if native quotient reasoning becomes painful
+
+*** Sheafification
+- TODO either implement general sheafification
+- TODO or isolate a minimal sheafification interface and only instantiate specific cokernels needed in practice
+
+*** Covers and indices
+- TODO choose a finite-intersection indexing convention that makes rewriting manageable
+- TODO consider normalized alternating cochains to simplify signs
+
+*** Local-to-global proofs
+- TODO write helper lemmas for:
+  - restricting cocycles
+  - gluing sections
+  - checking exactness stalkwise or locally
+
+*** Testing
+- TODO create small tests for:
+  - constant sheaf on interval/circle
+  - exponential sequence on punctured plane
+  - exactness of de Rham resolution on Euclidean opens
+  - exactness of Dolbeault resolution on polydiscs
+  - first Čech cohomology of circle cover
+
+---
+
+** Part Q: likely blockers
+- TODO direct limits over refinements may be cumbersome
+- TODO sheafification may be annoying if implemented too abstractly
+- TODO singular chain machinery is large
+- TODO simplicial comparison may require extra combinatorial infrastructure
+- TODO meromorphic sheaf needs careful local quotient representation
+- TODO exactness of exponential sequence needs local holomorphic logarithms
+
+---
+
+** Part R: immediate next coding actions
+- TODO define `sheaf_of_abelian_groups`
+- TODO define sheaf morphisms and kernel sheaf
+- TODO define open covers and Čech cochains
+- TODO implement Čech coboundary and prove `δ² = 0`
+- TODO define Čech cohomology on a fixed cover
+- TODO define refinement maps
+- TODO implement short exact sequence interface for sheaves
+- TODO define connecting morphism on fixed-cover cohomology
+- TODO prove long exact sequence on sufficiently exact covers
+- TODO define fine sheaf and prove higher Čech cohomology vanishes
+- TODO define constant sheaf `Z`
+- TODO state comparison theorem with simplicial cohomology
+- TODO define de Rham resolution as a sheaf complex
+- TODO define exponential sheaf sequence as a target application

@@ -1,0 +1,466 @@
+DIGEST 6f24e0e761d9eeaed06d0a4e30f23132
+FCAG.NeuralOp.Approximation
+R1540:1543 Stdlib.Lists.List <> <> lib
+R1545:1549 Stdlib.Arith.Arith <> <> lib
+R1579:1584 Stdlib.QArith.QArith <> <> lib
+R1586:1591 Stdlib.ZArith.ZArith <> <> lib
+R1621:1656 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> <> lib
+R1686:1725 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> <> lib
+R1735:1747 Stdlib.Lists.List ListNotations <> mod
+R1775:1781 CAG.Complex <> <> lib
+R1808:1819 CAG.NeuralOp.DFT <> <> lib
+R1846:1857 CAG.NeuralOp.FNO <> <> lib
+def 1985:1991 <> norm_sq
+R1999:2002 Corelib.Init.Datatypes <> list ind
+R2004:2011 CAG.Complex <> CComplex rec
+binder 1994:1995 <> xs:1
+R2016:2020 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+R2027:2036 CAG.NeuralOp.DFT <> seq_energy def
+R2038:2039 CAG.NeuralOp.Approximation <> xs:1 var
+def 2112:2119 <> seq_dist
+R2130:2133 Corelib.Init.Datatypes <> list ind
+R2135:2142 CAG.Complex <> CComplex rec
+binder 2122:2123 <> xs:2
+binder 2125:2126 <> ys:3
+R2147:2151 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+R2158:2164 CAG.NeuralOp.Approximation <> norm_sq def
+R2167:2174 Stdlib.Lists.List <> map abbrev
+R2258:2269 Stdlib.Lists.List <> combine def
+R2274:2275 CAG.NeuralOp.Approximation <> ys:3 var
+R2271:2272 CAG.NeuralOp.Approximation <> xs:2 var
+R2182:2182 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2184:2185 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2187:2187 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 2186:2186 <> y:4
+binder 2183:2183 <> x:5
+binder 2182:2187 <> pat:6
+R2192:2195 CAG.Complex <> Cadd def
+R2197:2197 CAG.NeuralOp.Approximation <> x:5 var
+R2200:2203 CAG.Complex <> Cmul def
+R2206:2208 CAG.Complex <> mkC constr
+R2211:2218 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+R2223:2225 Stdlib.QArith.QArith_base <> ::Q_scope:x_'#'_x not
+R2233:2233 CAG.NeuralOp.Approximation <> y:4 var
+prf 2471:2488 <> spectral_proj_full
+R2496:2499 Corelib.Init.Datatypes <> list ind
+R2501:2508 CAG.Complex <> CComplex rec
+binder 2491:2492 <> xs:7
+R2545:2547 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2517:2529 CAG.NeuralOp.DFT <> spectral_proj def
+R2532:2537 Corelib.Init.Datatypes <> length def
+R2539:2540 CAG.NeuralOp.Approximation <> xs:7 var
+R2543:2544 CAG.NeuralOp.Approximation <> xs:7 var
+R2548:2549 CAG.NeuralOp.Approximation <> xs:7 var
+R2754:2766 CAG.NeuralOp.DFT <> spectral_proj def
+R2824:2826 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2783:2790 CAG.NeuralOp.DFT <> low_pass def
+R2793:2798 Corelib.Init.Datatypes <> length def
+R2805:2810 Corelib.Init.Datatypes <> length def
+R2817:2819 CAG.NeuralOp.DFT <> dft def
+R2827:2829 CAG.NeuralOp.DFT <> dft def
+R2824:2826 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2783:2790 CAG.NeuralOp.DFT <> low_pass def
+R2793:2798 Corelib.Init.Datatypes <> length def
+R2805:2810 Corelib.Init.Datatypes <> length def
+R2817:2819 CAG.NeuralOp.DFT <> dft def
+R2827:2829 CAG.NeuralOp.DFT <> dft def
+R2847:2854 CAG.NeuralOp.DFT <> low_pass def
+R2857:2862 CAG.NeuralOp.DFT <> pad_to def
+R2865:2878 CAG.NeuralOp.DFT <> truncate_modes def
+R2915:2917 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2900:2905 Corelib.Init.Datatypes <> length def
+R2908:2910 CAG.NeuralOp.DFT <> dft def
+R2918:2923 Corelib.Init.Datatypes <> length def
+R2915:2917 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2900:2905 Corelib.Init.Datatypes <> length def
+R2908:2910 CAG.NeuralOp.DFT <> dft def
+R2918:2923 Corelib.Init.Datatypes <> length def
+R2943:2945 CAG.NeuralOp.DFT <> dft def
+R2956:2970 Stdlib.Lists.List <> length_map thm
+R2973:2987 Stdlib.Lists.List <> length_seq thm
+R2956:2970 Stdlib.Lists.List <> length_map thm
+R2956:2970 Stdlib.Lists.List <> length_map thm
+R2973:2987 Stdlib.Lists.List <> length_seq thm
+R2973:2987 Stdlib.Lists.List <> length_seq thm
+R3034:3048 Stdlib.Lists.List <> firstn_all thm
+R3034:3048 Stdlib.Lists.List <> firstn_all thm
+R3034:3048 Stdlib.Lists.List <> firstn_all thm
+R3063:3074 Stdlib.Arith.PeanoNat Nat sub_diag thm
+R3063:3074 Stdlib.Arith.PeanoNat Nat sub_diag thm
+R3063:3074 Stdlib.Arith.PeanoNat Nat sub_diag thm
+R3083:3096 Stdlib.Lists.List <> app_nil_r thm
+R3083:3096 Stdlib.Lists.List <> app_nil_r thm
+R3120:3131 CAG.NeuralOp.DFT <> idft_dft_inv prfax
+R3120:3131 CAG.NeuralOp.DFT <> idft_dft_inv prfax
+prf 3261:3279 <> spectral_proj_error
+R3290:3292 Corelib.Init.Datatypes <> nat ind
+binder 3282:3286 <> K_max:8
+R3301:3304 Corelib.Init.Datatypes <> list ind
+R3306:3313 CAG.Complex <> CComplex rec
+binder 3296:3297 <> xs:9
+R3332:3335 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R3327:3331 CAG.NeuralOp.Approximation <> K_max:8 var
+R3336:3341 Corelib.Init.Datatypes <> length def
+R3343:3344 CAG.NeuralOp.Approximation <> xs:9 var
+binder 3321:3322 <> hK:10
+R3369:3381 CAG.NeuralOp.DFT <> spectral_proj def
+R3383:3387 CAG.NeuralOp.Approximation <> K_max:8 var
+R3389:3390 CAG.NeuralOp.Approximation <> xs:9 var
+binder 3362:3363 <> ys:11
+R3411:3413 CAG.Complex <> mkC constr
+R3416:3423 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+R3428:3430 Stdlib.QArith.QArith_base <> ::Q_scope:x_'#'_x not
+binder 3403:3406 <> neg1:12
+R3455:3462 Stdlib.Lists.List <> map abbrev
+R3527:3538 Stdlib.Lists.List <> combine def
+R3543:3544 CAG.NeuralOp.Approximation <> ys:11 var
+R3540:3541 CAG.NeuralOp.Approximation <> xs:9 var
+R3470:3470 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3472:3473 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3475:3475 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 3474:3474 <> y:13
+binder 3471:3471 <> x:14
+binder 3470:3475 <> pat:15
+R3480:3483 CAG.Complex <> Cadd def
+R3485:3485 CAG.NeuralOp.Approximation <> x:14 var
+R3488:3491 CAG.Complex <> Cmul def
+R3493:3496 CAG.NeuralOp.Approximation <> neg1:12 var
+R3498:3498 CAG.NeuralOp.Approximation <> y:13 var
+binder 3448:3450 <> err:16
+R3632:3638 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3625:3627 CAG.NeuralOp.DFT <> dft def
+R3629:3631 CAG.NeuralOp.Approximation <> err:16 var
+R3639:3644 CAG.NeuralOp.DFT <> pad_to def
+R3647:3652 Corelib.Init.Datatypes <> length def
+R3654:3655 CAG.NeuralOp.Approximation <> xs:9 var
+R3685:3695 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R3665:3675 Stdlib.Lists.List <> repeat abbrev
+R3680:3684 CAG.NeuralOp.Approximation <> K_max:8 var
+R3677:3678 CAG.Complex <> C0 def
+R3696:3706 Stdlib.Lists.List <> firstn abbrev
+R3742:3751 Stdlib.Lists.List <> skipn abbrev
+R3760:3762 CAG.NeuralOp.DFT <> dft def
+R3764:3765 CAG.NeuralOp.Approximation <> xs:9 var
+R3753:3757 CAG.NeuralOp.Approximation <> K_max:8 var
+R3718:3720 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R3709:3714 Corelib.Init.Datatypes <> length def
+R3716:3717 CAG.NeuralOp.Approximation <> xs:9 var
+R3721:3725 CAG.NeuralOp.Approximation <> K_max:8 var
+prf 4104:4126 <> spectral_proj_converges
+R4134:4137 Corelib.Init.Datatypes <> list ind
+R4139:4146 CAG.Complex <> CComplex rec
+binder 4129:4130 <> xs:17
+R4183:4185 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4155:4167 CAG.NeuralOp.DFT <> spectral_proj def
+R4170:4175 Corelib.Init.Datatypes <> length def
+R4177:4178 CAG.NeuralOp.Approximation <> xs:17 var
+R4181:4182 CAG.NeuralOp.Approximation <> xs:17 var
+R4186:4187 CAG.NeuralOp.Approximation <> xs:17 var
+R4206:4223 CAG.NeuralOp.Approximation <> spectral_proj_full thm
+R4206:4223 CAG.NeuralOp.Approximation <> spectral_proj_full thm
+prf 4344:4359 <> circulant_as_fno
+R4366:4369 Corelib.Init.Datatypes <> list ind
+R4371:4378 CAG.Complex <> CComplex rec
+binder 4362:4362 <> c:18
+R4395:4398 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R4387:4392 Corelib.Init.Datatypes <> length def
+R4394:4394 CAG.NeuralOp.Approximation <> c:18 var
+binder 4382:4383 <> hN:19
+R4412:4419 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4433:4441 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4424:4432 CAG.NeuralOp.FNO <> FNOParams rec
+binder 4420:4420 <> p:20
+R4462:4471 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R4456:4459 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R4445:4454 CAG.NeuralOp.FNO <> fno_layers proj
+R4442:4442 CAG.NeuralOp.Approximation <> p:20 var
+R4460:4461 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+binder 4479:4479 <> v:21
+R4501:4512 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4490:4492 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4482:4487 Corelib.Init.Datatypes <> length def
+R4489:4489 CAG.NeuralOp.Approximation <> v:21 var
+R4493:4498 Corelib.Init.Datatypes <> length def
+R4500:4500 CAG.NeuralOp.Approximation <> c:18 var
+R4528:4530 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4513:4523 CAG.NeuralOp.FNO <> fno_forward def
+R4525:4525 CAG.NeuralOp.Approximation <> p:20 var
+R4527:4527 CAG.NeuralOp.Approximation <> v:21 var
+R4531:4542 CAG.NeuralOp.FNO <> circulant_op def
+R4544:4544 CAG.NeuralOp.Approximation <> c:18 var
+R4546:4546 CAG.NeuralOp.Approximation <> v:21 var
+def 5226:5234 <> LinearMap
+R5241:5243 Corelib.Init.Datatypes <> nat ind
+binder 5237:5237 <> N:22
+R5256:5259 Corelib.Init.Datatypes <> list ind
+R5262:5265 Corelib.Init.Datatypes <> list ind
+R5267:5274 CAG.Complex <> CComplex rec
+def 5367:5378 <> apply_linear
+R5385:5388 Corelib.Init.Datatypes <> list ind
+R5391:5394 Corelib.Init.Datatypes <> list ind
+R5396:5403 CAG.Complex <> CComplex rec
+binder 5381:5381 <> M:23
+R5412:5415 Corelib.Init.Datatypes <> list ind
+R5417:5424 CAG.Complex <> CComplex rec
+binder 5408:5408 <> v:24
+R5429:5432 Corelib.Init.Datatypes <> list ind
+R5434:5441 CAG.Complex <> CComplex rec
+R5448:5455 Stdlib.Lists.List <> map abbrev
+R5528:5528 CAG.NeuralOp.Approximation <> M:23 var
+binder 5462:5464 <> row:25
+R5469:5472 CAG.NeuralOp.DFT <> csum def
+R5475:5480 Corelib.Init.Datatypes <> length def
+R5482:5482 CAG.NeuralOp.Approximation <> v:24 var
+binder 5490:5490 <> j:26
+R5495:5498 CAG.Complex <> Cmul def
+R5501:5505 CAG.NeuralOp.DFT <> nth_C def
+R5507:5509 CAG.NeuralOp.Approximation <> row:25 var
+R5511:5511 CAG.NeuralOp.Approximation <> j:26 var
+R5515:5519 CAG.NeuralOp.DFT <> nth_C def
+R5521:5521 CAG.NeuralOp.Approximation <> v:24 var
+R5523:5523 CAG.NeuralOp.Approximation <> j:26 var
+prf 5723:5745 <> matrix_is_circulant_sum
+R5752:5754 Corelib.Init.Datatypes <> nat ind
+binder 5748:5748 <> N:27
+R5762:5770 CAG.NeuralOp.Approximation <> LinearMap def
+R5772:5772 CAG.NeuralOp.Approximation <> N:27 var
+binder 5758:5758 <> M:28
+R5781:5788 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5814:5861 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5794:5797 Corelib.Init.Datatypes <> list ind
+R5800:5803 Corelib.Init.Datatypes <> list ind
+R5805:5812 CAG.Complex <> CComplex rec
+binder 5789:5790 <> cs:29
+R5882:5891 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R5872:5875 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R5863:5868 Corelib.Init.Datatypes <> length def
+R5870:5871 CAG.NeuralOp.Approximation <> cs:29 var
+R5876:5876 CAG.NeuralOp.Approximation <> N:27 var
+binder 5899:5899 <> v:30
+R5920:5931 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5911:5913 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5903:5908 Corelib.Init.Datatypes <> length def
+R5910:5910 CAG.NeuralOp.Approximation <> v:30 var
+R5914:5914 CAG.NeuralOp.Approximation <> N:27 var
+R5948:5958 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5932:5943 CAG.NeuralOp.Approximation <> apply_linear def
+R5945:5945 CAG.NeuralOp.Approximation <> M:28 var
+R5947:5947 CAG.NeuralOp.Approximation <> v:30 var
+R5959:5972 Stdlib.Lists.List <> fold_left def
+R6135:6145 Stdlib.Lists.List <> repeat abbrev
+R6150:6150 CAG.NeuralOp.Approximation <> N:27 var
+R6147:6148 CAG.Complex <> C0 def
+R6131:6132 CAG.NeuralOp.Approximation <> cs:29 var
+binder 5979:5981 <> acc:31
+binder 5983:5983 <> c:32
+R5988:5995 Stdlib.Lists.List <> map abbrev
+R6070:6081 Stdlib.Lists.List <> combine def
+R6088:6099 CAG.NeuralOp.FNO <> circulant_op def
+R6101:6101 CAG.NeuralOp.Approximation <> c:32 var
+R6103:6103 CAG.NeuralOp.Approximation <> v:30 var
+R6083:6085 CAG.NeuralOp.Approximation <> acc:31 var
+R6003:6003 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R6005:6006 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R6008:6008 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 6007:6007 <> y:33
+binder 6004:6004 <> x:34
+binder 6003:6008 <> pat:35
+R6013:6016 CAG.Complex <> Cadd def
+R6018:6018 CAG.NeuralOp.Approximation <> x:34 var
+R6020:6020 CAG.NeuralOp.Approximation <> y:33 var
+prf 6960:6982 <> fno_dense_in_linear_ops
+R6989:6991 Corelib.Init.Datatypes <> nat ind
+binder 6985:6985 <> N:36
+R6999:7007 CAG.NeuralOp.Approximation <> LinearMap def
+R7009:7009 CAG.NeuralOp.Approximation <> N:36 var
+binder 6995:6995 <> T:37
+R7083:7090 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7104:7112 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7095:7103 CAG.NeuralOp.FNO <> FNOParams rec
+binder 7091:7091 <> p:38
+binder 7120:7120 <> v:39
+R7135:7146 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7131:7133 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7123:7128 Corelib.Init.Datatypes <> length def
+R7130:7130 CAG.NeuralOp.Approximation <> v:39 var
+R7134:7134 CAG.NeuralOp.Approximation <> N:36 var
+R7162:7164 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7147:7157 CAG.NeuralOp.FNO <> fno_forward def
+R7159:7159 CAG.NeuralOp.Approximation <> p:38 var
+R7161:7161 CAG.NeuralOp.Approximation <> v:39 var
+R7165:7176 CAG.NeuralOp.Approximation <> apply_linear def
+R7178:7178 CAG.NeuralOp.Approximation <> T:37 var
+R7180:7180 CAG.NeuralOp.Approximation <> v:39 var
+def 7837:7842 <> ContOp
+R7851:7853 Corelib.Init.Datatypes <> nat ind
+binder 7845:7845 <> N:40
+binder 7847:7847 <> M:41
+R7879:7882 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7866:7869 Corelib.Init.Datatypes <> list ind
+R7871:7878 CAG.Complex <> CComplex rec
+R7883:7886 Corelib.Init.Datatypes <> list ind
+R7888:7895 CAG.Complex <> CComplex rec
+def 8024:8028 <> FNO_L
+R8035:8037 Corelib.Init.Datatypes <> nat ind
+binder 8031:8031 <> L:42
+R8043:8051 CAG.NeuralOp.FNO <> FNOParams rec
+def 8223:8239 <> IsUniversalNonlin
+R8247:8258 CAG.NeuralOp.FNO <> Nonlinearity def
+binder 8242:8243 <> σ:43
+R8330:8333 Corelib.Init.Datatypes <> list ind
+R8335:8342 CAG.Complex <> CComplex rec
+binder 8319:8326 <> p_coeffs:44
+R8350:8357 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R8370:8378 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R8362:8369 CAG.Complex <> CComplex rec
+binder 8358:8358 <> z:45
+R8383:8386 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R8379:8380 CAG.NeuralOp.Approximation <> σ:43 var
+R8382:8382 CAG.NeuralOp.Approximation <> z:45 var
+R8387:8390 CAG.NeuralOp.DFT <> csum def
+R8393:8398 Corelib.Init.Datatypes <> length def
+R8400:8407 CAG.NeuralOp.Approximation <> p_coeffs:44 var
+binder 8433:8433 <> k:46
+R8438:8441 CAG.Complex <> Cmul def
+R8444:8448 CAG.NeuralOp.DFT <> nth_C def
+R8450:8457 CAG.NeuralOp.Approximation <> p_coeffs:44 var
+R8459:8459 CAG.NeuralOp.Approximation <> k:46 var
+R8463:8466 CAG.Complex <> Cpow def
+R8468:8468 CAG.NeuralOp.Approximation <> z:45 var
+R8470:8470 CAG.NeuralOp.Approximation <> k:46 var
+prf 9178:9197 <> fno_universal_approx
+R9206:9208 Corelib.Init.Datatypes <> nat ind
+binder 9200:9200 <> N:47
+binder 9202:9202 <> M:48
+R9217:9228 CAG.NeuralOp.FNO <> Nonlinearity def
+binder 9212:9213 <> σ:49
+R9242:9258 CAG.NeuralOp.Approximation <> IsUniversalNonlin def
+R9260:9261 CAG.NeuralOp.Approximation <> σ:49 var
+binder 9236:9238 <> hσ:50
+R9273:9278 CAG.NeuralOp.Approximation <> ContOp def
+R9280:9280 CAG.NeuralOp.Approximation <> N:47 var
+R9282:9282 CAG.NeuralOp.Approximation <> M:48 var
+binder 9269:9269 <> F:51
+binder 9302:9302 <> v:52
+R9317:9320 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9313:9315 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9305:9310 Corelib.Init.Datatypes <> length def
+R9312:9312 CAG.NeuralOp.Approximation <> v:52 var
+R9316:9316 CAG.NeuralOp.Approximation <> N:47 var
+R9333:9335 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9321:9326 Corelib.Init.Datatypes <> length def
+R9329:9329 CAG.NeuralOp.Approximation <> F:51 var
+R9331:9331 CAG.NeuralOp.Approximation <> v:52 var
+R9336:9336 CAG.NeuralOp.Approximation <> M:48 var
+binder 9290:9291 <> hF:53
+R9439:9442 Corelib.Init.Datatypes <> list ind
+R9445:9448 Corelib.Init.Datatypes <> list ind
+R9450:9457 CAG.Complex <> CComplex rec
+binder 9429:9435 <> samples:54
+binder 9491:9491 <> v:55
+R9511:9514 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9494:9500 Stdlib.Lists.List <> In def
+R9504:9510 CAG.NeuralOp.Approximation <> samples:54 var
+R9502:9502 CAG.NeuralOp.Approximation <> v:55 var
+R9523:9525 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9515:9520 Corelib.Init.Datatypes <> length def
+R9522:9522 CAG.NeuralOp.Approximation <> v:55 var
+R9526:9526 CAG.NeuralOp.Approximation <> N:47 var
+binder 9473:9480 <> hsamples:56
+R9534:9541 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9555:9608 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9546:9554 CAG.NeuralOp.FNO <> FNOParams rec
+binder 9542:9542 <> p:57
+binder 9616:9616 <> v:58
+R9636:9647 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9619:9625 Stdlib.Lists.List <> In def
+R9629:9635 CAG.NeuralOp.Approximation <> samples:54 var
+R9627:9627 CAG.NeuralOp.Approximation <> v:58 var
+R9663:9665 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9648:9658 CAG.NeuralOp.FNO <> fno_forward def
+R9660:9660 CAG.NeuralOp.Approximation <> p:57 var
+R9662:9662 CAG.NeuralOp.Approximation <> v:58 var
+R9666:9666 CAG.NeuralOp.Approximation <> F:51 var
+R9668:9668 CAG.NeuralOp.Approximation <> v:58 var
+def 10588:10598 <> tail_energy
+R10609:10611 Corelib.Init.Datatypes <> nat ind
+binder 10601:10605 <> K_max:59
+R10620:10623 Corelib.Init.Datatypes <> list ind
+R10625:10632 CAG.Complex <> CComplex rec
+binder 10615:10616 <> xs:60
+R10637:10641 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+R10648:10657 CAG.NeuralOp.DFT <> seq_energy def
+R10660:10669 Stdlib.Lists.List <> skipn abbrev
+R10678:10680 CAG.NeuralOp.DFT <> dft def
+R10682:10683 CAG.NeuralOp.Approximation <> xs:60 var
+R10671:10675 CAG.NeuralOp.Approximation <> K_max:59 var
+prf 10753:10773 <> spectral_approx_bound
+R10784:10786 Corelib.Init.Datatypes <> nat ind
+binder 10776:10780 <> K_max:61
+R10795:10798 Corelib.Init.Datatypes <> list ind
+R10800:10807 CAG.Complex <> CComplex rec
+binder 10790:10791 <> xs:62
+R10826:10829 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R10821:10825 CAG.NeuralOp.Approximation <> K_max:61 var
+R10830:10835 Corelib.Init.Datatypes <> length def
+R10837:10838 CAG.NeuralOp.Approximation <> xs:62 var
+binder 10815:10816 <> hK:63
+R10996:11002 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10852:10858 CAG.NeuralOp.Approximation <> norm_sq def
+R10861:10868 Stdlib.Lists.List <> map abbrev
+R10954:10965 Stdlib.Lists.List <> combine def
+R10971:10983 CAG.NeuralOp.DFT <> spectral_proj def
+R10985:10989 CAG.NeuralOp.Approximation <> K_max:61 var
+R10991:10992 CAG.NeuralOp.Approximation <> xs:62 var
+R10967:10968 CAG.NeuralOp.Approximation <> xs:62 var
+R10876:10876 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R10878:10879 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R10881:10881 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 10880:10880 <> y:64
+binder 10877:10877 <> x:65
+binder 10876:10881 <> pat:66
+R10886:10889 CAG.Complex <> Cadd def
+R10891:10891 CAG.NeuralOp.Approximation <> x:65 var
+R10894:10897 CAG.Complex <> Cmul def
+R10900:10902 CAG.Complex <> mkC constr
+R10905:10912 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+R10917:10919 Stdlib.QArith.QArith_base <> ::Q_scope:x_'#'_x not
+R10927:10927 CAG.NeuralOp.Approximation <> y:64 var
+R11040:11042 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R11003:11010 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+R11014:11016 Stdlib.QArith.QArith_base <> ::Q_scope:x_'#'_x not
+R11017:11026 Stdlib.PArith.BinPos Pos of_nat def
+R11029:11034 Corelib.Init.Datatypes <> length def
+R11036:11037 CAG.NeuralOp.Approximation <> xs:62 var
+R11043:11053 CAG.NeuralOp.Approximation <> tail_energy def
+R11055:11059 CAG.NeuralOp.Approximation <> K_max:61 var
+R11061:11062 CAG.NeuralOp.Approximation <> xs:62 var
+prf 11410:11425 <> tail_energy_zero
+R11433:11436 Corelib.Init.Datatypes <> list ind
+R11438:11445 CAG.Complex <> CComplex rec
+binder 11428:11429 <> xs:67
+R11480:11482 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11454:11464 CAG.NeuralOp.Approximation <> tail_energy def
+R11467:11472 Corelib.Init.Datatypes <> length def
+R11474:11475 CAG.NeuralOp.Approximation <> xs:67 var
+R11478:11479 CAG.NeuralOp.Approximation <> xs:67 var
+R11502:11512 CAG.NeuralOp.Approximation <> tail_energy def
+R11547:11549 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11532:11537 Corelib.Init.Datatypes <> length def
+R11540:11542 CAG.NeuralOp.DFT <> dft def
+R11550:11555 Corelib.Init.Datatypes <> length def
+R11547:11549 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11532:11537 Corelib.Init.Datatypes <> length def
+R11540:11542 CAG.NeuralOp.DFT <> dft def
+R11550:11555 Corelib.Init.Datatypes <> length def
+R11573:11575 CAG.NeuralOp.DFT <> dft def
+R11586:11600 Stdlib.Lists.List <> length_map thm
+R11603:11617 Stdlib.Lists.List <> length_seq thm
+R11586:11600 Stdlib.Lists.List <> length_map thm
+R11586:11600 Stdlib.Lists.List <> length_map thm
+R11603:11617 Stdlib.Lists.List <> length_seq thm
+R11603:11617 Stdlib.Lists.List <> length_seq thm
+R11662:11675 Stdlib.Lists.List <> skipn_all thm
+R11662:11675 Stdlib.Lists.List <> skipn_all thm
+R11662:11675 Stdlib.Lists.List <> skipn_all thm
+R11687:11696 CAG.NeuralOp.DFT <> seq_energy def

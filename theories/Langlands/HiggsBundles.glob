@@ -1,0 +1,293 @@
+DIGEST 32c0e2b2c22cba808ab24c8cda749fdc
+FCAG.Langlands.HiggsBundles
+R911:914 Stdlib.Lists.List <> <> lib
+R916:920 Stdlib.Arith.Arith <> <> lib
+R947:953 CAG.Complex <> <> lib
+R980:981 CAG.AG <> <> lib
+R1008:1023 CAG.ManifoldTopology <> <> lib
+R1050:1084 CAG.Harmonic.BundleCovariantDerivatives <> <> lib
+R1111:1132 CAG.Divisor.LineBundleCech <> <> lib
+rec 1751:1760 <> HiggsField
+proj 1822:1826 <> hf_op
+proj 1925:1937 <> hf_linear_add
+proj 2027:2041 <> hf_linear_scale
+proj 2349:2361 <> hf_integrable
+R1767:1783 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 1763:1763 <> M:1
+R1791:1805 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R1807:1807 CAG.Langlands.HiggsBundles <> M:1 var
+binder 1787:1787 <> E:2
+R1837:1840 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1834:1836 Corelib.Init.Datatypes <> nat ind
+R1852:1855 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1841:1849 CAG.Harmonic.BundleCovariantDerivatives <> Section_E defax
+R1851:1851 CAG.Langlands.HiggsBundles <> E:2 var
+R1856:1864 CAG.Harmonic.BundleCovariantDerivatives <> Section_E defax
+R1866:1866 CAG.Langlands.HiggsBundles <> E:2 var
+binder 1950:1950 <> i:5
+binder 1952:1952 <> s:6
+binder 1954:1954 <> t:7
+R1986:1988 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1961:1965 CAG.Langlands.HiggsBundles <> hf_op:4 meth
+R1970:1980 CAG.Harmonic.BundleCovariantDerivatives <> section_add defax
+R1984:1984 CAG.Langlands.HiggsBundles <> t:7 var
+R1982:1982 CAG.Langlands.HiggsBundles <> s:6 var
+R1967:1967 CAG.Langlands.HiggsBundles <> i:5 var
+R1989:1999 CAG.Harmonic.BundleCovariantDerivatives <> section_add defax
+R2014:2018 CAG.Langlands.HiggsBundles <> hf_op:4 meth
+R2022:2022 CAG.Langlands.HiggsBundles <> t:7 var
+R2020:2020 CAG.Langlands.HiggsBundles <> i:5 var
+R2002:2006 CAG.Langlands.HiggsBundles <> hf_op:4 meth
+R2010:2010 CAG.Langlands.HiggsBundles <> s:6 var
+R2008:2008 CAG.Langlands.HiggsBundles <> i:5 var
+binder 2052:2052 <> i:9
+R2059:2066 CAG.Complex <> CComplex rec
+binder 2055:2055 <> c:10
+binder 2069:2069 <> s:11
+R2103:2105 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2076:2080 CAG.Langlands.HiggsBundles <> hf_op:4 meth
+R2085:2097 CAG.Harmonic.BundleCovariantDerivatives <> section_scale defax
+R2101:2101 CAG.Langlands.HiggsBundles <> s:11 var
+R2099:2099 CAG.Langlands.HiggsBundles <> c:10 var
+R2082:2082 CAG.Langlands.HiggsBundles <> i:9 var
+R2106:2118 CAG.Harmonic.BundleCovariantDerivatives <> section_scale defax
+R2123:2127 CAG.Langlands.HiggsBundles <> hf_op:4 meth
+R2131:2131 CAG.Langlands.HiggsBundles <> s:11 var
+R2129:2129 CAG.Langlands.HiggsBundles <> i:9 var
+R2120:2120 CAG.Langlands.HiggsBundles <> c:10 var
+binder 2372:2372 <> i:13
+binder 2374:2374 <> j:14
+binder 2376:2376 <> s:15
+R2402:2404 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2383:2387 CAG.Langlands.HiggsBundles <> hf_op:4 meth
+R2392:2396 CAG.Langlands.HiggsBundles <> hf_op:4 meth
+R2400:2400 CAG.Langlands.HiggsBundles <> s:15 var
+R2398:2398 CAG.Langlands.HiggsBundles <> j:14 var
+R2389:2389 CAG.Langlands.HiggsBundles <> i:13 var
+R2405:2409 CAG.Langlands.HiggsBundles <> hf_op:4 meth
+R2414:2418 CAG.Langlands.HiggsBundles <> hf_op:4 meth
+R2422:2422 CAG.Langlands.HiggsBundles <> s:15 var
+R2420:2420 CAG.Langlands.HiggsBundles <> i:13 var
+R2411:2411 CAG.Langlands.HiggsBundles <> j:14 var
+R2439:2443 CAG.Langlands.HiggsBundles <> hf_op proj
+R2439:2443 CAG.Langlands.HiggsBundles <> hf_op proj
+R2474:2486 CAG.Langlands.HiggsBundles <> hf_linear_add proj
+R2474:2486 CAG.Langlands.HiggsBundles <> hf_linear_add proj
+R2515:2529 CAG.Langlands.HiggsBundles <> hf_linear_scale proj
+R2515:2529 CAG.Langlands.HiggsBundles <> hf_linear_scale proj
+R2556:2568 CAG.Langlands.HiggsBundles <> hf_integrable proj
+R2556:2568 CAG.Langlands.HiggsBundles <> hf_integrable proj
+rec 2899:2909 <> HiggsBundle
+proj 2947:2953 <> higgs_E
+proj 2979:2987 <> higgs_phi
+R2916:2932 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 2912:2912 <> M:17
+R2959:2973 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R2975:2975 CAG.Langlands.HiggsBundles <> M:17 var
+R2991:3000 CAG.Langlands.HiggsBundles <> HiggsField rec
+R3002:3008 CAG.Langlands.HiggsBundles <> higgs_E:19 meth
+R3024:3030 CAG.Langlands.HiggsBundles <> higgs_E proj
+R3024:3030 CAG.Langlands.HiggsBundles <> higgs_E proj
+R3051:3059 CAG.Langlands.HiggsBundles <> higgs_phi proj
+R3051:3059 CAG.Langlands.HiggsBundles <> higgs_phi proj
+def 3111:3120 <> higgs_rank
+R3127:3143 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 3123:3123 <> M:21
+R3151:3161 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R3163:3163 CAG.Langlands.HiggsBundles <> M:21 var
+binder 3147:3147 <> H:22
+R3168:3170 Corelib.Init.Datatypes <> nat ind
+R3177:3183 CAG.Harmonic.BundleCovariantDerivatives <> hb_rank proj
+R3185:3185 CAG.Langlands.HiggsBundles <> M:21 var
+R3188:3194 CAG.Langlands.HiggsBundles <> higgs_E proj
+R3196:3196 CAG.Langlands.HiggsBundles <> H:22 var
+ax 3580:3588 <> higgs_iso
+R3604:3620 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 3600:3600 <> M:23
+R3641:3644 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3628:3638 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R3640:3640 CAG.Langlands.HiggsBundles <> M:23 var
+R3658:3661 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3645:3655 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R3657:3657 CAG.Langlands.HiggsBundles <> M:23 var
+ax 3675:3688 <> higgs_iso_refl
+R3704:3720 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 3700:3700 <> M:26
+R3728:3738 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R3740:3740 CAG.Langlands.HiggsBundles <> M:26 var
+binder 3724:3724 <> H:27
+R3748:3756 CAG.Langlands.HiggsBundles <> higgs_iso defax
+R3760:3760 CAG.Langlands.HiggsBundles <> H:27 var
+R3758:3758 CAG.Langlands.HiggsBundles <> H:27 var
+ax 3770:3783 <> higgs_iso_symm
+R3799:3815 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 3795:3795 <> M:30
+R3826:3836 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R3838:3838 CAG.Langlands.HiggsBundles <> M:30 var
+binder 3819:3819 <> H:31
+binder 3821:3822 <> H':32
+R3860:3863 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3846:3854 CAG.Langlands.HiggsBundles <> higgs_iso defax
+R3858:3859 CAG.Langlands.HiggsBundles <> H':32 var
+R3856:3856 CAG.Langlands.HiggsBundles <> H:31 var
+R3864:3872 CAG.Langlands.HiggsBundles <> higgs_iso defax
+R3877:3877 CAG.Langlands.HiggsBundles <> H:31 var
+R3874:3875 CAG.Langlands.HiggsBundles <> H':32 var
+ax 3887:3901 <> higgs_iso_trans
+R3917:3933 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 3913:3913 <> M:35
+R3948:3958 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R3960:3960 CAG.Langlands.HiggsBundles <> M:35 var
+binder 3937:3937 <> H:36
+binder 3939:3940 <> H':37
+binder 3942:3944 <> H'':38
+R3982:3985 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3968:3976 CAG.Langlands.HiggsBundles <> higgs_iso defax
+R3980:3981 CAG.Langlands.HiggsBundles <> H':37 var
+R3978:3978 CAG.Langlands.HiggsBundles <> H:36 var
+R4002:4005 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3986:3994 CAG.Langlands.HiggsBundles <> higgs_iso defax
+R3999:4001 CAG.Langlands.HiggsBundles <> H'':38 var
+R3996:3997 CAG.Langlands.HiggsBundles <> H':37 var
+R4006:4014 CAG.Langlands.HiggsBundles <> higgs_iso defax
+R4018:4020 CAG.Langlands.HiggsBundles <> H'':38 var
+R4016:4016 CAG.Langlands.HiggsBundles <> H:36 var
+ax 4333:4344 <> higgs_degree
+R4360:4376 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 4356:4356 <> M:41
+R4401:4404 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4384:4398 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R4400:4400 CAG.Langlands.HiggsBundles <> M:41 var
+R4405:4412 CAG.Complex <> CComplex rec
+ax 4498:4508 <> higgs_slope
+R4524:4540 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 4520:4520 <> M:44
+R4565:4568 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4548:4562 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R4564:4564 CAG.Langlands.HiggsBundles <> M:44 var
+R4569:4576 CAG.Complex <> CComplex rec
+ax 4783:4798 <> IsHiggsSubbundle
+R4814:4830 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 4810:4810 <> M:47
+R4838:4848 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R4850:4850 CAG.Langlands.HiggsBundles <> M:47 var
+binder 4834:4834 <> H:48
+R4875:4878 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4858:4872 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R4874:4874 CAG.Langlands.HiggsBundles <> M:47 var
+ax 4972:4990 <> IsStableHiggsBundle
+R5006:5022 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 5002:5002 <> M:51
+R5043:5046 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5030:5040 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R5042:5042 CAG.Langlands.HiggsBundles <> M:51 var
+ax 5590:5600 <> HitchinBase
+R5621:5624 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5604:5620 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+R5628:5631 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5625:5627 Corelib.Init.Datatypes <> nat ind
+ax 5723:5733 <> hitchin_map
+R5749:5765 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 5745:5745 <> M:56
+R5773:5783 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R5785:5785 CAG.Langlands.HiggsBundles <> M:56 var
+binder 5769:5769 <> H:57
+R5793:5803 CAG.Langlands.HiggsBundles <> HitchinBase defax
+R5805:5805 CAG.Langlands.HiggsBundles <> M:56 var
+R5808:5817 CAG.Langlands.HiggsBundles <> higgs_rank def
+R5819:5819 CAG.Langlands.HiggsBundles <> H:57 var
+ax 5899:5923 <> hitchin_map_iso_invariant
+R5939:5955 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 5935:5935 <> M:60
+R5966:5976 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R5978:5978 CAG.Langlands.HiggsBundles <> M:60 var
+binder 5959:5959 <> H:61
+binder 5961:5962 <> H':62
+R6000:6007 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5986:5994 CAG.Langlands.HiggsBundles <> higgs_iso defax
+R5998:5999 CAG.Langlands.HiggsBundles <> H':62 var
+R5996:5996 CAG.Langlands.HiggsBundles <> H:61 var
+R6036:6043 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6020:6022 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6008:6017 CAG.Langlands.HiggsBundles <> higgs_rank def
+R6019:6019 CAG.Langlands.HiggsBundles <> H:61 var
+R6023:6032 CAG.Langlands.HiggsBundles <> higgs_rank def
+R6034:6035 CAG.Langlands.HiggsBundles <> H':62 var
+R6044:6047 Corelib.Init.Logic <> True ind
+ax 6366:6378 <> SpectralCurve
+R6394:6410 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 6390:6390 <> M:65
+R6418:6428 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R6430:6430 CAG.Langlands.HiggsBundles <> M:65 var
+binder 6414:6414 <> H:66
+ax 6451:6477 <> spectral_curve_cover_degree
+R6493:6509 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 6489:6489 <> M:69
+R6517:6527 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R6529:6529 CAG.Langlands.HiggsBundles <> M:69 var
+binder 6513:6513 <> H:70
+R6537:6539 Corelib.Init.Datatypes <> nat ind
+ax 6549:6577 <> spectral_curve_degree_is_rank
+R6593:6609 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 6589:6589 <> M:73
+R6617:6627 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R6629:6629 CAG.Langlands.HiggsBundles <> M:73 var
+binder 6613:6613 <> H:74
+R6666:6668 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6637:6663 CAG.Langlands.HiggsBundles <> spectral_curve_cover_degree defax
+R6665:6665 CAG.Langlands.HiggsBundles <> H:74 var
+R6669:6678 CAG.Langlands.HiggsBundles <> higgs_rank def
+R6680:6680 CAG.Langlands.HiggsBundles <> H:74 var
+ax 7225:7248 <> hitchin_fibration_proper
+R7252:7255 Corelib.Init.Logic <> True ind
+ax 7538:7562 <> hitchin_fiber_is_jacobian
+R7578:7594 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 7574:7574 <> M:79
+R7602:7612 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R7614:7614 CAG.Langlands.HiggsBundles <> M:79 var
+binder 7598:7598 <> H:80
+R7622:7625 Corelib.Init.Logic <> True ind
+def 8123:8140 <> IsRank1HiggsBundle
+R8147:8163 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 8143:8143 <> M:83
+R8171:8181 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R8183:8183 CAG.Langlands.HiggsBundles <> M:83 var
+binder 8167:8167 <> H:84
+R8210:8212 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8198:8207 CAG.Langlands.HiggsBundles <> higgs_rank def
+R8209:8209 CAG.Langlands.HiggsBundles <> H:84 var
+prf 8351:8372 <> rank1_higgs_integrable
+R8388:8404 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 8384:8384 <> M:85
+R8412:8422 CAG.Langlands.HiggsBundles <> HiggsBundle rec
+R8424:8424 CAG.Langlands.HiggsBundles <> M:85 var
+binder 8408:8408 <> H:86
+R8452:8459 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8432:8449 CAG.Langlands.HiggsBundles <> IsRank1HiggsBundle def
+R8451:8451 CAG.Langlands.HiggsBundles <> H:86 var
+binder 8467:8467 <> i:87
+binder 8469:8469 <> j:88
+binder 8471:8471 <> s:89
+R8521:8541 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8474:8478 CAG.Langlands.HiggsBundles <> hf_op proj
+R8497:8501 CAG.Langlands.HiggsBundles <> hf_op proj
+R8519:8519 CAG.Langlands.HiggsBundles <> s:89 var
+R8517:8517 CAG.Langlands.HiggsBundles <> j:88 var
+R8504:8512 CAG.Langlands.HiggsBundles <> higgs_phi proj
+R8514:8514 CAG.Langlands.HiggsBundles <> H:86 var
+R8494:8494 CAG.Langlands.HiggsBundles <> i:87 var
+R8481:8489 CAG.Langlands.HiggsBundles <> higgs_phi proj
+R8491:8491 CAG.Langlands.HiggsBundles <> H:86 var
+R8542:8546 CAG.Langlands.HiggsBundles <> hf_op proj
+R8565:8569 CAG.Langlands.HiggsBundles <> hf_op proj
+R8587:8587 CAG.Langlands.HiggsBundles <> s:89 var
+R8585:8585 CAG.Langlands.HiggsBundles <> i:87 var
+R8572:8580 CAG.Langlands.HiggsBundles <> higgs_phi proj
+R8582:8582 CAG.Langlands.HiggsBundles <> H:86 var
+R8562:8562 CAG.Langlands.HiggsBundles <> j:88 var
+R8549:8557 CAG.Langlands.HiggsBundles <> higgs_phi proj
+R8559:8559 CAG.Langlands.HiggsBundles <> H:86 var
+R8629:8641 CAG.Langlands.HiggsBundles <> hf_integrable proj
+R8644:8652 CAG.Langlands.HiggsBundles <> higgs_phi proj
+R8629:8641 CAG.Langlands.HiggsBundles <> hf_integrable proj
+R8644:8652 CAG.Langlands.HiggsBundles <> higgs_phi proj

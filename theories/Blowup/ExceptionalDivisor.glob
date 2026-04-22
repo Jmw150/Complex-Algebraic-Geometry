@@ -1,0 +1,255 @@
+DIGEST 0a3b95cdca9129493fbc3a988877278f
+FCAG.Blowup.ExceptionalDivisor
+R617:620 Stdlib.Lists.List <> <> lib
+R622:626 Stdlib.Arith.Arith <> <> lib
+R628:630 Stdlib.micromega.Lia <> <> lib
+R657:663 CAG.Complex <> <> lib
+R690:705 CAG.ManifoldTopology <> <> lib
+R732:753 CAG.Divisor.LineBundleCech <> <> lib
+R780:800 CAG.Divisor.DivisorBundle <> <> lib
+R827:853 CAG.Projective.HyperplaneBundle <> <> lib
+R880:905 CAG.Kahler.Lefschetz.Operators <> <> lib
+ax 1213:1218 <> blowup
+R1234:1247 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1230:1230 <> M:1
+R1259:1260 CAG.Complex <> Cn def
+R1263:1268 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R1270:1270 CAG.Blowup.ExceptionalDivisor <> M:1 var
+binder 1255:1255 <> x:2
+R1275:1288 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+ax 1343:1350 <> blowdown
+R1366:1379 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1362:1362 <> M:5
+R1387:1388 CAG.Complex <> Cn def
+R1391:1396 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R1398:1398 CAG.Blowup.ExceptionalDivisor <> M:5 var
+binder 1383:1383 <> x:6
+R1431:1434 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1407:1408 CAG.Complex <> Cn def
+R1411:1416 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R1419:1424 CAG.Blowup.ExceptionalDivisor <> blowup defax
+R1426:1426 CAG.Blowup.ExceptionalDivisor <> M:5 var
+R1428:1428 CAG.Blowup.ExceptionalDivisor <> x:6 var
+R1435:1436 CAG.Complex <> Cn def
+R1439:1444 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R1446:1446 CAG.Blowup.ExceptionalDivisor <> M:5 var
+prf 1507:1516 <> blowup_dim
+R1532:1545 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1528:1528 <> M:9
+R1553:1554 CAG.Complex <> Cn def
+R1557:1562 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R1564:1564 CAG.Blowup.ExceptionalDivisor <> M:9 var
+binder 1549:1549 <> x:10
+R1592:1594 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1573:1578 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R1581:1586 CAG.Blowup.ExceptionalDivisor <> blowup defax
+R1588:1588 CAG.Blowup.ExceptionalDivisor <> M:9 var
+R1590:1590 CAG.Blowup.ExceptionalDivisor <> x:10 var
+R1595:1600 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R1602:1602 CAG.Blowup.ExceptionalDivisor <> M:9 var
+prf 1679:1697 <> blowdown_iso_away_E
+R1713:1726 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1709:1709 <> M:11
+R1734:1735 CAG.Complex <> Cn def
+R1738:1743 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R1745:1745 CAG.Blowup.ExceptionalDivisor <> M:11 var
+binder 1730:1730 <> x:12
+R1826:1829 Corelib.Init.Logic <> True ind
+R1853:1853 Corelib.Init.Logic <> I constr
+R1853:1853 Corelib.Init.Logic <> I constr
+ax 2164:2182 <> exceptional_divisor
+R2198:2211 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2194:2194 <> M:13
+R2223:2224 CAG.Complex <> Cn def
+R2227:2232 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R2234:2234 CAG.Blowup.ExceptionalDivisor <> M:13 var
+binder 2219:2219 <> x:14
+R2243:2256 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+prf 2333:2355 <> exceptional_divisor_dim
+R2371:2384 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2367:2367 <> M:17
+R2396:2397 CAG.Complex <> Cn def
+R2400:2405 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R2407:2407 CAG.Blowup.ExceptionalDivisor <> M:17 var
+binder 2392:2392 <> x:18
+R2448:2450 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2416:2421 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R2424:2442 CAG.Blowup.ExceptionalDivisor <> exceptional_divisor defax
+R2444:2444 CAG.Blowup.ExceptionalDivisor <> M:17 var
+R2446:2446 CAG.Blowup.ExceptionalDivisor <> x:18 var
+R2459:2461 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R2451:2456 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R2458:2458 CAG.Blowup.ExceptionalDivisor <> M:17 var
+prf 2581:2613 <> exceptional_divisor_is_projective
+R2629:2642 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2625:2625 <> M:19
+R2654:2655 CAG.Complex <> Cn def
+R2658:2663 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R2665:2665 CAG.Blowup.ExceptionalDivisor <> M:19 var
+binder 2650:2650 <> x:20
+R2758:2761 Corelib.Init.Logic <> True ind
+R2785:2785 Corelib.Init.Logic <> I constr
+R2785:2785 Corelib.Init.Logic <> I constr
+ax 3098:3120 <> exceptional_line_bundle
+R3136:3149 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3132:3132 <> M:21
+R3161:3162 CAG.Complex <> Cn def
+R3165:3170 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R3172:3172 CAG.Blowup.ExceptionalDivisor <> M:21 var
+binder 3157:3157 <> x:22
+R3181:3197 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R3200:3210 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R3213:3218 CAG.Blowup.ExceptionalDivisor <> blowup defax
+R3220:3220 CAG.Blowup.ExceptionalDivisor <> M:21 var
+R3222:3222 CAG.Blowup.ExceptionalDivisor <> x:22 var
+def 3279:3305 <> neg_exceptional_line_bundle
+R3312:3325 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3308:3308 <> M:25
+R3337:3338 CAG.Complex <> Cn def
+R3341:3346 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R3348:3348 CAG.Blowup.ExceptionalDivisor <> M:25 var
+binder 3333:3333 <> x:26
+R3358:3374 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R3377:3387 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R3390:3395 CAG.Blowup.ExceptionalDivisor <> blowup defax
+R3397:3397 CAG.Blowup.ExceptionalDivisor <> M:25 var
+R3399:3399 CAG.Blowup.ExceptionalDivisor <> x:26 var
+R3408:3415 CAG.Divisor.LineBundleCech <> hlb_dual defax
+R3418:3440 CAG.Blowup.ExceptionalDivisor <> exceptional_line_bundle defax
+R3442:3442 CAG.Blowup.ExceptionalDivisor <> M:25 var
+R3444:3444 CAG.Blowup.ExceptionalDivisor <> x:26 var
+prf 3527:3556 <> exceptional_bundle_restriction
+R3572:3585 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3568:3568 <> M:27
+R3597:3598 CAG.Complex <> Cn def
+R3601:3606 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R3608:3608 CAG.Blowup.ExceptionalDivisor <> M:27 var
+binder 3593:3593 <> x:28
+R3698:3701 Corelib.Init.Logic <> True ind
+R3725:3725 Corelib.Init.Logic <> I constr
+R3725:3725 Corelib.Init.Logic <> I constr
+prf 3818:3851 <> neg_exceptional_bundle_restriction
+R3867:3880 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3863:3863 <> M:29
+R3892:3893 CAG.Complex <> Cn def
+R3896:3901 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R3903:3903 CAG.Blowup.ExceptionalDivisor <> M:29 var
+binder 3888:3888 <> x:30
+R3996:3999 Corelib.Init.Logic <> True ind
+R4023:4023 Corelib.Init.Logic <> I constr
+R4023:4023 Corelib.Init.Logic <> I constr
+prf 4376:4409 <> sections_neg_exceptional_cotangent
+R4425:4438 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 4421:4421 <> M:31
+R4450:4451 CAG.Complex <> Cn def
+R4454:4459 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R4461:4461 CAG.Blowup.ExceptionalDivisor <> M:31 var
+binder 4446:4446 <> x:32
+R4532:4535 Corelib.Init.Logic <> True ind
+R4559:4559 Corelib.Init.Logic <> I constr
+R4559:4559 Corelib.Init.Logic <> I constr
+prf 4644:4672 <> restriction_to_E_differential
+R4688:4701 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 4684:4684 <> M:33
+R4713:4714 CAG.Complex <> Cn def
+R4717:4722 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R4724:4724 CAG.Blowup.ExceptionalDivisor <> M:33 var
+binder 4709:4709 <> x:34
+R4876:4879 Corelib.Init.Logic <> True ind
+R4903:4903 Corelib.Init.Logic <> I constr
+R4903:4903 Corelib.Init.Logic <> I constr
+ax 5191:5201 <> pullback_lb
+R5217:5230 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 5213:5213 <> M:35
+R5238:5239 CAG.Complex <> Cn def
+R5242:5247 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R5249:5249 CAG.Blowup.ExceptionalDivisor <> M:35 var
+binder 5234:5234 <> x:36
+R5291:5298 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5258:5274 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R5277:5287 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R5289:5289 CAG.Blowup.ExceptionalDivisor <> M:35 var
+R5299:5315 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R5318:5328 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R5331:5336 CAG.Blowup.ExceptionalDivisor <> blowup defax
+R5338:5338 CAG.Blowup.ExceptionalDivisor <> M:35 var
+R5340:5340 CAG.Blowup.ExceptionalDivisor <> x:36 var
+ax 5386:5398 <> blowup_tensor
+R5414:5427 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 5410:5410 <> M:39
+R5435:5436 CAG.Complex <> Cn def
+R5439:5444 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R5446:5446 CAG.Blowup.ExceptionalDivisor <> M:39 var
+binder 5431:5431 <> x:40
+R5499:5506 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5455:5471 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R5474:5484 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R5487:5492 CAG.Blowup.ExceptionalDivisor <> blowup defax
+R5494:5494 CAG.Blowup.ExceptionalDivisor <> M:39 var
+R5496:5496 CAG.Blowup.ExceptionalDivisor <> x:40 var
+R5551:5558 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5507:5523 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R5526:5536 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R5539:5544 CAG.Blowup.ExceptionalDivisor <> blowup defax
+R5546:5546 CAG.Blowup.ExceptionalDivisor <> M:39 var
+R5548:5548 CAG.Blowup.ExceptionalDivisor <> x:40 var
+R5559:5575 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R5578:5588 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R5591:5596 CAG.Blowup.ExceptionalDivisor <> blowup defax
+R5598:5598 CAG.Blowup.ExceptionalDivisor <> M:39 var
+R5600:5600 CAG.Blowup.ExceptionalDivisor <> x:40 var
+prf 5716:5736 <> pullback_sections_iso
+R5752:5765 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 5748:5748 <> M:43
+R5777:5778 CAG.Complex <> Cn def
+R5781:5786 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R5788:5788 CAG.Blowup.ExceptionalDivisor <> M:43 var
+binder 5773:5773 <> x:44
+R5797:5813 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R5816:5826 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R5828:5828 CAG.Blowup.ExceptionalDivisor <> M:43 var
+binder 5793:5793 <> L:45
+R5905:5908 Corelib.Init.Logic <> True ind
+R5932:5932 Corelib.Init.Logic <> I constr
+R5932:5932 Corelib.Init.Logic <> I constr
+ax 6219:6225 <> blowup2
+R6241:6254 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 6237:6237 <> M:46
+R6268:6269 CAG.Complex <> Cn def
+R6272:6277 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R6279:6279 CAG.Blowup.ExceptionalDivisor <> M:46 var
+binder 6262:6262 <> x:47
+binder 6264:6264 <> y:48
+R6284:6297 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+ax 6377:6398 <> exceptional_divisor2_x
+R6414:6427 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 6410:6410 <> M:51
+R6441:6442 CAG.Complex <> Cn def
+R6445:6450 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R6452:6452 CAG.Blowup.ExceptionalDivisor <> M:51 var
+binder 6435:6435 <> x:52
+binder 6437:6437 <> y:53
+R6457:6470 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+ax 6484:6505 <> exceptional_divisor2_y
+R6521:6534 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 6517:6517 <> M:56
+R6548:6549 CAG.Complex <> Cn def
+R6552:6557 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R6559:6559 CAG.Blowup.ExceptionalDivisor <> M:56 var
+binder 6542:6542 <> x:57
+binder 6544:6544 <> y:58
+R6564:6577 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+ax 6642:6665 <> exceptional_line_bundle2
+R6681:6694 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 6677:6677 <> M:61
+R6708:6709 CAG.Complex <> Cn def
+R6712:6717 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R6719:6719 CAG.Blowup.ExceptionalDivisor <> M:61 var
+binder 6702:6702 <> x:62
+binder 6704:6704 <> y:63
+R6728:6744 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R6747:6757 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R6760:6766 CAG.Blowup.ExceptionalDivisor <> blowup2 defax
+R6768:6768 CAG.Blowup.ExceptionalDivisor <> M:61 var
+R6770:6770 CAG.Blowup.ExceptionalDivisor <> x:62 var
+R6772:6772 CAG.Blowup.ExceptionalDivisor <> y:63 var

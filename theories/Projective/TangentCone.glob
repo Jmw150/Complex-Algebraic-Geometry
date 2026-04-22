@@ -1,0 +1,226 @@
+DIGEST bc0b86b1d5ec9cddc24e554fba4d388c
+FCAG.Projective.TangentCone
+R645:648 Stdlib.Lists.List <> <> lib
+R650:654 Stdlib.Arith.Arith <> <> lib
+R656:661 Stdlib.ZArith.ZArith <> <> lib
+R663:665 Stdlib.micromega.Lia <> <> lib
+R692:698 CAG.Complex <> <> lib
+R725:740 CAG.ManifoldTopology <> <> lib
+R767:789 CAG.Projective.TangentSpace <> <> lib
+ax 1125:1144 <> poly_vanishing_order
+R1160:1162 Corelib.Init.Datatypes <> nat ind
+binder 1156:1156 <> n:1
+R1182:1185 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1170:1179 CAG.Projective.TangentSpace <> Polynomial defax
+R1181:1181 CAG.Projective.TangentCone <> n:1 var
+R1190:1193 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1186:1187 CAG.Complex <> Cn def
+R1189:1189 CAG.Projective.TangentCone <> n:1 var
+R1194:1196 Corelib.Init.Datatypes <> nat ind
+def 1307:1323 <> vanishes_to_order
+R1332:1334 Corelib.Init.Datatypes <> nat ind
+binder 1326:1326 <> n:4
+binder 1328:1328 <> m:5
+R1342:1351 CAG.Projective.TangentSpace <> Polynomial defax
+R1353:1353 CAG.Projective.TangentCone <> n:4 var
+binder 1338:1338 <> F:6
+R1361:1362 CAG.Complex <> Cn def
+R1364:1364 CAG.Projective.TangentCone <> n:4 var
+binder 1357:1357 <> p:7
+R1404:1407 Corelib.Init.Peano <> ::nat_scope:x_'>='_x not
+R1380:1399 CAG.Projective.TangentCone <> poly_vanishing_order defax
+R1403:1403 CAG.Projective.TangentCone <> p:7 var
+R1401:1401 CAG.Projective.TangentCone <> F:6 var
+R1408:1408 CAG.Projective.TangentCone <> m:5 var
+ax 1736:1747 <> leading_form
+R1763:1765 Corelib.Init.Datatypes <> nat ind
+binder 1759:1759 <> n:8
+R1773:1782 CAG.Projective.TangentSpace <> Polynomial defax
+R1784:1784 CAG.Projective.TangentCone <> n:8 var
+binder 1769:1769 <> F:9
+R1792:1793 CAG.Complex <> Cn def
+R1795:1795 CAG.Projective.TangentCone <> n:8 var
+binder 1788:1788 <> p:10
+R1803:1812 CAG.Projective.TangentSpace <> Polynomial defax
+R1814:1814 CAG.Projective.TangentCone <> n:8 var
+prf 1885:1908 <> leading_form_homogeneous
+R1924:1926 Corelib.Init.Datatypes <> nat ind
+binder 1920:1920 <> n:13
+R1934:1943 CAG.Projective.TangentSpace <> Polynomial defax
+R1945:1945 CAG.Projective.TangentCone <> n:13 var
+binder 1930:1930 <> F:14
+R1953:1954 CAG.Complex <> Cn def
+R1956:1956 CAG.Projective.TangentCone <> n:13 var
+binder 1949:1949 <> p:15
+R2042:2045 Corelib.Init.Logic <> True ind
+R2069:2069 Corelib.Init.Logic <> I constr
+R2069:2069 Corelib.Init.Logic <> I constr
+prf 2153:2175 <> leading_form_is_initial
+R2191:2193 Corelib.Init.Datatypes <> nat ind
+binder 2187:2187 <> n:16
+R2201:2210 CAG.Projective.TangentSpace <> Polynomial defax
+R2212:2212 CAG.Projective.TangentCone <> n:16 var
+binder 2197:2197 <> F:17
+R2220:2221 CAG.Complex <> Cn def
+R2223:2223 CAG.Projective.TangentCone <> n:16 var
+binder 2216:2216 <> p:18
+R2235:2236 CAG.Complex <> Cn def
+R2238:2238 CAG.Projective.TangentCone <> n:16 var
+binder 2231:2231 <> v:19
+R2318:2321 Corelib.Init.Logic <> True ind
+R2345:2345 Corelib.Init.Logic <> I constr
+R2345:2345 Corelib.Init.Logic <> I constr
+def 2687:2711 <> tangent_cone_hypersurface
+R2718:2720 Corelib.Init.Datatypes <> nat ind
+binder 2714:2714 <> n:20
+R2728:2737 CAG.Projective.TangentSpace <> Polynomial defax
+R2739:2739 CAG.Projective.TangentCone <> n:20 var
+binder 2724:2724 <> F:21
+R2747:2748 CAG.Complex <> Cn def
+R2750:2750 CAG.Projective.TangentCone <> n:20 var
+binder 2743:2743 <> p:22
+R2763:2766 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2759:2760 CAG.Complex <> Cn def
+R2762:2762 CAG.Projective.TangentCone <> n:20 var
+binder 2781:2781 <> v:23
+R2816:2818 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2786:2794 CAG.Projective.TangentSpace <> poly_eval defax
+R2815:2815 CAG.Projective.TangentCone <> v:23 var
+R2797:2808 CAG.Projective.TangentCone <> leading_form defax
+R2812:2812 CAG.Projective.TangentCone <> p:22 var
+R2810:2810 CAG.Projective.TangentCone <> F:21 var
+R2819:2820 CAG.Complex <> C0 def
+def 2959:2970 <> tangent_cone
+R2979:2981 Corelib.Init.Datatypes <> nat ind
+binder 2973:2973 <> n:24
+binder 2975:2975 <> k:25
+R3000:3003 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2993:2997 Stdlib.Vectors.Fin <> t ind
+R2999:2999 CAG.Projective.TangentCone <> k:25 var
+R3004:3013 CAG.Projective.TangentSpace <> Polynomial defax
+R3015:3015 CAG.Projective.TangentCone <> n:24 var
+binder 2989:2989 <> F:26
+R3023:3024 CAG.Complex <> Cn def
+R3026:3026 CAG.Projective.TangentCone <> n:24 var
+binder 3019:3019 <> p:27
+R3039:3042 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3035:3036 CAG.Complex <> Cn def
+R3038:3038 CAG.Projective.TangentCone <> n:24 var
+binder 3057:3057 <> v:28
+R3073:3077 Stdlib.Vectors.Fin <> t ind
+R3079:3079 CAG.Projective.TangentCone <> k:25 var
+binder 3069:3069 <> i:29
+R3120:3122 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3086:3094 CAG.Projective.TangentSpace <> poly_eval defax
+R3119:3119 CAG.Projective.TangentCone <> v:28 var
+R3097:3108 CAG.Projective.TangentCone <> leading_form defax
+R3116:3116 CAG.Projective.TangentCone <> p:27 var
+R3111:3111 CAG.Projective.TangentCone <> F:26 var
+R3113:3113 CAG.Projective.TangentCone <> i:29 var
+R3123:3124 CAG.Complex <> C0 def
+prf 3434:3469 <> tangent_cone_smooth_is_tangent_space
+R3487:3489 Corelib.Init.Datatypes <> nat ind
+binder 3481:3481 <> n:30
+binder 3483:3483 <> k:31
+R3508:3511 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3501:3505 Stdlib.Vectors.Fin <> t ind
+R3507:3507 CAG.Projective.TangentCone <> k:31 var
+R3512:3521 CAG.Projective.TangentSpace <> Polynomial defax
+R3523:3523 CAG.Projective.TangentCone <> n:30 var
+binder 3497:3497 <> F:32
+R3531:3532 CAG.Complex <> Cn def
+R3534:3534 CAG.Projective.TangentCone <> n:30 var
+binder 3527:3527 <> p:33
+R3565:3572 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3542:3556 CAG.Projective.TangentSpace <> is_smooth_point def
+R3558:3558 CAG.Projective.TangentCone <> n:30 var
+R3560:3560 CAG.Projective.TangentCone <> k:31 var
+R3562:3562 CAG.Projective.TangentCone <> F:32 var
+R3564:3564 CAG.Projective.TangentCone <> p:33 var
+binder 3580:3580 <> v:34
+R3601:3605 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R3583:3594 CAG.Projective.TangentCone <> tangent_cone def
+R3600:3600 CAG.Projective.TangentCone <> v:34 var
+R3598:3598 CAG.Projective.TangentCone <> p:33 var
+R3596:3596 CAG.Projective.TangentCone <> F:32 var
+R3606:3625 CAG.Projective.TangentSpace <> affine_tangent_space def
+R3627:3627 CAG.Projective.TangentCone <> n:30 var
+R3629:3629 CAG.Projective.TangentCone <> k:31 var
+R3631:3631 CAG.Projective.TangentCone <> F:32 var
+R3633:3633 CAG.Projective.TangentCone <> p:33 var
+R3635:3635 CAG.Projective.TangentCone <> v:34 var
+ax 3933:3943 <> AnalyticArc
+R3959:3975 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 3955:3955 <> V:35
+R3987:3998 CAG.Projective.TangentSpace <> smooth_point def
+R4000:4000 CAG.Projective.TangentCone <> V:35 var
+binder 3983:3983 <> p:36
+ax 4075:4095 <> arc_tangent_direction
+R4111:4127 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 4107:4107 <> V:39
+R4139:4150 CAG.Projective.TangentSpace <> smooth_point def
+R4152:4152 CAG.Projective.TangentCone <> V:39 var
+binder 4135:4135 <> p:40
+R4175:4178 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4160:4170 CAG.Projective.TangentCone <> AnalyticArc defax
+R4172:4172 CAG.Projective.TangentCone <> V:39 var
+R4174:4174 CAG.Projective.TangentCone <> p:40 var
+R4179:4180 CAG.Complex <> Cn def
+R4199:4201 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R4183:4196 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R4198:4198 CAG.Projective.TangentCone <> V:39 var
+prf 4288:4315 <> tangent_cone_is_arc_tangents
+R4333:4335 Corelib.Init.Datatypes <> nat ind
+binder 4327:4327 <> n:43
+binder 4329:4329 <> k:44
+R4354:4357 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4347:4351 Stdlib.Vectors.Fin <> t ind
+R4353:4353 CAG.Projective.TangentCone <> k:44 var
+R4358:4367 CAG.Projective.TangentSpace <> Polynomial defax
+R4369:4369 CAG.Projective.TangentCone <> n:43 var
+binder 4343:4343 <> F:45
+R4377:4378 CAG.Complex <> Cn def
+R4380:4380 CAG.Projective.TangentCone <> n:43 var
+binder 4373:4373 <> p:46
+R4388:4389 CAG.Complex <> Cn def
+R4391:4391 CAG.Projective.TangentCone <> n:43 var
+binder 4384:4384 <> v:47
+R4417:4499 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R4399:4410 CAG.Projective.TangentCone <> tangent_cone def
+R4416:4416 CAG.Projective.TangentCone <> v:47 var
+R4414:4414 CAG.Projective.TangentCone <> p:46 var
+R4412:4412 CAG.Projective.TangentCone <> F:45 var
+R4500:4503 Corelib.Init.Logic <> True ind
+prf 4603:4630 <> tangent_cone_is_secant_limit
+R4648:4650 Corelib.Init.Datatypes <> nat ind
+binder 4642:4642 <> n:48
+binder 4644:4644 <> k:49
+R4669:4672 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4662:4666 Stdlib.Vectors.Fin <> t ind
+R4668:4668 CAG.Projective.TangentCone <> k:49 var
+R4673:4682 CAG.Projective.TangentSpace <> Polynomial defax
+R4684:4684 CAG.Projective.TangentCone <> n:48 var
+binder 4658:4658 <> F:50
+R4692:4693 CAG.Complex <> Cn def
+R4695:4695 CAG.Projective.TangentCone <> n:48 var
+binder 4688:4688 <> p:51
+R4703:4704 CAG.Complex <> Cn def
+R4706:4706 CAG.Projective.TangentCone <> n:48 var
+binder 4699:4699 <> v:52
+R4732:4832 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4714:4725 CAG.Projective.TangentCone <> tangent_cone def
+R4731:4731 CAG.Projective.TangentCone <> v:52 var
+R4729:4729 CAG.Projective.TangentCone <> p:51 var
+R4727:4727 CAG.Projective.TangentCone <> F:50 var
+R4833:4836 Corelib.Init.Logic <> True ind
+R4860:4860 Corelib.Init.Logic <> I constr
+R4860:4860 Corelib.Init.Logic <> I constr
+prf 5147:5174 <> tangent_cone_dim_lower_bound
+R5190:5206 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 5186:5186 <> V:53
+R5218:5229 CAG.Projective.TangentSpace <> smooth_point def
+R5231:5231 CAG.Projective.TangentCone <> V:53 var
+binder 5214:5214 <> p:54
+R5297:5300 Corelib.Init.Logic <> True ind
+R5324:5324 Corelib.Init.Logic <> I constr
+R5324:5324 Corelib.Init.Logic <> I constr

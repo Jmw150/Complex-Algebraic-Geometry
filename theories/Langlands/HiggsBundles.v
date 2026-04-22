@@ -1,0 +1,189 @@
+(** * Langlands/HiggsBundles.v
+    Higgs bundles, the Hitchin fibration, and spectral curves.
+
+    A Higgs bundle on a complex manifold M is a pair (E, φ) where:
+    - E is a holomorphic vector bundle of rank n
+    - φ : E → E ⊗ K_M is the Higgs field (K_M = canonical bundle)
+    - φ ∧ φ = 0 (integrability condition, automatic for n=1 or dim M = 1)
+
+    The Hitchin map sends (E, φ) to the characteristic polynomial of φ,
+    landing in ⊕ H⁰(M, K_M^i).  The fiber over a spectral curve Σ ⊂ T*M
+    is (essentially) the Jacobian Jac(Σ), making the Hitchin fibration
+    into an algebraically completely integrable system.
+
+    Connection to geometric Langlands (Kapustin-Witten):
+    - Automorphic side: D-modules on Bun_G(X)  ←→  Higgs bundles via mirror symmetry
+    - Spectral side: Loc_{G^∨}(X)  ←→  spectral data of Hitchin fibration for G^∨ *)
+
+From Stdlib Require Import List Arith.
+From CAG Require Import Complex.
+From CAG Require Import AG.
+From CAG Require Import ManifoldTopology.
+From CAG Require Import Harmonic.BundleCovariantDerivatives.
+From CAG Require Import Divisor.LineBundleCech.
+
+Local Open Scope CReal_scope.
+
+(* ================================================================== *)
+(** * 1. Higgs fields                                                  *)
+(* ================================================================== *)
+
+(** A Higgs field on a hermitian bundle E is a (1,0)-form valued endomorphism:
+      φ ∈ H⁰(M, End(E) ⊗ Ω¹_M)
+    satisfying the integrability condition φ ∧ φ = 0.
+
+    We represent the Higgs field abstractly as a family of operators
+    φ_i : Γ(E) → Γ(E) for each holomorphic direction i, encoding
+    the component of φ along dz_i. *)
+Record HiggsField {M : HermitianManifold} (E : HermitianBundle M) : Type :=
+{ hf_op     : nat -> Section_E E -> Section_E E
+  (** φ_i : Γ(E) → Γ(E) — the i-th component *)
+; hf_linear_add   : forall i s t,
+    hf_op i (section_add s t) = section_add (hf_op i s) (hf_op i t)
+; hf_linear_scale : forall i (c : CComplex) s,
+    hf_op i (section_scale c s) = section_scale c (hf_op i s)
+  (** Integrability: φ ∧ φ = 0, i.e., [φ_i, φ_j] = 0 for all i, j.
+      For curves (dim M = 1) this is automatic; for higher dimensions
+      it is the condition that the spectral curve is well-defined. *)
+; hf_integrable : forall i j s,
+    hf_op i (hf_op j s) = hf_op j (hf_op i s)
+}.
+
+Arguments hf_op         {M E} _ _.
+Arguments hf_linear_add   {M E} _ _ _ _.
+Arguments hf_linear_scale {M E} _ _ _ _.
+Arguments hf_integrable   {M E} _ _ _ _.
+
+(* ================================================================== *)
+(** * 2. Higgs bundles                                                 *)
+(* ================================================================== *)
+
+(** A Higgs bundle: a hermitian bundle together with an integrable Higgs field. *)
+Record HiggsBundle (M : HermitianManifold) : Type :=
+{ higgs_E   : HermitianBundle M
+; higgs_phi : HiggsField higgs_E
+}.
+
+Arguments higgs_E   {M} _.
+Arguments higgs_phi {M} _.
+
+(** Rank of a Higgs bundle. *)
+Definition higgs_rank {M : HermitianManifold} (H : HiggsBundle M) : nat :=
+  hb_rank M (higgs_E H).
+
+(* ================================================================== *)
+(** * 3. Isomorphisms of Higgs bundles                                 *)
+(* ================================================================== *)
+
+(** Two Higgs bundles (E, φ) and (E', φ') are isomorphic if there exists
+    a bundle isomorphism g : E → E' such that g ∘ φ = φ' ∘ g. *)
+Parameter higgs_iso : forall {M : HermitianManifold},
+    HiggsBundle M -> HiggsBundle M -> Prop.
+
+Axiom higgs_iso_refl : forall {M : HermitianManifold} (H : HiggsBundle M),
+    higgs_iso H H.
+
+Axiom higgs_iso_symm : forall {M : HermitianManifold} (H H' : HiggsBundle M),
+    higgs_iso H H' -> higgs_iso H' H.
+
+Axiom higgs_iso_trans : forall {M : HermitianManifold} (H H' H'' : HiggsBundle M),
+    higgs_iso H H' -> higgs_iso H' H'' -> higgs_iso H H''.
+
+(* ================================================================== *)
+(** * 4. Stability                                                     *)
+(* ================================================================== *)
+
+(** Degree of a hermitian bundle (via curvature integral — axiomatized). *)
+Parameter higgs_degree : forall {M : HermitianManifold},
+    HermitianBundle M -> CComplex.
+
+(** Slope: μ(E) = deg(E) / rk(E) — axiomatized to avoid division. *)
+Parameter higgs_slope : forall {M : HermitianManifold},
+    HermitianBundle M -> CComplex.
+
+(** A Higgs bundle (E, φ) is stable if for every φ-invariant sub-bundle F ⊂ E:
+      μ(F) < μ(E)  (slope stability in the sense of Mumford-Takemoto).
+    Semi-stable: μ(F) ≤ μ(E). *)
+Parameter IsHiggsSubbundle : forall {M : HermitianManifold} (H : HiggsBundle M),
+    HermitianBundle M -> Prop.
+
+(** Stability: slope of every proper φ-invariant sub-bundle is smaller. *)
+Parameter IsStableHiggsBundle : forall {M : HermitianManifold},
+    HiggsBundle M -> Prop.
+
+(* ================================================================== *)
+(** * 5. The Hitchin map and spectral curves                           *)
+(* ================================================================== *)
+
+(** The characteristic polynomial of the Higgs field φ at a point:
+      det(λI - φ) = λⁿ + a₁λⁿ⁻¹ + ... + aₙ
+    where aᵢ = (-1)^i · trace(∧^i φ) ∈ H⁰(M, K_M^i).
+
+    The Hitchin base for GL(n) is:
+      B_n(M) = ⊕_{i=1}^n H⁰(M, K_M^i)
+
+    We axiomatize this as a type. *)
+Parameter HitchinBase : HermitianManifold -> nat -> Type.
+
+(** The Hitchin map: sends a rank-n Higgs bundle to its spectral data. *)
+Parameter hitchin_map : forall {M : HermitianManifold} (H : HiggsBundle M),
+    HitchinBase M (higgs_rank H).
+
+(** The Hitchin map is invariant under Higgs bundle isomorphisms. *)
+Axiom hitchin_map_iso_invariant : forall {M : HermitianManifold} (H H' : HiggsBundle M),
+    higgs_iso H H' ->
+    higgs_rank H = higgs_rank H' ->
+    True. (* hitchin_map H = hitchin_map H' — requires transport *)
+
+(** The spectral curve: for a rank-n Higgs bundle (E, φ) on a curve X,
+    the spectral curve Σ ⊂ T*X is the zero locus of det(η - φ)
+    where η is the tautological section of π*K_X on T*X.
+    It is a branched n-sheeted cover of X. *)
+Parameter SpectralCurve : forall {M : HermitianManifold} (H : HiggsBundle M), Type.
+
+Parameter spectral_curve_cover_degree : forall {M : HermitianManifold} (H : HiggsBundle M),
+    nat.
+
+Axiom spectral_curve_degree_is_rank : forall {M : HermitianManifold} (H : HiggsBundle M),
+    spectral_curve_cover_degree H = higgs_rank H.
+
+(* ================================================================== *)
+(** * 6. The Hitchin fibration                                         *)
+(* ================================================================== *)
+
+(** The Hitchin fibration: Higgs bundles → Hitchin base is a proper map
+    of algebraic varieties.  The generic fiber over a smooth spectral curve
+    Σ is (a torsor under) the Jacobian Jac(Σ).
+
+    This makes the moduli of Higgs bundles into an algebraically completely
+    integrable Hamiltonian system. *)
+Axiom hitchin_fibration_proper : True. (* placeholder *)
+
+(** For a smooth spectral curve Σ, the fiber of the Hitchin map over
+    the corresponding point in the Hitchin base is Jac(Σ).
+    This is the key geometric input for the geometric Langlands correspondence
+    via mirror symmetry (Kapustin-Witten). *)
+Axiom hitchin_fiber_is_jacobian : forall {M : HermitianManifold} (H : HiggsBundle M),
+    True. (* fiber ≅ Jac(SpectralCurve H) *)
+
+(* ================================================================== *)
+(** * 7. Rank-1 Higgs bundles: the abelian case                        *)
+(* ================================================================== *)
+
+(** A rank-1 Higgs bundle (L, φ) on a curve X has:
+    - L a line bundle
+    - φ ∈ H⁰(X, K_X) a holomorphic 1-form (the Higgs field)
+    - The spectral curve Σ ⊂ T*X is a double cover branched at the zeros of φ. *)
+Definition IsRank1HiggsBundle {M : HermitianManifold} (H : HiggsBundle M) : Prop :=
+  higgs_rank H = 1.
+
+(** For rank-1 Higgs bundles, the Higgs field is just a holomorphic 1-form
+    and the integrability condition is automatic. *)
+Lemma rank1_higgs_integrable : forall {M : HermitianManifold} (H : HiggsBundle M),
+    IsRank1HiggsBundle H ->
+    forall i j s, hf_op (higgs_phi H) i (hf_op (higgs_phi H) j s) =
+                  hf_op (higgs_phi H) j (hf_op (higgs_phi H) i s).
+Proof.
+  intros M H _ i j s.
+  apply (hf_integrable (higgs_phi H)).
+Qed.

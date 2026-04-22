@@ -1,0 +1,825 @@
+DIGEST 100ff921d6e54e26425eee7dccd58dc5
+FCAG.Langlands.BeilinsonBernstein
+R1200:1203 Stdlib.Lists.List <> <> lib
+R1205:1209 Stdlib.Arith.Arith <> <> lib
+R1227:1242 CAG.Galois.Field <> <> lib
+R1260:1275 CAG.Lie.BasicDef <> <> lib
+R1293:1306 CAG.Lie.Ideals <> <> lib
+R1324:1339 CAG.Lie.Solvable <> <> lib
+R1357:1373 CAG.Lie.Nilpotent <> <> lib
+R1391:1405 CAG.Lie.Radical <> <> lib
+def 1898:1915 <> IsCartanSubalgebra
+binder 1918:1918 <> F:1
+R1935:1939 CAG.Galois.Field <> Field rec
+R1941:1941 CAG.Langlands.BeilinsonBernstein <> F:1 var
+binder 1929:1931 <> fld:2
+binder 1945:1945 <> L:3
+R1965:1975 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1981:1981 CAG.Langlands.BeilinsonBernstein <> L:3 var
+R1977:1979 CAG.Langlands.BeilinsonBernstein <> fld:2 var
+binder 1960:1961 <> la:4
+R1990:1993 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1989:1989 CAG.Langlands.BeilinsonBernstein <> L:3 var
+binder 1985:1985 <> h:5
+R2029:2087 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2012:2023 CAG.Lie.BasicDef <> IsSubalgebra rec
+R2028:2028 CAG.Langlands.BeilinsonBernstein <> h:5 var
+R2025:2026 CAG.Langlands.BeilinsonBernstein <> la:4 var
+R2088:2088 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2146:2196 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2233:2233 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 2096:2096 <> x:6
+binder 2098:2098 <> y:7
+R2104:2107 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2101:2101 CAG.Langlands.BeilinsonBernstein <> h:5 var
+R2103:2103 CAG.Langlands.BeilinsonBernstein <> x:6 var
+R2111:2114 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2108:2108 CAG.Langlands.BeilinsonBernstein <> h:5 var
+R2110:2110 CAG.Langlands.BeilinsonBernstein <> y:7 var
+R2133:2135 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2115:2125 CAG.Lie.BasicDef <> laF_bracket proj
+R2132:2132 CAG.Langlands.BeilinsonBernstein <> y:7 var
+R2130:2130 CAG.Langlands.BeilinsonBernstein <> x:6 var
+R2127:2128 CAG.Langlands.BeilinsonBernstein <> la:4 var
+R2136:2142 CAG.Lie.BasicDef <> la_zero abbrev
+R2144:2145 CAG.Langlands.BeilinsonBernstein <> la:4 var
+binder 2204:2204 <> x:8
+R2226:2229 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2207:2218 CAG.Lie.Ideals <> IsNormalizer def
+R2225:2225 CAG.Langlands.BeilinsonBernstein <> x:8 var
+R2223:2223 CAG.Langlands.BeilinsonBernstein <> h:5 var
+R2220:2221 CAG.Langlands.BeilinsonBernstein <> la:4 var
+R2230:2230 CAG.Langlands.BeilinsonBernstein <> h:5 var
+R2232:2232 CAG.Langlands.BeilinsonBernstein <> x:8 var
+ax 2304:2324 <> semisimple_has_cartan
+binder 2338:2338 <> F:9
+R2355:2359 CAG.Galois.Field <> Field rec
+R2361:2361 CAG.Langlands.BeilinsonBernstein <> F:9 var
+binder 2349:2351 <> fld:10
+binder 2365:2365 <> L:11
+R2381:2391 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2397:2397 CAG.Langlands.BeilinsonBernstein <> L:11 var
+R2393:2395 CAG.Langlands.BeilinsonBernstein <> fld:10 var
+binder 2376:2377 <> la:12
+R2420:2427 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2405:2416 CAG.Lie.Radical <> IsSemisimple def
+R2418:2419 CAG.Langlands.BeilinsonBernstein <> la:12 var
+R2428:2434 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2448:2449 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2440:2443 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2439:2439 CAG.Langlands.BeilinsonBernstein <> L:11 var
+binder 2435:2435 <> h:13
+R2450:2467 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R2472:2472 CAG.Langlands.BeilinsonBernstein <> h:13 var
+R2469:2470 CAG.Langlands.BeilinsonBernstein <> la:12 var
+ax 2594:2621 <> cartan_subalgebras_conjugate
+binder 2635:2635 <> F:16
+R2652:2656 CAG.Galois.Field <> Field rec
+R2658:2658 CAG.Langlands.BeilinsonBernstein <> F:16 var
+binder 2646:2648 <> fld:17
+binder 2662:2662 <> L:18
+R2678:2688 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2694:2694 CAG.Langlands.BeilinsonBernstein <> L:18 var
+R2690:2692 CAG.Langlands.BeilinsonBernstein <> fld:17 var
+binder 2673:2674 <> la:19
+R2717:2724 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2702:2713 CAG.Lie.Radical <> IsSemisimple def
+R2715:2716 CAG.Langlands.BeilinsonBernstein <> la:19 var
+R2740:2743 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2739:2739 CAG.Langlands.BeilinsonBernstein <> L:18 var
+binder 2732:2732 <> h:20
+binder 2734:2735 <> h':21
+R2779:2788 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2756:2773 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R2778:2778 CAG.Langlands.BeilinsonBernstein <> h:20 var
+R2775:2776 CAG.Langlands.BeilinsonBernstein <> la:19 var
+R2813:2822 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2789:2806 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R2811:2812 CAG.Langlands.BeilinsonBernstein <> h':21 var
+R2808:2809 CAG.Langlands.BeilinsonBernstein <> la:19 var
+R2823:2826 Corelib.Init.Logic <> True ind
+rec 3298:3303 <> Weight
+proj 3400:3404 <> wt_fn
+proj 3449:3454 <> wt_add
+proj 3549:3556 <> wt_scale
+proj 3642:3651 <> wt_support
+binder 3306:3306 <> F:24
+R3323:3327 CAG.Galois.Field <> Field rec
+R3329:3329 CAG.Langlands.BeilinsonBernstein <> F:24 var
+binder 3317:3319 <> fld:25
+binder 3333:3333 <> L:26
+R3353:3363 CAG.Lie.BasicDef <> LieAlgebraF rec
+R3369:3369 CAG.Langlands.BeilinsonBernstein <> L:26 var
+R3365:3367 CAG.Langlands.BeilinsonBernstein <> fld:25 var
+binder 3348:3349 <> la:27
+R3378:3381 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3377:3377 CAG.Langlands.BeilinsonBernstein <> L:26 var
+binder 3373:3373 <> h:28
+R3414:3417 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3413:3413 CAG.Langlands.BeilinsonBernstein <> L:26 var
+R3418:3418 CAG.Langlands.BeilinsonBernstein <> F:24 var
+binder 3469:3469 <> x:31
+binder 3471:3471 <> y:32
+R3477:3480 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3474:3474 CAG.Langlands.BeilinsonBernstein <> h:28 var
+R3476:3476 CAG.Langlands.BeilinsonBernstein <> x:31 var
+R3484:3491 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3481:3481 CAG.Langlands.BeilinsonBernstein <> h:28 var
+R3483:3483 CAG.Langlands.BeilinsonBernstein <> y:32 var
+R3513:3515 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3492:3496 CAG.Langlands.BeilinsonBernstein <> wt_fn:30 meth
+R3499:3504 CAG.Lie.BasicDef <> la_add abbrev
+R3506:3507 CAG.Langlands.BeilinsonBernstein <> la:27 var
+R3511:3511 CAG.Langlands.BeilinsonBernstein <> y:32 var
+R3509:3509 CAG.Langlands.BeilinsonBernstein <> x:31 var
+R3516:3521 CAG.Galois.Field <> cr_add proj
+R3538:3542 CAG.Langlands.BeilinsonBernstein <> wt_fn:30 meth
+R3544:3544 CAG.Langlands.BeilinsonBernstein <> y:32 var
+R3528:3532 CAG.Langlands.BeilinsonBernstein <> wt_fn:30 meth
+R3534:3534 CAG.Langlands.BeilinsonBernstein <> x:31 var
+R3523:3525 CAG.Langlands.BeilinsonBernstein <> fld:25 var
+R3574:3574 CAG.Langlands.BeilinsonBernstein <> F:24 var
+binder 3570:3570 <> a:34
+binder 3577:3577 <> x:35
+R3583:3590 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3580:3580 CAG.Langlands.BeilinsonBernstein <> h:28 var
+R3582:3582 CAG.Langlands.BeilinsonBernstein <> x:35 var
+R3614:3616 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3591:3595 CAG.Langlands.BeilinsonBernstein <> wt_fn:30 meth
+R3598:3605 CAG.Lie.BasicDef <> la_scale abbrev
+R3607:3608 CAG.Langlands.BeilinsonBernstein <> la:27 var
+R3612:3612 CAG.Langlands.BeilinsonBernstein <> x:35 var
+R3610:3610 CAG.Langlands.BeilinsonBernstein <> a:34 var
+R3617:3622 CAG.Galois.Field <> cr_mul proj
+R3631:3635 CAG.Langlands.BeilinsonBernstein <> wt_fn:30 meth
+R3637:3637 CAG.Langlands.BeilinsonBernstein <> x:35 var
+R3628:3628 CAG.Langlands.BeilinsonBernstein <> a:34 var
+R3624:3626 CAG.Langlands.BeilinsonBernstein <> fld:25 var
+binder 3662:3662 <> x:37
+R3670:3673 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3665:3666 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R3667:3667 CAG.Langlands.BeilinsonBernstein <> h:28 var
+R3669:3669 CAG.Langlands.BeilinsonBernstein <> x:37 var
+R3681:3683 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3674:3678 CAG.Langlands.BeilinsonBernstein <> wt_fn:30 meth
+R3680:3680 CAG.Langlands.BeilinsonBernstein <> x:37 var
+R3684:3690 CAG.Galois.Field <> cr_zero proj
+R3692:3694 CAG.Langlands.BeilinsonBernstein <> fld:25 var
+R3710:3714 CAG.Langlands.BeilinsonBernstein <> wt_fn proj
+R3710:3714 CAG.Langlands.BeilinsonBernstein <> wt_fn proj
+R3749:3754 CAG.Langlands.BeilinsonBernstein <> wt_add proj
+R3749:3754 CAG.Langlands.BeilinsonBernstein <> wt_add proj
+R3796:3803 CAG.Langlands.BeilinsonBernstein <> wt_scale proj
+R3796:3803 CAG.Langlands.BeilinsonBernstein <> wt_scale proj
+R3841:3850 CAG.Langlands.BeilinsonBernstein <> wt_support proj
+R3841:3850 CAG.Langlands.BeilinsonBernstein <> wt_support proj
+ax 3990:4002 <> PositiveRoots
+binder 4014:4014 <> F:39
+R4031:4035 CAG.Galois.Field <> Field rec
+R4037:4037 CAG.Langlands.BeilinsonBernstein <> F:39 var
+binder 4025:4027 <> fld:40
+binder 4041:4041 <> L:41
+R4061:4071 CAG.Lie.BasicDef <> LieAlgebraF rec
+R4077:4077 CAG.Langlands.BeilinsonBernstein <> L:41 var
+R4073:4075 CAG.Langlands.BeilinsonBernstein <> fld:40 var
+binder 4056:4057 <> la:42
+R4086:4089 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4085:4085 CAG.Langlands.BeilinsonBernstein <> L:41 var
+binder 4081:4081 <> h:43
+R4124:4131 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4101:4118 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R4123:4123 CAG.Langlands.BeilinsonBernstein <> h:43 var
+R4120:4121 CAG.Langlands.BeilinsonBernstein <> la:42 var
+R4143:4146 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4132:4137 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R4142:4142 CAG.Langlands.BeilinsonBernstein <> h:43 var
+R4139:4140 CAG.Langlands.BeilinsonBernstein <> la:42 var
+ax 4349:4364 <> IsDominantWeight
+binder 4376:4376 <> F:46
+R4393:4397 CAG.Galois.Field <> Field rec
+R4399:4399 CAG.Langlands.BeilinsonBernstein <> F:46 var
+binder 4387:4389 <> fld:47
+binder 4403:4403 <> L:48
+R4423:4433 CAG.Lie.BasicDef <> LieAlgebraF rec
+R4439:4439 CAG.Langlands.BeilinsonBernstein <> L:48 var
+R4435:4437 CAG.Langlands.BeilinsonBernstein <> fld:47 var
+binder 4418:4419 <> la:49
+R4448:4451 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4447:4447 CAG.Langlands.BeilinsonBernstein <> L:48 var
+binder 4443:4443 <> h:50
+R4486:4493 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4463:4480 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R4485:4485 CAG.Langlands.BeilinsonBernstein <> h:50 var
+R4482:4483 CAG.Langlands.BeilinsonBernstein <> la:49 var
+R4505:4508 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4494:4499 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R4504:4504 CAG.Langlands.BeilinsonBernstein <> h:50 var
+R4501:4502 CAG.Langlands.BeilinsonBernstein <> la:49 var
+ax 4593:4607 <> IsRegularWeight
+binder 4619:4619 <> F:53
+R4636:4640 CAG.Galois.Field <> Field rec
+R4642:4642 CAG.Langlands.BeilinsonBernstein <> F:53 var
+binder 4630:4632 <> fld:54
+binder 4646:4646 <> L:55
+R4666:4676 CAG.Lie.BasicDef <> LieAlgebraF rec
+R4682:4682 CAG.Langlands.BeilinsonBernstein <> L:55 var
+R4678:4680 CAG.Langlands.BeilinsonBernstein <> fld:54 var
+binder 4661:4662 <> la:56
+R4691:4694 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4690:4690 CAG.Langlands.BeilinsonBernstein <> L:55 var
+binder 4686:4686 <> h:57
+R4729:4736 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4706:4723 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R4728:4728 CAG.Langlands.BeilinsonBernstein <> h:57 var
+R4725:4726 CAG.Langlands.BeilinsonBernstein <> la:56 var
+R4748:4751 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4737:4742 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R4747:4747 CAG.Langlands.BeilinsonBernstein <> h:57 var
+R4744:4745 CAG.Langlands.BeilinsonBernstein <> la:56 var
+ax 4881:4908 <> dominant_weyl_representative
+binder 4922:4922 <> F:60
+R4939:4943 CAG.Galois.Field <> Field rec
+R4945:4945 CAG.Langlands.BeilinsonBernstein <> F:60 var
+binder 4933:4935 <> fld:61
+binder 4949:4949 <> L:62
+R4969:4979 CAG.Lie.BasicDef <> LieAlgebraF rec
+R4985:4985 CAG.Langlands.BeilinsonBernstein <> L:62 var
+R4981:4983 CAG.Langlands.BeilinsonBernstein <> fld:61 var
+binder 4964:4965 <> la:63
+R4994:4997 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4993:4993 CAG.Langlands.BeilinsonBernstein <> L:62 var
+binder 4989:4989 <> h:64
+R5014:5031 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R5036:5036 CAG.Langlands.BeilinsonBernstein <> h:64 var
+R5033:5034 CAG.Langlands.BeilinsonBernstein <> la:63 var
+binder 5009:5010 <> hc:65
+R5045:5050 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R5055:5055 CAG.Langlands.BeilinsonBernstein <> h:64 var
+R5052:5053 CAG.Langlands.BeilinsonBernstein <> la:63 var
+binder 5040:5041 <> λ:66
+R5063:5070 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5087:5089 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5076:5081 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R5086:5086 CAG.Langlands.BeilinsonBernstein <> h:64 var
+R5083:5084 CAG.Langlands.BeilinsonBernstein <> la:63 var
+binder 5071:5072 <> μ:67
+R5090:5105 CAG.Langlands.BeilinsonBernstein <> IsDominantWeight defax
+R5115:5116 CAG.Langlands.BeilinsonBernstein <> μ:67 var
+R5112:5113 CAG.Langlands.BeilinsonBernstein <> hc:65 var
+R5110:5110 CAG.Langlands.BeilinsonBernstein <> h:64 var
+R5107:5108 CAG.Langlands.BeilinsonBernstein <> la:63 var
+ax 5599:5609 <> FlagVariety
+binder 5621:5621 <> F:70
+R5638:5642 CAG.Galois.Field <> Field rec
+R5644:5644 CAG.Langlands.BeilinsonBernstein <> F:70 var
+binder 5632:5634 <> fld:71
+binder 5648:5648 <> L:72
+R5668:5678 CAG.Lie.BasicDef <> LieAlgebraF rec
+R5684:5684 CAG.Langlands.BeilinsonBernstein <> L:72 var
+R5680:5682 CAG.Langlands.BeilinsonBernstein <> fld:71 var
+binder 5663:5664 <> la:73
+ax 5744:5757 <> sl2_flag_is_P1
+binder 5771:5771 <> F:76
+R5788:5792 CAG.Galois.Field <> Field rec
+R5794:5794 CAG.Langlands.BeilinsonBernstein <> F:76 var
+binder 5782:5784 <> fld:77
+binder 5798:5798 <> L:78
+R5814:5824 CAG.Lie.BasicDef <> LieAlgebraF rec
+R5830:5830 CAG.Langlands.BeilinsonBernstein <> L:78 var
+R5826:5828 CAG.Langlands.BeilinsonBernstein <> fld:77 var
+binder 5809:5810 <> la:79
+R5853:5860 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5838:5849 CAG.Lie.Radical <> IsSemisimple def
+R5851:5852 CAG.Langlands.BeilinsonBernstein <> la:79 var
+R5861:5864 Corelib.Init.Logic <> True ind
+ax 6433:6449 <> LineBundle_lambda
+binder 6461:6461 <> F:82
+R6478:6482 CAG.Galois.Field <> Field rec
+R6484:6484 CAG.Langlands.BeilinsonBernstein <> F:82 var
+binder 6472:6474 <> fld:83
+binder 6488:6488 <> L:84
+R6508:6518 CAG.Lie.BasicDef <> LieAlgebraF rec
+R6524:6524 CAG.Langlands.BeilinsonBernstein <> L:84 var
+R6520:6522 CAG.Langlands.BeilinsonBernstein <> fld:83 var
+binder 6503:6504 <> la:85
+R6533:6536 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6532:6532 CAG.Langlands.BeilinsonBernstein <> L:84 var
+binder 6528:6528 <> h:86
+R6553:6570 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R6575:6575 CAG.Langlands.BeilinsonBernstein <> h:86 var
+R6572:6573 CAG.Langlands.BeilinsonBernstein <> la:85 var
+binder 6548:6549 <> hc:87
+R6588:6593 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R6598:6598 CAG.Langlands.BeilinsonBernstein <> h:86 var
+R6595:6596 CAG.Langlands.BeilinsonBernstein <> la:85 var
+binder 6583:6584 <> λ:88
+R6620:6623 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6606:6616 CAG.Langlands.BeilinsonBernstein <> FlagVariety defax
+R6618:6619 CAG.Langlands.BeilinsonBernstein <> la:85 var
+ax 6699:6712 <> O_zero_trivial
+binder 6726:6726 <> F:91
+R6743:6747 CAG.Galois.Field <> Field rec
+R6749:6749 CAG.Langlands.BeilinsonBernstein <> F:91 var
+binder 6737:6739 <> fld:92
+binder 6753:6753 <> L:93
+R6773:6783 CAG.Lie.BasicDef <> LieAlgebraF rec
+R6789:6789 CAG.Langlands.BeilinsonBernstein <> L:93 var
+R6785:6787 CAG.Langlands.BeilinsonBernstein <> fld:92 var
+binder 6768:6769 <> la:94
+R6798:6801 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6797:6797 CAG.Langlands.BeilinsonBernstein <> L:93 var
+binder 6793:6793 <> h:95
+R6818:6835 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R6840:6840 CAG.Langlands.BeilinsonBernstein <> h:95 var
+R6837:6838 CAG.Langlands.BeilinsonBernstein <> la:94 var
+binder 6813:6814 <> hc:96
+R6858:6863 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R6868:6868 CAG.Langlands.BeilinsonBernstein <> h:95 var
+R6865:6866 CAG.Langlands.BeilinsonBernstein <> la:94 var
+binder 6848:6854 <> zero_wt:97
+R6880:6890 CAG.Langlands.BeilinsonBernstein <> FlagVariety defax
+R6892:6893 CAG.Langlands.BeilinsonBernstein <> la:94 var
+binder 6876:6876 <> x:98
+R6901:6901 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6941:6949 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 6909:6909 <> y:99
+R6927:6929 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6912:6916 CAG.Langlands.BeilinsonBernstein <> wt_fn proj
+R6926:6926 CAG.Langlands.BeilinsonBernstein <> y:99 var
+R6918:6924 CAG.Langlands.BeilinsonBernstein <> zero_wt:97 var
+R6930:6936 CAG.Galois.Field <> cr_zero proj
+R6938:6940 CAG.Langlands.BeilinsonBernstein <> fld:92 var
+R6985:6987 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6950:6966 CAG.Langlands.BeilinsonBernstein <> LineBundle_lambda defax
+R6984:6984 CAG.Langlands.BeilinsonBernstein <> x:98 var
+R6976:6982 CAG.Langlands.BeilinsonBernstein <> zero_wt:97 var
+R6973:6974 CAG.Langlands.BeilinsonBernstein <> hc:96 var
+R6971:6971 CAG.Langlands.BeilinsonBernstein <> h:95 var
+R6968:6969 CAG.Langlands.BeilinsonBernstein <> la:94 var
+R6988:6988 CAG.Langlands.BeilinsonBernstein <> F:91 var
+rec 7594:7600 <> GModule
+proj 7681:7690 <> gm_carrier
+proj 7701:7705 <> gm_vs
+proj 7744:7752 <> gm_action
+proj 7789:7797 <> gm_linear
+proj 7902:7911 <> gm_bracket
+binder 7603:7603 <> F:102
+R7620:7624 CAG.Galois.Field <> Field rec
+R7626:7626 CAG.Langlands.BeilinsonBernstein <> F:102 var
+binder 7614:7616 <> fld:103
+binder 7630:7630 <> L:104
+R7650:7660 CAG.Lie.BasicDef <> LieAlgebraF rec
+R7666:7666 CAG.Langlands.BeilinsonBernstein <> L:104 var
+R7662:7664 CAG.Langlands.BeilinsonBernstein <> fld:103 var
+binder 7645:7646 <> la:105
+R7714:7725 CAG.Lie.BasicDef <> VectorSpaceF rec
+R7731:7740 CAG.Langlands.BeilinsonBernstein <> gm_carrier:107 meth
+R7727:7729 CAG.Langlands.BeilinsonBernstein <> fld:103 var
+R7758:7761 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7757:7757 CAG.Langlands.BeilinsonBernstein <> L:104 var
+R7772:7775 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7762:7771 CAG.Langlands.BeilinsonBernstein <> gm_carrier:107 meth
+R7776:7785 CAG.Langlands.BeilinsonBernstein <> gm_carrier:107 meth
+binder 7809:7809 <> x:110
+binder 7811:7811 <> y:111
+binder 7813:7813 <> v:112
+R7847:7853 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7820:7828 CAG.Langlands.BeilinsonBernstein <> gm_action:109 meth
+R7846:7846 CAG.Langlands.BeilinsonBernstein <> v:112 var
+R7831:7836 CAG.Lie.BasicDef <> la_add abbrev
+R7838:7839 CAG.Langlands.BeilinsonBernstein <> la:105 var
+R7843:7843 CAG.Langlands.BeilinsonBernstein <> y:111 var
+R7841:7841 CAG.Langlands.BeilinsonBernstein <> x:110 var
+R7854:7860 CAG.Lie.BasicDef <> vsF_add proj
+R7885:7893 CAG.Langlands.BeilinsonBernstein <> gm_action:109 meth
+R7897:7897 CAG.Langlands.BeilinsonBernstein <> v:112 var
+R7895:7895 CAG.Langlands.BeilinsonBernstein <> y:111 var
+R7869:7877 CAG.Langlands.BeilinsonBernstein <> gm_action:109 meth
+R7881:7881 CAG.Langlands.BeilinsonBernstein <> v:112 var
+R7879:7879 CAG.Langlands.BeilinsonBernstein <> x:110 var
+R7862:7866 CAG.Langlands.BeilinsonBernstein <> gm_vs:108 meth
+binder 7922:7922 <> x:114
+binder 7924:7924 <> y:115
+binder 7926:7926 <> v:116
+R7965:7971 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7933:7941 CAG.Langlands.BeilinsonBernstein <> gm_action:109 meth
+R7964:7964 CAG.Langlands.BeilinsonBernstein <> v:116 var
+R7944:7954 CAG.Lie.BasicDef <> laF_bracket proj
+R7961:7961 CAG.Langlands.BeilinsonBernstein <> y:115 var
+R7959:7959 CAG.Langlands.BeilinsonBernstein <> x:114 var
+R7956:7957 CAG.Langlands.BeilinsonBernstein <> la:105 var
+R7972:7978 CAG.Lie.BasicDef <> vsF_add proj
+R8029:8035 CAG.Lie.BasicDef <> vsF_neg proj
+R8044:8052 CAG.Langlands.BeilinsonBernstein <> gm_action:109 meth
+R8057:8065 CAG.Langlands.BeilinsonBernstein <> gm_action:109 meth
+R8069:8069 CAG.Langlands.BeilinsonBernstein <> v:116 var
+R8067:8067 CAG.Langlands.BeilinsonBernstein <> x:114 var
+R8054:8054 CAG.Langlands.BeilinsonBernstein <> y:115 var
+R8037:8041 CAG.Langlands.BeilinsonBernstein <> gm_vs:108 meth
+R7993:8001 CAG.Langlands.BeilinsonBernstein <> gm_action:109 meth
+R8006:8014 CAG.Langlands.BeilinsonBernstein <> gm_action:109 meth
+R8018:8018 CAG.Langlands.BeilinsonBernstein <> v:116 var
+R8016:8016 CAG.Langlands.BeilinsonBernstein <> y:115 var
+R8003:8003 CAG.Langlands.BeilinsonBernstein <> x:114 var
+R7980:7984 CAG.Langlands.BeilinsonBernstein <> gm_vs:108 meth
+R8088:8097 CAG.Langlands.BeilinsonBernstein <> gm_carrier proj
+R8088:8097 CAG.Langlands.BeilinsonBernstein <> gm_carrier proj
+R8125:8129 CAG.Langlands.BeilinsonBernstein <> gm_vs proj
+R8125:8129 CAG.Langlands.BeilinsonBernstein <> gm_vs proj
+R8162:8170 CAG.Langlands.BeilinsonBernstein <> gm_action proj
+R8162:8170 CAG.Langlands.BeilinsonBernstein <> gm_action proj
+ax 8272:8286 <> global_sections
+binder 8298:8298 <> F:118
+R8315:8319 CAG.Galois.Field <> Field rec
+R8321:8321 CAG.Langlands.BeilinsonBernstein <> F:118 var
+binder 8309:8311 <> fld:119
+binder 8325:8325 <> L:120
+R8345:8355 CAG.Lie.BasicDef <> LieAlgebraF rec
+R8361:8361 CAG.Langlands.BeilinsonBernstein <> L:120 var
+R8357:8359 CAG.Langlands.BeilinsonBernstein <> fld:119 var
+binder 8340:8341 <> la:121
+R8370:8373 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8369:8369 CAG.Langlands.BeilinsonBernstein <> L:120 var
+binder 8365:8365 <> h:122
+R8390:8407 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R8412:8412 CAG.Langlands.BeilinsonBernstein <> h:122 var
+R8409:8410 CAG.Langlands.BeilinsonBernstein <> la:121 var
+binder 8385:8386 <> hc:123
+R8425:8430 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R8435:8435 CAG.Langlands.BeilinsonBernstein <> h:122 var
+R8432:8433 CAG.Langlands.BeilinsonBernstein <> la:121 var
+binder 8420:8421 <> λ:124
+R8443:8449 CAG.Langlands.BeilinsonBernstein <> GModule rec
+R8451:8452 CAG.Langlands.BeilinsonBernstein <> la:121 var
+ax 8586:8595 <> borel_weil
+binder 8609:8609 <> F:127
+R8626:8630 CAG.Galois.Field <> Field rec
+R8632:8632 CAG.Langlands.BeilinsonBernstein <> F:127 var
+binder 8620:8622 <> fld:128
+binder 8636:8636 <> L:129
+R8656:8666 CAG.Lie.BasicDef <> LieAlgebraF rec
+R8672:8672 CAG.Langlands.BeilinsonBernstein <> L:129 var
+R8668:8670 CAG.Langlands.BeilinsonBernstein <> fld:128 var
+binder 8651:8652 <> la:130
+R8681:8684 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8680:8680 CAG.Langlands.BeilinsonBernstein <> L:129 var
+binder 8676:8676 <> h:131
+R8701:8718 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R8723:8723 CAG.Langlands.BeilinsonBernstein <> h:131 var
+R8720:8721 CAG.Langlands.BeilinsonBernstein <> la:130 var
+binder 8696:8697 <> hc:132
+R8736:8741 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R8746:8746 CAG.Langlands.BeilinsonBernstein <> h:131 var
+R8743:8744 CAG.Langlands.BeilinsonBernstein <> la:130 var
+binder 8731:8732 <> λ:133
+R8781:8870 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8754:8769 CAG.Langlands.BeilinsonBernstein <> IsDominantWeight defax
+R8779:8780 CAG.Langlands.BeilinsonBernstein <> λ:133 var
+R8776:8777 CAG.Langlands.BeilinsonBernstein <> hc:132 var
+R8774:8774 CAG.Langlands.BeilinsonBernstein <> h:131 var
+R8771:8772 CAG.Langlands.BeilinsonBernstein <> la:130 var
+R8871:8874 Corelib.Init.Logic <> True ind
+ax 9123:9137 <> borel_weil_bott
+binder 9151:9151 <> F:136
+R9168:9172 CAG.Galois.Field <> Field rec
+R9174:9174 CAG.Langlands.BeilinsonBernstein <> F:136 var
+binder 9162:9164 <> fld:137
+binder 9178:9178 <> L:138
+R9198:9208 CAG.Lie.BasicDef <> LieAlgebraF rec
+R9214:9214 CAG.Langlands.BeilinsonBernstein <> L:138 var
+R9210:9212 CAG.Langlands.BeilinsonBernstein <> fld:137 var
+binder 9193:9194 <> la:139
+R9223:9226 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9222:9222 CAG.Langlands.BeilinsonBernstein <> L:138 var
+binder 9218:9218 <> h:140
+R9243:9260 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R9265:9265 CAG.Langlands.BeilinsonBernstein <> h:140 var
+R9262:9263 CAG.Langlands.BeilinsonBernstein <> la:139 var
+binder 9238:9239 <> hc:141
+R9278:9283 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R9288:9288 CAG.Langlands.BeilinsonBernstein <> h:140 var
+R9285:9286 CAG.Langlands.BeilinsonBernstein <> la:139 var
+binder 9273:9274 <> λ:142
+R9325:9332 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9296:9297 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R9298:9313 CAG.Langlands.BeilinsonBernstein <> IsDominantWeight defax
+R9323:9324 CAG.Langlands.BeilinsonBernstein <> λ:142 var
+R9320:9321 CAG.Langlands.BeilinsonBernstein <> hc:141 var
+R9318:9318 CAG.Langlands.BeilinsonBernstein <> h:140 var
+R9315:9316 CAG.Langlands.BeilinsonBernstein <> la:139 var
+R9333:9336 Corelib.Init.Logic <> True ind
+ax 9820:9829 <> TwistedDOp
+binder 9841:9841 <> F:145
+R9858:9862 CAG.Galois.Field <> Field rec
+R9864:9864 CAG.Langlands.BeilinsonBernstein <> F:145 var
+binder 9852:9854 <> fld:146
+binder 9868:9868 <> L:147
+R9888:9898 CAG.Lie.BasicDef <> LieAlgebraF rec
+R9904:9904 CAG.Langlands.BeilinsonBernstein <> L:147 var
+R9900:9902 CAG.Langlands.BeilinsonBernstein <> fld:146 var
+binder 9883:9884 <> la:148
+R9913:9916 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9912:9912 CAG.Langlands.BeilinsonBernstein <> L:147 var
+binder 9908:9908 <> h:149
+R9933:9950 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R9955:9955 CAG.Langlands.BeilinsonBernstein <> h:149 var
+R9952:9953 CAG.Langlands.BeilinsonBernstein <> la:148 var
+binder 9928:9929 <> hc:150
+R9968:9973 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R9978:9978 CAG.Langlands.BeilinsonBernstein <> h:149 var
+R9975:9976 CAG.Langlands.BeilinsonBernstein <> la:148 var
+binder 9963:9964 <> λ:151
+ax 10062:10074 <> DLambdaModule
+binder 10086:10086 <> F:154
+R10103:10107 CAG.Galois.Field <> Field rec
+R10109:10109 CAG.Langlands.BeilinsonBernstein <> F:154 var
+binder 10097:10099 <> fld:155
+binder 10113:10113 <> L:156
+R10133:10143 CAG.Lie.BasicDef <> LieAlgebraF rec
+R10149:10149 CAG.Langlands.BeilinsonBernstein <> L:156 var
+R10145:10147 CAG.Langlands.BeilinsonBernstein <> fld:155 var
+binder 10128:10129 <> la:157
+R10158:10161 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10157:10157 CAG.Langlands.BeilinsonBernstein <> L:156 var
+binder 10153:10153 <> h:158
+R10178:10195 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R10200:10200 CAG.Langlands.BeilinsonBernstein <> h:158 var
+R10197:10198 CAG.Langlands.BeilinsonBernstein <> la:157 var
+binder 10173:10174 <> hc:159
+R10213:10218 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R10223:10223 CAG.Langlands.BeilinsonBernstein <> h:158 var
+R10220:10221 CAG.Langlands.BeilinsonBernstein <> la:157 var
+binder 10208:10209 <> λ:160
+ax 10427:10436 <> UgModuleCC
+binder 10448:10448 <> F:163
+R10465:10469 CAG.Galois.Field <> Field rec
+R10471:10471 CAG.Langlands.BeilinsonBernstein <> F:163 var
+binder 10459:10461 <> fld:164
+binder 10475:10475 <> L:165
+R10495:10505 CAG.Lie.BasicDef <> LieAlgebraF rec
+R10511:10511 CAG.Langlands.BeilinsonBernstein <> L:165 var
+R10507:10509 CAG.Langlands.BeilinsonBernstein <> fld:164 var
+binder 10490:10491 <> la:166
+R10520:10523 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10519:10519 CAG.Langlands.BeilinsonBernstein <> L:165 var
+binder 10515:10515 <> h:167
+R10540:10557 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R10562:10562 CAG.Langlands.BeilinsonBernstein <> h:167 var
+R10559:10560 CAG.Langlands.BeilinsonBernstein <> la:166 var
+binder 10535:10536 <> hc:168
+R10575:10580 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R10585:10585 CAG.Langlands.BeilinsonBernstein <> h:167 var
+R10582:10583 CAG.Langlands.BeilinsonBernstein <> la:166 var
+binder 10570:10571 <> λ:169
+ax 10948:10958 <> bb_localize
+binder 10970:10970 <> F:172
+R10987:10991 CAG.Galois.Field <> Field rec
+R10993:10993 CAG.Langlands.BeilinsonBernstein <> F:172 var
+binder 10981:10983 <> fld:173
+binder 10997:10997 <> L:174
+R11017:11027 CAG.Lie.BasicDef <> LieAlgebraF rec
+R11033:11033 CAG.Langlands.BeilinsonBernstein <> L:174 var
+R11029:11031 CAG.Langlands.BeilinsonBernstein <> fld:173 var
+binder 11012:11013 <> la:175
+R11042:11045 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11041:11041 CAG.Langlands.BeilinsonBernstein <> L:174 var
+binder 11037:11037 <> h:176
+R11062:11079 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R11084:11084 CAG.Langlands.BeilinsonBernstein <> h:176 var
+R11081:11082 CAG.Langlands.BeilinsonBernstein <> la:175 var
+binder 11057:11058 <> hc:177
+R11097:11102 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R11107:11107 CAG.Langlands.BeilinsonBernstein <> h:176 var
+R11104:11105 CAG.Langlands.BeilinsonBernstein <> la:175 var
+binder 11092:11093 <> λ:178
+R11136:11139 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11115:11124 CAG.Langlands.BeilinsonBernstein <> UgModuleCC defax
+R11134:11135 CAG.Langlands.BeilinsonBernstein <> λ:178 var
+R11131:11132 CAG.Langlands.BeilinsonBernstein <> hc:177 var
+R11129:11129 CAG.Langlands.BeilinsonBernstein <> h:176 var
+R11126:11127 CAG.Langlands.BeilinsonBernstein <> la:175 var
+R11140:11152 CAG.Langlands.BeilinsonBernstein <> DLambdaModule defax
+R11162:11163 CAG.Langlands.BeilinsonBernstein <> λ:178 var
+R11159:11160 CAG.Langlands.BeilinsonBernstein <> hc:177 var
+R11157:11157 CAG.Langlands.BeilinsonBernstein <> h:176 var
+R11154:11155 CAG.Langlands.BeilinsonBernstein <> la:175 var
+ax 11315:11332 <> bb_global_sections
+binder 11344:11344 <> F:181
+R11361:11365 CAG.Galois.Field <> Field rec
+R11367:11367 CAG.Langlands.BeilinsonBernstein <> F:181 var
+binder 11355:11357 <> fld:182
+binder 11371:11371 <> L:183
+R11391:11401 CAG.Lie.BasicDef <> LieAlgebraF rec
+R11407:11407 CAG.Langlands.BeilinsonBernstein <> L:183 var
+R11403:11405 CAG.Langlands.BeilinsonBernstein <> fld:182 var
+binder 11386:11387 <> la:184
+R11416:11419 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11415:11415 CAG.Langlands.BeilinsonBernstein <> L:183 var
+binder 11411:11411 <> h:185
+R11436:11453 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R11458:11458 CAG.Langlands.BeilinsonBernstein <> h:185 var
+R11455:11456 CAG.Langlands.BeilinsonBernstein <> la:184 var
+binder 11431:11432 <> hc:186
+R11471:11476 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R11481:11481 CAG.Langlands.BeilinsonBernstein <> h:185 var
+R11478:11479 CAG.Langlands.BeilinsonBernstein <> la:184 var
+binder 11466:11467 <> λ:187
+R11513:11516 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11489:11501 CAG.Langlands.BeilinsonBernstein <> DLambdaModule defax
+R11511:11512 CAG.Langlands.BeilinsonBernstein <> λ:187 var
+R11508:11509 CAG.Langlands.BeilinsonBernstein <> hc:186 var
+R11506:11506 CAG.Langlands.BeilinsonBernstein <> h:185 var
+R11503:11504 CAG.Langlands.BeilinsonBernstein <> la:184 var
+R11517:11526 CAG.Langlands.BeilinsonBernstein <> UgModuleCC defax
+R11536:11537 CAG.Langlands.BeilinsonBernstein <> λ:187 var
+R11533:11534 CAG.Langlands.BeilinsonBernstein <> hc:186 var
+R11531:11531 CAG.Langlands.BeilinsonBernstein <> h:185 var
+R11528:11529 CAG.Langlands.BeilinsonBernstein <> la:184 var
+ax 11953:11971 <> beilinson_bernstein
+binder 11985:11985 <> F:190
+R12002:12006 CAG.Galois.Field <> Field rec
+R12008:12008 CAG.Langlands.BeilinsonBernstein <> F:190 var
+binder 11996:11998 <> fld:191
+binder 12012:12012 <> L:192
+R12032:12042 CAG.Lie.BasicDef <> LieAlgebraF rec
+R12048:12048 CAG.Langlands.BeilinsonBernstein <> L:192 var
+R12044:12046 CAG.Langlands.BeilinsonBernstein <> fld:191 var
+binder 12027:12028 <> la:193
+R12057:12060 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12056:12056 CAG.Langlands.BeilinsonBernstein <> L:192 var
+binder 12052:12052 <> h:194
+R12077:12094 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R12099:12099 CAG.Langlands.BeilinsonBernstein <> h:194 var
+R12096:12097 CAG.Langlands.BeilinsonBernstein <> la:193 var
+binder 12072:12073 <> hc:195
+R12112:12117 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R12122:12122 CAG.Langlands.BeilinsonBernstein <> h:194 var
+R12119:12120 CAG.Langlands.BeilinsonBernstein <> la:193 var
+binder 12107:12108 <> λ:196
+R12157:12164 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12130:12145 CAG.Langlands.BeilinsonBernstein <> IsDominantWeight defax
+R12155:12156 CAG.Langlands.BeilinsonBernstein <> λ:196 var
+R12152:12153 CAG.Langlands.BeilinsonBernstein <> hc:195 var
+R12150:12150 CAG.Langlands.BeilinsonBernstein <> h:194 var
+R12147:12148 CAG.Langlands.BeilinsonBernstein <> la:193 var
+R12191:12244 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12165:12179 CAG.Langlands.BeilinsonBernstein <> IsRegularWeight defax
+R12189:12190 CAG.Langlands.BeilinsonBernstein <> λ:196 var
+R12186:12187 CAG.Langlands.BeilinsonBernstein <> hc:195 var
+R12184:12184 CAG.Langlands.BeilinsonBernstein <> h:194 var
+R12181:12182 CAG.Langlands.BeilinsonBernstein <> la:193 var
+R12245:12245 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R12348:12357 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R12463:12463 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R12258:12267 CAG.Langlands.BeilinsonBernstein <> UgModuleCC defax
+R12277:12278 CAG.Langlands.BeilinsonBernstein <> λ:196 var
+R12274:12275 CAG.Langlands.BeilinsonBernstein <> hc:195 var
+R12272:12272 CAG.Langlands.BeilinsonBernstein <> h:194 var
+R12269:12270 CAG.Langlands.BeilinsonBernstein <> la:193 var
+binder 12254:12254 <> M:197
+R12344:12346 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12288:12305 CAG.Langlands.BeilinsonBernstein <> bb_global_sections defax
+R12319:12329 CAG.Langlands.BeilinsonBernstein <> bb_localize defax
+R12342:12342 CAG.Langlands.BeilinsonBernstein <> M:197 var
+R12339:12340 CAG.Langlands.BeilinsonBernstein <> λ:196 var
+R12336:12337 CAG.Langlands.BeilinsonBernstein <> hc:195 var
+R12334:12334 CAG.Langlands.BeilinsonBernstein <> h:194 var
+R12331:12332 CAG.Langlands.BeilinsonBernstein <> la:193 var
+R12315:12316 CAG.Langlands.BeilinsonBernstein <> λ:196 var
+R12312:12313 CAG.Langlands.BeilinsonBernstein <> hc:195 var
+R12310:12310 CAG.Langlands.BeilinsonBernstein <> h:194 var
+R12307:12308 CAG.Langlands.BeilinsonBernstein <> la:193 var
+R12347:12347 CAG.Langlands.BeilinsonBernstein <> M:197 var
+R12370:12382 CAG.Langlands.BeilinsonBernstein <> DLambdaModule defax
+R12392:12393 CAG.Langlands.BeilinsonBernstein <> λ:196 var
+R12389:12390 CAG.Langlands.BeilinsonBernstein <> hc:195 var
+R12387:12387 CAG.Langlands.BeilinsonBernstein <> h:194 var
+R12384:12385 CAG.Langlands.BeilinsonBernstein <> la:193 var
+binder 12366:12366 <> N:198
+R12459:12461 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12403:12413 CAG.Langlands.BeilinsonBernstein <> bb_localize defax
+R12427:12444 CAG.Langlands.BeilinsonBernstein <> bb_global_sections defax
+R12457:12457 CAG.Langlands.BeilinsonBernstein <> N:198 var
+R12454:12455 CAG.Langlands.BeilinsonBernstein <> λ:196 var
+R12451:12452 CAG.Langlands.BeilinsonBernstein <> hc:195 var
+R12449:12449 CAG.Langlands.BeilinsonBernstein <> h:194 var
+R12446:12447 CAG.Langlands.BeilinsonBernstein <> la:193 var
+R12423:12424 CAG.Langlands.BeilinsonBernstein <> λ:196 var
+R12420:12421 CAG.Langlands.BeilinsonBernstein <> hc:195 var
+R12418:12418 CAG.Langlands.BeilinsonBernstein <> h:194 var
+R12415:12416 CAG.Langlands.BeilinsonBernstein <> la:193 var
+R12462:12462 CAG.Langlands.BeilinsonBernstein <> N:198 var
+prf 12580:12605 <> dlambda_globally_generated
+binder 12619:12619 <> F:201
+R12636:12640 CAG.Galois.Field <> Field rec
+R12642:12642 CAG.Langlands.BeilinsonBernstein <> F:201 var
+binder 12630:12632 <> fld:202
+binder 12646:12646 <> L:203
+R12666:12676 CAG.Lie.BasicDef <> LieAlgebraF rec
+R12682:12682 CAG.Langlands.BeilinsonBernstein <> L:203 var
+R12678:12680 CAG.Langlands.BeilinsonBernstein <> fld:202 var
+binder 12661:12662 <> la:204
+R12691:12694 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12690:12690 CAG.Langlands.BeilinsonBernstein <> L:203 var
+binder 12686:12686 <> h:205
+R12711:12728 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R12733:12733 CAG.Langlands.BeilinsonBernstein <> h:205 var
+R12730:12731 CAG.Langlands.BeilinsonBernstein <> la:204 var
+binder 12706:12707 <> hc:206
+R12746:12751 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R12756:12756 CAG.Langlands.BeilinsonBernstein <> h:205 var
+R12753:12754 CAG.Langlands.BeilinsonBernstein <> la:204 var
+binder 12741:12742 <> λ:207
+R12791:12798 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12764:12779 CAG.Langlands.BeilinsonBernstein <> IsDominantWeight defax
+R12789:12790 CAG.Langlands.BeilinsonBernstein <> λ:207 var
+R12786:12787 CAG.Langlands.BeilinsonBernstein <> hc:206 var
+R12784:12784 CAG.Langlands.BeilinsonBernstein <> h:205 var
+R12781:12782 CAG.Langlands.BeilinsonBernstein <> la:204 var
+R12825:12832 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12799:12813 CAG.Langlands.BeilinsonBernstein <> IsRegularWeight defax
+R12823:12824 CAG.Langlands.BeilinsonBernstein <> λ:207 var
+R12820:12821 CAG.Langlands.BeilinsonBernstein <> hc:206 var
+R12818:12818 CAG.Langlands.BeilinsonBernstein <> h:205 var
+R12815:12816 CAG.Langlands.BeilinsonBernstein <> la:204 var
+R12845:12857 CAG.Langlands.BeilinsonBernstein <> DLambdaModule defax
+R12867:12868 CAG.Langlands.BeilinsonBernstein <> λ:207 var
+R12864:12865 CAG.Langlands.BeilinsonBernstein <> hc:206 var
+R12862:12862 CAG.Langlands.BeilinsonBernstein <> h:205 var
+R12859:12860 CAG.Langlands.BeilinsonBernstein <> la:204 var
+binder 12841:12841 <> N:208
+R12934:12936 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12878:12888 CAG.Langlands.BeilinsonBernstein <> bb_localize defax
+R12902:12919 CAG.Langlands.BeilinsonBernstein <> bb_global_sections defax
+R12932:12932 CAG.Langlands.BeilinsonBernstein <> N:208 var
+R12929:12930 CAG.Langlands.BeilinsonBernstein <> λ:207 var
+R12926:12927 CAG.Langlands.BeilinsonBernstein <> hc:206 var
+R12924:12924 CAG.Langlands.BeilinsonBernstein <> h:205 var
+R12921:12922 CAG.Langlands.BeilinsonBernstein <> la:204 var
+R12898:12899 CAG.Langlands.BeilinsonBernstein <> λ:207 var
+R12895:12896 CAG.Langlands.BeilinsonBernstein <> hc:206 var
+R12893:12893 CAG.Langlands.BeilinsonBernstein <> h:205 var
+R12890:12891 CAG.Langlands.BeilinsonBernstein <> la:204 var
+R12937:12937 CAG.Langlands.BeilinsonBernstein <> N:208 var
+R12997:13001 Corelib.Init.Logic <> proj2 thm
+R13004:13022 CAG.Langlands.BeilinsonBernstein <> beilinson_bernstein prfax
+R12997:13001 Corelib.Init.Logic <> proj2 thm
+R13004:13022 CAG.Langlands.BeilinsonBernstein <> beilinson_bernstein prfax
+ax 14077:14095 <> sl2_bb_localization
+binder 14109:14109 <> F:209
+R14126:14130 CAG.Galois.Field <> Field rec
+R14132:14132 CAG.Langlands.BeilinsonBernstein <> F:209 var
+binder 14120:14122 <> fld:210
+binder 14136:14136 <> L:211
+R14156:14166 CAG.Lie.BasicDef <> LieAlgebraF rec
+R14172:14172 CAG.Langlands.BeilinsonBernstein <> L:211 var
+R14168:14170 CAG.Langlands.BeilinsonBernstein <> fld:210 var
+binder 14151:14152 <> la:212
+R14181:14184 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14180:14180 CAG.Langlands.BeilinsonBernstein <> L:211 var
+binder 14176:14176 <> h:213
+R14201:14218 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R14223:14223 CAG.Langlands.BeilinsonBernstein <> h:213 var
+R14220:14221 CAG.Langlands.BeilinsonBernstein <> la:212 var
+binder 14196:14197 <> hc:214
+R14236:14241 CAG.Langlands.BeilinsonBernstein <> Weight rec
+R14246:14246 CAG.Langlands.BeilinsonBernstein <> h:213 var
+R14243:14244 CAG.Langlands.BeilinsonBernstein <> la:212 var
+binder 14231:14232 <> λ:215
+R14269:14276 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14254:14265 CAG.Lie.Radical <> IsSemisimple def
+R14267:14268 CAG.Langlands.BeilinsonBernstein <> la:212 var
+R14304:14311 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14277:14292 CAG.Langlands.BeilinsonBernstein <> IsDominantWeight defax
+R14302:14303 CAG.Langlands.BeilinsonBernstein <> λ:215 var
+R14299:14300 CAG.Langlands.BeilinsonBernstein <> hc:214 var
+R14297:14297 CAG.Langlands.BeilinsonBernstein <> h:213 var
+R14294:14295 CAG.Langlands.BeilinsonBernstein <> la:212 var
+R14338:14415 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14312:14326 CAG.Langlands.BeilinsonBernstein <> IsRegularWeight defax
+R14336:14337 CAG.Langlands.BeilinsonBernstein <> λ:215 var
+R14333:14334 CAG.Langlands.BeilinsonBernstein <> hc:214 var
+R14331:14331 CAG.Langlands.BeilinsonBernstein <> h:213 var
+R14328:14329 CAG.Langlands.BeilinsonBernstein <> la:212 var
+R14416:14419 Corelib.Init.Logic <> True ind
+ax 14690:14715 <> harish_chandra_isomorphism
+binder 14729:14729 <> F:218
+R14746:14750 CAG.Galois.Field <> Field rec
+R14752:14752 CAG.Langlands.BeilinsonBernstein <> F:218 var
+binder 14740:14742 <> fld:219
+binder 14756:14756 <> L:220
+R14776:14786 CAG.Lie.BasicDef <> LieAlgebraF rec
+R14792:14792 CAG.Langlands.BeilinsonBernstein <> L:220 var
+R14788:14790 CAG.Langlands.BeilinsonBernstein <> fld:219 var
+binder 14771:14772 <> la:221
+R14801:14804 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14800:14800 CAG.Langlands.BeilinsonBernstein <> L:220 var
+binder 14796:14796 <> h:222
+R14821:14838 CAG.Langlands.BeilinsonBernstein <> IsCartanSubalgebra def
+R14843:14843 CAG.Langlands.BeilinsonBernstein <> h:222 var
+R14840:14841 CAG.Langlands.BeilinsonBernstein <> la:221 var
+binder 14816:14817 <> hc:223
+R14866:14873 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14851:14862 CAG.Lie.Radical <> IsSemisimple def
+R14864:14865 CAG.Langlands.BeilinsonBernstein <> la:221 var
+R14874:14877 Corelib.Init.Logic <> True ind

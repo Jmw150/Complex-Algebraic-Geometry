@@ -1,0 +1,660 @@
+DIGEST 098d1989cca19d06330cd23087ade264
+FCAG.Order.Lattice
+R83:97 CAG.Order.Poset <> <> lib
+R127:156 Stdlib.Logic.FunctionalExtensionality <> <> lib
+R186:207 Stdlib.Logic.ProofIrrelevance <> <> lib
+R237:251 Stdlib.Logic.Classical <> <> lib
+R281:290 Stdlib.Lists.List <> <> lib
+rec 366:380 <> JoinSemilattice
+proj 396:404 <> jsl_poset
+proj 419:425 <> jsl_bot
+proj 455:462 <> jsl_join
+proj 537:546 <> jsl_bot_le
+proj 588:599 <> jsl_join_ub1
+proj 648:659 <> jsl_join_ub2
+proj 708:719 <> jsl_join_lub
+R410:414 CAG.Order.Poset <> Poset rec
+R443:449 CAG.Order.Poset <> carrier proj
+R432:440 CAG.Order.Lattice <> jsl_poset:2 meth
+R487:490 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R479:485 CAG.Order.Poset <> carrier proj
+R468:476 CAG.Order.Lattice <> jsl_poset:2 meth
+R510:513 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R502:508 CAG.Order.Poset <> carrier proj
+R491:499 CAG.Order.Lattice <> jsl_poset:2 meth
+R525:531 CAG.Order.Poset <> carrier proj
+R514:522 CAG.Order.Lattice <> jsl_poset:2 meth
+binder 557:557 <> x:5
+R567:571 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R581:582 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R560:566 CAG.Order.Lattice <> jsl_bot:3 meth
+R583:583 CAG.Order.Lattice <> x:5 var
+R572:580 CAG.Order.Lattice <> jsl_poset:2 meth
+binder 610:610 <> x:7
+binder 612:612 <> y:8
+R616:620 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R630:631 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R615:615 CAG.Order.Lattice <> x:7 var
+R632:639 CAG.Order.Lattice <> jsl_join:4 meth
+R643:643 CAG.Order.Lattice <> y:8 var
+R641:641 CAG.Order.Lattice <> x:7 var
+R621:629 CAG.Order.Lattice <> jsl_poset:2 meth
+binder 670:670 <> x:10
+binder 672:672 <> y:11
+R676:680 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R690:691 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R675:675 CAG.Order.Lattice <> y:11 var
+R692:699 CAG.Order.Lattice <> jsl_join:4 meth
+R703:703 CAG.Order.Lattice <> y:11 var
+R701:701 CAG.Order.Lattice <> x:10 var
+R681:689 CAG.Order.Lattice <> jsl_poset:2 meth
+binder 730:730 <> x:13
+binder 732:732 <> y:14
+binder 734:734 <> z:15
+R759:762 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R742:746 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R756:757 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R741:741 CAG.Order.Lattice <> x:13 var
+R758:758 CAG.Order.Lattice <> z:15 var
+R747:755 CAG.Order.Lattice <> jsl_poset:2 meth
+R781:784 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R764:768 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R778:779 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R763:763 CAG.Order.Lattice <> y:14 var
+R780:780 CAG.Order.Lattice <> z:15 var
+R769:777 CAG.Order.Lattice <> jsl_poset:2 meth
+R797:801 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R811:812 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R785:792 CAG.Order.Lattice <> jsl_join:4 meth
+R796:796 CAG.Order.Lattice <> y:14 var
+R794:794 CAG.Order.Lattice <> x:13 var
+R813:813 CAG.Order.Lattice <> z:15 var
+R802:810 CAG.Order.Lattice <> jsl_poset:2 meth
+R844:850 CAG.Order.Lattice <> jsl_bot proj
+not 829:829 <> ::order_scope:'⊥{'_x_'}'
+R911:918 CAG.Order.Lattice <> jsl_join proj
+not 892:892 <> ::order_scope:x_'∨{'_x_'}'_x
+prf 989:997 <> join_idem
+R1004:1018 CAG.Order.Lattice <> JoinSemilattice rec
+binder 1000:1000 <> J:17
+R1029:1035 CAG.Order.Poset <> carrier proj
+R1026:1026 CAG.Order.Lattice <> J:17 var
+binder 1022:1022 <> x:18
+R1055:1057 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1046:1050 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1052:1053 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1051:1051 CAG.Order.Lattice <> J:17 var
+R1045:1045 CAG.Order.Lattice <> x:18 var
+R1054:1054 CAG.Order.Lattice <> x:18 var
+R1058:1058 CAG.Order.Lattice <> x:18 var
+R1079:1088 CAG.Order.Poset <> le_antisym proj
+R1079:1088 CAG.Order.Poset <> le_antisym proj
+R1105:1116 CAG.Order.Lattice <> jsl_join_lub proj
+R1129:1135 CAG.Order.Poset <> le_refl proj
+R1105:1116 CAG.Order.Lattice <> jsl_join_lub proj
+R1129:1135 CAG.Order.Poset <> le_refl proj
+R1129:1135 CAG.Order.Poset <> le_refl proj
+R1152:1163 CAG.Order.Lattice <> jsl_join_ub1 proj
+R1152:1163 CAG.Order.Lattice <> jsl_join_ub1 proj
+prf 1206:1214 <> join_comm
+R1221:1235 CAG.Order.Lattice <> JoinSemilattice rec
+binder 1217:1217 <> J:19
+R1248:1254 CAG.Order.Poset <> carrier proj
+R1245:1245 CAG.Order.Lattice <> J:19 var
+binder 1239:1239 <> x:20
+binder 1241:1241 <> y:21
+R1274:1276 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1265:1269 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1271:1272 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1270:1270 CAG.Order.Lattice <> J:19 var
+R1264:1264 CAG.Order.Lattice <> x:20 var
+R1273:1273 CAG.Order.Lattice <> y:21 var
+R1278:1282 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1284:1285 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1283:1283 CAG.Order.Lattice <> J:19 var
+R1277:1277 CAG.Order.Lattice <> y:21 var
+R1286:1286 CAG.Order.Lattice <> x:20 var
+R1307:1316 CAG.Order.Poset <> le_antisym proj
+R1331:1342 CAG.Order.Lattice <> jsl_join_lub proj
+R1359:1370 CAG.Order.Lattice <> jsl_join_ub2 proj
+R1384:1395 CAG.Order.Lattice <> jsl_join_ub1 proj
+R1411:1422 CAG.Order.Lattice <> jsl_join_ub2 proj
+R1436:1447 CAG.Order.Lattice <> jsl_join_ub1 proj
+R1307:1316 CAG.Order.Poset <> le_antisym proj
+R1331:1342 CAG.Order.Lattice <> jsl_join_lub proj
+R1331:1342 CAG.Order.Lattice <> jsl_join_lub proj
+R1359:1370 CAG.Order.Lattice <> jsl_join_ub2 proj
+R1384:1395 CAG.Order.Lattice <> jsl_join_ub1 proj
+R1411:1422 CAG.Order.Lattice <> jsl_join_ub2 proj
+R1436:1447 CAG.Order.Lattice <> jsl_join_ub1 proj
+prf 1492:1501 <> join_assoc
+R1508:1522 CAG.Order.Lattice <> JoinSemilattice rec
+binder 1504:1504 <> J:22
+R1537:1543 CAG.Order.Poset <> carrier proj
+R1534:1534 CAG.Order.Lattice <> J:22 var
+binder 1526:1526 <> x:23
+binder 1528:1528 <> y:24
+binder 1530:1530 <> z:25
+R1574:1576 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1554:1558 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1560:1562 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1573:1573 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1559:1559 CAG.Order.Lattice <> J:22 var
+R1553:1553 CAG.Order.Lattice <> x:23 var
+R1564:1568 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1570:1571 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1569:1569 CAG.Order.Lattice <> J:22 var
+R1563:1563 CAG.Order.Lattice <> y:24 var
+R1572:1572 CAG.Order.Lattice <> z:25 var
+R1577:1577 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1588:1593 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1595:1596 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1594:1594 CAG.Order.Lattice <> J:22 var
+R1579:1583 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1585:1586 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1584:1584 CAG.Order.Lattice <> J:22 var
+R1578:1578 CAG.Order.Lattice <> x:23 var
+R1587:1587 CAG.Order.Lattice <> y:24 var
+R1597:1597 CAG.Order.Lattice <> z:25 var
+R1618:1627 CAG.Order.Poset <> le_antisym proj
+R1640:1651 CAG.Order.Lattice <> jsl_join_lub proj
+R1618:1627 CAG.Order.Poset <> le_antisym proj
+R1640:1651 CAG.Order.Lattice <> jsl_join_lub proj
+R1640:1651 CAG.Order.Lattice <> jsl_join_lub proj
+R1690:1694 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1696:1697 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1668:1675 CAG.Order.Poset <> le_trans proj
+R1690:1694 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1696:1697 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1668:1675 CAG.Order.Poset <> le_trans proj
+R1717:1728 CAG.Order.Lattice <> jsl_join_ub1 proj
+R1717:1728 CAG.Order.Lattice <> jsl_join_ub1 proj
+R1747:1758 CAG.Order.Lattice <> jsl_join_ub1 proj
+R1747:1758 CAG.Order.Lattice <> jsl_join_ub1 proj
+R1775:1786 CAG.Order.Lattice <> jsl_join_lub proj
+R1775:1786 CAG.Order.Lattice <> jsl_join_lub proj
+R1827:1831 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1833:1834 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1805:1812 CAG.Order.Poset <> le_trans proj
+R1827:1831 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1833:1834 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R1805:1812 CAG.Order.Poset <> le_trans proj
+R1856:1867 CAG.Order.Lattice <> jsl_join_ub2 proj
+R1856:1867 CAG.Order.Lattice <> jsl_join_ub2 proj
+R1888:1899 CAG.Order.Lattice <> jsl_join_ub1 proj
+R1888:1899 CAG.Order.Lattice <> jsl_join_ub1 proj
+R1918:1929 CAG.Order.Lattice <> jsl_join_ub2 proj
+R1918:1929 CAG.Order.Lattice <> jsl_join_ub2 proj
+R1946:1957 CAG.Order.Lattice <> jsl_join_lub proj
+R1946:1957 CAG.Order.Lattice <> jsl_join_lub proj
+R1976:1987 CAG.Order.Lattice <> jsl_join_ub1 proj
+R1976:1987 CAG.Order.Lattice <> jsl_join_ub1 proj
+R2028:2032 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R2034:2035 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R2006:2013 CAG.Order.Poset <> le_trans proj
+R2028:2032 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R2034:2035 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R2006:2013 CAG.Order.Poset <> le_trans proj
+R2057:2068 CAG.Order.Lattice <> jsl_join_ub1 proj
+R2057:2068 CAG.Order.Lattice <> jsl_join_ub1 proj
+R2089:2100 CAG.Order.Lattice <> jsl_join_ub2 proj
+R2089:2100 CAG.Order.Lattice <> jsl_join_ub2 proj
+R2139:2143 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R2145:2146 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R2117:2124 CAG.Order.Poset <> le_trans proj
+R2139:2143 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R2145:2146 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R2117:2124 CAG.Order.Poset <> le_trans proj
+R2166:2177 CAG.Order.Lattice <> jsl_join_ub2 proj
+R2166:2177 CAG.Order.Lattice <> jsl_join_ub2 proj
+R2196:2207 CAG.Order.Lattice <> jsl_join_ub2 proj
+R2196:2207 CAG.Order.Lattice <> jsl_join_ub2 proj
+prf 2254:2264 <> le_iff_join
+R2271:2285 CAG.Order.Lattice <> JoinSemilattice rec
+binder 2267:2267 <> J:26
+R2298:2304 CAG.Order.Poset <> carrier proj
+R2295:2295 CAG.Order.Lattice <> J:26 var
+binder 2289:2289 <> x:27
+binder 2291:2291 <> y:28
+R2324:2328 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R2315:2319 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R2321:2322 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R2314:2314 CAG.Order.Lattice <> x:27 var
+R2323:2323 CAG.Order.Lattice <> y:28 var
+R2320:2320 CAG.Order.Lattice <> J:26 var
+R2339:2341 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2330:2334 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R2336:2337 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R2335:2335 CAG.Order.Lattice <> J:26 var
+R2329:2329 CAG.Order.Lattice <> x:27 var
+R2338:2338 CAG.Order.Lattice <> y:28 var
+R2342:2342 CAG.Order.Lattice <> y:28 var
+R2388:2397 CAG.Order.Poset <> le_antisym proj
+R2388:2397 CAG.Order.Poset <> le_antisym proj
+R2416:2427 CAG.Order.Lattice <> jsl_join_lub proj
+R2452:2458 CAG.Order.Poset <> le_refl proj
+R2416:2427 CAG.Order.Lattice <> jsl_join_lub proj
+R2452:2458 CAG.Order.Poset <> le_refl proj
+R2479:2490 CAG.Order.Lattice <> jsl_join_ub2 proj
+R2479:2490 CAG.Order.Lattice <> jsl_join_ub2 proj
+R2535:2546 CAG.Order.Lattice <> jsl_join_ub1 proj
+R2535:2546 CAG.Order.Lattice <> jsl_join_ub1 proj
+def 2598:2608 <> finite_join
+R2615:2629 CAG.Order.Lattice <> JoinSemilattice rec
+binder 2611:2611 <> J:29
+R2638:2641 Corelib.Init.Datatypes <> list ind
+R2646:2652 CAG.Order.Poset <> carrier proj
+R2643:2643 CAG.Order.Lattice <> J:29 var
+binder 2633:2634 <> xs:30
+R2661:2667 CAG.Order.Poset <> carrier proj
+R2658:2658 CAG.Order.Lattice <> J:29 var
+R2681:2682 CAG.Order.Lattice <> xs:30 var
+R2693:2695 Corelib.Init.Datatypes <> nil constr
+R2703:2706 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R2708:2708 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R2707:2707 CAG.Order.Lattice <> J:29 var
+R2715:2718 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R2728:2732 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R2734:2735 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R2733:2733 CAG.Order.Lattice <> J:29 var
+R2736:2746 CAG.Order.Lattice <> finite_join:31 def
+R2748:2748 CAG.Order.Lattice <> J:29 var
+rec 2798:2812 <> CompleteLattice
+proj 2828:2835 <> cl_poset
+proj 2850:2855 <> cl_sup
+proj 2925:2933 <> cl_sup_ub
+proj 3015:3024 <> cl_sup_lub
+R2841:2845 CAG.Order.Poset <> Poset rec
+R2892:2895 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2884:2890 CAG.Order.Poset <> carrier proj
+R2874:2881 CAG.Order.Lattice <> cl_poset:34 meth
+binder 2870:2870 <> S:35
+R2913:2919 CAG.Order.Poset <> carrier proj
+R2903:2910 CAG.Order.Lattice <> cl_poset:34 meth
+R2967:2970 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2959:2965 CAG.Order.Poset <> carrier proj
+R2949:2956 CAG.Order.Lattice <> cl_poset:34 meth
+binder 2945:2945 <> S:37
+binder 2977:2977 <> x:38
+R2983:2986 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2980:2980 CAG.Order.Lattice <> S:37 var
+R2982:2982 CAG.Order.Lattice <> x:38 var
+R2988:2992 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R3001:3002 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R2987:2987 CAG.Order.Lattice <> x:38 var
+R3003:3008 CAG.Order.Lattice <> cl_sup:36 meth
+R3010:3010 CAG.Order.Lattice <> S:37 var
+R2993:3000 CAG.Order.Lattice <> cl_poset:34 meth
+R3058:3061 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3050:3056 CAG.Order.Poset <> carrier proj
+R3040:3047 CAG.Order.Lattice <> cl_poset:34 meth
+binder 3036:3036 <> S:40
+binder 3068:3068 <> z:41
+R3075:3075 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3110:3114 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 3083:3083 <> x:42
+R3089:3092 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3086:3086 CAG.Order.Lattice <> S:40 var
+R3088:3088 CAG.Order.Lattice <> x:42 var
+R3094:3098 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R3107:3108 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R3093:3093 CAG.Order.Lattice <> x:42 var
+R3109:3109 CAG.Order.Lattice <> z:41 var
+R3099:3106 CAG.Order.Lattice <> cl_poset:34 meth
+R3123:3127 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R3136:3137 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R3115:3120 CAG.Order.Lattice <> cl_sup:36 meth
+R3122:3122 CAG.Order.Lattice <> S:40 var
+R3138:3138 CAG.Order.Lattice <> z:41 var
+R3128:3135 CAG.Order.Lattice <> cl_poset:34 meth
+R3171:3176 CAG.Order.Lattice <> cl_sup proj
+not 3154:3154 <> ::order_scope:'⊔{'_x_'}'_x
+def 3260:3265 <> cl_inf
+R3272:3286 CAG.Order.Lattice <> CompleteLattice rec
+binder 3268:3268 <> L:44
+R3305:3308 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3297:3303 CAG.Order.Poset <> carrier proj
+R3294:3294 CAG.Order.Lattice <> L:44 var
+binder 3290:3290 <> S:45
+R3320:3326 CAG.Order.Poset <> carrier proj
+R3317:3317 CAG.Order.Lattice <> L:44 var
+R3334:3337 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R3339:3341 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R3378:3378 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R3338:3338 CAG.Order.Lattice <> L:44 var
+binder 3346:3346 <> z:46
+binder 3358:3358 <> x:47
+R3364:3367 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3361:3361 CAG.Order.Lattice <> S:45 var
+R3363:3363 CAG.Order.Lattice <> x:47 var
+R3369:3373 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R3375:3376 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R3368:3368 CAG.Order.Lattice <> z:46 var
+R3377:3377 CAG.Order.Lattice <> x:47 var
+R3374:3374 CAG.Order.Lattice <> L:44 var
+R3408:3413 CAG.Order.Lattice <> cl_inf def
+not 3391:3391 <> ::order_scope:'⊓{'_x_'}'_x
+prf 3455:3463 <> cl_inf_lb
+R3470:3484 CAG.Order.Lattice <> CompleteLattice rec
+binder 3466:3466 <> L:48
+R3503:3506 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3495:3501 CAG.Order.Poset <> carrier proj
+R3492:3492 CAG.Order.Lattice <> L:48 var
+binder 3488:3488 <> S:49
+R3521:3527 CAG.Order.Poset <> carrier proj
+R3518:3518 CAG.Order.Lattice <> L:48 var
+binder 3514:3514 <> x:50
+R3540:3543 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3537:3537 CAG.Order.Lattice <> S:49 var
+R3539:3539 CAG.Order.Lattice <> x:50 var
+R3552:3556 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R3558:3559 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R3544:3547 CAG.Order.Lattice <> ::order_scope:'⊓{'_x_'}'_x not
+R3549:3550 CAG.Order.Lattice <> ::order_scope:'⊓{'_x_'}'_x not
+R3548:3548 CAG.Order.Lattice <> L:48 var
+R3551:3551 CAG.Order.Lattice <> S:49 var
+R3560:3560 CAG.Order.Lattice <> x:50 var
+R3557:3557 CAG.Order.Lattice <> L:48 var
+R3590:3595 CAG.Order.Lattice <> cl_inf def
+R3609:3618 CAG.Order.Lattice <> cl_sup_lub proj
+R3609:3618 CAG.Order.Lattice <> cl_sup_lub proj
+prf 3667:3676 <> cl_inf_glb
+R3683:3697 CAG.Order.Lattice <> CompleteLattice rec
+binder 3679:3679 <> L:51
+R3716:3719 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3708:3714 CAG.Order.Poset <> carrier proj
+R3705:3705 CAG.Order.Lattice <> L:51 var
+binder 3701:3701 <> S:52
+R3734:3740 CAG.Order.Poset <> carrier proj
+R3731:3731 CAG.Order.Lattice <> L:51 var
+binder 3727:3727 <> z:53
+R3750:3750 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3778:3782 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 3758:3758 <> x:54
+R3764:3767 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3761:3761 CAG.Order.Lattice <> S:52 var
+R3763:3763 CAG.Order.Lattice <> x:54 var
+R3769:3773 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R3775:3776 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R3768:3768 CAG.Order.Lattice <> z:53 var
+R3777:3777 CAG.Order.Lattice <> x:54 var
+R3774:3774 CAG.Order.Lattice <> L:51 var
+R3784:3788 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R3790:3791 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R3783:3783 CAG.Order.Lattice <> z:53 var
+R3792:3795 CAG.Order.Lattice <> ::order_scope:'⊓{'_x_'}'_x not
+R3797:3798 CAG.Order.Lattice <> ::order_scope:'⊓{'_x_'}'_x not
+R3796:3796 CAG.Order.Lattice <> L:51 var
+R3799:3799 CAG.Order.Lattice <> S:52 var
+R3789:3789 CAG.Order.Lattice <> L:51 var
+R3829:3834 CAG.Order.Lattice <> cl_inf def
+R3846:3854 CAG.Order.Lattice <> cl_sup_ub proj
+R3846:3854 CAG.Order.Lattice <> cl_sup_ub proj
+def 3929:3934 <> cl_bot
+R3941:3955 CAG.Order.Lattice <> CompleteLattice rec
+binder 3937:3937 <> L:55
+R3963:3969 CAG.Order.Poset <> carrier proj
+R3960:3960 CAG.Order.Lattice <> L:55 var
+R3977:3980 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R3982:3984 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R3999:3999 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R3981:3981 CAG.Order.Lattice <> L:55 var
+R3994:3998 Corelib.Init.Logic <> False ind
+def 4014:4019 <> cl_top
+R4026:4040 CAG.Order.Lattice <> CompleteLattice rec
+binder 4022:4022 <> L:56
+R4048:4054 CAG.Order.Poset <> carrier proj
+R4045:4045 CAG.Order.Lattice <> L:56 var
+R4062:4065 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R4067:4069 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R4083:4083 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R4066:4066 CAG.Order.Lattice <> L:56 var
+R4079:4082 Corelib.Init.Logic <> True ind
+prf 4093:4101 <> cl_bot_le
+R4108:4122 CAG.Order.Lattice <> CompleteLattice rec
+binder 4104:4104 <> L:57
+R4133:4139 CAG.Order.Poset <> carrier proj
+R4130:4130 CAG.Order.Lattice <> L:57 var
+binder 4126:4126 <> x:58
+R4157:4161 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4163:4164 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4149:4154 CAG.Order.Lattice <> cl_bot def
+R4156:4156 CAG.Order.Lattice <> L:57 var
+R4165:4165 CAG.Order.Lattice <> x:58 var
+R4162:4162 CAG.Order.Lattice <> L:57 var
+R4184:4189 CAG.Order.Lattice <> cl_bot def
+R4201:4210 CAG.Order.Lattice <> cl_sup_lub proj
+R4201:4210 CAG.Order.Lattice <> cl_sup_lub proj
+prf 4252:4260 <> cl_top_ge
+R4267:4281 CAG.Order.Lattice <> CompleteLattice rec
+binder 4263:4263 <> L:59
+R4292:4298 CAG.Order.Poset <> carrier proj
+R4289:4289 CAG.Order.Lattice <> L:59 var
+binder 4285:4285 <> x:60
+R4309:4313 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4315:4316 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4308:4308 CAG.Order.Lattice <> x:60 var
+R4317:4322 CAG.Order.Lattice <> cl_top def
+R4324:4324 CAG.Order.Lattice <> L:59 var
+R4314:4314 CAG.Order.Lattice <> L:59 var
+R4343:4348 CAG.Order.Lattice <> cl_top def
+R4360:4368 CAG.Order.Lattice <> cl_sup_ub proj
+R4360:4368 CAG.Order.Lattice <> cl_sup_ub proj
+R4378:4378 Corelib.Init.Logic <> I constr
+R4378:4378 Corelib.Init.Logic <> I constr
+def 4439:4445 <> cl_join
+R4452:4466 CAG.Order.Lattice <> CompleteLattice rec
+binder 4448:4448 <> L:61
+R4479:4485 CAG.Order.Poset <> carrier proj
+R4476:4476 CAG.Order.Lattice <> L:61 var
+binder 4470:4470 <> x:62
+binder 4472:4472 <> y:63
+R4494:4500 CAG.Order.Poset <> carrier proj
+R4491:4491 CAG.Order.Lattice <> L:61 var
+R4508:4511 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R4513:4515 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R4539:4539 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R4512:4512 CAG.Order.Lattice <> L:61 var
+binder 4520:4520 <> z:64
+R4530:4533 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R4526:4528 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4525:4525 CAG.Order.Lattice <> z:64 var
+R4529:4529 CAG.Order.Lattice <> x:62 var
+R4535:4537 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4534:4534 CAG.Order.Lattice <> z:64 var
+R4538:4538 CAG.Order.Lattice <> y:63 var
+prf 4549:4559 <> cl_join_ub1
+R4566:4580 CAG.Order.Lattice <> CompleteLattice rec
+binder 4562:4562 <> L:65
+R4593:4599 CAG.Order.Poset <> carrier proj
+R4590:4590 CAG.Order.Lattice <> L:65 var
+binder 4584:4584 <> x:66
+binder 4586:4586 <> y:67
+R4610:4614 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4616:4617 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4609:4609 CAG.Order.Lattice <> x:66 var
+R4618:4624 CAG.Order.Lattice <> cl_join def
+R4626:4626 CAG.Order.Lattice <> L:65 var
+R4628:4628 CAG.Order.Lattice <> x:66 var
+R4630:4630 CAG.Order.Lattice <> y:67 var
+R4615:4615 CAG.Order.Lattice <> L:65 var
+R4647:4653 CAG.Order.Lattice <> cl_join def
+R4665:4673 CAG.Order.Lattice <> cl_sup_ub proj
+R4665:4673 CAG.Order.Lattice <> cl_sup_ub proj
+prf 4708:4718 <> cl_join_ub2
+R4725:4739 CAG.Order.Lattice <> CompleteLattice rec
+binder 4721:4721 <> L:68
+R4752:4758 CAG.Order.Poset <> carrier proj
+R4749:4749 CAG.Order.Lattice <> L:68 var
+binder 4743:4743 <> x:69
+binder 4745:4745 <> y:70
+R4769:4773 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4775:4776 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4768:4768 CAG.Order.Lattice <> y:70 var
+R4777:4783 CAG.Order.Lattice <> cl_join def
+R4785:4785 CAG.Order.Lattice <> L:68 var
+R4787:4787 CAG.Order.Lattice <> x:69 var
+R4789:4789 CAG.Order.Lattice <> y:70 var
+R4774:4774 CAG.Order.Lattice <> L:68 var
+R4806:4812 CAG.Order.Lattice <> cl_join def
+R4824:4832 CAG.Order.Lattice <> cl_sup_ub proj
+R4824:4832 CAG.Order.Lattice <> cl_sup_ub proj
+prf 4868:4878 <> cl_join_lub
+R4885:4899 CAG.Order.Lattice <> CompleteLattice rec
+binder 4881:4881 <> L:71
+R4914:4920 CAG.Order.Poset <> carrier proj
+R4911:4911 CAG.Order.Lattice <> L:71 var
+binder 4903:4903 <> x:72
+binder 4905:4905 <> y:73
+binder 4907:4907 <> z:74
+R4940:4943 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4931:4935 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4937:4938 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4930:4930 CAG.Order.Lattice <> x:72 var
+R4939:4939 CAG.Order.Lattice <> z:74 var
+R4936:4936 CAG.Order.Lattice <> L:71 var
+R4954:4957 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4945:4949 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4951:4952 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4944:4944 CAG.Order.Lattice <> y:73 var
+R4953:4953 CAG.Order.Lattice <> z:74 var
+R4950:4950 CAG.Order.Lattice <> L:71 var
+R4971:4975 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4977:4978 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4958:4964 CAG.Order.Lattice <> cl_join def
+R4966:4966 CAG.Order.Lattice <> L:71 var
+R4968:4968 CAG.Order.Lattice <> x:72 var
+R4970:4970 CAG.Order.Lattice <> y:73 var
+R4979:4979 CAG.Order.Lattice <> z:74 var
+R4976:4976 CAG.Order.Lattice <> L:71 var
+R5012:5018 CAG.Order.Lattice <> cl_join def
+R5032:5041 CAG.Order.Lattice <> cl_sup_lub proj
+R5032:5041 CAG.Order.Lattice <> cl_sup_lub proj
+def 5153:5161 <> cl_to_jsl
+R5168:5182 CAG.Order.Lattice <> CompleteLattice rec
+binder 5164:5164 <> L:75
+R5187:5201 CAG.Order.Lattice <> JoinSemilattice rec
+R5211:5219 CAG.Order.Lattice <> jsl_poset proj
+R5211:5219 CAG.Order.Lattice <> jsl_poset proj
+R5211:5219 CAG.Order.Lattice <> jsl_poset proj
+R5231:5237 CAG.Order.Lattice <> jsl_bot proj
+R5231:5237 CAG.Order.Lattice <> jsl_bot proj
+R5258:5265 CAG.Order.Lattice <> jsl_join proj
+R5258:5265 CAG.Order.Lattice <> jsl_join proj
+R5286:5295 CAG.Order.Lattice <> jsl_bot_le proj
+R5286:5295 CAG.Order.Lattice <> jsl_bot_le proj
+R5317:5328 CAG.Order.Lattice <> jsl_join_ub1 proj
+R5317:5328 CAG.Order.Lattice <> jsl_join_ub1 proj
+R5363:5374 CAG.Order.Lattice <> jsl_join_ub2 proj
+R5363:5374 CAG.Order.Lattice <> jsl_join_ub2 proj
+R5409:5420 CAG.Order.Lattice <> jsl_join_lub proj
+R5409:5420 CAG.Order.Lattice <> jsl_join_lub proj
+R5226:5226 CAG.Order.Lattice <> L:75 var
+R5246:5251 CAG.Order.Lattice <> cl_bot def
+R5253:5253 CAG.Order.Lattice <> L:75 var
+R5273:5279 CAG.Order.Lattice <> cl_join def
+R5281:5281 CAG.Order.Lattice <> L:75 var
+R5302:5310 CAG.Order.Lattice <> cl_bot_le thm
+R5312:5312 CAG.Order.Lattice <> L:75 var
+binder 5337:5337 <> x:76
+binder 5339:5339 <> y:77
+R5344:5354 CAG.Order.Lattice <> cl_join_ub1 thm
+R5358:5358 CAG.Order.Lattice <> y:77 var
+R5356:5356 CAG.Order.Lattice <> x:76 var
+binder 5383:5383 <> x:78
+binder 5385:5385 <> y:79
+R5390:5400 CAG.Order.Lattice <> cl_join_ub2 thm
+R5404:5404 CAG.Order.Lattice <> y:79 var
+R5402:5402 CAG.Order.Lattice <> x:78 var
+binder 5429:5429 <> x:80
+binder 5431:5431 <> y:81
+binder 5433:5433 <> z:82
+R5438:5448 CAG.Order.Lattice <> cl_join_lub thm
+R5454:5454 CAG.Order.Lattice <> z:82 var
+R5452:5452 CAG.Order.Lattice <> y:81 var
+R5450:5450 CAG.Order.Lattice <> x:80 var
+def 5589:5606 <> knaster_tarski_lfp
+R5613:5627 CAG.Order.Lattice <> CompleteLattice rec
+binder 5609:5609 <> L:83
+R5636:5641 CAG.Order.Poset <> ::order_scope:x_'→m'_x not
+R5635:5635 CAG.Order.Lattice <> L:83 var
+R5642:5642 CAG.Order.Lattice <> L:83 var
+binder 5631:5631 <> f:84
+R5650:5656 CAG.Order.Poset <> carrier proj
+R5647:5647 CAG.Order.Lattice <> L:83 var
+R5664:5667 CAG.Order.Lattice <> ::order_scope:'⊓{'_x_'}'_x not
+R5669:5671 CAG.Order.Lattice <> ::order_scope:'⊓{'_x_'}'_x not
+R5693:5693 CAG.Order.Lattice <> ::order_scope:'⊓{'_x_'}'_x not
+R5668:5668 CAG.Order.Lattice <> L:83 var
+binder 5676:5676 <> x:85
+R5684:5688 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R5690:5691 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R5681:5681 CAG.Order.Lattice <> f:84 var
+R5683:5683 CAG.Order.Lattice <> x:85 var
+R5692:5692 CAG.Order.Lattice <> x:85 var
+R5689:5689 CAG.Order.Lattice <> L:83 var
+prf 5703:5726 <> knaster_tarski_lfp_fixed
+R5733:5747 CAG.Order.Lattice <> CompleteLattice rec
+binder 5729:5729 <> L:86
+R5756:5761 CAG.Order.Poset <> ::order_scope:x_'→m'_x not
+R5755:5755 CAG.Order.Lattice <> L:86 var
+R5762:5762 CAG.Order.Lattice <> L:86 var
+binder 5751:5751 <> f:87
+R5797:5799 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5771:5771 CAG.Order.Lattice <> f:87 var
+R5774:5791 CAG.Order.Lattice <> knaster_tarski_lfp def
+R5793:5793 CAG.Order.Lattice <> L:86 var
+R5795:5795 CAG.Order.Lattice <> f:87 var
+R5800:5817 CAG.Order.Lattice <> knaster_tarski_lfp def
+R5819:5819 CAG.Order.Lattice <> L:86 var
+R5821:5821 CAG.Order.Lattice <> f:87 var
+R5842:5851 CAG.Order.Poset <> le_antisym proj
+R5842:5851 CAG.Order.Poset <> le_antisym proj
+R5865:5874 CAG.Order.Lattice <> cl_inf_glb thm
+R5865:5874 CAG.Order.Lattice <> cl_inf_glb thm
+R5903:5910 CAG.Order.Poset <> le_trans proj
+R5903:5910 CAG.Order.Poset <> le_trans proj
+R5943:5952 CAG.Order.Poset <> mono_apply thm
+R5943:5952 CAG.Order.Poset <> mono_apply thm
+R5964:5972 CAG.Order.Lattice <> cl_inf_lb thm
+R5964:5972 CAG.Order.Lattice <> cl_inf_lb thm
+R6011:6019 CAG.Order.Lattice <> cl_inf_lb thm
+R6011:6019 CAG.Order.Lattice <> cl_inf_lb thm
+R6033:6042 CAG.Order.Poset <> mono_apply thm
+R6033:6042 CAG.Order.Poset <> mono_apply thm
+R6054:6063 CAG.Order.Lattice <> cl_inf_glb thm
+R6054:6063 CAG.Order.Lattice <> cl_inf_glb thm
+R6092:6099 CAG.Order.Poset <> le_trans proj
+R6092:6099 CAG.Order.Poset <> le_trans proj
+R6132:6141 CAG.Order.Poset <> mono_apply thm
+R6132:6141 CAG.Order.Poset <> mono_apply thm
+R6153:6161 CAG.Order.Lattice <> cl_inf_lb thm
+R6153:6161 CAG.Order.Lattice <> cl_inf_lb thm
+prf 6202:6225 <> knaster_tarski_lfp_least
+R6232:6246 CAG.Order.Lattice <> CompleteLattice rec
+binder 6228:6228 <> L:88
+R6255:6260 CAG.Order.Poset <> ::order_scope:x_'→m'_x not
+R6254:6254 CAG.Order.Lattice <> L:88 var
+R6261:6261 CAG.Order.Lattice <> L:88 var
+binder 6250:6250 <> f:89
+R6272:6278 CAG.Order.Poset <> carrier proj
+R6269:6269 CAG.Order.Lattice <> L:88 var
+binder 6265:6265 <> x:90
+R6295:6298 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6291:6293 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6288:6288 CAG.Order.Lattice <> f:89 var
+R6290:6290 CAG.Order.Lattice <> x:90 var
+R6294:6294 CAG.Order.Lattice <> x:90 var
+R6321:6325 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R6327:6328 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R6299:6316 CAG.Order.Lattice <> knaster_tarski_lfp def
+R6318:6318 CAG.Order.Lattice <> L:88 var
+R6320:6320 CAG.Order.Lattice <> f:89 var
+R6329:6329 CAG.Order.Lattice <> x:90 var
+R6326:6326 CAG.Order.Lattice <> L:88 var
+R6358:6366 CAG.Order.Lattice <> cl_inf_lb thm
+R6358:6366 CAG.Order.Lattice <> cl_inf_lb thm
+R6392:6398 CAG.Order.Poset <> le_refl proj
+R6392:6398 CAG.Order.Poset <> le_refl proj
+R6433:6450 CAG.Order.Lattice <> knaster_tarski_lfp def
+not 6417:6417 <> ::order_scope:'μ{'_x_'}'_x

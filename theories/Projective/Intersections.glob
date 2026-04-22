@@ -1,0 +1,122 @@
+DIGEST be8fe224e62cf28bfeea4129148258d2
+FCAG.Projective.Intersections
+R571:574 Stdlib.Lists.List <> <> lib
+R576:580 Stdlib.Arith.Arith <> <> lib
+R582:587 Stdlib.ZArith.ZArith <> <> lib
+R589:591 Stdlib.micromega.Lia <> <> lib
+R618:624 CAG.Complex <> <> lib
+R651:666 CAG.ManifoldTopology <> <> lib
+R693:715 CAG.Projective.TangentSpace <> <> lib
+R742:766 CAG.Projective.FunctionFields <> <> lib
+R793:809 CAG.Projective.Degree <> <> lib
+R836:861 CAG.Kahler.Lefschetz.Operators <> <> lib
+ax 1237:1261 <> intersection_multiplicity
+R1281:1297 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 1273:1273 <> V:1
+binder 1275:1275 <> W:2
+binder 1277:1277 <> Z:3
+R1305:1307 Corelib.Init.Datatypes <> nat ind
+ax 1367:1389 <> intersection_components
+R1407:1423 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 1401:1401 <> V:6
+binder 1403:1403 <> W:7
+R1431:1434 Corelib.Init.Datatypes <> list ind
+R1436:1452 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+def 1529:1542 <> expected_codim
+R1551:1567 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 1545:1545 <> V:10
+binder 1547:1547 <> W:11
+R1572:1574 Corelib.Init.Datatypes <> nat ind
+R1581:1581 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R1617:1623 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R1659:1659 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R1598:1600 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R1582:1595 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R1597:1597 CAG.Projective.Intersections <> V:10 var
+R1601:1614 CAG.Projective.TangentSpace <> pv_complex_dim proj
+R1616:1616 CAG.Projective.Intersections <> V:10 var
+R1640:1642 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R1624:1637 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R1639:1639 CAG.Projective.Intersections <> W:11 var
+R1643:1656 CAG.Projective.TangentSpace <> pv_complex_dim proj
+R1658:1658 CAG.Projective.Intersections <> W:11 var
+def 1734:1752 <> proper_intersection
+R1761:1777 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 1755:1755 <> V:12
+binder 1757:1757 <> W:13
+R1827:1832 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1808:1810 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1792:1805 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R1807:1807 CAG.Projective.Intersections <> V:12 var
+R1811:1824 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R1826:1826 CAG.Projective.Intersections <> W:13 var
+R1869:1872 Corelib.Init.Peano <> ::nat_scope:x_'>='_x not
+R1850:1852 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R1834:1847 CAG.Projective.TangentSpace <> pv_complex_dim proj
+R1849:1849 CAG.Projective.Intersections <> V:12 var
+R1853:1866 CAG.Projective.TangentSpace <> pv_complex_dim proj
+R1868:1868 CAG.Projective.Intersections <> W:13 var
+R1873:1886 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R1888:1888 CAG.Projective.Intersections <> V:12 var
+prf 2178:2183 <> bezout
+R2201:2217 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 2195:2195 <> V:14
+binder 2197:2197 <> W:15
+R2248:2330 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2225:2243 CAG.Projective.Intersections <> proper_intersection def
+R2245:2245 CAG.Projective.Intersections <> V:14 var
+R2247:2247 CAG.Projective.Intersections <> W:15 var
+R2331:2334 Corelib.Init.Logic <> True ind
+R2358:2358 Corelib.Init.Logic <> I constr
+R2358:2358 Corelib.Init.Logic <> I constr
+prf 2433:2465 <> transverse_intersection_unit_mult
+R2485:2501 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 2477:2477 <> V:16
+binder 2479:2479 <> W:17
+binder 2481:2481 <> Z:18
+R2591:2594 Corelib.Init.Logic <> True ind
+R2618:2618 Corelib.Init.Logic <> I constr
+R2618:2618 Corelib.Init.Logic <> I constr
+prf 3013:3032 <> bezout_hypersurfaces
+R3054:3056 Corelib.Init.Datatypes <> nat ind
+binder 3044:3044 <> n:19
+binder 3046:3047 <> d1:20
+binder 3049:3050 <> d2:21
+R3068:3076 CAG.Projective.TangentSpace <> HomogPoly defax
+R3078:3078 CAG.Projective.Intersections <> n:19 var
+R3080:3081 CAG.Projective.Intersections <> d1:20 var
+binder 3064:3064 <> F:22
+R3089:3097 CAG.Projective.TangentSpace <> HomogPoly defax
+R3099:3099 CAG.Projective.Intersections <> n:19 var
+R3101:3102 CAG.Projective.Intersections <> d2:21 var
+binder 3085:3085 <> G:23
+R3204:3207 Corelib.Init.Logic <> True ind
+R3231:3231 Corelib.Init.Logic <> I constr
+R3231:3231 Corelib.Init.Logic <> I constr
+prf 3580:3603 <> weak_bezout_plane_curves
+R3623:3625 Corelib.Init.Datatypes <> nat ind
+binder 3615:3616 <> d1:24
+binder 3618:3619 <> d2:25
+R3637:3645 CAG.Projective.TangentSpace <> HomogPoly defax
+R3649:3650 CAG.Projective.Intersections <> d1:24 var
+binder 3633:3633 <> F:26
+R3658:3666 CAG.Projective.TangentSpace <> HomogPoly defax
+R3670:3671 CAG.Projective.Intersections <> d2:25 var
+binder 3654:3654 <> G:27
+R3757:3760 Corelib.Init.Logic <> True ind
+R3784:3784 Corelib.Init.Logic <> I constr
+R3784:3784 Corelib.Init.Logic <> I constr
+prf 4166:4196 <> self_intersection_normal_bundle
+R4212:4228 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 4208:4208 <> V:28
+R4288:4291 Corelib.Init.Logic <> True ind
+R4315:4315 Corelib.Init.Logic <> I constr
+R4315:4315 Corelib.Init.Logic <> I constr
+prf 4655:4688 <> intersection_pairing_nondegenerate
+R4704:4717 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 4700:4700 <> M:29
+R4725:4727 Corelib.Init.Datatypes <> nat ind
+binder 4721:4721 <> k:30
+R4812:4815 Corelib.Init.Logic <> True ind
+R4839:4839 Corelib.Init.Logic <> I constr
+R4839:4839 Corelib.Init.Logic <> I constr

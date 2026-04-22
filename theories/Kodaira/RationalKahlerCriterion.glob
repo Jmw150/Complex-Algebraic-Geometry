@@ -1,0 +1,98 @@
+DIGEST 1b8ac99eca8ce2a2d2b67dfa5575980f
+FCAG.Kodaira.RationalKahlerCriterion
+R809:812 Stdlib.Lists.List <> <> lib
+R814:818 Stdlib.Arith.Arith <> <> lib
+R820:822 Stdlib.micromega.Lia <> <> lib
+R849:855 CAG.Complex <> <> lib
+R882:897 CAG.ManifoldTopology <> <> lib
+R924:945 CAG.Divisor.LineBundleCech <> <> lib
+R972:988 CAG.Divisor.Curvature <> <> lib
+R1015:1034 CAG.Divisor.ChernClasses <> <> lib
+R1061:1086 CAG.Vanishing.KodairaVanishing <> <> lib
+R1113:1129 CAG.Kodaira.Embedding <> <> lib
+R1156:1165 CAG.LieAlgebra <> <> lib
+R1192:1217 CAG.Kahler.Lefschetz.Operators <> <> lib
+def 1564:1575 <> hodge_metric
+R1582:1595 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1578:1578 <> M:1
+R1610:1616 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1629:1709 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1622:1624 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R1626:1626 CAG.Kodaira.RationalKahlerCriterion <> M:1 var
+binder 1617:1618 <> ω:2
+R1710:1713 Corelib.Init.Logic <> True ind
+def 1827:1843 <> is_rational_class
+R1850:1863 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1846:1846 <> M:3
+R1872:1874 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R1876:1876 CAG.Kodaira.RationalKahlerCriterion <> M:3 var
+binder 1867:1868 <> α:4
+R1893:1899 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1937:1938 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1904:1920 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R1923:1933 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R1935:1935 CAG.Kodaira.RationalKahlerCriterion <> M:3 var
+binder 1900:1900 <> L:5
+R1939:1945 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1953:1956 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1950:1952 Corelib.Init.Datatypes <> nat ind
+binder 1946:1946 <> k:6
+R1968:2016 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1959:1961 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R1962:1962 CAG.Kodaira.RationalKahlerCriterion <> k:6 var
+R2017:2020 Corelib.Init.Logic <> True ind
+prf 2327:2352 <> rational_class_to_integral
+R2368:2381 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2364:2364 <> M:7
+R2390:2392 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R2394:2394 CAG.Kodaira.RationalKahlerCriterion <> M:7 var
+binder 2385:2386 <> α:8
+R2426:2520 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2404:2420 CAG.Kodaira.RationalKahlerCriterion <> is_rational_class def
+R2422:2422 CAG.Kodaira.RationalKahlerCriterion <> M:7 var
+R2424:2425 CAG.Kodaira.RationalKahlerCriterion <> α:8 var
+R2521:2527 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2565:2570 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2532:2548 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R2551:2561 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R2563:2563 CAG.Kodaira.RationalKahlerCriterion <> M:7 var
+binder 2528:2528 <> L:9
+R2571:2590 CAG.Divisor.Curvature <> positive_line_bundle def
+R2592:2592 CAG.Kodaira.RationalKahlerCriterion <> M:7 var
+R2594:2594 CAG.Kodaira.RationalKahlerCriterion <> L:9 var
+prf 2684:2714 <> hodge_metric_implies_projective
+R2730:2743 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2726:2726 <> M:10
+R2765:2908 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2751:2762 CAG.Kodaira.RationalKahlerCriterion <> hodge_metric def
+R2764:2764 CAG.Kodaira.RationalKahlerCriterion <> M:10 var
+R2909:2912 Corelib.Init.Logic <> True ind
+R2936:2936 Corelib.Init.Logic <> I constr
+R2936:2936 Corelib.Init.Logic <> I constr
+prf 3238:3264 <> projective_has_hodge_metric
+R3280:3293 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3276:3276 <> M:11
+R3337:3344 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3333:3336 Corelib.Init.Logic <> True ind
+R3345:3356 CAG.Kodaira.RationalKahlerCriterion <> hodge_metric def
+R3358:3358 CAG.Kodaira.RationalKahlerCriterion <> M:11 var
+R3391:3402 CAG.Kodaira.RationalKahlerCriterion <> hodge_metric def
+R3415:3421 CAG.LieAlgebra <> vs_zero proj
+R3424:3429 CAG.Kahler.Lefschetz.Operators <> HdR_vs defax
+R3415:3421 CAG.LieAlgebra <> vs_zero proj
+R3424:3429 CAG.Kahler.Lefschetz.Operators <> HdR_vs defax
+R3446:3446 Corelib.Init.Logic <> I constr
+R3446:3446 Corelib.Init.Logic <> I constr
+prf 3754:3783 <> kodaira_algebraicity_criterion
+R3799:3812 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3795:3795 <> M:12
+R3834:3906 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R3820:3831 CAG.Kodaira.RationalKahlerCriterion <> hodge_metric def
+R3833:3833 CAG.Kodaira.RationalKahlerCriterion <> M:12 var
+R3907:3910 Corelib.Init.Logic <> True ind
+R3958:3988 CAG.Kodaira.RationalKahlerCriterion <> hodge_metric_implies_projective thm
+R3958:3988 CAG.Kodaira.RationalKahlerCriterion <> hodge_metric_implies_projective thm
+R4007:4033 CAG.Kodaira.RationalKahlerCriterion <> projective_has_hodge_metric thm
+R4037:4037 Corelib.Init.Logic <> I constr
+R4007:4033 CAG.Kodaira.RationalKahlerCriterion <> projective_has_hodge_metric thm
+R4037:4037 Corelib.Init.Logic <> I constr

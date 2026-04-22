@@ -1,1 +1,1 @@
-# Complex-Algebraic-Geometry
+This project is a Rocq/Coq formalization effort built around a constructive foundation for complex algebraic geometry following "Principles of Algebraic Geometry" by Griffiths and Harris, "Introduction to Lie Algebras and Representation Theory" by Humphreys, and "Categories for Types" by Crole.

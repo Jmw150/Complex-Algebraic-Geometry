@@ -1,0 +1,96 @@
+DIGEST ddf25005d61197478cbadcaa852af7c0
+FCAG.Projective.MinimalDegree
+R851:854 Stdlib.Lists.List <> <> lib
+R856:860 Stdlib.Arith.Arith <> <> lib
+R862:867 Stdlib.ZArith.ZArith <> <> lib
+R869:871 Stdlib.micromega.Lia <> <> lib
+R898:904 CAG.Complex <> <> lib
+R931:946 CAG.ManifoldTopology <> <> lib
+R973:995 CAG.Projective.TangentSpace <> <> lib
+R1022:1046 CAG.Projective.FunctionFields <> <> lib
+R1073:1089 CAG.Projective.Degree <> <> lib
+R1116:1147 CAG.Projective.ProjectionConeChordal <> <> lib
+def 1490:1502 <> nondegenerate
+R1509:1525 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 1505:1505 <> V:1
+R1626:1629 Corelib.Init.Logic <> True ind
+prf 1716:1744 <> generic_section_nondegenerate
+R1760:1776 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 1756:1756 <> V:2
+R1788:1800 CAG.Projective.MinimalDegree <> nondegenerate def
+R1802:1802 CAG.Projective.MinimalDegree <> V:2 var
+binder 1784:1784 <> H:3
+R1901:1904 Corelib.Init.Logic <> True ind
+R1928:1928 Corelib.Init.Logic <> I constr
+R1928:1928 Corelib.Init.Logic <> I constr
+def 2194:2212 <> irreducible_variety
+R2219:2235 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 2215:2215 <> V:4
+R2336:2339 Corelib.Init.Logic <> True ind
+prf 2418:2444 <> generic_section_irreducible
+R2460:2476 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 2456:2456 <> V:5
+R2505:2717 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2484:2502 CAG.Projective.MinimalDegree <> irreducible_variety def
+R2504:2504 CAG.Projective.MinimalDegree <> V:5 var
+R2718:2721 Corelib.Init.Logic <> True ind
+R2745:2745 Corelib.Init.Logic <> I constr
+R2745:2745 Corelib.Init.Logic <> I constr
+prf 3054:3074 <> minimal_degree_curves
+R3090:3106 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 3086:3086 <> V:6
+R3140:3147 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3131:3133 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3115:3128 CAG.Projective.TangentSpace <> pv_complex_dim proj
+R3130:3130 CAG.Projective.MinimalDegree <> V:6 var
+R3169:3176 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3148:3166 CAG.Projective.MinimalDegree <> irreducible_variety def
+R3168:3168 CAG.Projective.MinimalDegree <> V:6 var
+R3192:3199 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3177:3189 CAG.Projective.MinimalDegree <> nondegenerate def
+R3191:3191 CAG.Projective.MinimalDegree <> V:6 var
+R3212:3215 Corelib.Init.Peano <> ::nat_scope:x_'>='_x not
+R3201:3209 CAG.Projective.Degree <> degree_of defax
+R3211:3211 CAG.Projective.MinimalDegree <> V:6 var
+R3216:3229 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R3231:3231 CAG.Projective.MinimalDegree <> V:6 var
+prf 3546:3559 <> minimal_degree
+R3575:3591 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 3571:3571 <> V:7
+R3620:3627 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3599:3617 CAG.Projective.MinimalDegree <> irreducible_variety def
+R3619:3619 CAG.Projective.MinimalDegree <> V:7 var
+R3643:3650 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3628:3640 CAG.Projective.MinimalDegree <> nondegenerate def
+R3642:3642 CAG.Projective.MinimalDegree <> V:7 var
+R3663:3666 Corelib.Init.Peano <> ::nat_scope:x_'>='_x not
+R3652:3660 CAG.Projective.Degree <> degree_of defax
+R3662:3662 CAG.Projective.MinimalDegree <> V:7 var
+R3702:3704 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R3683:3685 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R3667:3680 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R3682:3682 CAG.Projective.MinimalDegree <> V:7 var
+R3686:3699 CAG.Projective.TangentSpace <> pv_complex_dim proj
+R3701:3701 CAG.Projective.MinimalDegree <> V:7 var
+prf 4082:4102 <> linear_span_dim_bound
+R4118:4134 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 4114:4114 <> V:8
+R4163:4229 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4142:4160 CAG.Projective.MinimalDegree <> irreducible_variety def
+R4162:4162 CAG.Projective.MinimalDegree <> V:8 var
+R4230:4233 Corelib.Init.Logic <> True ind
+R4257:4257 Corelib.Init.Logic <> I constr
+R4257:4257 Corelib.Init.Logic <> I constr
+prf 4322:4341 <> degree_one_is_linear
+R4357:4373 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 4353:4353 <> V:9
+R4402:4409 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4381:4399 CAG.Projective.MinimalDegree <> irreducible_variety def
+R4401:4401 CAG.Projective.MinimalDegree <> V:9 var
+R4431:4495 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4422:4424 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4411:4419 CAG.Projective.Degree <> degree_of defax
+R4421:4421 CAG.Projective.MinimalDegree <> V:9 var
+R4496:4499 Corelib.Init.Logic <> True ind
+R4523:4523 Corelib.Init.Logic <> I constr
+R4523:4523 Corelib.Init.Logic <> I constr

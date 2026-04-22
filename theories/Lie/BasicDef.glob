@@ -1,0 +1,1457 @@
+DIGEST fa777d75274ea45648dee8571526cc46
+FCAG.Lie.BasicDef
+R94:109 CAG.Galois.Field <> <> lib
+rec 120:131 <> VectorSpaceF
+proj 185:191 <> vsF_add
+proj 212:219 <> vsF_zero
+proj 229:235 <> vsF_neg
+proj 251:259 <> vsF_scale
+proj 278:290 <> vsF_add_assoc
+proj 366:377 <> vsF_add_comm
+proj 424:437 <> vsF_add_zero_r
+proj 477:489 <> vsF_add_neg_r
+proj 540:552 <> vsF_scale_one
+proj 600:612 <> vsF_scale_mul
+proj 698:712 <> vsF_scale_add_v
+proj 805:819 <> vsF_scale_add_s
+binder 134:134 <> F:1
+R151:155 CAG.Galois.Field <> Field rec
+R157:157 CAG.Lie.BasicDef <> F:1 var
+binder 145:147 <> fld:2
+binder 161:161 <> V:3
+R198:201 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R197:197 CAG.Lie.BasicDef <> V:3 var
+R203:206 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R202:202 CAG.Lie.BasicDef <> V:3 var
+R207:207 CAG.Lie.BasicDef <> V:3 var
+R224:224 CAG.Lie.BasicDef <> V:3 var
+R242:245 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R241:241 CAG.Lie.BasicDef <> V:3 var
+R246:246 CAG.Lie.BasicDef <> V:3 var
+R264:267 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R263:263 CAG.Lie.BasicDef <> F:1 var
+R269:272 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R268:268 CAG.Lie.BasicDef <> V:3 var
+R273:273 CAG.Lie.BasicDef <> V:3 var
+binder 302:302 <> u:9
+binder 304:304 <> v:10
+binder 306:306 <> w:11
+R336:338 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R313:319 CAG.Lie.BasicDef <> vsF_add:5 meth
+R324:330 CAG.Lie.BasicDef <> vsF_add:5 meth
+R334:334 CAG.Lie.BasicDef <> w:11 var
+R332:332 CAG.Lie.BasicDef <> v:10 var
+R321:321 CAG.Lie.BasicDef <> u:9 var
+R339:345 CAG.Lie.BasicDef <> vsF_add:5 meth
+R361:361 CAG.Lie.BasicDef <> w:11 var
+R348:354 CAG.Lie.BasicDef <> vsF_add:5 meth
+R358:358 CAG.Lie.BasicDef <> v:10 var
+R356:356 CAG.Lie.BasicDef <> u:9 var
+binder 390:390 <> u:13
+binder 392:392 <> v:14
+R406:408 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R395:401 CAG.Lie.BasicDef <> vsF_add:5 meth
+R405:405 CAG.Lie.BasicDef <> v:14 var
+R403:403 CAG.Lie.BasicDef <> u:13 var
+R409:415 CAG.Lie.BasicDef <> vsF_add:5 meth
+R419:419 CAG.Lie.BasicDef <> u:13 var
+R417:417 CAG.Lie.BasicDef <> v:14 var
+binder 448:448 <> v:16
+R469:471 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R451:457 CAG.Lie.BasicDef <> vsF_add:5 meth
+R461:468 CAG.Lie.BasicDef <> vsF_zero:6 meth
+R459:459 CAG.Lie.BasicDef <> v:16 var
+R472:472 CAG.Lie.BasicDef <> v:16 var
+binder 501:501 <> v:18
+R525:527 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R504:510 CAG.Lie.BasicDef <> vsF_add:5 meth
+R515:521 CAG.Lie.BasicDef <> vsF_neg:7 meth
+R523:523 CAG.Lie.BasicDef <> v:18 var
+R512:512 CAG.Lie.BasicDef <> v:18 var
+R528:535 CAG.Lie.BasicDef <> vsF_zero:6 meth
+binder 565:565 <> v:20
+R592:594 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R568:576 CAG.Lie.BasicDef <> vsF_scale:8 meth
+R591:591 CAG.Lie.BasicDef <> v:20 var
+R579:584 CAG.Galois.Field <> cr_one proj
+R586:588 CAG.Lie.BasicDef <> fld:2 var
+R595:595 CAG.Lie.BasicDef <> v:20 var
+binder 625:625 <> a:22
+binder 627:627 <> b:23
+binder 629:629 <> v:24
+R663:665 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R636:644 CAG.Lie.BasicDef <> vsF_scale:8 meth
+R649:657 CAG.Lie.BasicDef <> vsF_scale:8 meth
+R661:661 CAG.Lie.BasicDef <> v:24 var
+R659:659 CAG.Lie.BasicDef <> b:23 var
+R646:646 CAG.Lie.BasicDef <> a:22 var
+R666:674 CAG.Lie.BasicDef <> vsF_scale:8 meth
+R693:693 CAG.Lie.BasicDef <> v:24 var
+R677:682 CAG.Galois.Field <> cr_mul proj
+R690:690 CAG.Lie.BasicDef <> b:23 var
+R688:688 CAG.Lie.BasicDef <> a:22 var
+R684:686 CAG.Lie.BasicDef <> fld:2 var
+binder 723:723 <> a:26
+binder 725:725 <> u:27
+binder 727:727 <> v:28
+R759:761 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R734:742 CAG.Lie.BasicDef <> vsF_scale:8 meth
+R747:753 CAG.Lie.BasicDef <> vsF_add:5 meth
+R757:757 CAG.Lie.BasicDef <> v:28 var
+R755:755 CAG.Lie.BasicDef <> u:27 var
+R744:744 CAG.Lie.BasicDef <> a:26 var
+R762:768 CAG.Lie.BasicDef <> vsF_add:5 meth
+R787:795 CAG.Lie.BasicDef <> vsF_scale:8 meth
+R799:799 CAG.Lie.BasicDef <> v:28 var
+R797:797 CAG.Lie.BasicDef <> a:26 var
+R771:779 CAG.Lie.BasicDef <> vsF_scale:8 meth
+R783:783 CAG.Lie.BasicDef <> u:27 var
+R781:781 CAG.Lie.BasicDef <> a:26 var
+binder 830:830 <> a:30
+binder 832:832 <> b:31
+binder 834:834 <> v:32
+R869:871 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R841:849 CAG.Lie.BasicDef <> vsF_scale:8 meth
+R868:868 CAG.Lie.BasicDef <> v:32 var
+R852:857 CAG.Galois.Field <> cr_add proj
+R865:865 CAG.Lie.BasicDef <> b:31 var
+R863:863 CAG.Lie.BasicDef <> a:30 var
+R859:861 CAG.Lie.BasicDef <> fld:2 var
+R872:878 CAG.Lie.BasicDef <> vsF_add:5 meth
+R897:905 CAG.Lie.BasicDef <> vsF_scale:8 meth
+R909:909 CAG.Lie.BasicDef <> v:32 var
+R907:907 CAG.Lie.BasicDef <> b:31 var
+R881:889 CAG.Lie.BasicDef <> vsF_scale:8 meth
+R893:893 CAG.Lie.BasicDef <> v:32 var
+R891:891 CAG.Lie.BasicDef <> a:30 var
+R927:933 CAG.Lie.BasicDef <> vsF_add proj
+R927:933 CAG.Lie.BasicDef <> vsF_add proj
+R964:971 CAG.Lie.BasicDef <> vsF_zero proj
+R964:971 CAG.Lie.BasicDef <> vsF_zero proj
+R997:1003 CAG.Lie.BasicDef <> vsF_neg proj
+R997:1003 CAG.Lie.BasicDef <> vsF_neg proj
+R1032:1040 CAG.Lie.BasicDef <> vsF_scale proj
+R1032:1040 CAG.Lie.BasicDef <> vsF_scale proj
+R1137:1149 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R1137:1149 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R1181:1192 CAG.Lie.BasicDef <> vsF_add_comm proj
+R1181:1192 CAG.Lie.BasicDef <> vsF_add_comm proj
+R1223:1236 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R1223:1236 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R1263:1275 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R1263:1275 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R1303:1315 CAG.Lie.BasicDef <> vsF_scale_one proj
+R1303:1315 CAG.Lie.BasicDef <> vsF_scale_one proj
+R1343:1355 CAG.Lie.BasicDef <> vsF_scale_mul proj
+R1343:1355 CAG.Lie.BasicDef <> vsF_scale_mul proj
+R1387:1401 CAG.Lie.BasicDef <> vsF_scale_add_v proj
+R1387:1401 CAG.Lie.BasicDef <> vsF_scale_add_v proj
+R1432:1446 CAG.Lie.BasicDef <> vsF_scale_add_s proj
+R1432:1446 CAG.Lie.BasicDef <> vsF_scale_add_s proj
+rec 1475:1485 <> LieAlgebraF
+proj 1539:1544 <> laF_vs
+proj 1576:1586 <> laF_bracket
+proj 1605:1621 <> laF_bracket_add_l
+proj 1738:1756 <> laF_bracket_scale_l
+proj 1861:1877 <> laF_bracket_add_r
+proj 1994:2012 <> laF_bracket_scale_r
+proj 2117:2131 <> laF_bracket_alt
+proj 2186:2195 <> laF_jacobi
+binder 1488:1488 <> F:34
+R1505:1509 CAG.Galois.Field <> Field rec
+R1511:1511 CAG.Lie.BasicDef <> F:34 var
+binder 1499:1501 <> fld:35
+binder 1515:1515 <> L:36
+R1554:1565 CAG.Lie.BasicDef <> VectorSpaceF rec
+R1571:1571 CAG.Lie.BasicDef <> L:36 var
+R1567:1569 CAG.Lie.BasicDef <> fld:35 var
+R1591:1594 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1590:1590 CAG.Lie.BasicDef <> L:36 var
+R1596:1599 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1595:1595 CAG.Lie.BasicDef <> L:36 var
+R1600:1600 CAG.Lie.BasicDef <> L:36 var
+binder 1632:1632 <> x:40
+binder 1634:1634 <> y:41
+binder 1636:1636 <> z:42
+R1677:1683 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1643:1653 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R1676:1676 CAG.Lie.BasicDef <> z:42 var
+R1656:1662 CAG.Lie.BasicDef <> vsF_add proj
+R1673:1673 CAG.Lie.BasicDef <> y:41 var
+R1671:1671 CAG.Lie.BasicDef <> x:40 var
+R1664:1669 CAG.Lie.BasicDef <> laF_vs:38 meth
+R1684:1690 CAG.Lie.BasicDef <> vsF_add proj
+R1718:1728 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R1732:1732 CAG.Lie.BasicDef <> z:42 var
+R1730:1730 CAG.Lie.BasicDef <> y:41 var
+R1700:1710 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R1714:1714 CAG.Lie.BasicDef <> z:42 var
+R1712:1712 CAG.Lie.BasicDef <> x:40 var
+R1692:1697 CAG.Lie.BasicDef <> laF_vs:38 meth
+binder 1767:1767 <> a:44
+binder 1769:1769 <> x:45
+binder 1771:1771 <> y:46
+R1814:1820 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1778:1788 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R1813:1813 CAG.Lie.BasicDef <> y:46 var
+R1791:1799 CAG.Lie.BasicDef <> vsF_scale proj
+R1810:1810 CAG.Lie.BasicDef <> x:45 var
+R1808:1808 CAG.Lie.BasicDef <> a:44 var
+R1801:1806 CAG.Lie.BasicDef <> laF_vs:38 meth
+R1821:1829 CAG.Lie.BasicDef <> vsF_scale proj
+R1841:1851 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R1855:1855 CAG.Lie.BasicDef <> y:46 var
+R1853:1853 CAG.Lie.BasicDef <> x:45 var
+R1838:1838 CAG.Lie.BasicDef <> a:44 var
+R1831:1836 CAG.Lie.BasicDef <> laF_vs:38 meth
+binder 1888:1888 <> x:48
+binder 1890:1890 <> y:49
+binder 1892:1892 <> z:50
+R1933:1939 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1899:1909 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R1914:1920 CAG.Lie.BasicDef <> vsF_add proj
+R1931:1931 CAG.Lie.BasicDef <> z:50 var
+R1929:1929 CAG.Lie.BasicDef <> y:49 var
+R1922:1927 CAG.Lie.BasicDef <> laF_vs:38 meth
+R1911:1911 CAG.Lie.BasicDef <> x:48 var
+R1940:1946 CAG.Lie.BasicDef <> vsF_add proj
+R1974:1984 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R1988:1988 CAG.Lie.BasicDef <> z:50 var
+R1986:1986 CAG.Lie.BasicDef <> x:48 var
+R1956:1966 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R1970:1970 CAG.Lie.BasicDef <> y:49 var
+R1968:1968 CAG.Lie.BasicDef <> x:48 var
+R1948:1953 CAG.Lie.BasicDef <> laF_vs:38 meth
+binder 2023:2023 <> a:52
+binder 2025:2025 <> x:53
+binder 2027:2027 <> y:54
+R2070:2076 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2034:2044 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R2049:2057 CAG.Lie.BasicDef <> vsF_scale proj
+R2068:2068 CAG.Lie.BasicDef <> y:54 var
+R2066:2066 CAG.Lie.BasicDef <> a:52 var
+R2059:2064 CAG.Lie.BasicDef <> laF_vs:38 meth
+R2046:2046 CAG.Lie.BasicDef <> x:53 var
+R2077:2085 CAG.Lie.BasicDef <> vsF_scale proj
+R2097:2107 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R2111:2111 CAG.Lie.BasicDef <> y:54 var
+R2109:2109 CAG.Lie.BasicDef <> x:53 var
+R2094:2094 CAG.Lie.BasicDef <> a:52 var
+R2087:2092 CAG.Lie.BasicDef <> laF_vs:38 meth
+binder 2142:2142 <> x:56
+R2164:2166 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2149:2159 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R2163:2163 CAG.Lie.BasicDef <> x:56 var
+R2161:2161 CAG.Lie.BasicDef <> x:56 var
+R2167:2174 CAG.Lie.BasicDef <> vsF_zero proj
+R2176:2181 CAG.Lie.BasicDef <> laF_vs:38 meth
+binder 2206:2206 <> x:58
+binder 2208:2208 <> y:59
+binder 2210:2210 <> z:60
+R2380:2386 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2217:2223 CAG.Lie.BasicDef <> vsF_add proj
+R2348:2358 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R2363:2373 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R2377:2377 CAG.Lie.BasicDef <> y:59 var
+R2375:2375 CAG.Lie.BasicDef <> x:58 var
+R2360:2360 CAG.Lie.BasicDef <> z:60 var
+R2239:2245 CAG.Lie.BasicDef <> vsF_add proj
+R2307:2317 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R2322:2332 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R2336:2336 CAG.Lie.BasicDef <> x:58 var
+R2334:2334 CAG.Lie.BasicDef <> z:60 var
+R2319:2319 CAG.Lie.BasicDef <> y:59 var
+R2264:2274 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R2279:2289 CAG.Lie.BasicDef <> laF_bracket:39 meth
+R2293:2293 CAG.Lie.BasicDef <> z:60 var
+R2291:2291 CAG.Lie.BasicDef <> y:59 var
+R2276:2276 CAG.Lie.BasicDef <> x:58 var
+R2247:2252 CAG.Lie.BasicDef <> laF_vs:38 meth
+R2225:2230 CAG.Lie.BasicDef <> laF_vs:38 meth
+R2387:2394 CAG.Lie.BasicDef <> vsF_zero proj
+R2396:2401 CAG.Lie.BasicDef <> laF_vs:38 meth
+R2418:2423 CAG.Lie.BasicDef <> laF_vs proj
+R2418:2423 CAG.Lie.BasicDef <> laF_vs proj
+R2453:2463 CAG.Lie.BasicDef <> laF_bracket proj
+R2453:2463 CAG.Lie.BasicDef <> laF_bracket proj
+R2559:2575 CAG.Lie.BasicDef <> laF_bracket_add_l proj
+R2559:2575 CAG.Lie.BasicDef <> laF_bracket_add_l proj
+R2608:2626 CAG.Lie.BasicDef <> laF_bracket_scale_l proj
+R2608:2626 CAG.Lie.BasicDef <> laF_bracket_scale_l proj
+R2657:2673 CAG.Lie.BasicDef <> laF_bracket_add_r proj
+R2657:2673 CAG.Lie.BasicDef <> laF_bracket_add_r proj
+R2706:2724 CAG.Lie.BasicDef <> laF_bracket_scale_r proj
+R2706:2724 CAG.Lie.BasicDef <> laF_bracket_scale_r proj
+R2755:2769 CAG.Lie.BasicDef <> laF_bracket_alt proj
+R2755:2769 CAG.Lie.BasicDef <> laF_bracket_alt proj
+R2800:2809 CAG.Lie.BasicDef <> laF_jacobi proj
+R2800:2809 CAG.Lie.BasicDef <> laF_jacobi proj
+abbrev 2925:2930 <> la_add
+R2941:2947 CAG.Lie.BasicDef <> vsF_add proj
+R2952:2957 CAG.Lie.BasicDef <> laF_vs proj
+abbrev 2974:2980 <> la_zero
+R2990:2997 CAG.Lie.BasicDef <> vsF_zero proj
+R3001:3006 CAG.Lie.BasicDef <> laF_vs proj
+abbrev 3023:3028 <> la_neg
+R3039:3045 CAG.Lie.BasicDef <> vsF_neg proj
+R3050:3055 CAG.Lie.BasicDef <> laF_vs proj
+abbrev 3072:3079 <> la_scale
+R3088:3096 CAG.Lie.BasicDef <> vsF_scale proj
+R3099:3104 CAG.Lie.BasicDef <> laF_vs proj
+prf 3186:3206 <> vsF_add_cancel_double
+binder 3209:3209 <> F:62
+R3226:3230 CAG.Galois.Field <> Field rec
+R3232:3232 CAG.Lie.BasicDef <> F:62 var
+binder 3220:3222 <> fld:63
+binder 3236:3236 <> V:64
+R3256:3267 CAG.Lie.BasicDef <> VectorSpaceF rec
+R3273:3273 CAG.Lie.BasicDef <> V:64 var
+R3269:3271 CAG.Lie.BasicDef <> fld:63 var
+binder 3251:3252 <> vs:65
+R3281:3281 CAG.Lie.BasicDef <> V:64 var
+binder 3277:3277 <> v:66
+R3308:3311 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3304:3306 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3290:3296 CAG.Lie.BasicDef <> vsF_add proj
+R3303:3303 CAG.Lie.BasicDef <> v:66 var
+R3301:3301 CAG.Lie.BasicDef <> v:66 var
+R3298:3299 CAG.Lie.BasicDef <> vs:65 var
+R3307:3307 CAG.Lie.BasicDef <> v:66 var
+R3313:3315 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3312:3312 CAG.Lie.BasicDef <> v:66 var
+R3316:3323 CAG.Lie.BasicDef <> vsF_zero proj
+R3325:3326 CAG.Lie.BasicDef <> vs:65 var
+R3389:3391 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3362:3368 CAG.Lie.BasicDef <> vsF_add proj
+R3376:3382 CAG.Lie.BasicDef <> vsF_neg proj
+R3392:3399 CAG.Lie.BasicDef <> vsF_zero proj
+R3418:3430 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R3389:3391 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3362:3368 CAG.Lie.BasicDef <> vsF_add proj
+R3376:3382 CAG.Lie.BasicDef <> vsF_neg proj
+R3392:3399 CAG.Lie.BasicDef <> vsF_zero proj
+R3418:3430 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R3491:3493 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3449:3455 CAG.Lie.BasicDef <> vsF_add proj
+R3478:3484 CAG.Lie.BasicDef <> vsF_neg proj
+R3461:3467 CAG.Lie.BasicDef <> vsF_add proj
+R3494:3501 CAG.Lie.BasicDef <> vsF_zero proj
+R3491:3493 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3449:3455 CAG.Lie.BasicDef <> vsF_add proj
+R3478:3484 CAG.Lie.BasicDef <> vsF_neg proj
+R3461:3467 CAG.Lie.BasicDef <> vsF_add proj
+R3494:3501 CAG.Lie.BasicDef <> vsF_zero proj
+R3554:3566 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R3554:3566 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R3554:3566 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R3610:3623 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R3610:3623 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R3610:3623 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+prf 3675:3688 <> vsF_add_zero_l
+binder 3691:3691 <> F:67
+R3708:3712 CAG.Galois.Field <> Field rec
+R3714:3714 CAG.Lie.BasicDef <> F:67 var
+binder 3702:3704 <> fld:68
+binder 3718:3718 <> V:69
+R3738:3749 CAG.Lie.BasicDef <> VectorSpaceF rec
+R3755:3755 CAG.Lie.BasicDef <> V:69 var
+R3751:3753 CAG.Lie.BasicDef <> fld:68 var
+binder 3733:3734 <> vs:70
+R3763:3763 CAG.Lie.BasicDef <> V:69 var
+binder 3759:3759 <> v:71
+R3798:3800 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3772:3778 CAG.Lie.BasicDef <> vsF_add proj
+R3797:3797 CAG.Lie.BasicDef <> v:71 var
+R3784:3791 CAG.Lie.BasicDef <> vsF_zero proj
+R3793:3794 CAG.Lie.BasicDef <> vs:70 var
+R3780:3781 CAG.Lie.BasicDef <> vs:70 var
+R3801:3801 CAG.Lie.BasicDef <> v:71 var
+R3825:3836 CAG.Lie.BasicDef <> vsF_add_comm proj
+R3825:3836 CAG.Lie.BasicDef <> vsF_add_comm proj
+R3825:3836 CAG.Lie.BasicDef <> vsF_add_comm proj
+R3850:3863 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R3850:3863 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+prf 3897:3908 <> vsF_neg_zero
+binder 3911:3911 <> F:72
+R3928:3932 CAG.Galois.Field <> Field rec
+R3934:3934 CAG.Lie.BasicDef <> F:72 var
+binder 3922:3924 <> fld:73
+binder 3938:3938 <> V:74
+R3958:3969 CAG.Lie.BasicDef <> VectorSpaceF rec
+R3975:3975 CAG.Lie.BasicDef <> V:74 var
+R3971:3973 CAG.Lie.BasicDef <> fld:73 var
+binder 3953:3954 <> vs:75
+R4008:4010 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3984:3990 CAG.Lie.BasicDef <> vsF_neg proj
+R3996:4003 CAG.Lie.BasicDef <> vsF_zero proj
+R4005:4006 CAG.Lie.BasicDef <> vs:75 var
+R3992:3993 CAG.Lie.BasicDef <> vs:75 var
+R4011:4018 CAG.Lie.BasicDef <> vsF_zero proj
+R4020:4021 CAG.Lie.BasicDef <> vs:75 var
+R4096:4098 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4045:4051 CAG.Lie.BasicDef <> vsF_add proj
+R4071:4077 CAG.Lie.BasicDef <> vsF_neg proj
+R4083:4090 CAG.Lie.BasicDef <> vsF_zero proj
+R4057:4064 CAG.Lie.BasicDef <> vsF_zero proj
+R4099:4106 CAG.Lie.BasicDef <> vsF_zero proj
+R4129:4141 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R4096:4098 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4045:4051 CAG.Lie.BasicDef <> vsF_add proj
+R4071:4077 CAG.Lie.BasicDef <> vsF_neg proj
+R4083:4090 CAG.Lie.BasicDef <> vsF_zero proj
+R4057:4064 CAG.Lie.BasicDef <> vsF_zero proj
+R4099:4106 CAG.Lie.BasicDef <> vsF_zero proj
+R4129:4141 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R4159:4170 CAG.Lie.BasicDef <> vsF_add_comm proj
+R4159:4170 CAG.Lie.BasicDef <> vsF_add_comm proj
+R4159:4170 CAG.Lie.BasicDef <> vsF_add_comm proj
+R4193:4206 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R4193:4206 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R4193:4206 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+prf 4256:4271 <> vsF_scale_zero_v
+binder 4274:4274 <> F:76
+R4291:4295 CAG.Galois.Field <> Field rec
+R4297:4297 CAG.Lie.BasicDef <> F:76 var
+binder 4285:4287 <> fld:77
+binder 4301:4301 <> V:78
+R4321:4332 CAG.Lie.BasicDef <> VectorSpaceF rec
+R4338:4338 CAG.Lie.BasicDef <> V:78 var
+R4334:4336 CAG.Lie.BasicDef <> fld:77 var
+binder 4316:4317 <> vs:79
+R4346:4346 CAG.Lie.BasicDef <> F:76 var
+binder 4342:4342 <> a:80
+R4383:4385 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4355:4363 CAG.Lie.BasicDef <> vsF_scale proj
+R4371:4378 CAG.Lie.BasicDef <> vsF_zero proj
+R4380:4381 CAG.Lie.BasicDef <> vs:79 var
+R4368:4368 CAG.Lie.BasicDef <> a:80 var
+R4365:4366 CAG.Lie.BasicDef <> vs:79 var
+R4386:4393 CAG.Lie.BasicDef <> vsF_zero proj
+R4395:4396 CAG.Lie.BasicDef <> vs:79 var
+R4414:4434 CAG.Lie.BasicDef <> vsF_add_cancel_double thm
+R4414:4434 CAG.Lie.BasicDef <> vsF_add_cancel_double thm
+R4454:4468 CAG.Lie.BasicDef <> vsF_scale_add_v proj
+R4454:4468 CAG.Lie.BasicDef <> vsF_scale_add_v proj
+R4454:4468 CAG.Lie.BasicDef <> vsF_scale_add_v proj
+R4495:4508 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R4495:4508 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+prf 4524:4541 <> laF_bracket_zero_r
+binder 4544:4544 <> F:81
+R4561:4565 CAG.Galois.Field <> Field rec
+R4567:4567 CAG.Lie.BasicDef <> F:81 var
+binder 4555:4557 <> fld:82
+binder 4571:4571 <> L:83
+R4591:4601 CAG.Lie.BasicDef <> LieAlgebraF rec
+R4607:4607 CAG.Lie.BasicDef <> L:83 var
+R4603:4605 CAG.Lie.BasicDef <> fld:82 var
+binder 4586:4587 <> la:84
+R4615:4615 CAG.Lie.BasicDef <> L:83 var
+binder 4611:4611 <> x:85
+R4653:4655 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4624:4634 CAG.Lie.BasicDef <> laF_bracket proj
+R4642:4648 CAG.Lie.BasicDef <> la_zero abbrev
+R4650:4651 CAG.Lie.BasicDef <> la:84 var
+R4639:4639 CAG.Lie.BasicDef <> x:85 var
+R4636:4637 CAG.Lie.BasicDef <> la:84 var
+R4656:4662 CAG.Lie.BasicDef <> la_zero abbrev
+R4664:4665 CAG.Lie.BasicDef <> la:84 var
+R4684:4704 CAG.Lie.BasicDef <> vsF_add_cancel_double thm
+R4707:4712 CAG.Lie.BasicDef <> laF_vs proj
+R4684:4704 CAG.Lie.BasicDef <> vsF_add_cancel_double thm
+R4707:4712 CAG.Lie.BasicDef <> laF_vs proj
+R4737:4753 CAG.Lie.BasicDef <> laF_bracket_add_r proj
+R4737:4753 CAG.Lie.BasicDef <> laF_bracket_add_r proj
+R4737:4753 CAG.Lie.BasicDef <> laF_bracket_add_r proj
+R4789:4802 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R4777:4782 CAG.Lie.BasicDef <> laF_vs proj
+R4789:4802 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R4777:4782 CAG.Lie.BasicDef <> laF_vs proj
+prf 4818:4835 <> laF_bracket_zero_l
+binder 4838:4838 <> F:86
+R4855:4859 CAG.Galois.Field <> Field rec
+R4861:4861 CAG.Lie.BasicDef <> F:86 var
+binder 4849:4851 <> fld:87
+binder 4865:4865 <> L:88
+R4885:4895 CAG.Lie.BasicDef <> LieAlgebraF rec
+R4901:4901 CAG.Lie.BasicDef <> L:88 var
+R4897:4899 CAG.Lie.BasicDef <> fld:87 var
+binder 4880:4881 <> la:89
+R4909:4909 CAG.Lie.BasicDef <> L:88 var
+binder 4905:4905 <> x:90
+R4947:4949 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4918:4928 CAG.Lie.BasicDef <> laF_bracket proj
+R4946:4946 CAG.Lie.BasicDef <> x:90 var
+R4934:4940 CAG.Lie.BasicDef <> la_zero abbrev
+R4942:4943 CAG.Lie.BasicDef <> la:89 var
+R4930:4931 CAG.Lie.BasicDef <> la:89 var
+R4950:4956 CAG.Lie.BasicDef <> la_zero abbrev
+R4958:4959 CAG.Lie.BasicDef <> la:89 var
+R4978:4998 CAG.Lie.BasicDef <> vsF_add_cancel_double thm
+R5001:5006 CAG.Lie.BasicDef <> laF_vs proj
+R4978:4998 CAG.Lie.BasicDef <> vsF_add_cancel_double thm
+R5001:5006 CAG.Lie.BasicDef <> laF_vs proj
+R5031:5047 CAG.Lie.BasicDef <> laF_bracket_add_l proj
+R5031:5047 CAG.Lie.BasicDef <> laF_bracket_add_l proj
+R5031:5047 CAG.Lie.BasicDef <> laF_bracket_add_l proj
+R5083:5096 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R5071:5076 CAG.Lie.BasicDef <> laF_vs proj
+R5083:5096 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R5071:5076 CAG.Lie.BasicDef <> laF_vs proj
+prf 5112:5128 <> laF_bracket_neg_r
+binder 5131:5131 <> F:91
+R5148:5152 CAG.Galois.Field <> Field rec
+R5154:5154 CAG.Lie.BasicDef <> F:91 var
+binder 5142:5144 <> fld:92
+binder 5158:5158 <> L:93
+R5178:5188 CAG.Lie.BasicDef <> LieAlgebraF rec
+R5194:5194 CAG.Lie.BasicDef <> L:93 var
+R5190:5192 CAG.Lie.BasicDef <> fld:92 var
+binder 5173:5174 <> la:94
+R5204:5204 CAG.Lie.BasicDef <> L:93 var
+binder 5198:5198 <> x:95
+binder 5200:5200 <> y:96
+R5243:5245 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5213:5223 CAG.Lie.BasicDef <> laF_bracket proj
+R5231:5236 CAG.Lie.BasicDef <> la_neg abbrev
+R5238:5239 CAG.Lie.BasicDef <> la:94 var
+R5241:5241 CAG.Lie.BasicDef <> y:96 var
+R5228:5228 CAG.Lie.BasicDef <> x:95 var
+R5225:5226 CAG.Lie.BasicDef <> la:94 var
+R5246:5251 CAG.Lie.BasicDef <> la_neg abbrev
+R5253:5254 CAG.Lie.BasicDef <> la:94 var
+R5257:5267 CAG.Lie.BasicDef <> laF_bracket proj
+R5274:5274 CAG.Lie.BasicDef <> y:96 var
+R5272:5272 CAG.Lie.BasicDef <> x:95 var
+R5269:5270 CAG.Lie.BasicDef <> la:94 var
+R5365:5367 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5302:5307 CAG.Lie.BasicDef <> la_add abbrev
+R5334:5344 CAG.Lie.BasicDef <> laF_bracket proj
+R5352:5357 CAG.Lie.BasicDef <> la_neg abbrev
+R5313:5323 CAG.Lie.BasicDef <> laF_bracket proj
+R5368:5374 CAG.Lie.BasicDef <> la_zero abbrev
+R5365:5367 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5302:5307 CAG.Lie.BasicDef <> la_add abbrev
+R5334:5344 CAG.Lie.BasicDef <> laF_bracket proj
+R5352:5357 CAG.Lie.BasicDef <> la_neg abbrev
+R5313:5323 CAG.Lie.BasicDef <> laF_bracket proj
+R5368:5374 CAG.Lie.BasicDef <> la_zero abbrev
+R5400:5416 CAG.Lie.BasicDef <> laF_bracket_add_r proj
+R5400:5416 CAG.Lie.BasicDef <> laF_bracket_add_r proj
+R5400:5416 CAG.Lie.BasicDef <> laF_bracket_add_r proj
+R5445:5457 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R5433:5438 CAG.Lie.BasicDef <> laF_vs proj
+R5445:5457 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R5433:5438 CAG.Lie.BasicDef <> laF_vs proj
+R5445:5457 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R5433:5438 CAG.Lie.BasicDef <> laF_vs proj
+R5471:5488 CAG.Lie.BasicDef <> laF_bracket_zero_r thm
+R5471:5488 CAG.Lie.BasicDef <> laF_bracket_zero_r thm
+R5574:5576 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5511:5516 CAG.Lie.BasicDef <> la_add abbrev
+R5555:5565 CAG.Lie.BasicDef <> laF_bracket proj
+R5522:5532 CAG.Lie.BasicDef <> laF_bracket proj
+R5540:5545 CAG.Lie.BasicDef <> la_neg abbrev
+R5577:5583 CAG.Lie.BasicDef <> la_zero abbrev
+R5574:5576 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5511:5516 CAG.Lie.BasicDef <> la_add abbrev
+R5555:5565 CAG.Lie.BasicDef <> laF_bracket proj
+R5522:5532 CAG.Lie.BasicDef <> laF_bracket proj
+R5540:5545 CAG.Lie.BasicDef <> la_neg abbrev
+R5577:5583 CAG.Lie.BasicDef <> la_zero abbrev
+R5615:5626 CAG.Lie.BasicDef <> vsF_add_comm proj
+R5603:5608 CAG.Lie.BasicDef <> laF_vs proj
+R5615:5626 CAG.Lie.BasicDef <> vsF_add_comm proj
+R5603:5608 CAG.Lie.BasicDef <> laF_vs proj
+R5615:5626 CAG.Lie.BasicDef <> vsF_add_comm proj
+R5603:5608 CAG.Lie.BasicDef <> laF_vs proj
+R5658:5671 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R5686:5696 CAG.Lie.BasicDef <> laF_bracket proj
+R5704:5709 CAG.Lie.BasicDef <> la_neg abbrev
+R5674:5679 CAG.Lie.BasicDef <> laF_vs proj
+R5658:5671 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R5686:5696 CAG.Lie.BasicDef <> laF_bracket proj
+R5704:5709 CAG.Lie.BasicDef <> la_neg abbrev
+R5674:5679 CAG.Lie.BasicDef <> laF_vs proj
+R5658:5671 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R5686:5696 CAG.Lie.BasicDef <> laF_bracket proj
+R5704:5709 CAG.Lie.BasicDef <> la_neg abbrev
+R5674:5679 CAG.Lie.BasicDef <> laF_vs proj
+R5734:5746 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R5761:5771 CAG.Lie.BasicDef <> laF_bracket proj
+R5749:5754 CAG.Lie.BasicDef <> laF_vs proj
+R5734:5746 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R5761:5771 CAG.Lie.BasicDef <> laF_bracket proj
+R5749:5754 CAG.Lie.BasicDef <> laF_vs proj
+R5734:5746 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R5761:5771 CAG.Lie.BasicDef <> laF_bracket proj
+R5749:5754 CAG.Lie.BasicDef <> laF_vs proj
+R5806:5818 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R5794:5799 CAG.Lie.BasicDef <> laF_vs proj
+R5806:5818 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R5794:5799 CAG.Lie.BasicDef <> laF_vs proj
+R5806:5818 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R5794:5799 CAG.Lie.BasicDef <> laF_vs proj
+R5862:5873 CAG.Lie.BasicDef <> vsF_add_comm proj
+R5850:5855 CAG.Lie.BasicDef <> laF_vs proj
+R5862:5873 CAG.Lie.BasicDef <> vsF_add_comm proj
+R5850:5855 CAG.Lie.BasicDef <> laF_vs proj
+R5862:5873 CAG.Lie.BasicDef <> vsF_add_comm proj
+R5850:5855 CAG.Lie.BasicDef <> laF_vs proj
+R5898:5911 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R5886:5891 CAG.Lie.BasicDef <> laF_vs proj
+R5898:5911 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R5886:5891 CAG.Lie.BasicDef <> laF_vs proj
+prf 5927:5943 <> laF_bracket_neg_l
+binder 5946:5946 <> F:97
+R5963:5967 CAG.Galois.Field <> Field rec
+R5969:5969 CAG.Lie.BasicDef <> F:97 var
+binder 5957:5959 <> fld:98
+binder 5973:5973 <> L:99
+R5993:6003 CAG.Lie.BasicDef <> LieAlgebraF rec
+R6009:6009 CAG.Lie.BasicDef <> L:99 var
+R6005:6007 CAG.Lie.BasicDef <> fld:98 var
+binder 5988:5989 <> la:100
+R6019:6019 CAG.Lie.BasicDef <> L:99 var
+binder 6013:6013 <> x:101
+binder 6015:6015 <> y:102
+R6058:6060 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6028:6038 CAG.Lie.BasicDef <> laF_bracket proj
+R6057:6057 CAG.Lie.BasicDef <> y:102 var
+R6044:6049 CAG.Lie.BasicDef <> la_neg abbrev
+R6051:6052 CAG.Lie.BasicDef <> la:100 var
+R6054:6054 CAG.Lie.BasicDef <> x:101 var
+R6040:6041 CAG.Lie.BasicDef <> la:100 var
+R6061:6066 CAG.Lie.BasicDef <> la_neg abbrev
+R6068:6069 CAG.Lie.BasicDef <> la:100 var
+R6072:6082 CAG.Lie.BasicDef <> laF_bracket proj
+R6089:6089 CAG.Lie.BasicDef <> y:102 var
+R6087:6087 CAG.Lie.BasicDef <> x:101 var
+R6084:6085 CAG.Lie.BasicDef <> la:100 var
+R6180:6182 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6117:6122 CAG.Lie.BasicDef <> la_add abbrev
+R6161:6171 CAG.Lie.BasicDef <> laF_bracket proj
+R6128:6138 CAG.Lie.BasicDef <> laF_bracket proj
+R6144:6149 CAG.Lie.BasicDef <> la_neg abbrev
+R6183:6189 CAG.Lie.BasicDef <> la_zero abbrev
+R6180:6182 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6117:6122 CAG.Lie.BasicDef <> la_add abbrev
+R6161:6171 CAG.Lie.BasicDef <> laF_bracket proj
+R6128:6138 CAG.Lie.BasicDef <> laF_bracket proj
+R6144:6149 CAG.Lie.BasicDef <> la_neg abbrev
+R6183:6189 CAG.Lie.BasicDef <> la_zero abbrev
+R6215:6231 CAG.Lie.BasicDef <> laF_bracket_add_l proj
+R6215:6231 CAG.Lie.BasicDef <> laF_bracket_add_l proj
+R6215:6231 CAG.Lie.BasicDef <> laF_bracket_add_l proj
+R6260:6271 CAG.Lie.BasicDef <> vsF_add_comm proj
+R6248:6253 CAG.Lie.BasicDef <> laF_vs proj
+R6260:6271 CAG.Lie.BasicDef <> vsF_add_comm proj
+R6248:6253 CAG.Lie.BasicDef <> laF_vs proj
+R6260:6271 CAG.Lie.BasicDef <> vsF_add_comm proj
+R6248:6253 CAG.Lie.BasicDef <> laF_vs proj
+R6300:6312 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R6288:6293 CAG.Lie.BasicDef <> laF_vs proj
+R6300:6312 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R6288:6293 CAG.Lie.BasicDef <> laF_vs proj
+R6300:6312 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R6288:6293 CAG.Lie.BasicDef <> laF_vs proj
+R6326:6343 CAG.Lie.BasicDef <> laF_bracket_zero_l thm
+R6326:6343 CAG.Lie.BasicDef <> laF_bracket_zero_l thm
+R6362:6375 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R6390:6400 CAG.Lie.BasicDef <> laF_bracket proj
+R6406:6411 CAG.Lie.BasicDef <> la_neg abbrev
+R6378:6383 CAG.Lie.BasicDef <> laF_vs proj
+R6362:6375 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R6390:6400 CAG.Lie.BasicDef <> laF_bracket proj
+R6406:6411 CAG.Lie.BasicDef <> la_neg abbrev
+R6378:6383 CAG.Lie.BasicDef <> laF_vs proj
+R6362:6375 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R6390:6400 CAG.Lie.BasicDef <> laF_bracket proj
+R6406:6411 CAG.Lie.BasicDef <> la_neg abbrev
+R6378:6383 CAG.Lie.BasicDef <> laF_vs proj
+R6438:6450 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R6465:6475 CAG.Lie.BasicDef <> laF_bracket proj
+R6453:6458 CAG.Lie.BasicDef <> laF_vs proj
+R6438:6450 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R6465:6475 CAG.Lie.BasicDef <> laF_bracket proj
+R6453:6458 CAG.Lie.BasicDef <> laF_vs proj
+R6438:6450 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R6465:6475 CAG.Lie.BasicDef <> laF_bracket proj
+R6453:6458 CAG.Lie.BasicDef <> laF_vs proj
+R6510:6522 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R6498:6503 CAG.Lie.BasicDef <> laF_vs proj
+R6510:6522 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R6498:6503 CAG.Lie.BasicDef <> laF_vs proj
+R6510:6522 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R6498:6503 CAG.Lie.BasicDef <> laF_vs proj
+R6565:6576 CAG.Lie.BasicDef <> vsF_add_comm proj
+R6553:6558 CAG.Lie.BasicDef <> laF_vs proj
+R6565:6576 CAG.Lie.BasicDef <> vsF_add_comm proj
+R6553:6558 CAG.Lie.BasicDef <> laF_vs proj
+R6565:6576 CAG.Lie.BasicDef <> vsF_add_comm proj
+R6553:6558 CAG.Lie.BasicDef <> laF_vs proj
+R6601:6614 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R6589:6594 CAG.Lie.BasicDef <> laF_vs proj
+R6601:6614 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R6589:6594 CAG.Lie.BasicDef <> laF_vs proj
+prf 6630:6641 <> laF_anticomm
+binder 6644:6644 <> F:103
+R6661:6665 CAG.Galois.Field <> Field rec
+R6667:6667 CAG.Lie.BasicDef <> F:103 var
+binder 6655:6657 <> fld:104
+binder 6671:6671 <> L:105
+R6691:6701 CAG.Lie.BasicDef <> LieAlgebraF rec
+R6707:6707 CAG.Lie.BasicDef <> L:105 var
+R6703:6705 CAG.Lie.BasicDef <> fld:104 var
+binder 6686:6687 <> la:106
+R6717:6717 CAG.Lie.BasicDef <> L:105 var
+binder 6711:6711 <> x:107
+binder 6713:6713 <> y:108
+R6744:6746 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6726:6736 CAG.Lie.BasicDef <> laF_bracket proj
+R6743:6743 CAG.Lie.BasicDef <> y:108 var
+R6741:6741 CAG.Lie.BasicDef <> x:107 var
+R6738:6739 CAG.Lie.BasicDef <> la:106 var
+R6747:6752 CAG.Lie.BasicDef <> la_neg abbrev
+R6754:6755 CAG.Lie.BasicDef <> la:106 var
+R6758:6768 CAG.Lie.BasicDef <> laF_bracket proj
+R6775:6775 CAG.Lie.BasicDef <> x:107 var
+R6773:6773 CAG.Lie.BasicDef <> y:108 var
+R6770:6771 CAG.Lie.BasicDef <> la:106 var
+R6851:6853 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6800:6805 CAG.Lie.BasicDef <> la_add abbrev
+R6832:6842 CAG.Lie.BasicDef <> laF_bracket proj
+R6811:6821 CAG.Lie.BasicDef <> laF_bracket proj
+R6854:6860 CAG.Lie.BasicDef <> la_zero abbrev
+R6851:6853 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6800:6805 CAG.Lie.BasicDef <> la_add abbrev
+R6832:6842 CAG.Lie.BasicDef <> laF_bracket proj
+R6811:6821 CAG.Lie.BasicDef <> laF_bracket proj
+R6854:6860 CAG.Lie.BasicDef <> la_zero abbrev
+R6930:6932 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6884:6894 CAG.Lie.BasicDef <> laF_bracket proj
+R6916:6921 CAG.Lie.BasicDef <> la_add abbrev
+R6900:6905 CAG.Lie.BasicDef <> la_add abbrev
+R6933:6939 CAG.Lie.BasicDef <> la_zero abbrev
+R6964:6978 CAG.Lie.BasicDef <> laF_bracket_alt proj
+R6930:6932 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6884:6894 CAG.Lie.BasicDef <> laF_bracket proj
+R6916:6921 CAG.Lie.BasicDef <> la_add abbrev
+R6900:6905 CAG.Lie.BasicDef <> la_add abbrev
+R6933:6939 CAG.Lie.BasicDef <> la_zero abbrev
+R6964:6978 CAG.Lie.BasicDef <> laF_bracket_alt proj
+R6998:7014 CAG.Lie.BasicDef <> laF_bracket_add_l proj
+R6998:7014 CAG.Lie.BasicDef <> laF_bracket_add_l proj
+R6998:7014 CAG.Lie.BasicDef <> laF_bracket_add_l proj
+R7042:7058 CAG.Lie.BasicDef <> laF_bracket_add_r proj
+R7042:7058 CAG.Lie.BasicDef <> laF_bracket_add_r proj
+R7042:7058 CAG.Lie.BasicDef <> laF_bracket_add_r proj
+R7042:7058 CAG.Lie.BasicDef <> laF_bracket_add_r proj
+R7042:7058 CAG.Lie.BasicDef <> laF_bracket_add_r proj
+R7085:7099 CAG.Lie.BasicDef <> laF_bracket_alt proj
+R7085:7099 CAG.Lie.BasicDef <> laF_bracket_alt proj
+R7085:7099 CAG.Lie.BasicDef <> laF_bracket_alt proj
+R7129:7143 CAG.Lie.BasicDef <> laF_bracket_alt proj
+R7129:7143 CAG.Lie.BasicDef <> laF_bracket_alt proj
+R7129:7143 CAG.Lie.BasicDef <> laF_bracket_alt proj
+R7169:7182 CAG.Lie.BasicDef <> vsF_add_zero_l thm
+R7185:7190 CAG.Lie.BasicDef <> laF_vs proj
+R7169:7182 CAG.Lie.BasicDef <> vsF_add_zero_l thm
+R7185:7190 CAG.Lie.BasicDef <> laF_vs proj
+R7169:7182 CAG.Lie.BasicDef <> vsF_add_zero_l thm
+R7185:7190 CAG.Lie.BasicDef <> laF_vs proj
+R7229:7242 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R7217:7222 CAG.Lie.BasicDef <> laF_vs proj
+R7229:7242 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R7217:7222 CAG.Lie.BasicDef <> laF_vs proj
+R7229:7242 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R7217:7222 CAG.Lie.BasicDef <> laF_vs proj
+R7282:7295 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R7310:7320 CAG.Lie.BasicDef <> laF_bracket proj
+R7298:7303 CAG.Lie.BasicDef <> laF_vs proj
+R7282:7295 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R7310:7320 CAG.Lie.BasicDef <> laF_bracket proj
+R7298:7303 CAG.Lie.BasicDef <> laF_vs proj
+R7282:7295 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R7310:7320 CAG.Lie.BasicDef <> laF_bracket proj
+R7298:7303 CAG.Lie.BasicDef <> laF_vs proj
+R7346:7358 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R7373:7383 CAG.Lie.BasicDef <> laF_bracket proj
+R7361:7366 CAG.Lie.BasicDef <> laF_vs proj
+R7346:7358 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R7373:7383 CAG.Lie.BasicDef <> laF_bracket proj
+R7361:7366 CAG.Lie.BasicDef <> laF_vs proj
+R7346:7358 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R7373:7383 CAG.Lie.BasicDef <> laF_bracket proj
+R7361:7366 CAG.Lie.BasicDef <> laF_vs proj
+R7418:7430 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R7406:7411 CAG.Lie.BasicDef <> laF_vs proj
+R7418:7430 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R7406:7411 CAG.Lie.BasicDef <> laF_vs proj
+R7418:7430 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R7406:7411 CAG.Lie.BasicDef <> laF_vs proj
+R7470:7481 CAG.Lie.BasicDef <> vsF_add_comm proj
+R7458:7463 CAG.Lie.BasicDef <> laF_vs proj
+R7470:7481 CAG.Lie.BasicDef <> vsF_add_comm proj
+R7458:7463 CAG.Lie.BasicDef <> laF_vs proj
+R7470:7481 CAG.Lie.BasicDef <> vsF_add_comm proj
+R7458:7463 CAG.Lie.BasicDef <> laF_vs proj
+R7506:7519 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R7494:7499 CAG.Lie.BasicDef <> laF_vs proj
+R7506:7519 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R7494:7499 CAG.Lie.BasicDef <> laF_vs proj
+rec 7536:7547 <> IsSubalgebra
+proj 7646:7653 <> sub_zero
+proj 7678:7684 <> sub_add
+proj 7739:7745 <> sub_neg
+proj 7789:7797 <> sub_scale
+proj 7845:7855 <> sub_bracket
+binder 7550:7550 <> F:109
+R7567:7571 CAG.Galois.Field <> Field rec
+R7573:7573 CAG.Lie.BasicDef <> F:109 var
+binder 7561:7563 <> fld:110
+binder 7577:7577 <> L:111
+R7597:7607 CAG.Lie.BasicDef <> LieAlgebraF rec
+R7613:7613 CAG.Lie.BasicDef <> L:111 var
+R7609:7611 CAG.Lie.BasicDef <> fld:110 var
+binder 7592:7593 <> la:112
+R7622:7625 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7621:7621 CAG.Lie.BasicDef <> L:111 var
+binder 7617:7617 <> S:113
+R7660:7660 CAG.Lie.BasicDef <> S:113 var
+R7663:7669 CAG.Lie.BasicDef <> la_zero abbrev
+R7671:7672 CAG.Lie.BasicDef <> la:112 var
+binder 7699:7699 <> x:116
+binder 7701:7701 <> y:117
+R7707:7710 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7704:7704 CAG.Lie.BasicDef <> S:113 var
+R7706:7706 CAG.Lie.BasicDef <> x:116 var
+R7714:7717 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7711:7711 CAG.Lie.BasicDef <> S:113 var
+R7713:7713 CAG.Lie.BasicDef <> y:117 var
+R7718:7718 CAG.Lie.BasicDef <> S:113 var
+R7721:7726 CAG.Lie.BasicDef <> la_add abbrev
+R7728:7729 CAG.Lie.BasicDef <> la:112 var
+R7733:7733 CAG.Lie.BasicDef <> y:117 var
+R7731:7731 CAG.Lie.BasicDef <> x:116 var
+binder 7760:7760 <> x:119
+R7766:7769 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7763:7763 CAG.Lie.BasicDef <> S:113 var
+R7765:7765 CAG.Lie.BasicDef <> x:119 var
+R7770:7770 CAG.Lie.BasicDef <> S:113 var
+R7773:7778 CAG.Lie.BasicDef <> la_neg abbrev
+R7780:7781 CAG.Lie.BasicDef <> la:112 var
+R7783:7783 CAG.Lie.BasicDef <> x:119 var
+binder 7810:7810 <> a:121
+binder 7812:7812 <> x:122
+R7818:7821 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7815:7815 CAG.Lie.BasicDef <> S:113 var
+R7817:7817 CAG.Lie.BasicDef <> x:122 var
+R7822:7822 CAG.Lie.BasicDef <> S:113 var
+R7825:7832 CAG.Lie.BasicDef <> la_scale abbrev
+R7834:7835 CAG.Lie.BasicDef <> la:112 var
+R7839:7839 CAG.Lie.BasicDef <> x:122 var
+R7837:7837 CAG.Lie.BasicDef <> a:121 var
+binder 7866:7866 <> x:124
+binder 7868:7868 <> y:125
+R7874:7877 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7871:7871 CAG.Lie.BasicDef <> S:113 var
+R7873:7873 CAG.Lie.BasicDef <> x:124 var
+R7881:7884 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7878:7878 CAG.Lie.BasicDef <> S:113 var
+R7880:7880 CAG.Lie.BasicDef <> y:125 var
+R7885:7885 CAG.Lie.BasicDef <> S:113 var
+R7888:7898 CAG.Lie.BasicDef <> laF_bracket proj
+R7905:7905 CAG.Lie.BasicDef <> y:125 var
+R7903:7903 CAG.Lie.BasicDef <> x:124 var
+R7900:7901 CAG.Lie.BasicDef <> la:112 var
+R7923:7930 CAG.Lie.BasicDef <> sub_zero proj
+R7923:7930 CAG.Lie.BasicDef <> sub_zero proj
+R7961:7967 CAG.Lie.BasicDef <> sub_add proj
+R7961:7967 CAG.Lie.BasicDef <> sub_add proj
+R7999:8005 CAG.Lie.BasicDef <> sub_neg proj
+R7999:8005 CAG.Lie.BasicDef <> sub_neg proj
+R8037:8045 CAG.Lie.BasicDef <> sub_scale proj
+R8037:8045 CAG.Lie.BasicDef <> sub_scale proj
+R8075:8085 CAG.Lie.BasicDef <> sub_bracket proj
+R8075:8085 CAG.Lie.BasicDef <> sub_bracket proj
+prf 8110:8127 <> full_is_subalgebra
+binder 8130:8130 <> F:127
+R8147:8151 CAG.Galois.Field <> Field rec
+R8153:8153 CAG.Lie.BasicDef <> F:127 var
+binder 8141:8143 <> fld:128
+binder 8157:8157 <> L:129
+R8177:8187 CAG.Lie.BasicDef <> LieAlgebraF rec
+R8193:8193 CAG.Lie.BasicDef <> L:129 var
+R8189:8191 CAG.Lie.BasicDef <> fld:128 var
+binder 8172:8173 <> la:130
+R8198:8209 CAG.Lie.BasicDef <> IsSubalgebra rec
+R8224:8227 Corelib.Init.Logic <> True ind
+R8211:8212 CAG.Lie.BasicDef <> la:130 var
+R8265:8265 Corelib.Init.Logic <> I constr
+R8265:8265 Corelib.Init.Logic <> I constr
+R8265:8265 Corelib.Init.Logic <> I constr
+R8265:8265 Corelib.Init.Logic <> I constr
+R8265:8265 Corelib.Init.Logic <> I constr
+R8265:8265 Corelib.Init.Logic <> I constr
+prf 8280:8297 <> zero_is_subalgebra
+binder 8300:8300 <> F:131
+R8317:8321 CAG.Galois.Field <> Field rec
+R8323:8323 CAG.Lie.BasicDef <> F:131 var
+binder 8311:8313 <> fld:132
+binder 8327:8327 <> L:133
+R8347:8357 CAG.Lie.BasicDef <> LieAlgebraF rec
+R8363:8363 CAG.Lie.BasicDef <> L:133 var
+R8359:8361 CAG.Lie.BasicDef <> fld:132 var
+binder 8342:8343 <> la:134
+R8372:8383 CAG.Lie.BasicDef <> IsSubalgebra rec
+binder 8393:8393 <> x:135
+R8399:8401 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8398:8398 CAG.Lie.BasicDef <> x:135 var
+R8402:8408 CAG.Lie.BasicDef <> la_zero abbrev
+R8410:8411 CAG.Lie.BasicDef <> la:134 var
+R8385:8386 CAG.Lie.BasicDef <> la:134 var
+R8511:8524 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R8499:8504 CAG.Lie.BasicDef <> laF_vs proj
+R8511:8524 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R8499:8504 CAG.Lie.BasicDef <> laF_vs proj
+R8563:8574 CAG.Lie.BasicDef <> vsF_neg_zero thm
+R8563:8574 CAG.Lie.BasicDef <> vsF_neg_zero thm
+R8614:8629 CAG.Lie.BasicDef <> vsF_scale_zero_v thm
+R8614:8629 CAG.Lie.BasicDef <> vsF_scale_zero_v thm
+R8680:8694 CAG.Lie.BasicDef <> laF_bracket_alt proj
+R8680:8694 CAG.Lie.BasicDef <> laF_bracket_alt proj
+prf 8710:8725 <> inter_subalgebra
+binder 8728:8728 <> F:136
+R8745:8749 CAG.Galois.Field <> Field rec
+R8751:8751 CAG.Lie.BasicDef <> F:136 var
+binder 8739:8741 <> fld:137
+binder 8755:8755 <> L:138
+R8775:8785 CAG.Lie.BasicDef <> LieAlgebraF rec
+R8791:8791 CAG.Lie.BasicDef <> L:138 var
+R8787:8789 CAG.Lie.BasicDef <> fld:137 var
+binder 8770:8771 <> la:139
+R8802:8805 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8801:8801 CAG.Lie.BasicDef <> L:138 var
+binder 8795:8795 <> S:140
+binder 8797:8797 <> T:141
+R8835:8838 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8818:8829 CAG.Lie.BasicDef <> IsSubalgebra rec
+R8834:8834 CAG.Lie.BasicDef <> S:140 var
+R8831:8832 CAG.Lie.BasicDef <> la:139 var
+R8856:8863 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8839:8850 CAG.Lie.BasicDef <> IsSubalgebra rec
+R8855:8855 CAG.Lie.BasicDef <> T:141 var
+R8852:8853 CAG.Lie.BasicDef <> la:139 var
+R8864:8875 CAG.Lie.BasicDef <> IsSubalgebra rec
+binder 8885:8885 <> x:142
+R8893:8896 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R8890:8890 CAG.Lie.BasicDef <> S:140 var
+R8892:8892 CAG.Lie.BasicDef <> x:142 var
+R8897:8897 CAG.Lie.BasicDef <> T:141 var
+R8899:8899 CAG.Lie.BasicDef <> x:142 var
+R8877:8878 CAG.Lie.BasicDef <> la:139 var
+R8961:8968 CAG.Lie.BasicDef <> sub_zero proj
+R8983:8990 CAG.Lie.BasicDef <> sub_zero proj
+R8961:8968 CAG.Lie.BasicDef <> sub_zero proj
+R8983:8990 CAG.Lie.BasicDef <> sub_zero proj
+R9054:9060 CAG.Lie.BasicDef <> sub_add proj
+R9054:9060 CAG.Lie.BasicDef <> sub_add proj
+R9092:9098 CAG.Lie.BasicDef <> sub_add proj
+R9092:9098 CAG.Lie.BasicDef <> sub_add proj
+R9161:9167 CAG.Lie.BasicDef <> sub_neg proj
+R9161:9167 CAG.Lie.BasicDef <> sub_neg proj
+R9199:9205 CAG.Lie.BasicDef <> sub_neg proj
+R9199:9205 CAG.Lie.BasicDef <> sub_neg proj
+R9270:9278 CAG.Lie.BasicDef <> sub_scale proj
+R9270:9278 CAG.Lie.BasicDef <> sub_scale proj
+R9310:9318 CAG.Lie.BasicDef <> sub_scale proj
+R9310:9318 CAG.Lie.BasicDef <> sub_scale proj
+R9393:9403 CAG.Lie.BasicDef <> sub_bracket proj
+R9393:9403 CAG.Lie.BasicDef <> sub_bracket proj
+R9435:9445 CAG.Lie.BasicDef <> sub_bracket proj
+R9435:9445 CAG.Lie.BasicDef <> sub_bracket proj
+rec 9474:9479 <> LieHom
+proj 9589:9593 <> lh_fn
+proj 9612:9617 <> lh_add
+proj 9698:9705 <> lh_scale
+proj 9780:9789 <> lh_bracket
+binder 9482:9482 <> F:143
+R9499:9503 CAG.Galois.Field <> Field rec
+R9505:9505 CAG.Lie.BasicDef <> F:143 var
+binder 9493:9495 <> fld:144
+binder 9509:9509 <> L:145
+binder 9511:9511 <> M:146
+R9531:9541 CAG.Lie.BasicDef <> LieAlgebraF rec
+R9547:9547 CAG.Lie.BasicDef <> L:145 var
+R9543:9545 CAG.Lie.BasicDef <> fld:144 var
+binder 9526:9527 <> la:147
+R9556:9566 CAG.Lie.BasicDef <> LieAlgebraF rec
+R9572:9572 CAG.Lie.BasicDef <> M:146 var
+R9568:9570 CAG.Lie.BasicDef <> fld:144 var
+binder 9551:9552 <> lb:148
+R9603:9606 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9602:9602 CAG.Lie.BasicDef <> L:145 var
+R9607:9607 CAG.Lie.BasicDef <> M:146 var
+binder 9632:9632 <> x:151
+binder 9634:9634 <> y:152
+R9662:9664 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9641:9645 CAG.Lie.BasicDef <> lh_fn:150 meth
+R9648:9653 CAG.Lie.BasicDef <> la_add abbrev
+R9655:9656 CAG.Lie.BasicDef <> la:147 var
+R9660:9660 CAG.Lie.BasicDef <> y:152 var
+R9658:9658 CAG.Lie.BasicDef <> x:151 var
+R9665:9670 CAG.Lie.BasicDef <> la_add abbrev
+R9672:9673 CAG.Lie.BasicDef <> lb:148 var
+R9686:9690 CAG.Lie.BasicDef <> lh_fn:150 meth
+R9692:9692 CAG.Lie.BasicDef <> y:152 var
+R9676:9680 CAG.Lie.BasicDef <> lh_fn:150 meth
+R9682:9682 CAG.Lie.BasicDef <> x:151 var
+binder 9718:9718 <> a:154
+binder 9720:9720 <> x:155
+R9750:9752 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9727:9731 CAG.Lie.BasicDef <> lh_fn:150 meth
+R9734:9741 CAG.Lie.BasicDef <> la_scale abbrev
+R9743:9744 CAG.Lie.BasicDef <> la:147 var
+R9748:9748 CAG.Lie.BasicDef <> x:155 var
+R9746:9746 CAG.Lie.BasicDef <> a:154 var
+R9753:9760 CAG.Lie.BasicDef <> la_scale abbrev
+R9762:9763 CAG.Lie.BasicDef <> lb:148 var
+R9768:9772 CAG.Lie.BasicDef <> lh_fn:150 meth
+R9774:9774 CAG.Lie.BasicDef <> x:155 var
+R9765:9765 CAG.Lie.BasicDef <> a:154 var
+binder 9800:9800 <> x:157
+binder 9802:9802 <> y:158
+R9835:9837 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9809:9813 CAG.Lie.BasicDef <> lh_fn:150 meth
+R9816:9826 CAG.Lie.BasicDef <> laF_bracket proj
+R9833:9833 CAG.Lie.BasicDef <> y:158 var
+R9831:9831 CAG.Lie.BasicDef <> x:157 var
+R9828:9829 CAG.Lie.BasicDef <> la:147 var
+R9838:9848 CAG.Lie.BasicDef <> laF_bracket proj
+R9864:9868 CAG.Lie.BasicDef <> lh_fn:150 meth
+R9870:9870 CAG.Lie.BasicDef <> y:158 var
+R9854:9858 CAG.Lie.BasicDef <> lh_fn:150 meth
+R9860:9860 CAG.Lie.BasicDef <> x:157 var
+R9850:9851 CAG.Lie.BasicDef <> lb:148 var
+R9888:9892 CAG.Lie.BasicDef <> lh_fn proj
+R9888:9892 CAG.Lie.BasicDef <> lh_fn proj
+R9927:9932 CAG.Lie.BasicDef <> lh_add proj
+R9927:9932 CAG.Lie.BasicDef <> lh_add proj
+R9966:9973 CAG.Lie.BasicDef <> lh_scale proj
+R9966:9973 CAG.Lie.BasicDef <> lh_scale proj
+R10005:10014 CAG.Lie.BasicDef <> lh_bracket proj
+R10005:10014 CAG.Lie.BasicDef <> lh_bracket proj
+prf 10042:10048 <> lh_zero
+binder 10051:10051 <> F:160
+R10068:10072 CAG.Galois.Field <> Field rec
+R10074:10074 CAG.Lie.BasicDef <> F:160 var
+binder 10062:10064 <> fld:161
+binder 10078:10078 <> L:162
+binder 10080:10080 <> M:163
+R10100:10110 CAG.Lie.BasicDef <> LieAlgebraF rec
+R10116:10116 CAG.Lie.BasicDef <> L:162 var
+R10112:10114 CAG.Lie.BasicDef <> fld:161 var
+binder 10095:10096 <> la:164
+R10125:10135 CAG.Lie.BasicDef <> LieAlgebraF rec
+R10141:10141 CAG.Lie.BasicDef <> M:163 var
+R10137:10139 CAG.Lie.BasicDef <> fld:161 var
+binder 10120:10121 <> lb:165
+R10154:10159 CAG.Lie.BasicDef <> LieHom rec
+R10164:10165 CAG.Lie.BasicDef <> lb:165 var
+R10161:10162 CAG.Lie.BasicDef <> la:164 var
+binder 10149:10150 <> φ:166
+R10195:10197 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10174:10178 CAG.Lie.BasicDef <> lh_fn proj
+R10184:10190 CAG.Lie.BasicDef <> la_zero abbrev
+R10192:10193 CAG.Lie.BasicDef <> la:164 var
+R10180:10181 CAG.Lie.BasicDef <> φ:166 var
+R10198:10204 CAG.Lie.BasicDef <> la_zero abbrev
+R10206:10207 CAG.Lie.BasicDef <> lb:165 var
+R10226:10246 CAG.Lie.BasicDef <> vsF_add_cancel_double thm
+R10249:10254 CAG.Lie.BasicDef <> laF_vs proj
+R10226:10246 CAG.Lie.BasicDef <> vsF_add_cancel_double thm
+R10249:10254 CAG.Lie.BasicDef <> laF_vs proj
+R10279:10284 CAG.Lie.BasicDef <> lh_add proj
+R10279:10284 CAG.Lie.BasicDef <> lh_add proj
+R10279:10284 CAG.Lie.BasicDef <> lh_add proj
+R10320:10333 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R10308:10313 CAG.Lie.BasicDef <> laF_vs proj
+R10320:10333 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R10308:10313 CAG.Lie.BasicDef <> laF_vs proj
+prf 10349:10354 <> lh_neg
+binder 10357:10357 <> F:167
+R10374:10378 CAG.Galois.Field <> Field rec
+R10380:10380 CAG.Lie.BasicDef <> F:167 var
+binder 10368:10370 <> fld:168
+binder 10384:10384 <> L:169
+binder 10386:10386 <> M:170
+R10406:10416 CAG.Lie.BasicDef <> LieAlgebraF rec
+R10422:10422 CAG.Lie.BasicDef <> L:169 var
+R10418:10420 CAG.Lie.BasicDef <> fld:168 var
+binder 10401:10402 <> la:171
+R10431:10441 CAG.Lie.BasicDef <> LieAlgebraF rec
+R10447:10447 CAG.Lie.BasicDef <> M:170 var
+R10443:10445 CAG.Lie.BasicDef <> fld:168 var
+binder 10426:10427 <> lb:172
+R10460:10465 CAG.Lie.BasicDef <> LieHom rec
+R10470:10471 CAG.Lie.BasicDef <> lb:172 var
+R10467:10468 CAG.Lie.BasicDef <> la:171 var
+binder 10455:10456 <> φ:173
+R10479:10479 CAG.Lie.BasicDef <> L:169 var
+binder 10475:10475 <> x:174
+R10510:10512 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10488:10492 CAG.Lie.BasicDef <> lh_fn proj
+R10498:10503 CAG.Lie.BasicDef <> la_neg abbrev
+R10505:10506 CAG.Lie.BasicDef <> la:171 var
+R10508:10508 CAG.Lie.BasicDef <> x:174 var
+R10494:10495 CAG.Lie.BasicDef <> φ:173 var
+R10513:10518 CAG.Lie.BasicDef <> la_neg abbrev
+R10520:10521 CAG.Lie.BasicDef <> lb:172 var
+R10524:10528 CAG.Lie.BasicDef <> lh_fn proj
+R10533:10533 CAG.Lie.BasicDef <> x:174 var
+R10530:10531 CAG.Lie.BasicDef <> φ:173 var
+R10608:10610 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10561:10566 CAG.Lie.BasicDef <> la_add abbrev
+R10585:10589 CAG.Lie.BasicDef <> lh_fn proj
+R10595:10600 CAG.Lie.BasicDef <> la_neg abbrev
+R10572:10576 CAG.Lie.BasicDef <> lh_fn proj
+R10611:10617 CAG.Lie.BasicDef <> la_zero abbrev
+R10608:10610 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10561:10566 CAG.Lie.BasicDef <> la_add abbrev
+R10585:10589 CAG.Lie.BasicDef <> lh_fn proj
+R10595:10600 CAG.Lie.BasicDef <> la_neg abbrev
+R10572:10576 CAG.Lie.BasicDef <> lh_fn proj
+R10611:10617 CAG.Lie.BasicDef <> la_zero abbrev
+R10643:10648 CAG.Lie.BasicDef <> lh_add proj
+R10643:10648 CAG.Lie.BasicDef <> lh_add proj
+R10643:10648 CAG.Lie.BasicDef <> lh_add proj
+R10677:10689 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R10665:10670 CAG.Lie.BasicDef <> laF_vs proj
+R10677:10689 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R10665:10670 CAG.Lie.BasicDef <> laF_vs proj
+R10677:10689 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R10665:10670 CAG.Lie.BasicDef <> laF_vs proj
+R10703:10709 CAG.Lie.BasicDef <> lh_zero thm
+R10703:10709 CAG.Lie.BasicDef <> lh_zero thm
+R10779:10781 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10732:10737 CAG.Lie.BasicDef <> la_add abbrev
+R10768:10772 CAG.Lie.BasicDef <> lh_fn proj
+R10743:10747 CAG.Lie.BasicDef <> lh_fn proj
+R10753:10758 CAG.Lie.BasicDef <> la_neg abbrev
+R10782:10788 CAG.Lie.BasicDef <> la_zero abbrev
+R10779:10781 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10732:10737 CAG.Lie.BasicDef <> la_add abbrev
+R10768:10772 CAG.Lie.BasicDef <> lh_fn proj
+R10743:10747 CAG.Lie.BasicDef <> lh_fn proj
+R10753:10758 CAG.Lie.BasicDef <> la_neg abbrev
+R10782:10788 CAG.Lie.BasicDef <> la_zero abbrev
+R10820:10831 CAG.Lie.BasicDef <> vsF_add_comm proj
+R10808:10813 CAG.Lie.BasicDef <> laF_vs proj
+R10820:10831 CAG.Lie.BasicDef <> vsF_add_comm proj
+R10808:10813 CAG.Lie.BasicDef <> laF_vs proj
+R10820:10831 CAG.Lie.BasicDef <> vsF_add_comm proj
+R10808:10813 CAG.Lie.BasicDef <> laF_vs proj
+R10863:10876 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R10891:10895 CAG.Lie.BasicDef <> lh_fn proj
+R10901:10906 CAG.Lie.BasicDef <> la_neg abbrev
+R10879:10884 CAG.Lie.BasicDef <> laF_vs proj
+R10863:10876 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R10891:10895 CAG.Lie.BasicDef <> lh_fn proj
+R10901:10906 CAG.Lie.BasicDef <> la_neg abbrev
+R10879:10884 CAG.Lie.BasicDef <> laF_vs proj
+R10863:10876 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R10891:10895 CAG.Lie.BasicDef <> lh_fn proj
+R10901:10906 CAG.Lie.BasicDef <> la_neg abbrev
+R10879:10884 CAG.Lie.BasicDef <> laF_vs proj
+R10931:10943 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R10958:10962 CAG.Lie.BasicDef <> lh_fn proj
+R10946:10951 CAG.Lie.BasicDef <> laF_vs proj
+R10931:10943 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R10958:10962 CAG.Lie.BasicDef <> lh_fn proj
+R10946:10951 CAG.Lie.BasicDef <> laF_vs proj
+R10931:10943 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R10958:10962 CAG.Lie.BasicDef <> lh_fn proj
+R10946:10951 CAG.Lie.BasicDef <> laF_vs proj
+R10995:11007 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R10983:10988 CAG.Lie.BasicDef <> laF_vs proj
+R10995:11007 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R10983:10988 CAG.Lie.BasicDef <> laF_vs proj
+R10995:11007 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R10983:10988 CAG.Lie.BasicDef <> laF_vs proj
+R11051:11062 CAG.Lie.BasicDef <> vsF_add_comm proj
+R11039:11044 CAG.Lie.BasicDef <> laF_vs proj
+R11051:11062 CAG.Lie.BasicDef <> vsF_add_comm proj
+R11039:11044 CAG.Lie.BasicDef <> laF_vs proj
+R11051:11062 CAG.Lie.BasicDef <> vsF_add_comm proj
+R11039:11044 CAG.Lie.BasicDef <> laF_vs proj
+R11087:11100 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R11075:11080 CAG.Lie.BasicDef <> laF_vs proj
+R11087:11100 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R11075:11080 CAG.Lie.BasicDef <> laF_vs proj
+rec 11117:11123 <> LieIsom
+proj 11233:11238 <> li_hom
+proj 11262:11267 <> li_inv
+proj 11284:11292 <> li_fn_inv
+proj 11337:11345 <> li_inv_fn
+binder 11126:11126 <> F:175
+R11143:11147 CAG.Galois.Field <> Field rec
+R11149:11149 CAG.Lie.BasicDef <> F:175 var
+binder 11137:11139 <> fld:176
+binder 11153:11153 <> L:177
+binder 11155:11155 <> M:178
+R11175:11185 CAG.Lie.BasicDef <> LieAlgebraF rec
+R11191:11191 CAG.Lie.BasicDef <> L:177 var
+R11187:11189 CAG.Lie.BasicDef <> fld:176 var
+binder 11170:11171 <> la:179
+R11200:11210 CAG.Lie.BasicDef <> LieAlgebraF rec
+R11216:11216 CAG.Lie.BasicDef <> M:178 var
+R11212:11214 CAG.Lie.BasicDef <> fld:176 var
+binder 11195:11196 <> lb:180
+R11246:11251 CAG.Lie.BasicDef <> LieHom rec
+R11256:11257 CAG.Lie.BasicDef <> lb:180 var
+R11253:11254 CAG.Lie.BasicDef <> la:179 var
+R11275:11278 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11274:11274 CAG.Lie.BasicDef <> M:178 var
+R11279:11279 CAG.Lie.BasicDef <> L:177 var
+binder 11303:11303 <> x:184
+R11329:11331 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11306:11310 CAG.Lie.BasicDef <> lh_fn proj
+R11320:11325 CAG.Lie.BasicDef <> li_inv:183 meth
+R11327:11327 CAG.Lie.BasicDef <> x:184 var
+R11312:11317 CAG.Lie.BasicDef <> li_hom:182 meth
+R11332:11332 CAG.Lie.BasicDef <> x:184 var
+binder 11356:11356 <> x:186
+R11382:11384 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11359:11364 CAG.Lie.BasicDef <> li_inv:183 meth
+R11367:11371 CAG.Lie.BasicDef <> lh_fn proj
+R11380:11380 CAG.Lie.BasicDef <> x:186 var
+R11373:11378 CAG.Lie.BasicDef <> li_hom:182 meth
+R11385:11385 CAG.Lie.BasicDef <> x:186 var
+R11402:11407 CAG.Lie.BasicDef <> li_hom proj
+R11402:11407 CAG.Lie.BasicDef <> li_hom proj
+R11441:11446 CAG.Lie.BasicDef <> li_inv proj
+R11441:11446 CAG.Lie.BasicDef <> li_inv proj
+R11480:11488 CAG.Lie.BasicDef <> li_fn_inv proj
+R11480:11488 CAG.Lie.BasicDef <> li_fn_inv proj
+R11519:11527 CAG.Lie.BasicDef <> li_inv_fn proj
+R11519:11527 CAG.Lie.BasicDef <> li_inv_fn proj
+def 11560:11570 <> lie_isom_id
+binder 11573:11573 <> F:188
+R11590:11594 CAG.Galois.Field <> Field rec
+R11596:11596 CAG.Lie.BasicDef <> F:188 var
+binder 11584:11586 <> fld:189
+binder 11600:11600 <> L:190
+R11620:11630 CAG.Lie.BasicDef <> LieAlgebraF rec
+R11636:11636 CAG.Lie.BasicDef <> L:190 var
+R11632:11634 CAG.Lie.BasicDef <> fld:189 var
+binder 11615:11616 <> la:191
+R11641:11647 CAG.Lie.BasicDef <> LieIsom rec
+R11652:11653 CAG.Lie.BasicDef <> la:191 var
+R11649:11650 CAG.Lie.BasicDef <> la:191 var
+R11675:11680 CAG.Lie.BasicDef <> li_hom proj
+R11675:11680 CAG.Lie.BasicDef <> li_hom proj
+R11675:11680 CAG.Lie.BasicDef <> li_hom proj
+R11902:11907 CAG.Lie.BasicDef <> li_inv proj
+R11902:11907 CAG.Lie.BasicDef <> li_inv proj
+R11937:11945 CAG.Lie.BasicDef <> li_fn_inv proj
+R11937:11945 CAG.Lie.BasicDef <> li_fn_inv proj
+R11980:11988 CAG.Lie.BasicDef <> li_inv_fn proj
+R11980:11988 CAG.Lie.BasicDef <> li_inv_fn proj
+R11689:11693 CAG.Lie.BasicDef <> lh_fn proj
+R11689:11693 CAG.Lie.BasicDef <> lh_fn proj
+R11689:11693 CAG.Lie.BasicDef <> lh_fn proj
+R11737:11742 CAG.Lie.BasicDef <> lh_add proj
+R11737:11742 CAG.Lie.BasicDef <> lh_add proj
+R11794:11801 CAG.Lie.BasicDef <> lh_scale proj
+R11794:11801 CAG.Lie.BasicDef <> lh_scale proj
+R11853:11862 CAG.Lie.BasicDef <> lh_bracket proj
+R11853:11862 CAG.Lie.BasicDef <> lh_bracket proj
+binder 11702:11702 <> x:192
+R11707:11707 CAG.Lie.BasicDef <> x:192 var
+binder 11751:11751 <> x:193
+binder 11753:11753 <> y:194
+R11758:11764 Corelib.Init.Logic <> eq_refl constr
+binder 11810:11810 <> a:195
+binder 11812:11812 <> x:196
+R11817:11823 Corelib.Init.Logic <> eq_refl constr
+binder 11871:11871 <> x:197
+binder 11873:11873 <> y:198
+R11878:11884 Corelib.Init.Logic <> eq_refl constr
+binder 11917:11917 <> x:199
+R11922:11922 CAG.Lie.BasicDef <> x:199 var
+binder 11954:11954 <> x:200
+R11959:11965 Corelib.Init.Logic <> eq_refl constr
+binder 11997:11997 <> x:201
+R12002:12008 Corelib.Init.Logic <> eq_refl constr
+R11675:11680 CAG.Lie.BasicDef <> li_hom proj
+R11675:11680 CAG.Lie.BasicDef <> li_hom proj
+R11675:11680 CAG.Lie.BasicDef <> li_hom proj
+R11902:11907 CAG.Lie.BasicDef <> li_inv proj
+R11902:11907 CAG.Lie.BasicDef <> li_inv proj
+R11937:11945 CAG.Lie.BasicDef <> li_fn_inv proj
+R11937:11945 CAG.Lie.BasicDef <> li_fn_inv proj
+R11980:11988 CAG.Lie.BasicDef <> li_inv_fn proj
+R11980:11988 CAG.Lie.BasicDef <> li_inv_fn proj
+R11689:11693 CAG.Lie.BasicDef <> lh_fn proj
+R11689:11693 CAG.Lie.BasicDef <> lh_fn proj
+R11689:11693 CAG.Lie.BasicDef <> lh_fn proj
+R11737:11742 CAG.Lie.BasicDef <> lh_add proj
+R11737:11742 CAG.Lie.BasicDef <> lh_add proj
+R11794:11801 CAG.Lie.BasicDef <> lh_scale proj
+R11794:11801 CAG.Lie.BasicDef <> lh_scale proj
+R11853:11862 CAG.Lie.BasicDef <> lh_bracket proj
+R11853:11862 CAG.Lie.BasicDef <> lh_bracket proj
+binder 11702:11702 <> x:202
+R11707:11707 CAG.Lie.BasicDef <> x:202 var
+binder 11751:11751 <> x:203
+binder 11753:11753 <> y:204
+R11758:11764 Corelib.Init.Logic <> eq_refl constr
+binder 11810:11810 <> a:205
+binder 11812:11812 <> x:206
+R11817:11823 Corelib.Init.Logic <> eq_refl constr
+binder 11871:11871 <> x:207
+binder 11873:11873 <> y:208
+R11878:11884 Corelib.Init.Logic <> eq_refl constr
+binder 11917:11917 <> x:209
+R11922:11922 CAG.Lie.BasicDef <> x:209 var
+binder 11954:11954 <> x:210
+R11959:11965 Corelib.Init.Logic <> eq_refl constr
+binder 11997:11997 <> x:211
+R12002:12008 Corelib.Init.Logic <> eq_refl constr
+def 12036:12048 <> lie_isom_comp
+binder 12051:12051 <> F:212
+R12068:12072 CAG.Galois.Field <> Field rec
+R12074:12074 CAG.Lie.BasicDef <> F:212 var
+binder 12062:12064 <> fld:213
+binder 12078:12078 <> L:214
+binder 12080:12080 <> M:215
+binder 12082:12082 <> N:216
+R12102:12112 CAG.Lie.BasicDef <> LieAlgebraF rec
+R12118:12118 CAG.Lie.BasicDef <> L:214 var
+R12114:12116 CAG.Lie.BasicDef <> fld:213 var
+binder 12097:12098 <> la:217
+R12127:12137 CAG.Lie.BasicDef <> LieAlgebraF rec
+R12143:12143 CAG.Lie.BasicDef <> M:215 var
+R12139:12141 CAG.Lie.BasicDef <> fld:213 var
+binder 12122:12123 <> lb:218
+R12152:12162 CAG.Lie.BasicDef <> LieAlgebraF rec
+R12168:12168 CAG.Lie.BasicDef <> N:216 var
+R12164:12166 CAG.Lie.BasicDef <> fld:213 var
+binder 12147:12148 <> lc:219
+R12180:12186 CAG.Lie.BasicDef <> LieIsom rec
+R12191:12192 CAG.Lie.BasicDef <> lc:219 var
+R12188:12189 CAG.Lie.BasicDef <> lb:218 var
+binder 12176:12176 <> g:220
+R12200:12206 CAG.Lie.BasicDef <> LieIsom rec
+R12211:12212 CAG.Lie.BasicDef <> lb:218 var
+R12208:12209 CAG.Lie.BasicDef <> la:217 var
+binder 12196:12196 <> f:221
+R12217:12223 CAG.Lie.BasicDef <> LieIsom rec
+R12228:12229 CAG.Lie.BasicDef <> lc:219 var
+R12225:12226 CAG.Lie.BasicDef <> la:217 var
+R12239:12244 CAG.Lie.BasicDef <> li_hom proj
+R12239:12244 CAG.Lie.BasicDef <> li_hom proj
+R12239:12244 CAG.Lie.BasicDef <> li_hom proj
+R12785:12790 CAG.Lie.BasicDef <> li_inv proj
+R12785:12790 CAG.Lie.BasicDef <> li_inv proj
+R12835:12843 CAG.Lie.BasicDef <> li_fn_inv proj
+R12835:12843 CAG.Lie.BasicDef <> li_fn_inv proj
+R12967:12975 CAG.Lie.BasicDef <> li_inv_fn proj
+R12967:12975 CAG.Lie.BasicDef <> li_inv_fn proj
+R12259:12263 CAG.Lie.BasicDef <> lh_fn proj
+R12259:12263 CAG.Lie.BasicDef <> lh_fn proj
+R12259:12263 CAG.Lie.BasicDef <> lh_fn proj
+R12328:12333 CAG.Lie.BasicDef <> lh_add proj
+R12328:12333 CAG.Lie.BasicDef <> lh_add proj
+R12474:12481 CAG.Lie.BasicDef <> lh_scale proj
+R12474:12481 CAG.Lie.BasicDef <> lh_scale proj
+R12624:12633 CAG.Lie.BasicDef <> lh_bracket proj
+R12624:12633 CAG.Lie.BasicDef <> lh_bracket proj
+binder 12277:12277 <> x:222
+R12282:12286 CAG.Lie.BasicDef <> lh_fn proj
+R12300:12304 CAG.Lie.BasicDef <> lh_fn proj
+R12317:12317 CAG.Lie.BasicDef <> x:222 var
+R12307:12312 CAG.Lie.BasicDef <> li_hom proj
+R12314:12314 CAG.Lie.BasicDef <> f:221 var
+R12289:12294 CAG.Lie.BasicDef <> li_hom proj
+R12296:12296 CAG.Lie.BasicDef <> g:220 var
+binder 12346:12346 <> x:223
+binder 12348:12348 <> y:224
+R12362:12369 Corelib.Init.Logic <> eq_trans thm
+R12443:12448 CAG.Lie.BasicDef <> lh_add proj
+R12451:12456 CAG.Lie.BasicDef <> li_hom proj
+R12458:12458 CAG.Lie.BasicDef <> g:220 var
+R12372:12378 Corelib.Init.Logic <> f_equal thm
+R12400:12405 CAG.Lie.BasicDef <> lh_add proj
+R12420:12420 CAG.Lie.BasicDef <> y:224 var
+R12418:12418 CAG.Lie.BasicDef <> x:223 var
+R12408:12413 CAG.Lie.BasicDef <> li_hom proj
+R12415:12415 CAG.Lie.BasicDef <> f:221 var
+R12381:12385 CAG.Lie.BasicDef <> lh_fn proj
+R12388:12393 CAG.Lie.BasicDef <> li_hom proj
+R12395:12395 CAG.Lie.BasicDef <> g:220 var
+binder 12492:12492 <> a:225
+binder 12494:12494 <> x:226
+R12508:12515 Corelib.Init.Logic <> eq_trans thm
+R12591:12598 CAG.Lie.BasicDef <> lh_scale proj
+R12611:12611 CAG.Lie.BasicDef <> a:225 var
+R12601:12606 CAG.Lie.BasicDef <> li_hom proj
+R12608:12608 CAG.Lie.BasicDef <> g:220 var
+R12518:12524 Corelib.Init.Logic <> f_equal thm
+R12546:12553 CAG.Lie.BasicDef <> lh_scale proj
+R12568:12568 CAG.Lie.BasicDef <> x:226 var
+R12566:12566 CAG.Lie.BasicDef <> a:225 var
+R12556:12561 CAG.Lie.BasicDef <> li_hom proj
+R12563:12563 CAG.Lie.BasicDef <> f:221 var
+R12527:12531 CAG.Lie.BasicDef <> lh_fn proj
+R12534:12539 CAG.Lie.BasicDef <> li_hom proj
+R12541:12541 CAG.Lie.BasicDef <> g:220 var
+binder 12642:12642 <> x:227
+binder 12644:12644 <> y:228
+R12658:12665 Corelib.Init.Logic <> eq_trans thm
+R12743:12752 CAG.Lie.BasicDef <> lh_bracket proj
+R12755:12760 CAG.Lie.BasicDef <> li_hom proj
+R12762:12762 CAG.Lie.BasicDef <> g:220 var
+R12668:12674 Corelib.Init.Logic <> f_equal thm
+R12696:12705 CAG.Lie.BasicDef <> lh_bracket proj
+R12720:12720 CAG.Lie.BasicDef <> y:228 var
+R12718:12718 CAG.Lie.BasicDef <> x:227 var
+R12708:12713 CAG.Lie.BasicDef <> li_hom proj
+R12715:12715 CAG.Lie.BasicDef <> f:221 var
+R12677:12681 CAG.Lie.BasicDef <> lh_fn proj
+R12684:12689 CAG.Lie.BasicDef <> li_hom proj
+R12691:12691 CAG.Lie.BasicDef <> g:220 var
+binder 12802:12802 <> y:229
+R12807:12812 CAG.Lie.BasicDef <> li_inv proj
+R12817:12822 CAG.Lie.BasicDef <> li_inv proj
+R12826:12826 CAG.Lie.BasicDef <> y:229 var
+R12824:12824 CAG.Lie.BasicDef <> g:220 var
+R12814:12814 CAG.Lie.BasicDef <> f:221 var
+binder 12852:12852 <> y:230
+R12864:12871 Corelib.Init.Logic <> eq_trans thm
+R12946:12954 CAG.Lie.BasicDef <> li_fn_inv proj
+R12958:12958 CAG.Lie.BasicDef <> y:230 var
+R12956:12956 CAG.Lie.BasicDef <> g:220 var
+R12874:12880 Corelib.Init.Logic <> f_equal thm
+R12902:12910 CAG.Lie.BasicDef <> li_fn_inv proj
+R12915:12920 CAG.Lie.BasicDef <> li_inv proj
+R12924:12924 CAG.Lie.BasicDef <> y:230 var
+R12922:12922 CAG.Lie.BasicDef <> g:220 var
+R12912:12912 CAG.Lie.BasicDef <> f:221 var
+R12883:12887 CAG.Lie.BasicDef <> lh_fn proj
+R12890:12895 CAG.Lie.BasicDef <> li_hom proj
+R12897:12897 CAG.Lie.BasicDef <> g:220 var
+binder 12984:12984 <> x:231
+R12996:13003 Corelib.Init.Logic <> eq_trans thm
+R13078:13086 CAG.Lie.BasicDef <> li_inv_fn proj
+R13090:13090 CAG.Lie.BasicDef <> x:231 var
+R13088:13088 CAG.Lie.BasicDef <> f:221 var
+R13006:13012 Corelib.Init.Logic <> f_equal thm
+R13026:13034 CAG.Lie.BasicDef <> li_inv_fn proj
+R13039:13043 CAG.Lie.BasicDef <> lh_fn proj
+R13056:13056 CAG.Lie.BasicDef <> x:231 var
+R13046:13051 CAG.Lie.BasicDef <> li_hom proj
+R13053:13053 CAG.Lie.BasicDef <> f:221 var
+R13036:13036 CAG.Lie.BasicDef <> g:220 var
+R13015:13020 CAG.Lie.BasicDef <> li_inv proj
+R13022:13022 CAG.Lie.BasicDef <> f:221 var

@@ -1,0 +1,446 @@
+DIGEST a0fd6318488b9fed1adc936f3701a04c
+FCAG.Category.Subobject
+R156:172 CAG.Category.Core <> <> lib
+R190:209 CAG.Category.Functor <> <> lib
+R227:245 CAG.Category.Limits <> <> lib
+R263:290 CAG.Category.PreservesLimits <> <> lib
+def 577:590 <> IsMonomorphism
+R597:604 CAG.Category.Core <> Category rec
+binder 593:593 <> C:1
+R617:618 CAG.Category.Core <> Ob proj
+R614:614 CAG.Category.Subobject <> C:1 var
+binder 608:608 <> A:2
+binder 610:610 <> B:3
+R628:630 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R632:633 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R635:637 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R627:627 CAG.Category.Subobject <> C:1 var
+R631:631 CAG.Category.Subobject <> A:2 var
+R634:634 CAG.Category.Subobject <> B:3 var
+binder 623:623 <> m:4
+binder 659:659 <> X:5
+R669:671 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R673:674 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R676:678 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R668:668 CAG.Category.Subobject <> C:1 var
+R672:672 CAG.Category.Subobject <> X:5 var
+R675:675 CAG.Category.Subobject <> A:2 var
+binder 662:662 <> f:6
+binder 664:664 <> g:7
+R699:702 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R689:691 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R683:687 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R682:682 CAG.Category.Subobject <> m:4 var
+R688:688 CAG.Category.Subobject <> f:6 var
+R693:697 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R692:692 CAG.Category.Subobject <> m:4 var
+R698:698 CAG.Category.Subobject <> g:7 var
+R704:706 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R703:703 CAG.Category.Subobject <> f:6 var
+R707:707 CAG.Category.Subobject <> g:7 var
+rec 1325:1334 <> IsPullback
+proj 1435:1442 <> pb_proj1
+proj 1461:1468 <> pb_proj2
+proj 1487:1493 <> pb_comm
+proj 1533:1538 <> pb_med
+proj 1636:1647 <> pb_med_proj1
+proj 1769:1780 <> pb_med_proj2
+proj 1902:1912 <> pb_med_uniq
+R1341:1348 CAG.Category.Core <> Category rec
+binder 1337:1337 <> C:8
+R1363:1364 CAG.Category.Core <> Ob proj
+R1360:1360 CAG.Category.Subobject <> C:8 var
+binder 1352:1352 <> A:9
+binder 1354:1354 <> B:10
+binder 1356:1356 <> D:11
+R1378:1380 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1382:1383 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1385:1387 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1377:1377 CAG.Category.Subobject <> C:8 var
+R1381:1381 CAG.Category.Subobject <> A:9 var
+R1384:1384 CAG.Category.Subobject <> D:11 var
+binder 1373:1373 <> f:12
+R1396:1398 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1400:1401 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1403:1405 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1395:1395 CAG.Category.Subobject <> C:8 var
+R1399:1399 CAG.Category.Subobject <> B:10 var
+R1402:1402 CAG.Category.Subobject <> D:11 var
+binder 1391:1391 <> g:13
+R1416:1417 CAG.Category.Core <> Ob proj
+R1413:1413 CAG.Category.Subobject <> C:8 var
+binder 1409:1409 <> P:14
+R1447:1449 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1451:1452 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1454:1456 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1446:1446 CAG.Category.Subobject <> C:8 var
+R1450:1450 CAG.Category.Subobject <> P:14 var
+R1453:1453 CAG.Category.Subobject <> A:9 var
+R1473:1475 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1477:1478 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1480:1482 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1472:1472 CAG.Category.Subobject <> C:8 var
+R1476:1476 CAG.Category.Subobject <> P:14 var
+R1479:1479 CAG.Category.Subobject <> B:10 var
+R1512:1514 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1499:1503 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1498:1498 CAG.Category.Subobject <> f:12 var
+R1504:1511 CAG.Category.Subobject <> pb_proj1:16 meth
+R1516:1520 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1515:1515 CAG.Category.Subobject <> g:13 var
+R1521:1528 CAG.Category.Subobject <> pb_proj2:17 meth
+binder 1552:1552 <> X:19
+R1562:1564 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1566:1567 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1569:1571 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1561:1561 CAG.Category.Subobject <> C:8 var
+R1565:1565 CAG.Category.Subobject <> X:19 var
+R1568:1568 CAG.Category.Subobject <> A:9 var
+binder 1556:1557 <> h1:20
+R1581:1583 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1585:1586 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1588:1590 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1580:1580 CAG.Category.Subobject <> C:8 var
+R1584:1584 CAG.Category.Subobject <> X:19 var
+R1587:1587 CAG.Category.Subobject <> B:10 var
+binder 1575:1576 <> h2:21
+R1617:1620 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1606:1608 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1599:1603 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1598:1598 CAG.Category.Subobject <> f:12 var
+R1604:1605 CAG.Category.Subobject <> h1:20 var
+R1610:1614 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1609:1609 CAG.Category.Subobject <> g:13 var
+R1615:1616 CAG.Category.Subobject <> h2:21 var
+R1622:1624 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1626:1627 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1629:1631 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1621:1621 CAG.Category.Subobject <> C:8 var
+R1625:1625 CAG.Category.Subobject <> X:19 var
+R1628:1628 CAG.Category.Subobject <> P:14 var
+binder 1659:1659 <> X:23
+R1669:1671 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1673:1674 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1676:1678 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1668:1668 CAG.Category.Subobject <> C:8 var
+R1672:1672 CAG.Category.Subobject <> X:23 var
+R1675:1675 CAG.Category.Subobject <> A:9 var
+binder 1663:1664 <> h1:24
+R1688:1690 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1692:1693 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1695:1697 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1687:1687 CAG.Category.Subobject <> C:8 var
+R1691:1691 CAG.Category.Subobject <> X:23 var
+R1694:1694 CAG.Category.Subobject <> B:10 var
+binder 1682:1683 <> h2:25
+R1714:1716 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1707:1711 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1706:1706 CAG.Category.Subobject <> f:12 var
+R1712:1713 CAG.Category.Subobject <> h1:24 var
+R1718:1722 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1717:1717 CAG.Category.Subobject <> g:13 var
+R1723:1724 CAG.Category.Subobject <> h2:25 var
+binder 1701:1702 <> Hc:26
+R1760:1762 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1740:1744 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1732:1739 CAG.Category.Subobject <> pb_proj1:16 meth
+R1745:1750 CAG.Category.Subobject <> pb_med:22 meth
+R1758:1759 CAG.Category.Subobject <> Hc:26 var
+R1755:1756 CAG.Category.Subobject <> h2:25 var
+R1752:1753 CAG.Category.Subobject <> h1:24 var
+R1763:1764 CAG.Category.Subobject <> h1:24 var
+binder 1792:1792 <> X:28
+R1802:1804 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1806:1807 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1809:1811 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1801:1801 CAG.Category.Subobject <> C:8 var
+R1805:1805 CAG.Category.Subobject <> X:28 var
+R1808:1808 CAG.Category.Subobject <> A:9 var
+binder 1796:1797 <> h1:29
+R1821:1823 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1825:1826 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1828:1830 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1820:1820 CAG.Category.Subobject <> C:8 var
+R1824:1824 CAG.Category.Subobject <> X:28 var
+R1827:1827 CAG.Category.Subobject <> B:10 var
+binder 1815:1816 <> h2:30
+R1847:1849 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1840:1844 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1839:1839 CAG.Category.Subobject <> f:12 var
+R1845:1846 CAG.Category.Subobject <> h1:29 var
+R1851:1855 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1850:1850 CAG.Category.Subobject <> g:13 var
+R1856:1857 CAG.Category.Subobject <> h2:30 var
+binder 1834:1835 <> Hc:31
+R1893:1895 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1873:1877 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1865:1872 CAG.Category.Subobject <> pb_proj2:17 meth
+R1878:1883 CAG.Category.Subobject <> pb_med:22 meth
+R1891:1892 CAG.Category.Subobject <> Hc:31 var
+R1888:1889 CAG.Category.Subobject <> h2:30 var
+R1885:1886 CAG.Category.Subobject <> h1:29 var
+R1896:1897 CAG.Category.Subobject <> h2:30 var
+binder 1925:1925 <> X:33
+R1935:1937 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1939:1940 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1942:1944 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1934:1934 CAG.Category.Subobject <> C:8 var
+R1938:1938 CAG.Category.Subobject <> X:33 var
+R1941:1941 CAG.Category.Subobject <> A:9 var
+binder 1929:1930 <> h1:34
+R1954:1956 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1958:1959 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1961:1963 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1953:1953 CAG.Category.Subobject <> C:8 var
+R1957:1957 CAG.Category.Subobject <> X:33 var
+R1960:1960 CAG.Category.Subobject <> B:10 var
+binder 1948:1949 <> h2:35
+R1980:1982 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1973:1977 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1972:1972 CAG.Category.Subobject <> f:12 var
+R1978:1979 CAG.Category.Subobject <> h1:34 var
+R1984:1988 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1983:1983 CAG.Category.Subobject <> g:13 var
+R1989:1990 CAG.Category.Subobject <> h2:35 var
+binder 1967:1968 <> Hc:36
+R2003:2005 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2007:2008 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2010:2012 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2002:2002 CAG.Category.Subobject <> C:8 var
+R2006:2006 CAG.Category.Subobject <> X:33 var
+R2009:2009 CAG.Category.Subobject <> P:14 var
+binder 1998:1998 <> u:37
+R2039:2042 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2034:2036 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2028:2032 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R2020:2027 CAG.Category.Subobject <> pb_proj1:16 meth
+R2033:2033 CAG.Category.Subobject <> u:37 var
+R2037:2038 CAG.Category.Subobject <> h1:34 var
+R2062:2065 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2057:2059 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2051:2055 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R2043:2050 CAG.Category.Subobject <> pb_proj2:17 meth
+R2056:2056 CAG.Category.Subobject <> u:37 var
+R2060:2061 CAG.Category.Subobject <> h2:35 var
+R2067:2069 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2066:2066 CAG.Category.Subobject <> u:37 var
+R2070:2075 CAG.Category.Subobject <> pb_med:22 meth
+R2083:2084 CAG.Category.Subobject <> Hc:36 var
+R2080:2081 CAG.Category.Subobject <> h2:35 var
+R2077:2078 CAG.Category.Subobject <> h1:34 var
+R2101:2108 CAG.Category.Subobject <> pb_proj1 proj
+R2101:2108 CAG.Category.Subobject <> pb_proj1 proj
+R2151:2158 CAG.Category.Subobject <> pb_proj2 proj
+R2151:2158 CAG.Category.Subobject <> pb_proj2 proj
+R2201:2207 CAG.Category.Subobject <> pb_comm proj
+R2201:2207 CAG.Category.Subobject <> pb_comm proj
+R2251:2256 CAG.Category.Subobject <> pb_med proj
+R2251:2256 CAG.Category.Subobject <> pb_med proj
+R2314:2325 CAG.Category.Subobject <> pb_med_proj1 proj
+R2314:2325 CAG.Category.Subobject <> pb_med_proj1 proj
+R2378:2389 CAG.Category.Subobject <> pb_med_proj2 proj
+R2378:2389 CAG.Category.Subobject <> pb_med_proj2 proj
+R2442:2452 CAG.Category.Subobject <> pb_med_uniq proj
+R2442:2452 CAG.Category.Subobject <> pb_med_uniq proj
+def 2539:2550 <> HasPullbacks
+R2557:2564 CAG.Category.Core <> Category rec
+binder 2553:2553 <> C:39
+R2598:2599 CAG.Category.Core <> Ob proj
+R2595:2595 CAG.Category.Subobject <> C:39 var
+binder 2587:2587 <> A:40
+binder 2589:2589 <> B:41
+binder 2591:2591 <> D:42
+R2609:2611 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2613:2614 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2616:2618 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2608:2608 CAG.Category.Subobject <> C:39 var
+R2612:2612 CAG.Category.Subobject <> A:40 var
+R2615:2615 CAG.Category.Subobject <> D:42 var
+binder 2604:2604 <> f:43
+R2627:2629 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2631:2632 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2634:2636 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2626:2626 CAG.Category.Subobject <> C:39 var
+R2630:2630 CAG.Category.Subobject <> B:41 var
+R2633:2633 CAG.Category.Subobject <> D:42 var
+binder 2622:2622 <> g:44
+R2644:2645 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'&'_x_'}' not
+R2647:2649 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'&'_x_'}' not
+R2656:2658 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'&'_x_'}' not
+R2675:2676 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'&'_x_'}' not
+R2653:2654 CAG.Category.Core <> Ob proj
+R2650:2650 CAG.Category.Subobject <> C:39 var
+binder 2646:2646 <> P:45
+R2659:2668 CAG.Category.Subobject <> IsPullback rec
+R2674:2674 CAG.Category.Subobject <> P:45 var
+R2672:2672 CAG.Category.Subobject <> g:44 var
+R2670:2670 CAG.Category.Subobject <> f:43 var
+prf 3513:3535 <> monic_gives_id_pullback
+R3542:3549 CAG.Category.Core <> Category rec
+binder 3538:3538 <> C:46
+R3562:3563 CAG.Category.Core <> Ob proj
+R3559:3559 CAG.Category.Subobject <> C:46 var
+binder 3553:3553 <> A:47
+binder 3555:3555 <> B:48
+R3573:3575 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3577:3578 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3580:3582 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3572:3572 CAG.Category.Subobject <> C:46 var
+R3576:3576 CAG.Category.Subobject <> A:47 var
+R3579:3579 CAG.Category.Subobject <> B:48 var
+binder 3568:3568 <> m:49
+R3607:3610 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3591:3604 CAG.Category.Subobject <> IsMonomorphism def
+R3606:3606 CAG.Category.Subobject <> m:49 var
+R3611:3620 CAG.Category.Subobject <> IsPullback rec
+R3626:3626 CAG.Category.Subobject <> A:47 var
+R3624:3624 CAG.Category.Subobject <> m:49 var
+R3622:3622 CAG.Category.Subobject <> m:49 var
+R3665:3672 CAG.Category.Subobject <> pb_proj1 proj
+R3665:3672 CAG.Category.Subobject <> pb_proj1 proj
+R3665:3672 CAG.Category.Subobject <> pb_proj1 proj
+R3691:3698 CAG.Category.Subobject <> pb_proj2 proj
+R3691:3698 CAG.Category.Subobject <> pb_proj2 proj
+R3717:3722 CAG.Category.Subobject <> pb_med proj
+R3717:3722 CAG.Category.Subobject <> pb_med proj
+R3680:3681 CAG.Category.Core <> id proj
+R3706:3707 CAG.Category.Core <> id proj
+binder 3733:3733 <> X:50
+binder 3735:3736 <> h1:51
+binder 3738:3739 <> h2:52
+R3746:3747 CAG.Category.Subobject <> h1:51 var
+R3665:3672 CAG.Category.Subobject <> pb_proj1 proj
+R3665:3672 CAG.Category.Subobject <> pb_proj1 proj
+R3665:3672 CAG.Category.Subobject <> pb_proj1 proj
+R3691:3698 CAG.Category.Subobject <> pb_proj2 proj
+R3691:3698 CAG.Category.Subobject <> pb_proj2 proj
+R3717:3722 CAG.Category.Subobject <> pb_med proj
+R3717:3722 CAG.Category.Subobject <> pb_med proj
+R3680:3681 CAG.Category.Core <> id proj
+R3706:3707 CAG.Category.Core <> id proj
+binder 3733:3733 <> X:53
+binder 3735:3736 <> h1:54
+binder 3738:3739 <> h2:55
+R3746:3747 CAG.Category.Subobject <> h1:54 var
+R3805:3811 CAG.Category.Core <> id_left proj
+R3805:3811 CAG.Category.Core <> id_left proj
+R3853:3859 CAG.Category.Core <> id_left proj
+R3853:3859 CAG.Category.Core <> id_left proj
+R3853:3859 CAG.Category.Core <> id_left proj
+R3931:3937 CAG.Category.Core <> id_left proj
+R3931:3937 CAG.Category.Core <> id_left proj
+R3931:3937 CAG.Category.Core <> id_left proj
+prf 3971:3993 <> id_pullback_gives_monic
+R4000:4007 CAG.Category.Core <> Category rec
+binder 3996:3996 <> C:56
+R4020:4021 CAG.Category.Core <> Ob proj
+R4017:4017 CAG.Category.Subobject <> C:56 var
+binder 4011:4011 <> A:57
+binder 4013:4013 <> B:58
+R4031:4033 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4035:4036 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4038:4040 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4030:4030 CAG.Category.Subobject <> C:56 var
+R4034:4034 CAG.Category.Subobject <> A:57 var
+R4037:4037 CAG.Category.Subobject <> B:58 var
+binder 4026:4026 <> m:59
+R4065:4068 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4049:4058 CAG.Category.Subobject <> IsPullback rec
+R4064:4064 CAG.Category.Subobject <> A:57 var
+R4062:4062 CAG.Category.Subobject <> m:59 var
+R4060:4060 CAG.Category.Subobject <> m:59 var
+R4069:4082 CAG.Category.Subobject <> IsMonomorphism def
+R4084:4084 CAG.Category.Subobject <> m:59 var
+prf 4532:4567 <> preserves_pullbacks_preserves_monics
+R4576:4583 CAG.Category.Core <> Category rec
+binder 4570:4570 <> C:60
+binder 4572:4572 <> D:61
+R4595:4601 CAG.Category.Functor <> Functor rec
+R4603:4603 CAG.Category.Subobject <> C:60 var
+R4605:4605 CAG.Category.Subobject <> D:61 var
+binder 4591:4591 <> F:62
+R4638:4639 CAG.Category.Core <> Ob proj
+R4635:4635 CAG.Category.Subobject <> C:60 var
+binder 4627:4627 <> A:63
+binder 4629:4629 <> B:64
+binder 4631:4631 <> E:65
+R4649:4651 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4653:4654 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4656:4658 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4648:4648 CAG.Category.Subobject <> C:60 var
+R4652:4652 CAG.Category.Subobject <> A:63 var
+R4655:4655 CAG.Category.Subobject <> E:65 var
+binder 4644:4644 <> f:66
+R4667:4669 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4671:4672 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4674:4676 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4666:4666 CAG.Category.Subobject <> C:60 var
+R4670:4670 CAG.Category.Subobject <> B:64 var
+R4673:4673 CAG.Category.Subobject <> E:65 var
+binder 4662:4662 <> g:67
+R4687:4688 CAG.Category.Core <> Ob proj
+R4684:4684 CAG.Category.Subobject <> C:60 var
+binder 4680:4680 <> P:68
+R4715:4724 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4699:4708 CAG.Category.Subobject <> IsPullback rec
+R4714:4714 CAG.Category.Subobject <> P:68 var
+R4712:4712 CAG.Category.Subobject <> g:67 var
+R4710:4710 CAG.Category.Subobject <> f:66 var
+R4725:4734 CAG.Category.Subobject <> IsPullback rec
+R4756:4759 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R4755:4755 CAG.Category.Subobject <> F:62 var
+R4760:4760 CAG.Category.Subobject <> P:68 var
+R4747:4750 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R4746:4746 CAG.Category.Subobject <> F:62 var
+R4751:4751 CAG.Category.Subobject <> g:67 var
+R4738:4741 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R4737:4737 CAG.Category.Subobject <> F:62 var
+R4742:4742 CAG.Category.Subobject <> f:66 var
+binder 4613:4615 <> hpb:69
+R4778:4779 CAG.Category.Core <> Ob proj
+R4775:4775 CAG.Category.Subobject <> C:60 var
+binder 4769:4769 <> A:70
+binder 4771:4771 <> B:71
+R4789:4791 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4793:4794 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4796:4798 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4788:4788 CAG.Category.Subobject <> C:60 var
+R4792:4792 CAG.Category.Subobject <> A:70 var
+R4795:4795 CAG.Category.Subobject <> B:71 var
+binder 4784:4784 <> m:72
+R4811:4824 CAG.Category.Subobject <> IsMonomorphism def
+R4826:4826 CAG.Category.Subobject <> m:72 var
+binder 4806:4807 <> Hm:73
+R4835:4848 CAG.Category.Subobject <> IsMonomorphism def
+R4852:4855 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R4851:4851 CAG.Category.Subobject <> F:62 var
+R4856:4856 CAG.Category.Subobject <> m:72 var
+R4875:4897 CAG.Category.Subobject <> id_pullback_gives_monic prfax
+R4875:4897 CAG.Category.Subobject <> id_pullback_gives_monic prfax
+R4927:4949 CAG.Category.Subobject <> monic_gives_id_pullback thm
+R4927:4949 CAG.Category.Subobject <> monic_gives_id_pullback thm
+rec 5244:5252 <> Subobject
+proj 5296:5301 <> sub_ob
+proj 5316:5322 <> sub_map
+proj 5346:5353 <> sub_mono
+R5259:5266 CAG.Category.Core <> Category rec
+binder 5255:5255 <> C:74
+R5277:5278 CAG.Category.Core <> Ob proj
+R5274:5274 CAG.Category.Subobject <> C:74 var
+binder 5270:5270 <> B:75
+R5309:5310 CAG.Category.Core <> Ob proj
+R5306:5306 CAG.Category.Subobject <> C:74 var
+R5327:5329 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R5336:5337 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R5339:5341 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R5326:5326 CAG.Category.Subobject <> C:74 var
+R5330:5335 CAG.Category.Subobject <> sub_ob:77 meth
+R5338:5338 CAG.Category.Subobject <> B:75 var
+R5357:5370 CAG.Category.Subobject <> IsMonomorphism def
+R5372:5378 CAG.Category.Subobject <> sub_map:78 meth
+R5395:5400 CAG.Category.Subobject <> sub_ob proj
+R5395:5400 CAG.Category.Subobject <> sub_ob proj
+R5423:5429 CAG.Category.Subobject <> sub_map proj
+R5423:5429 CAG.Category.Subobject <> sub_map proj
+R5451:5458 CAG.Category.Subobject <> sub_mono proj
+R5451:5458 CAG.Category.Subobject <> sub_mono proj

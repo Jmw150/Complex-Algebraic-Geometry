@@ -1,0 +1,1099 @@
+DIGEST 076ec9d336a0960f1650fe8ec9475e98
+FCAG.Lie.SpecialLinear
+R417:432 CAG.Galois.Field <> <> lib
+R450:465 CAG.Lie.BasicDef <> <> lib
+R483:496 CAG.Lie.Ideals <> <> lib
+R514:527 CAG.Lie.Linear <> <> lib
+R545:563 CAG.Lie.KillingForm <> <> lib
+R593:596 Stdlib.Lists.List <> <> lib
+R598:602 Stdlib.Arith.Arith <> <> lib
+R612:624 Stdlib.Lists.List ListNotations <> mod
+def 919:931 <> mat_trace_aux
+binder 934:934 <> F:1
+R951:955 CAG.Galois.Field <> Field rec
+R957:957 CAG.Lie.SpecialLinear <> F:1 var
+binder 945:947 <> fld:2
+R968:971 Corelib.Init.Datatypes <> list ind
+R974:977 Corelib.Init.Datatypes <> list ind
+R979:979 CAG.Lie.SpecialLinear <> F:1 var
+binder 961:964 <> rows:3
+R988:990 Corelib.Init.Datatypes <> nat ind
+binder 984:984 <> k:4
+R995:995 CAG.Lie.SpecialLinear <> F:1 var
+R1008:1011 CAG.Lie.SpecialLinear <> rows:3 var
+R1022:1023 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R1033:1039 CAG.Galois.Field <> cr_zero proj
+R1028:1030 CAG.Lie.SpecialLinear <> fld:2 var
+R1049:1052 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1072:1077 CAG.Galois.Field <> cr_add proj
+R1067:1069 CAG.Lie.SpecialLinear <> fld:2 var
+R1131:1143 CAG.Lie.SpecialLinear <> mat_trace_aux:5 def
+R1155:1155 Corelib.Init.Datatypes <> S constr
+R1157:1157 CAG.Lie.SpecialLinear <> k:4 var
+R1145:1147 CAG.Lie.SpecialLinear <> fld:2 var
+R1081:1088 Stdlib.Lists.List <> nth abbrev
+R1101:1107 CAG.Galois.Field <> cr_zero proj
+R1096:1098 CAG.Lie.SpecialLinear <> fld:2 var
+R1090:1090 CAG.Lie.SpecialLinear <> k:4 var
+def 1180:1188 <> mat_trace
+binder 1191:1191 <> F:7
+R1208:1212 CAG.Galois.Field <> Field rec
+R1214:1214 CAG.Lie.SpecialLinear <> F:7 var
+binder 1202:1204 <> fld:8
+R1222:1227 CAG.Lie.Linear <> Matrix def
+R1229:1229 CAG.Lie.SpecialLinear <> F:7 var
+binder 1218:1218 <> A:9
+R1234:1234 CAG.Lie.SpecialLinear <> F:7 var
+R1241:1253 CAG.Lie.SpecialLinear <> mat_trace_aux def
+R1259:1259 CAG.Lie.SpecialLinear <> A:9 var
+R1255:1257 CAG.Lie.SpecialLinear <> fld:8 var
+ax 1305:1317 <> mat_trace_add
+binder 1329:1329 <> F:10
+R1346:1350 CAG.Galois.Field <> Field rec
+R1352:1352 CAG.Lie.SpecialLinear <> F:10 var
+binder 1340:1342 <> fld:11
+R1362:1367 CAG.Lie.Linear <> Matrix def
+R1369:1369 CAG.Lie.SpecialLinear <> F:10 var
+binder 1356:1356 <> A:12
+binder 1358:1358 <> B:13
+R1408:1414 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1377:1385 CAG.Lie.SpecialLinear <> mat_trace def
+R1392:1398 CAG.Lie.Linear <> mat_add def
+R1406:1406 CAG.Lie.SpecialLinear <> B:13 var
+R1404:1404 CAG.Lie.SpecialLinear <> A:12 var
+R1400:1402 CAG.Lie.SpecialLinear <> fld:11 var
+R1387:1389 CAG.Lie.SpecialLinear <> fld:11 var
+R1420:1425 CAG.Galois.Field <> cr_add proj
+R1415:1417 CAG.Lie.SpecialLinear <> fld:11 var
+R1447:1455 CAG.Lie.SpecialLinear <> mat_trace def
+R1461:1461 CAG.Lie.SpecialLinear <> B:13 var
+R1457:1459 CAG.Lie.SpecialLinear <> fld:11 var
+R1429:1437 CAG.Lie.SpecialLinear <> mat_trace def
+R1443:1443 CAG.Lie.SpecialLinear <> A:12 var
+R1439:1441 CAG.Lie.SpecialLinear <> fld:11 var
+ax 1502:1516 <> mat_trace_scale
+binder 1528:1528 <> F:16
+R1545:1549 CAG.Galois.Field <> Field rec
+R1551:1551 CAG.Lie.SpecialLinear <> F:16 var
+binder 1539:1541 <> fld:17
+R1559:1559 CAG.Lie.SpecialLinear <> F:16 var
+binder 1555:1555 <> c:18
+R1567:1572 CAG.Lie.Linear <> Matrix def
+R1574:1574 CAG.Lie.SpecialLinear <> F:16 var
+binder 1563:1563 <> A:19
+R1615:1621 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1582:1590 CAG.Lie.SpecialLinear <> mat_trace def
+R1597:1605 CAG.Lie.Linear <> mat_scale def
+R1613:1613 CAG.Lie.SpecialLinear <> A:19 var
+R1611:1611 CAG.Lie.SpecialLinear <> c:18 var
+R1607:1609 CAG.Lie.SpecialLinear <> fld:17 var
+R1592:1594 CAG.Lie.SpecialLinear <> fld:17 var
+R1627:1632 CAG.Galois.Field <> cr_mul proj
+R1622:1624 CAG.Lie.SpecialLinear <> fld:17 var
+R1638:1646 CAG.Lie.SpecialLinear <> mat_trace def
+R1652:1652 CAG.Lie.SpecialLinear <> A:19 var
+R1648:1650 CAG.Lie.SpecialLinear <> fld:17 var
+R1635:1635 CAG.Lie.SpecialLinear <> c:18 var
+ax 1681:1694 <> mat_trace_zero
+binder 1706:1706 <> F:22
+R1723:1727 CAG.Galois.Field <> Field rec
+R1729:1729 CAG.Lie.SpecialLinear <> F:22 var
+binder 1717:1719 <> fld:23
+R1737:1739 Corelib.Init.Datatypes <> nat ind
+binder 1733:1733 <> n:24
+R1777:1779 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1747:1755 CAG.Lie.SpecialLinear <> mat_trace def
+R1762:1769 CAG.Lie.Linear <> mat_zero def
+R1775:1775 CAG.Lie.SpecialLinear <> n:24 var
+R1771:1773 CAG.Lie.SpecialLinear <> fld:23 var
+R1757:1759 CAG.Lie.SpecialLinear <> fld:23 var
+R1785:1791 CAG.Galois.Field <> cr_zero proj
+R1780:1782 CAG.Lie.SpecialLinear <> fld:23 var
+ax 1842:1860 <> gl_zero_eq_mat_zero
+binder 1872:1872 <> F:27
+R1889:1893 CAG.Galois.Field <> Field rec
+R1895:1895 CAG.Lie.SpecialLinear <> F:27 var
+binder 1883:1885 <> fld:28
+R1903:1905 Corelib.Init.Datatypes <> nat ind
+binder 1899:1899 <> n:29
+R1931:1933 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1913:1919 CAG.Lie.BasicDef <> la_zero abbrev
+R1922:1923 CAG.Lie.Linear <> gl prfax
+R1929:1929 CAG.Lie.SpecialLinear <> n:29 var
+R1925:1927 CAG.Lie.SpecialLinear <> fld:28 var
+R1934:1941 CAG.Lie.Linear <> mat_zero def
+R1947:1947 CAG.Lie.SpecialLinear <> n:29 var
+R1943:1945 CAG.Lie.SpecialLinear <> fld:28 var
+ax 2000:2016 <> gl_add_eq_mat_add
+binder 2028:2028 <> F:32
+R2045:2049 CAG.Galois.Field <> Field rec
+R2051:2051 CAG.Lie.SpecialLinear <> F:32 var
+binder 2039:2041 <> fld:33
+R2059:2061 Corelib.Init.Datatypes <> nat ind
+binder 2055:2055 <> n:34
+R2071:2076 CAG.Lie.Linear <> Matrix def
+R2078:2078 CAG.Lie.SpecialLinear <> F:32 var
+binder 2065:2065 <> A:35
+binder 2067:2067 <> B:36
+R2107:2109 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2086:2091 CAG.Lie.BasicDef <> la_add abbrev
+R2094:2095 CAG.Lie.Linear <> gl prfax
+R2101:2101 CAG.Lie.SpecialLinear <> n:34 var
+R2097:2099 CAG.Lie.SpecialLinear <> fld:33 var
+R2106:2106 CAG.Lie.SpecialLinear <> B:36 var
+R2104:2104 CAG.Lie.SpecialLinear <> A:35 var
+R2110:2116 CAG.Lie.Linear <> mat_add def
+R2124:2124 CAG.Lie.SpecialLinear <> B:36 var
+R2122:2122 CAG.Lie.SpecialLinear <> A:35 var
+R2118:2120 CAG.Lie.SpecialLinear <> fld:33 var
+ax 2177:2193 <> gl_neg_eq_mat_neg
+binder 2205:2205 <> F:39
+R2222:2226 CAG.Galois.Field <> Field rec
+R2228:2228 CAG.Lie.SpecialLinear <> F:39 var
+binder 2216:2218 <> fld:40
+R2236:2238 Corelib.Init.Datatypes <> nat ind
+binder 2232:2232 <> n:41
+R2246:2251 CAG.Lie.Linear <> Matrix def
+R2253:2253 CAG.Lie.SpecialLinear <> F:39 var
+binder 2242:2242 <> A:42
+R2280:2282 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2261:2266 CAG.Lie.BasicDef <> la_neg abbrev
+R2269:2270 CAG.Lie.Linear <> gl prfax
+R2276:2276 CAG.Lie.SpecialLinear <> n:41 var
+R2272:2274 CAG.Lie.SpecialLinear <> fld:40 var
+R2279:2279 CAG.Lie.SpecialLinear <> A:42 var
+R2283:2289 CAG.Lie.Linear <> mat_neg def
+R2295:2295 CAG.Lie.SpecialLinear <> A:42 var
+R2291:2293 CAG.Lie.SpecialLinear <> fld:40 var
+ax 2363:2383 <> gl_scale_eq_mat_scale
+binder 2395:2395 <> F:45
+R2412:2416 CAG.Galois.Field <> Field rec
+R2418:2418 CAG.Lie.SpecialLinear <> F:45 var
+binder 2406:2408 <> fld:46
+R2426:2428 Corelib.Init.Datatypes <> nat ind
+binder 2422:2422 <> n:47
+R2436:2436 CAG.Lie.SpecialLinear <> F:45 var
+binder 2432:2432 <> c:48
+R2444:2449 CAG.Lie.Linear <> Matrix def
+R2451:2451 CAG.Lie.SpecialLinear <> F:45 var
+binder 2440:2440 <> A:49
+R2482:2484 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2459:2466 CAG.Lie.BasicDef <> la_scale abbrev
+R2469:2470 CAG.Lie.Linear <> gl prfax
+R2476:2476 CAG.Lie.SpecialLinear <> n:47 var
+R2472:2474 CAG.Lie.SpecialLinear <> fld:46 var
+R2481:2481 CAG.Lie.SpecialLinear <> A:49 var
+R2479:2479 CAG.Lie.SpecialLinear <> c:48 var
+R2485:2493 CAG.Lie.Linear <> mat_scale def
+R2501:2501 CAG.Lie.SpecialLinear <> A:49 var
+R2499:2499 CAG.Lie.SpecialLinear <> c:48 var
+R2495:2497 CAG.Lie.SpecialLinear <> fld:46 var
+ax 2557:2581 <> gl_bracket_eq_mat_bracket
+binder 2593:2593 <> F:52
+R2610:2614 CAG.Galois.Field <> Field rec
+R2616:2616 CAG.Lie.SpecialLinear <> F:52 var
+binder 2604:2606 <> fld:53
+R2624:2626 Corelib.Init.Datatypes <> nat ind
+binder 2620:2620 <> n:54
+R2636:2641 CAG.Lie.Linear <> Matrix def
+R2643:2643 CAG.Lie.SpecialLinear <> F:52 var
+binder 2630:2630 <> A:55
+binder 2632:2632 <> B:56
+R2677:2679 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2651:2661 CAG.Lie.BasicDef <> laF_bracket proj
+R2676:2676 CAG.Lie.SpecialLinear <> B:56 var
+R2674:2674 CAG.Lie.SpecialLinear <> A:55 var
+R2664:2665 CAG.Lie.Linear <> gl prfax
+R2671:2671 CAG.Lie.SpecialLinear <> n:54 var
+R2667:2669 CAG.Lie.SpecialLinear <> fld:53 var
+R2680:2690 CAG.Lie.Linear <> mat_bracket def
+R2698:2698 CAG.Lie.SpecialLinear <> B:56 var
+R2696:2696 CAG.Lie.SpecialLinear <> A:55 var
+R2692:2694 CAG.Lie.SpecialLinear <> fld:53 var
+ax 2759:2780 <> mat_trace_bracket_zero
+binder 2792:2792 <> F:59
+R2809:2813 CAG.Galois.Field <> Field rec
+R2815:2815 CAG.Lie.SpecialLinear <> F:59 var
+binder 2803:2805 <> fld:60
+R2825:2830 CAG.Lie.Linear <> Matrix def
+R2832:2832 CAG.Lie.SpecialLinear <> F:59 var
+binder 2819:2819 <> A:61
+binder 2821:2821 <> B:62
+R2875:2877 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2840:2848 CAG.Lie.SpecialLinear <> mat_trace def
+R2855:2865 CAG.Lie.Linear <> mat_bracket def
+R2873:2873 CAG.Lie.SpecialLinear <> B:62 var
+R2871:2871 CAG.Lie.SpecialLinear <> A:61 var
+R2867:2869 CAG.Lie.SpecialLinear <> fld:60 var
+R2850:2852 CAG.Lie.SpecialLinear <> fld:60 var
+R2883:2889 CAG.Galois.Field <> cr_zero proj
+R2878:2880 CAG.Lie.SpecialLinear <> fld:60 var
+ax 2924:2939 <> mat_trace_cyclic
+binder 2951:2951 <> F:65
+R2968:2972 CAG.Galois.Field <> Field rec
+R2974:2974 CAG.Lie.SpecialLinear <> F:65 var
+binder 2962:2964 <> fld:66
+R2984:2989 CAG.Lie.Linear <> Matrix def
+R2991:2991 CAG.Lie.SpecialLinear <> F:65 var
+binder 2978:2978 <> A:67
+binder 2980:2980 <> B:68
+R3030:3032 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2999:3007 CAG.Lie.SpecialLinear <> mat_trace def
+R3014:3020 CAG.Lie.Linear <> mat_mul def
+R3028:3028 CAG.Lie.SpecialLinear <> B:68 var
+R3026:3026 CAG.Lie.SpecialLinear <> A:67 var
+R3022:3024 CAG.Lie.SpecialLinear <> fld:66 var
+R3009:3011 CAG.Lie.SpecialLinear <> fld:66 var
+R3033:3041 CAG.Lie.SpecialLinear <> mat_trace def
+R3048:3054 CAG.Lie.Linear <> mat_mul def
+R3062:3062 CAG.Lie.SpecialLinear <> A:67 var
+R3060:3060 CAG.Lie.SpecialLinear <> B:68 var
+R3056:3058 CAG.Lie.SpecialLinear <> fld:66 var
+R3043:3045 CAG.Lie.SpecialLinear <> fld:66 var
+ax 3124:3142 <> mat_trace_unit_diag
+binder 3154:3154 <> F:71
+R3171:3175 CAG.Galois.Field <> Field rec
+R3177:3177 CAG.Lie.SpecialLinear <> F:71 var
+binder 3165:3167 <> fld:72
+R3187:3189 Corelib.Init.Datatypes <> nat ind
+binder 3181:3181 <> n:73
+binder 3183:3183 <> i:74
+R3231:3233 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3197:3205 CAG.Lie.SpecialLinear <> mat_trace def
+R3212:3219 CAG.Lie.Linear <> mat_unit def
+R3229:3229 CAG.Lie.SpecialLinear <> i:74 var
+R3227:3227 CAG.Lie.SpecialLinear <> i:74 var
+R3225:3225 CAG.Lie.SpecialLinear <> n:73 var
+R3221:3223 CAG.Lie.SpecialLinear <> fld:72 var
+R3207:3209 CAG.Lie.SpecialLinear <> fld:72 var
+R3239:3244 CAG.Galois.Field <> cr_one proj
+R3234:3236 CAG.Lie.SpecialLinear <> fld:72 var
+ax 3323:3345 <> mat_trace_unit_off_diag
+binder 3357:3357 <> F:77
+R3374:3378 CAG.Galois.Field <> Field rec
+R3380:3380 CAG.Lie.SpecialLinear <> F:77 var
+binder 3368:3370 <> fld:78
+R3392:3394 Corelib.Init.Datatypes <> nat ind
+binder 3384:3384 <> n:79
+binder 3386:3386 <> i:80
+binder 3388:3388 <> j:81
+R3408:3411 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3403:3406 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R3402:3402 CAG.Lie.SpecialLinear <> i:80 var
+R3407:3407 CAG.Lie.SpecialLinear <> j:81 var
+R3446:3448 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3412:3420 CAG.Lie.SpecialLinear <> mat_trace def
+R3427:3434 CAG.Lie.Linear <> mat_unit def
+R3444:3444 CAG.Lie.SpecialLinear <> j:81 var
+R3442:3442 CAG.Lie.SpecialLinear <> i:80 var
+R3440:3440 CAG.Lie.SpecialLinear <> n:79 var
+R3436:3438 CAG.Lie.SpecialLinear <> fld:78 var
+R3422:3424 CAG.Lie.SpecialLinear <> fld:78 var
+R3454:3460 CAG.Galois.Field <> cr_zero proj
+R3449:3451 CAG.Lie.SpecialLinear <> fld:78 var
+def 3735:3745 <> IsTracezero
+binder 3748:3748 <> F:84
+R3765:3769 CAG.Galois.Field <> Field rec
+R3771:3771 CAG.Lie.SpecialLinear <> F:84 var
+binder 3759:3761 <> fld:85
+R3779:3784 CAG.Lie.Linear <> Matrix def
+R3786:3786 CAG.Lie.SpecialLinear <> F:84 var
+binder 3775:3775 <> A:86
+R3816:3818 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3801:3809 CAG.Lie.SpecialLinear <> mat_trace def
+R3815:3815 CAG.Lie.SpecialLinear <> A:86 var
+R3811:3813 CAG.Lie.SpecialLinear <> fld:85 var
+R3824:3830 CAG.Galois.Field <> cr_zero proj
+R3819:3821 CAG.Lie.SpecialLinear <> fld:85 var
+prf 3890:3905 <> sl_is_subalgebra
+binder 3917:3917 <> F:87
+R3934:3938 CAG.Galois.Field <> Field rec
+R3940:3940 CAG.Lie.SpecialLinear <> F:87 var
+binder 3928:3930 <> fld:88
+R3948:3950 Corelib.Init.Datatypes <> nat ind
+binder 3944:3944 <> n:89
+R3958:3969 CAG.Lie.BasicDef <> IsSubalgebra rec
+R3983:3993 CAG.Lie.SpecialLinear <> IsTracezero def
+R3995:3997 CAG.Lie.SpecialLinear <> fld:88 var
+R3972:3973 CAG.Lie.Linear <> gl prfax
+R3979:3979 CAG.Lie.SpecialLinear <> n:89 var
+R3975:3977 CAG.Lie.SpecialLinear <> fld:88 var
+R4070:4080 CAG.Lie.SpecialLinear <> IsTracezero def
+R4095:4113 CAG.Lie.SpecialLinear <> gl_zero_eq_mat_zero prfax
+R4095:4113 CAG.Lie.SpecialLinear <> gl_zero_eq_mat_zero prfax
+R4095:4113 CAG.Lie.SpecialLinear <> gl_zero_eq_mat_zero prfax
+R4122:4135 CAG.Lie.SpecialLinear <> mat_trace_zero prfax
+R4122:4135 CAG.Lie.SpecialLinear <> mat_trace_zero prfax
+R4215:4225 CAG.Lie.SpecialLinear <> IsTracezero def
+R4245:4261 CAG.Lie.SpecialLinear <> gl_add_eq_mat_add prfax
+R4264:4276 CAG.Lie.SpecialLinear <> mat_trace_add prfax
+R4245:4261 CAG.Lie.SpecialLinear <> gl_add_eq_mat_add prfax
+R4245:4261 CAG.Lie.SpecialLinear <> gl_add_eq_mat_add prfax
+R4264:4276 CAG.Lie.SpecialLinear <> mat_trace_add prfax
+R4264:4276 CAG.Lie.SpecialLinear <> mat_trace_add prfax
+R4302:4312 CAG.Galois.Field <> cr_add_zero proj
+R4302:4312 CAG.Galois.Field <> cr_add_zero proj
+R4375:4385 CAG.Lie.SpecialLinear <> IsTracezero def
+R4405:4421 CAG.Lie.SpecialLinear <> gl_neg_eq_mat_neg prfax
+R4405:4421 CAG.Lie.SpecialLinear <> gl_neg_eq_mat_neg prfax
+R4405:4421 CAG.Lie.SpecialLinear <> gl_neg_eq_mat_neg prfax
+R4431:4437 CAG.Lie.Linear <> mat_neg def
+R4452:4466 CAG.Lie.SpecialLinear <> mat_trace_scale prfax
+R4452:4466 CAG.Lie.SpecialLinear <> mat_trace_scale prfax
+R4452:4466 CAG.Lie.SpecialLinear <> mat_trace_scale prfax
+R4491:4505 CAG.Lie.KillingForm <> ring_mul_zero_r thm
+R4491:4505 CAG.Lie.KillingForm <> ring_mul_zero_r thm
+R4575:4585 CAG.Lie.SpecialLinear <> IsTracezero def
+R4605:4625 CAG.Lie.SpecialLinear <> gl_scale_eq_mat_scale prfax
+R4605:4625 CAG.Lie.SpecialLinear <> gl_scale_eq_mat_scale prfax
+R4605:4625 CAG.Lie.SpecialLinear <> gl_scale_eq_mat_scale prfax
+R4636:4650 CAG.Lie.SpecialLinear <> mat_trace_scale prfax
+R4636:4650 CAG.Lie.SpecialLinear <> mat_trace_scale prfax
+R4636:4650 CAG.Lie.SpecialLinear <> mat_trace_scale prfax
+R4675:4689 CAG.Lie.KillingForm <> ring_mul_zero_r thm
+R4675:4689 CAG.Lie.KillingForm <> ring_mul_zero_r thm
+R4747:4757 CAG.Lie.SpecialLinear <> IsTracezero def
+R4777:4801 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket prfax
+R4777:4801 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket prfax
+R4777:4801 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket prfax
+R4814:4835 CAG.Lie.SpecialLinear <> mat_trace_bracket_zero prfax
+R4814:4835 CAG.Lie.SpecialLinear <> mat_trace_bracket_zero prfax
+def 5323:5333 <> sl_off_diag
+binder 5336:5336 <> F:90
+R5353:5357 CAG.Galois.Field <> Field rec
+R5359:5359 CAG.Lie.SpecialLinear <> F:90 var
+binder 5347:5349 <> fld:91
+R5371:5373 Corelib.Init.Datatypes <> nat ind
+binder 5363:5363 <> n:92
+binder 5365:5365 <> i:93
+binder 5367:5367 <> j:94
+R5378:5383 CAG.Lie.Linear <> Matrix def
+R5385:5385 CAG.Lie.SpecialLinear <> F:90 var
+R5392:5399 CAG.Lie.Linear <> mat_unit def
+R5409:5409 CAG.Lie.SpecialLinear <> j:94 var
+R5407:5407 CAG.Lie.SpecialLinear <> i:93 var
+R5405:5405 CAG.Lie.SpecialLinear <> n:92 var
+R5401:5403 CAG.Lie.SpecialLinear <> fld:91 var
+def 5487:5493 <> sl_diag
+binder 5496:5496 <> F:95
+R5513:5517 CAG.Galois.Field <> Field rec
+R5519:5519 CAG.Lie.SpecialLinear <> F:95 var
+binder 5507:5509 <> fld:96
+R5529:5531 Corelib.Init.Datatypes <> nat ind
+binder 5523:5523 <> n:97
+binder 5525:5525 <> i:98
+R5536:5541 CAG.Lie.Linear <> Matrix def
+R5543:5543 CAG.Lie.SpecialLinear <> F:95 var
+R5550:5556 CAG.Lie.Linear <> mat_add def
+R5598:5604 CAG.Lie.Linear <> mat_neg def
+R5611:5618 CAG.Lie.Linear <> mat_unit def
+R5633:5633 Corelib.Init.Datatypes <> S constr
+R5635:5635 CAG.Lie.SpecialLinear <> i:98 var
+R5627:5627 Corelib.Init.Datatypes <> S constr
+R5629:5629 CAG.Lie.SpecialLinear <> i:98 var
+R5624:5624 CAG.Lie.SpecialLinear <> n:97 var
+R5620:5622 CAG.Lie.SpecialLinear <> fld:96 var
+R5606:5608 CAG.Lie.SpecialLinear <> fld:96 var
+R5563:5570 CAG.Lie.Linear <> mat_unit def
+R5580:5580 CAG.Lie.SpecialLinear <> i:98 var
+R5578:5578 CAG.Lie.SpecialLinear <> i:98 var
+R5576:5576 CAG.Lie.SpecialLinear <> n:97 var
+R5572:5574 CAG.Lie.SpecialLinear <> fld:96 var
+R5558:5560 CAG.Lie.SpecialLinear <> fld:96 var
+prf 5674:5690 <> sl_diag_tracezero
+binder 5702:5702 <> F:99
+R5719:5723 CAG.Galois.Field <> Field rec
+R5725:5725 CAG.Lie.SpecialLinear <> F:99 var
+binder 5713:5715 <> fld:100
+R5735:5737 Corelib.Init.Datatypes <> nat ind
+binder 5729:5729 <> n:101
+binder 5731:5731 <> i:102
+R5745:5755 CAG.Lie.SpecialLinear <> IsTracezero def
+R5762:5768 CAG.Lie.SpecialLinear <> sl_diag def
+R5776:5776 CAG.Lie.SpecialLinear <> i:102 var
+R5774:5774 CAG.Lie.SpecialLinear <> n:101 var
+R5770:5772 CAG.Lie.SpecialLinear <> fld:100 var
+R5757:5759 CAG.Lie.SpecialLinear <> fld:100 var
+R5814:5824 CAG.Lie.SpecialLinear <> IsTracezero def
+R5827:5833 CAG.Lie.SpecialLinear <> sl_diag def
+R5846:5858 CAG.Lie.SpecialLinear <> mat_trace_add prfax
+R5861:5879 CAG.Lie.SpecialLinear <> mat_trace_unit_diag prfax
+R5846:5858 CAG.Lie.SpecialLinear <> mat_trace_add prfax
+R5846:5858 CAG.Lie.SpecialLinear <> mat_trace_add prfax
+R5861:5879 CAG.Lie.SpecialLinear <> mat_trace_unit_diag prfax
+R5861:5879 CAG.Lie.SpecialLinear <> mat_trace_unit_diag prfax
+R5955:5961 CAG.Lie.Linear <> mat_neg def
+R5972:5986 CAG.Lie.SpecialLinear <> mat_trace_scale prfax
+R5989:6007 CAG.Lie.SpecialLinear <> mat_trace_unit_diag prfax
+R5972:5986 CAG.Lie.SpecialLinear <> mat_trace_scale prfax
+R5972:5986 CAG.Lie.SpecialLinear <> mat_trace_scale prfax
+R5989:6007 CAG.Lie.SpecialLinear <> mat_trace_unit_diag prfax
+R5989:6007 CAG.Lie.SpecialLinear <> mat_trace_unit_diag prfax
+R6025:6034 CAG.Galois.Field <> cr_mul_one proj
+R6025:6034 CAG.Galois.Field <> cr_mul_one proj
+R6025:6034 CAG.Galois.Field <> cr_mul_one proj
+R6049:6058 CAG.Galois.Field <> cr_add_neg proj
+R6049:6058 CAG.Galois.Field <> cr_add_neg proj
+prf 6135:6155 <> sl_off_diag_tracezero
+binder 6167:6167 <> F:103
+R6184:6188 CAG.Galois.Field <> Field rec
+R6190:6190 CAG.Lie.SpecialLinear <> F:103 var
+binder 6178:6180 <> fld:104
+R6202:6204 Corelib.Init.Datatypes <> nat ind
+binder 6194:6194 <> n:105
+binder 6196:6196 <> i:106
+binder 6198:6198 <> j:107
+R6218:6221 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6213:6216 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R6212:6212 CAG.Lie.SpecialLinear <> i:106 var
+R6217:6217 CAG.Lie.SpecialLinear <> j:107 var
+R6222:6232 CAG.Lie.SpecialLinear <> IsTracezero def
+R6239:6249 CAG.Lie.SpecialLinear <> sl_off_diag def
+R6259:6259 CAG.Lie.SpecialLinear <> j:107 var
+R6257:6257 CAG.Lie.SpecialLinear <> i:106 var
+R6255:6255 CAG.Lie.SpecialLinear <> n:105 var
+R6251:6253 CAG.Lie.SpecialLinear <> fld:104 var
+R6234:6236 CAG.Lie.SpecialLinear <> fld:104 var
+R6303:6313 CAG.Lie.SpecialLinear <> IsTracezero def
+R6316:6326 CAG.Lie.SpecialLinear <> sl_off_diag def
+R6337:6359 CAG.Lie.SpecialLinear <> mat_trace_unit_off_diag prfax
+R6337:6359 CAG.Lie.SpecialLinear <> mat_trace_unit_off_diag prfax
+prf 6717:6732 <> sl_bracket_units
+binder 6744:6744 <> F:108
+R6761:6765 CAG.Galois.Field <> Field rec
+R6767:6767 CAG.Lie.SpecialLinear <> F:108 var
+binder 6755:6757 <> fld:109
+R6783:6785 Corelib.Init.Datatypes <> nat ind
+binder 6771:6771 <> n:110
+binder 6773:6773 <> i:111
+binder 6775:6775 <> j:112
+binder 6777:6777 <> k:113
+binder 6779:6779 <> l:114
+R6857:6863 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6793:6803 CAG.Lie.BasicDef <> laF_bracket proj
+R6838:6845 CAG.Lie.Linear <> mat_unit def
+R6855:6855 CAG.Lie.SpecialLinear <> l:114 var
+R6853:6853 CAG.Lie.SpecialLinear <> k:113 var
+R6851:6851 CAG.Lie.SpecialLinear <> n:110 var
+R6847:6849 CAG.Lie.SpecialLinear <> fld:109 var
+R6817:6824 CAG.Lie.Linear <> mat_unit def
+R6834:6834 CAG.Lie.SpecialLinear <> j:112 var
+R6832:6832 CAG.Lie.SpecialLinear <> i:111 var
+R6830:6830 CAG.Lie.SpecialLinear <> n:110 var
+R6826:6828 CAG.Lie.SpecialLinear <> fld:109 var
+R6806:6807 CAG.Lie.Linear <> gl prfax
+R6813:6813 CAG.Lie.SpecialLinear <> n:110 var
+R6809:6811 CAG.Lie.SpecialLinear <> fld:109 var
+R6864:6870 CAG.Lie.Linear <> mat_add def
+R6953:6959 Stdlib.Arith.PeanoNat Nat eqb def
+R6961:6961 CAG.Lie.SpecialLinear <> l:114 var
+R6963:6963 CAG.Lie.SpecialLinear <> i:111 var
+R7008:7015 CAG.Lie.Linear <> mat_zero def
+R7021:7021 CAG.Lie.SpecialLinear <> n:110 var
+R7017:7019 CAG.Lie.SpecialLinear <> fld:109 var
+R6970:6976 CAG.Lie.Linear <> mat_neg def
+R6983:6990 CAG.Lie.Linear <> mat_unit def
+R7000:7000 CAG.Lie.SpecialLinear <> j:112 var
+R6998:6998 CAG.Lie.SpecialLinear <> k:113 var
+R6996:6996 CAG.Lie.SpecialLinear <> n:110 var
+R6992:6994 CAG.Lie.SpecialLinear <> fld:109 var
+R6978:6980 CAG.Lie.SpecialLinear <> fld:109 var
+R6886:6892 Stdlib.Arith.PeanoNat Nat eqb def
+R6894:6894 CAG.Lie.SpecialLinear <> j:112 var
+R6896:6896 CAG.Lie.SpecialLinear <> k:113 var
+R6927:6934 CAG.Lie.Linear <> mat_zero def
+R6940:6940 CAG.Lie.SpecialLinear <> n:110 var
+R6936:6938 CAG.Lie.SpecialLinear <> fld:109 var
+R6903:6910 CAG.Lie.Linear <> mat_unit def
+R6920:6920 CAG.Lie.SpecialLinear <> l:114 var
+R6918:6918 CAG.Lie.SpecialLinear <> i:111 var
+R6916:6916 CAG.Lie.SpecialLinear <> n:110 var
+R6912:6914 CAG.Lie.SpecialLinear <> fld:109 var
+R6872:6874 CAG.Lie.SpecialLinear <> fld:109 var
+R7068:7092 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket prfax
+R7068:7092 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket prfax
+R7068:7092 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket prfax
+R7101:7116 CAG.Lie.Linear <> mat_unit_bracket prfax
+R7101:7116 CAG.Lie.Linear <> mat_unit_bracket prfax
+ax 7199:7215 <> sl_bracket_hi_eij
+binder 7227:7227 <> F:115
+R7244:7248 CAG.Galois.Field <> Field rec
+R7250:7250 CAG.Lie.SpecialLinear <> F:115 var
+binder 7238:7240 <> fld:116
+R7262:7264 Corelib.Init.Datatypes <> nat ind
+binder 7254:7254 <> n:117
+binder 7256:7256 <> i:118
+binder 7258:7258 <> j:119
+R7277:7280 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7273:7275 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R7272:7272 CAG.Lie.SpecialLinear <> i:118 var
+R7276:7276 CAG.Lie.SpecialLinear <> n:117 var
+R7286:7289 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7282:7284 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R7281:7281 CAG.Lie.SpecialLinear <> j:119 var
+R7285:7285 CAG.Lie.SpecialLinear <> n:117 var
+R7296:7303 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7291:7294 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R7290:7290 CAG.Lie.SpecialLinear <> i:118 var
+R7295:7295 CAG.Lie.SpecialLinear <> j:119 var
+R7304:7307 Corelib.Init.Logic <> True ind
+def 7732:7740 <> sl2_X_mat
+binder 7743:7743 <> F:122
+R7760:7764 CAG.Galois.Field <> Field rec
+R7766:7766 CAG.Lie.SpecialLinear <> F:122 var
+binder 7754:7756 <> fld:123
+R7771:7776 CAG.Lie.Linear <> Matrix def
+R7778:7778 CAG.Lie.SpecialLinear <> F:122 var
+R7785:7785 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7815:7819 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7850:7850 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7786:7786 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7800:7801 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7814:7814 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7792:7798 CAG.Galois.Field <> cr_zero proj
+R7787:7789 CAG.Lie.SpecialLinear <> fld:123 var
+R7807:7812 CAG.Galois.Field <> cr_one proj
+R7802:7804 CAG.Lie.SpecialLinear <> fld:123 var
+R7820:7820 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7834:7835 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7849:7849 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7826:7832 CAG.Galois.Field <> cr_zero proj
+R7821:7823 CAG.Lie.SpecialLinear <> fld:123 var
+R7841:7847 CAG.Galois.Field <> cr_zero proj
+R7836:7838 CAG.Lie.SpecialLinear <> fld:123 var
+def 7865:7873 <> sl2_H_mat
+binder 7876:7876 <> F:124
+R7893:7897 CAG.Galois.Field <> Field rec
+R7899:7899 CAG.Lie.SpecialLinear <> F:124 var
+binder 7887:7889 <> fld:125
+R7904:7909 CAG.Lie.Linear <> Matrix def
+R7911:7911 CAG.Lie.SpecialLinear <> F:124 var
+R7918:7918 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7949:7953 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7996:7996 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7919:7919 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7932:7934 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7948:7948 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7925:7930 CAG.Galois.Field <> cr_one proj
+R7920:7922 CAG.Lie.SpecialLinear <> fld:125 var
+R7940:7946 CAG.Galois.Field <> cr_zero proj
+R7935:7937 CAG.Lie.SpecialLinear <> fld:125 var
+R7954:7954 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7968:7969 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7995:7995 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R7960:7966 CAG.Galois.Field <> cr_zero proj
+R7955:7957 CAG.Lie.SpecialLinear <> fld:125 var
+R7975:7980 CAG.Galois.Field <> cr_neg proj
+R7970:7972 CAG.Lie.SpecialLinear <> fld:125 var
+R7988:7993 CAG.Galois.Field <> cr_one proj
+R7983:7985 CAG.Lie.SpecialLinear <> fld:125 var
+def 8011:8019 <> sl2_Y_mat
+binder 8022:8022 <> F:126
+R8039:8043 CAG.Galois.Field <> Field rec
+R8045:8045 CAG.Lie.SpecialLinear <> F:126 var
+binder 8033:8035 <> fld:127
+R8050:8055 CAG.Lie.Linear <> Matrix def
+R8057:8057 CAG.Lie.SpecialLinear <> F:126 var
+R8064:8064 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R8095:8099 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R8130:8130 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R8065:8065 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R8079:8080 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R8094:8094 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R8071:8077 CAG.Galois.Field <> cr_zero proj
+R8066:8068 CAG.Lie.SpecialLinear <> fld:127 var
+R8086:8092 CAG.Galois.Field <> cr_zero proj
+R8081:8083 CAG.Lie.SpecialLinear <> fld:127 var
+R8100:8100 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R8113:8115 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R8129:8129 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R8106:8111 CAG.Galois.Field <> cr_one proj
+R8101:8103 CAG.Lie.SpecialLinear <> fld:127 var
+R8121:8127 CAG.Galois.Field <> cr_zero proj
+R8116:8118 CAG.Lie.SpecialLinear <> fld:127 var
+prf 8169:8183 <> sl2_X_tracezero
+binder 8195:8195 <> F:128
+R8212:8216 CAG.Galois.Field <> Field rec
+R8218:8218 CAG.Lie.SpecialLinear <> F:128 var
+binder 8206:8208 <> fld:129
+R8226:8236 CAG.Lie.SpecialLinear <> IsTracezero def
+R8243:8251 CAG.Lie.SpecialLinear <> sl2_X_mat def
+R8253:8255 CAG.Lie.SpecialLinear <> fld:129 var
+R8238:8240 CAG.Lie.SpecialLinear <> fld:129 var
+R8297:8307 CAG.Lie.SpecialLinear <> IsTracezero def
+R8310:8318 CAG.Lie.SpecialLinear <> sl2_X_mat def
+R8321:8329 CAG.Lie.SpecialLinear <> mat_trace def
+R8332:8344 CAG.Lie.SpecialLinear <> mat_trace_aux def
+R8369:8379 CAG.Galois.Field <> cr_add_zero proj
+R8369:8379 CAG.Galois.Field <> cr_add_zero proj
+R8369:8379 CAG.Galois.Field <> cr_add_zero proj
+R8394:8404 CAG.Galois.Field <> cr_add_zero proj
+R8394:8404 CAG.Galois.Field <> cr_add_zero proj
+prf 8420:8434 <> sl2_Y_tracezero
+binder 8446:8446 <> F:130
+R8463:8467 CAG.Galois.Field <> Field rec
+R8469:8469 CAG.Lie.SpecialLinear <> F:130 var
+binder 8457:8459 <> fld:131
+R8477:8487 CAG.Lie.SpecialLinear <> IsTracezero def
+R8494:8502 CAG.Lie.SpecialLinear <> sl2_Y_mat def
+R8504:8506 CAG.Lie.SpecialLinear <> fld:131 var
+R8489:8491 CAG.Lie.SpecialLinear <> fld:131 var
+R8548:8558 CAG.Lie.SpecialLinear <> IsTracezero def
+R8561:8569 CAG.Lie.SpecialLinear <> sl2_Y_mat def
+R8572:8580 CAG.Lie.SpecialLinear <> mat_trace def
+R8583:8595 CAG.Lie.SpecialLinear <> mat_trace_aux def
+R8620:8630 CAG.Galois.Field <> cr_add_zero proj
+R8620:8630 CAG.Galois.Field <> cr_add_zero proj
+R8620:8630 CAG.Galois.Field <> cr_add_zero proj
+R8645:8655 CAG.Galois.Field <> cr_add_zero proj
+R8645:8655 CAG.Galois.Field <> cr_add_zero proj
+prf 8671:8685 <> sl2_H_tracezero
+binder 8697:8697 <> F:132
+R8714:8718 CAG.Galois.Field <> Field rec
+R8720:8720 CAG.Lie.SpecialLinear <> F:132 var
+binder 8708:8710 <> fld:133
+R8728:8738 CAG.Lie.SpecialLinear <> IsTracezero def
+R8745:8753 CAG.Lie.SpecialLinear <> sl2_H_mat def
+R8755:8757 CAG.Lie.SpecialLinear <> fld:133 var
+R8740:8742 CAG.Lie.SpecialLinear <> fld:133 var
+R8799:8809 CAG.Lie.SpecialLinear <> IsTracezero def
+R8812:8820 CAG.Lie.SpecialLinear <> sl2_H_mat def
+R8823:8831 CAG.Lie.SpecialLinear <> mat_trace def
+R8834:8846 CAG.Lie.SpecialLinear <> mat_trace_aux def
+R8932:8942 CAG.Galois.Field <> cr_add_zero proj
+R8932:8942 CAG.Galois.Field <> cr_add_zero proj
+R8932:8942 CAG.Galois.Field <> cr_add_zero proj
+R8957:8966 CAG.Galois.Field <> cr_add_neg proj
+R8957:8966 CAG.Galois.Field <> cr_add_neg proj
+ax 9025:9038 <> sl2_bracket_hx
+binder 9050:9050 <> F:134
+R9067:9071 CAG.Galois.Field <> Field rec
+R9073:9073 CAG.Lie.SpecialLinear <> F:134 var
+binder 9061:9063 <> fld:135
+R9128:9134 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9081:9091 CAG.Lie.Linear <> mat_bracket def
+R9114:9122 CAG.Lie.SpecialLinear <> sl2_X_mat def
+R9124:9126 CAG.Lie.SpecialLinear <> fld:135 var
+R9098:9106 CAG.Lie.SpecialLinear <> sl2_H_mat def
+R9108:9110 CAG.Lie.SpecialLinear <> fld:135 var
+R9093:9095 CAG.Lie.SpecialLinear <> fld:135 var
+R9135:9143 CAG.Lie.Linear <> mat_scale def
+R9191:9199 CAG.Lie.SpecialLinear <> sl2_X_mat def
+R9201:9203 CAG.Lie.SpecialLinear <> fld:135 var
+R9155:9160 CAG.Galois.Field <> cr_add proj
+R9150:9152 CAG.Lie.SpecialLinear <> fld:135 var
+R9181:9186 CAG.Galois.Field <> cr_one proj
+R9176:9178 CAG.Lie.SpecialLinear <> fld:135 var
+R9168:9173 CAG.Galois.Field <> cr_one proj
+R9163:9165 CAG.Lie.SpecialLinear <> fld:135 var
+R9145:9147 CAG.Lie.SpecialLinear <> fld:135 var
+ax 9214:9227 <> sl2_bracket_hy
+binder 9239:9239 <> F:138
+R9256:9260 CAG.Galois.Field <> Field rec
+R9262:9262 CAG.Lie.SpecialLinear <> F:138 var
+binder 9250:9252 <> fld:139
+R9317:9323 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9270:9280 CAG.Lie.Linear <> mat_bracket def
+R9303:9311 CAG.Lie.SpecialLinear <> sl2_Y_mat def
+R9313:9315 CAG.Lie.SpecialLinear <> fld:139 var
+R9287:9295 CAG.Lie.SpecialLinear <> sl2_H_mat def
+R9297:9299 CAG.Lie.SpecialLinear <> fld:139 var
+R9282:9284 CAG.Lie.SpecialLinear <> fld:139 var
+R9324:9332 CAG.Lie.Linear <> mat_scale def
+R9395:9403 CAG.Lie.SpecialLinear <> sl2_Y_mat def
+R9405:9407 CAG.Lie.SpecialLinear <> fld:139 var
+R9344:9349 CAG.Galois.Field <> cr_neg proj
+R9339:9341 CAG.Lie.SpecialLinear <> fld:139 var
+R9358:9363 CAG.Galois.Field <> cr_add proj
+R9353:9355 CAG.Lie.SpecialLinear <> fld:139 var
+R9384:9389 CAG.Galois.Field <> cr_one proj
+R9379:9381 CAG.Lie.SpecialLinear <> fld:139 var
+R9371:9376 CAG.Galois.Field <> cr_one proj
+R9366:9368 CAG.Lie.SpecialLinear <> fld:139 var
+R9334:9336 CAG.Lie.SpecialLinear <> fld:139 var
+ax 9418:9431 <> sl2_bracket_xy
+binder 9443:9443 <> F:142
+R9460:9464 CAG.Galois.Field <> Field rec
+R9466:9466 CAG.Lie.SpecialLinear <> F:142 var
+binder 9454:9456 <> fld:143
+R9521:9523 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9474:9484 CAG.Lie.Linear <> mat_bracket def
+R9507:9515 CAG.Lie.SpecialLinear <> sl2_Y_mat def
+R9517:9519 CAG.Lie.SpecialLinear <> fld:143 var
+R9491:9499 CAG.Lie.SpecialLinear <> sl2_X_mat def
+R9501:9503 CAG.Lie.SpecialLinear <> fld:143 var
+R9486:9488 CAG.Lie.SpecialLinear <> fld:143 var
+R9524:9532 CAG.Lie.SpecialLinear <> sl2_H_mat def
+R9534:9536 CAG.Lie.SpecialLinear <> fld:143 var
+def 9826:9834 <> char_ne_2
+binder 9837:9837 <> F:146
+R9854:9858 CAG.Galois.Field <> Field rec
+R9860:9860 CAG.Lie.SpecialLinear <> F:146 var
+binder 9848:9850 <> fld:147
+R9913:9916 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R9880:9885 CAG.Galois.Field <> cr_add proj
+R9875:9877 CAG.Lie.SpecialLinear <> fld:147 var
+R9906:9911 CAG.Galois.Field <> cr_one proj
+R9901:9903 CAG.Lie.SpecialLinear <> fld:147 var
+R9893:9898 CAG.Galois.Field <> cr_one proj
+R9888:9890 CAG.Lie.SpecialLinear <> fld:147 var
+R9922:9928 CAG.Galois.Field <> cr_zero proj
+R9917:9919 CAG.Lie.SpecialLinear <> fld:147 var
+ax 10367:10385 <> sl2_abstract_simple
+binder 10399:10399 <> F:148
+R10416:10420 CAG.Galois.Field <> Field rec
+R10422:10422 CAG.Lie.SpecialLinear <> F:148 var
+binder 10410:10412 <> fld:149
+binder 10426:10426 <> L:150
+R10446:10456 CAG.Lie.BasicDef <> LieAlgebraF rec
+R10462:10462 CAG.Lie.SpecialLinear <> L:150 var
+R10458:10460 CAG.Lie.SpecialLinear <> fld:149 var
+binder 10441:10442 <> la:151
+R10474:10474 CAG.Lie.SpecialLinear <> L:150 var
+binder 10466:10466 <> x:152
+binder 10468:10468 <> h:153
+binder 10470:10470 <> y:154
+R10495:10502 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10482:10490 CAG.Lie.SpecialLinear <> char_ne_2 def
+R10492:10494 CAG.Lie.SpecialLinear <> fld:149 var
+R10525:10532 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10521:10523 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10503:10513 CAG.Lie.BasicDef <> laF_bracket proj
+R10520:10520 CAG.Lie.SpecialLinear <> y:154 var
+R10518:10518 CAG.Lie.SpecialLinear <> x:152 var
+R10515:10516 CAG.Lie.SpecialLinear <> la:151 var
+R10524:10524 CAG.Lie.SpecialLinear <> h:153 var
+R10618:10625 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10551:10553 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10533:10543 CAG.Lie.BasicDef <> laF_bracket proj
+R10550:10550 CAG.Lie.SpecialLinear <> x:152 var
+R10548:10548 CAG.Lie.SpecialLinear <> h:153 var
+R10545:10546 CAG.Lie.SpecialLinear <> la:151 var
+R10554:10562 CAG.Lie.BasicDef <> vsF_scale proj
+R10617:10617 CAG.Lie.SpecialLinear <> x:152 var
+R10582:10587 CAG.Galois.Field <> cr_add proj
+R10577:10579 CAG.Lie.SpecialLinear <> fld:149 var
+R10608:10613 CAG.Galois.Field <> cr_one proj
+R10603:10605 CAG.Lie.SpecialLinear <> fld:149 var
+R10595:10600 CAG.Galois.Field <> cr_one proj
+R10590:10592 CAG.Lie.SpecialLinear <> fld:149 var
+R10565:10570 CAG.Lie.BasicDef <> laF_vs proj
+R10572:10573 CAG.Lie.SpecialLinear <> la:151 var
+R10760:10767 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10644:10646 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10626:10636 CAG.Lie.BasicDef <> laF_bracket proj
+R10643:10643 CAG.Lie.SpecialLinear <> y:154 var
+R10641:10641 CAG.Lie.SpecialLinear <> h:153 var
+R10638:10639 CAG.Lie.SpecialLinear <> la:151 var
+R10647:10653 CAG.Lie.BasicDef <> vsF_neg proj
+R10695:10703 CAG.Lie.BasicDef <> vsF_scale proj
+R10758:10758 CAG.Lie.SpecialLinear <> y:154 var
+R10723:10728 CAG.Galois.Field <> cr_add proj
+R10718:10720 CAG.Lie.SpecialLinear <> fld:149 var
+R10749:10754 CAG.Galois.Field <> cr_one proj
+R10744:10746 CAG.Lie.SpecialLinear <> fld:149 var
+R10736:10741 CAG.Galois.Field <> cr_one proj
+R10731:10733 CAG.Lie.SpecialLinear <> fld:149 var
+R10706:10711 CAG.Lie.BasicDef <> laF_vs proj
+R10713:10714 CAG.Lie.SpecialLinear <> la:151 var
+R10656:10661 CAG.Lie.BasicDef <> laF_vs proj
+R10663:10664 CAG.Lie.SpecialLinear <> la:151 var
+R10768:10775 CAG.Lie.Ideals <> IsSimple def
+R10777:10778 CAG.Lie.SpecialLinear <> la:151 var
+prf 11228:11249 <> mat_bracket_anticomm_2
+binder 11252:11252 <> F:157
+R11269:11273 CAG.Galois.Field <> Field rec
+R11275:11275 CAG.Lie.SpecialLinear <> F:157 var
+binder 11263:11265 <> fld:158
+R11285:11290 CAG.Lie.Linear <> Matrix def
+R11292:11292 CAG.Lie.SpecialLinear <> F:157 var
+binder 11279:11279 <> A:159
+binder 11281:11281 <> B:160
+R11320:11322 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11301:11311 CAG.Lie.Linear <> mat_bracket def
+R11319:11319 CAG.Lie.SpecialLinear <> B:160 var
+R11317:11317 CAG.Lie.SpecialLinear <> A:159 var
+R11313:11315 CAG.Lie.SpecialLinear <> fld:158 var
+R11323:11329 CAG.Lie.Linear <> mat_neg def
+R11336:11346 CAG.Lie.Linear <> mat_bracket def
+R11354:11354 CAG.Lie.SpecialLinear <> A:159 var
+R11352:11352 CAG.Lie.SpecialLinear <> B:160 var
+R11348:11350 CAG.Lie.SpecialLinear <> fld:158 var
+R11331:11333 CAG.Lie.SpecialLinear <> fld:158 var
+R11380:11391 CAG.Lie.BasicDef <> laF_anticomm thm
+R11394:11395 CAG.Lie.Linear <> gl prfax
+R11380:11391 CAG.Lie.BasicDef <> laF_anticomm thm
+R11394:11395 CAG.Lie.Linear <> gl prfax
+R11423:11447 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket prfax
+R11423:11447 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket prfax
+R11423:11447 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket prfax
+R11423:11447 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket prfax
+R11423:11447 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket prfax
+R11473:11489 CAG.Lie.SpecialLinear <> gl_neg_eq_mat_neg prfax
+R11473:11489 CAG.Lie.SpecialLinear <> gl_neg_eq_mat_neg prfax
+R11473:11489 CAG.Lie.SpecialLinear <> gl_neg_eq_mat_neg prfax
+prf 11600:11616 <> mat_bracket_alt_2
+binder 11619:11619 <> F:161
+R11636:11640 CAG.Galois.Field <> Field rec
+R11642:11642 CAG.Lie.SpecialLinear <> F:161 var
+binder 11630:11632 <> fld:162
+R11650:11655 CAG.Lie.Linear <> Matrix def
+R11657:11657 CAG.Lie.SpecialLinear <> F:161 var
+binder 11646:11646 <> A:163
+R11685:11687 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11666:11676 CAG.Lie.Linear <> mat_bracket def
+R11684:11684 CAG.Lie.SpecialLinear <> A:163 var
+R11682:11682 CAG.Lie.SpecialLinear <> A:163 var
+R11678:11680 CAG.Lie.SpecialLinear <> fld:162 var
+R11688:11695 CAG.Lie.Linear <> mat_zero def
+R11697:11699 CAG.Lie.SpecialLinear <> fld:162 var
+R11738:11752 CAG.Lie.BasicDef <> laF_bracket_alt proj
+R11727:11728 CAG.Lie.Linear <> gl prfax
+R11738:11752 CAG.Lie.BasicDef <> laF_bracket_alt proj
+R11727:11728 CAG.Lie.Linear <> gl prfax
+R11770:11794 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket prfax
+R11770:11794 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket prfax
+R11770:11794 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket prfax
+R11820:11838 CAG.Lie.SpecialLinear <> gl_zero_eq_mat_zero prfax
+R11820:11838 CAG.Lie.SpecialLinear <> gl_zero_eq_mat_zero prfax
+R11820:11838 CAG.Lie.SpecialLinear <> gl_zero_eq_mat_zero prfax
+ax 11991:12007 <> mat_neg_scale_neg
+binder 12019:12019 <> F:164
+R12036:12040 CAG.Galois.Field <> Field rec
+R12042:12042 CAG.Lie.SpecialLinear <> F:164 var
+binder 12030:12032 <> fld:165
+R12050:12050 CAG.Lie.SpecialLinear <> F:164 var
+binder 12046:12046 <> c:166
+R12058:12063 CAG.Lie.Linear <> Matrix def
+R12065:12065 CAG.Lie.SpecialLinear <> F:164 var
+binder 12054:12054 <> A:167
+R12119:12121 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12073:12079 CAG.Lie.Linear <> mat_neg def
+R12086:12094 CAG.Lie.Linear <> mat_scale def
+R12117:12117 CAG.Lie.SpecialLinear <> A:167 var
+R12106:12111 CAG.Galois.Field <> cr_neg proj
+R12101:12103 CAG.Lie.SpecialLinear <> fld:165 var
+R12114:12114 CAG.Lie.SpecialLinear <> c:166 var
+R12096:12098 CAG.Lie.SpecialLinear <> fld:165 var
+R12081:12083 CAG.Lie.SpecialLinear <> fld:165 var
+R12122:12130 CAG.Lie.Linear <> mat_scale def
+R12138:12138 CAG.Lie.SpecialLinear <> A:167 var
+R12136:12136 CAG.Lie.SpecialLinear <> c:166 var
+R12132:12134 CAG.Lie.SpecialLinear <> fld:165 var
+ax 12261:12273 <> mat_neg_scale
+binder 12285:12285 <> F:170
+R12302:12306 CAG.Galois.Field <> Field rec
+R12308:12308 CAG.Lie.SpecialLinear <> F:170 var
+binder 12296:12298 <> fld:171
+R12316:12316 CAG.Lie.SpecialLinear <> F:170 var
+binder 12312:12312 <> c:172
+R12324:12329 CAG.Lie.Linear <> Matrix def
+R12331:12331 CAG.Lie.SpecialLinear <> F:170 var
+binder 12320:12320 <> A:173
+R12370:12372 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12339:12345 CAG.Lie.Linear <> mat_neg def
+R12352:12360 CAG.Lie.Linear <> mat_scale def
+R12368:12368 CAG.Lie.SpecialLinear <> A:173 var
+R12366:12366 CAG.Lie.SpecialLinear <> c:172 var
+R12362:12364 CAG.Lie.SpecialLinear <> fld:171 var
+R12347:12349 CAG.Lie.SpecialLinear <> fld:171 var
+R12373:12381 CAG.Lie.Linear <> mat_scale def
+R12404:12404 CAG.Lie.SpecialLinear <> A:173 var
+R12393:12398 CAG.Galois.Field <> cr_neg proj
+R12388:12390 CAG.Lie.SpecialLinear <> fld:171 var
+R12401:12401 CAG.Lie.SpecialLinear <> c:172 var
+R12383:12385 CAG.Lie.SpecialLinear <> fld:171 var
+prf 12503:12512 <> ad_sl2_X_X
+binder 12515:12515 <> F:176
+R12532:12536 CAG.Galois.Field <> Field rec
+R12538:12538 CAG.Lie.SpecialLinear <> F:176 var
+binder 12526:12528 <> fld:177
+R12594:12596 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12547:12557 CAG.Lie.Linear <> mat_bracket def
+R12580:12588 CAG.Lie.SpecialLinear <> sl2_X_mat def
+R12590:12592 CAG.Lie.SpecialLinear <> fld:177 var
+R12564:12572 CAG.Lie.SpecialLinear <> sl2_X_mat def
+R12574:12576 CAG.Lie.SpecialLinear <> fld:177 var
+R12559:12561 CAG.Lie.SpecialLinear <> fld:177 var
+R12597:12604 CAG.Lie.Linear <> mat_zero def
+R12606:12608 CAG.Lie.SpecialLinear <> fld:177 var
+R12626:12642 CAG.Lie.SpecialLinear <> mat_bracket_alt_2 thm
+R12626:12642 CAG.Lie.SpecialLinear <> mat_bracket_alt_2 thm
+prf 12657:12666 <> ad_sl2_H_H
+binder 12669:12669 <> F:178
+R12686:12690 CAG.Galois.Field <> Field rec
+R12692:12692 CAG.Lie.SpecialLinear <> F:178 var
+binder 12680:12682 <> fld:179
+R12748:12750 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12701:12711 CAG.Lie.Linear <> mat_bracket def
+R12734:12742 CAG.Lie.SpecialLinear <> sl2_H_mat def
+R12744:12746 CAG.Lie.SpecialLinear <> fld:179 var
+R12718:12726 CAG.Lie.SpecialLinear <> sl2_H_mat def
+R12728:12730 CAG.Lie.SpecialLinear <> fld:179 var
+R12713:12715 CAG.Lie.SpecialLinear <> fld:179 var
+R12751:12758 CAG.Lie.Linear <> mat_zero def
+R12760:12762 CAG.Lie.SpecialLinear <> fld:179 var
+R12780:12796 CAG.Lie.SpecialLinear <> mat_bracket_alt_2 thm
+R12780:12796 CAG.Lie.SpecialLinear <> mat_bracket_alt_2 thm
+prf 12811:12820 <> ad_sl2_Y_Y
+binder 12823:12823 <> F:180
+R12840:12844 CAG.Galois.Field <> Field rec
+R12846:12846 CAG.Lie.SpecialLinear <> F:180 var
+binder 12834:12836 <> fld:181
+R12902:12904 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12855:12865 CAG.Lie.Linear <> mat_bracket def
+R12888:12896 CAG.Lie.SpecialLinear <> sl2_Y_mat def
+R12898:12900 CAG.Lie.SpecialLinear <> fld:181 var
+R12872:12880 CAG.Lie.SpecialLinear <> sl2_Y_mat def
+R12882:12884 CAG.Lie.SpecialLinear <> fld:181 var
+R12867:12869 CAG.Lie.SpecialLinear <> fld:181 var
+R12905:12912 CAG.Lie.Linear <> mat_zero def
+R12914:12916 CAG.Lie.SpecialLinear <> fld:181 var
+R12934:12950 CAG.Lie.SpecialLinear <> mat_bracket_alt_2 thm
+R12934:12950 CAG.Lie.SpecialLinear <> mat_bracket_alt_2 thm
+abbrev 13134:13136 <> two
+R13151:13156 CAG.Galois.Field <> cr_add proj
+R13177:13182 CAG.Galois.Field <> cr_one proj
+R13164:13169 CAG.Galois.Field <> cr_one proj
+prf 13229:13238 <> ad_sl2_H_X
+binder 13241:13241 <> F:182
+R13258:13262 CAG.Galois.Field <> Field rec
+R13264:13264 CAG.Lie.SpecialLinear <> F:182 var
+binder 13252:13254 <> fld:183
+R13320:13326 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R13273:13283 CAG.Lie.Linear <> mat_bracket def
+R13306:13314 CAG.Lie.SpecialLinear <> sl2_X_mat def
+R13316:13318 CAG.Lie.SpecialLinear <> fld:183 var
+R13290:13298 CAG.Lie.SpecialLinear <> sl2_H_mat def
+R13300:13302 CAG.Lie.SpecialLinear <> fld:183 var
+R13285:13287 CAG.Lie.SpecialLinear <> fld:183 var
+R13327:13335 CAG.Lie.Linear <> mat_scale def
+R13352:13360 CAG.Lie.SpecialLinear <> sl2_X_mat def
+R13362:13364 CAG.Lie.SpecialLinear <> fld:183 var
+R13342:13344 CAG.Lie.SpecialLinear <> two abbrev
+R13346:13348 CAG.Lie.SpecialLinear <> fld:183 var
+R13346:13348 CAG.Lie.SpecialLinear <> fld:183 var
+R13346:13348 CAG.Lie.SpecialLinear <> fld:183 var
+R13337:13339 CAG.Lie.SpecialLinear <> fld:183 var
+R13381:13394 CAG.Lie.SpecialLinear <> sl2_bracket_hx prfax
+R13381:13394 CAG.Lie.SpecialLinear <> sl2_bracket_hx prfax
+prf 13462:13471 <> ad_sl2_X_H
+binder 13474:13474 <> F:184
+R13491:13495 CAG.Galois.Field <> Field rec
+R13497:13497 CAG.Lie.SpecialLinear <> F:184 var
+binder 13485:13487 <> fld:185
+R13553:13559 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R13506:13516 CAG.Lie.Linear <> mat_bracket def
+R13539:13547 CAG.Lie.SpecialLinear <> sl2_H_mat def
+R13549:13551 CAG.Lie.SpecialLinear <> fld:185 var
+R13523:13531 CAG.Lie.SpecialLinear <> sl2_X_mat def
+R13533:13535 CAG.Lie.SpecialLinear <> fld:185 var
+R13518:13520 CAG.Lie.SpecialLinear <> fld:185 var
+R13560:13568 CAG.Lie.Linear <> mat_scale def
+R13600:13608 CAG.Lie.SpecialLinear <> sl2_X_mat def
+R13610:13612 CAG.Lie.SpecialLinear <> fld:185 var
+R13580:13585 CAG.Galois.Field <> cr_neg proj
+R13575:13577 CAG.Lie.SpecialLinear <> fld:185 var
+R13589:13591 CAG.Lie.SpecialLinear <> two abbrev
+R13593:13595 CAG.Lie.SpecialLinear <> fld:185 var
+R13593:13595 CAG.Lie.SpecialLinear <> fld:185 var
+R13593:13595 CAG.Lie.SpecialLinear <> fld:185 var
+R13570:13572 CAG.Lie.SpecialLinear <> fld:185 var
+R13633:13654 CAG.Lie.SpecialLinear <> mat_bracket_anticomm_2 thm
+R13657:13670 CAG.Lie.SpecialLinear <> sl2_bracket_hx prfax
+R13633:13654 CAG.Lie.SpecialLinear <> mat_bracket_anticomm_2 thm
+R13633:13654 CAG.Lie.SpecialLinear <> mat_bracket_anticomm_2 thm
+R13657:13670 CAG.Lie.SpecialLinear <> sl2_bracket_hx prfax
+R13657:13670 CAG.Lie.SpecialLinear <> sl2_bracket_hx prfax
+R13681:13693 CAG.Lie.SpecialLinear <> mat_neg_scale prfax
+R13681:13693 CAG.Lie.SpecialLinear <> mat_neg_scale prfax
+prf 13744:13753 <> ad_sl2_H_Y
+binder 13756:13756 <> F:186
+R13773:13777 CAG.Galois.Field <> Field rec
+R13779:13779 CAG.Lie.SpecialLinear <> F:186 var
+binder 13767:13769 <> fld:187
+R13835:13841 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R13788:13798 CAG.Lie.Linear <> mat_bracket def
+R13821:13829 CAG.Lie.SpecialLinear <> sl2_Y_mat def
+R13831:13833 CAG.Lie.SpecialLinear <> fld:187 var
+R13805:13813 CAG.Lie.SpecialLinear <> sl2_H_mat def
+R13815:13817 CAG.Lie.SpecialLinear <> fld:187 var
+R13800:13802 CAG.Lie.SpecialLinear <> fld:187 var
+R13842:13850 CAG.Lie.Linear <> mat_scale def
+R13882:13890 CAG.Lie.SpecialLinear <> sl2_Y_mat def
+R13892:13894 CAG.Lie.SpecialLinear <> fld:187 var
+R13862:13867 CAG.Galois.Field <> cr_neg proj
+R13857:13859 CAG.Lie.SpecialLinear <> fld:187 var
+R13871:13873 CAG.Lie.SpecialLinear <> two abbrev
+R13875:13877 CAG.Lie.SpecialLinear <> fld:187 var
+R13875:13877 CAG.Lie.SpecialLinear <> fld:187 var
+R13875:13877 CAG.Lie.SpecialLinear <> fld:187 var
+R13852:13854 CAG.Lie.SpecialLinear <> fld:187 var
+R13911:13924 CAG.Lie.SpecialLinear <> sl2_bracket_hy prfax
+R13911:13924 CAG.Lie.SpecialLinear <> sl2_bracket_hy prfax
+prf 14017:14026 <> ad_sl2_Y_H
+binder 14029:14029 <> F:188
+R14046:14050 CAG.Galois.Field <> Field rec
+R14052:14052 CAG.Lie.SpecialLinear <> F:188 var
+binder 14040:14042 <> fld:189
+R14108:14114 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R14061:14071 CAG.Lie.Linear <> mat_bracket def
+R14094:14102 CAG.Lie.SpecialLinear <> sl2_H_mat def
+R14104:14106 CAG.Lie.SpecialLinear <> fld:189 var
+R14078:14086 CAG.Lie.SpecialLinear <> sl2_Y_mat def
+R14088:14090 CAG.Lie.SpecialLinear <> fld:189 var
+R14073:14075 CAG.Lie.SpecialLinear <> fld:189 var
+R14115:14123 CAG.Lie.Linear <> mat_scale def
+R14140:14148 CAG.Lie.SpecialLinear <> sl2_Y_mat def
+R14150:14152 CAG.Lie.SpecialLinear <> fld:189 var
+R14130:14132 CAG.Lie.SpecialLinear <> two abbrev
+R14134:14136 CAG.Lie.SpecialLinear <> fld:189 var
+R14134:14136 CAG.Lie.SpecialLinear <> fld:189 var
+R14134:14136 CAG.Lie.SpecialLinear <> fld:189 var
+R14125:14127 CAG.Lie.SpecialLinear <> fld:189 var
+R14173:14194 CAG.Lie.SpecialLinear <> mat_bracket_anticomm_2 thm
+R14197:14210 CAG.Lie.SpecialLinear <> sl2_bracket_hy prfax
+R14173:14194 CAG.Lie.SpecialLinear <> mat_bracket_anticomm_2 thm
+R14173:14194 CAG.Lie.SpecialLinear <> mat_bracket_anticomm_2 thm
+R14197:14210 CAG.Lie.SpecialLinear <> sl2_bracket_hy prfax
+R14197:14210 CAG.Lie.SpecialLinear <> sl2_bracket_hy prfax
+R14221:14237 CAG.Lie.SpecialLinear <> mat_neg_scale_neg prfax
+R14221:14237 CAG.Lie.SpecialLinear <> mat_neg_scale_neg prfax
+prf 14286:14295 <> ad_sl2_X_Y
+binder 14298:14298 <> F:190
+R14315:14319 CAG.Galois.Field <> Field rec
+R14321:14321 CAG.Lie.SpecialLinear <> F:190 var
+binder 14309:14311 <> fld:191
+R14377:14379 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R14330:14340 CAG.Lie.Linear <> mat_bracket def
+R14363:14371 CAG.Lie.SpecialLinear <> sl2_Y_mat def
+R14373:14375 CAG.Lie.SpecialLinear <> fld:191 var
+R14347:14355 CAG.Lie.SpecialLinear <> sl2_X_mat def
+R14357:14359 CAG.Lie.SpecialLinear <> fld:191 var
+R14342:14344 CAG.Lie.SpecialLinear <> fld:191 var
+R14380:14388 CAG.Lie.SpecialLinear <> sl2_H_mat def
+R14390:14392 CAG.Lie.SpecialLinear <> fld:191 var
+R14408:14421 CAG.Lie.SpecialLinear <> sl2_bracket_xy prfax
+R14408:14421 CAG.Lie.SpecialLinear <> sl2_bracket_xy prfax
+prf 14487:14496 <> ad_sl2_Y_X
+binder 14499:14499 <> F:192
+R14516:14520 CAG.Galois.Field <> Field rec
+R14522:14522 CAG.Lie.SpecialLinear <> F:192 var
+binder 14510:14512 <> fld:193
+R14578:14584 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R14531:14541 CAG.Lie.Linear <> mat_bracket def
+R14564:14572 CAG.Lie.SpecialLinear <> sl2_X_mat def
+R14574:14576 CAG.Lie.SpecialLinear <> fld:193 var
+R14548:14556 CAG.Lie.SpecialLinear <> sl2_Y_mat def
+R14558:14560 CAG.Lie.SpecialLinear <> fld:193 var
+R14543:14545 CAG.Lie.SpecialLinear <> fld:193 var
+R14585:14591 CAG.Lie.Linear <> mat_neg def
+R14598:14606 CAG.Lie.SpecialLinear <> sl2_H_mat def
+R14608:14610 CAG.Lie.SpecialLinear <> fld:193 var
+R14593:14595 CAG.Lie.SpecialLinear <> fld:193 var
+R14631:14652 CAG.Lie.SpecialLinear <> mat_bracket_anticomm_2 thm
+R14655:14668 CAG.Lie.SpecialLinear <> sl2_bracket_xy prfax
+R14631:14652 CAG.Lie.SpecialLinear <> mat_bracket_anticomm_2 thm
+R14631:14652 CAG.Lie.SpecialLinear <> mat_bracket_anticomm_2 thm
+R14655:14668 CAG.Lie.SpecialLinear <> sl2_bracket_xy prfax
+R14655:14668 CAG.Lie.SpecialLinear <> sl2_bracket_xy prfax

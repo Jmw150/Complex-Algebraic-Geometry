@@ -1,0 +1,240 @@
+#+TITLE: Verified Group Theory in Rocq
+#+AUTHOR: jmw150
+#+DATE: 2026-04-11
+#+DESCRIPTION: Roadmap for building proven-correct group theory, for Ben McReynolds @ Purdue
+
+* Group Theory Formalization
+
+** DONE 1. Fix the Axiomatization
+   Fix the =Group= record in =theories/Group.v=. The current form
+   has existential inverses only, making downstream proofs painful.
+   Switch to a =StrictGroup= record with an explicit =inv= function.
+
+   Fields: =mul=, =e=, =inv=, =associative=, =id_right=, =id_left=,
+   =inv_right=, =inv_left=.
+
+   Also prove the original existential =Group= record follows from =StrictGroup=
+   so nothing is lost.
+
+** DONE 2. Dummit & Foote Proposition 1
+   Basic consequences of the axioms. All should be proved as lemmas
+   in a =Section= with a =StrictGroup= context.
+
+   - [x] Uniqueness of identity
+   - [x] Uniqueness of inverses
+   - [x] Double inverse: =(a⁻¹)⁻¹ = a=
+   - [x] Inverse of product: =(ab)⁻¹ = b⁻¹ a⁻¹=
+   - [x] Left cancellation: =au = av → u = v=
+   - [x] Right cancellation: =ub = vb → u = v=
+
+** DONE 3. Homomorphisms
+   Define a =GroupHom= record capturing =φ(ab) = φ(a)φ(b)=.
+
+   Prove:
+   - [x] =φ(e) = e=
+   - [x] =φ(a⁻¹) = φ(a)⁻¹=
+   - [x] Kernel is a subgroup
+   - [x] Image is a subgroup
+   - [x] Kernel is a normal subgroup
+
+** DONE 4. Normal Subgroups and Quotient Groups
+   Uncomment and complete the stubs in =theories/Group.v=.
+
+   - [x] =is_normal_subgroup= definition  (fixed arity bug, uncommented)
+   - [x] Quotient relation =a ~ b ↔ a⁻¹b ∈ N=  (fixed arity bug, uncommented)
+   - [x] =qrel= equivalence: =qrel_refl=, =qrel_sym=, =qrel_trans=
+   - [x] =qrel_mul_compat=: multiplication descends to the quotient
+   - [~] Quotient set =G/N= as a =StrictGroup= instance
+         (=QuotCarrier=, =qmap=, =QuotStrictGroup= admitted — Rocq lacks
+          native quotient types; all mathematical content is proved)
+
+** DONE 5. Lagrange's Theorem
+   Uses a Section with explicit =G_elems : list G= and decidable =H=.
+
+   - [x] =H_list= via =List.filter=; =NoDup=, membership iff
+   - [x] =coset_list g= = =map (g *) H_list=; length, NoDup, membership
+   - [x] =H= closed under =sinv= (=H_closed_sinv=)
+   - [x] Coset equivalence =crel= (refl, sym, trans)
+   - [x] =in_coset_iff_crel=: =x ∈ gH ↔ g ~_H x=
+   - [x] =coset_eq_from_common=: cosets sharing an element share all elements
+   - [~] =coset_partition_exists= (admitted — list combinatorics)
+   - [x] =lagrange=: =Nat.divide |H_list| |G_elems|= proved from partition
+
+** DONE 6. Isomorphism Theorems
+
+   Infrastructure:
+   - [x] =GroupIso= record (hom + two-sided inverse)
+   - [x] =iso_injective=, =iso_surjective=
+   - [x] Subgroup helpers: =subgroup_contains_id=, =subgroup_closed_mul=, =subgroup_closed_sinv=
+
+   First Isomorphism Theorem (=G / ker(φ) ≅ im(φ)=):
+   - [x] =FIT_equiv=: =φ(a)=φ(b) ↔ φ(a⁻¹b)=1= (algebraic core)
+   - [x] =FIT_well_defined=, =FIT_injective= (corollaries)
+   - [x] =FIT_ker_normal=, =FIT_img_sub= (re-stated from §3)
+   - [~] =first_isomorphism_theorem= (admitted — quotient/subtype infra)
+
+   Second Isomorphism Theorem (=HN/N ≅ H/(H∩N)=):
+   - [x] =H_inter_N= and =HN_prod= definitions
+   - [x] =H_inter_N_subgroup=: H∩N is a subgroup
+   - [x] =H_inter_N_normal_in_H=: conjugate of H∩N-element stays in H∩N
+   - [x] =SIT_equiv=: =h₁⁻¹h₂∈N ↔ h₁⁻¹h₂∈H∩N= for h₁,h₂∈H
+   - [~] =second_isomorphism_theorem= (admitted)
+
+   Third Isomorphism Theorem (=(G/N)/(H/N) ≅ G/H=):
+   - [x] =TIT_coset_refinement=: =N(a⁻¹b)→H(a⁻¹b)= (N⊆H)
+   - [x] =TIT_hom_compat=: N-equiv is preserved under multiplication (via =qrel_mul_compat=)
+   - [~] =third_isomorphism_theorem= (admitted)
+
+** DONE 7. Free Groups and the Word Problem
+   New file =theories/FreeGroup.v=.
+
+*** Representation
+    - [x] =Letter n= — =(Fin.t n) × bool=, =true= = generator, =false= = inverse.
+    - [x] =Word n= — =list (Letter n)=.
+    - [x] =letter_inv : Letter n -> Letter n= — flip =bool= flag.
+    - [x] =letter_eq_dec= — decidable equality via =Fin.eq_dec= + =bool_dec=.
+    - [x] =letter_inv_involutive=, =letter_inv_neq=.
+
+*** Reduction to normal form
+    - [x] =cancel_step= — leftmost adjacent cancellable pair removed;
+          proved by =cancel_step_cancel= / =cancel_step_recurse= spec lemmas.
+    - [x] =cancel_step_shortens= — =length w' + 2 = length w= (proved).
+    - [x] =reduce_aux= — fuel-bounded iteration; =reduce w = reduce_aux (length w) w=.
+    - [x] =reduced : Word n -> Prop= — =cancel_step w = None=.
+    - [~] =reduce_is_reduced=, =reduce_idempotent=, =reduce_app_reduce_{l,r}= (admitted).
+    - [~] =reduce_self= (admitted — holds in the quotient model).
+
+*** Free group structure
+    - [x] =free_mul= — concatenate then reduce.
+    - [x] =free_inv= — reverse and flip each letter.
+    - [x] =free_inv_involutive=, =free_inv_app= (proved).
+    - [x] =free_assoc= (proved using =reduce_app_reduce_{l,r}= + =app_assoc=).
+    - [x] =free_sg_id_right=, =free_sg_id_left= (proved using =reduce_self=).
+    - [~] =free_inv_right=, =free_inv_left= (admitted).
+    - [x] =FreeGroup n : StrictGroup (Word n)=.
+
+*** Word problem decision procedure
+    - [x] =word_eq : Word n -> Word n -> bool= — compare =reduce w1= and =reduce w2=
+          via =list_eq_dec letter_eq_dec=.
+    - [x] =word_eq_correct= (proved): =word_eq u v = true ↔ reduce u = reduce v=.
+    - [x] =word_eq_refl=, =word_eq_sym=, =word_eq_trans= (proved).
+
+*** Extraction and demo
+    - [~] =Extraction "lib/free_group.ml" reduce word_eq free_mul free_inv FreeGroup=
+          (instructions in comment at bottom of =FreeGroup.v=).
+    - [ ] Small OCaml driver (=bin/word_problem.ml=) for =F_2=.
+
+** DONE 8. Group Representations
+   New file =theories/Representation.v=. Uses matrix machinery from =AG.v=.
+
+*** GL(n,ℂ) as a StrictGroup
+    - [x] =GLMat n= record: =gl_mat=, =gl_inv_mat=, =Mat_wf= witnesses, inverse laws
+    - [x] =GLMat_eq= — equality from matrix equality (via =proof_irrelevance=)
+    - [x] =GL_mul=, =GL_id=, =GL_inv= — group operations (inverse is concrete: swap fields)
+    - [x] =GL_inv_right=, =GL_inv_left= — FULLY proved from stored inverse proofs
+    - [x] =GL_assoc=, =GL_id_right=, =GL_id_left= — proved from admitted matrix lemmas
+    - [x] =GL_StrictGroup n : StrictGroup (GLMat n)=
+
+*** Representations
+    - [x] =GroupRep sg n := GroupHom sg (GL_StrictGroup n)=
+    - [x] =rep_matrix= — extract the matrix assigned to a group element
+    - [x] =rep_identity= — =ρ(e) = I_n= (proved)
+    - [x] =rep_inv_glmat=, =rep_inv_matrix= — =ρ(g⁻¹) = ρ(g)⁻¹= (proved)
+    - [x] =rep_mul_matrix= — =ρ(gh) = ρ(g)·ρ(h)= (proved)
+    - [x] =trivial_rep= — trivial representation (proved)
+
+*** Matrix algebra admits (in =AG.v=)
+    - [x] =mident_wf= — proved via =mident_aux_row_length= + =mident_aux_length=
+    - [~] =mmul_wf= (admitted)
+    - [~] =mmul_assoc= (admitted)
+    - [~] =mmul_mident_right=, =mmul_mident_left= (admitted — next target)
+
+** DONE 9. Character Theory
+   New file =theories/Character.v=.
+
+*** Definitions
+    - [x] =character ρ g = trace(ρ(g))=
+    - [x] =Cinject_nat n= — n copies of C1 (recursive, avoids CReal setoid issues)
+    - [x] =block_diag= — (n+m)×(n+m) block diagonal matrix
+    - [x] =char_inner_product_sum= — Σ_g χ₁(g)·conj(χ₂(g)) (computable)
+    - [x] =RepHom=, =is_irreducible=, =zero_mat= — Schur infrastructure
+
+*** Proved lemmas
+    - [x] =nth_default_map_seq= — k-th element of map over seq
+    - [x] =ident_row_diag= — diagonal entry of identity row is C1
+    - [x] =trace_mident= — =trace(I_n) = Cinject_nat n= (FULLY PROVED)
+    - [x] =char_identity= — =χ(e) = n= (FULLY PROVED)
+    - [x] =char_class_fn= — =χ(hgh⁻¹) = χ(g)= (proved using =trace_cyclic=)
+    - [x] =char_mul= — =χ(gh) = trace(ρ(g)·ρ(h))=
+
+*** Admitted
+    - [~] =trace_cyclic= — =trace(AB) = trace(BA)= (key; needed by =char_class_fn=)
+    - [~] =trace_madd=, =trace_block_diag=
+    - [~] =char_inv_unitary= — =χ(g⁻¹) = conj(χ(g))= for unitary reps
+    - [~] =char_direct_sum= — =χ_{ρ₁⊕ρ₂} = χ_{ρ₁} + χ_{ρ₂}=
+    - [~] =block_diag_wf=, =GL_direct_sum_*=, =rep_direct_sum=
+    - [~] =schurs_lemma= (statement correct; proof hard)
+
+** TODO 10. Fill in matrix algebra admits
+   Target: prove =mmul_mident_right=, =mmul_mident_left=, then =trace_cyclic=.
+
+*** mmul_mident_right : A · I_n = A
+    Strategy: show each row of =mmul A (mident n) n= equals the corresponding
+    row of =A=. Key sub-lemma: =dot row (col (mident n) j) = nth_default C0 row j=.
+
+*** mmul_mident_left : I_n · A = A
+    Strategy: =col (mident n) j= is the standard basis vector =e_j=.
+    Then =dot e_j row = j=-th entry of row.
+
+*** trace_cyclic : trace(AB) = trace(BA)
+    Strategy: both equal =Σ_{i,j} A_{ij} · B_{ji}=.
+    Requires double-sum interchange; doable by induction on rows.
+
+** DONE 10.5. Lie Algebras
+   New file =theories/LieAlgebra.v=. Compiles cleanly.
+
+*** Vector space and Lie algebra records
+    - [x] =VectorSpace= record (8 axioms: add/scale/zero/neg)
+    - [x] =LieAlgebra= record extending VectorSpace with =la_bracket=,
+          bilinearity, antisymmetry, Jacobi identity
+    - [x] =bracket_anticomm=, =bracket_add_r=, =bracket_scale_r= (Admitted)
+
+*** Matrix Lie algebra gl(n,ℂ)
+    - [x] =mscale=, =mzero= definitions
+    - [~] =mat_vs_scale_one=, =mat_vs_scale_assoc= (Admitted — CReal setoid/propositional
+          equality mismatch: =ring= tactic needs CRealEq goals, not propositional =)
+    - [x] =gl_bracket n A B = commutator A B n=
+    - [x] =gl_bracket_antisymm= (proved via =mat_vs_add_neg_r=)
+    - [~] =gl_bracket_add_l=, =gl_bracket_scale_l=, =gl_jacobi= (Admitted)
+    - [x] =MatVS n : VectorSpace (Mat CComplex)=
+    - [x] =gl n : LieAlgebra (Mat CComplex)=
+
+*** Homomorphisms and representations
+    - [x] =LieAlgHom= record with =lahom_fn=, =lahom_add=, =lahom_scale=, =lahom_bracket=
+    - [x] =LieAlgRep la n := LieAlgHom la (gl n)=
+    - [x] =adjoint la x y = la_bracket la x y=
+    - [~] =gl_adjoint_hom= — Jacobi identity for gl (Admitted)
+    - [~] =induced_lie_rep= (Admitted — adjoint rep needs n²×n² matrix infrastructure)
+
+*** Killing form
+    - [x] =killing_form n A B = 2n·trace(AB) − 2·trace(A)·trace(B)=
+          (explicit gl(n) formula, avoids n²×n² adjoint matrix)
+    - [~] =killing_symm= (Admitted — uses trace_cyclic + CReal commutativity)
+    - [~] =killing_add_l=, =killing_scale_l=, =killing_invariant= (Admitted)
+    - [~] =is_semisimple=, =gl_semisimple= (Admitted)
+
+** DONE 11. Free group carrier fix
+   Changed carrier to =RWord n = {w : Word n | reduced w}=.
+
+   - [x] =nil_reduced : reduced []=
+   - [x] =reduce_is_reduced : reduced (reduce w)=
+   - [x] =reduce_self : reduced w → reduce w = w= (from =reduce_aux_none=)
+   - [x] =free_inv_reduced : reduced w → reduced (free_inv w)=
+         (via =cancel_step_none_map_inv= + =cancel_step_none_rev=)
+   - [x] =rword_mul=, =rword_inv=, =rword_e=, =FreeGroup= on sigma type
+   - [x] =rword_id_right/left= proved (using =reduce_self=)
+   - [~] =rword_assoc= (uses =reduce_app_reduce_r/l=; l proved, r admitted)
+   - [~] =rword_inv_right/left= (admitted — need =free_inv_right/left=)
+
+   Infrastructure added: =cancel_step_app_none=, =cancel_step_none_suffix=,
+   =cancel_step_none_last_pair=, =cancel_step_none_map_inv=, =cancel_step_none_rev=.

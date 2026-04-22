@@ -1,0 +1,182 @@
+DIGEST d5cb78124d81592a87b14d553a0a1a1b
+FCAG.Projective.Degree
+R570:573 Stdlib.Lists.List <> <> lib
+R575:579 Stdlib.Arith.Arith <> <> lib
+R581:586 Stdlib.ZArith.ZArith <> <> lib
+R588:590 Stdlib.micromega.Lia <> <> lib
+R617:623 CAG.Complex <> <> lib
+R650:665 CAG.ManifoldTopology <> <> lib
+R692:721 CAG.Kahler.Lefschetz.HardLefschetz <> <> lib
+R748:770 CAG.Projective.TangentSpace <> <> lib
+R797:821 CAG.Projective.FunctionFields <> <> lib
+R848:857 CAG.LieAlgebra <> <> lib
+R884:909 CAG.Kahler.Lefschetz.Operators <> <> lib
+ax 1254:1270 <> fundamental_class
+R1286:1302 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 1282:1282 <> V:1
+R1310:1312 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R1315:1324 CAG.Projective.FunctionFields <> CPn_kahler defax
+R1327:1340 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R1342:1342 CAG.Projective.Degree <> V:1 var
+R1348:1350 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R1351:1364 CAG.Projective.TangentSpace <> pv_complex_dim proj
+R1366:1366 CAG.Projective.Degree <> V:1 var
+ax 1455:1475 <> linear_subspace_class
+R1493:1495 Corelib.Init.Datatypes <> nat ind
+binder 1487:1487 <> n:4
+binder 1489:1489 <> k:5
+R1515:1522 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1505:1508 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R1504:1504 CAG.Projective.Degree <> k:5 var
+R1509:1509 CAG.Projective.Degree <> n:4 var
+R1523:1525 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R1528:1537 CAG.Projective.FunctionFields <> CPn_kahler defax
+R1539:1539 CAG.Projective.Degree <> n:4 var
+R1544:1546 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R1547:1547 CAG.Projective.Degree <> k:5 var
+ax 1627:1635 <> degree_of
+R1656:1659 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1639:1655 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+R1660:1662 Corelib.Init.Datatypes <> nat ind
+prf 1674:1690 <> pv_dim_le_ambient
+R1706:1722 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 1702:1702 <> V:10
+R1747:1750 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R1731:1744 CAG.Projective.TangentSpace <> pv_complex_dim proj
+R1746:1746 CAG.Projective.Degree <> V:10 var
+R1751:1764 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R1766:1766 CAG.Projective.Degree <> V:10 var
+prf 1807:1832 <> fundamental_class_multiple
+R1848:1864 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 1844:1844 <> V:11
+R1891:1897 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1872:1888 CAG.Projective.Degree <> fundamental_class defax
+R1890:1890 CAG.Projective.Degree <> V:11 var
+R1898:1905 CAG.LieAlgebra <> vs_scale proj
+R2058:2078 CAG.Projective.Degree <> linear_subspace_class defax
+R2081:2094 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R2096:2096 CAG.Projective.Degree <> V:11 var
+R2100:2113 CAG.Projective.TangentSpace <> pv_complex_dim proj
+R2115:2115 CAG.Projective.Degree <> V:11 var
+R2134:2150 CAG.Projective.Degree <> pv_dim_le_ambient prfax
+R2152:2152 CAG.Projective.Degree <> V:11 var
+R1985:1993 CAG.Complex <> Cinject_Q def
+R1996:2015 Stdlib.QArith.QArith_base <> inject_Z def
+R2018:2025 Stdlib.ZArith.BinInt Z of_nat def
+R2028:2036 CAG.Projective.Degree <> degree_of defax
+R2038:2038 CAG.Projective.Degree <> V:11 var
+R1908:1913 CAG.Kahler.Lefschetz.Operators <> HdR_vs defax
+R1916:1925 CAG.Projective.FunctionFields <> CPn_kahler defax
+R1928:1941 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R1943:1943 CAG.Projective.Degree <> V:11 var
+R1949:1951 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R1952:1965 CAG.Projective.TangentSpace <> pv_complex_dim proj
+R1967:1967 CAG.Projective.Degree <> V:11 var
+ax 2468:2494 <> generic_complementary_plane
+R2510:2526 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 2506:2506 <> V:12
+prf 2616:2641 <> generic_intersection_count
+R2657:2673 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 2653:2653 <> V:15
+R2685:2711 CAG.Projective.Degree <> generic_complementary_plane defax
+R2713:2713 CAG.Projective.Degree <> V:15 var
+binder 2681:2681 <> L:16
+R2773:2776 Corelib.Init.Logic <> True ind
+R2800:2800 Corelib.Init.Logic <> I constr
+R2800:2800 Corelib.Init.Logic <> I constr
+prf 2893:2919 <> generic_intersection_smooth
+R2935:2951 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 2931:2931 <> V:17
+R2963:2989 CAG.Projective.Degree <> generic_complementary_plane defax
+R2991:2991 CAG.Projective.Degree <> V:17 var
+binder 2959:2959 <> L:18
+R2999:3002 Corelib.Init.Logic <> True ind
+R3026:3026 Corelib.Init.Logic <> I constr
+R3026:3026 Corelib.Init.Logic <> I constr
+ax 3329:3345 <> fubini_study_form
+R3361:3363 Corelib.Init.Datatypes <> nat ind
+binder 3357:3357 <> n:19
+R3371:3373 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R3376:3385 CAG.Projective.FunctionFields <> CPn_kahler defax
+R3387:3387 CAG.Projective.Degree <> n:19 var
+ax 3457:3470 <> integrate_over
+R3486:3502 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 3482:3482 <> V:22
+R3553:3556 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3510:3512 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R3515:3526 CAG.Projective.FunctionFields <> pv_to_kahler defax
+R3528:3528 CAG.Projective.Degree <> V:22 var
+R3533:3535 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R3536:3549 CAG.Projective.TangentSpace <> pv_complex_dim proj
+R3551:3551 CAG.Projective.Degree <> V:22 var
+R3557:3564 CAG.Complex <> CComplex rec
+prf 3625:3645 <> degree_volume_formula
+R3661:3677 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 3657:3657 <> V:25
+R3758:3761 Corelib.Init.Logic <> True ind
+R3785:3785 Corelib.Init.Logic <> I constr
+R3785:3785 Corelib.Init.Logic <> I constr
+def 4104:4123 <> hypersurface_variety
+R4132:4134 Corelib.Init.Datatypes <> nat ind
+binder 4126:4126 <> n:26
+binder 4128:4128 <> d:27
+R4142:4150 CAG.Projective.TangentSpace <> HomogPoly defax
+R4152:4152 CAG.Projective.Degree <> n:26 var
+R4154:4154 CAG.Projective.Degree <> d:27 var
+binder 4138:4138 <> F:28
+R4159:4175 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+R4185:4198 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R4185:4198 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R4185:4198 CAG.Projective.TangentSpace <> pv_ambient_dim proj
+R4210:4215 CAG.Projective.TangentSpace <> pv_mem proj
+R4210:4215 CAG.Projective.TangentSpace <> pv_mem proj
+R4269:4282 CAG.Projective.TangentSpace <> pv_complex_dim proj
+R4269:4282 CAG.Projective.TangentSpace <> pv_complex_dim proj
+R4203:4203 CAG.Projective.Degree <> n:26 var
+binder 4224:4224 <> p:29
+R4258:4260 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4229:4237 CAG.Projective.TangentSpace <> poly_eval defax
+R4257:4257 CAG.Projective.Degree <> p:29 var
+R4240:4252 CAG.Projective.TangentSpace <> homog_to_poly defax
+R4254:4254 CAG.Projective.Degree <> F:28 var
+R4261:4262 CAG.Complex <> C0 def
+R4288:4290 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R4287:4287 CAG.Projective.Degree <> n:26 var
+prf 4378:4396 <> degree_hypersurface
+R4414:4416 Corelib.Init.Datatypes <> nat ind
+binder 4408:4408 <> n:30
+binder 4410:4410 <> d:31
+R4424:4432 CAG.Projective.TangentSpace <> HomogPoly defax
+R4434:4434 CAG.Projective.Degree <> n:30 var
+R4436:4436 CAG.Projective.Degree <> d:31 var
+binder 4420:4420 <> F:32
+R4482:4484 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4444:4452 CAG.Projective.Degree <> degree_of defax
+R4455:4474 CAG.Projective.Degree <> hypersurface_variety def
+R4476:4476 CAG.Projective.Degree <> n:30 var
+R4478:4478 CAG.Projective.Degree <> d:31 var
+R4480:4480 CAG.Projective.Degree <> F:32 var
+R4485:4485 CAG.Projective.Degree <> d:31 var
+prf 4567:4598 <> equivalent_definitions_of_degree
+R4614:4630 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 4610:4610 <> V:33
+R4757:4760 Corelib.Init.Logic <> True ind
+R4784:4784 Corelib.Init.Logic <> I constr
+R4784:4784 Corelib.Init.Logic <> I constr
+prf 5082:5096 <> degree_positive
+R5112:5128 CAG.Projective.TangentSpace <> ProjectiveVariety rec
+binder 5108:5108 <> V:34
+R5138:5140 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R5141:5149 CAG.Projective.Degree <> degree_of defax
+R5151:5151 CAG.Projective.Degree <> V:34 var
+prf 5243:5264 <> degree_linear_subspace
+R5282:5284 Corelib.Init.Datatypes <> nat ind
+binder 5276:5276 <> n:35
+binder 5278:5278 <> k:36
+R5294:5297 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R5293:5293 CAG.Projective.Degree <> k:36 var
+R5298:5298 CAG.Projective.Degree <> n:35 var
+binder 5288:5288 <> H:37
+R5370:5373 Corelib.Init.Logic <> True ind
+R5397:5397 Corelib.Init.Logic <> I constr
+R5397:5397 Corelib.Init.Logic <> I constr

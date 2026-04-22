@@ -1,0 +1,607 @@
+DIGEST 6698aff28419e815655f69e789775f4b
+FCAG.NeuralOp.FNO
+R1142:1145 Stdlib.Lists.List <> <> lib
+R1147:1151 Stdlib.Arith.Arith <> <> lib
+R1181:1186 Stdlib.QArith.QArith <> <> lib
+R1188:1193 Stdlib.ZArith.ZArith <> <> lib
+R1223:1258 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> <> lib
+R1288:1321 Stdlib.Reals.Cauchy.ConstructiveCauchyAbs <> <> lib
+R1351:1363 Stdlib.micromega.Lia <> <> lib
+R1373:1385 Stdlib.Lists.List ListNotations <> mod
+R1413:1419 CAG.Complex <> <> lib
+R1446:1457 CAG.NeuralOp.DFT <> <> lib
+def 1689:1700 <> Nonlinearity
+R1713:1716 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1705:1712 CAG.Complex <> CComplex rec
+R1717:1724 CAG.Complex <> CComplex rec
+def 1739:1744 <> relu_C
+R1748:1759 CAG.NeuralOp.FNO <> Nonlinearity def
+binder 1770:1770 <> z:1
+R1775:1777 CAG.Complex <> mkC constr
+R1780:1788 Stdlib.Reals.Cauchy.ConstructiveCauchyAbs <> CReal_max def
+R1791:1792 CAG.Complex <> re proj
+R1794:1794 CAG.NeuralOp.FNO <> z:1 var
+R1801:1802 CAG.Complex <> im proj
+R1804:1804 CAG.NeuralOp.FNO <> z:1 var
+def 1820:1825 <> tanh_C
+R1829:1840 CAG.NeuralOp.FNO <> Nonlinearity def
+def 1950:1961 <> apply_nonlin
+R1969:1980 CAG.NeuralOp.FNO <> Nonlinearity def
+binder 1964:1965 <> σ:2
+R1989:1992 Corelib.Init.Datatypes <> list ind
+R1994:2001 CAG.Complex <> CComplex rec
+binder 1984:1985 <> xs:3
+R2006:2009 Corelib.Init.Datatypes <> list ind
+R2011:2018 CAG.Complex <> CComplex rec
+R2025:2032 Stdlib.Lists.List <> map abbrev
+R2037:2038 CAG.NeuralOp.FNO <> xs:3 var
+R2034:2035 CAG.NeuralOp.FNO <> σ:2 var
+rec 2332:2345 <> FNOLayerParams
+proj 2361:2369 <> fno_K_max
+proj 2382:2392 <> fno_weights
+proj 2435:2442 <> fno_skip
+proj 2461:2470 <> fno_nonlin
+proj 2491:2505 <> fno_weights_len
+R2375:2377 Corelib.Init.Datatypes <> nat ind
+R2396:2399 Corelib.Init.Datatypes <> list ind
+R2401:2408 CAG.Complex <> CComplex rec
+R2449:2456 CAG.Complex <> CComplex rec
+R2475:2486 CAG.NeuralOp.FNO <> Nonlinearity def
+R2527:2529 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2509:2514 Corelib.Init.Datatypes <> length def
+R2516:2526 CAG.NeuralOp.FNO <> fno_weights:6 meth
+R2530:2538 CAG.NeuralOp.FNO <> fno_K_max:5 meth
+def 2654:2666 <> apply_weights
+R2676:2679 Corelib.Init.Datatypes <> list ind
+R2681:2688 CAG.Complex <> CComplex rec
+binder 2669:2669 <> R:10
+binder 2671:2672 <> Xs:11
+R2693:2696 Corelib.Init.Datatypes <> list ind
+R2698:2705 CAG.Complex <> CComplex rec
+R2712:2724 CAG.NeuralOp.DFT <> pointwise_mul def
+R2726:2726 CAG.NeuralOp.FNO <> R:10 var
+R2728:2729 CAG.NeuralOp.FNO <> Xs:11 var
+def 2863:2875 <> spectral_conv
+R2882:2895 CAG.NeuralOp.FNO <> FNOLayerParams rec
+binder 2878:2878 <> p:12
+R2903:2906 Corelib.Init.Datatypes <> list ind
+R2908:2915 CAG.Complex <> CComplex rec
+binder 2899:2899 <> v:13
+R2920:2923 Corelib.Init.Datatypes <> list ind
+R2925:2932 CAG.Complex <> CComplex rec
+R2951:2956 Corelib.Init.Datatypes <> length def
+R2958:2958 CAG.NeuralOp.FNO <> v:13 var
+binder 2943:2943 <> N:14
+R2978:2980 CAG.NeuralOp.DFT <> dft def
+R2982:2982 CAG.NeuralOp.FNO <> v:13 var
+binder 2969:2973 <> Xfull:15
+R3002:3015 CAG.NeuralOp.DFT <> truncate_modes def
+R3020:3028 CAG.NeuralOp.FNO <> fno_K_max proj
+R3017:3017 CAG.NeuralOp.FNO <> p:12 var
+R3031:3035 CAG.NeuralOp.FNO <> Xfull:15 var
+binder 2993:2996 <> Xlow:16
+R3059:3071 CAG.NeuralOp.FNO <> apply_weights def
+R3076:3086 CAG.NeuralOp.FNO <> fno_weights proj
+R3073:3073 CAG.NeuralOp.FNO <> p:12 var
+R3089:3092 CAG.NeuralOp.FNO <> Xlow:16 var
+binder 3046:3054 <> Xweighted:17
+R3112:3117 CAG.NeuralOp.DFT <> pad_to def
+R3119:3119 CAG.NeuralOp.FNO <> N:14 var
+R3121:3129 CAG.NeuralOp.FNO <> Xweighted:17 var
+binder 3103:3106 <> Xpad:18
+R3136:3139 CAG.NeuralOp.DFT <> idft def
+R3141:3144 CAG.NeuralOp.FNO <> Xpad:18 var
+def 3215:3229 <> skip_connection
+R3236:3249 CAG.NeuralOp.FNO <> FNOLayerParams rec
+binder 3232:3232 <> p:19
+R3257:3260 Corelib.Init.Datatypes <> list ind
+R3262:3269 CAG.Complex <> CComplex rec
+binder 3253:3253 <> v:20
+R3274:3277 Corelib.Init.Datatypes <> list ind
+R3279:3286 CAG.Complex <> CComplex rec
+R3293:3300 Stdlib.Lists.List <> map abbrev
+R3333:3333 CAG.NeuralOp.FNO <> v:20 var
+binder 3307:3307 <> x:21
+R3312:3315 CAG.Complex <> Cmul def
+R3320:3327 CAG.NeuralOp.FNO <> fno_skip proj
+R3317:3317 CAG.NeuralOp.FNO <> p:19 var
+R3330:3330 CAG.NeuralOp.FNO <> x:21 var
+def 3400:3408 <> fno_layer
+R3415:3428 CAG.NeuralOp.FNO <> FNOLayerParams rec
+binder 3411:3411 <> p:22
+R3436:3439 Corelib.Init.Datatypes <> list ind
+R3441:3448 CAG.Complex <> CComplex rec
+binder 3432:3432 <> v:23
+R3453:3456 Corelib.Init.Datatypes <> list ind
+R3458:3465 CAG.Complex <> CComplex rec
+R3482:3494 CAG.NeuralOp.FNO <> spectral_conv def
+R3500:3500 CAG.NeuralOp.FNO <> p:22 var
+R3502:3502 CAG.NeuralOp.FNO <> v:23 var
+binder 3476:3477 <> Kv:24
+R3519:3533 CAG.NeuralOp.FNO <> skip_connection def
+R3537:3537 CAG.NeuralOp.FNO <> p:22 var
+R3539:3539 CAG.NeuralOp.FNO <> v:23 var
+binder 3513:3514 <> Wv:25
+R3546:3557 CAG.NeuralOp.FNO <> apply_nonlin def
+R3562:3571 CAG.NeuralOp.FNO <> fno_nonlin proj
+R3559:3559 CAG.NeuralOp.FNO <> p:22 var
+R3575:3582 Stdlib.Lists.List <> map abbrev
+R3651:3662 Stdlib.Lists.List <> combine def
+R3667:3668 CAG.NeuralOp.FNO <> Wv:25 var
+R3664:3665 CAG.NeuralOp.FNO <> Kv:24 var
+R3590:3590 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3592:3593 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3595:3595 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 3594:3594 <> w:26
+binder 3591:3591 <> k:27
+binder 3590:3595 <> pat:28
+R3600:3603 CAG.Complex <> Cadd def
+R3605:3605 CAG.NeuralOp.FNO <> k:27 var
+R3607:3607 CAG.NeuralOp.FNO <> w:26 var
+rec 3862:3870 <> FNOParams
+proj 3886:3893 <> fno_lift
+proj 3960:3967 <> fno_proj
+proj 4018:4027 <> fno_layers
+R3900:3907 CAG.Complex <> CComplex rec
+R3974:3981 CAG.Complex <> CComplex rec
+R4032:4035 Corelib.Init.Datatypes <> list ind
+R4037:4050 CAG.NeuralOp.FNO <> FNOLayerParams rec
+def 4132:4135 <> lift
+R4142:4149 CAG.Complex <> CComplex rec
+binder 4138:4138 <> p:33
+R4157:4160 Corelib.Init.Datatypes <> list ind
+R4162:4169 CAG.Complex <> CComplex rec
+binder 4153:4153 <> v:34
+R4174:4177 Corelib.Init.Datatypes <> list ind
+R4179:4186 CAG.Complex <> CComplex rec
+R4193:4200 Stdlib.Lists.List <> map abbrev
+R4211:4211 CAG.NeuralOp.FNO <> v:34 var
+R4203:4206 CAG.Complex <> Cmul def
+R4208:4208 CAG.NeuralOp.FNO <> p:33 var
+def 4271:4282 <> apply_layers
+R4294:4297 Corelib.Init.Datatypes <> list ind
+R4299:4312 CAG.NeuralOp.FNO <> FNOLayerParams rec
+binder 4285:4290 <> layers:35
+R4320:4323 Corelib.Init.Datatypes <> list ind
+R4325:4332 CAG.Complex <> CComplex rec
+binder 4316:4316 <> v:36
+R4341:4344 Corelib.Init.Datatypes <> list ind
+R4346:4353 CAG.Complex <> CComplex rec
+R4366:4371 CAG.NeuralOp.FNO <> layers:35 var
+R4382:4383 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R4393:4393 CAG.NeuralOp.FNO <> v:36 var
+R4400:4403 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R4410:4421 CAG.NeuralOp.FNO <> apply_layers:37 def
+R4427:4435 CAG.NeuralOp.FNO <> fno_layer def
+R4439:4439 CAG.NeuralOp.FNO <> v:36 var
+def 4532:4542 <> fno_forward
+R4549:4557 CAG.NeuralOp.FNO <> FNOParams rec
+binder 4545:4545 <> p:39
+R4565:4568 Corelib.Init.Datatypes <> list ind
+R4570:4577 CAG.Complex <> CComplex rec
+binder 4561:4561 <> u:40
+R4582:4585 Corelib.Init.Datatypes <> list ind
+R4587:4594 CAG.Complex <> CComplex rec
+R4601:4604 CAG.NeuralOp.FNO <> lift def
+R4609:4616 CAG.NeuralOp.FNO <> fno_proj proj
+R4606:4606 CAG.NeuralOp.FNO <> p:39 var
+R4620:4631 CAG.NeuralOp.FNO <> apply_layers def
+R4636:4645 CAG.NeuralOp.FNO <> fno_layers proj
+R4633:4633 CAG.NeuralOp.FNO <> p:39 var
+R4649:4652 CAG.NeuralOp.FNO <> lift def
+R4657:4664 CAG.NeuralOp.FNO <> fno_lift proj
+R4654:4654 CAG.NeuralOp.FNO <> p:39 var
+R4667:4667 CAG.NeuralOp.FNO <> u:40 var
+def 4975:4979 <> MCSeq
+R4987:4989 Corelib.Init.Datatypes <> nat ind
+binder 4982:4983 <> dv:41
+R4995:4998 Corelib.Init.Datatypes <> list ind
+R5001:5004 Corelib.Init.Datatypes <> list ind
+R5006:5013 CAG.Complex <> CComplex rec
+def 5084:5090 <> CMatrix
+R5097:5099 Corelib.Init.Datatypes <> nat ind
+binder 5093:5093 <> d:42
+R5105:5108 Corelib.Init.Datatypes <> list ind
+R5111:5114 Corelib.Init.Datatypes <> list ind
+R5116:5123 CAG.Complex <> CComplex rec
+def 5216:5227 <> cmat_vec_mul
+R5234:5240 CAG.NeuralOp.FNO <> CMatrix def
+binder 5230:5230 <> M:43
+R5250:5253 Corelib.Init.Datatypes <> list ind
+R5255:5262 CAG.Complex <> CComplex rec
+binder 5246:5246 <> v:44
+R5267:5270 Corelib.Init.Datatypes <> list ind
+R5272:5279 CAG.Complex <> CComplex rec
+R5286:5293 Stdlib.Lists.List <> map abbrev
+R5366:5366 CAG.NeuralOp.FNO <> M:43 var
+binder 5300:5302 <> row:45
+R5307:5310 CAG.NeuralOp.DFT <> csum def
+R5313:5318 Corelib.Init.Datatypes <> length def
+R5320:5320 CAG.NeuralOp.FNO <> v:44 var
+binder 5328:5328 <> j:46
+R5333:5336 CAG.Complex <> Cmul def
+R5339:5343 CAG.NeuralOp.DFT <> nth_C def
+R5345:5347 CAG.NeuralOp.FNO <> row:45 var
+R5349:5349 CAG.NeuralOp.FNO <> j:46 var
+R5353:5357 CAG.NeuralOp.DFT <> nth_C def
+R5359:5359 CAG.NeuralOp.FNO <> v:44 var
+R5361:5361 CAG.NeuralOp.FNO <> j:46 var
+rec 5447:5462 <> MCFNOLayerParams
+proj 5489:5496 <> mc_K_max
+proj 5510:5519 <> mc_weights
+proj 5594:5600 <> mc_skip
+proj 5662:5670 <> mc_nonlin
+R5470:5472 Corelib.Init.Datatypes <> nat ind
+binder 5465:5466 <> dv:47
+R5503:5505 Corelib.Init.Datatypes <> nat ind
+R5524:5527 Corelib.Init.Datatypes <> list ind
+R5530:5536 CAG.NeuralOp.FNO <> CMatrix def
+R5538:5539 CAG.NeuralOp.FNO <> dv:47 var
+R5608:5614 CAG.NeuralOp.FNO <> CMatrix def
+R5616:5617 CAG.NeuralOp.FNO <> dv:47 var
+R5676:5687 CAG.NeuralOp.FNO <> Nonlinearity def
+R5738:5745 CAG.NeuralOp.FNO <> mc_K_max proj
+R5738:5745 CAG.NeuralOp.FNO <> mc_K_max proj
+R5765:5774 CAG.NeuralOp.FNO <> mc_weights proj
+R5765:5774 CAG.NeuralOp.FNO <> mc_weights proj
+R5792:5798 CAG.NeuralOp.FNO <> mc_skip proj
+R5792:5798 CAG.NeuralOp.FNO <> mc_skip proj
+R5819:5827 CAG.NeuralOp.FNO <> mc_nonlin proj
+R5819:5827 CAG.NeuralOp.FNO <> mc_nonlin proj
+def 6028:6043 <> mc_spectral_conv
+R6051:6053 Corelib.Init.Datatypes <> nat ind
+binder 6046:6047 <> dv:53
+R6061:6076 CAG.NeuralOp.FNO <> MCFNOLayerParams rec
+R6078:6079 CAG.NeuralOp.FNO <> dv:53 var
+binder 6057:6057 <> p:54
+R6092:6096 CAG.NeuralOp.FNO <> MCSeq def
+R6098:6099 CAG.NeuralOp.FNO <> dv:53 var
+binder 6087:6088 <> vs:55
+R6104:6108 CAG.NeuralOp.FNO <> MCSeq def
+R6110:6111 CAG.NeuralOp.FNO <> dv:53 var
+R6266:6267 CAG.NeuralOp.FNO <> vs:55 var
+prf 6530:6560 <> spectral_conv_translation_equiv
+R6567:6580 CAG.NeuralOp.FNO <> FNOLayerParams rec
+binder 6563:6563 <> p:56
+R6592:6595 Corelib.Init.Datatypes <> list ind
+R6597:6604 CAG.Complex <> CComplex rec
+binder 6588:6588 <> v:57
+R6616:6618 Corelib.Init.Datatypes <> nat ind
+binder 6608:6612 <> shift:58
+R6637:6642 Corelib.Init.Datatypes <> length def
+R6644:6644 CAG.NeuralOp.FNO <> v:57 var
+binder 6631:6631 <> N:59
+R6663:6670 Stdlib.Lists.List <> map abbrev
+R6712:6719 Stdlib.Lists.List <> seq abbrev
+R6723:6723 CAG.NeuralOp.FNO <> N:59 var
+binder 6677:6677 <> k:60
+R6682:6686 CAG.NeuralOp.DFT <> nth_C def
+R6688:6688 CAG.NeuralOp.FNO <> v:57 var
+R6691:6691 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R6701:6706 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R6693:6695 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R6692:6692 CAG.NeuralOp.FNO <> k:60 var
+R6696:6700 CAG.NeuralOp.FNO <> shift:58 var
+R6707:6707 CAG.NeuralOp.FNO <> N:59 var
+binder 6657:6658 <> sv:61
+R6751:6757 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6733:6745 CAG.NeuralOp.FNO <> spectral_conv def
+R6747:6747 CAG.NeuralOp.FNO <> p:56 var
+R6749:6750 CAG.NeuralOp.FNO <> sv:61 var
+R6758:6765 Stdlib.Lists.List <> map abbrev
+R6838:6845 Stdlib.Lists.List <> seq abbrev
+R6849:6849 CAG.NeuralOp.FNO <> N:59 var
+binder 6772:6772 <> k:62
+R6777:6781 CAG.NeuralOp.DFT <> nth_C def
+R6784:6796 CAG.NeuralOp.FNO <> spectral_conv def
+R6798:6798 CAG.NeuralOp.FNO <> p:56 var
+R6800:6800 CAG.NeuralOp.FNO <> v:57 var
+R6804:6804 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R6814:6819 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R6806:6808 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R6805:6805 CAG.NeuralOp.FNO <> k:62 var
+R6809:6813 CAG.NeuralOp.FNO <> shift:58 var
+R6820:6820 CAG.NeuralOp.FNO <> N:59 var
+prf 7065:7080 <> fno_layer_length
+R7087:7100 CAG.NeuralOp.FNO <> FNOLayerParams rec
+binder 7083:7083 <> p:63
+R7108:7111 Corelib.Init.Datatypes <> list ind
+R7113:7120 CAG.Complex <> CComplex rec
+binder 7104:7104 <> v:64
+R7151:7153 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7129:7134 Corelib.Init.Datatypes <> length def
+R7137:7145 CAG.NeuralOp.FNO <> fno_layer def
+R7147:7147 CAG.NeuralOp.FNO <> p:63 var
+R7149:7149 CAG.NeuralOp.FNO <> v:64 var
+R7154:7159 Corelib.Init.Datatypes <> length def
+R7161:7161 CAG.NeuralOp.FNO <> v:64 var
+R7180:7188 CAG.NeuralOp.FNO <> fno_layer def
+R7191:7202 CAG.NeuralOp.FNO <> apply_nonlin def
+R7205:7219 CAG.NeuralOp.FNO <> skip_connection def
+R7222:7234 CAG.NeuralOp.FNO <> spectral_conv def
+R7249:7254 Corelib.Init.Datatypes <> length def
+R7249:7254 Corelib.Init.Datatypes <> length def
+R7319:7321 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7305:7310 Corelib.Init.Datatypes <> length def
+R7313:7315 CAG.NeuralOp.DFT <> dft def
+R7319:7321 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7305:7310 Corelib.Init.Datatypes <> length def
+R7313:7315 CAG.NeuralOp.DFT <> dft def
+R7337:7339 CAG.NeuralOp.DFT <> dft def
+R7350:7364 Stdlib.Lists.List <> length_map thm
+R7367:7381 Stdlib.Lists.List <> length_seq thm
+R7350:7364 Stdlib.Lists.List <> length_map thm
+R7350:7364 Stdlib.Lists.List <> length_map thm
+R7367:7381 Stdlib.Lists.List <> length_seq thm
+R7367:7381 Stdlib.Lists.List <> length_seq thm
+R7516:7519 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R7471:7476 Corelib.Init.Datatypes <> length def
+R7479:7492 CAG.NeuralOp.DFT <> truncate_modes def
+R7497:7505 CAG.NeuralOp.FNO <> fno_K_max proj
+R7509:7511 CAG.NeuralOp.DFT <> dft def
+R7516:7519 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R7471:7476 Corelib.Init.Datatypes <> length def
+R7479:7492 CAG.NeuralOp.DFT <> truncate_modes def
+R7497:7505 CAG.NeuralOp.FNO <> fno_K_max proj
+R7509:7511 CAG.NeuralOp.DFT <> dft def
+R7540:7553 CAG.NeuralOp.DFT <> truncate_modes def
+R7564:7581 Stdlib.Lists.List <> length_firstn thm
+R7564:7581 Stdlib.Lists.List <> length_firstn thm
+R7564:7581 Stdlib.Lists.List <> length_firstn thm
+R7765:7768 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R7688:7693 Corelib.Init.Datatypes <> length def
+R7696:7708 CAG.NeuralOp.FNO <> apply_weights def
+R7713:7723 CAG.NeuralOp.FNO <> fno_weights proj
+R7727:7740 CAG.NeuralOp.DFT <> truncate_modes def
+R7745:7753 CAG.NeuralOp.FNO <> fno_K_max proj
+R7757:7759 CAG.NeuralOp.DFT <> dft def
+R7765:7768 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R7688:7693 Corelib.Init.Datatypes <> length def
+R7696:7708 CAG.NeuralOp.FNO <> apply_weights def
+R7713:7723 CAG.NeuralOp.FNO <> fno_weights proj
+R7727:7740 CAG.NeuralOp.DFT <> truncate_modes def
+R7745:7753 CAG.NeuralOp.FNO <> fno_K_max proj
+R7757:7759 CAG.NeuralOp.DFT <> dft def
+R7789:7801 CAG.NeuralOp.FNO <> apply_weights def
+R7804:7816 CAG.NeuralOp.DFT <> pointwise_mul def
+R7831:7845 Stdlib.Lists.List <> length_map thm
+R7831:7845 Stdlib.Lists.List <> length_map thm
+R7831:7845 Stdlib.Lists.List <> length_map thm
+R7864:7877 Stdlib.Lists.List <> length_combine thm
+R7896:7909 CAG.NeuralOp.DFT <> truncate_modes def
+R7914:7922 CAG.NeuralOp.FNO <> fno_K_max proj
+R7926:7928 CAG.NeuralOp.DFT <> dft def
+R7880:7890 CAG.NeuralOp.FNO <> fno_weights proj
+R7864:7877 Stdlib.Lists.List <> length_combine thm
+R7896:7909 CAG.NeuralOp.DFT <> truncate_modes def
+R7914:7922 CAG.NeuralOp.FNO <> fno_K_max proj
+R7926:7928 CAG.NeuralOp.DFT <> dft def
+R7880:7890 CAG.NeuralOp.FNO <> fno_weights proj
+R8098:8100 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8010:8015 Corelib.Init.Datatypes <> length def
+R8018:8023 CAG.NeuralOp.DFT <> pad_to def
+R8028:8040 CAG.NeuralOp.FNO <> apply_weights def
+R8045:8055 CAG.NeuralOp.FNO <> fno_weights proj
+R8059:8072 CAG.NeuralOp.DFT <> truncate_modes def
+R8077:8085 CAG.NeuralOp.FNO <> fno_K_max proj
+R8089:8091 CAG.NeuralOp.DFT <> dft def
+R8098:8100 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8010:8015 Corelib.Init.Datatypes <> length def
+R8018:8023 CAG.NeuralOp.DFT <> pad_to def
+R8028:8040 CAG.NeuralOp.FNO <> apply_weights def
+R8045:8055 CAG.NeuralOp.FNO <> fno_weights proj
+R8059:8072 CAG.NeuralOp.DFT <> truncate_modes def
+R8077:8085 CAG.NeuralOp.FNO <> fno_K_max proj
+R8089:8091 CAG.NeuralOp.DFT <> dft def
+R8116:8121 CAG.NeuralOp.DFT <> pad_to def
+R8132:8146 Stdlib.Lists.List <> length_app thm
+R8149:8166 Stdlib.Lists.List <> repeat_length thm
+R8132:8146 Stdlib.Lists.List <> length_app thm
+R8132:8146 Stdlib.Lists.List <> length_app thm
+R8149:8166 Stdlib.Lists.List <> repeat_length thm
+R8149:8166 Stdlib.Lists.List <> repeat_length thm
+R8322:8324 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8227:8232 Corelib.Init.Datatypes <> length def
+R8235:8238 CAG.NeuralOp.DFT <> idft def
+R8241:8246 CAG.NeuralOp.DFT <> pad_to def
+R8251:8263 CAG.NeuralOp.FNO <> apply_weights def
+R8268:8278 CAG.NeuralOp.FNO <> fno_weights proj
+R8282:8295 CAG.NeuralOp.DFT <> truncate_modes def
+R8300:8308 CAG.NeuralOp.FNO <> fno_K_max proj
+R8312:8314 CAG.NeuralOp.DFT <> dft def
+R8322:8324 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8227:8232 Corelib.Init.Datatypes <> length def
+R8235:8238 CAG.NeuralOp.DFT <> idft def
+R8241:8246 CAG.NeuralOp.DFT <> pad_to def
+R8251:8263 CAG.NeuralOp.FNO <> apply_weights def
+R8268:8278 CAG.NeuralOp.FNO <> fno_weights proj
+R8282:8295 CAG.NeuralOp.DFT <> truncate_modes def
+R8300:8308 CAG.NeuralOp.FNO <> fno_K_max proj
+R8312:8314 CAG.NeuralOp.DFT <> dft def
+R8340:8343 CAG.NeuralOp.DFT <> idft def
+R8354:8368 Stdlib.Lists.List <> length_map thm
+R8371:8385 Stdlib.Lists.List <> length_seq thm
+R8354:8368 Stdlib.Lists.List <> length_map thm
+R8354:8368 Stdlib.Lists.List <> length_map thm
+R8371:8385 Stdlib.Lists.List <> length_seq thm
+R8371:8385 Stdlib.Lists.List <> length_seq thm
+R8507:8509 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8457:8462 Corelib.Init.Datatypes <> length def
+R8465:8472 Stdlib.Lists.List <> map abbrev
+binder 8479:8479 <> x:65
+R8484:8487 CAG.Complex <> Cmul def
+R8492:8499 CAG.NeuralOp.FNO <> fno_skip proj
+R8502:8502 CAG.NeuralOp.FNO <> x:65 var
+R8507:8509 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8457:8462 Corelib.Init.Datatypes <> length def
+R8465:8472 Stdlib.Lists.List <> map abbrev
+binder 8479:8479 <> x:66
+R8484:8487 CAG.Complex <> Cmul def
+R8492:8499 CAG.NeuralOp.FNO <> fno_skip proj
+R8502:8502 CAG.NeuralOp.FNO <> x:66 var
+R8526:8540 Stdlib.Lists.List <> length_map thm
+R8526:8540 Stdlib.Lists.List <> length_map thm
+R8526:8540 Stdlib.Lists.List <> length_map thm
+R8607:8621 Stdlib.Lists.List <> length_map thm
+R8624:8638 Stdlib.Lists.List <> length_map thm
+R8607:8621 Stdlib.Lists.List <> length_map thm
+R8607:8621 Stdlib.Lists.List <> length_map thm
+R8624:8638 Stdlib.Lists.List <> length_map thm
+R8624:8638 Stdlib.Lists.List <> length_map thm
+R8655:8673 Stdlib.Lists.List <> length_combine thm
+R8773:8780 Stdlib.Lists.List <> map abbrev
+binder 8787:8787 <> x:67
+R8792:8795 CAG.Complex <> Cmul def
+R8798:8805 CAG.NeuralOp.FNO <> fno_skip proj
+R8810:8810 CAG.NeuralOp.FNO <> x:67 var
+R8680:8683 CAG.NeuralOp.DFT <> idft def
+R8686:8691 CAG.NeuralOp.DFT <> pad_to def
+R8696:8708 CAG.NeuralOp.FNO <> apply_weights def
+R8711:8721 CAG.NeuralOp.FNO <> fno_weights proj
+R8727:8740 CAG.NeuralOp.DFT <> truncate_modes def
+R8743:8751 CAG.NeuralOp.FNO <> fno_K_max proj
+R8757:8759 CAG.NeuralOp.DFT <> dft def
+R8655:8673 Stdlib.Lists.List <> length_combine thm
+R8773:8780 Stdlib.Lists.List <> map abbrev
+binder 8787:8787 <> x:68
+R8792:8795 CAG.Complex <> Cmul def
+R8798:8805 CAG.NeuralOp.FNO <> fno_skip proj
+R8810:8810 CAG.NeuralOp.FNO <> x:68 var
+R8680:8683 CAG.NeuralOp.DFT <> idft def
+R8686:8691 CAG.NeuralOp.DFT <> pad_to def
+R8696:8708 CAG.NeuralOp.FNO <> apply_weights def
+R8711:8721 CAG.NeuralOp.FNO <> fno_weights proj
+R8727:8740 CAG.NeuralOp.DFT <> truncate_modes def
+R8743:8751 CAG.NeuralOp.FNO <> fno_K_max proj
+R8757:8759 CAG.NeuralOp.DFT <> dft def
+prf 8879:8897 <> apply_layers_length
+R8909:8912 Corelib.Init.Datatypes <> list ind
+R8914:8927 CAG.NeuralOp.FNO <> FNOLayerParams rec
+binder 8900:8905 <> layers:69
+R8935:8938 Corelib.Init.Datatypes <> list ind
+R8940:8947 CAG.Complex <> CComplex rec
+binder 8931:8931 <> v:70
+R8986:8988 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8956:8961 Corelib.Init.Datatypes <> length def
+R8964:8975 CAG.NeuralOp.FNO <> apply_layers def
+R8977:8982 CAG.NeuralOp.FNO <> layers:69 var
+R8984:8984 CAG.NeuralOp.FNO <> v:70 var
+R8989:8994 Corelib.Init.Datatypes <> length def
+R8996:8996 CAG.NeuralOp.FNO <> v:70 var
+R9091:9106 CAG.NeuralOp.FNO <> fno_layer_length thm
+R9091:9106 CAG.NeuralOp.FNO <> fno_layer_length thm
+R9091:9106 CAG.NeuralOp.FNO <> fno_layer_length thm
+prf 9134:9151 <> fno_forward_length
+R9158:9166 CAG.NeuralOp.FNO <> FNOParams rec
+binder 9154:9154 <> p:71
+R9174:9177 Corelib.Init.Datatypes <> list ind
+R9179:9186 CAG.Complex <> CComplex rec
+binder 9170:9170 <> u:72
+R9219:9221 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9195:9200 Corelib.Init.Datatypes <> length def
+R9203:9213 CAG.NeuralOp.FNO <> fno_forward def
+R9215:9215 CAG.NeuralOp.FNO <> p:71 var
+R9217:9217 CAG.NeuralOp.FNO <> u:72 var
+R9222:9227 Corelib.Init.Datatypes <> length def
+R9229:9229 CAG.NeuralOp.FNO <> u:72 var
+R9248:9258 CAG.NeuralOp.FNO <> fno_forward def
+R9261:9264 CAG.NeuralOp.FNO <> lift def
+R9277:9291 Stdlib.Lists.List <> length_map thm
+R9294:9312 CAG.NeuralOp.FNO <> apply_layers_length thm
+R9315:9329 Stdlib.Lists.List <> length_map thm
+R9277:9291 Stdlib.Lists.List <> length_map thm
+R9277:9291 Stdlib.Lists.List <> length_map thm
+R9294:9312 CAG.NeuralOp.FNO <> apply_layers_length thm
+R9294:9312 CAG.NeuralOp.FNO <> apply_layers_length thm
+R9315:9329 Stdlib.Lists.List <> length_map thm
+R9315:9329 Stdlib.Lists.List <> length_map thm
+def 9491:9501 <> fno_compose
+R9512:9520 CAG.NeuralOp.FNO <> FNOParams rec
+binder 9504:9505 <> p1:73
+binder 9507:9508 <> p2:74
+R9525:9533 CAG.NeuralOp.FNO <> FNOParams rec
+R9543:9550 CAG.NeuralOp.FNO <> fno_lift proj
+R9543:9550 CAG.NeuralOp.FNO <> fno_lift proj
+R9543:9550 CAG.NeuralOp.FNO <> fno_lift proj
+R9598:9605 CAG.NeuralOp.FNO <> fno_proj proj
+R9598:9605 CAG.NeuralOp.FNO <> fno_proj proj
+R9632:9641 CAG.NeuralOp.FNO <> fno_layers proj
+R9632:9641 CAG.NeuralOp.FNO <> fno_layers proj
+R9557:9560 CAG.Complex <> Cmul def
+R9566:9573 CAG.NeuralOp.FNO <> fno_lift proj
+R9562:9563 CAG.NeuralOp.FNO <> p2:74 var
+R9582:9589 CAG.NeuralOp.FNO <> fno_proj proj
+R9578:9579 CAG.NeuralOp.FNO <> p1:73 var
+R9616:9623 CAG.NeuralOp.FNO <> fno_proj proj
+R9612:9613 CAG.NeuralOp.FNO <> p2:74 var
+R9661:9664 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R9650:9659 CAG.NeuralOp.FNO <> fno_layers proj
+R9646:9647 CAG.NeuralOp.FNO <> p1:73 var
+R9669:9678 CAG.NeuralOp.FNO <> fno_layers proj
+R9665:9666 CAG.NeuralOp.FNO <> p2:74 var
+prf 9761:9777 <> fno_compose_assoc
+R9791:9799 CAG.NeuralOp.FNO <> FNOParams rec
+binder 9780:9781 <> p1:75
+binder 9783:9784 <> p2:76
+binder 9786:9787 <> p3:77
+R9807:9810 Corelib.Init.Datatypes <> list ind
+R9812:9819 CAG.Complex <> CComplex rec
+binder 9803:9803 <> u:78
+R9878:9884 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9828:9838 CAG.NeuralOp.FNO <> fno_forward def
+R9841:9851 CAG.NeuralOp.FNO <> fno_compose def
+R9853:9854 CAG.NeuralOp.FNO <> p1:75 var
+R9857:9867 CAG.NeuralOp.FNO <> fno_compose def
+R9869:9870 CAG.NeuralOp.FNO <> p2:76 var
+R9872:9873 CAG.NeuralOp.FNO <> p3:77 var
+R9877:9877 CAG.NeuralOp.FNO <> u:78 var
+R9885:9895 CAG.NeuralOp.FNO <> fno_forward def
+R9898:9908 CAG.NeuralOp.FNO <> fno_compose def
+R9911:9921 CAG.NeuralOp.FNO <> fno_compose def
+R9923:9924 CAG.NeuralOp.FNO <> p1:75 var
+R9926:9927 CAG.NeuralOp.FNO <> p2:76 var
+R9930:9931 CAG.NeuralOp.FNO <> p3:77 var
+R9934:9934 CAG.NeuralOp.FNO <> u:78 var
+def 10303:10314 <> circulant_op
+R10323:10326 Corelib.Init.Datatypes <> list ind
+R10328:10335 CAG.Complex <> CComplex rec
+binder 10317:10317 <> c:79
+binder 10319:10319 <> v:80
+R10340:10343 Corelib.Init.Datatypes <> list ind
+R10345:10352 CAG.Complex <> CComplex rec
+R10359:10369 CAG.NeuralOp.DFT <> cyclic_conv def
+R10371:10371 CAG.NeuralOp.FNO <> c:79 var
+R10373:10373 CAG.NeuralOp.FNO <> v:80 var
+prf 10455:10475 <> circulant_is_spectral
+R10482:10485 Corelib.Init.Datatypes <> list ind
+R10487:10494 CAG.Complex <> CComplex rec
+binder 10478:10478 <> c:81
+R10503:10510 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R10529:10537 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R10515:10528 CAG.NeuralOp.FNO <> FNOLayerParams rec
+binder 10511:10511 <> p:82
+R10562:10571 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R10551:10553 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10541:10549 CAG.NeuralOp.FNO <> fno_K_max proj
+R10538:10538 CAG.NeuralOp.FNO <> p:82 var
+R10554:10559 Corelib.Init.Datatypes <> length def
+R10561:10561 CAG.NeuralOp.FNO <> c:81 var
+R10590:10599 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R10584:10587 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10575:10582 CAG.NeuralOp.FNO <> fno_skip proj
+R10572:10572 CAG.NeuralOp.FNO <> p:82 var
+R10588:10589 CAG.Complex <> C0 def
+binder 10607:10607 <> v:83
+R10629:10640 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10618:10620 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10610:10615 Corelib.Init.Datatypes <> length def
+R10617:10617 CAG.NeuralOp.FNO <> v:83 var
+R10621:10626 Corelib.Init.Datatypes <> length def
+R10628:10628 CAG.NeuralOp.FNO <> c:81 var
+R10658:10660 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10641:10653 CAG.NeuralOp.FNO <> spectral_conv def
+R10655:10655 CAG.NeuralOp.FNO <> p:82 var
+R10657:10657 CAG.NeuralOp.FNO <> v:83 var
+R10661:10672 CAG.NeuralOp.FNO <> circulant_op def
+R10674:10674 CAG.NeuralOp.FNO <> c:81 var
+R10676:10676 CAG.NeuralOp.FNO <> v:83 var

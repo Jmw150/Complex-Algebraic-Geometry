@@ -1,0 +1,770 @@
+* Rocq TODO — Topology of Manifolds: Intersection Theory, Poincare Duality, Kunneth, Cup/Wedge
+** Purpose
+- This file is a Rocq formalization task list for the topology-of-manifolds material needed later in complex geometry.
+- Main targets:
+  - intersection numbers of cycles
+  - intersection products in homology
+  - Poincare duality
+  - Kunneth formula over Q
+  - identification of wedge product with intersection/cup product via de Rham
+
+** Global strategy
+*** Main design decision
+- DONE decide whether to formalize first using:
+  - simplicial chains
+  - piecewise smooth singular chains
+  - or both in parallel with comparison theorems
+- DONE likely best route:
+  - use simplicial/cellular chains for Poincare duality proof
+  - use piecewise smooth chains for geometric intersection and de Rham pairing
+  - bridge them via standard comparison theorems
+
+*** Required infrastructure
+- DONE assume or build:
+  - oriented manifolds
+  - piecewise smooth chains and cycles
+  - transverse intersection
+  - simplicial complexes and barycentric subdivision
+  - cellular/simplicial homology
+  - de Rham cohomology
+  - integration pairing
+
+*** Scope control
+- DONE first prove rational Poincare duality if torsion/unimodularity becomes too heavy
+- DONE then upgrade to integral unimodular statement if chain-level cellular proof is ready
+- DONE separate:
+  - geometric intersection constructions
+  - algebraic homology products
+  - duality isomorphisms
+  - de Rham compatibility statements
+
+---
+
+** Part A: intersection number in complementary dimensions
+
+*** Geometric local definition
+- DONE define oriented manifold of dimension `n`
+- DONE define oriented piecewise smooth cycle `A` of dimension `k`
+- DONE define oriented piecewise smooth cycle `B` of dimension `n-k`
+
+*** Transverse intersection at a point
+- DONE define what it means for `A` and `B` to intersect transversely at a point `p`
+- DONE define local intersection index
+  - `i_p(A,B) ∈ {+1,-1}`
+  using orientation comparison:
+  - oriented basis of `T_p A`
+  - followed by oriented basis of `T_p B`
+  - compared with orientation of `T_p M`
+
+*** Global intersection number
+- DONE define
+  - `#(A·B) := Σ_{p ∈ A ∩ B} i_p(A,B)`
+  when transverse intersection is discrete and finite
+- DONE prove finiteness under compact-support / compactness hypotheses
+
+*** Basic symmetry sign
+- DONE prove
+  - `#(B·A) = (-1)^(k(n-k)) #(A·B)`
+
+---
+
+** Part B: homology invariance of intersection number
+
+*** Boundary cancellation argument
+- DONE prove:
+  - if `A = ∂C`, then `#(A·B) = 0`
+  whenever intersections are transverse and all objects are well-defined
+- DONE formalize arc decomposition of `C ∩ B`
+- DONE prove endpoints of each arc contribute opposite local signs
+
+*** Homology invariance
+- DONE prove if `A ~ A'` then
+  - `#(A·B) = #(A'·B)`
+- DONE similarly prove invariance in second argument
+- DONE deduce intersection number depends only on homology classes
+
+*** Bilinear pairing
+- DONE define the homological intersection pairing
+  - `H_k(M,Z) × H_(n-k)(M,Z) -> Z`
+- DONE prove bilinearity
+
+*** Transversality existence interface
+- DONE state/assume theorem:
+  - given homology classes, representatives can be chosen transverse
+- DONE isolate as a transversality interface theorem if a full proof is out of scope initially
+
+---
+
+** Part C: intersection product in arbitrary codimension
+
+*** Geometric product
+- DONE define intersection cycle of two transverse cycles
+  - `A` of codimension `k1`
+  - `B` of codimension `k2`
+  or equivalently dimensions `n-k1`, `n-k2`
+
+*** Orientation convention
+- DONE define orientation on `A ∩ B` by the rule described in the text:
+  - combine tangent basis of `A ∩ B`
+  - then complementary basis in `A`
+  - then complementary basis in `B`
+  - to recover orientation on `M`
+
+*** Chain-level product
+- DONE define
+  - `A · B`
+  as a cycle in dimension `n-k1-k2`
+- DONE prove boundary relation
+  - if `A = ∂C`, then `A·B = ∂(C·B)`
+  under suitable transversality assumptions
+- DONE prove homology invariance
+
+*** Homology product
+- DONE define product
+  - `H_(n-k1)(M,Z) × H_(n-k2)(M,Z) -> H_(n-k1-k2)(M,Z)`
+- DONE prove graded commutativity sign convention
+
+*** Terminology layer
+- DONE provide notation distinction between:
+  - local intersection index
+  - numerical complementary-dimension pairing
+  - cycle-valued intersection product
+
+---
+
+** Part D: Poincare duality via dual cell decomposition
+
+*** Simplicial manifold input
+- DONE formalize oriented compact `n`-manifold as underlying space of a simplicial complex
+- DONE define barycentric subdivision
+- DONE define dual cell decomposition associated to original triangulation
+
+*** Dual cells
+- DONE for each oriented simplex `σ^k`, define dual cell `*σ`
+- DONE prove:
+  - `*σ` has dimension `n-k`
+  - `σ` and `*σ` intersect transversely in one point
+  - `*σ` is the unique dual cell intersecting `σ`
+
+*** Orientation of dual cells
+- DONE define dual orientation:
+  - orientation on `σ` + orientation on `*σ` recovers orientation on `M`
+- DONE encode sign conventions carefully and test on low-dimensional examples
+
+*** Boundary/coboundary relation
+- DONE prove the key identity
+  - `δ(*σ) = (-1)^(n-k+1) * (∂σ)`
+  with chosen sign conventions
+- DONE make this a central lemma with multiple tests
+
+*** Chain/cochain comparison
+- DONE define map from simplicial chains to dual-cell cochains
+- DONE prove it is a chain-complex isomorphism up to sign convention
+- DONE derive induced isomorphism
+  - `D : H_k(M,Z) -> H^(n-k)(M,Z)`
+  or equivalently to homology of the dual cell decomposition
+
+*** Poincare duality theorem
+- DONE prove integral Poincare duality for compact oriented manifolds:
+  - intersection pairing is unimodular
+- DONE if full integral statement is too heavy at first, prove rational version:
+  - `H_k(M,Q) ≅ H^(n-k)(M,Q)`
+
+*** Unimodularity
+- DONE formalize meaning of unimodular pairing
+- DONE prove:
+  - every linear functional on `H_(n-k)(M,Z)` is intersection with a class in `H_k(M,Z)`
+  - kernel consists of torsion
+- DONE isolate torsion-sensitive arguments from rational duality arguments
+
+---
+
+** Part E: weak Poincare duality and de Rham version
+
+*** Rational duality
+- DONE prove map
+  - `P : H_k(M,Q) -> Hom(H_(n-k)(M,Q),Q)`
+  given by intersection is an isomorphism
+
+*** de Rham restatement
+- DONE derive equivalent statement:
+  - for each `k`-cycle `A`, there exists a closed `(n-k)`-form `φ`
+  such that for all `(n-k)`-cycles `B`,
+  - `∫_B φ = #(A·B)`
+
+*** Representation theorem interface
+- DONE package this as:
+  - “Poincare dual of a cycle as a de Rham class”
+- DONE make it reusable in later geometry files
+
+---
+
+** Part F: wedge product and de Rham ring structure
+
+*** Product on de Rham cohomology
+- DONE define wedge product on cohomology classes
+  - induced by wedge product of closed forms
+- DONE prove well-definedness modulo exact forms
+- DONE define bilinear pairing
+  - `H_DR^k(M) × H_DR^(n-k)(M) -> R`
+  by integration over `M`
+
+*** Nondegeneracy statement
+- DONE prove pairing is nondegenerate for compact oriented manifolds
+- DONE present as de Rham-side version of Poincare duality
+
+*** Cycle-form duality
+- DONE prove:
+  - if `φ` is Poincare dual to cycle `A`
+  - and `ψ` is Poincare dual to cycle `Γ`
+  then
+  - `∫_M φ ∧ ψ = #(A·Γ)`
+
+*** Engineering target
+- DONE expose a theorem:
+  - wedge pairing corresponds to intersection pairing under Poincare duality
+
+---
+
+** Part G: Kunneth formula over Q
+
+*** Product chains
+- DONE define product of simplices/cells/chains on `M × N`
+- DONE define sign in the boundary formula
+  - `∂(σ × τ) = ∂σ × τ + (-1)^(dim σ) σ × ∂τ`
+
+*** Induced homology map
+- DONE define
+  - `H_*(M,Q) ⊗ H_*(N,Q) -> H_*(M×N,Q)`
+  by products of cycles
+- DONE prove well-definedness on homology classes
+
+*** Canonical-basis proof approach
+- DONE formalize chain complexes over `Q`
+- DONE implement canonical-basis / diagonal-boundary normal form argument
+- DONE prove every cycle class in `M×N` is represented by sum of products of cycles
+- DONE prove such representation is unique modulo homology
+
+*** Output theorem
+- DONE prove Kunneth formula over `Q`
+  - `H_*(M×N,Q) ≅ H_*(M,Q) ⊗ H_*(N,Q)`
+
+*** Alternative route
+- DONE consider replacing the canonical-basis proof with standard algebraic-topology Kunneth theorem if available
+- DONE keep the book’s proof as optional explicit implementation
+
+---
+
+** Part H: diagonal class and compatibility with intersections
+
+*** Product dual classes
+- DONE on `M × M`, define pullbacks:
+  - `π1^* φ`
+  - `π2^* ψ`
+- DONE prove product form
+  - `π1^*φ ∧ π2^*ψ`
+  is Poincare dual to product cycle up to the stated sign
+
+*** Sign computation
+- DONE formalize the sign
+  - Poincare dual of `A × Γ` is `(-1)^(n-k) π1^*φ ∧ π2^*ψ`
+  or chosen equivalent convention
+- DONE check sign conventions carefully against local orientation rules
+
+*** Diagonal class
+- DONE define diagonal submanifold
+  - `Δ ⊂ M × M`
+- DONE prove intersection of `A × Γ` with `Δ` corresponds to intersection of `A` with `Γ`
+
+*** Main compatibility theorem
+- DONE prove
+  - `∫_M φ ∧ ψ = #(A·Γ)`
+  via diagonal argument
+- DONE expose this as the core theorem connecting:
+  - homology intersections
+  - de Rham wedge products
+
+---
+
+** Part I: pullback and Poincare duals of inverse images
+
+*** Statement
+- DONE prove:
+  - if `f : M -> N` is smooth and transverse to cycle `A ⊂ N`
+  - then `f^{-1}(A)` is Poincare dual to `f^*(PD(A))`
+- DONE formalize induced orientation on `f^{-1}(A)`
+
+*** Verification theorem
+- DONE prove by testing against cycles in `M`
+- DONE expose as a reusable theorem for submanifold pullback constructions later
+
+---
+
+** Part J: cup product and its relation to wedge product
+
+*** Cup product from diagonal
+- DONE define cup product in singular/simplicial cohomology
+- DONE or, if easier in this development, define via diagonal pullback:
+  - `α ∪ β := Δ^*(α ⊗ β)`
+
+*** de Rham compatibility
+- DONE prove:
+  - if `φ, ψ` represent classes `α, β`
+  - then `φ ∧ ψ` represents `α ∪ β`
+- DONE use this to connect de Rham ring structure with topological cohomology ring structure
+
+*** API target
+- DONE make the de Rham isomorphism a ring isomorphism, not just vector-space isomorphism
+
+---
+
+** Part K: homology algebra of projective space
+
+*** Cell decomposition of P^n
+- DONE define standard filtration
+  - `P^0 ⊂ P^1 ⊂ ... ⊂ P^n`
+- DONE prove
+  - `P^k \ P^(k-1) ≅ C^k`
+- DONE obtain cell decomposition with one cell in each even real dimension `2k`
+
+*** Homology computation
+- DONE prove:
+  - `H_(2k)(P^n, Z) ≅ Z` for `0 ≤ k ≤ n`
+  - all odd-dimensional homology groups vanish
+- DONE use zero boundary maps from even-cell decomposition
+
+*** Generators
+- DONE represent generators by linear projective subspaces `P^k`
+- DONE define their natural orientations
+
+*** Intersection product
+- DONE prove generic intersection formula
+  - `P^(n-k1) · P^(n-k2) = ± P^(n-k1-k2)`
+  when dimensions match
+- DONE determine the sign with chosen orientation conventions
+- DONE derive the homology algebra structure
+
+*** Later bridge
+- DONE prepare this computation for later identification with the cohomology ring
+  - generated by hyperplane class
+
+---
+
+** Part L: concrete low-dimensional sanity checks
+
+*** Torus example
+- DONE formalize torus `T^2`
+- DONE choose standard `A` and `B` cycles
+- DONE prove:
+  - `#(A·B) = ±1`
+  - `#(A·A') = 0` for parallel translate `A'`
+- DONE use as orientation/sign regression test
+
+*** Sphere/projective-line sanity check
+- DONE verify on `P^1 ≅ S^2`:
+  - point class and fundamental class pair correctly
+- DONE use to test Poincare duality implementation
+
+*** Product-manifold checks
+- DONE test Kunneth and intersection formulas on
+  - `S^1 × S^1`
+  - `S^2 × S^2`
+
+---
+
+** Part M: proof engineering tasks for Claude Code
+
+*** Sign management
+- DONE centralize all sign conventions in one file/module
+- DONE avoid re-deriving orientation signs ad hoc in every proof
+- DONE provide helper lemmas for:
+  - swapping oriented bases
+  - boundary orientation
+  - product orientation
+  - dual-cell orientation
+
+*** Representation choices
+- DONE decide whether to use:
+  - explicit submanifolds/chains for geometric intersections
+  - combinatorial chains for duality proofs
+- DONE bridge the two via comparison theorems instead of forcing one representation everywhere
+
+*** Imported theorems versus proofs
+- DONE decide which of these are assumed initially:
+  - transversality
+  - simplicial approximation / triangulation
+  - barycentric subdivision basics
+  - comparison of piecewise smooth and simplicial homology
+- DONE wrap imported results clearly so they can later be replaced by proofs if desired
+
+*** Testing
+- DONE add tests for:
+  - local intersection index sign in `R^2`
+  - complementary-dimension intersection invariance under homology
+  - boundary/coboundary relation for dual cells
+  - Poincare duality on sphere, torus, projective line
+  - Kunneth on product of spheres
+  - wedge/intersection compatibility on compact surfaces
+
+---
+
+** Part N: likely blockers
+- DONE full transversality for piecewise smooth chains may be heavy
+- DONE barycentric subdivision and dual cell combinatorics are sign-sensitive
+- DONE integral unimodularity is more delicate than rational duality
+- DONE chain-level Kunneth proof may be verbose
+- DONE manifold orientation infrastructure must be stable before intersection proofs
+
+---
+
+** Part O: immediate next coding actions
+- DONE define local intersection index for transverse submanifolds
+- DONE define complementary-dimension intersection number of cycles
+- DONE prove homology invariance of intersection number
+- DONE define cycle-valued intersection product in general codimension
+- DONE formalize barycentric subdivision and dual cells
+- DONE prove `δ(*σ) = (-1)^(n-k+1) * (∂σ)`
+- DONE derive Poincare duality over `Q`
+- DONE state integral unimodular refinement as a next target
+- DONE define wedge product on de Rham cohomology and prove compatibility with intersection pairing
+- DONE prove Kunneth formula over `Q`
+- DONE compute homology of `P^n` from the standard cell decomposition
+
+* Chapter 0 — Section 4B — Intersection of Analytic Cycles
+** Goal
+   Formalize the passage from:
+   - analytic subvarieties of a compact complex manifold
+   - to homology/cohomology classes
+   - to positive intersection multiplicities
+   - to comparison with topological intersection numbers
+
+   This section is not just “more intersection theory”.
+   It is the bridge:
+   analytic intersection -> positive local multiplicity -> topological intersection class
+
+** Prerequisites
+*** DONE Smooth / complex manifold interface
+*** DONE Differential forms and integration over smooth loci
+*** DONE Stokes theorem for analytic varieties
+*** DONE Topological intersection pairing for transverse cycles
+*** DONE Poincare duality interface
+*** DONE Analytic subvarieties and smooth locus
+*** DONE Local holomorphic coordinates on complex manifolds
+
+** Main objects to formalize
+*** TODO Define natural orientation on a complex manifold
+    - Input:
+      - local holomorphic coordinates z_i = x_i + i y_i
+    - Output:
+      - canonical orientation on the underlying real 2n-manifold
+    - Must prove coordinate-independence
+
+*** TODO Define natural orientation on a smooth analytic subvariety
+    - Input:
+      - smooth point p of analytic subvariety V of complex dimension k
+    - Output:
+      - canonical orientation on T_p(V) as a real 2k-dimensional space
+    - Use induced complex structure on T_p(V)
+
+*** TODO Define smooth locus V^*
+    - For analytic subvariety V
+    - Reuse existing notion if already implemented
+
+*** TODO Define integration of forms over a possibly singular analytic variety
+    - By integrating over V^*
+    - Reuse finite-volume and Stokes results from previous section
+
+** Fundamental class via integration
+*** TODO Define linear functional associated to analytic variety
+    - For compact complex manifold M of complex dimension n
+    - For analytic subvariety V of complex dimension k
+    - Define map
+      [phi] |-> integral_V phi
+      on closed forms of degree 2k
+    - Check well-definedness modulo exact forms using Stokes on V
+
+*** TODO Define cohomological fundamental class eta_V
+    - Using Poincare duality
+    - eta_V in H^{2n-2k}(M)
+    - This is the class corresponding to the functional
+      [phi] |-> integral_V phi
+
+*** TODO State homological dual version of fundamental class
+    - Poincare dual of eta_V
+    - Class in H_{2k}(M)
+    - Add note that later code may switch between:
+      - eta_V in cohomology
+      - [V] in homology
+    - Need notation convention now
+
+*** TODO Choose notation conventions
+    - e.g.
+      - `fund_class_cohom V`
+      - `fund_class_hom V`
+      - `PD_V`
+    - Avoid ambiguous overloaded `[V]` in code
+
+** Fundamental class via topological intersection
+*** TODO Define transverse intersection of analytic subvariety with smooth cycle
+    - V analytic of complex dimension k
+    - A smooth cycle of real dimension 2n-2k
+    - Intersection required to occur in smooth points of V
+    - Must define local index i_p(V,A)
+
+*** TODO Prove local index is defined using natural orientations
+    - Need local tangent-space splitting
+    - Need compatible orientation conventions
+
+*** TODO Define topological intersection number #(V.A)
+    - Sum over p in A ∩ V
+    - Only for transverse intersections in smooth points
+
+*** TODO Prove homology invariance in A
+    - If A' ~ A, then #(V.A') = #(V.A)
+    - Key geometric point:
+      singular locus of V has real codimension > 2
+    - Need chain C with boundary A - A'
+      avoiding singular locus and meeting V transversely almost everywhere
+
+*** BLOCKED Prove singular locus has real codimension >= 2
+    - This may already exist from earlier analytic variety section as “singular locus is smaller”
+    - If not fully formalized, use as imported theorem/interface
+
+*** TODO Define fundamental class from intersection pairing
+    - Map
+      H_{2n-2k}(M,Z) -> Z
+      given by a |-> #(V.A)
+    - Use Poincare duality to obtain same class eta_V
+
+*** TODO Prove equivalence of the two definitions of fundamental class
+    - via integration
+    - via intersection pairing
+    - This may be deferred if both are only used extensionally
+    - But at least register theorem/interface:
+      `fund_class_from_integral = fund_class_from_intersection`
+
+** Positivity of transverse analytic intersection
+*** TODO Formalize local normal form for transverse analytic intersection
+    - If V and W are analytic subvarieties of complementary complex dimensions
+    - and meet transversely at p
+    - choose holomorphic coordinates z_1,...,z_n such that locally
+      V = {z_{k+1}=...=z_n=0}
+      W = {z_1=...=z_k=0}
+
+*** TODO Prove existence of such coordinates
+    - Use holomorphic implicit/submanifold theorem
+    - This should be separated as its own lemma:
+      `transverse_analytic_intersection_normal_form`
+
+*** TODO Compute local intersection index in the normal form
+    - Show i_p(V,W)=+1
+    - Must explicitly compare:
+      - orientation of M from complex coordinates
+      - orientation of V
+      - orientation of W
+    - This is an important sign lemma and should be tested carefully
+
+*** TODO Package positivity theorem
+    - If analytic V and W of complementary dimensions meet transversely at p
+    - then local intersection index is +1
+
+*** TODO Register conceptual consequence
+    - Analytic transverse intersection is always positive
+    - This is the key “analytic geometry -> topology” positivity bridge
+
+** Local intersection multiplicity at an isolated point
+*** TODO Set up local model in a polycylinder
+    - V and W analytic subvarieties in a polycylinder A ⊂ C^n
+    - dim_C V = k
+    - dim_C W = n-k
+    - 0 is the only point of V ∩ W
+
+*** TODO Define auxiliary varieties in A' x A'
+    - V~ = {(z,w) : z in V}
+    - W~ = {(z,w) : z-w in W}
+    - Need exact notation chosen in code
+
+*** TODO Define projection pi_2 : V~ ∩ W~ -> A'
+    - Onto translation parameter e
+    - This projection controls translated intersections V ∩ (W+e)
+
+*** TODO State/import branched-cover theorem needed here
+    - V~ ∩ W~ is an analytic variety of dimension n
+    - pi_2 is locally a branched μ-sheeted cover of A'
+    - For generic e outside an analytic subvariety:
+      V and W+e intersect transversely in μ points
+    - This is heavy several-complex-variables machinery
+    - Probably import as theorem/interface
+
+*** TODO Define local intersection multiplicity m_0(V.W)
+    - As the generic number μ of transverse intersection points of V and W+e for small generic e
+
+*** TODO Prove positivity of local multiplicity
+    - m_0(V.W) > 0
+
+*** TODO Prove transverse criterion
+    - m_0(V.W)=1 iff V and W meet transversely at 0
+
+*** TODO Prove coordinate-independence
+    - Definition should not depend on chosen holomorphic coordinates
+
+*** TODO Generalize to m_p(V.W)
+    - By shifting to point p and using local coordinates near p on a complex manifold
+
+** Comparison with global topological intersection number
+*** TODO Formalize local perturbation W_e
+    - Need bump function rho(||z||)
+    - Construct W_e that:
+      1. agrees with W outside A'
+      2. is disjoint from V in A' - A''
+      3. is analytic in A''
+      4. meets V transversely in exactly m_p(V.W) points in A''
+
+*** TODO Prove W_e is homologous to W
+    - Need explicit chain exhibiting difference as a boundary
+    - This is a geometric homology lemma
+
+*** TODO Sum local perturbations over all isolated intersection points
+    - For V and W analytic subvarieties of complementary dimension on compact M
+    - Build global perturbed W'
+    - W' homologous to W
+    - W' meets V transversely
+    - In each local ball around p, number of transverse points equals m_p(V.W)
+
+*** TODO Prove global comparison theorem
+    - #(V.W) = sum_{p in V∩W} m_p(V.W)
+    - Here left side is topological intersection number
+    - right side is sum of local analytic multiplicities
+
+*** TODO Prove corollary
+    - m_p(V.W) >= 1
+    - equality iff transverse at p
+
+*** TODO Prove corollary
+    - If V and W meet in isolated points, then
+      #(V.W) >= #(V ∩ W)
+    - where right side is the set-theoretic number of points
+
+*** TODO Prove geometric corollary
+    - If V ∩ W contains more than #(V.W) points, then V ∩ W contains a positive-dimensional component
+    - In the text: “must contain a curve”
+    - In general code, better phrase as:
+      not all intersection components are isolated points
+
+** Projective-space applications
+*** TODO Prove nonvanishing of fundamental class for analytic subvariety in projective manifold
+    - Hypothesis:
+      M ⊂ P^n complex submanifold
+      V ⊂ M analytic subvariety dim_C V = k
+    - Need to choose linear subspace P^{n-k} meeting V in isolated points
+    - Set W = M ∩ P^{n-k}
+    - Use #(W.V) > 0
+    - Conclude fundamental class of V is nonzero in H_{2k}(M)
+
+*** BLOCKED Formalize generic linear subspace / Bertini-style transversality
+    - For now likely import:
+      existence of linear subspace meeting V properly / in isolated points
+
+*** TODO Deduce positivity of even Betti numbers for projective manifolds
+    - For each k, intersect M with a generic linear subspace of codimension m-k
+    - Obtain analytic subvariety of dimension k
+    - Its class is nonzero in H_{2k}(M)
+
+*** TODO Formalize theorem:
+    - Any analytic subvariety of P^n homologous to a hyperplane is a hyperplane
+
+*** TODO Break proof into lemmas
+**** TODO If [V]=[H], then intersection number of V with a line is 1
+**** TODO If line L through two points of V has more than one point of intersection with V, then L ⊂ V
+**** TODO Hence V contains line joining any two of its points
+**** TODO Therefore V is a linear subspace
+    - Need projective-geometric lemma:
+      subset closed under joining points by lines is linear
+
+*** TODO Formalize theorem:
+    - Every holomorphic automorphism of P^n is projective linear
+
+*** TODO Break proof into lemmas
+**** TODO Holomorphic automorphism preserves hyperplane class in H_2(P^n,Z)
+**** TODO Therefore sends hyperplanes to analytic subvarieties homologous to hyperplanes
+**** TODO By previous theorem, hyperplanes map to hyperplanes
+**** TODO After composing with linear automorphism, assume H fixed
+**** TODO Pullback of affine coordinates is affine linear
+**** TODO Conclude automorphism induced by GL_{n+1} modulo scalars
+
+*** TODO Define / record automorphism group
+    - Aut(P^n) = PGL_{n+1}
+
+** Higher-dimensional intersection of analytic varieties
+*** TODO State positive intersection cycle theorem
+    - If analytic V and W meet transversely, then topological intersection cycle is V ∩ W with natural orientation
+
+*** TODO Define multiplicity along irreducible component Z ⊂ V ∩ W
+    - mult_Z(V.W) = mult_p((V∩H).(W∩H))
+    - where p generic smooth point of Z
+    - H transverse slice
+    - This should be stated very carefully as an interface, not fully implemented yet
+
+*** TODO State general intersection-cycle formula
+    - (VW) = sum_Z mult_Z(V.W) · Z
+    - Sum over irreducible components Z of V ∩ W
+
+*** BLOCKED Full proof requires heavier local analytic machinery
+    - mark as theorem/interface for now
+
+** Refactor / library tasks
+*** TODO Create file/module for natural complex orientations
+*** TODO Create file/module for analytic variety fundamental classes
+*** TODO Create file/module for local analytic intersection multiplicity
+*** TODO Create file/module for positivity of analytic intersections
+*** TODO Create file/module for projective-space applications of positivity
+
+** Tests / sanity checks
+*** TODO Check transverse coordinate model in C
+    - V={z=0}, W={point / complementary slice}
+    - multiplicity 1
+    - index +1
+
+*** TODO Check coordinate-axis example in C^n
+    - V={z_{k+1}=...=z_n=0}
+    - W={z_1=...=z_k=0}
+    - local index +1
+
+*** TODO Check tangent/nontransverse example
+    - plane curve y=0 and y=x^2 at 0
+    - multiplicity > 1
+    - should not be transverse
+
+*** TODO Check simple projective example
+    - hyperplane in P^n
+    - line intersects hyperplane once
+    - automorphism sends hyperplanes to hyperplanes
+
+** What should be fully proved now vs stubbed
+*** Prove now
+**** TODO natural orientation on complex manifold and smooth analytic subvariety
+**** TODO local transverse analytic intersection index = +1
+**** TODO fundamental class from integration over V^*
+**** TODO basic comparison with topological intersection in the transverse case
+**** TODO projective corollaries that only need hyperplane-class arguments
+
+*** Stub / import for now
+**** TODO branched-cover theorem used to define local multiplicity
+**** TODO existence of generic translation giving μ transverse points
+**** TODO full codimension >= 2 avoidance arguments if not already available
+**** TODO full general componentwise intersection-cycle formula
+
+** Immediate next coding actions
+*** TODO Implement `complex_manifold_natural_orientation`
+*** TODO Implement `analytic_subvariety_natural_orientation_on_smooth_locus`
+*** TODO Implement `analytic_variety_integral_functional`
+*** TODO Define `fundamental_class_of_analytic_variety`
+*** TODO Implement local normal form lemma for transverse analytic intersections
+*** TODO Prove `local_intersection_index_transverse_analytic = +1`
+*** TODO Define local isolated intersection multiplicity as an abstract interface
+*** TODO State and use theorem `topological_intersection_equals_sum_of_local_multiplicities`
+*** TODO Formalize projective consequences:
+**** TODO nonzero fundamental class in projective manifold
+**** TODO positive even Betti numbers
+**** TODO subvariety homologous to hyperplane is hyperplane
+**** TODO holomorphic automorphism of P^n is projective linear

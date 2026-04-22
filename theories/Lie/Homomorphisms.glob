@@ -1,0 +1,289 @@
+DIGEST f1017bdbb061e7105e0e795880b90646
+FCAG.Lie.Homomorphisms
+R156:171 CAG.Galois.Field <> <> lib
+R189:204 CAG.Lie.BasicDef <> <> lib
+R222:235 CAG.Lie.Ideals <> <> lib
+def 319:324 <> LieKer
+binder 327:327 <> F:1
+R344:348 CAG.Galois.Field <> Field rec
+R350:350 CAG.Lie.Homomorphisms <> F:1 var
+binder 338:340 <> fld:2
+binder 354:354 <> L:3
+binder 356:356 <> M:4
+R376:386 CAG.Lie.BasicDef <> LieAlgebraF rec
+R392:392 CAG.Lie.Homomorphisms <> L:3 var
+R388:390 CAG.Lie.Homomorphisms <> fld:2 var
+binder 371:372 <> la:5
+R401:411 CAG.Lie.BasicDef <> LieAlgebraF rec
+R417:417 CAG.Lie.Homomorphisms <> M:4 var
+R413:415 CAG.Lie.Homomorphisms <> fld:2 var
+binder 396:397 <> lb:6
+R430:435 CAG.Lie.BasicDef <> LieHom rec
+R440:441 CAG.Lie.Homomorphisms <> lb:6 var
+R437:438 CAG.Lie.Homomorphisms <> la:5 var
+binder 425:426 <> φ:7
+R449:449 CAG.Lie.Homomorphisms <> L:3 var
+binder 445:445 <> x:8
+R474:476 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R464:468 CAG.Lie.BasicDef <> lh_fn proj
+R473:473 CAG.Lie.Homomorphisms <> x:8 var
+R470:471 CAG.Lie.Homomorphisms <> φ:7 var
+R477:483 CAG.Lie.BasicDef <> la_zero abbrev
+R485:486 CAG.Lie.Homomorphisms <> lb:6 var
+prf 529:540 <> ker_is_ideal
+binder 543:543 <> F:9
+R560:564 CAG.Galois.Field <> Field rec
+R566:566 CAG.Lie.Homomorphisms <> F:9 var
+binder 554:556 <> fld:10
+binder 570:570 <> L:11
+binder 572:572 <> M:12
+R592:602 CAG.Lie.BasicDef <> LieAlgebraF rec
+R608:608 CAG.Lie.Homomorphisms <> L:11 var
+R604:606 CAG.Lie.Homomorphisms <> fld:10 var
+binder 587:588 <> la:13
+R617:627 CAG.Lie.BasicDef <> LieAlgebraF rec
+R633:633 CAG.Lie.Homomorphisms <> M:12 var
+R629:631 CAG.Lie.Homomorphisms <> fld:10 var
+binder 612:613 <> lb:14
+R646:651 CAG.Lie.BasicDef <> LieHom rec
+R656:657 CAG.Lie.Homomorphisms <> lb:14 var
+R653:654 CAG.Lie.Homomorphisms <> la:13 var
+binder 641:642 <> φ:15
+R662:668 CAG.Lie.Ideals <> IsIdeal rec
+R674:679 CAG.Lie.Homomorphisms <> LieKer def
+R681:682 CAG.Lie.Homomorphisms <> φ:15 var
+R670:671 CAG.Lie.Homomorphisms <> la:13 var
+R702:707 CAG.Lie.Homomorphisms <> LieKer def
+R733:739 CAG.Lie.BasicDef <> lh_zero thm
+R733:739 CAG.Lie.BasicDef <> lh_zero thm
+R776:781 CAG.Lie.BasicDef <> lh_add proj
+R776:781 CAG.Lie.BasicDef <> lh_add proj
+R776:781 CAG.Lie.BasicDef <> lh_add proj
+R816:829 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R804:809 CAG.Lie.BasicDef <> laF_vs proj
+R816:829 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R804:809 CAG.Lie.BasicDef <> laF_vs proj
+R858:863 CAG.Lie.BasicDef <> lh_neg thm
+R858:863 CAG.Lie.BasicDef <> lh_neg thm
+R858:863 CAG.Lie.BasicDef <> lh_neg thm
+R876:887 CAG.Lie.BasicDef <> vsF_neg_zero thm
+R876:887 CAG.Lie.BasicDef <> vsF_neg_zero thm
+R921:928 CAG.Lie.BasicDef <> lh_scale proj
+R921:928 CAG.Lie.BasicDef <> lh_scale proj
+R921:928 CAG.Lie.BasicDef <> lh_scale proj
+R942:957 CAG.Lie.BasicDef <> vsF_scale_zero_v thm
+R942:957 CAG.Lie.BasicDef <> vsF_scale_zero_v thm
+R991:1000 CAG.Lie.BasicDef <> lh_bracket proj
+R991:1000 CAG.Lie.BasicDef <> lh_bracket proj
+R991:1000 CAG.Lie.BasicDef <> lh_bracket proj
+R1014:1031 CAG.Lie.BasicDef <> laF_bracket_zero_r thm
+R1014:1031 CAG.Lie.BasicDef <> laF_bracket_zero_r thm
+def 1091:1095 <> LieIm
+binder 1098:1098 <> F:16
+R1115:1119 CAG.Galois.Field <> Field rec
+R1121:1121 CAG.Lie.Homomorphisms <> F:16 var
+binder 1109:1111 <> fld:17
+binder 1125:1125 <> L:18
+binder 1127:1127 <> M:19
+R1147:1157 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1163:1163 CAG.Lie.Homomorphisms <> L:18 var
+R1159:1161 CAG.Lie.Homomorphisms <> fld:17 var
+binder 1142:1143 <> la:20
+R1172:1182 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1188:1188 CAG.Lie.Homomorphisms <> M:19 var
+R1184:1186 CAG.Lie.Homomorphisms <> fld:17 var
+binder 1167:1168 <> lb:21
+R1201:1206 CAG.Lie.BasicDef <> LieHom rec
+R1211:1212 CAG.Lie.Homomorphisms <> lb:21 var
+R1208:1209 CAG.Lie.Homomorphisms <> la:20 var
+binder 1196:1197 <> φ:22
+R1220:1220 CAG.Lie.Homomorphisms <> M:19 var
+binder 1216:1216 <> y:23
+R1235:1241 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1243:1244 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1242:1242 <> x:24
+R1255:1257 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1245:1249 CAG.Lie.BasicDef <> lh_fn proj
+R1254:1254 CAG.Lie.Homomorphisms <> x:24 var
+R1251:1252 CAG.Lie.Homomorphisms <> φ:22 var
+R1258:1258 CAG.Lie.Homomorphisms <> y:23 var
+prf 1304:1319 <> im_is_subalgebra
+binder 1322:1322 <> F:25
+R1339:1343 CAG.Galois.Field <> Field rec
+R1345:1345 CAG.Lie.Homomorphisms <> F:25 var
+binder 1333:1335 <> fld:26
+binder 1349:1349 <> L:27
+binder 1351:1351 <> M:28
+R1371:1381 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1387:1387 CAG.Lie.Homomorphisms <> L:27 var
+R1383:1385 CAG.Lie.Homomorphisms <> fld:26 var
+binder 1366:1367 <> la:29
+R1396:1406 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1412:1412 CAG.Lie.Homomorphisms <> M:28 var
+R1408:1410 CAG.Lie.Homomorphisms <> fld:26 var
+binder 1391:1392 <> lb:30
+R1425:1430 CAG.Lie.BasicDef <> LieHom rec
+R1435:1436 CAG.Lie.Homomorphisms <> lb:30 var
+R1432:1433 CAG.Lie.Homomorphisms <> la:29 var
+binder 1420:1421 <> φ:31
+R1441:1452 CAG.Lie.BasicDef <> IsSubalgebra rec
+R1458:1462 CAG.Lie.Homomorphisms <> LieIm def
+R1464:1465 CAG.Lie.Homomorphisms <> φ:31 var
+R1454:1455 CAG.Lie.Homomorphisms <> lb:30 var
+R1498:1502 CAG.Lie.Homomorphisms <> LieIm def
+R1517:1523 CAG.Lie.BasicDef <> la_zero abbrev
+R1517:1523 CAG.Lie.BasicDef <> la_zero abbrev
+R1536:1542 CAG.Lie.BasicDef <> lh_zero thm
+R1536:1542 CAG.Lie.BasicDef <> lh_zero thm
+R1583:1588 CAG.Lie.BasicDef <> la_add abbrev
+R1583:1588 CAG.Lie.BasicDef <> la_add abbrev
+R1611:1616 CAG.Lie.BasicDef <> lh_add proj
+R1611:1616 CAG.Lie.BasicDef <> lh_add proj
+R1611:1616 CAG.Lie.BasicDef <> lh_add proj
+R1669:1674 CAG.Lie.BasicDef <> la_neg abbrev
+R1669:1674 CAG.Lie.BasicDef <> la_neg abbrev
+R1691:1696 CAG.Lie.BasicDef <> lh_neg thm
+R1691:1696 CAG.Lie.BasicDef <> lh_neg thm
+R1691:1696 CAG.Lie.BasicDef <> lh_neg thm
+R1747:1754 CAG.Lie.BasicDef <> la_scale abbrev
+R1747:1754 CAG.Lie.BasicDef <> la_scale abbrev
+R1773:1780 CAG.Lie.BasicDef <> lh_scale proj
+R1773:1780 CAG.Lie.BasicDef <> lh_scale proj
+R1773:1780 CAG.Lie.BasicDef <> lh_scale proj
+R1838:1848 CAG.Lie.BasicDef <> laF_bracket proj
+R1838:1848 CAG.Lie.BasicDef <> laF_bracket proj
+R1871:1880 CAG.Lie.BasicDef <> lh_bracket proj
+R1871:1880 CAG.Lie.BasicDef <> lh_bracket proj
+R1871:1880 CAG.Lie.BasicDef <> lh_bracket proj
+sec 2283:2300 <> QuotientLieAlgebra
+var  2315:2315 QuotientLieAlgebra F
+var  2326:2328 QuotientLieAlgebra fld
+var  2342:2342 QuotientLieAlgebra L
+var  2363:2364 QuotientLieAlgebra la
+var  2388:2388 QuotientLieAlgebra I
+var  2404:2405 QuotientLieAlgebra hI
+R2332:2336 CAG.Galois.Field <> Field rec
+R2338:2338 CAG.Lie.Homomorphisms <> F:32 var
+R2368:2378 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2384:2384 CAG.Lie.Homomorphisms <> L:34 var
+R2380:2382 CAG.Lie.Homomorphisms <> fld:33 var
+R2393:2396 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2392:2392 CAG.Lie.Homomorphisms <> L:34 var
+R2409:2415 CAG.Lie.Ideals <> IsIdeal rec
+R2420:2420 CAG.Lie.Homomorphisms <> I:36 var
+R2417:2418 CAG.Lie.Homomorphisms <> la:35 var
+var 2479:2486 QuotientLieAlgebra QuotType
+var 2504:2510 QuotientLieAlgebra QuotAlg
+R2515:2525 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2531:2538 CAG.Lie.Homomorphisms <> QuotType prfax
+R2527:2529 CAG.Lie.Homomorphisms <> QuotientLieAlgebra.fld var
+var 2600:2605 QuotientLieAlgebra pi_hom
+R2609:2614 CAG.Lie.BasicDef <> LieHom rec
+R2619:2625 CAG.Lie.Homomorphisms <> QuotAlg prfax
+R2616:2617 CAG.Lie.Homomorphisms <> QuotientLieAlgebra.la var
+var 2664:2670 QuotientLieAlgebra pi_surj
+R2685:2692 CAG.Lie.Homomorphisms <> QuotType prfax
+binder 2681:2681 <> q:44
+R2695:2701 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2703:2704 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2702:2702 <> x:45
+R2719:2721 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2705:2709 CAG.Lie.BasicDef <> lh_fn proj
+R2718:2718 CAG.Lie.Homomorphisms <> x:45 var
+R2711:2716 CAG.Lie.Homomorphisms <> pi_hom prfax
+R2722:2722 CAG.Lie.Homomorphisms <> q:44 var
+var 2770:2775 QuotientLieAlgebra pi_ker
+binder 2786:2786 <> x:48
+R2804:2808 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R2789:2794 CAG.Lie.Homomorphisms <> LieKer def
+R2803:2803 CAG.Lie.Homomorphisms <> x:48 var
+R2796:2801 CAG.Lie.Homomorphisms <> pi_hom prfax
+R2809:2809 CAG.Lie.Homomorphisms <> QuotientLieAlgebra.I var
+R2811:2811 CAG.Lie.Homomorphisms <> x:48 var
+R2819:2836 CAG.Lie.Homomorphisms QuotientLieAlgebra <> sec
+ax 2933:2949 <> first_iso_theorem
+binder 2961:2961 <> F:51
+R2978:2982 CAG.Galois.Field <> Field rec
+R2984:2984 CAG.Lie.Homomorphisms <> F:51 var
+binder 2972:2974 <> fld:52
+binder 2988:2988 <> L:53
+binder 2990:2990 <> M:54
+R3010:3020 CAG.Lie.BasicDef <> LieAlgebraF rec
+R3026:3026 CAG.Lie.Homomorphisms <> L:53 var
+R3022:3024 CAG.Lie.Homomorphisms <> fld:52 var
+binder 3005:3006 <> la:55
+R3035:3045 CAG.Lie.BasicDef <> LieAlgebraF rec
+R3051:3051 CAG.Lie.Homomorphisms <> M:54 var
+R3047:3049 CAG.Lie.Homomorphisms <> fld:52 var
+binder 3030:3031 <> lb:56
+R3064:3069 CAG.Lie.BasicDef <> LieHom rec
+R3074:3075 CAG.Lie.Homomorphisms <> lb:56 var
+R3071:3072 CAG.Lie.Homomorphisms <> la:55 var
+binder 3059:3060 <> φ:57
+R3083:3090 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3115:3117 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3098:3108 CAG.Lie.BasicDef <> LieAlgebraF rec
+R3114:3114 CAG.Lie.Homomorphisms <> L:53 var
+R3110:3112 CAG.Lie.Homomorphisms <> fld:52 var
+binder 3091:3094 <> quot:58
+R3118:3126 Corelib.Init.Logic <> inhabited ind
+R3129:3135 CAG.Lie.BasicDef <> LieIsom rec
+R3142:3143 CAG.Lie.Homomorphisms <> lb:56 var
+R3137:3140 CAG.Lie.Homomorphisms <> quot:58 var
+prf 3276:3293 <> second_iso_theorem
+binder 3296:3296 <> F:61
+R3313:3317 CAG.Galois.Field <> Field rec
+R3319:3319 CAG.Lie.Homomorphisms <> F:61 var
+binder 3307:3309 <> fld:62
+binder 3323:3323 <> L:63
+R3343:3353 CAG.Lie.BasicDef <> LieAlgebraF rec
+R3359:3359 CAG.Lie.Homomorphisms <> L:63 var
+R3355:3357 CAG.Lie.Homomorphisms <> fld:62 var
+binder 3338:3339 <> la:64
+R3370:3373 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3369:3369 CAG.Lie.Homomorphisms <> L:63 var
+binder 3363:3363 <> I:65
+binder 3365:3365 <> J:66
+R3390:3396 CAG.Lie.Ideals <> IsIdeal rec
+R3401:3401 CAG.Lie.Homomorphisms <> I:65 var
+R3398:3399 CAG.Lie.Homomorphisms <> la:64 var
+binder 3385:3386 <> hI:67
+R3410:3416 CAG.Lie.Ideals <> IsIdeal rec
+R3421:3421 CAG.Lie.Homomorphisms <> J:66 var
+R3418:3419 CAG.Lie.Homomorphisms <> la:64 var
+binder 3405:3406 <> hJ:68
+binder 3442:3442 <> x:69
+R3448:3451 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3445:3445 CAG.Lie.Homomorphisms <> I:65 var
+R3447:3447 CAG.Lie.Homomorphisms <> x:69 var
+R3452:3452 CAG.Lie.Homomorphisms <> J:66 var
+R3454:3454 CAG.Lie.Homomorphisms <> x:69 var
+binder 3429:3431 <> hIJ:70
+R3463:3466 Corelib.Init.Logic <> True ind
+R3524:3530 Corelib.Init.Logic <> I constr
+R3524:3530 Corelib.Init.Logic <> I constr
+prf 3637:3653 <> third_iso_theorem
+binder 3656:3656 <> F:71
+R3673:3677 CAG.Galois.Field <> Field rec
+R3679:3679 CAG.Lie.Homomorphisms <> F:71 var
+binder 3667:3669 <> fld:72
+binder 3683:3683 <> L:73
+R3703:3713 CAG.Lie.BasicDef <> LieAlgebraF rec
+R3719:3719 CAG.Lie.Homomorphisms <> L:73 var
+R3715:3717 CAG.Lie.Homomorphisms <> fld:72 var
+binder 3698:3699 <> la:74
+R3730:3733 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3729:3729 CAG.Lie.Homomorphisms <> L:73 var
+binder 3723:3723 <> I:75
+binder 3725:3725 <> J:76
+R3750:3756 CAG.Lie.Ideals <> IsIdeal rec
+R3761:3761 CAG.Lie.Homomorphisms <> I:75 var
+R3758:3759 CAG.Lie.Homomorphisms <> la:74 var
+binder 3745:3746 <> hI:77
+R3770:3776 CAG.Lie.Ideals <> IsIdeal rec
+R3781:3781 CAG.Lie.Homomorphisms <> J:76 var
+R3778:3779 CAG.Lie.Homomorphisms <> la:74 var
+binder 3765:3766 <> hJ:78
+R3790:3793 Corelib.Init.Logic <> True ind
+R3851:3857 Corelib.Init.Logic <> I constr
+R3851:3857 Corelib.Init.Logic <> I constr

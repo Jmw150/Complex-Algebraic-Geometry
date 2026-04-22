@@ -1,0 +1,290 @@
+#+TITLE: Complex Algebraic Geometry — Master TODO
+#+STARTUP: overview
+
+# Checkbox states:
+#   - [X]  done       — fully proved, no admits
+#   - [-]  in progress — file exists; contains Axiom / Parameter / Admitted
+#   - [ ]  not started — no Rocq file yet
+
+* Foundations
+
+** Complex numbers and CReal arithmetic
+- [X] CComplex record (re, im : CReal)
+- [X] CComplex arithmetic (Cadd, Cneg, Csub, Cmul, Cpow, Cnorm2, Cdist2, Cconj)
+- [X] CComplex setoid equality (CComplex_req / ~~C)
+- [X] Cmul_C0_l, Csub_C0_r, Csub_C0mul_r (proved by ring)
+- [-] Csub_two_succ (axiomatized; inject_Z/inject_Q ring arithmetic too deep)
+- [X] CComplex_apart (#C), CComplex_nonzero record
+- [X] Holomorphic functions via Cauchy–Riemann equations
+- [X] Complex manifolds: Cn, holomorphic_in_var_at, holomorphic_each_at
+
+** Real analysis extras
+- [X] Rderiv_at, CRealLe axioms, basic CReal infrastructure (Reals_extra.v)
+
+** Topology
+- [X] Basic topological space record, open sets, continuity (Topology.v)
+
+** Manifold topology
+- [X] KahlerManifold record, HdR, HdR_vs, Hpq, forms_pq, vs_add/vs_zero (ManifoldTopology.v)
+
+* Harmonic Theory
+
+** L² Sobolev infrastructure
+- [-] L2_inner, Sobolev norms, elliptic regularity interface (Sobolev.v; key axioms)
+- [-] L2_inner_le_zero, CReal_nonneg_add_zero_rhs_le, CReal_nonneg_sum_zero_both (axioms)
+
+** Dolbeault Laplacian and Dirichlet form
+- [X] dbar_laplacian, dbar, dbar_star definitions (Laplacian.v)
+- [-] dbar_zero, dbar_star_zero (axioms; definitional issue)
+- [X] dirichlet_form, laplacian_nonneg, dirichlet_symmetric (proved)
+
+** Spectral theorem interface
+- [X] eigenvalue_pq, harmonic_forms_are_kernel_of_laplacian (Spectral.v)
+- [X] eigenvalues_of_laplacian_are_nonneg (proved via Dirichlet form)
+- [X] harmonic_implies_dbar_zero (proved)
+- [X] dbar_and_dbar_star_implies_harmonic (proved)
+
+** Weitzenböck / Bochner–Kodaira
+- [-] rough_laplacian, curv_endomorphism, weitzenbock axiom (Weitzenbock.v)
+- [X] bochner_vanishing_setup (proved: Δφ=0 → (∇*∇φ,φ)+(Rφ,φ)=0 → curvature+positivity → φ=0)
+
+** Green operator and Riesz
+- [X] Green operator interface (GreenOperator.v; fully axiomatized, no admits)
+- [X] Riesz resolvent interface (RieszResolvent.v; fully axiomatized, no admits)
+
+** Gårding inequality
+- [X] Garding inequality axiom interface (Garding.v; fully axiomatized, no admits)
+
+** Bundle covariant derivatives
+- [X] Connection, covariant derivative interface (BundleCovariantDerivatives.v; no admits)
+
+** Kähler curvature
+- [X] Curvature operator, Kähler identities interface (KahlerCurvature.v; no admits)
+
+* Kähler Manifolds
+
+** sl₂ representation theory
+- [X] sl2_X, sl2_Y, sl2_H operators; VectorSpace interface (LieAlgebra.v)
+- [-] vs_scale_creal_eq (axiom; CReal setoid bridge)
+- [X] Y_power_weight: Y^n lowers weight by 2n (Kahler/sl2/Basic.v; proved)
+- [X] orbit_H_stable (proved)
+- [X] Finite-dimensional sl₂ module structure (sl2/FiniteDimensional.v; no admits)
+
+** Lefschetz operators
+- [X] L (Lefschetz), Λ (contraction), dc, definitions (Lefschetz/Operators.v; axiomatized, no admits)
+- [X] Hard Lefschetz theorem interface (Lefschetz/HardLefschetz.v; axiomatized, no admits)
+- [X] Primitive cohomology decomposition (Lefschetz/Primitive.v; axiomatized, no admits)
+
+** Hodge–Riemann bilinear form
+- [-] Q_form Parameter; Q_bilinear_left, Q_bilinear_right Axioms (BilinearForm.v)
+- [-] Q_type_orthogonal, Q_nondegenerate, Q_symmetry (axioms; need Hpq → HdR injection)
+- [ ] Q_well_defined on cohomology (requires ∂-exactness machinery)
+- [X] EasyCases interface (HodgeRiemann/EasyCases.v; no admits)
+- [X] General Hodge–Riemann interface (HodgeRiemann/General.v; no admits)
+
+** Kähler geometry
+- [X] Hyperplane sections interface (Kahler/Geometry/HyperplaneSections.v; no admits)
+- [X] Signature theorem interface (Kahler/Signature.v; no admits)
+
+* Complex Analysis
+
+** One-variable complex analysis
+- [-] Cauchy integral formula, residue theorem, analytic continuation (~10 admits, ComplexAnalysis.v)
+- [-] ComplexAnalysis2.v — additional complex analysis (26 admits)
+
+** Sheaf theory
+- [-] Sheaf axioms, cohomology of sheaves, long exact sequences (~10 admits, Sheaves.v)
+- [ ] Čech cohomology and de Rham comparison
+
+** Presheaves
+- [X] Yoneda products interface (Presheaf/YonedaProducts.v; no admits)
+
+* Divisors and Line Bundles
+
+** Divisors
+- [-] Divisor class group, Weil vs Cartier divisors (Divisor/DivisorBundle.v; 1 admit)
+- [-] Divisor line bundle [D], transition functions (Divisor/LineBundleCech.v; 4 admits)
+- [-] Curvature of line bundle metrics (Divisor/Curvature.v; 1 admit)
+- [-] Degree of divisors on Riemann surfaces (Divisor/RiemannSurfaceDegree.v; 4 admits)
+
+** Canonical bundle
+- [-] Canonical bundle on projective space (CanonicalBundle/ProjectiveSpace.v; 1 admit)
+- [-] Adjunction formula: K_V = (K_M + [V])|_V (CanonicalBundle/Adjunction.v; 1 admit)
+
+** Residues
+- [X] Poincaré residue sequence (Residue/PoincareResidue.v; no admits)
+
+** Hypersurfaces
+- [-] Normal bundle of a hypersurface (Hypersurface/NormalBundle.v; 1 admit)
+
+** Projective geometry
+- [X] Hyperplane bundle on P^n (Projective/HyperplaneBundle.v; no admits)
+- [-] Chern classes and first Chern class c₁(L)
+- [-] Exponential sequence and c₁ map H¹(M,O*) → H²(M,Z)
+
+* Vanishing Theorems
+
+** Kodaira vanishing
+- [-] Kodaira vanishing: H^q(M, Ω^p_M ⊗ L^{-1}) = 0 for p+q < n (L positive)
+- [-] Formalize proof via Bochner–Kodaira estimate
+- [-] Kodaira–Serre duality
+
+** Restriction to hyperplane sections
+- [-] Exact sequence: 0 → Ω^p_M(-V) → Ω^p_M → Ω^p_M|_V → 0  (*)
+- [-] Exact sequence: 0 → Ω^{p-1}_V(-V) → Ω^p_M|_V → Ω^p_V → 0  (**)
+- [-] Restriction isomorphism: H^q(M,Ω^p_M) → H^q(V,Ω^p_V) iso for p+q < n-2
+- [-] Restriction injectivity for p+q = n-1
+
+** Lefschetz hyperplane theorem
+- [-] Topological Lefschetz hyperplane: H_q(V,Z) → H_q(M,Z) iso for q < n-1
+- [-] Corollaries for smooth projective hypersurfaces
+
+** Theorem B (Cartan–Serre)
+- [-] H^q(M, O(L^μ ⊗ E)) = 0 for q > 0, μ >> 0 (L positive, E arbitrary)
+- [-] Proof via Kodaira–Serre duality + curvature estimate
+
+* Algebraic Varieties
+
+** Rational and meromorphic functions
+- [-] Rational functions on P^n as quotients of homogeneous polynomials
+- [-] Every meromorphic function on P^n is rational (use Chow + divisor comparison)
+- [-] Every meromorphic function on smooth projective V is rational (generic projection)
+
+** Degree theory
+- [-] Degree of V via fundamental class in H_{2k}(P^n,Z)
+- [-] Degree = #points in generic complementary linear section
+- [-] Degree = vol(V)/k! via ∫_V ω^k
+- [-] Degree of hypersurface equals polynomial degree
+- [-] Degree preserved under generic projection and coning
+
+** Projective geometry
+- [-] Chordal/secant variety C(V) and dim C(V) ≤ 2k+1
+- [-] Every smooth k-dimensional variety embeds in P^{2k+1}
+- [-] Minimal degree: deg(V) ≥ n-k+1 for nondegenerate irreducible V ⊂ P^n
+- [-] Degree-1 varieties are linear subspaces
+
+** Tangent spaces and tangent cones
+- [-] Tangent space at smooth point: T_p(V) via differentials of defining equations
+- [-] Homogeneous-coordinate formula using Euler relation
+- [-] Tangent cone at singular point via leading homogeneous term
+
+** Line bundles and divisors on projective varieties
+- [-] Every line bundle on a projective submanifold M ⊂ P^N is [D] for some divisor D
+- [-] Proof by induction on dim M using Theorem B + Bertini
+
+** Analytic classes and Hodge (1,1) theorem
+- [-] Analytic homology class: Q-linear combination of fundamental classes [V]
+- [-] Analytic class η_V is of pure type (p,p) for V of codimension p
+- [-] Lefschetz theorem on (1,1)-classes: H^{1,1}(M) ∩ H²(M,Z) = {η_D : D divisor}
+- [-] Nondegeneracy of divisor–curve intersection pairing
+
+* Kodaira Embedding Theorem
+
+** Blow-up geometry
+- [-] Blow-up π : M̃ → M at a point, exceptional divisor E ≅ P(T_x M)
+- [-] [E]|_E = universal bundle J = O(-1) on E
+- [-] [-E]|_E = hyperplane bundle O(1) on E
+- [-] H⁰(E, O_E(-E)) ≅ T_x*M
+
+** Curvature of exceptional divisor bundles
+- [-] Curvature of [E]: Ω_{[E]} = -π'*ω_{FS} near E
+- [-] Curvature of [-E]: positive on U_ε, zero outside
+
+** Positivity of twisted pullbacks
+- [-] π*L^k - nE is positive for k >> 0 (L positive)
+- [-] Canonical bundle formula: K_{M̃} = π*K_M + (n-1)E
+
+** Kodaira embedding
+- [-] Sections of L^k separate two points for k >> 0
+- [-] Differential map d_x : H⁰(M,O(L^k)) → T_x*M ⊗ L_x^k surjective for k >> 0
+- [-] Kodaira embedding theorem: positive L embeds M into projective space via |L^k|
+- [-] Intrinsic criterion: M algebraic ↔ ∃ closed positive (1,1)-form with rational class
+
+** Corollaries
+- [-] Products of algebraic varieties are algebraic
+- [-] Blow-up of algebraic variety at a point is algebraic
+- [-] Finite unbranched covering preserves algebraicity (both directions)
+- [-] L^k + E very ample for k >> 0
+
+* Group Theory and Galois Theory
+
+** Group theory
+- [-] Group axioms, subgroups, normal subgroups, quotients (Group.v; 8 admits)
+- [-] Free group (FreeGroup.v; 4 admits)
+
+** Galois theory
+- [X] Field extensions, algebraic closure interface (Galois/Field.v; no admits)
+- [X] Field automorphisms, Galois group (Galois/Automorphism.v; no admits)
+- [-] Fundamental theorem of Galois theory — Artin argument (Galois/Correspondence.v; 4 admits)
+
+* Category Theory
+
+** Core categorical infrastructure
+- [X] Category, functor, natural transformation (Category/Core.v)
+- [X] Products, coproducts (Category/Products.v, Category/Coproducts.v)
+- [X] Limits and colimits (Category/Limits.v)
+- [X] Adjunctions (Category/Adjunction.v)
+- [X] Yoneda lemma, representable functors (Category/Yoneda.v, Category/Representable.v)
+- [X] Comma categories (Category/Comma.v)
+- [X] Subobject classifier (Category/Subobject.v)
+- [X] Cartesian closed categories (Category/CartesianClosed.v)
+- [X] Under-category limits (Category/UnderLimits.v)
+- [X] Functor category limits (Category/FunctorCategoryLimits.v)
+- [X] Adjoint functor theorem (Freyd) (Category/AdjointFunctorTheorem/Freyd.v)
+- [X] Adjunctions preserve limits (Category/AdjunctionLimits.v)
+- [X] Gluing construction (Category/Gluing.v)
+- [X] Preserves-limits interfaces (Category/PreservesLimits.v)
+- [X] Initial object criteria (Category/InitialObjectCriteria.v)
+- [X] Poset and Set examples (Category/Examples/)
+
+** Order theory
+- [X] Poset, DCPO, lattice, ideals, compact elements (Order/*.v)
+
+* Axiomatic Type Theory (ATT)
+
+** Syntax and semantics
+- [X] ATT signatures, syntax, models (ATT/Signature.v, ATT/Syntax.v, ATT/Model.v)
+- [X] Theory interface (ATT/Theory.v)
+- [X] Generic model construction (ATT/GenericModel.v)
+- [X] Translation functors (ATT/Translation.v)
+- [-] Internal language (ATT/InternalLanguage.v; 3 admits)
+- [-] Classifying equivalence (ATT/ClassifyingEquivalence.v; 1 admit)
+- [-] Soundness and completeness (ATT/SoundComplete.v; 3 admits)
+- [X] Classifying category (ATT/ClassifyingCategory.v; no admits)
+
+* Ax-Style Theories (AxTheory)
+
+** Classifying categories and gluing
+- [X] Theory interface (AxTheory/Theory.v; no admits)
+- [-] Syntax with admits (AxTheory/Syntax.v; 1 admit)
+- [-] Translation functors (AxTheory/Translation.v; 2 admits)
+- [-] Classifying category (AxTheory/ClassifyingCategory.v; 5 admits)
+- [-] Gluing setup (AxTheory/GluingSetup.v; 3 admits)
+- [-] Generated functional theory (AxTheory/GeneratedFunctionalTheory.v; 1 admit)
+- [-] Relative free CCC (AxTheory/RelativeFreeCCC.v; 2 admits)
+- [-] Conservativity (AxTheory/Conservativity.v; 3 admits)
+
+* Representation Theory
+
+** Characters and representations
+- [-] Representation record, morphisms (Representation.v; 2 admits)
+- [-] Character theory (Character.v; 10 admits)
+
+* Neural Operators (Fourier / Functional)
+
+** NeuralOp
+- [-] Discrete Fourier transform formalization (NeuralOp/DFT.v; 9 admits)
+- [-] Fourier Neural Operator (NeuralOp/FNO.v; 6 admits)
+- [-] Approximation theory interface (NeuralOp/Approximation.v; 7 admits)
+- [X] Extraction to OCaml (NeuralOp/Extract.v)
+
+* Miscellaneous
+
+** AG overview
+- [-] AG.v — high-level overview / imports (25 admits)
+
+** Coinductives
+- [X] Coinductive type examples (Coinductive.v)
+
+** Extraction
+- [X] Extraction setup (Extract.v)

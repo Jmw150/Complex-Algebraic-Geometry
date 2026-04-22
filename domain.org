@@ -1,0 +1,458 @@
+#+TITLE: Order Theory / Domain Theory TODO — Algebraic Lattices, Ideals, Scott Domains
+#+AUTHOR: Claude Code / Rocq planning
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize the order/domain theory in this section in a way that is useful for:
+  - denotational semantics
+  - algebraic and polymorphic type theory models
+  - Scott domains and continuous maps
+  - ideal completion constructions
+  - adjunction-style continuity arguments
+
+  The immediate targets are:
+  - algebraic complete lattices
+  - compact elements
+  - continuity and directed joins
+  - ideal completion of join-semilattices
+  - ideal lifting of finite-join-preserving maps
+  - Scott domains
+
+* Global design decisions
+** TODO Fix a base notion of poset
+   Need one record for posets with:
+   - carrier
+   - preorder / partial order relation
+   - reflexivity
+   - transitivity
+   - antisymmetry
+
+** TODO Decide equality strategy
+   Need to choose whether the carrier is treated:
+   - with ordinary equality plus proof of antisymmetry
+   - or as a setoid
+   Prefer ordinary equality if possible.
+
+** TODO Fix notation conventions
+   Need notation for:
+   - x <= y
+   - joins / meets
+   - directed suprema
+   - compact elements
+   - down-closure x↓
+   - principal ideal
+   - bottom ⊥
+
+** TODO Decide layering
+   Recommended layers:
+   - Poset
+   - Join-semilattice / lattice / complete lattice
+   - Directed-complete poset (dcpo)
+   - Algebraic dcpo / algebraic complete lattice
+   - Ideal completion
+   - Scott domain
+
+* Part I — Directed sets, dcpos, continuity
+** TODO Define directed subset of a poset
+   Need:
+   - inhabited or nonempty convention fixed explicitly
+   - upper-bound closure condition for finite pairs
+
+** TODO Define dcpo
+   A poset with joins of all directed subsets
+
+** TODO Define bottom element
+** TODO Define bounded cocompleteness if not already done elsewhere
+   This is mentioned later in the Scott domain definition.
+   Need exact notion used in the book.
+
+** TODO Define Scott-continuous map
+   f : X -> Y between dcpos
+   preserving:
+   - monotonicity
+   - directed joins
+
+** TODO Define complete lattice
+   Need all joins / meets of arbitrary subsets
+
+** TODO Relate complete lattices and dcpos
+   Every complete lattice is a dcpo
+   with directed suprema inherited from arbitrary joins
+
+* Part II — Compact elements and algebraicity
+** TODO Define compact element in a dcpo / complete lattice
+   x is compact if whenever
+   x <= sup D
+   for D directed, then x <= d for some d in D
+
+** TODO Define X° = compact elements of X
+** TODO Define algebraic dcpo / algebraic complete lattice
+   Every element is directed join of compact elements below it
+
+** TODO Define principal compact approximation set
+   For x in X:
+   - {e in X° | e <= x}
+
+** TODO Prove compactness lemmas needed later
+   - compactness stable under suitable operations
+   - compact elements below a directed join factor through one stage
+
+* Part III — Closure systems representation theorem fragment
+   This corresponds to the section just before Discussion 1.5.13.
+** TODO Formalize algebraic closure systems
+   Need the exact definition used in the text
+   before re-proving the isomorphism with an algebraic complete lattice.
+
+** TODO Define map f : X -> T by x |-> X_x
+   Need precise definition of X_x from the earlier part of the chapter
+
+** TODO Prove T is a closure system
+** TODO Prove f preserves order
+** TODO Prove f reflects order
+** TODO Prove f is bijective
+** TODO Conclude X ≅ T
+
+** TODO Prove T is algebraic
+   Need to reproduce the argument:
+   - directed subset {X_{x(i)}}
+   - corresponding directed subset D = {x(i)}
+   - sup x = sup D
+   - show union_i X_{x(i)} = X_x
+   - conclude directed joins in T behave correctly
+
+* Part IV — Lemma 1.5.14: adjoint-style criterion
+   This lemma is important and should be formalized cleanly.
+** TODO State Lemma 1.5.14
+   Let X,Y be algebraic complete lattices and
+   l : X -> Y, r : Y -> X monotone
+   with:
+   l(x) <= y iff x <= r(y)
+
+   Need to prove:
+   r is continuous iff l preserves compact elements
+
+** TODO Define adjunction condition for monotone maps
+   Could define Galois connection / adjunction
+   between posets:
+   l ⊣ r
+
+** TODO Prove (= >) direction
+   Assume r continuous.
+   For e compact in X, prove l(e) compact in Y.
+
+*** NEXT Break proof into explicit steps
+**** TODO If l(e) <= sup_i y_i, then e <= r(l(e)) <= sup_i r(y_i)
+**** TODO Use compactness of e to get e <= r(y_i0)
+**** TODO Conclude l(e) <= y_i0
+**** TODO Therefore l(e) compact
+
+** TODO Prove (<=) direction
+   Assume l preserves compact elements.
+   Need to prove r preserves directed joins.
+
+*** NEXT Prove formula for r(y)
+**** TODO Prove r(y) = sup {x in X | l(x) <= y}
+**** TODO Prove stronger formula
+     r(y) = sup {x compact | l(x) <= y}
+
+*** NEXT Prove continuity
+**** TODO Let {y_i} be directed
+**** TODO Show
+     sup {x compact | l(x) <= sup_i y_i}
+     =
+     sup_i sup {x compact | l(x) <= y_i}
+**** TODO Prove one inequality directly
+**** TODO For reverse inequality:
+     if x compact and l(x) <= sup_i y_i,
+     then l(x) compact in Y,
+     so l(x) <= y_i0 for some i0
+**** TODO Conclude x below RHS
+**** TODO Therefore r preserves directed joins
+
+** TODO Package as a reusable theorem
+   This should become one of the main APIs:
+   - adjoint_right_continuous_iff_left_preserves_compacts
+
+* Part V — Lemma 1.5.15: preserving all joins
+** TODO State lemma
+   For f : X -> Y monotone between complete lattices,
+   f preserves all joins iff it preserves:
+   - finite joins
+   - directed joins
+
+** NEXT Prove forward implication
+   Easy decomposition
+
+** NEXT Prove reverse implication
+   Need a clean decomposition of an arbitrary join
+   into a directed join of finite joins
+
+*** TODO Define finite-subset approximation of a subset A
+*** TODO Show the set of finite joins of elements of A is directed
+*** TODO Show sup A = directed sup of finite joins of A
+*** TODO Use preservation of finite joins + directed joins
+
+** TODO Turn Exercise 1.5.16 into a full proof script
+   Do not leave it as a gap.
+
+* Part VI — Ideals of a join-semilattice
+** TODO Define join-semilattice
+   Need:
+   - binary join
+   - bottom element if required
+   Clarify whether bottom is part of the structure or derived.
+
+** TODO Define ideal I ⊆ X of a join-semilattice
+   Conditions:
+   - bottom in I
+   - x,y in I implies x \/ y in I
+   - x' <= x in I implies x' in I
+
+** TODO Define X~ = set of ideals of X
+   Better final name:
+   - IdealCompletion X
+   - avoid overloaded X-bar if coding
+
+** TODO Order ideals by inclusion
+** TODO Prove ideals form a poset
+
+* Part VII — Proposition 1.5.18: ideal completion
+** TODO State proposition
+   If X is a join-semilattice, then IdealCompletion X
+   is an algebraic complete lattice under inclusion.
+
+** NEXT Prove complete lattice structure
+*** TODO Prove bottom ideal exists
+   - {⊥}
+
+*** TODO Prove arbitrary nonempty meets are intersections
+**** TODO Intersection of ideals is an ideal
+**** TODO Hence meets exist
+
+*** TODO Prove directed joins are unions
+**** TODO If {I_s} is directed, then union_s I_s is an ideal
+**** TODO Key step:
+     closure under binary joins uses directedness
+
+** NEXT Prove algebraicity
+*** TODO Characterize compact elements
+   Need theorem:
+   compact ideals are exactly principal ideals of finite joins:
+   (∨F)↓ for finite F ⊆ X
+
+*** TODO Prove (=>) finite-principal ideals are compact
+**** TODO If (∨F)↓ ⊆ union_s I_s with directed {I_s}
+**** TODO Since F finite and family directed, find one stage containing all of F
+**** TODO Conclude whole principal ideal below that stage
+
+*** TODO Prove (<=) every compact ideal is of that form
+**** TODO Show E ⊆ union {(∨F)↓ | finite F ⊆ E}
+**** TODO Use compactness of E to pick one finite F
+**** TODO Conclude E = (∨F)↓
+
+** TODO Conclude IdealCompletion X is algebraic complete lattice
+
+* Part VIII — Binary joins of ideals
+   This is used inside Proposition 1.5.18 and should be extracted.
+** TODO Define binary join of ideals I and J
+   Candidate:
+   I \/ J = down-closure of {x \/ y | x in I, y in J}
+
+** TODO Prove this is an ideal
+** TODO Prove it is the least upper bound of I and J in IdealCompletion X
+
+* Part IX — Ideal lifting
+** TODO Define ideal lifting of a finite-join-preserving monotone map
+   If f : X -> A
+   where X is a join-semilattice and A an algebraic complete lattice,
+   define:
+   \bar f(I) = sup {f(x) | x in I}
+
+** TODO Prove \bar f preserves directed joins
+   Follow the proof in the text:
+   reduce to unions of directed families of ideals
+
+** TODO Prove \bar f preserves finite joins
+   Need:
+   - bottom
+   - binary joins of ideals
+   - finite-join preservation of f
+
+** TODO Package theorem
+   finite-join-preserving map out of X
+   extends uniquely / canonically to join-preserving map out of IdealCompletion X
+
+** TODO Define ideal lifting between join-semilattices
+   If f : X -> Y preserves finite joins,
+   define
+   \bar f : IdealCompletion X -> IdealCompletion Y
+   by
+   \bar f(I) = down-closure of {f(x) | x in I}
+   or equivalently the ideal generated by the image
+
+** TODO Prove this \bar f preserves all joins
+** TODO Prove this \bar f preserves compact elements
+
+* Part X — Corollary 1.5.19
+** TODO State corollary
+   If X,Y are algebraic complete lattices and
+   f : X -> Y preserves all joins and compact elements,
+   then via ideal completion there is a commuting square relating:
+   - X
+   - Y
+   - X°
+   - Y°
+   and their ideal completions
+
+** TODO Define compact-element join-semilattice X°
+** TODO Prove X° is a join-semilattice
+** TODO Define theta : IdealCompletion(X°) -> X by
+   I |-> sup I
+
+** TODO Define inverse theta^{-1} : X -> IdealCompletion(X°)
+   x |-> {e compact | e <= x}
+
+** TODO Prove theta and theta^{-1} are well-defined
+** TODO Prove theta is an isomorphism
+** TODO Prove the square commutes with f and the ideal lifting of f|_{X°}
+
+** TODO Turn Exercise 1.5.20 into full proof obligations
+   Do not leave this as an informal gap.
+
+* Part XI — Scott domains
+** TODO Define Scott domain
+   According to the text:
+   a dcpo with:
+   - bottom element
+   - bounded cocomplete
+   - algebraic
+
+** TODO Clarify bounded cocomplete
+   Need exact earlier definition from the chapter
+   before formalizing Scott domain.
+
+** TODO Build a library of examples of Scott domains
+*** TODO Flat domain over a set
+*** TODO Lifted natural numbers
+*** TODO Ideal completion of a join-semilattice
+*** TODO Function spaces if already developed
+*** TODO Powerset-like examples if appropriate
+
+** TODO Add picture/documentation examples
+   Since the exercise explicitly asks for pictures,
+   store at least textual Hasse-style descriptions in comments.
+
+* Part XII — Further exercises worth formalizing
+** TODO Exercise 1.5.22
+   Generate many Scott domain examples
+
+** TODO Exercise: ideal completion as free dcpo
+   This is mathematically important and type-theory relevant.
+
+*** TODO Define poset-ideal
+   Directed + lower closed subset of a poset
+
+*** TODO Compare ideals and poset-ideals when X is a join-semilattice
+*** TODO Define free dcpo generated by a poset
+*** TODO Prove uniqueness up to isomorphism
+*** TODO Show poset-ideals of X form a dcpo
+*** TODO Define embedding η : X -> Idl(X) by x |-> x↓
+*** TODO Prove Idl(X) is the free dcpo on X
+
+** TODO Exercise: simultaneous least fixed point
+   This looks semantically useful.
+
+*** TODO Given continuous
+     f : D × E -> D
+     g : D × E -> E
+     define h(d,e) = (f(d,e), g(d,e))
+*** TODO Prove h continuous
+*** TODO Prove existence of least fixpoint of h
+*** TODO Define φ_e(d) = f(d,e)
+*** TODO Prove φ_e continuous
+*** TODO Define ψ(e) = g(Y(φ_e), e)
+*** TODO Prove ψ continuous
+*** TODO Prove (Y(φ_{Yψ}), Yψ) is least fixpoint of h
+
+** TODO Exercise: regular elements of Heyting lattice form Boolean lattice
+   This may be useful later if constructive/classical interactions arise.
+
+** TODO Exercise: complete sublattice of an algebraic complete lattice is algebraic
+   Worth formalizing as a reusable theorem.
+
+** TODO Exercise: monotone self-map fixpoint via post-fixed points
+   Also semantically useful.
+
+* Part XIII — Type theory / semantics connection
+** TODO Add documentation comments explaining why this section matters
+   The text says these results are technical now but crucial later for models of
+   polymorphic type theories.
+   Preserve that motivation in the codebase.
+
+** TODO Relate ideal completion to free completion constructions
+   This is important for syntax-to-semantics transitions.
+
+** TODO Relate Scott domains to semantic universes of types/programs
+   Add notes:
+   - algebraicity = finite information approximation
+   - directed joins = approximation limits
+   - compact elements = finite observations
+
+** TODO Mark which theorems will be needed later for polymorphism
+   At least:
+   - adjunction criterion for continuity
+   - ideal completion algebraicity
+   - ideal lifting
+   - Scott domains
+
+* Part XIV — Suggested file/module layout
+** TODO `Order/Poset.v`
+   Basic posets, monotone maps, order isomorphisms
+
+** TODO `Order/Lattice.v`
+   Join-semilattices, lattices, complete lattices
+
+** TODO `Order/DCPO.v`
+   Directed sets, dcpos, continuous maps
+
+** TODO `Order/Compact.v`
+   Compact elements, algebraicity
+
+** TODO `Order/Ideal.v`
+   Ideals, principal ideals, ideal completion
+
+** TODO `Order/IdealLifting.v`
+   Ideal lifting of finite-join-preserving maps
+
+** TODO `Order/ScottDomain.v`
+   Scott domains and basic examples
+
+** TODO `Order/Adjunction.v`
+   Galois connections / adjunctions on posets, Lemma 1.5.14
+
+** TODO `Order/Examples.v`
+   Flat domains, lifted naturals, powersets, ideal completions
+
+* Part XV — Sanity tests
+** TODO Test compactness of principal finite ideals
+** TODO Test directed union of ideals is an ideal
+** TODO Test ideal completion of a finite join-semilattice by explicit computation
+** TODO Test ideal lifting on a small finite semilattice
+** TODO Test Corollary 1.5.19 on a simple algebraic lattice
+** TODO Test Scott domain examples
+** TODO Test Lemma 1.5.15 on powerset lattices
+** TODO Test Lemma 1.5.14 on a simple adjunction
+
+* Part XVI — Immediate next coding actions
+** NEXT Implement posets and monotone maps
+** NEXT Implement join-semilattices and complete lattices
+** NEXT Implement directed sets and dcpos
+** NEXT Define compact elements and algebraic complete lattices
+** NEXT Prove Lemma 1.5.15
+** NEXT Define ideals and ideal completion
+** NEXT Prove Proposition 1.5.18
+** NEXT Define ideal lifting
+** NEXT Prove Corollary 1.5.19
+** NEXT Define Scott domains
+** NEXT Add at least three explicit Scott domain examples

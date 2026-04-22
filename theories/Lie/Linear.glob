@@ -1,0 +1,383 @@
+DIGEST 1de6534e315a46ebb4509b8c0622f24b
+FCAG.Lie.Linear
+R113:128 CAG.Galois.Field <> <> lib
+R146:161 CAG.Lie.BasicDef <> <> lib
+R191:194 Stdlib.Lists.List <> <> lib
+R196:200 Stdlib.Arith.Arith <> <> lib
+R202:205 Stdlib.Bool.Bool <> <> lib
+R215:227 Stdlib.Lists.List ListNotations <> mod
+def 351:356 <> Matrix
+binder 359:359 <> F:1
+R372:375 Corelib.Init.Datatypes <> list ind
+R378:381 Corelib.Init.Datatypes <> list ind
+R383:383 CAG.Lie.Linear <> F:1 var
+def 419:426 <> mat_zero
+binder 429:429 <> F:2
+R446:450 CAG.Galois.Field <> Field rec
+R452:452 CAG.Lie.Linear <> F:2 var
+binder 440:442 <> fld:3
+R460:462 Corelib.Init.Datatypes <> nat ind
+binder 456:456 <> n:4
+R467:472 CAG.Lie.Linear <> Matrix def
+R474:474 CAG.Lie.Linear <> F:2 var
+R481:491 Stdlib.Lists.List <> repeat abbrev
+R523:523 CAG.Lie.Linear <> n:4 var
+R494:504 Stdlib.Lists.List <> repeat abbrev
+R520:520 CAG.Lie.Linear <> n:4 var
+R507:513 CAG.Galois.Field <> cr_zero proj
+R515:517 CAG.Lie.Linear <> fld:3 var
+def 562:568 <> mat_add
+binder 571:571 <> F:5
+R588:592 CAG.Galois.Field <> Field rec
+R594:594 CAG.Lie.Linear <> F:5 var
+binder 582:584 <> fld:6
+R604:609 CAG.Lie.Linear <> Matrix def
+R611:611 CAG.Lie.Linear <> F:5 var
+binder 598:598 <> A:7
+binder 600:600 <> B:8
+R616:621 CAG.Lie.Linear <> Matrix def
+R623:623 CAG.Lie.Linear <> F:5 var
+R630:637 Stdlib.Lists.List <> map abbrev
+R727:738 Stdlib.Lists.List <> combine def
+R742:742 CAG.Lie.Linear <> B:8 var
+R740:740 CAG.Lie.Linear <> A:7 var
+R645:645 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R648:649 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R652:652 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 650:651 <> r2:9
+binder 646:647 <> r1:10
+binder 645:652 <> pat:11
+R661:668 Stdlib.Lists.List <> map abbrev
+R703:714 Stdlib.Lists.List <> combine def
+R719:720 CAG.Lie.Linear <> r2:9 var
+R716:717 CAG.Lie.Linear <> r1:10 var
+R676:676 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R678:679 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R681:681 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 680:680 <> b:12
+binder 677:677 <> a:13
+binder 676:681 <> pat:14
+R686:691 CAG.Galois.Field <> cr_add proj
+R699:699 CAG.Lie.Linear <> b:12 var
+R697:697 CAG.Lie.Linear <> a:13 var
+R693:695 CAG.Lie.Linear <> fld:6 var
+def 788:796 <> mat_scale
+binder 799:799 <> F:15
+R816:820 CAG.Galois.Field <> Field rec
+R822:822 CAG.Lie.Linear <> F:15 var
+binder 810:812 <> fld:16
+R830:830 CAG.Lie.Linear <> F:15 var
+binder 826:826 <> c:17
+R838:843 CAG.Lie.Linear <> Matrix def
+R845:845 CAG.Lie.Linear <> F:15 var
+binder 834:834 <> A:18
+R850:855 CAG.Lie.Linear <> Matrix def
+R857:857 CAG.Lie.Linear <> F:15 var
+R864:871 Stdlib.Lists.List <> map abbrev
+R925:925 CAG.Lie.Linear <> A:18 var
+binder 878:880 <> row:19
+R885:892 Stdlib.Lists.List <> map abbrev
+R920:922 CAG.Lie.Linear <> row:19 var
+binder 899:899 <> a:20
+R904:909 CAG.Galois.Field <> cr_mul proj
+R917:917 CAG.Lie.Linear <> a:20 var
+R915:915 CAG.Lie.Linear <> c:17 var
+R911:913 CAG.Lie.Linear <> fld:16 var
+def 957:963 <> mat_neg
+binder 966:966 <> F:21
+R983:987 CAG.Galois.Field <> Field rec
+R989:989 CAG.Lie.Linear <> F:21 var
+binder 977:979 <> fld:22
+R997:1002 CAG.Lie.Linear <> Matrix def
+R1004:1004 CAG.Lie.Linear <> F:21 var
+binder 993:993 <> A:23
+R1009:1014 CAG.Lie.Linear <> Matrix def
+R1016:1016 CAG.Lie.Linear <> F:21 var
+R1023:1031 CAG.Lie.Linear <> mat_scale def
+R1063:1063 CAG.Lie.Linear <> A:23 var
+R1038:1043 CAG.Galois.Field <> cr_neg proj
+R1050:1055 CAG.Galois.Field <> cr_one proj
+R1057:1059 CAG.Lie.Linear <> fld:22 var
+R1045:1047 CAG.Lie.Linear <> fld:22 var
+R1033:1035 CAG.Lie.Linear <> fld:22 var
+def 1115:1121 <> mat_mul
+binder 1124:1124 <> F:24
+R1141:1145 CAG.Galois.Field <> Field rec
+R1147:1147 CAG.Lie.Linear <> F:24 var
+binder 1135:1137 <> fld:25
+R1157:1162 CAG.Lie.Linear <> Matrix def
+R1164:1164 CAG.Lie.Linear <> F:24 var
+binder 1151:1151 <> A:26
+binder 1153:1153 <> B:27
+R1169:1174 CAG.Lie.Linear <> Matrix def
+R1176:1176 CAG.Lie.Linear <> F:24 var
+R1183:1190 Stdlib.Lists.List <> map abbrev
+R1446:1446 CAG.Lie.Linear <> A:26 var
+binder 1197:1201 <> row_A:28
+R1210:1217 Stdlib.Lists.List <> map abbrev
+R1411:1418 Stdlib.Lists.List <> seq abbrev
+R1423:1433 Stdlib.Lists.List <> length abbrev
+R1435:1439 CAG.Lie.Linear <> row_A:28 var
+binder 1224:1230 <> col_idx:29
+R1241:1254 Stdlib.Lists.List <> fold_left def
+R1390:1396 CAG.Galois.Field <> cr_zero proj
+R1398:1400 CAG.Lie.Linear <> fld:25 var
+R1367:1378 Stdlib.Lists.List <> combine def
+R1386:1386 CAG.Lie.Linear <> A:26 var
+R1380:1384 CAG.Lie.Linear <> row_A:28 var
+binder 1261:1263 <> acc:30
+R1266:1266 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1268:1269 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1275:1275 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 1270:1274 <> row_B:31
+binder 1267:1267 <> a:32
+binder 1266:1275 <> pat:33
+R1288:1293 CAG.Galois.Field <> cr_add proj
+R1304:1309 CAG.Galois.Field <> cr_mul proj
+R1318:1325 Stdlib.Lists.List <> nth abbrev
+R1342:1348 CAG.Galois.Field <> cr_zero proj
+R1350:1352 CAG.Lie.Linear <> fld:25 var
+R1335:1339 CAG.Lie.Linear <> row_B:31 var
+R1327:1333 CAG.Lie.Linear <> col_idx:29 var
+R1315:1315 CAG.Lie.Linear <> a:32 var
+R1311:1313 CAG.Lie.Linear <> fld:25 var
+R1299:1301 CAG.Lie.Linear <> acc:30 var
+R1295:1297 CAG.Lie.Linear <> fld:25 var
+def 1500:1510 <> mat_bracket
+binder 1513:1513 <> F:34
+R1530:1534 CAG.Galois.Field <> Field rec
+R1536:1536 CAG.Lie.Linear <> F:34 var
+binder 1524:1526 <> fld:35
+R1546:1551 CAG.Lie.Linear <> Matrix def
+R1553:1553 CAG.Lie.Linear <> F:34 var
+binder 1540:1540 <> A:36
+binder 1542:1542 <> B:37
+R1558:1563 CAG.Lie.Linear <> Matrix def
+R1565:1565 CAG.Lie.Linear <> F:34 var
+R1572:1578 CAG.Lie.Linear <> mat_add def
+R1617:1623 CAG.Lie.Linear <> mat_neg def
+R1630:1636 CAG.Lie.Linear <> mat_mul def
+R1644:1644 CAG.Lie.Linear <> A:36 var
+R1642:1642 CAG.Lie.Linear <> B:37 var
+R1638:1640 CAG.Lie.Linear <> fld:35 var
+R1625:1627 CAG.Lie.Linear <> fld:35 var
+R1585:1591 CAG.Lie.Linear <> mat_mul def
+R1599:1599 CAG.Lie.Linear <> B:37 var
+R1597:1597 CAG.Lie.Linear <> A:36 var
+R1593:1595 CAG.Lie.Linear <> fld:35 var
+R1580:1582 CAG.Lie.Linear <> fld:35 var
+def 1747:1751 <> gl_vs
+binder 1754:1754 <> F:38
+R1771:1775 CAG.Galois.Field <> Field rec
+R1777:1777 CAG.Lie.Linear <> F:38 var
+binder 1765:1767 <> fld:39
+R1785:1787 Corelib.Init.Datatypes <> nat ind
+binder 1781:1781 <> n:40
+R1792:1803 CAG.Lie.BasicDef <> VectorSpaceF rec
+R1810:1815 CAG.Lie.Linear <> Matrix def
+R1817:1817 CAG.Lie.Linear <> F:38 var
+R1805:1807 CAG.Lie.Linear <> fld:39 var
+R1844:1850 CAG.Lie.BasicDef <> vsF_add proj
+R1844:1850 CAG.Lie.BasicDef <> vsF_add proj
+R1844:1850 CAG.Lie.BasicDef <> vsF_add proj
+R1874:1881 CAG.Lie.BasicDef <> vsF_zero proj
+R1874:1881 CAG.Lie.BasicDef <> vsF_zero proj
+R1907:1913 CAG.Lie.BasicDef <> vsF_neg proj
+R1907:1913 CAG.Lie.BasicDef <> vsF_neg proj
+R1937:1945 CAG.Lie.BasicDef <> vsF_scale proj
+R1937:1945 CAG.Lie.BasicDef <> vsF_scale proj
+R1857:1863 CAG.Lie.Linear <> mat_add def
+R1887:1894 CAG.Lie.Linear <> mat_zero def
+R1920:1926 CAG.Lie.Linear <> mat_neg def
+R1950:1958 CAG.Lie.Linear <> mat_scale def
+R1844:1850 CAG.Lie.BasicDef <> vsF_add proj
+R1844:1850 CAG.Lie.BasicDef <> vsF_add proj
+R1844:1850 CAG.Lie.BasicDef <> vsF_add proj
+R1874:1881 CAG.Lie.BasicDef <> vsF_zero proj
+R1874:1881 CAG.Lie.BasicDef <> vsF_zero proj
+R1907:1913 CAG.Lie.BasicDef <> vsF_neg proj
+R1907:1913 CAG.Lie.BasicDef <> vsF_neg proj
+R1937:1945 CAG.Lie.BasicDef <> vsF_scale proj
+R1937:1945 CAG.Lie.BasicDef <> vsF_scale proj
+R1857:1863 CAG.Lie.Linear <> mat_add def
+R1887:1894 CAG.Lie.Linear <> mat_zero def
+R1920:1926 CAG.Lie.Linear <> mat_neg def
+R1950:1958 CAG.Lie.Linear <> mat_scale def
+def 2007:2008 <> gl
+binder 2011:2011 <> F:41
+R2028:2032 CAG.Galois.Field <> Field rec
+R2034:2034 CAG.Lie.Linear <> F:41 var
+binder 2022:2024 <> fld:42
+R2042:2044 Corelib.Init.Datatypes <> nat ind
+binder 2038:2038 <> n:43
+R2049:2059 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2066:2071 CAG.Lie.Linear <> Matrix def
+R2073:2073 CAG.Lie.Linear <> F:41 var
+R2061:2063 CAG.Lie.Linear <> fld:42 var
+R2100:2105 CAG.Lie.BasicDef <> laF_vs proj
+R2100:2105 CAG.Lie.BasicDef <> laF_vs proj
+R2100:2105 CAG.Lie.BasicDef <> laF_vs proj
+R2132:2142 CAG.Lie.BasicDef <> laF_bracket proj
+R2132:2142 CAG.Lie.BasicDef <> laF_bracket proj
+R2115:2119 CAG.Lie.Linear <> gl_vs prfax
+R2147:2157 CAG.Lie.Linear <> mat_bracket def
+R2100:2105 CAG.Lie.BasicDef <> laF_vs proj
+R2100:2105 CAG.Lie.BasicDef <> laF_vs proj
+R2100:2105 CAG.Lie.BasicDef <> laF_vs proj
+R2132:2142 CAG.Lie.BasicDef <> laF_bracket proj
+R2132:2142 CAG.Lie.BasicDef <> laF_bracket proj
+R2115:2119 CAG.Lie.Linear <> gl_vs prfax
+R2147:2157 CAG.Lie.Linear <> mat_bracket def
+def 2299:2306 <> mat_unit
+binder 2309:2309 <> F:44
+R2326:2330 CAG.Galois.Field <> Field rec
+R2332:2332 CAG.Lie.Linear <> F:44 var
+binder 2320:2322 <> fld:45
+R2344:2346 Corelib.Init.Datatypes <> nat ind
+binder 2336:2336 <> n:46
+binder 2338:2338 <> i:47
+binder 2340:2340 <> j:48
+R2351:2356 CAG.Lie.Linear <> Matrix def
+R2358:2358 CAG.Lie.Linear <> F:44 var
+R2365:2372 Stdlib.Lists.List <> map abbrev
+R2500:2507 Stdlib.Lists.List <> seq abbrev
+R2511:2511 CAG.Lie.Linear <> n:46 var
+binder 2379:2379 <> r:49
+R2388:2395 Stdlib.Lists.List <> map abbrev
+R2482:2489 Stdlib.Lists.List <> seq abbrev
+R2493:2493 CAG.Lie.Linear <> n:46 var
+binder 2402:2402 <> c:50
+R2427:2430 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2416:2422 Stdlib.Arith.PeanoNat Nat eqb def
+R2424:2424 CAG.Lie.Linear <> r:49 var
+R2426:2426 CAG.Lie.Linear <> i:47 var
+R2431:2437 Stdlib.Arith.PeanoNat Nat eqb def
+R2439:2439 CAG.Lie.Linear <> c:50 var
+R2441:2441 CAG.Lie.Linear <> j:48 var
+R2464:2470 CAG.Galois.Field <> cr_zero proj
+R2472:2474 CAG.Lie.Linear <> fld:45 var
+R2448:2453 CAG.Galois.Field <> cr_one proj
+R2455:2457 CAG.Lie.Linear <> fld:45 var
+prf 2597:2608 <> mat_unit_mul
+binder 2611:2611 <> F:51
+R2628:2632 CAG.Galois.Field <> Field rec
+R2634:2634 CAG.Lie.Linear <> F:51 var
+binder 2622:2624 <> fld:52
+R2650:2652 Corelib.Init.Datatypes <> nat ind
+binder 2638:2638 <> n:53
+binder 2640:2640 <> i:54
+binder 2642:2642 <> j:55
+binder 2644:2644 <> k:56
+binder 2646:2646 <> l:57
+R2714:2720 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2661:2667 CAG.Lie.Linear <> mat_mul def
+R2695:2702 CAG.Lie.Linear <> mat_unit def
+R2712:2712 CAG.Lie.Linear <> l:57 var
+R2710:2710 CAG.Lie.Linear <> k:56 var
+R2708:2708 CAG.Lie.Linear <> n:53 var
+R2704:2706 CAG.Lie.Linear <> fld:52 var
+R2674:2681 CAG.Lie.Linear <> mat_unit def
+R2691:2691 CAG.Lie.Linear <> j:55 var
+R2689:2689 CAG.Lie.Linear <> i:54 var
+R2687:2687 CAG.Lie.Linear <> n:53 var
+R2683:2685 CAG.Lie.Linear <> fld:52 var
+R2669:2671 CAG.Lie.Linear <> fld:52 var
+R2724:2730 Stdlib.Arith.PeanoNat Nat eqb def
+R2732:2732 CAG.Lie.Linear <> j:55 var
+R2734:2734 CAG.Lie.Linear <> k:56 var
+R2765:2772 CAG.Lie.Linear <> mat_zero def
+R2778:2778 CAG.Lie.Linear <> n:53 var
+R2774:2776 CAG.Lie.Linear <> fld:52 var
+R2741:2748 CAG.Lie.Linear <> mat_unit def
+R2758:2758 CAG.Lie.Linear <> l:57 var
+R2756:2756 CAG.Lie.Linear <> i:54 var
+R2754:2754 CAG.Lie.Linear <> n:53 var
+R2750:2752 CAG.Lie.Linear <> fld:52 var
+prf 2889:2904 <> mat_unit_bracket
+binder 2907:2907 <> F:58
+R2924:2928 CAG.Galois.Field <> Field rec
+R2930:2930 CAG.Lie.Linear <> F:58 var
+binder 2918:2920 <> fld:59
+R2946:2948 Corelib.Init.Datatypes <> nat ind
+binder 2934:2934 <> n:60
+binder 2936:2936 <> i:61
+binder 2938:2938 <> j:62
+binder 2940:2940 <> k:63
+binder 2942:2942 <> l:64
+R3014:3020 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2957:2967 CAG.Lie.Linear <> mat_bracket def
+R2995:3002 CAG.Lie.Linear <> mat_unit def
+R3012:3012 CAG.Lie.Linear <> l:64 var
+R3010:3010 CAG.Lie.Linear <> k:63 var
+R3008:3008 CAG.Lie.Linear <> n:60 var
+R3004:3006 CAG.Lie.Linear <> fld:59 var
+R2974:2981 CAG.Lie.Linear <> mat_unit def
+R2991:2991 CAG.Lie.Linear <> j:62 var
+R2989:2989 CAG.Lie.Linear <> i:61 var
+R2987:2987 CAG.Lie.Linear <> n:60 var
+R2983:2985 CAG.Lie.Linear <> fld:59 var
+R2969:2971 CAG.Lie.Linear <> fld:59 var
+R3021:3027 CAG.Lie.Linear <> mat_add def
+R3110:3116 Stdlib.Arith.PeanoNat Nat eqb def
+R3118:3118 CAG.Lie.Linear <> l:64 var
+R3120:3120 CAG.Lie.Linear <> i:61 var
+R3165:3172 CAG.Lie.Linear <> mat_zero def
+R3178:3178 CAG.Lie.Linear <> n:60 var
+R3174:3176 CAG.Lie.Linear <> fld:59 var
+R3127:3133 CAG.Lie.Linear <> mat_neg def
+R3140:3147 CAG.Lie.Linear <> mat_unit def
+R3157:3157 CAG.Lie.Linear <> j:62 var
+R3155:3155 CAG.Lie.Linear <> k:63 var
+R3153:3153 CAG.Lie.Linear <> n:60 var
+R3149:3151 CAG.Lie.Linear <> fld:59 var
+R3135:3137 CAG.Lie.Linear <> fld:59 var
+R3043:3049 Stdlib.Arith.PeanoNat Nat eqb def
+R3051:3051 CAG.Lie.Linear <> j:62 var
+R3053:3053 CAG.Lie.Linear <> k:63 var
+R3084:3091 CAG.Lie.Linear <> mat_zero def
+R3097:3097 CAG.Lie.Linear <> n:60 var
+R3093:3095 CAG.Lie.Linear <> fld:59 var
+R3060:3067 CAG.Lie.Linear <> mat_unit def
+R3077:3077 CAG.Lie.Linear <> l:64 var
+R3075:3075 CAG.Lie.Linear <> i:61 var
+R3073:3073 CAG.Lie.Linear <> n:60 var
+R3069:3071 CAG.Lie.Linear <> fld:59 var
+R3029:3031 CAG.Lie.Linear <> fld:59 var
+prf 3257:3274 <> mat_bracket_jacobi
+binder 3277:3277 <> F:65
+R3294:3298 CAG.Galois.Field <> Field rec
+R3300:3300 CAG.Lie.Linear <> F:65 var
+binder 3288:3290 <> fld:66
+R3312:3317 CAG.Lie.Linear <> Matrix def
+R3319:3319 CAG.Lie.Linear <> F:65 var
+binder 3304:3304 <> A:67
+binder 3306:3306 <> B:68
+binder 3308:3308 <> C:69
+R3509:3515 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3328:3334 CAG.Lie.Linear <> mat_add def
+R3469:3479 CAG.Lie.Linear <> mat_bracket def
+R3488:3498 CAG.Lie.Linear <> mat_bracket def
+R3506:3506 CAG.Lie.Linear <> B:68 var
+R3504:3504 CAG.Lie.Linear <> A:67 var
+R3500:3502 CAG.Lie.Linear <> fld:66 var
+R3485:3485 CAG.Lie.Linear <> C:69 var
+R3481:3483 CAG.Lie.Linear <> fld:66 var
+R3347:3353 CAG.Lie.Linear <> mat_add def
+R3420:3430 CAG.Lie.Linear <> mat_bracket def
+R3439:3449 CAG.Lie.Linear <> mat_bracket def
+R3457:3457 CAG.Lie.Linear <> A:67 var
+R3455:3455 CAG.Lie.Linear <> C:69 var
+R3451:3453 CAG.Lie.Linear <> fld:66 var
+R3436:3436 CAG.Lie.Linear <> B:68 var
+R3432:3434 CAG.Lie.Linear <> fld:66 var
+R3369:3379 CAG.Lie.Linear <> mat_bracket def
+R3388:3398 CAG.Lie.Linear <> mat_bracket def
+R3406:3406 CAG.Lie.Linear <> C:69 var
+R3404:3404 CAG.Lie.Linear <> B:68 var
+R3400:3402 CAG.Lie.Linear <> fld:66 var
+R3385:3385 CAG.Lie.Linear <> A:67 var
+R3381:3383 CAG.Lie.Linear <> fld:66 var
+R3355:3357 CAG.Lie.Linear <> fld:66 var
+R3336:3338 CAG.Lie.Linear <> fld:66 var
+R3516:3523 CAG.Lie.Linear <> mat_zero def
+R3525:3527 CAG.Lie.Linear <> fld:66 var

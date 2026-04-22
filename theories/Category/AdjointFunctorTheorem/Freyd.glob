@@ -1,0 +1,183 @@
+DIGEST 359a23406c32d3b812ad4e00e8f226c1
+FCAG.Category.AdjointFunctorTheorem.Freyd
+R224:240 CAG.Category.Core <> <> lib
+R258:277 CAG.Category.Functor <> <> lib
+R295:313 CAG.Category.Limits <> <> lib
+R331:353 CAG.Category.Adjunction <> <> lib
+R371:398 CAG.Category.PreservesLimits <> <> lib
+R416:433 CAG.Category.Comma <> <> lib
+R451:474 CAG.Category.UnderLimits <> <> lib
+R492:525 CAG.Category.InitialObjectCriteria <> <> lib
+R543:571 CAG.Category.AdjunctionLimits <> <> lib
+rec 1157:1167 <> SolutionSet
+proj 1231:1238 <> ss_index
+proj 1251:1256 <> ss_obj
+proj 1285:1290 <> ss_map
+proj 1347:1355 <> ss_factor
+R1176:1183 CAG.Category.Core <> Category rec
+binder 1170:1170 <> C:1
+binder 1172:1172 <> S:2
+R1191:1197 CAG.Category.Functor <> Functor rec
+R1199:1199 CAG.Category.AdjointFunctorTheorem.Freyd <> S:2 var
+R1201:1201 CAG.Category.AdjointFunctorTheorem.Freyd <> C:1 var
+binder 1187:1187 <> G:3
+R1212:1213 CAG.Category.Core <> Ob proj
+R1209:1209 CAG.Category.AdjointFunctorTheorem.Freyd <> C:1 var
+binder 1205:1205 <> A:4
+R1271:1274 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1263:1270 CAG.Category.AdjointFunctorTheorem.Freyd <> ss_index:6 meth
+R1278:1279 CAG.Category.Core <> Ob proj
+R1275:1275 CAG.Category.AdjointFunctorTheorem.Freyd <> S:2 var
+R1308:1315 CAG.Category.AdjointFunctorTheorem.Freyd <> ss_index:6 meth
+binder 1304:1304 <> x:8
+R1319:1321 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1323:1324 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1340:1342 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1318:1318 CAG.Category.AdjointFunctorTheorem.Freyd <> C:1 var
+R1322:1322 CAG.Category.AdjointFunctorTheorem.Freyd <> A:4 var
+R1326:1330 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R1339:1339 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R1325:1325 CAG.Category.AdjointFunctorTheorem.Freyd <> G:3 var
+R1331:1336 CAG.Category.AdjointFunctorTheorem.Freyd <> ss_obj:7 meth
+R1338:1338 CAG.Category.AdjointFunctorTheorem.Freyd <> x:8 var
+R1374:1375 CAG.Category.Core <> Ob proj
+R1371:1371 CAG.Category.AdjointFunctorTheorem.Freyd <> S:2 var
+binder 1367:1367 <> B:10
+R1385:1387 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1389:1390 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1397:1399 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1384:1384 CAG.Category.AdjointFunctorTheorem.Freyd <> C:1 var
+R1388:1388 CAG.Category.AdjointFunctorTheorem.Freyd <> A:4 var
+R1392:1395 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R1391:1391 CAG.Category.AdjointFunctorTheorem.Freyd <> G:3 var
+R1396:1396 CAG.Category.AdjointFunctorTheorem.Freyd <> B:10 var
+binder 1380:1380 <> g:11
+R1407:1414 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1452:1460 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1419:1426 CAG.Category.AdjointFunctorTheorem.Freyd <> ss_index:6 meth
+binder 1415:1415 <> x:12
+R1435:1437 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1446:1447 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1449:1451 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1434:1434 CAG.Category.AdjointFunctorTheorem.Freyd <> S:2 var
+R1438:1443 CAG.Category.AdjointFunctorTheorem.Freyd <> ss_obj:7 meth
+R1445:1445 CAG.Category.AdjointFunctorTheorem.Freyd <> x:12 var
+R1448:1448 CAG.Category.AdjointFunctorTheorem.Freyd <> B:10 var
+binder 1430:1430 <> h:13
+R1462:1464 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1461:1461 CAG.Category.AdjointFunctorTheorem.Freyd <> g:11 var
+R1471:1475 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1466:1469 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R1465:1465 CAG.Category.AdjointFunctorTheorem.Freyd <> G:3 var
+R1470:1470 CAG.Category.AdjointFunctorTheorem.Freyd <> h:13 var
+R1476:1481 CAG.Category.AdjointFunctorTheorem.Freyd <> ss_map:9 meth
+R1483:1483 CAG.Category.AdjointFunctorTheorem.Freyd <> x:12 var
+R1500:1507 CAG.Category.AdjointFunctorTheorem.Freyd <> ss_index proj
+R1500:1507 CAG.Category.AdjointFunctorTheorem.Freyd <> ss_index proj
+R1533:1538 CAG.Category.AdjointFunctorTheorem.Freyd <> ss_obj proj
+R1533:1538 CAG.Category.AdjointFunctorTheorem.Freyd <> ss_obj proj
+R1568:1573 CAG.Category.AdjointFunctorTheorem.Freyd <> ss_map proj
+R1568:1573 CAG.Category.AdjointFunctorTheorem.Freyd <> ss_map proj
+R1603:1611 CAG.Category.AdjointFunctorTheorem.Freyd <> ss_factor proj
+R1603:1611 CAG.Category.AdjointFunctorTheorem.Freyd <> ss_factor proj
+def 1698:1711 <> HasSolutionSet
+R1720:1727 CAG.Category.Core <> Category rec
+binder 1714:1714 <> C:15
+binder 1716:1716 <> S:16
+R1735:1741 CAG.Category.Functor <> Functor rec
+R1743:1743 CAG.Category.AdjointFunctorTheorem.Freyd <> S:16 var
+R1745:1745 CAG.Category.AdjointFunctorTheorem.Freyd <> C:15 var
+binder 1731:1731 <> G:17
+R1774:1775 CAG.Category.Core <> Ob proj
+R1771:1771 CAG.Category.AdjointFunctorTheorem.Freyd <> C:15 var
+binder 1767:1767 <> A:18
+R1779:1789 CAG.Category.AdjointFunctorTheorem.Freyd <> SolutionSet rec
+R1793:1793 CAG.Category.AdjointFunctorTheorem.Freyd <> A:18 var
+R1791:1791 CAG.Category.AdjointFunctorTheorem.Freyd <> G:17 var
+prf 3161:3173 <> freyd_forward
+R3182:3189 CAG.Category.Core <> Category rec
+binder 3176:3176 <> C:19
+binder 3178:3178 <> S:20
+R3201:3207 CAG.Category.Functor <> Functor rec
+R3209:3209 CAG.Category.AdjointFunctorTheorem.Freyd <> C:19 var
+R3211:3211 CAG.Category.AdjointFunctorTheorem.Freyd <> S:20 var
+binder 3197:3197 <> F:21
+R3219:3225 CAG.Category.Functor <> Functor rec
+R3227:3227 CAG.Category.AdjointFunctorTheorem.Freyd <> S:20 var
+R3229:3229 CAG.Category.AdjointFunctorTheorem.Freyd <> C:19 var
+binder 3215:3215 <> G:22
+R3240:3244 CAG.Category.Adjunction <> ::cat_scope:x_'⊣'_x not
+R3239:3239 CAG.Category.AdjointFunctorTheorem.Freyd <> F:21 var
+R3245:3245 CAG.Category.AdjointFunctorTheorem.Freyd <> G:22 var
+binder 3233:3235 <> adj:23
+R3257:3264 CAG.Category.Core <> Category rec
+binder 3253:3253 <> I:24
+R3273:3294 CAG.Category.PreservesLimits <> PreservesLimitsOfShape def
+R3298:3298 CAG.Category.AdjointFunctorTheorem.Freyd <> G:22 var
+R3296:3296 CAG.Category.AdjointFunctorTheorem.Freyd <> I:24 var
+R3317:3346 CAG.Category.AdjunctionLimits <> right_adjoint_preserves_limits thm
+R3317:3346 CAG.Category.AdjunctionLimits <> right_adjoint_preserves_limits thm
+prf 3443:3460 <> freyd_solution_set
+R3469:3476 CAG.Category.Core <> Category rec
+binder 3463:3463 <> C:25
+binder 3465:3465 <> S:26
+R3488:3494 CAG.Category.Functor <> Functor rec
+R3496:3496 CAG.Category.AdjointFunctorTheorem.Freyd <> C:25 var
+R3498:3498 CAG.Category.AdjointFunctorTheorem.Freyd <> S:26 var
+binder 3484:3484 <> F:27
+R3506:3512 CAG.Category.Functor <> Functor rec
+R3514:3514 CAG.Category.AdjointFunctorTheorem.Freyd <> S:26 var
+R3516:3516 CAG.Category.AdjointFunctorTheorem.Freyd <> C:25 var
+binder 3502:3502 <> G:28
+R3527:3531 CAG.Category.Adjunction <> ::cat_scope:x_'⊣'_x not
+R3526:3526 CAG.Category.AdjointFunctorTheorem.Freyd <> F:27 var
+R3532:3532 CAG.Category.AdjointFunctorTheorem.Freyd <> G:28 var
+binder 3520:3522 <> adj:29
+R3541:3554 CAG.Category.AdjointFunctorTheorem.Freyd <> HasSolutionSet def
+R3556:3556 CAG.Category.AdjointFunctorTheorem.Freyd <> G:28 var
+R3759:3775 CAG.Category.AdjointFunctorTheorem.Freyd <> Build_SolutionSet constr
+R3785:3788 Corelib.Init.Datatypes <> unit ind
+R3801:3804 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R3834:3842 CAG.Category.Functor <> component proj
+R3823:3830 CAG.Category.Adjunction <> adj_unit proj
+R3759:3775 CAG.Category.AdjointFunctorTheorem.Freyd <> Build_SolutionSet constr
+R3785:3788 Corelib.Init.Datatypes <> unit ind
+R3801:3804 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R3834:3842 CAG.Category.Functor <> component proj
+R3823:3830 CAG.Category.Adjunction <> adj_unit proj
+R3873:3874 Corelib.Init.Datatypes <> tt constr
+R3873:3874 Corelib.Init.Datatypes <> tt constr
+R3885:3890 CAG.Category.Adjunction <> adj_lr def
+R3885:3890 CAG.Category.Adjunction <> adj_lr def
+R3918:3926 CAG.Category.Adjunction <> adj_rl_lr thm
+R3918:3926 CAG.Category.Adjunction <> adj_rl_lr thm
+prf 4020:4048 <> freyd_adjoint_functor_theorem
+R4057:4064 CAG.Category.Core <> Category rec
+binder 4051:4051 <> C:30
+binder 4053:4053 <> S:31
+R4076:4082 CAG.Category.Functor <> Functor rec
+R4084:4084 CAG.Category.AdjointFunctorTheorem.Freyd <> S:31 var
+R4086:4086 CAG.Category.AdjointFunctorTheorem.Freyd <> C:30 var
+binder 4072:4072 <> G:32
+R4102:4109 CAG.Category.Limits <> Complete def
+R4111:4111 CAG.Category.AdjointFunctorTheorem.Freyd <> S:31 var
+binder 4094:4098 <> hcomp:33
+binder 4134:4134 <> I:34
+R4137:4158 CAG.Category.PreservesLimits <> PreservesLimitsOfShape def
+R4162:4162 CAG.Category.AdjointFunctorTheorem.Freyd <> G:32 var
+R4160:4160 CAG.Category.AdjointFunctorTheorem.Freyd <> I:34 var
+binder 4119:4123 <> hpres:35
+R4178:4191 CAG.Category.AdjointFunctorTheorem.Freyd <> HasSolutionSet def
+R4193:4193 CAG.Category.AdjointFunctorTheorem.Freyd <> G:32 var
+binder 4170:4172 <> hss:36
+R4202:4203 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'&'_x_'}' not
+R4205:4207 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'&'_x_'}' not
+R4219:4221 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'&'_x_'}' not
+R4229:4230 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'&'_x_'}' not
+R4208:4214 CAG.Category.Functor <> Functor rec
+R4216:4216 CAG.Category.AdjointFunctorTheorem.Freyd <> C:30 var
+R4218:4218 CAG.Category.AdjointFunctorTheorem.Freyd <> S:31 var
+binder 4204:4204 <> F:37
+R4223:4227 CAG.Category.Adjunction <> ::cat_scope:x_'⊣'_x not
+R4222:4222 CAG.Category.AdjointFunctorTheorem.Freyd <> F:37 var
+R4228:4228 CAG.Category.AdjointFunctorTheorem.Freyd <> G:32 var

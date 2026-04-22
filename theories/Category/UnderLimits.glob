@@ -1,0 +1,763 @@
+DIGEST f3a5087f053a336ee2d05ed08f08f694
+FCAG.Category.UnderLimits
+R194:210 CAG.Category.Core <> <> lib
+R228:247 CAG.Category.Functor <> <> lib
+R265:283 CAG.Category.Limits <> <> lib
+R301:328 CAG.Category.PreservesLimits <> <> lib
+R346:363 CAG.Category.Comma <> <> lib
+R393:414 Stdlib.Logic.ProofIrrelevance <> <> lib
+prf 1838:1858 <> under_category_limits
+R1867:1874 CAG.Category.Core <> Category rec
+binder 1861:1861 <> C:1
+binder 1863:1863 <> S:2
+R1889:1890 CAG.Category.Core <> Ob proj
+R1886:1886 CAG.Category.UnderLimits <> C:1 var
+binder 1882:1882 <> A:3
+R1899:1905 CAG.Category.Functor <> Functor rec
+R1907:1907 CAG.Category.UnderLimits <> S:2 var
+R1909:1909 CAG.Category.UnderLimits <> C:1 var
+binder 1895:1895 <> G:4
+R1921:1928 CAG.Category.Core <> Category rec
+binder 1917:1917 <> I:5
+R1943:1958 CAG.Category.Limits <> HasLimitsOfShape def
+R1960:1960 CAG.Category.UnderLimits <> I:5 var
+R1962:1962 CAG.Category.UnderLimits <> S:2 var
+binder 1936:1939 <> hlim:6
+R1978:1999 CAG.Category.PreservesLimits <> PreservesLimitsOfShape def
+R2003:2003 CAG.Category.UnderLimits <> G:4 var
+R2001:2001 CAG.Category.UnderLimits <> I:5 var
+binder 1970:1974 <> hpres:7
+R2012:2027 CAG.Category.Limits <> HasLimitsOfShape def
+R2029:2029 CAG.Category.UnderLimits <> I:5 var
+R2033:2037 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+R2032:2032 CAG.Category.UnderLimits <> A:3 var
+R2038:2038 CAG.Category.UnderLimits <> G:4 var
+R2103:2113 CAG.Category.Functor <> FunctorComp def
+R2116:2126 CAG.Category.Comma <> UnderForget def
+R2103:2113 CAG.Category.Functor <> FunctorComp def
+R2116:2126 CAG.Category.Comma <> UnderForget def
+R2495:2504 CAG.Category.Limits <> Build_Cone constr
+R2511:2521 CAG.Category.Functor <> FunctorComp def
+binder 2544:2544 <> i:8
+R2550:2558 CAG.Category.Comma <> under_map proj
+R2570:2573 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R2574:2574 CAG.Category.UnderLimits <> i:8 var
+binder 2587:2587 <> i:9
+binder 2589:2589 <> j:10
+binder 2591:2591 <> u:11
+R2597:2606 CAG.Category.Comma <> under_comm proj
+R2622:2625 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R2626:2626 CAG.Category.UnderLimits <> u:11 var
+R2495:2504 CAG.Category.Limits <> Build_Cone constr
+R2511:2521 CAG.Category.Functor <> FunctorComp def
+binder 2544:2544 <> i:12
+R2550:2558 CAG.Category.Comma <> under_map proj
+R2570:2573 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R2574:2574 CAG.Category.UnderLimits <> i:12 var
+binder 2587:2587 <> i:13
+binder 2589:2589 <> j:14
+binder 2591:2591 <> u:15
+R2597:2606 CAG.Category.Comma <> under_comm proj
+R2622:2625 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R2626:2626 CAG.Category.UnderLimits <> u:15 var
+R2695:2701 CAG.Category.Limits <> lim_med proj
+R2695:2701 CAG.Category.Limits <> lim_med proj
+R2836:2842 CAG.Category.Comma <> UnderOb rec
+R2761:2768 CAG.Category.Comma <> under_ob proj
+R2761:2768 CAG.Category.Comma <> under_ob proj
+R2761:2768 CAG.Category.Comma <> under_ob proj
+R2816:2824 CAG.Category.Comma <> under_map proj
+R2816:2824 CAG.Category.Comma <> under_map proj
+R2780:2790 CAG.Category.Limits <> cone_vertex proj
+R2836:2842 CAG.Category.Comma <> UnderOb rec
+R2761:2768 CAG.Category.Comma <> under_ob proj
+R2761:2768 CAG.Category.Comma <> under_ob proj
+R2761:2768 CAG.Category.Comma <> under_ob proj
+R2816:2824 CAG.Category.Comma <> under_map proj
+R2816:2824 CAG.Category.Comma <> under_map proj
+R2780:2790 CAG.Category.Limits <> cone_vertex proj
+R2930:2933 CAG.Category.Limits <> Cone rec
+binder 2926:2926 <> K:16
+R2945:2954 CAG.Category.Limits <> Build_Cone constr
+R2971:2978 CAG.Category.Comma <> under_ob proj
+R2991:3001 CAG.Category.Limits <> cone_vertex proj
+R2988:2988 CAG.Category.UnderLimits <> K:16 var
+binder 3016:3016 <> i:17
+R3022:3030 CAG.Category.Comma <> under_hom proj
+R3048:3055 CAG.Category.Limits <> cone_map proj
+R3045:3045 CAG.Category.UnderLimits <> K:16 var
+R3058:3058 CAG.Category.UnderLimits <> i:17 var
+binder 3073:3073 <> i:18
+binder 3075:3075 <> j:19
+binder 3077:3077 <> u:20
+R3082:3088 Corelib.Init.Logic <> f_equal thm
+R3119:3127 CAG.Category.Limits <> cone_comm proj
+R3116:3116 CAG.Category.UnderLimits <> K:16 var
+R3130:3130 CAG.Category.UnderLimits <> u:20 var
+R3092:3100 CAG.Category.Comma <> under_hom proj
+R2930:2933 CAG.Category.Limits <> Cone rec
+binder 2926:2926 <> K:21
+R2945:2954 CAG.Category.Limits <> Build_Cone constr
+R2971:2978 CAG.Category.Comma <> under_ob proj
+R2991:3001 CAG.Category.Limits <> cone_vertex proj
+R2988:2988 CAG.Category.UnderLimits <> K:21 var
+binder 3016:3016 <> i:22
+R3022:3030 CAG.Category.Comma <> under_hom proj
+R3048:3055 CAG.Category.Limits <> cone_map proj
+R3045:3045 CAG.Category.UnderLimits <> K:21 var
+R3058:3058 CAG.Category.UnderLimits <> i:22 var
+binder 3073:3073 <> i:23
+binder 3075:3075 <> j:24
+binder 3077:3077 <> u:25
+R3082:3088 Corelib.Init.Logic <> f_equal thm
+R3119:3127 CAG.Category.Limits <> cone_comm proj
+R3116:3116 CAG.Category.UnderLimits <> K:21 var
+R3130:3130 CAG.Category.UnderLimits <> u:25 var
+R3092:3100 CAG.Category.Comma <> under_hom proj
+R3241:3244 CAG.Category.Limits <> Cone rec
+binder 3237:3237 <> K:26
+R3320:3322 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3286:3290 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R3256:3260 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3285:3285 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3265:3271 CAG.Category.Limits <> lim_med proj
+R3283:3283 CAG.Category.UnderLimits <> K:26 var
+R3291:3299 CAG.Category.Comma <> under_map proj
+R3306:3316 CAG.Category.Limits <> cone_vertex proj
+R3318:3318 CAG.Category.UnderLimits <> K:26 var
+R3328:3334 CAG.Category.Limits <> lim_med proj
+R3241:3244 CAG.Category.Limits <> Cone rec
+binder 3237:3237 <> K:27
+R3320:3322 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3286:3290 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R3256:3260 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3285:3285 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3265:3271 CAG.Category.Limits <> lim_med proj
+R3283:3283 CAG.Category.UnderLimits <> K:27 var
+R3291:3299 CAG.Category.Comma <> under_map proj
+R3306:3316 CAG.Category.Limits <> cone_vertex proj
+R3318:3318 CAG.Category.UnderLimits <> K:27 var
+R3328:3334 CAG.Category.Limits <> lim_med proj
+R3371:3382 CAG.Category.Limits <> lim_med_uniq proj
+R3371:3382 CAG.Category.Limits <> lim_med_uniq proj
+R3411:3418 CAG.Category.Limits <> cone_map proj
+R3421:3429 CAG.Category.Limits <> cone_fmap def
+R3450:3454 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3471:3471 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3455:3462 CAG.Category.Limits <> cone_map proj
+R3411:3418 CAG.Category.Limits <> cone_map proj
+R3421:3429 CAG.Category.Limits <> cone_fmap def
+R3450:3454 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3471:3471 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3455:3462 CAG.Category.Limits <> cone_map proj
+R3545:3567 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R3494:3498 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3544:3544 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3515:3519 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R3499:3506 CAG.Category.Limits <> cone_map proj
+R3524:3530 CAG.Category.Limits <> lim_med proj
+R3568:3576 CAG.Category.Comma <> under_map proj
+R3583:3593 CAG.Category.Limits <> cone_vertex proj
+R3545:3567 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R3494:3498 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3544:3544 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3515:3519 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R3499:3506 CAG.Category.Limits <> cone_map proj
+R3524:3530 CAG.Category.Limits <> lim_med proj
+R3568:3576 CAG.Category.Comma <> under_map proj
+R3583:3593 CAG.Category.Limits <> cone_vertex proj
+R3617:3626 CAG.Category.Core <> comp_assoc proj
+R3617:3626 CAG.Category.Core <> comp_assoc proj
+R3617:3626 CAG.Category.Core <> comp_assoc proj
+R3652:3657 Corelib.Init.Logic <> eq_sym thm
+R3663:3671 CAG.Category.Functor <> fmap_comp proj
+R3698:3704 CAG.Category.Limits <> lim_med proj
+R3675:3682 CAG.Category.Limits <> cone_map proj
+R3652:3657 Corelib.Init.Logic <> eq_sym thm
+R3663:3671 CAG.Category.Functor <> fmap_comp proj
+R3698:3704 CAG.Category.Limits <> lim_med proj
+R3675:3682 CAG.Category.Limits <> cone_map proj
+R3744:3755 CAG.Category.Limits <> lim_med_comm proj
+R3744:3755 CAG.Category.Limits <> lim_med_comm proj
+R3744:3755 CAG.Category.Limits <> lim_med_comm proj
+R3793:3802 CAG.Category.Comma <> under_comm proj
+R3820:3827 CAG.Category.Limits <> cone_map proj
+R3793:3802 CAG.Category.Comma <> under_comm proj
+R3820:3827 CAG.Category.Limits <> cone_map proj
+R3941:3944 CAG.Category.Limits <> Cone rec
+binder 3937:3937 <> K:28
+R3956:3969 CAG.Category.Comma <> Build_UnderHom constr
+R3980:3990 CAG.Category.Limits <> cone_vertex proj
+R3992:3992 CAG.Category.UnderLimits <> K:28 var
+R4015:4021 CAG.Category.Limits <> lim_med proj
+R4033:4033 CAG.Category.UnderLimits <> K:28 var
+R4050:4050 CAG.Category.UnderLimits <> K:28 var
+R3941:3944 CAG.Category.Limits <> Cone rec
+binder 3937:3937 <> K:29
+R3956:3969 CAG.Category.Comma <> Build_UnderHom constr
+R3980:3990 CAG.Category.Limits <> cone_vertex proj
+R3992:3992 CAG.Category.UnderLimits <> K:29 var
+R4015:4021 CAG.Category.Limits <> lim_med proj
+R4033:4033 CAG.Category.UnderLimits <> K:29 var
+R4050:4050 CAG.Category.UnderLimits <> K:29 var
+R4142:4143 CAG.Category.Core <> Ob proj
+binder 4133:4133 <> i:30
+binder 4135:4135 <> j:31
+R4153:4155 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4157:4157 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4159:4161 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4156:4156 CAG.Category.UnderLimits <> i:30 var
+R4158:4158 CAG.Category.UnderLimits <> j:31 var
+binder 4148:4148 <> u:32
+R4268:4274 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4169:4169 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R4176:4181 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R4171:4174 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R4175:4175 CAG.Category.UnderLimits <> u:32 var
+R4183:4196 CAG.Category.Comma <> Build_UnderHom constr
+R4217:4220 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R4221:4221 CAG.Category.UnderLimits <> i:30 var
+R4225:4232 CAG.Category.Limits <> cone_map proj
+R4240:4240 CAG.Category.UnderLimits <> i:30 var
+R4249:4260 CAG.Category.Limits <> lim_med_comm proj
+R4266:4266 CAG.Category.UnderLimits <> i:30 var
+R4276:4289 CAG.Category.Comma <> Build_UnderHom constr
+R4310:4313 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R4314:4314 CAG.Category.UnderLimits <> j:31 var
+R4318:4325 CAG.Category.Limits <> cone_map proj
+R4333:4333 CAG.Category.UnderLimits <> j:31 var
+R4342:4353 CAG.Category.Limits <> lim_med_comm proj
+R4359:4359 CAG.Category.UnderLimits <> j:31 var
+R4142:4143 CAG.Category.Core <> Ob proj
+binder 4133:4133 <> i:33
+binder 4135:4135 <> j:34
+R4153:4155 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4157:4157 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4159:4161 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4156:4156 CAG.Category.UnderLimits <> i:33 var
+R4158:4158 CAG.Category.UnderLimits <> j:34 var
+binder 4148:4148 <> u:35
+R4268:4274 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4169:4169 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R4176:4181 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R4171:4174 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R4175:4175 CAG.Category.UnderLimits <> u:35 var
+R4183:4196 CAG.Category.Comma <> Build_UnderHom constr
+R4217:4220 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R4221:4221 CAG.Category.UnderLimits <> i:33 var
+R4225:4232 CAG.Category.Limits <> cone_map proj
+R4240:4240 CAG.Category.UnderLimits <> i:33 var
+R4249:4260 CAG.Category.Limits <> lim_med_comm proj
+R4266:4266 CAG.Category.UnderLimits <> i:33 var
+R4276:4289 CAG.Category.Comma <> Build_UnderHom constr
+R4310:4313 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R4314:4314 CAG.Category.UnderLimits <> j:34 var
+R4318:4325 CAG.Category.Limits <> cone_map proj
+R4333:4333 CAG.Category.UnderLimits <> j:34 var
+R4342:4353 CAG.Category.Limits <> lim_med_comm proj
+R4359:4359 CAG.Category.UnderLimits <> j:34 var
+R4388:4399 CAG.Category.Comma <> under_hom_eq thm
+R4388:4399 CAG.Category.Comma <> under_hom_eq thm
+R4416:4424 CAG.Category.Limits <> cone_comm proj
+R4416:4424 CAG.Category.Limits <> cone_comm proj
+R4442:4447 Corelib.Init.Specif <> existT constr
+R4485:4494 CAG.Category.Limits <> Build_Cone constr
+R4500:4504 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+binder 4530:4530 <> i:36
+R4536:4549 CAG.Category.Comma <> Build_UnderHom constr
+R4570:4573 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R4574:4574 CAG.Category.UnderLimits <> i:36 var
+R4596:4603 CAG.Category.Limits <> cone_map proj
+R4611:4611 CAG.Category.UnderLimits <> i:36 var
+R4620:4631 CAG.Category.Limits <> lim_med_comm proj
+R4637:4637 CAG.Category.UnderLimits <> i:36 var
+R4458:4461 CAG.Category.Limits <> Cone rec
+binder 4454:4454 <> c:37
+R4468:4474 CAG.Category.Limits <> IsLimit rec
+R4476:4476 CAG.Category.UnderLimits <> c:37 var
+R4442:4447 Corelib.Init.Specif <> existT constr
+R4485:4494 CAG.Category.Limits <> Build_Cone constr
+R4500:4504 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+binder 4530:4530 <> i:38
+R4536:4549 CAG.Category.Comma <> Build_UnderHom constr
+R4570:4573 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R4574:4574 CAG.Category.UnderLimits <> i:38 var
+R4596:4603 CAG.Category.Limits <> cone_map proj
+R4611:4611 CAG.Category.UnderLimits <> i:38 var
+R4620:4631 CAG.Category.Limits <> lim_med_comm proj
+R4637:4637 CAG.Category.UnderLimits <> i:38 var
+R4458:4461 CAG.Category.Limits <> Cone rec
+binder 4454:4454 <> c:39
+R4468:4474 CAG.Category.Limits <> IsLimit rec
+R4476:4476 CAG.Category.UnderLimits <> c:39 var
+R4840:4851 CAG.Category.Comma <> under_hom_eq thm
+R4840:4851 CAG.Category.Comma <> under_hom_eq thm
+R4874:4885 CAG.Category.Limits <> lim_med_comm proj
+R4874:4885 CAG.Category.Limits <> lim_med_comm proj
+R4952:4963 CAG.Category.Comma <> under_hom_eq thm
+R4952:4963 CAG.Category.Comma <> under_hom_eq thm
+R4986:4997 CAG.Category.Limits <> lim_med_uniq proj
+R4986:4997 CAG.Category.Limits <> lim_med_uniq proj
+R5034:5040 Corelib.Init.Logic <> f_equal thm
+R5044:5052 CAG.Category.Comma <> under_hom proj
+R5034:5040 Corelib.Init.Logic <> f_equal thm
+R5044:5052 CAG.Category.Comma <> under_hom proj
+prf 5090:5118 <> under_forget_preserves_limits
+R5127:5134 CAG.Category.Core <> Category rec
+binder 5121:5121 <> C:40
+binder 5123:5123 <> S:41
+R5149:5150 CAG.Category.Core <> Ob proj
+R5146:5146 CAG.Category.UnderLimits <> C:40 var
+binder 5142:5142 <> A:42
+R5159:5165 CAG.Category.Functor <> Functor rec
+R5167:5167 CAG.Category.UnderLimits <> S:41 var
+R5169:5169 CAG.Category.UnderLimits <> C:40 var
+binder 5155:5155 <> G:43
+R5181:5188 CAG.Category.Core <> Category rec
+binder 5177:5177 <> I:44
+R5203:5218 CAG.Category.Limits <> HasLimitsOfShape def
+R5220:5220 CAG.Category.UnderLimits <> I:44 var
+R5222:5222 CAG.Category.UnderLimits <> S:41 var
+binder 5196:5199 <> hlim:45
+R5238:5259 CAG.Category.PreservesLimits <> PreservesLimitsOfShape def
+R5263:5263 CAG.Category.UnderLimits <> G:43 var
+R5261:5261 CAG.Category.UnderLimits <> I:44 var
+binder 5230:5234 <> hpres:46
+R5272:5293 CAG.Category.PreservesLimits <> PreservesLimitsOfShape def
+R5298:5308 CAG.Category.Comma <> UnderForget def
+R5312:5312 CAG.Category.UnderLimits <> G:43 var
+R5310:5310 CAG.Category.UnderLimits <> A:42 var
+R5295:5295 CAG.Category.UnderLimits <> I:44 var
+R5357:5367 CAG.Category.Functor <> FunctorComp def
+R5370:5380 CAG.Category.Comma <> UnderForget def
+R5357:5367 CAG.Category.Functor <> FunctorComp def
+R5370:5380 CAG.Category.Comma <> UnderForget def
+R5478:5487 CAG.Category.Limits <> Build_Cone constr
+R5494:5504 CAG.Category.Functor <> FunctorComp def
+binder 5523:5523 <> i:47
+R5529:5537 CAG.Category.Comma <> under_map proj
+R5549:5552 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R5553:5553 CAG.Category.UnderLimits <> i:47 var
+binder 5566:5566 <> i:48
+binder 5568:5568 <> j:49
+binder 5570:5570 <> u:50
+R5576:5585 CAG.Category.Comma <> under_comm proj
+R5601:5604 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R5605:5605 CAG.Category.UnderLimits <> u:50 var
+R5478:5487 CAG.Category.Limits <> Build_Cone constr
+R5494:5504 CAG.Category.Functor <> FunctorComp def
+binder 5523:5523 <> i:51
+R5529:5537 CAG.Category.Comma <> under_map proj
+R5549:5552 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R5553:5553 CAG.Category.UnderLimits <> i:51 var
+binder 5566:5566 <> i:52
+binder 5568:5568 <> j:53
+binder 5570:5570 <> u:54
+R5576:5585 CAG.Category.Comma <> under_comm proj
+R5601:5604 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R5605:5605 CAG.Category.UnderLimits <> u:54 var
+R5628:5634 CAG.Category.Limits <> lim_med proj
+R5628:5634 CAG.Category.Limits <> lim_med proj
+R5721:5727 CAG.Category.Comma <> UnderOb rec
+R5667:5674 CAG.Category.Comma <> under_ob proj
+R5667:5674 CAG.Category.Comma <> under_ob proj
+R5667:5674 CAG.Category.Comma <> under_ob proj
+R5701:5709 CAG.Category.Comma <> under_map proj
+R5701:5709 CAG.Category.Comma <> under_map proj
+R5687:5697 CAG.Category.Limits <> cone_vertex proj
+R5721:5727 CAG.Category.Comma <> UnderOb rec
+R5667:5674 CAG.Category.Comma <> under_ob proj
+R5667:5674 CAG.Category.Comma <> under_ob proj
+R5667:5674 CAG.Category.Comma <> under_ob proj
+R5701:5709 CAG.Category.Comma <> under_map proj
+R5701:5709 CAG.Category.Comma <> under_map proj
+R5687:5697 CAG.Category.Limits <> cone_vertex proj
+R5775:5776 CAG.Category.Core <> Ob proj
+binder 5766:5766 <> i:55
+binder 5768:5768 <> j:56
+R5786:5788 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R5790:5791 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R5793:5795 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R5789:5789 CAG.Category.UnderLimits <> i:55 var
+R5792:5792 CAG.Category.UnderLimits <> j:56 var
+binder 5781:5781 <> u:57
+R5916:5922 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5803:5803 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R5810:5815 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R5805:5808 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R5809:5809 CAG.Category.UnderLimits <> u:57 var
+R5817:5830 CAG.Category.Comma <> Build_UnderHom constr
+R5854:5857 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R5858:5858 CAG.Category.UnderLimits <> i:55 var
+R5878:5885 CAG.Category.Limits <> cone_map proj
+R5888:5888 CAG.Category.UnderLimits <> i:55 var
+R5897:5908 CAG.Category.Limits <> lim_med_comm proj
+R5914:5914 CAG.Category.UnderLimits <> i:55 var
+R5924:5937 CAG.Category.Comma <> Build_UnderHom constr
+R5961:5964 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R5965:5965 CAG.Category.UnderLimits <> j:56 var
+R5985:5992 CAG.Category.Limits <> cone_map proj
+R5995:5995 CAG.Category.UnderLimits <> j:56 var
+R6004:6015 CAG.Category.Limits <> lim_med_comm proj
+R6021:6021 CAG.Category.UnderLimits <> j:56 var
+R5775:5776 CAG.Category.Core <> Ob proj
+binder 5766:5766 <> i:58
+binder 5768:5768 <> j:59
+R5786:5788 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R5790:5791 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R5793:5795 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R5789:5789 CAG.Category.UnderLimits <> i:58 var
+R5792:5792 CAG.Category.UnderLimits <> j:59 var
+binder 5781:5781 <> u:60
+R5916:5922 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5803:5803 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R5810:5815 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R5805:5808 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R5809:5809 CAG.Category.UnderLimits <> u:60 var
+R5817:5830 CAG.Category.Comma <> Build_UnderHom constr
+R5854:5857 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R5858:5858 CAG.Category.UnderLimits <> i:58 var
+R5878:5885 CAG.Category.Limits <> cone_map proj
+R5888:5888 CAG.Category.UnderLimits <> i:58 var
+R5897:5908 CAG.Category.Limits <> lim_med_comm proj
+R5914:5914 CAG.Category.UnderLimits <> i:58 var
+R5924:5937 CAG.Category.Comma <> Build_UnderHom constr
+R5961:5964 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R5965:5965 CAG.Category.UnderLimits <> j:59 var
+R5985:5992 CAG.Category.Limits <> cone_map proj
+R5995:5995 CAG.Category.UnderLimits <> j:59 var
+R6004:6015 CAG.Category.Limits <> lim_med_comm proj
+R6021:6021 CAG.Category.UnderLimits <> j:59 var
+R6050:6061 CAG.Category.Comma <> under_hom_eq thm
+R6050:6061 CAG.Category.Comma <> under_hom_eq thm
+R6079:6087 CAG.Category.Limits <> cone_comm proj
+R6079:6087 CAG.Category.Limits <> cone_comm proj
+R6118:6127 CAG.Category.Limits <> Build_Cone constr
+R6133:6137 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+binder 6164:6164 <> i:61
+R6170:6183 CAG.Category.Comma <> Build_UnderHom constr
+R6207:6210 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R6211:6211 CAG.Category.UnderLimits <> i:61 var
+R6239:6246 CAG.Category.Limits <> cone_map proj
+R6249:6249 CAG.Category.UnderLimits <> i:61 var
+R6258:6269 CAG.Category.Limits <> lim_med_comm proj
+R6275:6275 CAG.Category.UnderLimits <> i:61 var
+R6118:6127 CAG.Category.Limits <> Build_Cone constr
+R6133:6137 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+binder 6164:6164 <> i:62
+R6170:6183 CAG.Category.Comma <> Build_UnderHom constr
+R6207:6210 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R6211:6211 CAG.Category.UnderLimits <> i:62 var
+R6239:6246 CAG.Category.Limits <> cone_map proj
+R6249:6249 CAG.Category.UnderLimits <> i:62 var
+R6258:6269 CAG.Category.Limits <> lim_med_comm proj
+R6275:6275 CAG.Category.UnderLimits <> i:62 var
+R6313:6319 CAG.Category.Limits <> lim_med proj
+R6313:6319 CAG.Category.Limits <> lim_med proj
+R6353:6359 CAG.Category.Limits <> lim_med proj
+R6363:6371 CAG.Category.Limits <> cone_fmap def
+R6374:6384 CAG.Category.Comma <> UnderForget def
+R6353:6359 CAG.Category.Limits <> lim_med proj
+R6363:6371 CAG.Category.Limits <> cone_fmap def
+R6374:6384 CAG.Category.Comma <> UnderForget def
+R6485:6487 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6478:6482 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R6454:6462 CAG.Category.Comma <> under_hom proj
+R6491:6492 CAG.Category.Core <> id proj
+R6485:6487 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6478:6482 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R6454:6462 CAG.Category.Comma <> under_hom proj
+R6491:6492 CAG.Category.Core <> id proj
+R6571:6573 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6528:6532 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R6522:6525 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R6534:6542 CAG.Category.Comma <> under_map proj
+R6553:6563 CAG.Category.Limits <> cone_vertex proj
+R6571:6573 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6528:6532 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R6522:6525 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R6534:6542 CAG.Category.Comma <> under_map proj
+R6553:6563 CAG.Category.Limits <> cone_vertex proj
+R6606:6617 CAG.Category.Limits <> lim_med_uniq proj
+R6606:6617 CAG.Category.Limits <> lim_med_uniq proj
+R6648:6655 CAG.Category.Limits <> cone_map proj
+R6658:6666 CAG.Category.Limits <> cone_fmap def
+R6688:6692 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R6710:6710 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R6693:6700 CAG.Category.Limits <> cone_map proj
+R6648:6655 CAG.Category.Limits <> cone_map proj
+R6658:6666 CAG.Category.Limits <> cone_fmap def
+R6688:6692 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R6710:6710 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R6693:6700 CAG.Category.Limits <> cone_map proj
+R6760:6784 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6753:6757 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R6736:6743 CAG.Category.Limits <> cone_map proj
+R6786:6794 CAG.Category.Comma <> under_hom proj
+R6816:6823 CAG.Category.Limits <> cone_map proj
+R6760:6784 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6753:6757 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R6736:6743 CAG.Category.Limits <> cone_map proj
+R6786:6794 CAG.Category.Comma <> under_hom proj
+R6816:6823 CAG.Category.Limits <> cone_map proj
+R6851:6862 CAG.Category.Limits <> lim_med_comm proj
+R6866:6874 CAG.Category.Limits <> cone_fmap def
+R6877:6887 CAG.Category.Comma <> UnderForget def
+R6851:6862 CAG.Category.Limits <> lim_med_comm proj
+R6866:6874 CAG.Category.Limits <> cone_fmap def
+R6877:6887 CAG.Category.Comma <> UnderForget def
+R6924:6933 CAG.Category.Core <> comp_assoc proj
+R6924:6933 CAG.Category.Core <> comp_assoc proj
+R6924:6933 CAG.Category.Core <> comp_assoc proj
+R6988:6992 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R6958:6962 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R6987:6987 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R6980:6984 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R6963:6970 CAG.Category.Limits <> cone_map proj
+R6994:7002 CAG.Category.Comma <> under_map proj
+R7013:7023 CAG.Category.Limits <> cone_vertex proj
+R6988:6992 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R6958:6962 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R6987:6987 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R6980:6984 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R6963:6970 CAG.Category.Limits <> cone_map proj
+R6994:7002 CAG.Category.Comma <> under_map proj
+R7013:7023 CAG.Category.Limits <> cone_vertex proj
+R7058:7063 Corelib.Init.Logic <> eq_sym thm
+R7069:7077 CAG.Category.Functor <> fmap_comp proj
+R7081:7088 CAG.Category.Limits <> cone_map proj
+R7058:7063 Corelib.Init.Logic <> eq_sym thm
+R7069:7077 CAG.Category.Functor <> fmap_comp proj
+R7081:7088 CAG.Category.Limits <> cone_map proj
+R7143:7152 CAG.Category.Comma <> under_comm proj
+R7174:7181 CAG.Category.Limits <> cone_map proj
+R7143:7152 CAG.Category.Comma <> under_comm proj
+R7174:7181 CAG.Category.Limits <> cone_map proj
+R7213:7226 CAG.Category.Comma <> Build_UnderHom constr
+R7237:7247 CAG.Category.Limits <> cone_vertex proj
+R7213:7226 CAG.Category.Comma <> Build_UnderHom constr
+R7237:7247 CAG.Category.Limits <> cone_vertex proj
+binder 7314:7314 <> i:63
+R7364:7366 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7343:7348 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7363:7363 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7332:7339 CAG.Category.Limits <> cone_map proj
+R7342:7342 CAG.Category.UnderLimits <> i:63 var
+R7351:7355 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7374:7381 CAG.Category.Limits <> cone_map proj
+R7384:7384 CAG.Category.UnderLimits <> i:63 var
+binder 7314:7314 <> i:64
+R7364:7366 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7343:7348 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7363:7363 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7332:7339 CAG.Category.Limits <> cone_map proj
+R7342:7342 CAG.Category.UnderLimits <> i:64 var
+R7351:7355 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7374:7381 CAG.Category.Limits <> cone_map proj
+R7384:7384 CAG.Category.UnderLimits <> i:64 var
+R7447:7449 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7440:7444 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7429:7436 CAG.Category.Limits <> cone_map proj
+R7462:7469 CAG.Category.Limits <> cone_map proj
+R7447:7449 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7440:7444 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7429:7436 CAG.Category.Limits <> cone_map proj
+R7462:7469 CAG.Category.Limits <> cone_map proj
+R7495:7506 CAG.Category.Limits <> lim_med_comm proj
+R7495:7506 CAG.Category.Limits <> lim_med_comm proj
+R7569:7573 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7558:7565 CAG.Category.Limits <> cone_map proj
+R7569:7573 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7558:7565 CAG.Category.Limits <> cone_map proj
+R7606:7606 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7632:7637 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7625:7629 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7614:7621 CAG.Category.Limits <> cone_map proj
+R7606:7606 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7632:7637 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7625:7629 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7614:7621 CAG.Category.Limits <> cone_map proj
+R7676:7685 CAG.Category.Core <> comp_assoc proj
+R7667:7671 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+R7676:7685 CAG.Category.Core <> comp_assoc proj
+R7667:7671 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+R7747:7758 CAG.Category.Comma <> under_hom_eq thm
+R7747:7758 CAG.Category.Comma <> under_hom_eq thm
+R7786:7797 CAG.Category.Limits <> lim_med_comm proj
+R7801:7809 CAG.Category.Limits <> cone_fmap def
+R7812:7822 CAG.Category.Comma <> UnderForget def
+R7786:7797 CAG.Category.Limits <> lim_med_comm proj
+R7801:7809 CAG.Category.Limits <> cone_fmap def
+R7812:7822 CAG.Category.Comma <> UnderForget def
+binder 7873:7873 <> i:65
+R7941:7943 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7902:7906 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7891:7898 CAG.Category.Limits <> cone_map proj
+R7901:7901 CAG.Category.UnderLimits <> i:65 var
+R7918:7919 CAG.Category.Core <> id proj
+R7909:7913 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+R7923:7933 CAG.Category.Limits <> cone_vertex proj
+R7951:7958 CAG.Category.Limits <> cone_map proj
+R7961:7961 CAG.Category.UnderLimits <> i:65 var
+binder 7873:7873 <> i:66
+R7941:7943 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7902:7906 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R7891:7898 CAG.Category.Limits <> cone_map proj
+R7901:7901 CAG.Category.UnderLimits <> i:66 var
+R7918:7919 CAG.Category.Core <> id proj
+R7909:7913 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+R7923:7933 CAG.Category.Limits <> cone_vertex proj
+R7951:7958 CAG.Category.Limits <> cone_map proj
+R7961:7961 CAG.Category.UnderLimits <> i:66 var
+R7997:8004 CAG.Category.Core <> id_right proj
+R7988:7992 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+R7997:8004 CAG.Category.Core <> id_right proj
+R7988:7992 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+R8042:8044 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8030:8034 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R8056:8057 CAG.Category.Core <> id proj
+R8047:8051 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+R8061:8071 CAG.Category.Limits <> cone_vertex proj
+R8042:8044 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8030:8034 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R8056:8057 CAG.Category.Core <> id proj
+R8047:8051 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+R8061:8071 CAG.Category.Limits <> cone_vertex proj
+R8113:8119 CAG.Category.Limits <> lim_med proj
+R8094:8101 Corelib.Init.Logic <> eq_trans thm
+R8113:8119 CAG.Category.Limits <> lim_med proj
+R8094:8101 Corelib.Init.Logic <> eq_trans thm
+R8148:8159 CAG.Category.Limits <> lim_med_uniq proj
+R8148:8159 CAG.Category.Limits <> lim_med_uniq proj
+R8197:8202 Corelib.Init.Logic <> eq_sym thm
+R8209:8220 CAG.Category.Limits <> lim_med_uniq proj
+R8241:8242 CAG.Category.Core <> id proj
+R8232:8236 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+R8197:8202 Corelib.Init.Logic <> eq_sym thm
+R8209:8220 CAG.Category.Limits <> lim_med_uniq proj
+R8241:8242 CAG.Category.Core <> id proj
+R8232:8236 CAG.Category.Comma <> ::cat_scope:x_'↓'_x not
+R8278:8284 Corelib.Init.Logic <> f_equal thm
+R8288:8296 CAG.Category.Comma <> under_hom proj
+R8278:8284 Corelib.Init.Logic <> f_equal thm
+R8288:8296 CAG.Category.Comma <> under_hom proj
+binder 8378:8378 <> K:67
+R8408:8412 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R8384:8392 CAG.Category.Comma <> under_hom proj
+R8418:8424 CAG.Category.Limits <> lim_med proj
+R8427:8427 CAG.Category.UnderLimits <> K:67 var
+binder 8378:8378 <> K:68
+R8408:8412 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R8384:8392 CAG.Category.Comma <> under_hom proj
+R8418:8424 CAG.Category.Limits <> lim_med proj
+R8427:8427 CAG.Category.UnderLimits <> K:68 var
+R8482:8489 CAG.Category.Limits <> cone_map proj
+R8492:8500 CAG.Category.Limits <> cone_fmap def
+R8503:8513 CAG.Category.Comma <> UnderForget def
+R8543:8551 CAG.Category.Comma <> under_hom proj
+R8573:8580 CAG.Category.Limits <> cone_map proj
+R8482:8489 CAG.Category.Limits <> cone_map proj
+R8492:8500 CAG.Category.Limits <> cone_fmap def
+R8503:8513 CAG.Category.Comma <> UnderForget def
+R8543:8551 CAG.Category.Comma <> under_hom proj
+R8573:8580 CAG.Category.Limits <> cone_map proj
+R8704:8706 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8653:8678 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R8611:8619 CAG.Category.Comma <> under_hom proj
+R8641:8648 CAG.Category.Limits <> cone_map proj
+R8680:8688 CAG.Category.Comma <> under_hom proj
+R8715:8722 CAG.Category.Limits <> cone_map proj
+R8704:8706 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8653:8678 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R8611:8619 CAG.Category.Comma <> under_hom proj
+R8641:8648 CAG.Category.Limits <> cone_map proj
+R8680:8688 CAG.Category.Comma <> under_hom proj
+R8715:8722 CAG.Category.Limits <> cone_map proj
+R8748:8754 Corelib.Init.Logic <> f_equal thm
+R8786:8797 CAG.Category.Limits <> lim_med_comm proj
+R8758:8766 CAG.Category.Comma <> under_hom proj
+R8748:8754 Corelib.Init.Logic <> f_equal thm
+R8786:8797 CAG.Category.Limits <> lim_med_comm proj
+R8758:8766 CAG.Category.Comma <> under_hom proj
+R8861:8861 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R8935:8940 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R8905:8909 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R8863:8871 CAG.Category.Comma <> under_hom proj
+R8893:8900 CAG.Category.Limits <> cone_map proj
+R8911:8919 CAG.Category.Comma <> under_hom proj
+R8946:8952 CAG.Category.Limits <> lim_med proj
+R8861:8861 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R8935:8940 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R8905:8909 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R8863:8871 CAG.Category.Comma <> under_hom proj
+R8893:8900 CAG.Category.Limits <> cone_map proj
+R8911:8919 CAG.Category.Comma <> under_hom proj
+R8946:8952 CAG.Category.Limits <> lim_med proj
+R8975:8984 CAG.Category.Core <> comp_assoc proj
+R8975:8984 CAG.Category.Core <> comp_assoc proj
+R9030:9041 CAG.Category.Limits <> lim_med_comm proj
+R9030:9041 CAG.Category.Limits <> lim_med_comm proj
+R9123:9125 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9117:9121 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R9131:9137 CAG.Category.Limits <> lim_med proj
+R9123:9125 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9117:9121 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R9131:9137 CAG.Category.Limits <> lim_med proj
+R9161:9172 CAG.Category.Limits <> lim_med_uniq proj
+R9161:9172 CAG.Category.Limits <> lim_med_uniq proj
+R9235:9260 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9228:9232 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R9217:9224 CAG.Category.Limits <> cone_map proj
+R9262:9270 CAG.Category.Comma <> under_hom proj
+R9292:9299 CAG.Category.Limits <> cone_map proj
+R9235:9260 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9228:9232 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R9217:9224 CAG.Category.Limits <> cone_map proj
+R9262:9270 CAG.Category.Comma <> under_hom proj
+R9292:9299 CAG.Category.Limits <> cone_map proj
+R9327:9338 CAG.Category.Limits <> lim_med_comm proj
+R9342:9350 CAG.Category.Limits <> cone_fmap def
+R9353:9363 CAG.Category.Comma <> UnderForget def
+R9327:9338 CAG.Category.Limits <> lim_med_comm proj
+R9342:9350 CAG.Category.Limits <> cone_fmap def
+R9353:9363 CAG.Category.Comma <> UnderForget def
+R9403:9403 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R9430:9435 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R9423:9427 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R9412:9419 CAG.Category.Limits <> cone_map proj
+R9403:9403 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R9430:9435 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R9423:9427 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R9412:9419 CAG.Category.Limits <> cone_map proj
+R9458:9467 CAG.Category.Core <> comp_assoc proj
+R9458:9467 CAG.Category.Core <> comp_assoc proj
+R9544:9551 Corelib.Init.Logic <> eq_trans thm
+R9632:9639 Corelib.Init.Logic <> eq_trans thm
+R9673:9680 Corelib.Init.Logic <> eq_trans thm
+R9733:9739 CAG.Category.Core <> id_left proj
+R9683:9689 Corelib.Init.Logic <> f_equal thm
+binder 9696:9696 <> x:69
+R9702:9706 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R9701:9701 CAG.Category.UnderLimits <> x:69 var
+R9645:9654 CAG.Category.Core <> comp_assoc proj
+R9560:9566 Corelib.Init.Logic <> f_equal thm
+R9612:9617 Corelib.Init.Logic <> eq_sym thm
+binder 9573:9573 <> x:70
+R9603:9607 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R9579:9587 CAG.Category.Comma <> under_hom proj
+R9608:9608 CAG.Category.UnderLimits <> x:70 var
+R9544:9551 Corelib.Init.Logic <> eq_trans thm
+R9632:9639 Corelib.Init.Logic <> eq_trans thm
+R9673:9680 Corelib.Init.Logic <> eq_trans thm
+R9733:9739 CAG.Category.Core <> id_left proj
+R9683:9689 Corelib.Init.Logic <> f_equal thm
+binder 9696:9696 <> x:71
+R9702:9706 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R9701:9701 CAG.Category.UnderLimits <> x:71 var
+R9645:9654 CAG.Category.Core <> comp_assoc proj
+R9560:9566 Corelib.Init.Logic <> f_equal thm
+R9612:9617 Corelib.Init.Logic <> eq_sym thm
+binder 9573:9573 <> x:72
+R9603:9607 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R9579:9587 CAG.Category.Comma <> under_hom proj
+R9608:9608 CAG.Category.UnderLimits <> x:72 var

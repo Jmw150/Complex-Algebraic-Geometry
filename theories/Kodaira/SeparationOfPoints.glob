@@ -1,0 +1,147 @@
+DIGEST 4222d866743d35a980c16ad6100f5512
+FCAG.Kodaira.SeparationOfPoints
+R961:964 Stdlib.Lists.List <> <> lib
+R966:970 Stdlib.Arith.Arith <> <> lib
+R972:974 Stdlib.micromega.Lia <> <> lib
+R1001:1007 CAG.Complex <> <> lib
+R1034:1049 CAG.ManifoldTopology <> <> lib
+R1076:1097 CAG.Divisor.LineBundleCech <> <> lib
+R1124:1140 CAG.Divisor.Curvature <> <> lib
+R1167:1192 CAG.Vanishing.KodairaVanishing <> <> lib
+R1219:1236 CAG.Vanishing.TheoremB <> <> lib
+R1263:1287 CAG.Blowup.ExceptionalDivisor <> <> lib
+R1314:1340 CAG.Blowup.CurvatureExceptional <> <> lib
+R1367:1388 CAG.Blowup.CanonicalBundle <> <> lib
+R1415:1440 CAG.Kahler.Lefschetz.Operators <> <> lib
+ax 1554:1565 <> pullback_lb2
+R1581:1594 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1577:1577 <> M:1
+R1604:1605 CAG.Complex <> Cn def
+R1608:1613 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R1615:1615 CAG.Kodaira.SeparationOfPoints <> M:1 var
+binder 1598:1598 <> x:2
+binder 1600:1600 <> y:3
+R1657:1664 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1624:1640 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R1643:1653 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R1655:1655 CAG.Kodaira.SeparationOfPoints <> M:1 var
+R1665:1681 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R1684:1694 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R1697:1703 CAG.Blowup.ExceptionalDivisor <> blowup2 defax
+R1705:1705 CAG.Kodaira.SeparationOfPoints <> M:1 var
+R1707:1707 CAG.Kodaira.SeparationOfPoints <> x:2 var
+R1709:1709 CAG.Kodaira.SeparationOfPoints <> y:3 var
+prf 1995:2022 <> sections_restrict_to_fiber_x
+R2038:2051 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2034:2034 <> M:6
+R2063:2079 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R2082:2092 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R2094:2094 CAG.Kodaira.SeparationOfPoints <> M:6 var
+binder 2059:2059 <> L:7
+R2103:2104 CAG.Complex <> Cn def
+R2107:2112 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R2114:2114 CAG.Kodaira.SeparationOfPoints <> M:6 var
+binder 2099:2099 <> x:8
+R2123:2125 Corelib.Init.Datatypes <> nat ind
+binder 2119:2119 <> k:9
+R2216:2219 Corelib.Init.Logic <> True ind
+R2243:2243 Corelib.Init.Logic <> I constr
+R2243:2243 Corelib.Init.Logic <> I constr
+prf 2338:2367 <> sections_restrict_to_fibers_xy
+R2383:2396 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2379:2379 <> M:10
+R2408:2424 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R2427:2437 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R2439:2439 CAG.Kodaira.SeparationOfPoints <> M:10 var
+binder 2404:2404 <> L:11
+R2454:2455 CAG.Complex <> Cn def
+R2458:2463 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R2465:2465 CAG.Kodaira.SeparationOfPoints <> M:10 var
+binder 2448:2448 <> x:12
+binder 2450:2450 <> y:13
+R2474:2476 Corelib.Init.Datatypes <> nat ind
+binder 2470:2470 <> k:14
+R2484:2487 Corelib.Init.Logic <> True ind
+R2511:2511 Corelib.Init.Logic <> I constr
+R2511:2511 Corelib.Init.Logic <> I constr
+prf 2876:2903 <> h1_vanishes_two_point_blowup
+R2919:2932 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2915:2915 <> M:15
+R2944:2960 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R2963:2973 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R2975:2975 CAG.Kodaira.SeparationOfPoints <> M:15 var
+binder 2940:2940 <> L:16
+R2986:2987 CAG.Complex <> Cn def
+R2990:2995 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R2997:2997 CAG.Kodaira.SeparationOfPoints <> M:15 var
+binder 2980:2980 <> x:17
+binder 2982:2982 <> y:18
+R3030:3115 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3006:3025 CAG.Divisor.Curvature <> positive_line_bundle def
+R3027:3027 CAG.Kodaira.SeparationOfPoints <> M:15 var
+R3029:3029 CAG.Kodaira.SeparationOfPoints <> L:16 var
+R3116:3119 Corelib.Init.Logic <> True ind
+R3143:3143 Corelib.Init.Logic <> I constr
+R3143:3143 Corelib.Init.Logic <> I constr
+prf 3456:3482 <> restriction_to_E_surjective
+R3498:3511 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3494:3494 <> M:19
+R3523:3539 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R3542:3552 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R3554:3554 CAG.Kodaira.SeparationOfPoints <> M:19 var
+binder 3519:3519 <> L:20
+R3565:3566 CAG.Complex <> Cn def
+R3569:3574 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R3576:3576 CAG.Kodaira.SeparationOfPoints <> M:19 var
+binder 3559:3559 <> x:21
+binder 3561:3561 <> y:22
+R3609:3616 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3585:3604 CAG.Divisor.Curvature <> positive_line_bundle def
+R3606:3606 CAG.Kodaira.SeparationOfPoints <> M:19 var
+R3608:3608 CAG.Kodaira.SeparationOfPoints <> L:20 var
+R3617:3623 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3632:3637 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3629:3631 Corelib.Init.Datatypes <> nat ind
+binder 3624:3625 <> k0:23
+R3649:3651 Corelib.Init.Datatypes <> nat ind
+binder 3645:3645 <> k:24
+R3670:3764 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3661:3663 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R3659:3660 CAG.Kodaira.SeparationOfPoints <> k0:23 var
+R3664:3664 CAG.Kodaira.SeparationOfPoints <> k:24 var
+R3765:3768 Corelib.Init.Logic <> True ind
+R3814:3814 Corelib.Init.Logic <> I constr
+R3814:3814 Corelib.Init.Logic <> I constr
+prf 4162:4209 <> sections_of_large_positive_power_separate_points
+R4229:4242 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 4225:4225 <> M:25
+R4250:4266 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R4269:4279 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R4281:4281 CAG.Kodaira.SeparationOfPoints <> M:25 var
+binder 4246:4246 <> L:26
+R4314:4321 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4290:4309 CAG.Divisor.Curvature <> positive_line_bundle def
+R4311:4311 CAG.Kodaira.SeparationOfPoints <> M:25 var
+R4313:4313 CAG.Kodaira.SeparationOfPoints <> L:26 var
+R4322:4328 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4337:4342 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4334:4336 Corelib.Init.Datatypes <> nat ind
+binder 4329:4330 <> k0:27
+R4354:4356 Corelib.Init.Datatypes <> nat ind
+binder 4350:4350 <> k:28
+R4375:4382 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4366:4368 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R4364:4365 CAG.Kodaira.SeparationOfPoints <> k0:27 var
+R4369:4369 CAG.Kodaira.SeparationOfPoints <> k:28 var
+R4396:4397 CAG.Complex <> Cn def
+R4400:4405 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R4407:4407 CAG.Kodaira.SeparationOfPoints <> M:25 var
+binder 4390:4390 <> x:29
+binder 4392:4392 <> y:30
+R4421:4515 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4416:4419 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R4415:4415 CAG.Kodaira.SeparationOfPoints <> x:29 var
+R4420:4420 CAG.Kodaira.SeparationOfPoints <> y:30 var
+R4516:4519 Corelib.Init.Logic <> True ind
+R4565:4565 Corelib.Init.Logic <> I constr
+R4565:4565 Corelib.Init.Logic <> I constr

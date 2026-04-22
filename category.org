@@ -1,0 +1,1017 @@
+#+TITLE: Category Theory ↔ Type Theory TODO — Products, Coproducts, Yoneda
+#+AUTHOR: Claude Code / Rocq planning
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize the category-theoretic material in this section in a way that is
+  directly useful for connecting category theory to type theory.
+
+  The immediate targets are:
+  - finite products and coproducts
+  - product-preserving functors
+  - representable functors
+  - the Yoneda embedding
+  - the Yoneda lemma
+
+  The type-theoretic motivation is:
+  - finite products model tuple/unit structure
+  - terminal object models nullary product / unit type
+  - coproducts model sum types
+  - representable functors explain “elements as generalized points”
+  - Yoneda is the key bridge from syntax/operations to semantic universality
+
+* Global design decisions
+** TODO Fix a base notion of category
+   Need one record for categories with:
+   - objects
+   - morphisms
+   - identity
+   - composition
+   - associativity
+   - identity laws
+
+** TODO Decide universe strategy
+   Need to choose whether:
+   - objects live in Type@{i}
+   - homs live in Type@{j}
+   - small / locally small are additional predicates
+   This matters before defining functor categories and Yoneda.
+
+** TODO Decide equality strategy
+   Need to choose whether to use:
+   - definitional equality where possible
+   - propositional equality for categorical laws
+   - setoids if unavoidable
+   Keep this lightweight if possible.
+
+** TODO Decide notation conventions
+   For example:
+   - C⟦A,B⟧ or Hom C A B
+   - id, comp, _∘_
+   - Cat^op or Cop
+   - H_A, H^A, yon
+   Fix notation early.
+
+* Part I — Products
+** TODO Define binary product of objects A and B in a category C
+   Data:
+   - object A × B
+   - projections π₁ : A × B -> A
+   - projections π₂ : A × B -> B
+   - universal property:
+     for any X with f : X -> A and g : X -> B,
+     there exists unique <f,g> : X -> A × B
+     such that π₁ ∘ <f,g> = f and π₂ ∘ <f,g> = g
+
+** TODO Define product of a set-indexed family
+   Data:
+   - object Π_i A_i
+   - projections π_j : Π_i A_i -> A_j
+   - universal property for families f_j : X -> A_j
+
+** TODO Define terminal object
+   Data:
+   - object 1
+   - for every A, unique morphism ! : A -> 1
+
+** TODO Treat terminal object as nullary product
+   Need an explicit theorem/interface:
+   - product of empty family = terminal object
+
+** TODO Define finite products
+   Two equivalent formulations:
+   - products of all finite families
+   - binary products + terminal object
+
+** NEXT Prove Exercise 2.6.7(1)
+   A category has finite products iff it has:
+   - binary products
+   - terminal object
+
+** TODO Define specified finite products
+   Distinguish:
+   - existence of finite products
+   - chosen/specified finite products
+   This matters for semantics and strictness.
+
+** TODO Define pairing notation
+   For f : X -> A and g : X -> B
+   define:
+   - <f,g> : X -> A × B
+
+** TODO Define product of morphisms
+   For f : A -> B and f' : A' -> B'
+   define:
+   - f × f' : A × A' -> B × B'
+   using the universal property
+
+** NEXT Prove basic identities for product morphisms
+   - id_A × id_B = id_{A×B}
+   - (g × g') ∘ (f × f') = (g ∘ f) × (g' ∘ f')
+
+** NEXT Prove Exercise 2.6.7(2)
+   In a category with finite products:
+   - (h × k) ∘ <f,g> = <h ∘ f, k ∘ g>
+   - <f,g> ∘ l = <f ∘ l, g ∘ l>
+
+** TODO Investigate Exercise 2.6.7(3)
+   Define binary product in C^op
+   Understand exactly how product/coproduct dualize
+   This should become a reusable lemma:
+   - product in C^op = coproduct in C
+
+* Part II — Coproducts
+** TODO Define binary coproduct of A and B
+   Data:
+   - object A + B
+   - insertions i_A : A -> A + B
+   - insertions i_B : B -> A + B
+   - universal property:
+     for f : A -> C and g : B -> C,
+     there exists unique [f,g] : A + B -> C
+     such that [f,g] ∘ i_A = f and [f,g] ∘ i_B = g
+
+** TODO Define set-indexed coproduct
+   Data:
+   - object Σ_i A_i
+   - insertions i_j : A_j -> Σ_i A_i
+   - universal property for families f_j : A_j -> C
+
+** TODO Define initial object
+   Data:
+   - object 0
+   - for every A, unique morphism 0 -> A
+
+** TODO Treat initial object as nullary coproduct
+   Need theorem/interface:
+   - coproduct of empty family = initial object
+
+** NEXT Prove uniqueness of coproduct up to isomorphism
+   Exercise 2.6.10
+
+** TODO Define copairing notation
+   For f : A -> C and g : B -> C
+   define:
+   - [f,g] : A + B -> C
+
+** TODO Add basic dual lemmas
+   Prove coproduct versions of product lemmas by direct proof or duality
+
+* Part III — Examples and sanity checks
+** TODO Formalize terminal / initial objects in a preorder-as-category
+   Verify:
+   - top = terminal
+   - bottom = initial
+
+** TODO Formalize products and coproducts in a lattice viewed as category
+   Verify:
+   - finite meets = finite products
+   - finite joins = finite coproducts
+
+** TODO Formalize binary coproduct in Set
+   Use disjoint union
+   Need explicit insertion maps
+
+** TODO Decide whether to implement Set examples concretely now
+   Could be useful as sanity tests for Yoneda later.
+
+** TODO Formalize products in Poset / POSet
+   Pointwise order on cartesian product
+   One-point poset as terminal object
+
+* Part IV — Product-preserving functors
+** TODO Define functor
+   Data:
+   - object map
+   - morphism map
+   - preserves identities
+   - preserves composition
+
+** TODO Define opposite category
+** TODO Define opposite functor
+** TODO Define functor category [C,D] once needed
+
+** TODO Define finite-product-preserving functor
+   For F : C -> D between categories with finite products:
+   require canonical maps
+   F(A₁ × ... × Aₙ) -> FA₁ × ... × FAₙ
+   to be isomorphisms
+
+** TODO Define canonical comparison map for binary products
+   m_{A,B} : F(A × B) -> FA × FB
+
+** TODO Define canonical map for terminal object
+   F(1_C) -> 1_D
+
+** TODO Define preservation of terminal object
+   As the nullary case of preservation of finite products
+
+** TODO Define strict finite-product-preserving functor
+   Require the canonical comparison maps to be identities
+
+** NEXT Prove associativity-up-to-isomorphism of products
+   Need theorem:
+   - A × (B × C) ≅ (A × B) × C
+   and both satisfy the same product specification of (A,B,C)
+
+** TODO Relate this to semantics of algebraic type theory
+   Add comments/theorem interfaces:
+   - terminal object ↔ unit type
+   - binary product ↔ pairing type / tuples
+   - strict preservation ↔ strict substitution behavior in semantics
+
+** TODO Investigate Exercise 2.6.13
+   Need example of F with
+   F(A × B) ≅ FA × FB
+   for all pairs A,B
+   but F does not preserve binary products.
+   Hint says countably infinite sets.
+   This should be worked out explicitly and stored as a warning/example.
+
+* Part V — Local smallness and Hom-functors
+** TODO Define small category
+   Morphisms indexed by a set
+
+** TODO Define locally small category
+   For any A,B, Hom_C(A,B) is a set
+
+** TODO Prove / record:
+   If C is small and D locally small, then [C,D] is locally small
+   Probably best as an interface theorem unless functor category is already built.
+
+** TODO Define Hom bifunctor
+   C(-,+) : C^op × C -> Set
+
+** TODO Define covariant representable H_A
+   H_A := C(A,-) : C -> Set
+
+** TODO Define contravariant representable H^A
+   H^A := C(-,A) : C^op -> Set
+   Decide final notation carefully:
+   - HA vs H_A
+   - Hb vs H^B
+   Use notation that will not collide later.
+
+** TODO Define action of morphisms on representables
+   For h : A -> A'
+   define induced natural transformations:
+   - H_h : H_{A'} -> H_A   for contravariant Yoneda direction
+   - or corresponding covariant version depending on chosen convention
+   Must fix direction carefully before coding Yoneda embedding.
+
+** TODO Define Yoneda embedding
+   H : C^op -> [C,Set]
+   sending A to H_A = C(A,-)
+   and f : A' -> A to H_f : H_A -> H_A'
+
+** TODO Also define the dual Yoneda embedding
+   H : C -> [C^op, Set]
+   sending B to C(-,B)
+
+* Part VI — Representable functors
+** TODO Define representable functor F : C -> Set
+   Exists A with natural isomorphism:
+   H_A ≅ F
+
+** TODO Define representation (a,A) of F
+   Where a ∈ F(A)
+   such that the induced map
+   Ψ : H_A -> F
+   with components
+   Ψ_B(f) = F(f)(a)
+   is a natural isomorphism
+
+** NEXT Prove equivalence of the two notions
+   - natural isomorphism H_A ≅ F
+   - representation by an element a ∈ FA
+   Probably easiest after Yoneda lemma.
+
+** TODO Formalize powerset example
+   Contravariant powerset functor P : Set^op -> Set
+   represented by 2 = {0,1}
+   Need the explicit natural isomorphism:
+   Set(X,2) ≅ P(X)
+
+** TODO Extract type-theoretic reading of representability
+   Add comments:
+   - representability = generic element
+   - object A acts like a universal context of one generalized element
+   This will matter later when connecting syntax/semantics.
+
+* Part VII — Yoneda lemma
+** TODO Define natural transformation between functors
+** TODO Define set Nat(F,G) for locally small target
+** TODO Define the functor
+   Nat(H~,+) : C × [C,Set] -> Set
+   once enough infrastructure exists
+
+** TODO Define evaluation functor
+   Ev : C × [C,Set] -> Set
+   with Ev(A,F) = F(A)
+
+** TODO State Yoneda lemma in objectwise form
+   For C locally small, F : C -> Set, A ∈ C:
+   Nat(H_A, F) ≅ F(A)
+
+** TODO State Yoneda lemma in natural form
+   Natural isomorphism:
+   Nat(H~,+) ≅ Ev
+
+** NEXT Construct the forward map Φ
+   Φ_{A,F}(α) := α_A(id_A)
+
+** NEXT Construct the inverse map Ψ
+   Ψ_{A,F}(a)_B(f) := F(f)(a)
+
+** NEXT Prove Ψ(a) is a natural transformation
+   This is a separate proof obligation and should not be buried.
+
+** NEXT Prove Φ ∘ Ψ = id
+** NEXT Prove Ψ ∘ Φ = id
+
+** NEXT Prove Nat(H_A,F) is a set
+   This follows from the explicit bijection with F(A)
+
+** TODO Prove naturality in A and F
+   Need the square in the text to commute
+   This should be broken into:
+   - naturality in the category argument A
+   - naturality in the functor argument F
+   and then combined
+
+** TODO Package Yoneda lemma in reusable forms
+   Need at least these APIs:
+   - yoneda_forward
+   - yoneda_backward
+   - yoneda_iso
+   - representable_element_correspondence
+
+* Part VIII — Type theory connection
+** TODO Add explicit comments / theorem wrappers for semantics relevance
+   This section is not just abstract category theory.
+   We want to connect to algebraic type theory.
+
+** TODO Relate terminal object to unit type
+   In semantics:
+   - terminal object corresponds to nullary context extension / unit-like structure
+
+** TODO Relate binary product to context-tuples / cartesian structure
+   In semantics:
+   - product corresponds to pairing
+   - projections correspond to eliminators
+   - mediating map corresponds to term formation by pairing
+
+** TODO Relate coproduct to sum type intuition
+   Even if not used immediately, record:
+   - injections correspond to constructors
+   - copairing corresponds to case split / eliminator
+
+** TODO Relate representables to contexts / generalized elements
+   H_A(B) = C(A,B)
+   can be read as generalized elements of B in context A
+
+** TODO Relate Yoneda to “a term is determined by its action on generalized elements”
+   This should become an explanatory comment theorem or documentation note.
+
+** TODO Mark where finite-product categories are used in algebraic type theory semantics
+   This is one of the main reasons this section matters.
+
+* Part IX — Proof refactoring tasks
+** TODO Separate universal-property proofs from concrete constructions
+   For products/coproducts:
+   - one file for abstract definitions
+   - one file for uniqueness lemmas
+   - one file for Set examples
+
+** TODO Keep duality organized
+   Many coproduct proofs can be duals of product proofs
+   Decide whether to:
+   - prove directly
+   - or via opposite category lemmas
+
+** TODO Keep Yoneda notation under control
+   This section becomes unreadable if notation is inconsistent.
+   Fix:
+   - H_A
+   - H^A or Hom(-,A)
+   - Yoneda embedding names
+   before coding.
+
+* Part X — Suggested file/module layout
+** TODO `Category/Core.v`
+   Basic category definition, opposite category, isomorphisms
+
+** TODO `Category/Functor.v`
+   Functors, natural transformations, functor categories
+
+** TODO `Category/Products.v`
+   Terminal objects, binary products, finite products, pairing, product of morphisms
+
+** TODO `Category/Coproducts.v`
+   Initial objects, binary coproducts, finite coproducts, copairing
+
+** TODO `Category/Representable.v`
+   Hom-functors, representable functors, representations
+
+** TODO `Category/Yoneda.v`
+   Yoneda embedding, Yoneda lemma, naturality, corollaries
+
+** TODO `Category/Examples/Set.v`
+   Set products, coproducts, powerset representation
+
+** TODO `Category/Examples/Poset.v`
+   Posets/lattices as categories, meets and joins
+
+** TODO `Semantics/FiniteProducts.v`
+   Notes / interfaces connecting finite products to algebraic type theory semantics
+
+* Part XI — Sanity tests
+** TODO Test terminal object uniqueness up to isomorphism
+** TODO Test binary product uniqueness up to isomorphism
+** TODO Test binary coproduct uniqueness up to isomorphism
+** TODO Test product identities:
+   - id × id
+   - composition of product morphisms
+** TODO Test coproduct dual identities
+** TODO Test Set coproduct as disjoint union
+** TODO Test powerset representability by 2
+** TODO Test Yoneda on a tiny category
+   Use a category with:
+   - two objects
+   - a few arrows
+   and compute Nat(H_A,F) explicitly
+
+* Part XII — Immediate next coding actions
+** NEXT Implement `Category`
+** NEXT Implement `Functor`
+** NEXT Implement `NatTrans`
+** NEXT Implement terminal objects and binary products
+** NEXT Prove finite products iff terminal + binary products
+** NEXT Implement coproducts by duality or directly
+** NEXT Implement Hom-functors H_A and H^A
+** NEXT Implement representable functor definition
+** NEXT Implement Yoneda forward and backward maps
+** NEXT Prove Yoneda lemma objectwise
+** NEXT Package naturality of Yoneda
+** NEXT Add semantic notes for finite products ↔ algebraic type theory
+
+#+TITLE: Category Theory TODO — Limits, Colimits, Preservation, and Adjoint Functor Theorems
+#+AUTHOR: Claude Code / Rocq planning
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize:
+  - limits and colimits of shape I
+  - functors preserving / reflecting / creating limits
+  - evaluation functors preserving limits in functor categories
+  - adjoints preserve limits/colimits
+  - under-cone categories and their limits
+  - Freyd's adjoint functor theorem
+  - well-powered categories and coseparating sets
+  - special adjoint functor theorem
+
+  The section is really about:
+  universal constructions + adjunction + existence criteria for left adjoints.
+
+* Global design decisions
+** TODO Fix base infrastructure requirements
+   Must already have:
+   - categories
+   - functors
+   - natural transformations
+   - opposite categories
+   - functor categories [I,C]
+   - products as special limits
+   - adjunctions
+   - monomorphisms
+   - pullbacks
+   - slice categories
+
+** TODO Decide how to represent diagrams
+   Need one uniform notion:
+   - a diagram of shape I in C is a functor D : I -> C
+
+** TODO Decide how to represent cones/cocones
+   Probably:
+   - cone over D with vertex L
+   - cocone under D with vertex L
+   Need explicit records with naturality / commutativity conditions.
+
+** TODO Decide whether limits are represented as:
+   - terminal objects in cone categories
+   - or records with universal mediating morphism
+   Probably define both and prove equivalence later if needed.
+
+** TODO Fix notation conventions
+   Need notation for:
+   - cone maps k_i : L -> D i
+   - lim D
+   - colim D
+   - preserve_limits_of_shape I
+   - reflect_limits_of_shape I
+   - create_limits_of_shape I
+
+* Part I — Limits and colimits of a diagram shape
+** TODO Define cone over diagram D : I -> C
+   Data:
+   - vertex L : C
+   - family of morphisms k_i : L -> D i
+   - compatibility:
+     for every u : i -> j in I,
+     D(u) ∘ k_i = k_j
+   Check exact index convention once before coding.
+
+** TODO Define cocone under diagram D : I -> C
+   Dual data:
+   - vertex L
+   - maps k_i : D i -> L
+   - compatibility with arrows u : i -> j
+
+** TODO Define limit of D
+   Data:
+   - cone (k_i : lim D -> D i)
+   - universal property:
+     for every cone (h_i : A -> D i),
+     there exists unique mediating morphism u : A -> lim D
+     such that k_i ∘ u = h_i for all i
+
+** TODO Define colimit of D
+   Dual universal property
+
+** TODO Prove uniqueness of limits up to isomorphism
+** TODO Prove uniqueness of colimits up to isomorphism
+
+** TODO Define category has limits of shape I
+** TODO Define category has colimits of shape I
+** TODO Define complete category
+   Has all small limits
+** TODO Define cocomplete category
+   Has all small colimits
+
+* Part II — Limits in functor categories
+   The first line of the quoted section finishes a proof about pointwise limits.
+** TODO Formalize pointwise limit candidate in [I,C]
+   Need theorem:
+   if C has limits of shape J, then [I,C] has limits of shape J
+   computed pointwise
+
+** TODO Prove pointwise cone is a cone
+   Given diagram D : J -> [I,C]
+   and for each object I of I a limit
+   lim_j D_j(I),
+   show the objectwise family forms a functor
+   lim D : I -> C
+
+** TODO Prove pointwise universal property
+   For any cone in [I,C], prove componentwise mediating morphisms form a natural transformation
+
+** TODO Package theorem
+   functor_category_limits_pointwise
+
+** TODO Add dual theorem for colimits
+   Either now or later:
+   [I,C] has colimits pointwise if C has them
+
+* Part III — Preservation, reflection, and creation of limits
+** TODO Define: F preserves limits of shape I
+   Given any limit cone for D : I -> C,
+   its F-image is a limit cone for F∘D : I -> D
+
+** TODO Define: F reflects limits of shape I
+   If a cone in C maps under F to a limit cone in D,
+   then it was already a limit cone in C
+
+** TODO Define: F creates limits of shape I
+   Given a limit cone of FD in D,
+   there exists a unique cone over D
+   with the same vertex after applying F,
+   and this cone is a limit in C
+
+** TODO Define preservation / reflection / creation of colimits
+   Dual notions
+
+** TODO Prove basic implications if desired
+   Creation often implies reflection + preservation in many contexts;
+   decide whether to formalize as general lemmas.
+
+* Part IV — Examples and special cases
+** NEXT Prove Example 2.11.11(1)
+   Preserving limits of shape n, where n is a finite discrete category,
+   is the same as preserving finite products.
+
+   Break into subgoals:
+*** TODO Define finite discrete category on n objects
+*** TODO Show cones over a discrete diagram are product data
+*** TODO Show limits of such diagrams are products
+*** TODO Conclude equivalence with finite product preservation
+
+** TODO Prove Example 2.11.11(2)
+   Evaluation functor at E:
+   Ev_E : [S,C] -> C
+   preserves any limits that exist in [S,C]
+
+   This should fall out immediately from pointwise limits.
+
+** TODO Formalize Example 2.11.11(3) as documentation/examples
+   Forgetful functors:
+   - Grp -> Set preserves limits
+   - Ab -> Set preserves limits
+   - Top -> Set preserves limits and colimits? text says only third preserves colimits
+   Need to be careful:
+   - Set-level underlying-set functor from Top preserves limits
+   - and apparently also colimits
+   This may be recorded as an example/interface rather than fully proved right now.
+
+** TODO Prove Example 2.11.11(4)
+   Theorem 2.11.8 remains true with:
+   "C has and F preserves ..."
+   Need to inspect earlier Theorem 2.11.8 and produce its preserved-limits version.
+
+* Part V — Adjoint functors preserve limits/colimits
+** TODO State Theorem 2.11.13
+   If G : S -> C has a left adjoint, then G preserves all limits existing in S.
+   Dually, if G has a right adjoint, then G preserves all colimits.
+
+** TODO Prove theorem directly from universal properties
+   This is likely easier and cleaner than formalizing the text's big diagram first.
+
+   Main proof plan:
+*** TODO Let F ⊣ G
+*** TODO Let D : I -> S with limit cone k_i : lim D -> D_i
+*** TODO Given cone h_i : A -> G D_i in C
+*** TODO Use adjunction bijection to obtain cone \bar h_i : F A -> D_i in S
+*** TODO Use universal property of lim D to obtain unique \bar k : F A -> lim D
+*** TODO Transpose back to k : A -> G(lim D)
+*** TODO Prove k is the unique mediating morphism
+*** TODO Conclude G preserves the limit
+
+** TODO Add dual proof for right adjoints preserve colimits
+
+** TODO Optional: formalize the text's functor-category square proof
+   Could be useful later, but likely not needed first.
+
+* Part VI — Under-cone / comma categories
+** TODO Define under-category (A | G)
+   Objects:
+   - morphisms f : A -> G(B)
+   Morphisms:
+   - h : B -> B'
+   such that G(h) ∘ f = f'
+
+   Need exact convention:
+   usually (A ↓ G)
+
+** TODO Define forgetful functor U : (A | G) -> S
+   Sends:
+   - object (f : A -> G(B)) to B
+   - morphism h to h
+
+** TODO Define over-category if needed later
+   Might as well mirror under-category infrastructure.
+
+* Part VII — Lemma 2.11.14
+** TODO State lemma
+   If G : S -> C and
+   - S has limits of shape I
+   - G preserves limits of shape I
+   then for any A in C,
+   the under-category (A | G) has limits of shape I,
+   and the forgetful functor U : (A | G) -> S preserves them.
+
+** NEXT Prove lemma carefully
+   Break into steps:
+
+*** TODO Let D : I -> (A | G)
+*** TODO Observe underlying diagram UD : I -> S
+*** TODO Extract cone h_i : A -> G(D_i) from the structure of objects in (A | G)
+
+*** TODO Take limit k_i : lim UD -> D_i in S
+*** TODO Since G preserves limits, G(k_i) is a limit cone of GUD in C
+
+*** TODO Use the cone h_i to obtain unique k : A -> G(lim UD)
+     making G(k_i) ∘ k = h_i
+
+*** TODO Construct object (k, lim UD) of (A | G)
+*** TODO Construct cone morphisms from (k, lim UD) to D_i
+*** TODO Prove universal property in (A | G)
+*** TODO Conclude U preserves these limits
+
+* Part VIII — Lemma 2.11.15
+** TODO State lemma
+   If C is locally small and complete,
+   then C has an initial object iff
+   there is a set of objects {A_x | x in X}
+   such that for every object B there is a morphism j_x : A_x -> B.
+
+** NEXT Prove forward implication
+   If 0 is initial, choose singleton set {0}
+
+** NEXT Prove reverse implication
+   Break into explicit steps:
+
+*** TODO Form product P = Π_x A_x
+*** TODO Consider the diagram whose single object is P
+     with all endomorphisms of P as arrows
+   Need to formalize:
+   - endomorphism category / monoid viewed as one-object category
+   or equivalently:
+   - small diagram indexed by End(P)
+
+*** TODO Take limit l : L -> P of this endomorphism diagram
+
+*** TODO For any object B, define some map L -> B using j_x and product projections
+*** TODO Prove uniqueness of any morphism L -> B
+   The proof uses equalizers:
+   - if f,g : L -> B
+   - form equalizer e : B' -> L
+   - obtain endomorphism of P from B'
+   - use universal property of the limit to show e splits
+   - conclude f = g
+
+*** TODO Conclude L is initial
+
+** TODO Package theorem
+   initial_object_via_solution_set_like_family
+
+* Part IX — Freyd's adjoint functor theorem
+** TODO State solution set condition for G : S -> C at A in C
+   There exists a set of morphisms
+   {f_x : A -> G(B_x)}
+   such that every g : A -> G(C)
+   factors through one of them via some h_x : B_x -> C.
+
+** TODO Define global solution set condition
+   At every object A of C
+
+** TODO State Theorem 2.11.16
+   If G : S -> C,
+   with S locally small and complete,
+   then G has a left adjoint iff:
+   - G preserves all small limits
+   - G satisfies the solution set condition
+
+** NEXT Prove forward implication
+   If F ⊣ G, then:
+*** TODO Use Theorem 2.11.13 to show G preserves limits
+*** TODO Show the unit η_A : A -> GFA is initial in (A | G)
+*** TODO Deduce a singleton/representative solution set
+
+** NEXT Prove reverse implication
+   Break into steps:
+
+*** TODO Fix A in C
+*** TODO By Lemma 2.11.14, (A | G) is complete
+*** TODO By local smallness of S, show (A | G) is locally small / small enough for Lemma 2.11.15
+     Need to be precise which smallness property is required.
+
+*** TODO Use the given solution set at A to show (A | G)
+     satisfies the hypothesis of Lemma 2.11.15
+
+*** TODO Deduce (A | G) has an initial object
+
+*** TODO Use Proposition 2.10.17 / earlier theorem:
+     if every (A | G) has initial object, then G has left adjoint
+   If Proposition 2.10.17 not yet formalized:
+*** TODO formalize theorem:
+     left adjoint exists iff each under-category (A | G) has initial object
+
+** TODO Package theorem
+   freyd_adjoint_functor_theorem
+
+* Part X — Example 2.11.17 (forgetful functor Grp -> Set)
+** TODO Formalize category Grp if not already available
+** TODO Define forgetful functor U : Grp -> Set
+
+** TODO Show Grp is locally small
+** TODO Show Grp is complete
+   Likely by known constructions:
+   products + equalizers + all limits
+   May be imported initially.
+
+** TODO Show U preserves limits
+   Likely by known theorem for concrete algebraic categories.
+   May be stubbed initially.
+
+** TODO Verify solution set condition for U
+   Break into steps:
+
+*** TODO For any function g : A -> U(G),
+     define subgroup im(g) generated by the image of A
+
+*** TODO Show g factors through inclusion U(im(g)) -> U(G)
+
+*** TODO Bound cardinality of im(g) in terms of |A|
+   Need a cardinality lemma sufficient to say:
+   only a set of isomorphism classes can arise
+
+*** TODO Choose representatives of those isomorphism classes
+*** TODO Build a set of functions A -> U(H) satisfying the solution set condition
+
+** TODO Conclude U has a left adjoint
+   This is the free group functor.
+
+** TODO Optionally expose result as:
+   free_group_exists_via_AFT
+
+* Part XI — Well-powered categories and coseparating sets
+** TODO Define monomorphism
+** TODO Define subobject of A
+   As monic m : A' -> A
+
+** TODO Define category Sub(A)
+   As full subcategory of slice C/A on subobjects
+
+** TODO Prove Sub(A) is a preorder
+   Use monicity to prove uniqueness of mediating maps
+
+** TODO Define well-powered category
+   For every A, Sub(A) is equivalent to a small category
+   Need to decide whether:
+   - use skeletal smallness
+   - or set of representatives of subobjects
+
+** TODO Record examples
+   - Set well-powered
+   - Grp well-powered
+   - Top well-powered
+
+** TODO Define coseparating collection of objects
+   O is coseparating if for any parallel f,g : A -> B with f != g,
+   there exists O in the collection and h : B -> O with h f != h g
+
+** TODO Add dual notion separating set if useful later
+
+* Part XII — Lemma 2.11.19
+** TODO State lemma
+   If F : C -> D preserves pullbacks which exist in C,
+   then F preserves monomorphisms.
+
+** NEXT Prove lemma
+   The text uses the pullback characterization of a monic:
+   m : A -> B is monic iff the square
+   A --id--> A
+   |         |
+   m         m
+   v         v
+   B --id--> B
+   is a pullback
+
+*** TODO Formalize pullback characterization of monic
+*** TODO Apply F to this pullback square
+*** TODO Deduce F(m) is monic
+
+* Part XIII — Special adjoint functor theorem
+** TODO State Theorem 2.11.20
+   Suppose:
+   - S locally small
+   - S complete
+   - S well-powered
+   - S has a coseparating set
+   - C locally small
+   - G : S -> C preserves all small limits
+   Then G has a left adjoint.
+
+** BLOCKED This proof is significantly more technical than Freyd's theorem.
+   It should be implemented only after:
+   - under-categories
+   - limits in under-categories
+   - well-poweredness
+   - monomorphism preservation
+   are already stable.
+
+** NEXT Break proof into explicit subgoals
+*** TODO Fix X in C
+*** TODO Choose coseparating set {E_i | i in I} in S
+
+*** TODO Define index set
+   F = ⋃_i C(X, G E_i)
+   Need to show this is a set using local smallness
+
+*** TODO Form product S = Π_{f in F} E_i
+   taking correct E_i attached to each f
+
+*** TODO Because G preserves products, define universal map θ : X -> G(S)
+
+*** TODO Consider subobjects S' ↪ S through which θ factors
+   Need to use:
+   - G preserves monics via pullbacks
+   - therefore factorization through GS' is unique if it exists
+
+*** TODO Choose representative set {m_β : S_β ↪ S | β in B}
+   of such subobjects
+   using well-poweredness
+
+*** TODO Form the limit of the diagram consisting of all m_β : S_β -> S
+   Let j : S_0 -> S be that limit
+
+*** TODO Use limit preservation by G to induce k : X -> G(S_0)
+
+*** TODO Prove (k, S_0) is initial in (X | G)
+   This is the heart of the proof.
+
+**** TODO Given object g : X -> G(Y) in (X | G),
+      define H = ⋃_i S(Y, E_i)
+
+**** TODO Form product T = Π_{h in H} E_i
+**** TODO Build monomorphism φ : Y ↪ T using coseparating set
+      Need proof that φ is monic from coseparating property.
+
+**** TODO Build ψ : S -> T from the indexing data
+**** TODO Show k factors through Y via pullback / equalizer construction
+**** TODO Produce morphism from (k,S_0) to (g,Y)
+
+**** TODO Prove uniqueness
+      The text uses an equalizer
+      r : L -> S_0
+      and then the defining property of S_0 as limit over those subobjects.
+
+*** TODO Conclude every under-category (X | G) has initial object
+*** TODO Deduce G has left adjoint
+
+** TODO Package theorem
+   special_adjoint_functor_theorem
+
+* Part XIV — Structural refactoring tasks
+** TODO Compare Theorem 2.11.13 with preorder analogue
+   Add documentation note if desired
+
+** TODO Compare Freyd AFT and special AFT
+   Keep one file for:
+   - general existence via solution sets
+   - special existence via well-poweredness + coseparators
+
+** TODO Decide what to prove now vs stub
+   Recommended:
+*** TODO Prove now
+**** limits/colimits
+**** preservation/reflection/creation
+**** adjoints preserve limits
+**** under-category limits
+**** Freyd AFT
+**** pullback-preserves-monics lemma
+
+*** TODO Stub for later if needed
+**** well-powered examples beyond Set/Grp/Top
+**** special adjoint functor theorem if proof burden is too high
+**** full category Top if not already developed
+
+* Part XV — Suggested file/module layout
+** TODO `Category/Limits.v`
+   cones, cocones, limits, colimits, completeness
+
+** TODO `Category/FunctorCategoryLimits.v`
+   pointwise limits in functor categories
+
+** TODO `Category/PreservesLimits.v`
+   preserves / reflects / creates limits and colimits
+
+** TODO `Category/AdjunctionLimits.v`
+   adjoints preserve limits / colimits
+
+** TODO `Category/Comma.v`
+   comma categories, under-categories, over-categories
+
+** TODO `Category/UnderLimits.v`
+   limits in under-categories
+
+** TODO `Category/InitialObjectCriteria.v`
+   Lemma 2.11.15 and related initial object existence criteria
+
+** TODO `Category/AdjointFunctorTheorem/Freyd.v`
+   solution set condition and Freyd AFT
+
+** TODO `Category/Subobject.v`
+   monics, subobjects, well-powered categories
+
+** TODO `Category/Coseparating.v`
+   coseparating sets and related lemmas
+
+** TODO `Category/AdjointFunctorTheorem/Special.v`
+   special adjoint functor theorem
+
+** TODO `Category/Examples/GrpToSet.v`
+   forgetful functor example and free group existence route
+
+* Part XVI — Sanity tests
+** TODO Test: evaluation functor preserves products and equalizers in [I,C]
+** TODO Test: left adjoint implies right adjoint preserves terminal object / products
+** TODO Test: Freyd AFT recovers free group existence
+** TODO Test: pullback-preserving functor preserves monics
+** TODO Test: under-category of a simple functor has limits as expected
+** TODO Test: preservation of discrete-shape limits matches finite-product preservation
+
+* Part XVII — Immediate next coding actions
+** NEXT Implement cone and cocone records
+** NEXT Implement limits and colimits of shape I
+** NEXT Implement preservation / reflection / creation of limits
+** NEXT Prove adjoints preserve limits
+** NEXT Implement under-category (A ↓ G)
+** NEXT Prove limits in under-categories are inherited when G preserves them
+** NEXT Prove Lemma 2.11.15
+** NEXT Implement solution set condition
+** NEXT Prove Freyd's adjoint functor theorem
+** NEXT Implement subobjects / well-powered categories
+** NEXT Prove pullback-preserving functors preserve monics
+** NEXT Decide whether to fully implement special adjoint functor theorem now or leave as theorem interface

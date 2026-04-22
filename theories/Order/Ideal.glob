@@ -1,0 +1,1271 @@
+DIGEST 160500a48127f4d9ece82bdb1f22da9f
+FCAG.Order.Ideal
+R170:184 CAG.Order.Poset <> <> lib
+R202:218 CAG.Order.Lattice <> <> lib
+R236:249 CAG.Order.DCPO <> <> lib
+R267:283 CAG.Order.Compact <> <> lib
+R313:342 Stdlib.Logic.FunctionalExtensionality <> <> lib
+R372:393 Stdlib.Logic.ProofIrrelevance <> <> lib
+R423:437 Stdlib.Logic.Classical <> <> lib
+R467:490 Stdlib.Logic.PropExtensionality <> <> lib
+R520:533 Stdlib.Sets.Ensembles <> <> lib
+R563:572 Stdlib.Lists.List <> <> lib
+rec 837:843 <> IsIdeal
+proj 907:915 <> ideal_bot
+proj 934:943 <> ideal_join
+proj 993:1002 <> ideal_down
+R850:864 CAG.Order.Lattice <> JoinSemilattice rec
+binder 846:846 <> J:1
+R883:886 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R875:881 CAG.Order.Poset <> carrier proj
+R872:872 CAG.Order.Ideal <> J:1 var
+binder 868:868 <> I:2
+R922:922 CAG.Order.Ideal <> I:2 var
+R924:927 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R929:929 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R928:928 CAG.Order.Ideal <> J:1 var
+binder 956:956 <> x:5
+binder 958:958 <> y:6
+R964:967 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R961:961 CAG.Order.Ideal <> I:2 var
+R963:963 CAG.Order.Ideal <> x:5 var
+R971:974 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R968:968 CAG.Order.Ideal <> I:2 var
+R970:970 CAG.Order.Ideal <> y:6 var
+R975:975 CAG.Order.Ideal <> I:2 var
+R979:983 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R985:986 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R984:984 CAG.Order.Ideal <> J:1 var
+R978:978 CAG.Order.Ideal <> x:5 var
+R987:987 CAG.Order.Ideal <> y:6 var
+binder 1015:1015 <> x:8
+binder 1017:1017 <> y:9
+R1023:1026 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1020:1020 CAG.Order.Ideal <> I:2 var
+R1022:1022 CAG.Order.Ideal <> x:8 var
+R1037:1040 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1028:1032 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R1034:1035 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R1027:1027 CAG.Order.Ideal <> y:9 var
+R1036:1036 CAG.Order.Ideal <> x:8 var
+R1033:1033 CAG.Order.Ideal <> J:1 var
+R1041:1041 CAG.Order.Ideal <> I:2 var
+R1043:1043 CAG.Order.Ideal <> y:9 var
+def 1241:1255 <> IdealCompletion
+R1262:1276 CAG.Order.Lattice <> JoinSemilattice rec
+binder 1258:1258 <> J:11
+R1281:1285 CAG.Order.Poset <> Poset rec
+R1311:1317 CAG.Order.Poset <> carrier proj
+R1311:1317 CAG.Order.Poset <> carrier proj
+R1311:1317 CAG.Order.Poset <> carrier proj
+R1372:1373 CAG.Order.Poset <> le proj
+R1372:1373 CAG.Order.Poset <> le proj
+R1447:1453 CAG.Order.Poset <> le_refl proj
+R1447:1453 CAG.Order.Poset <> le_refl proj
+R1483:1490 CAG.Order.Poset <> le_trans proj
+R1483:1490 CAG.Order.Poset <> le_trans proj
+R1548:1557 CAG.Order.Poset <> le_antisym proj
+R1548:1557 CAG.Order.Poset <> le_antisym proj
+R1325:1326 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1328:1330 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1350:1352 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1364:1365 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1342:1345 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1334:1340 CAG.Order.Poset <> carrier proj
+binder 1327:1327 <> I:12
+R1353:1359 CAG.Order.Ideal <> IsIdeal rec
+R1363:1363 CAG.Order.Ideal <> I:12 var
+binder 1390:1391 <> I1:13
+binder 1393:1394 <> I2:14
+binder 1406:1406 <> x:15
+R1423:1426 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1409:1417 Corelib.Init.Specif <> proj1_sig def
+R1422:1422 CAG.Order.Ideal <> x:15 var
+R1419:1420 CAG.Order.Ideal <> I1:13 var
+R1427:1435 Corelib.Init.Specif <> proj1_sig def
+R1440:1440 CAG.Order.Ideal <> x:15 var
+R1437:1438 CAG.Order.Ideal <> I2:14 var
+binder 1465:1465 <> I:16
+binder 1467:1467 <> x:17
+binder 1469:1470 <> Hx:18
+R1475:1476 CAG.Order.Ideal <> Hx:18 var
+binder 1501:1502 <> I1:19
+binder 1504:1505 <> I2:20
+binder 1507:1508 <> I3:21
+binder 1510:1512 <> h12:22
+binder 1514:1516 <> h23:23
+binder 1518:1518 <> x:24
+binder 1520:1521 <> Hx:25
+R1526:1528 CAG.Order.Ideal <> h23:23 var
+R1530:1530 CAG.Order.Ideal <> x:24 var
+R1533:1535 CAG.Order.Ideal <> h12:22 var
+R1537:1537 CAG.Order.Ideal <> x:24 var
+R1539:1540 CAG.Order.Ideal <> Hx:25 var
+R1311:1317 CAG.Order.Poset <> carrier proj
+R1311:1317 CAG.Order.Poset <> carrier proj
+R1311:1317 CAG.Order.Poset <> carrier proj
+R1372:1373 CAG.Order.Poset <> le proj
+R1372:1373 CAG.Order.Poset <> le proj
+R1447:1453 CAG.Order.Poset <> le_refl proj
+R1447:1453 CAG.Order.Poset <> le_refl proj
+R1483:1490 CAG.Order.Poset <> le_trans proj
+R1483:1490 CAG.Order.Poset <> le_trans proj
+R1548:1557 CAG.Order.Poset <> le_antisym proj
+R1548:1557 CAG.Order.Poset <> le_antisym proj
+R1325:1326 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1328:1330 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1350:1352 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1364:1365 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1342:1345 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1334:1340 CAG.Order.Poset <> carrier proj
+binder 1327:1327 <> I:26
+R1353:1359 CAG.Order.Ideal <> IsIdeal rec
+R1363:1363 CAG.Order.Ideal <> I:26 var
+binder 1390:1391 <> I1:27
+binder 1393:1394 <> I2:28
+binder 1406:1406 <> x:29
+R1423:1426 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1409:1417 Corelib.Init.Specif <> proj1_sig def
+R1422:1422 CAG.Order.Ideal <> x:29 var
+R1419:1420 CAG.Order.Ideal <> I1:27 var
+R1427:1435 Corelib.Init.Specif <> proj1_sig def
+R1440:1440 CAG.Order.Ideal <> x:29 var
+R1437:1438 CAG.Order.Ideal <> I2:28 var
+binder 1465:1465 <> I:30
+binder 1467:1467 <> x:31
+binder 1469:1470 <> Hx:32
+R1475:1476 CAG.Order.Ideal <> Hx:32 var
+binder 1501:1502 <> I1:33
+binder 1504:1505 <> I2:34
+binder 1507:1508 <> I3:35
+binder 1510:1512 <> h12:36
+binder 1514:1516 <> h23:37
+binder 1518:1518 <> x:38
+binder 1520:1521 <> Hx:39
+R1526:1528 CAG.Order.Ideal <> h23:37 var
+R1530:1530 CAG.Order.Ideal <> x:38 var
+R1533:1535 CAG.Order.Ideal <> h12:36 var
+R1537:1537 CAG.Order.Ideal <> x:38 var
+R1539:1540 CAG.Order.Ideal <> Hx:39 var
+R1603:1614 Corelib.Init.Specif <> eq_sig_hprop def
+R1603:1614 Corelib.Init.Specif <> eq_sig_hprop def
+R1637:1653 Stdlib.Logic.PropExtensionality <> proof_irrelevance thm
+R1637:1653 Stdlib.Logic.PropExtensionality <> proof_irrelevance thm
+R1666:1690 Stdlib.Logic.FunctionalExtensionality <> functional_extensionality thm
+R1666:1690 Stdlib.Logic.FunctionalExtensionality <> functional_extensionality thm
+R1713:1740 Stdlib.Logic.PropExtensionality <> propositional_extensionality prfax
+R1713:1740 Stdlib.Logic.PropExtensionality <> propositional_extensionality prfax
+R1812:1826 CAG.Order.Ideal <> IdealCompletion def
+not 1794:1794 <> ::order_scope:'IdCompl'_x
+def 1938:1952 <> principal_ideal
+R1959:1973 CAG.Order.Lattice <> JoinSemilattice rec
+binder 1955:1955 <> J:40
+R1984:1990 CAG.Order.Poset <> carrier proj
+R1981:1981 CAG.Order.Ideal <> J:40 var
+binder 1977:1977 <> x:41
+R2000:2001 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R2003:2005 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R2025:2027 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R2039:2040 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R2017:2020 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2009:2015 CAG.Order.Poset <> carrier proj
+R2006:2006 CAG.Order.Ideal <> J:40 var
+binder 2002:2002 <> I:42
+R2028:2034 CAG.Order.Ideal <> IsIdeal rec
+R2036:2036 CAG.Order.Ideal <> J:40 var
+R2038:2038 CAG.Order.Ideal <> I:42 var
+binder 2064:2064 <> y:43
+R2070:2074 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R2076:2077 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R2069:2069 CAG.Order.Ideal <> y:43 var
+binder 2064:2064 <> y:44
+R2070:2074 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R2076:2077 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R2069:2069 CAG.Order.Ideal <> y:44 var
+R2110:2119 CAG.Order.Lattice <> jsl_bot_le proj
+R2110:2119 CAG.Order.Lattice <> jsl_bot_le proj
+R2158:2169 CAG.Order.Lattice <> jsl_join_lub proj
+R2158:2169 CAG.Order.Lattice <> jsl_join_lub proj
+R2221:2228 CAG.Order.Poset <> le_trans proj
+R2221:2228 CAG.Order.Poset <> le_trans proj
+R2288:2302 CAG.Order.Ideal <> principal_ideal def
+not 2270:2270 <> ::order_scope:x_'↓i{'_x_'}'
+prf 2636:2646 <> inter_ideal
+R2653:2667 CAG.Order.Lattice <> JoinSemilattice rec
+binder 2649:2649 <> J:45
+R2675:2675 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2695:2699 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2687:2690 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2679:2685 CAG.Order.Poset <> carrier proj
+R2676:2676 CAG.Order.Ideal <> J:45 var
+binder 2671:2671 <> F:46
+binder 2723:2723 <> I:47
+R2729:2732 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2726:2726 CAG.Order.Ideal <> F:46 var
+R2728:2728 CAG.Order.Ideal <> I:47 var
+R2733:2739 CAG.Order.Ideal <> IsIdeal rec
+R2741:2741 CAG.Order.Ideal <> J:45 var
+R2743:2743 CAG.Order.Ideal <> I:47 var
+binder 2711:2712 <> hF:48
+R2757:2763 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2765:2766 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2764:2764 <> I:49
+R2767:2767 CAG.Order.Ideal <> F:46 var
+R2769:2769 CAG.Order.Ideal <> I:49 var
+binder 2751:2753 <> hne:50
+R2778:2784 CAG.Order.Ideal <> IsIdeal rec
+R2786:2786 CAG.Order.Ideal <> J:45 var
+binder 2793:2793 <> x:51
+binder 2805:2805 <> I:52
+R2811:2814 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2808:2808 CAG.Order.Ideal <> F:46 var
+R2810:2810 CAG.Order.Ideal <> I:52 var
+R2815:2815 CAG.Order.Ideal <> I:52 var
+R2817:2817 CAG.Order.Ideal <> x:51 var
+R2867:2875 CAG.Order.Ideal <> ideal_bot proj
+R2867:2875 CAG.Order.Ideal <> ideal_bot proj
+R2931:2940 CAG.Order.Ideal <> ideal_join proj
+R2931:2940 CAG.Order.Ideal <> ideal_join proj
+R3037:3046 CAG.Order.Ideal <> ideal_down proj
+R3037:3046 CAG.Order.Ideal <> ideal_down proj
+prf 3191:3210 <> union_directed_ideal
+R3217:3231 CAG.Order.Lattice <> JoinSemilattice rec
+binder 3213:3213 <> J:53
+R3243:3243 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3263:3267 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3255:3258 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3247:3253 CAG.Order.Poset <> carrier proj
+R3244:3244 CAG.Order.Ideal <> J:53 var
+binder 3239:3239 <> F:54
+binder 3291:3291 <> I:55
+R3297:3300 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3294:3294 CAG.Order.Ideal <> F:54 var
+R3296:3296 CAG.Order.Ideal <> I:55 var
+R3301:3307 CAG.Order.Ideal <> IsIdeal rec
+R3309:3309 CAG.Order.Ideal <> J:53 var
+R3311:3311 CAG.Order.Ideal <> I:55 var
+binder 3279:3280 <> hF:56
+R3326:3335 CAG.Order.DCPO <> IsDirected rec
+R3338:3352 CAG.Order.Ideal <> IdealCompletion def
+R3354:3354 CAG.Order.Ideal <> J:53 var
+binder 3362:3362 <> I:57
+R3367:3367 CAG.Order.Ideal <> F:54 var
+R3370:3378 Corelib.Init.Specif <> proj1_sig def
+R3380:3380 CAG.Order.Ideal <> I:57 var
+binder 3319:3322 <> hdir:58
+R3391:3397 CAG.Order.Ideal <> IsIdeal rec
+R3399:3399 CAG.Order.Ideal <> J:53 var
+binder 3406:3406 <> x:59
+R3411:3417 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3419:3420 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 3418:3418 <> I:60
+R3424:3427 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R3421:3421 CAG.Order.Ideal <> F:54 var
+R3423:3423 CAG.Order.Ideal <> I:60 var
+R3428:3428 CAG.Order.Ideal <> I:60 var
+R3430:3430 CAG.Order.Ideal <> x:59 var
+R3500:3506 CAG.Order.DCPO <> dir_inh proj
+R3500:3506 CAG.Order.DCPO <> dir_inh proj
+R3574:3582 CAG.Order.Ideal <> ideal_bot proj
+R3574:3582 CAG.Order.Ideal <> ideal_bot proj
+R3762:3770 CAG.Order.DCPO <> dir_upper proj
+R3790:3794 Corelib.Init.Specif <> exist constr
+R3823:3827 Corelib.Init.Specif <> exist constr
+R3762:3770 CAG.Order.DCPO <> dir_upper proj
+R3790:3794 Corelib.Init.Specif <> exist constr
+R3823:3827 Corelib.Init.Specif <> exist constr
+R3943:3952 CAG.Order.Ideal <> ideal_join proj
+R3943:3952 CAG.Order.Ideal <> ideal_join proj
+R4136:4145 CAG.Order.Ideal <> ideal_down proj
+R4136:4145 CAG.Order.Ideal <> ideal_down proj
+def 4330:4344 <> ideal_generated
+R4351:4365 CAG.Order.Lattice <> JoinSemilattice rec
+binder 4347:4347 <> J:61
+R4384:4387 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4376:4382 CAG.Order.Poset <> carrier proj
+R4373:4373 CAG.Order.Ideal <> J:61 var
+binder 4369:4369 <> A:62
+R4411:4414 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4403:4409 CAG.Order.Poset <> carrier proj
+R4400:4400 CAG.Order.Ideal <> J:61 var
+binder 4429:4429 <> x:63
+R4434:4441 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4463:4469 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4447:4450 Corelib.Init.Datatypes <> list ind
+R4455:4461 CAG.Order.Poset <> carrier proj
+R4452:4452 CAG.Order.Ideal <> J:61 var
+binder 4442:4443 <> xs:64
+R4470:4470 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R4500:4508 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 4478:4478 <> y:65
+R4493:4496 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4481:4487 Stdlib.Lists.List <> In def
+R4491:4492 CAG.Order.Ideal <> xs:64 var
+R4489:4489 CAG.Order.Ideal <> y:65 var
+R4497:4497 CAG.Order.Ideal <> A:62 var
+R4499:4499 CAG.Order.Ideal <> y:65 var
+R4510:4514 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4516:4517 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4509:4509 CAG.Order.Ideal <> x:63 var
+R4518:4528 CAG.Order.Lattice <> finite_join def
+R4530:4530 CAG.Order.Ideal <> J:61 var
+R4532:4533 CAG.Order.Ideal <> xs:64 var
+R4515:4515 CAG.Order.Ideal <> J:61 var
+prf 4543:4566 <> ideal_generated_is_ideal
+R4573:4587 CAG.Order.Lattice <> JoinSemilattice rec
+binder 4569:4569 <> J:66
+R4606:4609 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4598:4604 CAG.Order.Poset <> carrier proj
+R4595:4595 CAG.Order.Ideal <> J:66 var
+binder 4591:4591 <> A:67
+R4622:4628 CAG.Order.Ideal <> IsIdeal rec
+R4630:4630 CAG.Order.Ideal <> J:66 var
+R4633:4647 CAG.Order.Ideal <> ideal_generated def
+R4649:4649 CAG.Order.Ideal <> J:66 var
+R4651:4651 CAG.Order.Ideal <> A:67 var
+binder 4751:4752 <> xs:68
+binder 4754:4755 <> ys:69
+R4780:4784 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4786:4787 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4764:4774 CAG.Order.Lattice <> finite_join def
+R4778:4779 CAG.Order.Ideal <> xs:68 var
+R4788:4798 CAG.Order.Lattice <> finite_join def
+R4805:4808 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R4803:4804 CAG.Order.Ideal <> xs:68 var
+R4809:4810 CAG.Order.Ideal <> ys:69 var
+binder 4751:4752 <> xs:70
+binder 4754:4755 <> ys:71
+R4780:4784 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4786:4787 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R4764:4774 CAG.Order.Lattice <> finite_join def
+R4778:4779 CAG.Order.Ideal <> xs:70 var
+R4788:4798 CAG.Order.Lattice <> finite_join def
+R4805:4808 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R4803:4804 CAG.Order.Ideal <> xs:70 var
+R4809:4810 CAG.Order.Ideal <> ys:71 var
+R4889:4898 CAG.Order.Lattice <> jsl_bot_le proj
+R4889:4898 CAG.Order.Lattice <> jsl_bot_le proj
+R4922:4933 CAG.Order.Lattice <> jsl_join_lub proj
+R4922:4933 CAG.Order.Lattice <> jsl_join_lub proj
+R4954:4965 CAG.Order.Lattice <> jsl_join_ub1 proj
+R4954:4965 CAG.Order.Lattice <> jsl_join_ub1 proj
+R5002:5012 CAG.Order.Lattice <> finite_join def
+R5020:5023 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R4986:4993 CAG.Order.Poset <> le_trans proj
+R5002:5012 CAG.Order.Lattice <> finite_join def
+R5020:5023 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R4986:4993 CAG.Order.Poset <> le_trans proj
+R5069:5080 CAG.Order.Lattice <> jsl_join_ub2 proj
+R5069:5080 CAG.Order.Lattice <> jsl_join_ub2 proj
+binder 5176:5177 <> xs:72
+binder 5179:5180 <> ys:73
+R5205:5209 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R5211:5212 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R5189:5199 CAG.Order.Lattice <> finite_join def
+R5203:5204 CAG.Order.Ideal <> ys:73 var
+R5213:5223 CAG.Order.Lattice <> finite_join def
+R5230:5233 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R5228:5229 CAG.Order.Ideal <> xs:72 var
+R5234:5235 CAG.Order.Ideal <> ys:73 var
+binder 5176:5177 <> xs:74
+binder 5179:5180 <> ys:75
+R5205:5209 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R5211:5212 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R5189:5199 CAG.Order.Lattice <> finite_join def
+R5203:5204 CAG.Order.Ideal <> ys:75 var
+R5213:5223 CAG.Order.Lattice <> finite_join def
+R5230:5233 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R5228:5229 CAG.Order.Ideal <> xs:74 var
+R5234:5235 CAG.Order.Ideal <> ys:75 var
+R5314:5320 CAG.Order.Poset <> le_refl proj
+R5314:5320 CAG.Order.Poset <> le_refl proj
+R5360:5370 CAG.Order.Lattice <> finite_join def
+R5378:5381 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R5344:5351 CAG.Order.Poset <> le_trans proj
+R5360:5370 CAG.Order.Lattice <> finite_join def
+R5378:5381 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R5344:5351 CAG.Order.Poset <> le_trans proj
+R5423:5434 CAG.Order.Lattice <> jsl_join_ub2 proj
+R5423:5434 CAG.Order.Lattice <> jsl_join_ub2 proj
+R5515:5517 Corelib.Init.Datatypes <> nil constr
+R5515:5517 Corelib.Init.Datatypes <> nil constr
+R5553:5562 Corelib.Init.Logic <> False_rect scheme
+R5567:5577 Stdlib.Lists.List <> in_nil thm
+R5553:5562 Corelib.Init.Logic <> False_rect scheme
+R5567:5577 Stdlib.Lists.List <> in_nil thm
+R5605:5611 CAG.Order.Poset <> le_refl proj
+R5605:5611 CAG.Order.Poset <> le_refl proj
+R5701:5704 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R5701:5704 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R5742:5755 Stdlib.Lists.List <> in_app_or thm
+R5742:5755 Stdlib.Lists.List <> in_app_or thm
+R5859:5870 CAG.Order.Lattice <> jsl_join_lub proj
+R5859:5870 CAG.Order.Lattice <> jsl_join_lub proj
+R5907:5917 CAG.Order.Lattice <> finite_join def
+R5891:5898 CAG.Order.Poset <> le_trans proj
+R5907:5917 CAG.Order.Lattice <> finite_join def
+R5891:5898 CAG.Order.Poset <> le_trans proj
+R6010:6020 CAG.Order.Lattice <> finite_join def
+R5994:6001 CAG.Order.Poset <> le_trans proj
+R6010:6020 CAG.Order.Lattice <> finite_join def
+R5994:6001 CAG.Order.Poset <> le_trans proj
+R6195:6202 CAG.Order.Poset <> le_trans proj
+R6195:6202 CAG.Order.Poset <> le_trans proj
+prf 6289:6316 <> ideal_finite_join_closed_pre
+R6323:6337 CAG.Order.Lattice <> JoinSemilattice rec
+binder 6319:6319 <> J:76
+R6360:6363 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6352:6358 CAG.Order.Poset <> carrier proj
+R6349:6349 CAG.Order.Ideal <> J:76 var
+binder 6345:6345 <> I:77
+R6376:6382 CAG.Order.Ideal <> IsIdeal rec
+R6384:6384 CAG.Order.Ideal <> J:76 var
+R6386:6386 CAG.Order.Ideal <> I:77 var
+binder 6371:6372 <> hI:78
+R6399:6402 Corelib.Init.Datatypes <> list ind
+R6407:6413 CAG.Order.Poset <> carrier proj
+R6404:6404 CAG.Order.Ideal <> J:76 var
+binder 6394:6395 <> xs:79
+R6423:6423 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6453:6457 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 6431:6431 <> y:80
+R6446:6449 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6434:6440 Stdlib.Lists.List <> In def
+R6444:6445 CAG.Order.Ideal <> xs:79 var
+R6442:6442 CAG.Order.Ideal <> y:80 var
+R6450:6450 CAG.Order.Ideal <> I:77 var
+R6452:6452 CAG.Order.Ideal <> y:80 var
+R6458:6458 CAG.Order.Ideal <> I:77 var
+R6461:6471 CAG.Order.Lattice <> finite_join def
+R6473:6473 CAG.Order.Ideal <> J:76 var
+R6475:6476 CAG.Order.Ideal <> xs:79 var
+R6548:6556 CAG.Order.Ideal <> ideal_bot proj
+R6548:6556 CAG.Order.Ideal <> ideal_bot proj
+R6585:6594 CAG.Order.Ideal <> ideal_join proj
+R6585:6594 CAG.Order.Ideal <> ideal_join proj
+prf 6779:6799 <> ideal_compl_sup_ideal
+R6815:6829 CAG.Order.Lattice <> JoinSemilattice rec
+binder 6811:6811 <> J:81
+R6880:6883 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6841:6841 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R6843:6845 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R6865:6867 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R6879:6879 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R6857:6860 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6849:6855 CAG.Order.Poset <> carrier proj
+R6846:6846 CAG.Order.Ideal <> J:81 var
+binder 6842:6842 <> I:82
+R6868:6874 CAG.Order.Ideal <> IsIdeal rec
+R6876:6876 CAG.Order.Ideal <> J:81 var
+R6878:6878 CAG.Order.Ideal <> I:82 var
+binder 6837:6837 <> S:83
+R6895:6901 CAG.Order.Ideal <> IsIdeal rec
+R6903:6903 CAG.Order.Ideal <> J:81 var
+R6906:6920 CAG.Order.Ideal <> ideal_generated def
+R6922:6922 CAG.Order.Ideal <> J:81 var
+binder 6929:6929 <> x:84
+R6934:6940 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6966:6967 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6945:6945 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R6947:6949 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R6951:6953 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R6965:6965 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+binder 6946:6946 <> I:85
+R6954:6960 CAG.Order.Ideal <> IsIdeal rec
+R6962:6962 CAG.Order.Ideal <> J:81 var
+R6964:6964 CAG.Order.Ideal <> I:85 var
+binder 6941:6941 <> I:86
+R6971:6974 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R6968:6968 CAG.Order.Ideal <> S:83 var
+R6970:6970 CAG.Order.Ideal <> I:86 var
+R6975:6983 Corelib.Init.Specif <> proj1_sig def
+R6987:6987 CAG.Order.Ideal <> x:84 var
+R6985:6985 CAG.Order.Ideal <> I:86 var
+R7020:7043 CAG.Order.Ideal <> ideal_generated_is_ideal thm
+R7020:7043 CAG.Order.Ideal <> ideal_generated_is_ideal thm
+prf 7065:7082 <> ideal_compl_sup_ub
+R7098:7112 CAG.Order.Lattice <> JoinSemilattice rec
+binder 7094:7094 <> J:87
+R7163:7166 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7124:7124 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7126:7128 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7148:7150 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7162:7162 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7140:7143 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7132:7138 CAG.Order.Poset <> carrier proj
+R7129:7129 CAG.Order.Ideal <> J:87 var
+binder 7125:7125 <> I:88
+R7151:7157 CAG.Order.Ideal <> IsIdeal rec
+R7159:7159 CAG.Order.Ideal <> J:87 var
+R7161:7161 CAG.Order.Ideal <> I:88 var
+binder 7120:7120 <> S:89
+R7182:7182 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7184:7186 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7206:7208 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7220:7220 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7198:7201 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7190:7196 CAG.Order.Poset <> carrier proj
+R7187:7187 CAG.Order.Ideal <> J:87 var
+binder 7183:7183 <> I:90
+R7209:7215 CAG.Order.Ideal <> IsIdeal rec
+R7217:7217 CAG.Order.Ideal <> J:87 var
+R7219:7219 CAG.Order.Ideal <> I:90 var
+binder 7178:7178 <> I:91
+R7231:7238 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7228:7228 CAG.Order.Ideal <> S:89 var
+R7230:7230 CAG.Order.Ideal <> I:91 var
+binder 7246:7246 <> x:92
+R7262:7269 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7249:7257 Corelib.Init.Specif <> proj1_sig def
+R7261:7261 CAG.Order.Ideal <> x:92 var
+R7259:7259 CAG.Order.Ideal <> I:91 var
+R7270:7278 Corelib.Init.Specif <> proj1_sig def
+R7430:7430 CAG.Order.Ideal <> x:92 var
+R7281:7285 Corelib.Init.Specif <> exist constr
+R7402:7422 CAG.Order.Ideal <> ideal_compl_sup_ideal thm
+R7424:7424 CAG.Order.Ideal <> J:87 var
+R7426:7426 CAG.Order.Ideal <> S:89 var
+R7290:7304 CAG.Order.Ideal <> ideal_generated def
+R7306:7306 CAG.Order.Ideal <> J:87 var
+binder 7313:7313 <> x:93
+R7318:7324 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7351:7352 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7330:7330 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7332:7334 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7336:7338 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7350:7350 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+binder 7331:7331 <> I:94
+R7339:7345 CAG.Order.Ideal <> IsIdeal rec
+R7347:7347 CAG.Order.Ideal <> J:87 var
+R7349:7349 CAG.Order.Ideal <> I:94 var
+binder 7325:7326 <> I':95
+R7357:7360 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R7353:7353 CAG.Order.Ideal <> S:89 var
+R7355:7356 CAG.Order.Ideal <> I':95 var
+R7361:7369 Corelib.Init.Specif <> proj1_sig def
+R7374:7374 CAG.Order.Ideal <> x:93 var
+R7371:7372 CAG.Order.Ideal <> I':95 var
+R7478:7492 CAG.Order.Ideal <> ideal_generated def
+R7506:7509 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R7510:7512 Corelib.Init.Datatypes <> nil constr
+R7506:7509 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R7510:7512 Corelib.Init.Datatypes <> nil constr
+R7640:7651 CAG.Order.Lattice <> jsl_join_ub1 proj
+R7640:7651 CAG.Order.Lattice <> jsl_join_ub1 proj
+prf 7669:7687 <> ideal_compl_sup_lub
+R7703:7717 CAG.Order.Lattice <> JoinSemilattice rec
+binder 7699:7699 <> J:96
+R7768:7771 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7729:7729 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7731:7733 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7753:7755 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7767:7767 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7745:7748 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7737:7743 CAG.Order.Poset <> carrier proj
+R7734:7734 CAG.Order.Ideal <> J:96 var
+binder 7730:7730 <> I:97
+R7756:7762 CAG.Order.Ideal <> IsIdeal rec
+R7764:7764 CAG.Order.Ideal <> J:96 var
+R7766:7766 CAG.Order.Ideal <> I:97 var
+binder 7725:7725 <> S:98
+R7787:7787 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7789:7791 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7811:7813 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7825:7825 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7803:7806 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7795:7801 CAG.Order.Poset <> carrier proj
+R7792:7792 CAG.Order.Ideal <> J:96 var
+binder 7788:7788 <> I:99
+R7814:7820 CAG.Order.Ideal <> IsIdeal rec
+R7822:7822 CAG.Order.Ideal <> J:96 var
+R7824:7824 CAG.Order.Ideal <> I:99 var
+binder 7783:7783 <> z:100
+R7833:7833 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7891:7899 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 7841:7841 <> I:101
+R7847:7850 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7844:7844 CAG.Order.Ideal <> S:98 var
+R7846:7846 CAG.Order.Ideal <> I:101 var
+binder 7858:7858 <> x:102
+R7874:7877 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7861:7869 Corelib.Init.Specif <> proj1_sig def
+R7873:7873 CAG.Order.Ideal <> x:102 var
+R7871:7871 CAG.Order.Ideal <> I:101 var
+R7878:7886 Corelib.Init.Specif <> proj1_sig def
+R7890:7890 CAG.Order.Ideal <> x:102 var
+R7888:7888 CAG.Order.Ideal <> z:100 var
+binder 7907:7907 <> w:103
+R8075:8082 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7914:7922 Corelib.Init.Specif <> proj1_sig def
+R8074:8074 CAG.Order.Ideal <> w:103 var
+R7925:7929 Corelib.Init.Specif <> exist constr
+R8046:8066 CAG.Order.Ideal <> ideal_compl_sup_ideal thm
+R8068:8068 CAG.Order.Ideal <> J:96 var
+R8070:8070 CAG.Order.Ideal <> S:98 var
+R7934:7948 CAG.Order.Ideal <> ideal_generated def
+R7950:7950 CAG.Order.Ideal <> J:96 var
+binder 7957:7957 <> x:104
+R7962:7968 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7995:7996 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7974:7974 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7976:7978 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7980:7982 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R7994:7994 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+binder 7975:7975 <> I:105
+R7983:7989 CAG.Order.Ideal <> IsIdeal rec
+R7991:7991 CAG.Order.Ideal <> J:96 var
+R7993:7993 CAG.Order.Ideal <> I:105 var
+binder 7969:7970 <> I':106
+R8001:8004 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R7997:7997 CAG.Order.Ideal <> S:98 var
+R7999:8000 CAG.Order.Ideal <> I':106 var
+R8005:8013 Corelib.Init.Specif <> proj1_sig def
+R8018:8018 CAG.Order.Ideal <> x:104 var
+R8015:8016 CAG.Order.Ideal <> I':106 var
+R8083:8091 Corelib.Init.Specif <> proj1_sig def
+R8095:8095 CAG.Order.Ideal <> w:103 var
+R8093:8093 CAG.Order.Ideal <> z:100 var
+R8149:8163 CAG.Order.Ideal <> ideal_generated def
+R8215:8224 CAG.Order.Ideal <> ideal_down proj
+R8231:8239 Corelib.Init.Specif <> proj2_sig def
+R8245:8255 CAG.Order.Lattice <> finite_join def
+R8215:8224 CAG.Order.Ideal <> ideal_down proj
+R8231:8239 Corelib.Init.Specif <> proj2_sig def
+R8245:8255 CAG.Order.Lattice <> finite_join def
+R8277:8304 CAG.Order.Ideal <> ideal_finite_join_closed_pre thm
+R8277:8304 CAG.Order.Ideal <> ideal_finite_join_closed_pre thm
+R8320:8328 Corelib.Init.Specif <> proj2_sig def
+R8320:8328 Corelib.Init.Specif <> proj2_sig def
+def 8469:8494 <> IdealCompl_CompleteLattice
+R8501:8515 CAG.Order.Lattice <> JoinSemilattice rec
+binder 8497:8497 <> J:107
+R8520:8534 CAG.Order.Lattice <> CompleteLattice rec
+R8544:8551 CAG.Order.Lattice <> cl_poset proj
+R8544:8551 CAG.Order.Lattice <> cl_poset proj
+R8544:8551 CAG.Order.Lattice <> cl_poset proj
+R8577:8582 CAG.Order.Lattice <> cl_sup proj
+R8577:8582 CAG.Order.Lattice <> cl_sup proj
+R8738:8746 CAG.Order.Lattice <> cl_sup_ub proj
+R8738:8746 CAG.Order.Lattice <> cl_sup_ub proj
+R8806:8815 CAG.Order.Lattice <> cl_sup_lub proj
+R8806:8815 CAG.Order.Lattice <> cl_sup_lub proj
+R8556:8570 CAG.Order.Ideal <> IdealCompletion def
+R8572:8572 CAG.Order.Ideal <> J:107 var
+binder 8593:8593 <> S:108
+R8602:8606 Corelib.Init.Specif <> exist constr
+R8708:8728 CAG.Order.Ideal <> ideal_compl_sup_ideal thm
+R8730:8730 CAG.Order.Ideal <> J:107 var
+R8732:8732 CAG.Order.Ideal <> S:108 var
+R8611:8625 CAG.Order.Ideal <> ideal_generated def
+R8627:8627 CAG.Order.Ideal <> J:107 var
+binder 8634:8634 <> x:109
+R8639:8645 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R8671:8672 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R8650:8650 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R8652:8654 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R8656:8658 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R8670:8670 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+binder 8651:8651 <> I:110
+R8659:8665 CAG.Order.Ideal <> IsIdeal rec
+R8667:8667 CAG.Order.Ideal <> J:107 var
+R8669:8669 CAG.Order.Ideal <> I:110 var
+binder 8646:8646 <> I:111
+R8676:8679 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R8673:8673 CAG.Order.Ideal <> S:108 var
+R8675:8675 CAG.Order.Ideal <> I:111 var
+R8680:8688 Corelib.Init.Specif <> proj1_sig def
+R8692:8692 CAG.Order.Ideal <> x:109 var
+R8690:8690 CAG.Order.Ideal <> I:111 var
+binder 8755:8755 <> S:112
+binder 8757:8757 <> I:113
+binder 8759:8760 <> HI:114
+binder 8762:8762 <> x:115
+binder 8764:8765 <> Hx:116
+R8770:8787 CAG.Order.Ideal <> ideal_compl_sup_ub thm
+R8789:8789 CAG.Order.Ideal <> J:107 var
+R8791:8791 CAG.Order.Ideal <> S:112 var
+R8793:8793 CAG.Order.Ideal <> I:113 var
+R8795:8796 CAG.Order.Ideal <> HI:114 var
+R8798:8798 CAG.Order.Ideal <> x:115 var
+R8800:8801 CAG.Order.Ideal <> Hx:116 var
+binder 8824:8824 <> S:117
+binder 8826:8826 <> z:118
+binder 8828:8829 <> Hz:119
+binder 8831:8831 <> x:120
+binder 8833:8834 <> Hx:121
+R8839:8857 CAG.Order.Ideal <> ideal_compl_sup_lub thm
+R8859:8859 CAG.Order.Ideal <> J:107 var
+R8861:8861 CAG.Order.Ideal <> S:117 var
+R8863:8863 CAG.Order.Ideal <> z:118 var
+R8865:8866 CAG.Order.Ideal <> Hz:119 var
+R8868:8868 CAG.Order.Ideal <> x:120 var
+R8870:8871 CAG.Order.Ideal <> Hx:121 var
+prf 9091:9117 <> directed_covers_finite_list
+R9124:9138 CAG.Order.Lattice <> JoinSemilattice rec
+binder 9120:9120 <> J:122
+R9189:9192 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9150:9150 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R9152:9154 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R9174:9176 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R9188:9188 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R9166:9169 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9158:9164 CAG.Order.Poset <> carrier proj
+R9155:9155 CAG.Order.Ideal <> J:122 var
+binder 9151:9151 <> I:123
+R9177:9183 CAG.Order.Ideal <> IsIdeal rec
+R9185:9185 CAG.Order.Ideal <> J:122 var
+R9187:9187 CAG.Order.Ideal <> I:123 var
+binder 9146:9146 <> D:124
+R9209:9218 CAG.Order.DCPO <> IsDirected rec
+R9221:9235 CAG.Order.Ideal <> IdealCompletion def
+R9237:9237 CAG.Order.Ideal <> J:122 var
+R9240:9240 CAG.Order.Ideal <> D:124 var
+binder 9204:9205 <> hD:125
+R9253:9256 Corelib.Init.Datatypes <> list ind
+R9261:9267 CAG.Order.Poset <> carrier proj
+R9258:9258 CAG.Order.Ideal <> J:122 var
+binder 9248:9249 <> xs:126
+R9277:9277 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9334:9342 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 9285:9285 <> y:127
+R9300:9303 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9288:9294 Stdlib.Lists.List <> In def
+R9298:9299 CAG.Order.Ideal <> xs:126 var
+R9296:9296 CAG.Order.Ideal <> y:127 var
+R9304:9310 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9312:9313 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 9311:9311 <> I:128
+R9317:9320 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R9314:9314 CAG.Order.Ideal <> D:124 var
+R9316:9316 CAG.Order.Ideal <> I:128 var
+R9321:9329 Corelib.Init.Specif <> proj1_sig def
+R9333:9333 CAG.Order.Ideal <> y:127 var
+R9331:9331 CAG.Order.Ideal <> I:128 var
+R9343:9349 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9352:9353 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 9350:9351 <> Iz:129
+R9358:9361 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R9354:9354 CAG.Order.Ideal <> D:124 var
+R9356:9357 CAG.Order.Ideal <> Iz:129 var
+binder 9369:9369 <> y:130
+R9384:9387 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9372:9378 Stdlib.Lists.List <> In def
+R9382:9383 CAG.Order.Ideal <> xs:126 var
+R9380:9380 CAG.Order.Ideal <> y:130 var
+R9388:9396 Corelib.Init.Specif <> proj1_sig def
+R9401:9401 CAG.Order.Ideal <> y:130 var
+R9398:9399 CAG.Order.Ideal <> Iz:129 var
+R9468:9474 CAG.Order.DCPO <> dir_inh proj
+R9468:9474 CAG.Order.DCPO <> dir_inh proj
+R9546:9555 Corelib.Init.Logic <> False_rect scheme
+R9560:9570 Stdlib.Lists.List <> in_nil thm
+R9546:9555 Corelib.Init.Logic <> False_rect scheme
+R9560:9570 Stdlib.Lists.List <> in_nil thm
+R9599:9607 Corelib.Init.Logic <> or_introl constr
+R9609:9615 Corelib.Init.Logic <> eq_refl constr
+R9599:9607 Corelib.Init.Logic <> or_introl constr
+R9609:9615 Corelib.Init.Logic <> eq_refl constr
+binder 9661:9661 <> y:131
+binder 9663:9664 <> Hy:132
+R9673:9673 CAG.Order.Ideal <> y:131 var
+R9676:9684 Corelib.Init.Logic <> or_intror constr
+R9686:9687 CAG.Order.Ideal <> Hy:132 var
+binder 9661:9661 <> y:133
+binder 9663:9664 <> Hy:134
+R9673:9673 CAG.Order.Ideal <> y:133 var
+R9676:9684 Corelib.Init.Logic <> or_intror constr
+R9686:9687 CAG.Order.Ideal <> Hy:134 var
+R9725:9733 CAG.Order.DCPO <> dir_upper proj
+R9725:9733 CAG.Order.DCPO <> dir_upper proj
+prf 10011:10033 <> principal_ideal_compact
+R10040:10054 CAG.Order.Lattice <> JoinSemilattice rec
+binder 10036:10036 <> J:135
+R10065:10071 CAG.Order.Poset <> carrier proj
+R10062:10062 CAG.Order.Ideal <> J:135 var
+binder 10058:10058 <> x:136
+R10081:10089 CAG.Order.Compact <> IsCompact def
+R10092:10101 CAG.Order.DCPO <> cl_to_dcpo def
+R10104:10129 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R10131:10131 CAG.Order.Ideal <> J:135 var
+R10137:10142 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R10144:10144 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R10143:10143 CAG.Order.Ideal <> J:135 var
+R10136:10136 CAG.Order.Ideal <> x:136 var
+R10189:10197 Corelib.Init.Specif <> proj1_sig def
+R10200:10205 CAG.Order.Lattice <> cl_sup proj
+R10208:10233 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R10189:10197 Corelib.Init.Specif <> proj1_sig def
+R10200:10205 CAG.Order.Lattice <> cl_sup proj
+R10208:10233 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R10269:10275 CAG.Order.Poset <> le_refl proj
+R10269:10275 CAG.Order.Poset <> le_refl proj
+R10301:10315 CAG.Order.Ideal <> ideal_generated def
+R10370:10396 CAG.Order.Ideal <> directed_covers_finite_list thm
+R10370:10396 CAG.Order.Ideal <> directed_covers_finite_list thm
+R10495:10504 CAG.Order.Ideal <> ideal_down proj
+R10511:10519 Corelib.Init.Specif <> proj2_sig def
+R10526:10536 CAG.Order.Lattice <> finite_join def
+R10495:10504 CAG.Order.Ideal <> ideal_down proj
+R10511:10519 Corelib.Init.Specif <> proj2_sig def
+R10526:10536 CAG.Order.Lattice <> finite_join def
+R10561:10588 CAG.Order.Ideal <> ideal_finite_join_closed_pre thm
+R10595:10603 Corelib.Init.Specif <> proj2_sig def
+R10561:10588 CAG.Order.Ideal <> ideal_finite_join_closed_pre thm
+R10595:10603 Corelib.Init.Specif <> proj2_sig def
+R10633:10640 CAG.Order.Poset <> le_trans proj
+R10633:10640 CAG.Order.Poset <> le_trans proj
+prf 10741:10766 <> compact_ideal_is_principal
+R10773:10787 CAG.Order.Lattice <> JoinSemilattice rec
+binder 10769:10769 <> J:137
+R10799:10800 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R10802:10804 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R10824:10826 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R10838:10839 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R10816:10819 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10808:10814 CAG.Order.Poset <> carrier proj
+R10805:10805 CAG.Order.Ideal <> J:137 var
+binder 10801:10801 <> I:138
+R10827:10833 CAG.Order.Ideal <> IsIdeal rec
+R10835:10835 CAG.Order.Ideal <> J:137 var
+R10837:10837 CAG.Order.Ideal <> I:138 var
+binder 10795:10795 <> I:139
+R10852:10860 CAG.Order.Compact <> IsCompact def
+R10863:10872 CAG.Order.DCPO <> cl_to_dcpo def
+R10875:10900 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R10902:10902 CAG.Order.Ideal <> J:137 var
+R10906:10906 CAG.Order.Ideal <> I:139 var
+binder 10847:10848 <> hI:140
+R10915:10921 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R10937:10938 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R10929:10935 CAG.Order.Poset <> carrier proj
+R10926:10926 CAG.Order.Ideal <> J:137 var
+binder 10922:10922 <> x:141
+R10950:10952 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10939:10947 Corelib.Init.Specif <> proj1_sig def
+R10949:10949 CAG.Order.Ideal <> I:139 var
+R10953:10961 Corelib.Init.Specif <> proj1_sig def
+R10965:10970 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R10972:10972 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R10971:10971 CAG.Order.Ideal <> J:137 var
+R10964:10964 CAG.Order.Ideal <> x:141 var
+R11048:11049 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R11052:11054 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R11074:11076 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R11089:11090 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R11066:11069 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11058:11064 CAG.Order.Poset <> carrier proj
+binder 11050:11051 <> I':142
+R11077:11083 CAG.Order.Ideal <> IsIdeal rec
+R11087:11088 CAG.Order.Ideal <> I':142 var
+binder 11043:11044 <> Iz:143
+R11103:11109 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R11111:11112 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 11110:11110 <> x:144
+R11126:11129 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R11113:11121 Corelib.Init.Specif <> proj1_sig def
+R11125:11125 CAG.Order.Ideal <> x:144 var
+R11132:11135 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11145:11145 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11130:11131 CAG.Order.Ideal <> Iz:143 var
+R11137:11142 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R11144:11144 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R11136:11136 CAG.Order.Ideal <> x:144 var
+R11048:11049 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R11052:11054 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R11074:11076 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R11089:11090 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R11066:11069 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11058:11064 CAG.Order.Poset <> carrier proj
+binder 11050:11051 <> I':145
+R11077:11083 CAG.Order.Ideal <> IsIdeal rec
+R11087:11088 CAG.Order.Ideal <> I':145 var
+binder 11043:11044 <> Iz:146
+R11103:11109 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R11111:11112 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 11110:11110 <> x:147
+R11126:11129 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R11113:11121 Corelib.Init.Specif <> proj1_sig def
+R11125:11125 CAG.Order.Ideal <> x:147 var
+R11132:11135 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11145:11145 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11130:11131 CAG.Order.Ideal <> Iz:146 var
+R11137:11142 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R11144:11144 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R11136:11136 CAG.Order.Ideal <> x:147 var
+R11186:11195 CAG.Order.DCPO <> IsDirected rec
+R11198:11212 CAG.Order.Ideal <> IdealCompletion def
+R11186:11195 CAG.Order.DCPO <> IsDirected rec
+R11198:11212 CAG.Order.Ideal <> IdealCompletion def
+R11294:11299 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R11301:11301 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R11288:11291 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R11293:11293 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R11294:11299 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R11301:11301 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R11288:11291 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R11293:11293 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R11318:11321 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R11323:11323 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R11318:11321 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R11323:11323 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R11348:11356 CAG.Order.Ideal <> ideal_bot proj
+R11363:11371 Corelib.Init.Specif <> proj2_sig def
+R11348:11356 CAG.Order.Ideal <> ideal_bot proj
+R11363:11371 Corelib.Init.Specif <> proj2_sig def
+R11515:11515 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R11526:11532 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R11534:11534 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R11517:11521 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R11523:11524 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R11515:11515 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R11526:11532 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R11534:11534 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R11517:11521 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R11523:11524 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R11562:11566 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R11568:11569 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R11562:11566 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R11568:11569 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R11598:11607 CAG.Order.Ideal <> ideal_join proj
+R11614:11622 Corelib.Init.Specif <> proj2_sig def
+R11598:11607 CAG.Order.Ideal <> ideal_join proj
+R11614:11622 Corelib.Init.Specif <> proj2_sig def
+R11719:11726 CAG.Order.Poset <> le_trans proj
+R11719:11726 CAG.Order.Poset <> le_trans proj
+R11782:11793 CAG.Order.Lattice <> jsl_join_ub1 proj
+R11782:11793 CAG.Order.Lattice <> jsl_join_ub1 proj
+R11839:11846 CAG.Order.Poset <> le_trans proj
+R11839:11846 CAG.Order.Poset <> le_trans proj
+R11902:11913 CAG.Order.Lattice <> jsl_join_ub2 proj
+R11902:11913 CAG.Order.Lattice <> jsl_join_ub2 proj
+R11958:11962 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R11991:11992 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R11993:11996 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R12025:12026 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R11997:12022 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R11963:11988 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R11958:11962 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R11991:11992 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R11993:11996 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R12025:12026 CAG.Order.Lattice <> ::order_scope:'⊔{'_x_'}'_x not
+R11997:12022 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R11963:11988 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R12064:12078 CAG.Order.Ideal <> ideal_generated def
+R12094:12097 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R12098:12100 Corelib.Init.Datatypes <> nil constr
+R12094:12097 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R12098:12100 Corelib.Init.Datatypes <> nil constr
+R12184:12189 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R12191:12191 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R12184:12189 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R12191:12191 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R12272:12278 CAG.Order.Poset <> le_refl proj
+R12272:12278 CAG.Order.Poset <> le_refl proj
+R12304:12315 CAG.Order.Lattice <> jsl_join_ub1 proj
+R12304:12315 CAG.Order.Lattice <> jsl_join_ub1 proj
+R12465:12489 Stdlib.Logic.FunctionalExtensionality <> functional_extensionality thm
+R12465:12489 Stdlib.Logic.FunctionalExtensionality <> functional_extensionality thm
+R12509:12536 Stdlib.Logic.PropExtensionality <> propositional_extensionality prfax
+R12509:12536 Stdlib.Logic.PropExtensionality <> propositional_extensionality prfax
+R12620:12629 CAG.Order.Ideal <> ideal_down proj
+R12636:12644 Corelib.Init.Specif <> proj2_sig def
+R12620:12629 CAG.Order.Ideal <> ideal_down proj
+R12636:12644 Corelib.Init.Specif <> proj2_sig def
+prf 12716:12741 <> ideal_completion_algebraic
+R12748:12762 CAG.Order.Lattice <> JoinSemilattice rec
+binder 12744:12744 <> J:148
+R12771:12781 CAG.Order.Compact <> IsAlgebraic def
+R12784:12793 CAG.Order.DCPO <> cl_to_dcpo def
+R12796:12821 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R12823:12823 CAG.Order.Ideal <> J:148 var
+R12992:12997 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R12999:12999 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R12986:12989 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R12991:12991 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R12992:12997 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R12999:12999 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R12986:12989 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R12991:12991 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R13025:13047 CAG.Order.Ideal <> principal_ideal_compact thm
+R13051:13054 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R13056:13056 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R13025:13047 CAG.Order.Ideal <> principal_ideal_compact thm
+R13051:13054 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R13056:13056 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R13107:13116 CAG.Order.Ideal <> ideal_down proj
+R13123:13131 Corelib.Init.Specif <> proj2_sig def
+R13136:13139 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R13141:13141 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R13146:13154 CAG.Order.Ideal <> ideal_bot proj
+R13161:13169 Corelib.Init.Specif <> proj2_sig def
+R13107:13116 CAG.Order.Ideal <> ideal_down proj
+R13123:13131 Corelib.Init.Specif <> proj2_sig def
+R13136:13139 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R13141:13141 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R13146:13154 CAG.Order.Ideal <> ideal_bot proj
+R13161:13169 Corelib.Init.Specif <> proj2_sig def
+R13338:13363 CAG.Order.Ideal <> compact_ideal_is_principal thm
+R13338:13363 CAG.Order.Ideal <> compact_ideal_is_principal thm
+R13406:13431 CAG.Order.Ideal <> compact_ideal_is_principal thm
+R13406:13431 CAG.Order.Ideal <> compact_ideal_is_principal thm
+R13478:13486 Corelib.Init.Specif <> proj1_sig def
+R13478:13486 Corelib.Init.Specif <> proj1_sig def
+R13541:13547 CAG.Order.Poset <> le_refl proj
+R13541:13547 CAG.Order.Poset <> le_refl proj
+R13573:13581 Corelib.Init.Specif <> proj1_sig def
+R13573:13581 Corelib.Init.Specif <> proj1_sig def
+R13636:13642 CAG.Order.Poset <> le_refl proj
+R13636:13642 CAG.Order.Poset <> le_refl proj
+R13662:13662 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R13673:13679 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R13681:13681 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R13664:13668 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R13670:13671 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R13662:13662 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R13673:13679 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R13681:13681 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R13664:13668 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R13670:13671 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R13725:13747 CAG.Order.Ideal <> principal_ideal_compact thm
+R13753:13757 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R13759:13760 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R13725:13747 CAG.Order.Ideal <> principal_ideal_compact thm
+R13753:13757 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R13759:13760 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R13819:13828 CAG.Order.Ideal <> ideal_down proj
+R13835:13843 Corelib.Init.Specif <> proj2_sig def
+R13850:13854 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R13856:13857 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R13884:13893 CAG.Order.Ideal <> ideal_join proj
+R13900:13908 Corelib.Init.Specif <> proj2_sig def
+R13819:13828 CAG.Order.Ideal <> ideal_down proj
+R13835:13843 Corelib.Init.Specif <> proj2_sig def
+R13850:13854 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R13856:13857 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R13884:13893 CAG.Order.Ideal <> ideal_join proj
+R13900:13908 Corelib.Init.Specif <> proj2_sig def
+R14024:14031 CAG.Order.Poset <> le_trans proj
+R14024:14031 CAG.Order.Poset <> le_trans proj
+R14061:14072 CAG.Order.Lattice <> jsl_join_ub1 proj
+R14061:14072 CAG.Order.Lattice <> jsl_join_ub1 proj
+R14154:14161 CAG.Order.Poset <> le_trans proj
+R14154:14161 CAG.Order.Poset <> le_trans proj
+R14191:14202 CAG.Order.Lattice <> jsl_join_ub2 proj
+R14191:14202 CAG.Order.Lattice <> jsl_join_ub2 proj
+R14307:14315 CAG.Order.Compact <> IsCompact def
+R14318:14327 CAG.Order.DCPO <> cl_to_dcpo def
+R14330:14355 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R14363:14368 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14370:14370 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14307:14315 CAG.Order.Compact <> IsCompact def
+R14318:14327 CAG.Order.DCPO <> cl_to_dcpo def
+R14330:14355 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R14363:14368 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14370:14370 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14388:14410 CAG.Order.Ideal <> principal_ideal_compact thm
+R14388:14410 CAG.Order.Ideal <> principal_ideal_compact thm
+R14456:14460 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R14489:14490 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R14448:14453 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14455:14455 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14461:14486 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R14456:14460 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R14489:14490 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R14448:14453 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14455:14455 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14461:14486 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R14538:14547 CAG.Order.Ideal <> ideal_down proj
+R14554:14562 Corelib.Init.Specif <> proj2_sig def
+R14538:14547 CAG.Order.Ideal <> ideal_down proj
+R14554:14562 Corelib.Init.Specif <> proj2_sig def
+R14618:14622 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R14651:14652 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R14610:14615 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14617:14617 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14623:14648 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R14618:14622 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R14651:14652 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R14610:14615 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14617:14617 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14623:14648 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R14677:14682 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14684:14684 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14677:14682 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14684:14684 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14754:14760 CAG.Order.Poset <> le_refl proj
+R14754:14760 CAG.Order.Poset <> le_refl proj
+def 14833:14844 <> jsl_to_ideal
+R14851:14865 CAG.Order.Lattice <> JoinSemilattice rec
+binder 14847:14847 <> J:149
+R14881:14884 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14873:14879 CAG.Order.Poset <> carrier proj
+R14870:14870 CAG.Order.Ideal <> J:149 var
+R14885:14899 CAG.Order.Ideal <> IdealCompletion def
+R14901:14901 CAG.Order.Ideal <> J:149 var
+binder 14912:14912 <> x:150
+R14918:14923 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14925:14925 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R14924:14924 CAG.Order.Ideal <> J:149 var
+R14917:14917 CAG.Order.Ideal <> x:150 var
+prf 14935:14951 <> jsl_to_ideal_mono
+R14958:14972 CAG.Order.Lattice <> JoinSemilattice rec
+binder 14954:14954 <> J:151
+R14985:14991 CAG.Order.Poset <> carrier proj
+R14982:14982 CAG.Order.Ideal <> J:151 var
+binder 14976:14976 <> x:152
+binder 14978:14978 <> y:153
+R15011:15014 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15002:15006 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R15008:15009 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R15001:15001 CAG.Order.Ideal <> x:152 var
+R15010:15010 CAG.Order.Ideal <> y:153 var
+R15007:15007 CAG.Order.Ideal <> J:151 var
+R15031:15035 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R15045:15046 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R15015:15026 CAG.Order.Ideal <> jsl_to_ideal def
+R15028:15028 CAG.Order.Ideal <> J:151 var
+R15030:15030 CAG.Order.Ideal <> x:152 var
+R15047:15058 CAG.Order.Ideal <> jsl_to_ideal def
+R15060:15060 CAG.Order.Ideal <> J:151 var
+R15062:15062 CAG.Order.Ideal <> y:153 var
+R15036:15043 CAG.Order.Ideal <> ::order_scope:'IdCompl'_x not
+R15044:15044 CAG.Order.Ideal <> J:151 var
+R15110:15117 CAG.Order.Poset <> le_trans proj
+R15110:15117 CAG.Order.Poset <> le_trans proj
+prf 15241:15259 <> finite_join_le_join
+R15266:15280 CAG.Order.Lattice <> JoinSemilattice rec
+binder 15262:15262 <> J:154
+R15293:15299 CAG.Order.Poset <> carrier proj
+R15290:15290 CAG.Order.Ideal <> J:154 var
+binder 15284:15284 <> x:155
+binder 15286:15286 <> y:156
+R15309:15312 Corelib.Init.Datatypes <> list ind
+R15317:15323 CAG.Order.Poset <> carrier proj
+R15314:15314 CAG.Order.Ideal <> J:154 var
+binder 15304:15305 <> xs:157
+R15333:15333 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15384:15392 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 15341:15341 <> w:158
+R15356:15359 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15344:15350 Stdlib.Lists.List <> In def
+R15354:15355 CAG.Order.Ideal <> xs:157 var
+R15352:15352 CAG.Order.Ideal <> w:158 var
+R15370:15373 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R15361:15365 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R15367:15368 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R15360:15360 CAG.Order.Ideal <> w:158 var
+R15369:15369 CAG.Order.Ideal <> x:155 var
+R15366:15366 CAG.Order.Ideal <> J:154 var
+R15375:15379 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R15381:15382 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R15374:15374 CAG.Order.Ideal <> w:158 var
+R15383:15383 CAG.Order.Ideal <> y:156 var
+R15380:15380 CAG.Order.Ideal <> J:154 var
+R15409:15413 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R15415:15417 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R15428:15428 CAG.Order.Poset <> ::order_scope:x_'≤['_x_']'_x not
+R15393:15403 CAG.Order.Lattice <> finite_join def
+R15405:15405 CAG.Order.Ideal <> J:154 var
+R15407:15408 CAG.Order.Ideal <> xs:157 var
+R15419:15423 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R15425:15426 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R15424:15424 CAG.Order.Ideal <> J:154 var
+R15418:15418 CAG.Order.Ideal <> x:155 var
+R15427:15427 CAG.Order.Ideal <> y:156 var
+R15414:15414 CAG.Order.Ideal <> J:154 var
+R15502:15511 CAG.Order.Lattice <> jsl_bot_le proj
+R15502:15511 CAG.Order.Lattice <> jsl_bot_le proj
+R15535:15546 CAG.Order.Lattice <> jsl_join_lub proj
+R15535:15546 CAG.Order.Lattice <> jsl_join_lub proj
+R15574:15582 Corelib.Init.Logic <> or_introl constr
+R15584:15590 Corelib.Init.Logic <> eq_refl constr
+R15574:15582 Corelib.Init.Logic <> or_introl constr
+R15584:15590 Corelib.Init.Logic <> eq_refl constr
+R15623:15630 CAG.Order.Poset <> le_trans proj
+R15623:15630 CAG.Order.Poset <> le_trans proj
+R15659:15670 CAG.Order.Lattice <> jsl_join_ub1 proj
+R15659:15670 CAG.Order.Lattice <> jsl_join_ub1 proj
+R15691:15698 CAG.Order.Poset <> le_trans proj
+R15691:15698 CAG.Order.Poset <> le_trans proj
+R15727:15738 CAG.Order.Lattice <> jsl_join_ub2 proj
+R15727:15738 CAG.Order.Lattice <> jsl_join_ub2 proj
+prf 15811:15837 <> jsl_to_ideal_preserves_join
+R15844:15858 CAG.Order.Lattice <> JoinSemilattice rec
+binder 15840:15840 <> J:159
+R15871:15877 CAG.Order.Poset <> carrier proj
+R15868:15868 CAG.Order.Ideal <> J:159 var
+binder 15862:15862 <> x:160
+binder 15864:15864 <> y:161
+R15914:15920 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15887:15898 CAG.Order.Ideal <> jsl_to_ideal def
+R15900:15900 CAG.Order.Ideal <> J:159 var
+R15904:15908 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R15910:15911 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R15909:15909 CAG.Order.Ideal <> J:159 var
+R15903:15903 CAG.Order.Ideal <> x:160 var
+R15912:15912 CAG.Order.Ideal <> y:161 var
+R15921:15927 CAG.Order.Lattice <> cl_join def
+R15930:15955 CAG.Order.Ideal <> IdealCompl_CompleteLattice def
+R15957:15957 CAG.Order.Ideal <> J:159 var
+R15961:15972 CAG.Order.Ideal <> jsl_to_ideal def
+R15974:15974 CAG.Order.Ideal <> J:159 var
+R15976:15976 CAG.Order.Ideal <> x:160 var
+R15980:15991 CAG.Order.Ideal <> jsl_to_ideal def
+R15993:15993 CAG.Order.Ideal <> J:159 var
+R15995:15995 CAG.Order.Ideal <> y:161 var
+R16015:16021 CAG.Order.Lattice <> cl_join def
+R16024:16035 CAG.Order.Ideal <> jsl_to_ideal def
+R16047:16056 CAG.Order.Poset <> le_antisym proj
+R16059:16073 CAG.Order.Ideal <> IdealCompletion def
+R16047:16056 CAG.Order.Poset <> le_antisym proj
+R16059:16073 CAG.Order.Ideal <> IdealCompletion def
+R16150:16164 CAG.Order.Ideal <> ideal_generated def
+R16180:16183 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R16185:16188 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R16189:16191 Corelib.Init.Datatypes <> nil constr
+R16180:16183 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R16185:16188 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R16189:16191 Corelib.Init.Datatypes <> nil constr
+R16284:16289 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R16291:16291 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R16284:16289 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R16291:16291 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R16337:16343 CAG.Order.Poset <> le_refl proj
+R16337:16343 CAG.Order.Poset <> le_refl proj
+R16364:16369 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R16371:16371 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R16364:16369 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R16371:16371 CAG.Order.Ideal <> ::order_scope:x_'↓i{'_x_'}' not
+R16418:16424 CAG.Order.Poset <> le_refl proj
+R16418:16424 CAG.Order.Poset <> le_refl proj
+R16467:16471 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R16473:16474 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R16450:16457 CAG.Order.Poset <> le_trans proj
+R16467:16471 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R16473:16474 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R16450:16457 CAG.Order.Poset <> le_trans proj
+R16514:16525 CAG.Order.Lattice <> jsl_join_lub proj
+R16514:16525 CAG.Order.Lattice <> jsl_join_lub proj
+R16549:16560 CAG.Order.Lattice <> jsl_join_ub1 proj
+R16549:16560 CAG.Order.Lattice <> jsl_join_ub1 proj
+R16601:16605 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R16607:16608 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R16609:16612 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R16614:16614 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R16584:16591 CAG.Order.Poset <> le_trans proj
+R16601:16605 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R16607:16608 CAG.Order.Lattice <> ::order_scope:x_'∨{'_x_'}'_x not
+R16609:16612 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R16614:16614 CAG.Order.Lattice <> ::order_scope:'⊥{'_x_'}' not
+R16584:16591 CAG.Order.Poset <> le_trans proj
+R16641:16652 CAG.Order.Lattice <> jsl_join_ub1 proj
+R16641:16652 CAG.Order.Lattice <> jsl_join_ub1 proj
+R16679:16690 CAG.Order.Lattice <> jsl_join_ub2 proj
+R16679:16690 CAG.Order.Lattice <> jsl_join_ub2 proj
+R16775:16789 CAG.Order.Ideal <> ideal_generated def
+R16863:16873 CAG.Order.Lattice <> finite_join def
+R16847:16854 CAG.Order.Poset <> le_trans proj
+R16863:16873 CAG.Order.Lattice <> finite_join def
+R16847:16854 CAG.Order.Poset <> le_trans proj
+R16912:16930 CAG.Order.Ideal <> finite_join_le_join thm
+R16912:16930 CAG.Order.Ideal <> finite_join_le_join thm

@@ -1,0 +1,281 @@
+DIGEST addadb21dd55d74e9a49b9970629213d
+FCAG.Vanishing.RestrictionToHyperplane
+R692:695 Stdlib.Lists.List <> <> lib
+R697:701 Stdlib.Arith.Arith <> <> lib
+R703:705 Stdlib.micromega.Lia <> <> lib
+R732:738 CAG.Complex <> <> lib
+R765:780 CAG.ManifoldTopology <> <> lib
+R807:828 CAG.Divisor.LineBundleCech <> <> lib
+R855:875 CAG.Divisor.DivisorBundle <> <> lib
+R902:918 CAG.Divisor.Curvature <> <> lib
+R945:970 CAG.CanonicalBundle.Adjunction <> <> lib
+R997:1022 CAG.Vanishing.KodairaVanishing <> <> lib
+R1049:1077 CAG.Vanishing.LefschetzHyperplane <> <> lib
+R1104:1129 CAG.Kahler.Lefschetz.Operators <> <> lib
+abbrev 1463:1473 <> HDolb_twist
+R1487:1491 CAG.Vanishing.KodairaVanishing <> HDolb defax
+ax 1580:1596 <> restriction_forms
+R1612:1625 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1608:1608 <> M:1
+R1637:1661 CAG.Vanishing.LefschetzHyperplane <> smooth_hyperplane_section defax
+R1663:1663 CAG.Vanishing.RestrictionToHyperplane <> M:1 var
+binder 1633:1633 <> V:2
+R1671:1673 Corelib.Init.Datatypes <> nat ind
+binder 1667:1667 <> p:3
+R1681:1697 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R1700:1710 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R1713:1724 CAG.Vanishing.LefschetzHyperplane <> shs_manifold defax
+R1726:1726 CAG.Vanishing.RestrictionToHyperplane <> M:1 var
+R1728:1728 CAG.Vanishing.RestrictionToHyperplane <> V:2 var
+ax 2040:2056 <> forms_twisted_neg
+R2072:2085 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2068:2068 <> M:6
+R2097:2121 CAG.Vanishing.LefschetzHyperplane <> smooth_hyperplane_section defax
+R2123:2123 CAG.Vanishing.RestrictionToHyperplane <> M:6 var
+binder 2093:2093 <> V:7
+R2131:2133 Corelib.Init.Datatypes <> nat ind
+binder 2127:2127 <> p:8
+R2141:2157 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R2160:2170 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R2172:2172 CAG.Vanishing.RestrictionToHyperplane <> M:6 var
+prf 2360:2373 <> exact_seq_star
+R2389:2402 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2385:2385 <> M:11
+R2414:2438 CAG.Vanishing.LefschetzHyperplane <> smooth_hyperplane_section defax
+R2440:2440 CAG.Vanishing.RestrictionToHyperplane <> M:11 var
+binder 2410:2410 <> V:12
+R2448:2450 Corelib.Init.Datatypes <> nat ind
+binder 2444:2444 <> p:13
+R2532:2535 Corelib.Init.Logic <> True ind
+R2559:2559 Corelib.Init.Logic <> I constr
+R2559:2559 Corelib.Init.Logic <> I constr
+ax 2646:2657 <> les_star_map
+R2673:2686 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2669:2669 <> M:14
+R2698:2722 CAG.Vanishing.LefschetzHyperplane <> smooth_hyperplane_section defax
+R2724:2724 CAG.Vanishing.RestrictionToHyperplane <> M:14 var
+binder 2694:2694 <> V:15
+R2734:2736 Corelib.Init.Datatypes <> nat ind
+binder 2728:2728 <> p:16
+binder 2730:2730 <> q:17
+R2781:2788 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2744:2748 CAG.Vanishing.KodairaVanishing <> HDolb defax
+R2750:2750 CAG.Vanishing.RestrictionToHyperplane <> M:14 var
+R2753:2769 CAG.Vanishing.RestrictionToHyperplane <> forms_twisted_neg defax
+R2771:2771 CAG.Vanishing.RestrictionToHyperplane <> M:14 var
+R2773:2773 CAG.Vanishing.RestrictionToHyperplane <> V:15 var
+R2775:2775 CAG.Vanishing.RestrictionToHyperplane <> p:16 var
+R2778:2778 CAG.Vanishing.RestrictionToHyperplane <> p:16 var
+R2780:2780 CAG.Vanishing.RestrictionToHyperplane <> q:17 var
+R2789:2793 CAG.Vanishing.KodairaVanishing <> HDolb defax
+R2795:2795 CAG.Vanishing.RestrictionToHyperplane <> M:14 var
+R2798:2814 CAG.Vanishing.RestrictionToHyperplane <> forms_twisted_neg defax
+R2816:2816 CAG.Vanishing.RestrictionToHyperplane <> M:14 var
+R2818:2818 CAG.Vanishing.RestrictionToHyperplane <> V:15 var
+R2823:2823 CAG.Vanishing.RestrictionToHyperplane <> p:16 var
+R2825:2825 CAG.Vanishing.RestrictionToHyperplane <> q:17 var
+ax 3119:3133 <> forms_V_twisted
+R3149:3162 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3145:3145 <> M:20
+R3174:3198 CAG.Vanishing.LefschetzHyperplane <> smooth_hyperplane_section defax
+R3200:3200 CAG.Vanishing.RestrictionToHyperplane <> M:20 var
+binder 3170:3170 <> V:21
+R3208:3210 Corelib.Init.Datatypes <> nat ind
+binder 3204:3204 <> p:22
+R3218:3234 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R3237:3247 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R3250:3261 CAG.Vanishing.LefschetzHyperplane <> shs_manifold defax
+R3263:3263 CAG.Vanishing.RestrictionToHyperplane <> M:20 var
+R3265:3265 CAG.Vanishing.RestrictionToHyperplane <> V:21 var
+prf 3479:3496 <> exact_seq_starstar
+R3512:3525 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3508:3508 <> M:25
+R3537:3561 CAG.Vanishing.LefschetzHyperplane <> smooth_hyperplane_section defax
+R3563:3563 CAG.Vanishing.RestrictionToHyperplane <> M:25 var
+binder 3533:3533 <> V:26
+R3571:3573 Corelib.Init.Datatypes <> nat ind
+binder 3567:3567 <> p:27
+R3655:3658 Corelib.Init.Logic <> True ind
+R3682:3682 Corelib.Init.Logic <> I constr
+R3682:3682 Corelib.Init.Logic <> I constr
+prf 3997:4013 <> neg_V_is_negative
+R4029:4042 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 4025:4025 <> M:28
+R4054:4078 CAG.Vanishing.LefschetzHyperplane <> smooth_hyperplane_section defax
+R4080:4080 CAG.Vanishing.RestrictionToHyperplane <> M:28 var
+binder 4050:4050 <> V:29
+R4088:4107 CAG.Divisor.Curvature <> negative_line_bundle def
+R4109:4109 CAG.Vanishing.RestrictionToHyperplane <> M:28 var
+R4112:4128 CAG.Vanishing.RestrictionToHyperplane <> forms_twisted_neg defax
+R4130:4130 CAG.Vanishing.RestrictionToHyperplane <> M:28 var
+R4132:4132 CAG.Vanishing.RestrictionToHyperplane <> V:29 var
+prf 4236:4263 <> kodaira_forms_twisted_vanish
+R4279:4292 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 4275:4275 <> M:30
+R4304:4328 CAG.Vanishing.LefschetzHyperplane <> smooth_hyperplane_section defax
+R4330:4330 CAG.Vanishing.RestrictionToHyperplane <> M:30 var
+binder 4300:4300 <> V:31
+R4340:4342 Corelib.Init.Datatypes <> nat ind
+binder 4334:4334 <> p:32
+binder 4336:4336 <> q:33
+R4372:4379 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4356:4358 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R4352:4354 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R4351:4351 CAG.Vanishing.RestrictionToHyperplane <> p:32 var
+R4355:4355 CAG.Vanishing.RestrictionToHyperplane <> q:33 var
+R4359:4364 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R4366:4366 CAG.Vanishing.RestrictionToHyperplane <> M:30 var
+R4392:4396 CAG.Vanishing.KodairaVanishing <> HDolb defax
+R4398:4398 CAG.Vanishing.RestrictionToHyperplane <> M:30 var
+R4401:4417 CAG.Vanishing.RestrictionToHyperplane <> forms_twisted_neg defax
+R4419:4419 CAG.Vanishing.RestrictionToHyperplane <> M:30 var
+R4421:4421 CAG.Vanishing.RestrictionToHyperplane <> V:31 var
+R4423:4423 CAG.Vanishing.RestrictionToHyperplane <> p:32 var
+R4426:4426 CAG.Vanishing.RestrictionToHyperplane <> p:32 var
+R4428:4428 CAG.Vanishing.RestrictionToHyperplane <> q:33 var
+binder 4387:4388 <> α:34
+R4437:4439 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4435:4436 CAG.Vanishing.RestrictionToHyperplane <> α:34 var
+R4440:4449 CAG.Vanishing.KodairaVanishing <> HDolb_zero def
+R4451:4451 CAG.Vanishing.RestrictionToHyperplane <> M:30 var
+R4455:4455 CAG.Vanishing.RestrictionToHyperplane <> p:32 var
+R4457:4457 CAG.Vanishing.RestrictionToHyperplane <> q:33 var
+prf 4564:4593 <> kodaira_V_forms_twisted_vanish
+R4609:4622 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 4605:4605 <> M:35
+R4634:4658 CAG.Vanishing.LefschetzHyperplane <> smooth_hyperplane_section defax
+R4660:4660 CAG.Vanishing.RestrictionToHyperplane <> M:35 var
+binder 4630:4630 <> V:36
+R4670:4672 Corelib.Init.Datatypes <> nat ind
+binder 4664:4664 <> p:37
+binder 4666:4666 <> q:38
+R4706:4713 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4686:4688 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R4682:4684 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R4681:4681 CAG.Vanishing.RestrictionToHyperplane <> p:37 var
+R4685:4685 CAG.Vanishing.RestrictionToHyperplane <> q:38 var
+R4697:4699 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R4689:4694 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R4696:4696 CAG.Vanishing.RestrictionToHyperplane <> M:35 var
+R4726:4730 CAG.Vanishing.KodairaVanishing <> HDolb defax
+R4733:4744 CAG.Vanishing.LefschetzHyperplane <> shs_manifold defax
+R4746:4746 CAG.Vanishing.RestrictionToHyperplane <> M:35 var
+R4748:4748 CAG.Vanishing.RestrictionToHyperplane <> V:36 var
+R4752:4766 CAG.Vanishing.RestrictionToHyperplane <> forms_V_twisted defax
+R4768:4768 CAG.Vanishing.RestrictionToHyperplane <> M:35 var
+R4770:4770 CAG.Vanishing.RestrictionToHyperplane <> V:36 var
+R4772:4772 CAG.Vanishing.RestrictionToHyperplane <> p:37 var
+R4777:4777 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R4776:4776 CAG.Vanishing.RestrictionToHyperplane <> p:37 var
+R4781:4781 CAG.Vanishing.RestrictionToHyperplane <> q:38 var
+binder 4721:4722 <> α:39
+R4790:4792 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4788:4789 CAG.Vanishing.RestrictionToHyperplane <> α:39 var
+R4793:4802 CAG.Vanishing.KodairaVanishing <> HDolb_zero def
+R4805:4816 CAG.Vanishing.LefschetzHyperplane <> shs_manifold defax
+R4818:4818 CAG.Vanishing.RestrictionToHyperplane <> M:35 var
+R4820:4820 CAG.Vanishing.RestrictionToHyperplane <> V:36 var
+ax 5138:5158 <> restriction_dolbeault
+R5174:5187 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 5170:5170 <> M:40
+R5199:5223 CAG.Vanishing.LefschetzHyperplane <> smooth_hyperplane_section defax
+R5225:5225 CAG.Vanishing.RestrictionToHyperplane <> M:40 var
+binder 5195:5195 <> V:41
+R5235:5237 Corelib.Init.Datatypes <> nat ind
+binder 5229:5229 <> p:42
+binder 5231:5231 <> q:43
+R5282:5289 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5245:5249 CAG.Vanishing.KodairaVanishing <> HDolb defax
+R5251:5251 CAG.Vanishing.RestrictionToHyperplane <> M:40 var
+R5254:5270 CAG.Vanishing.RestrictionToHyperplane <> forms_twisted_neg defax
+R5272:5272 CAG.Vanishing.RestrictionToHyperplane <> M:40 var
+R5274:5274 CAG.Vanishing.RestrictionToHyperplane <> V:41 var
+R5279:5279 CAG.Vanishing.RestrictionToHyperplane <> p:42 var
+R5281:5281 CAG.Vanishing.RestrictionToHyperplane <> q:43 var
+R5290:5294 CAG.Vanishing.KodairaVanishing <> HDolb defax
+R5297:5308 CAG.Vanishing.LefschetzHyperplane <> shs_manifold defax
+R5310:5310 CAG.Vanishing.RestrictionToHyperplane <> M:40 var
+R5312:5312 CAG.Vanishing.RestrictionToHyperplane <> V:41 var
+R5316:5330 CAG.Vanishing.RestrictionToHyperplane <> forms_V_twisted defax
+R5332:5332 CAG.Vanishing.RestrictionToHyperplane <> M:40 var
+R5334:5334 CAG.Vanishing.RestrictionToHyperplane <> V:41 var
+R5339:5339 CAG.Vanishing.RestrictionToHyperplane <> p:42 var
+R5341:5341 CAG.Vanishing.RestrictionToHyperplane <> q:43 var
+prf 5430:5454 <> restriction_dolbeault_iso
+R5470:5483 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 5466:5466 <> M:46
+R5495:5519 CAG.Vanishing.LefschetzHyperplane <> smooth_hyperplane_section defax
+R5521:5521 CAG.Vanishing.RestrictionToHyperplane <> M:46 var
+binder 5491:5491 <> V:47
+R5531:5533 Corelib.Init.Datatypes <> nat ind
+binder 5525:5525 <> p:48
+binder 5527:5527 <> q:49
+R5567:5649 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5547:5549 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R5543:5545 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R5542:5542 CAG.Vanishing.RestrictionToHyperplane <> p:48 var
+R5546:5546 CAG.Vanishing.RestrictionToHyperplane <> q:49 var
+R5558:5560 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R5550:5555 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R5557:5557 CAG.Vanishing.RestrictionToHyperplane <> M:46 var
+R5650:5653 Corelib.Init.Logic <> True ind
+R5677:5677 Corelib.Init.Logic <> I constr
+R5677:5677 Corelib.Init.Logic <> I constr
+prf 5777:5807 <> restriction_dolbeault_injective
+R5823:5836 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 5819:5819 <> M:50
+R5848:5872 CAG.Vanishing.LefschetzHyperplane <> smooth_hyperplane_section defax
+R5874:5874 CAG.Vanishing.RestrictionToHyperplane <> M:50 var
+binder 5844:5844 <> V:51
+R5884:5886 Corelib.Init.Datatypes <> nat ind
+binder 5878:5878 <> p:52
+binder 5880:5880 <> q:53
+R5920:5927 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5900:5902 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5896:5898 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R5895:5895 CAG.Vanishing.RestrictionToHyperplane <> p:52 var
+R5899:5899 CAG.Vanishing.RestrictionToHyperplane <> q:53 var
+R5911:5913 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R5903:5908 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R5910:5910 CAG.Vanishing.RestrictionToHyperplane <> M:50 var
+R5940:5944 CAG.Vanishing.KodairaVanishing <> HDolb defax
+R5946:5946 CAG.Vanishing.RestrictionToHyperplane <> M:50 var
+R5949:5965 CAG.Vanishing.RestrictionToHyperplane <> forms_twisted_neg defax
+R5967:5967 CAG.Vanishing.RestrictionToHyperplane <> M:50 var
+R5969:5969 CAG.Vanishing.RestrictionToHyperplane <> V:51 var
+R5974:5974 CAG.Vanishing.RestrictionToHyperplane <> p:52 var
+R5976:5976 CAG.Vanishing.RestrictionToHyperplane <> q:53 var
+binder 5935:5936 <> α:54
+R6036:6043 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6015:6017 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5983:6003 CAG.Vanishing.RestrictionToHyperplane <> restriction_dolbeault defax
+R6005:6005 CAG.Vanishing.RestrictionToHyperplane <> M:50 var
+R6007:6007 CAG.Vanishing.RestrictionToHyperplane <> V:51 var
+R6009:6009 CAG.Vanishing.RestrictionToHyperplane <> p:52 var
+R6011:6011 CAG.Vanishing.RestrictionToHyperplane <> q:53 var
+R6013:6014 CAG.Vanishing.RestrictionToHyperplane <> α:54 var
+R6018:6027 CAG.Vanishing.KodairaVanishing <> HDolb_zero def
+R6046:6048 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6044:6045 CAG.Vanishing.RestrictionToHyperplane <> α:54 var
+R6049:6058 CAG.Vanishing.KodairaVanishing <> HDolb_zero def
+R6060:6060 CAG.Vanishing.RestrictionToHyperplane <> M:50 var
+R6064:6064 CAG.Vanishing.RestrictionToHyperplane <> p:52 var
+R6066:6066 CAG.Vanishing.RestrictionToHyperplane <> q:53 var
+def 6130:6203 <> restriction_on_holomorphic_form_cohomology_for_positive_hyperplane_section
+R6214:6227 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 6210:6210 <> M:55
+R6235:6259 CAG.Vanishing.LefschetzHyperplane <> smooth_hyperplane_section defax
+R6261:6261 CAG.Vanishing.RestrictionToHyperplane <> M:55 var
+binder 6231:6231 <> V:56
+R6282:6284 Corelib.Init.Datatypes <> nat ind
+binder 6276:6276 <> p:57
+binder 6278:6278 <> q:58
+R6317:6417 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6297:6299 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R6293:6295 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R6292:6292 CAG.Vanishing.RestrictionToHyperplane <> p:57 var
+R6296:6296 CAG.Vanishing.RestrictionToHyperplane <> q:58 var
+R6308:6310 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R6300:6305 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R6307:6307 CAG.Vanishing.RestrictionToHyperplane <> M:55 var
+R6418:6421 Corelib.Init.Logic <> True ind

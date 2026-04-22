@@ -1,0 +1,2413 @@
+#+TITLE: Harmonic Theory on Compact Complex Manifolds — Rocq TODO
+#+AUTHOR: Claude Code / Rocq planning
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize the Hodge-theoretic and elliptic-analysis infrastructure in this section
+  well enough to support:
+  - Hodge decomposition on compact complex manifolds
+  - harmonic forms and Green operators
+  - Sobolev-space arguments
+  - Garding inequality
+  - Weitzenbock identity
+  - Kodaira-type vanishing consequences in the Kahler case
+
+  This section is not purely algebraic. It mixes:
+  - differential geometry
+  - functional analysis
+  - elliptic regularity
+  - hermitian/Kahler identities
+
+  So the implementation plan must clearly separate:
+  - what to formalize now
+  - what to import or axiomatize as analysis
+  - what to expose as interfaces for later chapters
+
+* Global strategy
+** TODO Split the development into four layers
+*** TODO geometric layer
+    - compact complex manifold
+    - hermitian metric
+    - covariant derivatives
+    - bundle-valued forms
+*** TODO analytic layer
+    - L2 inner product
+    - Sobolev norms and completions
+    - compactness of Sobolev inclusions
+*** TODO elliptic layer
+    - Laplacian
+    - weak solutions
+    - Garding inequality
+    - regularity
+*** TODO Hodge layer
+    - compact self-adjoint operator T
+    - spectral theorem
+    - harmonic decomposition
+    - Green operator
+
+** TODO Decide what to prove vs assume
+   Recommended:
+*** TODO Prove now
+    - geometric definitions
+    - formal identities involving ∂, ∂*, Δ
+    - Hilbert-space deductions once Garding and regularity are assumed
+    - decomposition consequences
+*** TODO Assume / import initially
+    - Global Sobolev lemma
+    - Global Rellich lemma
+    - Garding inequality
+    - regularity lemma
+    - spectral theorem for compact self-adjoint operators
+*** TODO Later prove
+    - Garding inequality from Weitzenbock calculation
+    - regularity from smoothing/distribution theory
+    - precise Weitzenbock formula in the Kahler case
+
+** TODO Fix notation conventions
+   Need notation for:
+   - Sobolev space H^s(M,E) or %_s(M,E)
+   - Dirichlet form Q(φ,ψ)
+   - Dirichlet norm D(φ)
+   - Laplacian Δ
+   - harmonic space H^{p,q}(M)
+   - Green operator G
+   - operator T = (I + Δ)^{-1} as constructed weakly
+   - covariant derivative ∇
+   - local unitary frames e_i, v_i, φ_i
+
+* Part I — Geometric prerequisites
+** TODO Define compact complex manifold M
+** TODO Define hermitian metric on M
+** TODO Define hermitian connection on tangent bundle
+** TODO Define hermitian vector bundle E over M
+** TODO Define connection on E
+** TODO Define induced connection on E ⊗ T*(M)
+** TODO Define iterated covariant derivatives
+   Need notation:
+   - f_{a \bar j}
+   - ∇_i(∇_{\bar j} f)
+   - etc.
+
+** TODO Define orthonormal local frames
+   - {ξ_a} for E
+   - {v_i} for tangent bundle
+   - {φ_i} for cotangent/unitary coframe
+
+** TODO Define commutator rule for covariant derivatives
+   Formal target:
+   [∇_i, ∇_{\bar j}] f = A^{i\bar j}(f)
+   where A is order zero
+
+** TODO Package curvature/connection commutator identities
+   Need a reusable lemma:
+   commutator of covariant derivatives equals curvature/order-zero operator
+
+* Part II — Sobolev norms and spaces
+** TODO Define global Sobolev s-norm on sections of E
+   Need exact definition:
+   ||f||_s^2 = Σ_{k≤s} ∫_M ||∇^k f||^2
+
+** TODO Define iterated covariant derivative ∇^k f precisely
+** TODO Prove / state equivalence with local Sobolev norms
+   This is used to compare with ordinary Sobolev theory via partition of unity.
+
+** TODO Define Sobolev completion H^s(M,E)
+   The text writes %_s(M,E)
+   Pick one final notation in code.
+
+** TODO State Global Sobolev Lemma
+   H^{[(dim M)/2] + 1 + s}(M,E) ⊆ C^s(M,E)
+   and
+   ⋂_s H^s(M,E) = C^\infty(M,E)
+
+** BLOCKED Full proof requires analytic Sobolev embedding
+** TODO Expose as theorem/interface for now
+
+** TODO State Global Rellich Lemma
+   For s > r, inclusion H^s(M,E) -> H^r(M,E) is compact
+
+** BLOCKED Full proof requires compact manifold Sobolev theory
+** TODO Expose as theorem/interface for now
+
+* Part III — Dolbeault Laplacian and Dirichlet form
+** DONE Define A^{p,q}(M)
+** DONE Define L2 inner product on A^{p,q}(M)
+** DONE Define ∂ and ∂*
+** DONE Define Laplacian
+   Δ = ∂∂* + ∂*∂
+   or the convention used in this text
+
+** DONE Define Dirichlet inner product
+   Q(φ,ψ) = (φ,ψ) + (∂φ,∂ψ) + (∂*φ,∂*ψ)
+   = (φ,(I+Δ)ψ)
+
+** DONE Define Dirichlet norm D(φ) = Q(φ,φ)
+
+** TODO Prove basic positivity properties
+*** DONE Q(φ,φ) ≥ 0
+*** TODO D(φ)=0 iff φ=0 under I+Δ version
+*** DONE self-adjointness identities of Δ in the smooth setting
+
+* Part IV — Garding inequality and weak regularity
+** DONE State Garding inequality
+   ||φ||_1^2 ≤ C · D(φ)
+   for φ ∈ A^{p,q}(M)
+
+** TODO Clarify norm level
+   The text uses Sobolev 1-norm on forms.
+   Need exact theorem statement with constants and dependence.
+
+** BLOCKED Full proof depends on Weitzenbock and integration by parts estimates
+** TODO Expose as theorem/interface initially
+
+** DONE State Regularity Lemma I
+   If φ ∈ H^{p,q}_r(M) and ψ ∈ H^{p,q}_0(M) is a weak solution of
+   Δψ = φ
+   in the sense that
+   (ψ,Δη) = (φ,η)
+   for all smooth η,
+   then ψ ∈ H^{p,q}_{r+2}(M)
+
+** BLOCKED Full proof deferred to smoothing/distributions chapter
+** TODO Expose as theorem/interface initially
+
+** TODO Record immediate consequence
+   Any weak eigenform of Δ is smooth
+   because repeated regularity upgrade plus Sobolev lemma implies smoothness
+
+** TODO Define weak harmonic form
+** TODO Prove weak harmonic implies smooth harmonic
+   assuming regularity + Sobolev lemma
+
+* Part V — Hilbert-space construction of the inverse of I + Δ
+** TODO Formalize the completion H^{p,q}_1(M)
+   with Dirichlet norm
+** TODO Prove / assume Dirichlet norm is equivalent to Sobolev 1-norm
+   via Garding inequality and easy converse estimate
+
+** TODO State Hilbert-space representation lemma
+   For φ ∈ H^{p,q}_0(M), there exists unique ψ ∈ H^{p,q}_1(M) such that
+   (φ,η) = Q(ψ,η) = (ψ,(I+Δ)η)
+   for all smooth η
+
+** TODO Decide whether to derive this from Riesz representation theorem
+   Recommended: import Hilbert-space Riesz theorem
+
+** TODO Define operator T
+   T : H^{p,q}_0(M) -> H^{p,q}_0(M)
+   by T(φ)=ψ from the representation lemma
+
+** TODO Prove T is bounded into H^1
+** TODO Prove T as H^0 -> H^0 is compact
+   using boundedness into H^1 + Rellich inclusion H^1 -> H^0
+
+** TODO Prove T is self-adjoint
+
+** TODO Package theorem
+   compact_selfadjoint_resolvent_for_Dolbeault_Laplacian
+
+* Part VI — Spectral theorem consequences
+** DONE State/import spectral theorem for compact self-adjoint operators
+   Need decomposition:
+   H^{p,q}_0(M) = ⊕ E(μ_n)
+   with μ_n real eigenvalues, finite-dimensional eigenspaces
+
+** BLOCKED This is Hilbert-space functional analysis
+** TODO Import as theorem/interface
+
+** TODO Relate eigenvalues of T and Δ
+   Tφ = μφ  iff  Δφ = λφ in weak sense
+   with μ = 1/(1+λ)
+
+** DONE Prove λ ≥ 0
+** DONE Identify λ = 0 eigenspace with harmonic forms
+   H^{p,q}(M)
+
+** DONE Prove eigenspaces of Δ are finite-dimensional
+   via finite-dimensional eigenspaces of compact T
+
+** TODO Prove eigenspaces consist of smooth forms
+   via regularity lemma
+
+** DONE Define harmonic projection
+   Projection onto kernel of Δ
+
+** DONE Define Green operator G
+   G = 0 on harmonic space
+   G = λ^{-1} on λ-eigenspace for λ > 0
+
+** TODO Prove G is compact and self-adjoint
+** TODO Prove standard identities
+*** TODO ΔG = GΔ = id on orthogonal complement of harmonic forms
+*** TODO id = H + ΔG = H + GΔ, where H is harmonic projection
+
+* Part VII — Hodge theorem consequences
+** TODO State Hodge decomposition theorem for (p,q)-forms
+   Need exact version intended in this chapter:
+   A^{p,q}(M) decomposes orthogonally into
+   harmonic ⊕ im ∂ ⊕ im ∂*
+   or the cohomological form used later
+
+** TODO Prove H^{p,q}_{Dolbeault}(M) ≅ Harmonic^{p,q}(M)
+   using Green operator/Hodge decomposition
+
+** TODO Prove harmonic space finite-dimensional
+** TODO Prove cohomology finite-dimensional
+** TODO Package theorem
+   hodge_theorem_compact_complex_manifold
+
+* Part VIII — Weitzenbock identity
+** TODO Define local unitary coframe {φ_i}
+** TODO Define local expression of a (p,q)-form
+   ψ = Σ ψ_{I,J} φ_I ∧ \bar φ_J
+
+** TODO Define rough Laplacian on coefficient tensors
+   Formal target:
+   (Δψ)_{I,J} = - Σ ∇_k ∇_{\bar k} ψ_{I,J} + A'(ψ)
+
+** TODO State crude Weitzenbock identity
+   modulo lower-order terms,
+   global Laplacian looks like Euclidean Laplacian on coefficient functions
+
+** TODO Clarify symbol “= modulo lower-order terms”
+   Need an explicit definition or lemma schema for this shorthand
+
+** TODO Prove local formulas for:
+*** TODO ∂ψ
+*** TODO ∂*ψ
+*** TODO ∂*∂ψ
+*** TODO ∂∂*ψ
+*** TODO sum to get Laplacian formula modulo lower-order terms
+
+** BLOCKED Full proof is long local-coordinate computation
+** TODO Structure it into separate coordinate lemmas rather than one monolithic proof
+
+* Part IX — Proof of Garding inequality from Weitzenbock
+** TODO Define the auxiliary global form η used in the proof
+   Need exact local-to-global expression and proof it is globally defined
+
+** TODO Perform integration-by-parts computation
+   ∫_M ∂η = 0
+   and derive estimate controlling ||∇̄ψ||^2 from (Δψ,ψ) + lower-order terms
+
+** TODO Repeat with second auxiliary form to control ||∇ψ||^2
+
+** TODO Combine estimates
+   ||∇ψ||^2 + ||∇̄ψ||^2 + ||ψ||^2 ≤ C · D(ψ)
+
+** TODO Conclude Garding inequality
+   ||ψ||_1^2 ≤ C · D(ψ)
+
+** BLOCKED This proof requires a substantial amount of local differential-form algebra
+** TODO Keep as separate theorem chain:
+*** TODO rough_laplacian_estimate
+*** TODO first_covariant_derivative_control
+*** TODO garding_inequality
+
+* Part X — Kahler refinement
+** TODO Define torsion-free / Kahler condition as needed in this section
+   Or import from earlier/later chapter if already done
+
+** TODO State precise Weitzenbock formula in the Kahler case
+   Lower-order term given by Ricci curvature action
+
+** TODO Define Ricci curvature operator action on (p,q)-forms
+
+** TODO State Kodaira identity from this computation
+   (Δψ,ψ) = ||∇̄ψ||^2 + curvature term
+   or exact convention in text
+
+** DONE Prove vanishing consequence
+   If curvature hermitian form is positive definite and ψ harmonic,
+   then ψ = 0
+
+** TODO Deduce special case
+   H^{0,q}(M)=0 for q>0 under the positivity hypothesis stated
+
+** TODO Mark relation to later Kodaira vanishing theorem
+   This section proves only a special case / precursor.
+
+* Part XI — What to assume for now
+** TODO Assume as axioms / imported theorems initially
+*** DONE Global Sobolev lemma
+*** DONE Global Rellich lemma
+*** DONE Garding inequality
+*** DONE Regularity lemma I
+*** DONE Spectral theorem for compact self-adjoint operators
+*** DONE Riesz representation theorem in Hilbert spaces
+
+** TODO Then prove from these assumptions
+*** TODO representation lemma defining T
+*** TODO compactness/self-adjointness of T
+*** TODO spectral decomposition consequences
+*** TODO Green operator
+*** TODO Hodge theorem statements
+
+* Part XII — Longer-term proof goals
+** TODO Later prove analytically
+*** TODO Global Sobolev lemma from local Sobolev + partition of unity
+*** TODO Global Rellich lemma from local Rellich + compactness
+*** TODO Regularity lemma from smoothing/distribution theory
+*** TODO Garding inequality from Weitzenbock estimate
+*** TODO precise Kahler Weitzenbock and Kodaira identity
+
+* Part XIII — Suggested file/module layout
+** DONE `Harmonic/BundleCovariantDerivatives.v`
+   iterated covariant derivatives, commutator lemmas
+
+** DONE `Harmonic/Sobolev.v`
+   Sobolev norms, Sobolev spaces, embeddings, Rellich interfaces
+
+** DONE `Harmonic/Laplacian.v`
+   ∂, ∂*, Δ, Dirichlet form, weak solutions
+
+** DONE `Harmonic/RieszResolvent.v`
+   Hilbert-space representation lemma, operator T
+
+** DONE `Harmonic/Spectral.v`
+   spectral theorem interfaces, eigenvalue decomposition
+
+** DONE `Harmonic/GreenOperator.v`
+   Green operator, harmonic projection, Hodge decomposition
+
+** DONE `Harmonic/Weitzenbock.v`
+   local computations for rough Laplacian / Weitzenbock identity
+
+** DONE `Harmonic/Garding.v`
+   proof of Garding inequality
+
+** DONE `Harmonic/KahlerCurvature.v`
+   Kahler refinement, Ricci action, Kodaira identity
+
+* Part XIV — Key intermediate lemmas to isolate
+** TODO smooth_weak_eigenform_is_smooth
+** TODO compact_resolvent_from_garding_and_rellich
+** DONE eigenvalues_of_laplacian_are_nonnegative
+** DONE harmonic_forms_are_kernel_of_laplacian
+** TODO green_operator_is_compact_selfadjoint
+** TODO hodge_harmonic_represents_cohomology_class
+** DONE rough_laplacian_equals_covariant_laplacian_plus_lower_order
+** TODO kahler_weitzenbock_formula
+** DONE curvature_positive_implies_harmonic_vanishing
+
+* Part XV — Sanity tests / examples
+** TODO Trivial bundle over flat complex torus
+   Check:
+   - harmonic forms correspond to constant coefficient forms
+   - Laplacian diagonalizes explicitly
+
+** TODO Riemann surface example
+   Check:
+   - harmonic 0-forms are constants on compact connected surface
+   - Green operator behaves as expected modulo constants
+
+** TODO Flat Kahler manifold local test
+   Weitzenbock lower-order term should vanish in flat case
+
+** TODO Compact Kahler positivity toy case
+   If implementing enough curvature, test simple vanishing consequence on CP^n in a stubbed way
+
+* Part XVI — Immediate next coding actions
+** DONE Define Sobolev norm and Sobolev completion for bundle-valued forms
+** DONE Define Dirichlet form Q and Dirichlet norm D
+** DONE State Garding inequality as imported theorem
+** DONE State regularity lemma as imported theorem
+** DONE Implement Riesz-based operator T
+** NEXT Prove T bounded H^0 -> H^1 and compact/self-adjoint on H^0
+** DONE Import spectral theorem and define Green operator G
+** NEXT Prove finite-dimensionality and smoothness of eigenspaces
+** NEXT Derive Hodge decomposition / harmonic representative theorem
+** NEXT Separate local Weitzenbock/Garding proof into future analytic modules
+
+#+TITLE: Kahler Manifolds — Rocq TODO
+#+AUTHOR: Claude Code / Rocq planning
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize the Lefschetz / Hodge-Riemann part of Kahler geometry needed later for:
+  - Hard Lefschetz
+  - Lefschetz decomposition
+  - primitive cohomology
+  - Hodge-Riemann bilinear relations
+  - signature/index computations
+  - geometric interpretation via hyperplane sections
+
+  This section mixes:
+  - linear algebra of sl2-representations
+  - Kahler identities
+  - Hodge decomposition
+  - cohomological consequences
+  - projective-geometric interpretation
+
+  So the implementation should be layered:
+  1. sl2 representation theory
+  2. operators L, Λ, h on forms/cohomology
+  3. Hard Lefschetz and primitive decomposition
+  4. bilinear form Q and Hodge-Riemann relations
+  5. geometric/index consequences
+
+* Global design decisions
+** TODO Separate finite-dimensional sl2 representation theory from geometry
+   Make one module for abstract sl2-modules and one for their application to Kahler cohomology.
+
+** TODO Decide whether to formalize Lie algebra representations abstractly
+   or only the specific operators (L, Λ, h) satisfying sl2 relations
+   Recommended:
+   - define a minimal sl2-module interface
+   - then instantiate with Kahler operators
+
+** TODO Decide what to assume from earlier sections
+   Must already have:
+   - compact Kahler manifold
+   - Hodge decomposition
+   - harmonic forms identified with cohomology
+   - operators L and Λ on forms/cohomology
+   - the commutator relation [L,Λ] = h
+   - Hodge star and adjoints as needed
+
+** TODO Decide what to prove now vs defer
+   Recommended:
+*** TODO Prove now
+    - abstract sl2 representation lemmas
+    - Hard Lefschetz from sl2 representation
+    - primitive decomposition
+    - easy Hodge-Riemann cases used later
+    - index/signature consequences
+*** TODO Defer / stub initially
+    - full general proof of Hodge-Riemann bilinear relations
+    - full Weyl/Schur lemma representation-theoretic proof
+    - all fine projective interpretations if infrastructure is not ready
+
+** TODO Fix notation
+   Need notation for:
+   - L = wedge with Kahler form
+   - Λ = adjoint of L
+   - h = grading operator
+   - primitive space P^k or P^{p,q}
+   - Hodge numbers h^{p,q}
+   - bilinear form Q
+   - index I(M)
+
+* Part I — Abstract sl2 representation theory
+** TODO Define the Lie algebra sl2
+   Basis:
+   - X
+   - Y
+   - H
+   Relations:
+   - [H,X] = 2X
+   - [H,Y] = -2Y
+   - [X,Y] = H
+
+** TODO Define finite-dimensional sl2-module
+   A vector space V with operators X,Y,H satisfying the sl2 relations
+
+** TODO Define submodule
+** TODO Define irreducible module
+** TODO State decomposition theorem
+   Every finite-dimensional sl2-module decomposes as a direct sum of irreducibles
+
+** BLOCKED Full proof may be deferred if not needed immediately
+** TODO If deferred, expose as theorem/interface:
+   finite_dimensional_sl2_modules_semisimple
+
+** TODO Define weight space for H-eigenvalue λ
+** TODO Prove:
+   if Hv = λv then
+   - H(Xv) = (λ+2)Xv
+   - H(Yv) = (λ-2)Yv
+
+** DONE Prove X and Y are nilpotent in finite-dimensional modules
+   via finite spectrum shift argument
+
+** DONE Define primitive vector
+   v primitive iff
+   - Hv = λv for some λ
+   - Xv = 0
+
+** DONE Prove primitive vectors exist in any nonzero finite-dimensional module
+
+** DONE Prove proposition:
+   if v is primitive, then span{v, Yv, Y²v, ...} is an sl2-submodule
+   hence in irreducible module it spans all of V
+
+** TODO Prove linear independence of nonzero vectors Y^n v
+   using distinct H-eigenvalues
+
+** NEXT Prove classification for irreducible finite-dimensional sl2-modules
+   - all eigenvalues of H are integers
+   - if primitive vector has eigenvalue n >= 0 and Y^{n+1}v = 0,
+     then module has basis v, Yv, ..., Y^n v
+   - dimension = n+1
+   - weights are -n, -n+2, ..., n-2, n
+
+** TODO Package the irreducible module V(n)
+   Optionally identify with Sym^n(C^2)
+
+* Part II — Abstract Lefschetz decomposition for any sl2-module
+** TODO For any sl2-module V define primitive part
+   P V := ker(X)
+   or more generally in weight k:
+   P_k V := ker(X^{k+1} : V_{-k} -> V_{k+2}) depending on grading convention
+
+** TODO Define decomposition
+   V = P V ⊕ Y(P V) ⊕ Y²(P V) ⊕ ...
+
+** TODO Prove this decomposition
+   from semisimplicity / irreducible classification
+
+** TODO Prove isomorphism
+   Y^r : V_{-r} -> V_r
+   in the abstract setting, with grading matched to the Kahler application
+
+** TODO Prove kernel characterization
+   (ker X) ∩ V_k = ker(Y^{k+1} : V_k -> V_{-k-2})
+   with careful convention matching the text
+
+** TODO Package this as the general Lefschetz module theorem
+
+* Part III — Kahler operators and sl2 action on cohomology
+** TODO Define the operator L on forms/cohomology
+   L(α) = ω ∧ α
+   where ω is the Kahler form
+
+** TODO Define Λ as adjoint of L
+** TODO Define grading operator h
+   h acts on H^{p,q} with eigenvalue p+q-n
+   or n-(p+q) depending on sign convention
+   Need one consistent convention matching the text:
+   [Λ,L] = h
+
+** TODO Prove commutator identities
+   - [Λ,L] = h
+   - [h,L] = -2L or [L,h]=2L depending on convention
+   - [h,Λ] = 2Λ or equivalent
+   Must line up exactly with the sl2 basis assignment used.
+
+** TODO Define representation of sl2 on cohomology
+   Map:
+   - X |-> Λ
+   - Y |-> L
+   - H |-> h
+   or the text’s chosen correspondence
+   Verify relations hold.
+
+** TODO Prove L, Λ, h preserve harmonic forms / cohomology classes
+   so the action descends to H*(M)
+
+* Part IV — Hard Lefschetz theorem
+** TODO State Hard Lefschetz theorem
+   L^k : H^{n-k}(M) -> H^{n+k}(M)
+   is an isomorphism
+
+** NEXT Prove Hard Lefschetz from abstract sl2-module theorem
+   Need only the finite-dimensional representation theory and the sl2 action on cohomology
+
+** TODO Define primitive cohomology
+   P^{n-k}(M) := ker(L^{k+1} : H^{n-k}(M) -> H^{n+k+2}(M))
+   = (ker Λ) ∩ H^{n-k}(M)
+
+** TODO Prove equality of the two primitive definitions
+   kernel of L^{k+1} equals kernel of Λ on H^{n-k}
+
+** TODO Prove Lefschetz decomposition
+   H^m(M) = ⊕_k L^k P^{m-2k}(M)
+
+** TODO Prove compatibility with Hodge decomposition
+   P^{p,q}(M) := (ker Λ) ∩ H^{p,q}(M)
+   and
+   P^m(M) = ⊕_{p+q=m} P^{p,q}(M)
+
+* Part V — Projective-geometric interpretation
+** TODO Assume / prove the hyperplane Kahler form interpretation
+   If M ⊂ P^N with induced metric,
+   [ω|_M] is Poincare dual to hyperplane section class [V], V = M ∩ H
+
+** TODO Prove the induced Lefschetz operator corresponds to hyperplane intersection
+   under Poincare duality
+
+** TODO State homological Hard Lefschetz
+   Intersection with an (N-k)-plane gives an isomorphism
+   H_{n+k}(M) -> H_{n-k}(M)
+   in the projective setting
+
+** TODO Interpret primitive homology classes as finite cycles
+   image of H_{n-k}(M - V) -> H_{n-k}(M)
+
+** BLOCKED Requires projective embedding / Poincare duality / hyperplane section infrastructure
+
+* Part VI — Bilinear form Q
+** TODO Define bilinear form
+   Q : H^{n-k}(M) × H^{n-k}(M) -> C
+   by
+   Q(ξ,η) = ∫_M ξ ∧ η ∧ ω^k
+
+** TODO Prove Q is well defined on cohomology
+** TODO Prove type orthogonality
+   Q(H^{p,q}, H^{p',q'}) = 0 unless p=q' and q=p'
+   from degree/type reasons
+
+** TODO Define real form of Q on real cohomology
+** TODO Prove Q is nondegenerate using Hard Lefschetz + Poincare duality
+   even before full Hodge-Riemann positivity
+
+* Part VII — Hodge-Riemann bilinear relations
+** TODO State Hodge-Riemann bilinear relations
+   For ξ ∈ P^{p,q}(M), primitive, k = p+q,
+   the signed form
+   (sqrt(-1))^{p-q} (-1)^{k(k-1)/2} Q(ξ,\bar ξ) > 0
+
+** TODO Split statement into even/odd cases as in the text
+   - when p+q even: positivity of a real quadratic form
+   - when p+q odd: Q is nondegenerate skew form on primitive piece
+
+** BLOCKED Full proof in general depends on pointwise U_n representation theory / Schur lemma
+** TODO Expose as theorem/interface initially:
+   hodge_riemann_bilinear_relations
+
+** TODO Record the weaker corollary actually used later
+   Q is nondegenerate on each Lefschetz summand / on H^{n-k}(M)
+
+* Part VIII — Easy/proved cases of Hodge-Riemann
+** TODO Prove Hodge-Riemann for compact Riemann surfaces
+   Need:
+   - H¹(M,C) = H^{1,0} ⊕ H^{0,1}
+   - for ξ = h(z) dz,
+     Q(ξ,\bar ξ) = i ∫ |h|² dz ∧ d\bar z > 0
+
+** TODO Generalize this easy argument to H^{p,0} and H^{0,p}
+   These are primitive by type reasons
+   and positivity follows from the same local computation
+
+** TODO Package theorem:
+   primitive_(p,0)_and_(0,p)_classes_satisfy_HR
+
+** TODO Prove surface case for primitive (1,1)
+   For dim_C M = 2, if ξ is real primitive harmonic (1,1), compute locally
+   and show Q(ξ,ξ) < 0 in the sign convention of the text
+
+** TODO Package theorem:
+   hodge_riemann_for_kahler_surfaces
+
+* Part IX — Signature / index theorem consequences
+** TODO Define topological bilinear form on middle cohomology of oriented 4k-manifold
+   Q(ξ,η) = ∫ ξ ∧ η
+
+** TODO Define signature / index I(X)
+   number of positive minus negative eigenvalues of Q
+
+** TODO In Kahler dimension 2n, identify this form with the Hodge-Riemann Q
+   up to the ω^k factor / Lefschetz decomposition conventions
+
+** TODO Derive index formula
+   I(M) = Σ_{p,q even parity condition} (-1)^p h^{p,q}
+   matching the text’s final formula
+
+** TODO Verify the surface case
+   For a Kahler surface, H^{1,1}(M) has intersection form with exactly one positive eigenvalue
+
+** TODO Package theorem
+   index_theorem_for_kahler_surfaces
+
+* Part X — Distinguish topological vs analytic content
+** TODO Record/document:
+   - Lefschetz theorem is essentially topological
+   - Hodge decomposition depends on analytic complex structure
+   - Hodge numbers may jump under change of Kahler complex structure
+   - Lefschetz isomorphism/decomposition remains the same
+
+** TODO Add this as explanatory documentation, not as a formal theorem unless needed later
+
+* Part XI — What to assume from earlier sections
+** TODO Assume already available
+*** TODO compact Kahler manifold structure
+*** TODO Hodge decomposition H^m = ⊕ H^{p,q}
+*** TODO harmonic forms represent cohomology
+*** TODO operators L and Λ on harmonic forms/cohomology
+*** TODO basic Kahler identities sufficient to derive sl2 relations
+*** TODO Poincare duality
+*** TODO projective-space hyperplane class facts if using geometric interpretation
+
+* Part XII — Suggested file/module layout
+** TODO `Kahler/sl2/Basic.v`
+   sl2 definition, modules, weight spaces, primitive vectors
+
+** TODO `Kahler/sl2/FiniteDimensional.v`
+   finite-dimensional representation theory, irreducibles, decomposition
+
+** TODO `Kahler/Lefschetz/Operators.v`
+   L, Λ, h on forms/cohomology and sl2 relations
+
+** TODO `Kahler/Lefschetz/HardLefschetz.v`
+   Hard Lefschetz theorem and primitive decomposition
+
+** TODO `Kahler/Lefschetz/Primitive.v`
+   primitive cohomology and compatibility with Hodge decomposition
+
+** TODO `Kahler/HodgeRiemann/BilinearForm.v`
+   definition and basic properties of Q
+
+** TODO `Kahler/HodgeRiemann/EasyCases.v`
+   Riemann surface, (p,0)/(0,p), surface (1,1) computations
+
+** TODO `Kahler/HodgeRiemann/General.v`
+   full Hodge-Riemann relations as imported or later proved theorem
+
+** TODO `Kahler/Geometry/HyperplaneSections.v`
+   projective-geometric interpretation of Lefschetz theory
+
+** TODO `Kahler/Signature.v`
+   index formula and surface signature theorem
+
+* Part XIII — Priority order
+** Priority 1
+*** NEXT Define abstract sl2-module interface
+*** NEXT Prove primitive vector / irreducible decomposition lemmas needed for Lefschetz
+*** NEXT Instantiate sl2 action via L, Λ, h
+*** NEXT Prove Hard Lefschetz
+*** NEXT Prove primitive/Lefschetz decomposition
+
+** Priority 2
+*** NEXT Define bilinear form Q
+*** NEXT Prove nondegeneracy consequences from Lefschetz
+*** NEXT Prove easy Hodge-Riemann cases:
+    - Riemann surfaces
+    - H^{p,0}, H^{0,p}
+    - primitive (1,1) on surfaces
+
+** Priority 3
+*** TODO Prove index/signature consequences
+*** TODO Add projective hyperplane-section interpretation
+
+** Priority 4
+*** BLOCKED Full Hodge-Riemann general theorem
+*** BLOCKED Full U_n / Schur lemma proof of definiteness
+
+* Part XIV — Sanity tests
+** TODO sl2 test on Sym^n(C^2)
+   Recover weights and primitive vector structure
+
+** TODO Lefschetz test on projective space P^n
+   Hard Lefschetz should reduce to the standard one-dimensional cohomology in each even degree
+
+** TODO Riemann surface test
+   H^1(M,C) = H^{1,0} ⊕ H^{0,1}
+   positivity for holomorphic 1-forms
+
+** TODO Kahler surface test
+   primitive (1,1) form gives negative definite contribution
+
+** TODO Signature test on CP^2
+   index should be 1
+
+* Part XV — Immediate next coding actions
+** NEXT Implement finite-dimensional sl2-modules and weight-space lemmas
+** NEXT Prove irreducible module structure generated by a primitive vector
+** NEXT Implement abstract Lefschetz decomposition for sl2-modules
+** NEXT Define L, Λ, h on Kahler cohomology
+** NEXT Prove sl2 commutator relations for these operators
+** NEXT Prove Hard Lefschetz
+** NEXT Define primitive cohomology and prove Lefschetz decomposition
+** NEXT Define bilinear form Q
+** NEXT Prove Hodge-Riemann in the easy cases actually used later
+** NEXT Prove the surface index/signature corollaries
+
+#+TITLE: Complex Algebraic Varieties — Divisors and Line Bundles (Rocq TODO)
+#+AUTHOR: Claude Code / Rocq planning
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize the divisor / line bundle / Chern class material in this section,
+  with enough structure to support later work on:
+  - Picard groups
+  - divisor-line bundle correspondence
+  - curvature representatives of Chern classes
+  - adjunction formulas
+  - canonical bundles
+  - Poincare residue
+
+  This section bridges:
+  divisors <-> line bundles <-> cohomology <-> curvature <-> differential forms
+
+* Global strategy
+** TODO Split the development into layers
+*** TODO sheaf/cohomology layer
+    - exponential sequence
+    - Čech cohomology description of line bundles
+    - connecting morphism defining c₁
+*** TODO differential-geometric layer
+    - connections on line bundles
+    - curvature form
+    - de Rham representative of c₁
+*** TODO divisor layer
+    - divisors and associated line bundles [D]
+    - fundamental class / Poincare dual
+*** TODO bundle-formula layer
+    - hyperplane bundle
+    - universal bundle
+    - normal/conormal bundles
+    - adjunction formulas
+    - canonical bundle and residue sequence
+
+** TODO Decide what to prove now vs defer
+   Recommended:
+*** TODO Prove now
+    - Čech description of line bundles
+    - definition of c₁ by connecting morphism
+    - line bundle determined by c₁ in smooth category
+    - curvature gives de Rham representative of c₁
+    - divisor class gives same c₁ as Poincare dual class
+    - direct geometric examples on P^n and hypersurfaces
+*** TODO Defer / stub initially
+    - full analytic proof using singular Stokes on tubular neighborhoods
+    - some parts of de Rham/Čech comparison if already established earlier
+    - deep projective/cohomological vanishing facts beyond those explicitly used
+
+** TODO Fix notation
+   Need notation for:
+   - Pic(M)
+   - [D] for line bundle associated to divisor D
+   - c₁(L)
+   - η_V for Poincare dual / fundamental class
+   - K_M for canonical bundle
+   - N_V and N_V^* for normal/conormal bundles
+   - P.R. for residue map
+
+* Part I — Line bundles from Čech cocycles
+** TODO Define smooth complex line bundle via transition functions
+   Need:
+   - open cover {U_α}
+   - transition functions g_{αβ} : U_α ∩ U_β -> C*
+   - cocycle condition
+   - bundle reconstructed from cocycle
+
+** TODO Define holomorphic line bundle similarly
+** TODO Define equivalence of cocycles by Čech coboundaries
+** TODO Prove:
+   line bundle is determined up to C^\infty isomorphism by cohomology class
+   [g_{αβ}] in H¹(M, 𝒪^*)
+   or H¹(M, 𝒞^*) in the smooth case
+
+** TODO Define Picard group Pic(M)
+   Holomorphic version if needed
+** TODO Define smooth line bundle classification by H¹(M, 𝒞^*)
+
+* Part II — Exponential sequence and first Chern class
+** TODO State/define exponential sheaf sequence
+   0 -> Z -> 𝒪 (or 𝒞) -> 𝒪^* (or 𝒞^*) -> 0
+   Need careful distinction:
+   - holomorphic exponential sequence
+   - smooth exponential sequence
+
+** TODO Define the connecting morphism
+   δ : H¹(M, 𝒪^*) -> H²(M, Z)
+   and similarly in smooth category
+
+** TODO Define first Chern class c₁(L)
+   As δ([g_{αβ}])
+
+** TODO Prove functoriality of c₁
+** TODO Prove for holomorphic line bundles and smooth line bundles the definitions agree
+   via the commutative diagram induced by inclusions 𝒪 -> 𝒞 and 𝒪^* -> 𝒞^*
+
+** TODO Prove:
+   since H¹(M, 𝒞)=0 for fine sheaf 𝒞,
+   complex line bundles are classified up to C^\infty isomorphism by c₁ ∈ H²(M,Z)
+
+** TODO Package theorem
+   smooth_complex_line_bundles_classified_by_first_chern_class
+
+* Part III — Curvature form of a line bundle
+** TODO Define connection on a line bundle
+** TODO Define local connection 1-form θ_α in local frame e_α
+** TODO Recall/implement gauge transformation law
+   θ_β - θ_α = - g_{αβ}^{-1} d g_{αβ}
+   or equivalent sign convention
+
+** TODO Define curvature form Θ
+   In rank 1:
+   Θ = dθ_α
+   and prove this glues to a global closed 2-form
+
+** TODO Prove curvature form of a line bundle is globally defined and closed
+
+** TODO State proposition part 1
+   For any line bundle L with curvature form Θ,
+   c₁(L) = [ (i / 2π) Θ ] in H²_dR(M)
+
+** NEXT Prove this proposition carefully
+   Break into steps:
+
+*** TODO Choose simply connected cover {U_α}
+*** TODO Choose logarithms h_{αβ} = (1 / 2π i) log g_{αβ}
+*** TODO Define Čech 2-cocycle z_{αβγ} = h_{βγ} - h_{αγ} + h_{αβ}
+*** TODO Show z_{αβγ} represents c₁(L)
+
+*** TODO Compare with local connection forms:
+    θ_β - θ_α = - d log g_{αβ}
+*** TODO Compute de Rham connecting morphism explicitly
+*** TODO Show the Čech cocycle corresponding to curvature is -2π i · c₁(L)
+*** TODO Conclude [ (i / 2π) Θ ] = c₁(L)
+
+** TODO Package theorem
+   first_chern_class_equals_curvature_class
+
+* Part IV — Fundamental class of divisors
+** TODO Define divisor D = Σ a_i V_i on a complex manifold
+   Need irreducible analytic hypersurfaces V_i with integer coefficients
+
+** TODO Define fundamental class of divisor
+   (D) = Σ a_i (V_i)
+   and define Poincare dual η_D
+
+** TODO Define associated line bundle [D]
+   using local defining equations f_α and transition functions f_α / f_β
+
+** TODO State proposition part 2
+   If L = [D], then c₁(L) = η_D in H²(M,R)
+
+** NEXT Prove proposition part 2
+   This is the central divisor-line bundle comparison.
+
+** Step A — Curvature of metric connection on [V]
+*** TODO Let V be a smooth irreducible hypersurface first
+*** TODO Let e be a local nonzero holomorphic section of [V]
+*** TODO Write |e|² = h
+*** TODO Compute metric connection form
+    θ = ∂ log h = ∂ log |e|²
+*** TODO Compute curvature
+    Θ = dθ = ∂\bar∂ log |e|² = 2π i dd^c log |e|²
+    with exact convention fixed
+
+** Step B — Stokes computation near the divisor
+*** TODO Define tubular neighborhoods D(ε) = {|s(z)| < ε}
+    using a section s vanishing exactly on V
+*** TODO Apply Stokes to d^c log |s|² ∧ ψ
+*** TODO Show bounded metric-term contribution vanishes as ε -> 0
+*** TODO Reduce integral to local defining equation f_α
+*** TODO Compute boundary integral locally near smooth points of V
+*** TODO Conclude
+    ∫_M (i/2π) Θ ∧ ψ = ∫_V ψ
+    for all closed test forms ψ
+
+** Step C — Extend from irreducible hypersurface to arbitrary divisor
+*** TODO Use linearity in D
+*** TODO Conclude c₁([D]) = η_D
+
+** BLOCKED Full proof depends on earlier Stokes-for-analytic-varieties machinery
+** TODO If deferred, expose as theorem/interface:
+   chern_class_of_divisor_bundle_is_poincare_dual_of_divisor
+
+* Part V — Immediate consequences
+** TODO Prove divisor of a meromorphic function is homologous to zero
+   Since associated line bundle is trivial, c₁ = 0, hence divisor class vanishes in homology/cohomology
+
+** TODO Package theorem
+   principal_divisor_has_zero_fundamental_class
+
+* Part VI — Riemann surface consequences
+** TODO Define degree of a divisor on a compact Riemann surface
+   deg D = Σ n_i
+
+** TODO Prove degree equals fundamental class in H⁰(M,Z) ≅ Z
+** TODO Define degree of a line bundle
+   deg L = < c₁(L), [M] >
+
+** TODO Prove:
+   if Θ is curvature of a connection on L, then
+   deg L = (i / 2π) ∫_M Θ
+
+** TODO Apply to tangent bundle of a compact Riemann surface
+   Use earlier curvature/Gauss formula to derive
+   deg T'(M) = χ(M)
+
+** TODO Package theorem
+   degree_of_tangent_bundle_equals_euler_characteristic
+
+* Part VII — Picard group of projective space
+** TODO State/use exact sequence
+   H¹(P^n, 𝒪) -> H¹(P^n, 𝒪^*) -> H²(P^n, Z)
+** TODO Use H¹(P^n, 𝒪)=0 to prove
+   Pic(P^n) ≅ H²(P^n,Z) ≅ Z
+
+** TODO Conclude every line bundle/divisor on P^n is classified by integer multiple of hyperplane class
+** TODO Define hyperplane bundle [H]
+** TODO Define universal bundle J = [H]^* = [-H]
+
+* Part VIII — Universal bundle on projective space
+** TODO Construct universal bundle J on P^n geometrically
+   As subbundle of trivial bundle P^n × C^{n+1}
+   with fibre over [Z] equal to the line represented by Z
+
+** TODO Prove J is a holomorphic line bundle
+** TODO Define local meromorphic section e₀ over U₀
+   e₀([Z]) = (1, z₁, ..., z_n) or equivalent normalization
+
+** TODO Prove e₀ has pole of order 1 along hyperplane {Z₀ = 0}
+** TODO Conclude J = [-H]
+
+** TODO Package theorem
+   universal_bundle_is_negative_hyperplane_bundle
+
+* Part IX — Conormal bundle and adjunction formula I
+** TODO Define normal bundle N_V of a smooth hypersurface V ⊂ M
+   N_V = T'M|_V / T'V
+
+** TODO Define conormal bundle N_V^*
+   dual of N_V
+   or as annihilator of T'V inside T'^*M|_V
+
+** TODO For V locally defined by f_α, define local sections d f_α of N_V^*
+** TODO Prove d f_α are everywhere nonzero when V is smooth
+** TODO Prove transition relation
+   d f_α = g_{αβ} d f_β on overlaps
+   where g_{αβ} are transition functions for [V]
+
+** TODO Conclude N_V^* ⊗ [V]|_V is trivial
+** TODO State/derive Adjunction Formula I
+   N_V^* ≅ [ -V ]|_V
+   equivalently N_V ≅ [V]|_V
+
+** TODO Package theorem
+   adjunction_formula_I_for_smooth_hypersurfaces
+
+* Part X — Canonical bundle
+** TODO Define canonical bundle
+   K_M = Λ^n T'^*M
+
+** TODO Identify its holomorphic sections with top holomorphic forms
+   H⁰(M, K_M) = H^{n,0}(M)
+
+** TODO Compute K_{P^n}
+   via meromorphic n-form
+   ω = dw₁ ∧ ... ∧ dw_n / (w₁ ... w_n) or text’s equivalent form
+
+** TODO Check transition law of ω on overlaps
+** TODO Prove ω has simple poles along all coordinate hyperplanes
+** TODO Conclude
+   K_{P^n} = [-(n+1)H]
+
+** TODO Package theorem
+   canonical_bundle_of_projective_space
+
+* Part XI — Adjunction formula II
+** TODO Start from exact sequence on smooth hypersurface V ⊂ M
+   0 -> N_V^* -> T'^*M|_V -> T'^*V -> 0
+
+** TODO Prove determinant identity
+   K_V ≅ K_M|_V ⊗ N_V
+
+** TODO Combine with Adjunction Formula I
+   N_V ≅ [V]|_V
+
+** TODO Conclude Adjunction Formula II
+   K_V ≅ (K_M ⊗ [V])|_V
+
+** TODO Package theorem
+   adjunction_formula_II
+
+* Part XII — Poincare residue map
+** TODO Define meromorphic top forms with simple pole along V
+   H⁰(M, Ω_M^n(V))
+
+** TODO Define local residue formula
+   If ω = g(z) dz₁ ∧ ... ∧ dz_n / f(z)
+   with ∂f/∂z_i ≠ 0, define
+   P.R.(ω) = (-1)^i g(z) dz₁ ∧ ... ∧ ẑ_i ∧ ... ∧ dz_n / (∂f/∂z_i)
+
+** TODO Prove local formula is well defined
+   independent of choice of i
+** TODO Prove local formulas glue globally
+** TODO Define global Poincare residue map
+   P.R. : K_M ⊗ [V] -> K_V
+
+** TODO Prove this is the map induced by Adjunction Formula II
+** TODO Identify kernel
+   kernel(P.R.) = holomorphic top forms on M
+
+** TODO Define exact sheaf sequence
+   0 -> Ω_M^n -> Ω_M^n(V) -> Ω_V^{n-1} -> 0
+
+** TODO Derive long exact sequence on cohomology
+** TODO Extract surjectivity criterion
+   If H¹(M, Ω_M^n)=0, then residue is surjective on global sections
+
+** TODO State corollary for hypersurfaces in P^n
+   Since H^{n,1}(P^n)=0 / H¹(P^n, Ω_M^n)=0 as used in text,
+   every holomorphic top form on a hypersurface arises as a residue of a meromorphic top form on P^n
+
+* Part XIII — Key examples to formalize
+** TODO Example 1
+   degree on compact Riemann surfaces and curvature integral formula
+
+** TODO Example 2
+   Pic(P^n) ≅ Z and universal bundle J = [-H]
+
+** TODO Example 3
+   conormal bundle of a smooth hypersurface and Adjunction Formula I
+
+** TODO Example 4
+   K_{P^n} = [-(n+1)H], Adjunction Formula II, and residue exact sequence
+
+* Part XIV — What can be assumed initially
+** TODO Assume if already proved earlier
+*** TODO de Rham / Čech comparison
+*** TODO fine sheaf H¹(M, 𝒞)=0
+*** TODO Stokes theorem for analytic varieties
+*** TODO Poincare duality
+*** TODO H¹(P^n, 𝒪)=0
+*** TODO H¹(P^n, Ω_{P^n}^n)=0 if using that corollary immediately
+
+** TODO Mark these as imported interfaces if not yet formalized
+
+* Part XV — Suggested file/module layout
+** TODO `Divisor/LineBundleCech.v`
+   line bundles from Čech cocycles, Pic, c₁ via exponential sequence
+
+** TODO `Divisor/Curvature.v`
+   connections on line bundles, curvature form, de Rham representative of c₁
+
+** TODO `Divisor/DivisorBundle.v`
+   divisors, [D], principal divisors, c₁([D]) = η_D
+
+** TODO `Divisor/RiemannSurfaceDegree.v`
+   degree of divisor/line bundle on compact curves
+
+** TODO `Projective/HyperplaneBundle.v`
+   Pic(P^n), hyperplane bundle, universal bundle
+
+** TODO `Hypersurface/NormalBundle.v`
+   normal/conormal bundles and Adjunction Formula I
+
+** TODO `CanonicalBundle/ProjectiveSpace.v`
+   K_{P^n}
+
+** TODO `CanonicalBundle/Adjunction.v`
+   Adjunction Formula II
+
+** TODO `Residue/PoincareResidue.v`
+   residue map and exact sequence
+
+* Part XVI — Priority order
+** Priority 1
+*** NEXT Define c₁ via exponential sequence
+*** NEXT Prove curvature represents c₁
+*** NEXT Define [D] and state/prove c₁([D]) = η_D
+*** NEXT Deduce principal divisors are homologous to zero
+
+** Priority 2
+*** NEXT Formalize Pic(P^n) ≅ Z
+*** NEXT Define hyperplane and universal bundles
+*** NEXT Compute K_{P^n}
+
+** Priority 3
+*** NEXT Formalize normal/conormal bundles
+*** NEXT Prove Adjunction Formula I and II
+*** NEXT Define Poincare residue map
+
+** Priority 4
+*** TODO Global section consequences from residue sequence
+*** TODO More projective examples
+
+* Part XVII — Sanity tests
+** TODO Trivial line bundle
+   c₁ = 0 and curvature class vanishes
+
+** TODO Principal divisor
+   associated bundle trivial, class zero
+
+** TODO Hyperplane bundle on P^1
+   degree should be 1
+
+** TODO Universal bundle on P^1
+   should be O(-1)
+
+** TODO Canonical bundle on P^1
+   K_{P^1} = O(-2)
+
+** TODO Smooth hypersurface in P^2
+   verify adjunction formula in a simple example (e.g. plane curve degree d gives K_C = O(d-3)|_C)
+
+* Part XVIII — Immediate next coding actions
+** NEXT Implement line bundles from Čech 1-cocycles
+** NEXT Implement c₁ as connecting morphism from exponential sequence
+** NEXT Implement curvature form of a line bundle and prove its de Rham class is c₁
+** NEXT Implement divisor bundle [D]
+** NEXT State/prove c₁([D]) = η_D
+** NEXT Deduce principal divisors are homologous to zero
+** NEXT Implement Pic(P^n) and hyperplane/universal bundles
+** NEXT Implement normal/conormal bundles and prove Adjunction Formula I
+** NEXT Implement K_M and compute K_{P^n}
+** NEXT Implement Adjunction Formula II and Poincare residue map
+
+#+TITLE: Some Vanishing Theorems and Corollaries — Rocq TODO
+#+AUTHOR: Claude Code / Rocq planning
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize the main results and proof structure in this section:
+  - vanishing needed for the Lefschetz theorem on hyperplane sections
+  - the topological Lefschetz theorem on hyperplane sections
+  - Theorem B for positive twists
+  - the divisor-line bundle surjectivity statement on projective submanifolds
+  - the Lefschetz theorem on (1,1)-classes
+  - enough infrastructure around Hodge decomposition / Dolbeault / exponential sequence
+    to support these results cleanly
+
+  This section mixes:
+  - sheaf exact sequences and vanishing
+  - Kodaira vanishing
+  - hyperplane section arguments
+  - Morse-theoretic intuition
+  - Hodge decomposition and type arguments
+  - divisor / line bundle / Chern class correspondences
+
+* Global strategy
+** TODO Split the development into layers
+*** TODO sheaf-cohomological layer
+    - exact sequences of sheaves
+    - long exact cohomology sequences
+    - restriction maps and kernels/cokernels
+*** TODO positivity / vanishing layer
+    - negative line bundles
+    - Kodaira vanishing
+    - Theorem B
+*** TODO hyperplane section layer
+    - positive divisors from hyperplane sections
+    - Lefschetz theorem on hyperplane sections
+*** TODO Hodge-theoretic layer
+    - Hodge decomposition
+    - classes of type (p,p)
+    - Lefschetz (1,1) theorem
+*** TODO divisor/Picard layer
+    - every line bundle on projective submanifold is [D]
+    - analytic classes in H^{1,1} ∩ H^2(Z)
+
+** TODO Decide what to prove now vs assume
+   Recommended:
+*** TODO Prove now
+    - exact-sequence manipulations once prerequisites exist
+    - formal deduction of the restriction-isomorphism statement from Kodaira vanishing
+    - Theorem B from Kodaira-Serre duality and curvature estimates, if analytic bundle tools are in place
+    - proposition: every line bundle on projective submanifold is [D], assuming Bertini + Theorem B
+    - Lefschetz theorem on (1,1)-classes from exponential sequence + Hodge projection + divisor realization
+*** TODO Assume / import initially
+    - Kodaira vanishing theorem
+    - Kodaira-Serre duality
+    - Bertini theorem
+    - Hodge decomposition and Dolbeault isomorphism
+    - hard Lefschetz on cohomology
+    - Poincare duality
+    - topological Lefschetz theorem on hyperplane sections, unless proven separately
+*** TODO Treat as explanatory sketch only
+    - Morse-theoretic proof sketch of Lefschetz hyperplane theorem
+    unless Morse theory is already being formalized elsewhere
+
+** TODO Fix notation
+   Need notation for:
+   - Ω_M^p, Ω_V^p, Ω_M^p(-V), Ω_V^{p-1}(-V)
+   - H^q(M, Ω_M^p)
+   - H^{p,q}(M)
+   - η_D for divisor class / Poincare dual
+   - [D] for divisor line bundle
+   - H for hyperplane bundle / hyperplane divisor
+   - L for hyperplane intersection operator on cohomology if needed
+   - Pic(M)
+
+* Part I — Restriction of forms to a smooth hyperplane section
+** TODO Formalize the restriction map
+   H^q(M, Ω_M^p) -> H^q(V, Ω_V^p)
+   for V ⊂ M a smooth divisor / hypersurface
+
+** TODO Factor the restriction map through Ω_M^p|_V
+   Need maps:
+   - r : Ω_M^p -> Ω_M^p|_V
+   - i : Ω_M^p|_V -> Ω_V^p
+   and their exact sequences
+
+** TODO State exact sequence (*)
+   0 -> Ω_M^p(-V) -> Ω_M^p -> Ω_M^p|_V -> 0
+
+** TODO State exact sequence (**)
+   0 -> Ω_V^{p-1}(-V) -> Ω_M^p|_V -> Ω_V^p -> 0
+   derived from
+   0 -> N_V^* -> T_M^*|_V -> T_V^* -> 0
+   plus linear algebra and the adjunction formula I
+
+** TODO Prove / import the linear algebra lemma
+   From
+   0 -> N_V^* -> T_M^*|_V -> T_V^* -> 0
+   derive
+   0 -> N_V^* ⊗ Λ^{p-1}T_V^* -> Λ^p T_M^*|_V -> Λ^p T_V^* -> 0
+
+** TODO Rewrite N_V^* as [-V]|_V using adjunction formula I
+
+** TODO Deduce exact sequence (**)
+   0 -> Ω_V^{p-1}(-V) -> Ω_M^p|_V -> Ω_V^p -> 0
+
+* Part II — Vanishing input for the hyperplane section argument
+** TODO State Kodaira vanishing in the exact form needed
+   For a negative line bundle [-V]:
+   - H^q(M, Ω_M^p(-V)) = 0 for p+q<n
+   - H^q(V, Ω_V^{p-1}(-V)) = 0 for p+q<n
+   with V a smooth positive divisor in M
+
+** TODO Verify positivity/negativity conventions
+   The text says:
+   - [−V] is negative on M
+   - [−V]|_V is negative on V
+   Need exact library lemmas connecting hyperplane sections and positivity.
+
+** TODO Use the long exact sequences of (*) and (**)
+   to prove:
+   H^q(M, Ω_M^p) -> H^q(V, Ω_V^p)
+   is
+   - an isomorphism for p+q < n−2
+   - injective for p+q = n−1
+
+** NEXT Break proof into explicit LES steps
+*** TODO Show H^q(M, Ω_M^p) -> H^q(M, Ω_M^p|_V) is
+    - iso for p+q < n−1
+    - injective for p+q = n−1
+*** TODO Show H^q(M, Ω_M^p|_V) ≅ H^q(V, Ω_M^p|_V) by extension-by-zero convention
+*** TODO Show H^q(V, Ω_M^p|_V) -> H^q(V, Ω_V^p) is
+    - iso for p+q < n−2
+    - injective for p+q = n−1
+*** TODO Compose the two maps and conclude the stated result
+
+** TODO Package theorem
+   restriction_on_holomorphic_form_cohomology_for_positive_hyperplane_section
+
+* Part III — Lefschetz theorem on hyperplane sections
+** TODO State the topological Lefschetz hyperplane theorem
+   For V = M ∩ H a smooth hyperplane section of a projective submanifold M^n:
+   - H_q(V,Z) -> H_q(M,Z) is an isomorphism for q < n−1
+   - surjective for q = n−1
+   or the dual cohomology version, depending on existing library
+
+** TODO Decide whether to prove or import this theorem
+   Recommended:
+   import as theorem initially, unless Morse theory has already been formalized
+
+** TODO Record Morse-theoretic proof as comments / roadmap only
+   The text gives a sketch via Morse functions and positivity of the Hessian.
+   This is useful documentation but likely out of scope for immediate proof.
+
+** TODO Extract corollaries for projective hypersurfaces
+   If V ⊂ P^n is smooth hypersurface:
+   - H^{2k-1}(V)=0 for k ≠ n/2
+   - H^{2k}(V) generated by k-plane section for k<n/2
+   - if dim V ≥ 2 then V connected and simply connected
+
+** TODO Formalize the “transverse intersection of hypersurfaces” extension
+   as a later corollary if needed
+
+** TODO Add explanatory theorem/documentation
+   Lefschetz + hard Lefschetz imply only primitive middle homology is “new”
+
+* Part IV — Theorem B
+** TODO State Theorem B
+   If M is compact complex, L positive line bundle, E holomorphic vector bundle,
+   then there exists μ₀ such that
+   H^q(M, O(L^μ ⊗ E)) = 0
+   for all q>0 and μ>μ₀
+
+** TODO Structure the proof through duality
+   Use Kodaira-Serre duality to reduce to
+   H^{0,p}(M, L^{-μ} ⊗ E) = 0
+   for μ sufficiently large and p<n
+
+** TODO State / import Kodaira-Serre duality in the exact form needed
+** TODO Define induced metric and curvature on tensor product bundles
+** TODO Prove tensor product curvature formula
+   Θ_{E⊗E'} = Θ_E ⊗ 1 + 1 ⊗ Θ_{E'}
+   in the precise formulation used earlier
+
+** TODO Specialize to L^{-μ} ⊗ E
+   Compute
+   Θ = Θ_E - (μ/2π i) ω ⊗ 1
+   or exact sign/convention matching the text
+
+** TODO Use harmonic representative argument
+   If η ∈ H^{0,p}(M, L^{-μ} ⊗ E) is harmonic, derive estimate
+   2 i ([Λ,Θ]η,η) > 0
+   but also
+   2 i ([Λ,Θ]η,η) ≤ 0
+   hence η=0 for μ large and p<n
+
+** NEXT Break the analytic estimate proof into sublemmas
+*** TODO Prove identity
+    2 i ([Λ,Θ]η,η) = 2 i (ΛΘη,η) - 2 i (ΘΛη,η)
+*** TODO Use Kähler identity [Λ,∂] = - i \bar∂^*
+    in the exact form needed
+*** TODO Derive nonpositivity from harmonicity
+*** TODO Estimate [Λ,Θ_E] as bounded operator
+*** TODO Compute [Λ,ω]η = (n-p)η in type (0,p)
+*** TODO Conclude positivity for μ large
+*** TODO Therefore η = 0
+
+** TODO Package theorem
+   theorem_B_positive_twists_vanishing
+
+* Part V — Every line bundle on a projective submanifold is a divisor bundle
+** TODO State proposition
+   If M ⊂ P^N is a projective submanifold, then every line bundle on M is [D]
+   for some divisor D
+
+** TODO Prove proposition by induction on dim M
+   following the text
+
+** NEXT Break proof into steps
+*** TODO Let H be the hyperplane bundle restricted to M
+*** TODO Show it suffices to prove:
+    for μ≫0, H^0(M, O(L + μH)) ≠ 0
+*** TODO Base case n=0 or curve case as needed
+*** TODO Choose smooth hyperplane section V by Bertini
+*** TODO Use exact sheaf sequence
+    0 -> O_M(L + (μ−1)H) -> O_M(L + μH) -> O_V(L + μH) -> 0
+*** TODO By induction get H^0(V, O(L + μH)) ≠ 0
+*** TODO Apply Theorem B to kill H^1(M, O(L + (μ−1)H)) for μ≫0
+*** TODO Deduce surjection
+    H^0(M, O(L + μH)) -> H^0(V, O(L + μH)) -> 0
+*** TODO Conclude H^0(M, O(L + μH)) ≠ 0
+*** TODO Divide by a section of H^μ to obtain meromorphic section of L
+*** TODO Conclude L = [D]
+
+** TODO Package theorem
+   line_bundles_on_projective_submanifold_are_divisor_bundles
+
+* Part VI — Analytic classes and the Hodge conjecture prelude
+** TODO Define analytic homology class
+   Rational linear combination of fundamental classes of analytic subvarieties
+
+** TODO Define analytic cohomology class
+   Poincare dual of an analytic homology class
+
+** TODO Prove local type statement
+   If V is analytic of codimension p, then η_V is of pure type (p,p)
+
+** NEXT Formalize the proof sketch
+*** TODO For harmonic representative η_V and harmonic test form ψ,
+    use type decomposition:
+    ∫_M η_V ∧ ψ = ∫_V ψ = ∫_V ψ^{p,p}
+*** TODO Conclude η_V = η_V^{p,p}
+
+** TODO State the Hodge conjecture informally as documentation
+   On projective manifolds, every rational (p,p)-class should be analytic
+   Mark explicitly as unproved/open.
+
+* Part VII — Lefschetz theorem on (1,1)-classes
+** TODO State theorem
+   For M ⊂ P^N a projective submanifold, every class
+   γ ∈ H^{1,1}(M) ∩ H^2(M,Z)
+   is analytic; in fact γ = η_D for some divisor D
+
+** NEXT Prove theorem
+   The proof is a cohomological diagram chase.
+
+** Step A — Exponential sequence cohomology
+*** TODO State exact sequence
+    H^1(M, O^*) --c1--> H^2(M,Z) --β--> H^2(M,O) ≅ H^{0,2}(M)
+
+*** TODO Prove / import identification
+    β is the composition:
+    H^2(M,Z) -> H^2(M,C) -> H^{0,2}(M)
+   i.e. inclusion into complex cohomology followed by projection to the (0,2)-piece
+
+** NEXT Formalize this identification carefully
+*** TODO Compute de Rham image of a Čech cocycle z_{αβγ} using local primitives f_{αβ}
+*** TODO Compute Dolbeault image using the same local data
+*** TODO Show the diagram in the text commutes
+
+** Step B — Use type condition
+*** TODO Let γ ∈ H^{1,1}(M) ∩ H^2(M,Z)
+*** TODO Since γ has no (0,2)-component, β(γ)=0
+*** TODO Exactness gives γ = c1(L) for some line bundle L
+
+** Step C — Use divisor realization
+*** TODO Apply previous proposition: L = [D] for some divisor D
+*** TODO Conclude
+    γ = c1([D]) = η_D
+
+** TODO Package theorem
+   lefschetz_theorem_on_11_classes
+
+* Part VIII — Nondegeneracy of divisor-curve intersection pairing
+** TODO State corollary
+   Since hard Lefschetz identifies H^{2n−2}(M,Q) with H^{1,1}(M) ∩ H^2(M,Q),
+   and the Lefschetz (1,1) theorem identifies these with divisor classes,
+   the pairing between divisors and curves is nondegenerate
+
+** TODO Prove this corollary explicitly if needed later
+   likely via Poincare duality + hard Lefschetz + divisor realization
+
+* Part IX — Prerequisite infrastructure checklist
+** TODO Assume/import if already available
+*** TODO exact sequences of sheaves and long exact cohomology sequence
+*** TODO extension by zero and identification H^*(M,F|_V)=H^*(V,F|_V)
+*** TODO Kodaira vanishing
+*** TODO Kodaira-Serre duality
+*** TODO Bertini theorem
+*** TODO positivity/negativity of hyperplane bundles
+*** TODO harmonic representatives and Hodge decomposition
+*** TODO Dolbeault isomorphism
+*** TODO Poincare duality
+*** TODO hard Lefschetz theorem
+*** TODO divisor-line bundle-Chern class correspondence from previous section
+
+* Part X — Suggested file/module layout
+** TODO `Vanishing/RestrictionToHyperplane.v`
+   exact sequences (*) and (**), restriction isomorphism/injectivity
+
+** TODO `Vanishing/LefschetzHyperplane.v`
+   statement/import of topological Lefschetz hyperplane theorem and corollaries
+
+** TODO `Vanishing/TheoremB.v`
+   positive twist vanishing for vector bundles
+
+** TODO `Projective/AllLineBundlesAreDivisors.v`
+   inductive proof every line bundle is [D]
+
+** TODO `Hodge/AnalyticClasses.v`
+   analytic classes are of pure type (p,p)
+
+** TODO `Hodge/Lefschetz11.v`
+   Lefschetz theorem on (1,1)-classes
+
+** TODO `Projective/DivisorCurvePairing.v`
+   nondegeneracy of divisor-curve pairing
+
+* Part XI — Priority order
+** Priority 1
+*** NEXT Formalize the restriction exact sequences (*) and (**)
+*** NEXT Prove the restriction-isomorphism statement from Kodaira vanishing
+*** NEXT State/import topological Lefschetz hyperplane theorem
+
+** Priority 2
+*** NEXT Formalize Theorem B
+*** NEXT Prove every line bundle on projective submanifold is [D]
+
+** Priority 3
+*** NEXT Formalize the β map as projection to H^{0,2}
+*** NEXT Prove the Lefschetz theorem on (1,1)-classes
+
+** Priority 4
+*** TODO Formalize geometric corollaries for hypersurfaces
+*** TODO Formalize divisor-curve pairing nondegeneracy
+
+* Part XII — Sanity tests
+** TODO Smooth hypersurface V ⊂ P^n
+   restriction map on low-degree cohomology should match the theorem
+
+** TODO For P^n itself
+   verify Lefschetz (1,1) gives hyperplane class
+
+** TODO For a projective curve M
+   every line bundle should be [D] by explicit classical argument
+   compare with the general theorem
+
+** TODO For a surface in projective space
+   verify divisor classes coincide with H^{1,1} ∩ H^2(Z)
+
+* Part XIII — Immediate next coding actions
+** NEXT Implement exact sequences (*) and (**)
+** NEXT Prove the restriction map is iso/injective in the stated degree range
+** NEXT Import or state topological Lefschetz hyperplane theorem
+** NEXT Formalize Theorem B for positive twists
+** NEXT Prove every line bundle on projective submanifold is [D]
+** NEXT Implement the cohomological β map and prove it is projection to H^{0,2}
+** NEXT Prove Lefschetz theorem on (1,1)-classes
+** NEXT Deduce nondegeneracy of divisor-curve intersection pairing
+
+#+TITLE: Complex Algebraic Varieties — Rational Functions, Degree, Chordal Varieties, Tangent Spaces (Rocq TODO)
+#+AUTHOR: Claude Code / Rocq planning
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize the material in this section on:
+  - meromorphic vs rational functions on projective and algebraic varieties
+  - the GAGA-style principle for global meromorphic/holomorphic objects
+  - degree of a projective variety
+  - multiplicativity of degree under intersections
+  - projection, cones, and chordal varieties
+  - lower bound deg(V) ≥ n-k+1 for nondegenerate irreducible varieties
+  - tangent spaces and tangent cones
+
+  This section mixes:
+  - projective geometry
+  - intersection theory
+  - function field arguments
+  - generic projection arguments
+  - local differential geometry of projective varieties
+
+* Global strategy
+** TODO Split the development into layers
+*** TODO function-field layer
+    - rational functions on P^n
+    - meromorphic = rational on projective varieties
+    - function fields under projection
+*** TODO degree/intersection layer
+    - degree via homology/intersection / generic linear section
+    - multiplicativity under proper intersections
+*** TODO projective-geometry layer
+    - generic projection
+    - cones
+    - chordal varieties
+    - nondegeneracy and minimal degree
+*** TODO local geometry layer
+    - tangent spaces
+    - tangent cones
+    - equivalent definitions
+
+** TODO Decide what to prove now vs defer
+   Recommended:
+*** TODO Prove now
+    - rationality of meromorphic functions on P^n
+    - rationality of meromorphic functions on smooth projective varieties
+      modulo generic projection lemmas
+    - equivalence of degree definitions
+    - projection and cone degree invariance
+    - tangent-space formulas
+*** TODO Assume / import initially
+    - Chow's theorem
+    - Bertini theorem
+    - hard Lefschetz / Poincare duality where used for degree
+    - Bezout/intersection multiplicity statements if already established
+*** TODO Defer initially
+    - full GAGA for holomorphic maps/vector bundles
+    - full product-variety formalization for “graph is algebraic”
+    - complete proof of generic hyperplane irreducibility if not already available
+
+** TODO Fix notation
+   Need notation for:
+   - K(V) = field of rational functions
+   - M(V) = field of meromorphic functions
+   - deg(V)
+   - cone p*V or Cone_p(V)
+   - chordal/secant variety C(V)
+   - tangent space T_p(V)
+   - tangent cone C_p(V) or TC_p(V)
+
+* Part I — Rational and meromorphic functions on projective space
+** TODO Define rational function on P^n
+   As quotient F/G of homogeneous polynomials of the same degree
+
+** TODO Define meromorphic function on P^n
+   Using analytic / sheaf-theoretic notion already available
+
+** TODO Prove:
+   every meromorphic function on P^n is rational
+
+** NEXT Break proof into steps
+*** TODO For meromorphic φ on P^n, define zero divisor (φ)_0 and pole divisor (φ)_∞
+*** TODO Use Chow theorem to express these divisors by homogeneous polynomials F and G
+*** TODO Prove F and G have same degree because (φ) is homologous to zero
+*** TODO Show F/G is a well-defined rational function on P^n
+*** TODO Compare divisors:
+    (F/G) = (φ)
+*** TODO Conclude φ = λ F/G for some λ ∈ C
+
+** TODO Package theorem
+   meromorphic_functions_on_projective_space_are_rational
+
+* Part II — Rational functions on a smooth projective variety
+** TODO Define rational function on V ⊂ P^n
+   As restriction to V of a rational function on ambient projective space
+
+** TODO Define meromorphic function field M(V)
+** TODO Define rational function field K(V)
+   likely as function field of the variety / restrictions of rational ambient functions
+
+** TODO State theorem
+   Every meromorphic function on an algebraic variety V ⊂ P^n is rational
+
+** NEXT Prove theorem via generic projection
+** Step A — Projection to complementary linear subspace
+*** TODO Let V be smooth irreducible k-dimensional projective variety of degree d
+*** TODO Choose generic (n-k-1)-plane P^{n-k-1} disjoint from V
+*** TODO Choose complementary k-plane P^k
+*** TODO Define projection π : V -> P^k from P^{n-k-1}
+
+*** TODO Prove generic fiber of π has d points
+   via degree / generic linear section argument
+
+*** TODO Prove all fibers are finite
+   If a fiber contained a curve, that curve would meet the projection center,
+   contradicting disjointness
+
+*** TODO Conclude inclusions
+   π^* K(P^k) ⊆ K(V) ⊆ M(V)
+
+** Step B — Degree bound for field extension
+*** TODO Given meromorphic φ on V, define symmetric functions ψ_i on P^k - B - π(D)
+   where B is branch locus and D = (φ)_0 + (φ)_∞
+
+*** TODO Show ψ_i extends holomorphically across the branch locus
+   by boundedness + Riemann extension
+
+*** TODO Show ψ_i extends meromorphically across π(D)
+   by multiplying φ with a suitable local defining equation to remove poles
+
+*** TODO Conclude ψ_i is rational on P^k
+
+*** TODO Deduce polynomial relation
+   φ^d - π^*ψ_1 φ^{d-1} + ... + (-1)^d π^*ψ_d = 0
+*** TODO Conclude [M(V) : π^*K(P^k)] ≤ d
+
+** Step C — Degree lower bound for the extension
+*** TODO Refine projection by choosing generic P^{n-k-2} ⊂ P^{n-k-1}
+*** TODO Define π' : V -> P^{k+1}
+*** TODO Choose coordinates so projection map is explicit
+*** TODO Define x_{k+1} = X_{k+1}/X_0 as rational function on V
+
+*** TODO Prove x_{k+1} satisfies no polynomial relation of degree < d over π^*K(P^k)
+   using generic injectivity of π' over an open set and size of generic fibers of π
+
+*** TODO Conclude [M(V) : π^*K(P^k)] ≥ d
+
+** Step D — Final conclusion
+*** TODO Combine upper and lower bounds to get equality
+*** TODO Deduce every meromorphic φ ∈ M(V) lies in K(V)
+
+** TODO Package theorem
+   meromorphic_functions_on_smooth_projective_variety_are_rational
+
+* Part III — GAGA-style corollaries
+** TODO State/prove corollary
+   The field of rational functions on an algebraic variety is independent of embedding
+
+** TODO Define structure sheaf O_V algebraically
+   As rational functions finite on open sets
+   or import from earlier algebraic geometry layer
+
+** TODO Prove / record:
+   any meromorphic differential form on a smooth variety is algebraic
+   i.e. rational coefficient functions times differentials of rational functions
+
+** NEXT Formalize this proof
+*** TODO Show differentials dφ of rational functions span cotangent space generically / locally
+*** TODO Express any meromorphic form in that basis
+*** TODO Coefficients are meromorphic, hence rational
+
+** TODO State future GAGA-style results as placeholders/documentation
+   - any holomorphic map between smooth projective varieties is algebraic
+   - any holomorphic vector bundle on smooth projective variety is algebraic
+   Mark as dependent on later results:
+   - products of varieties
+   - Grassmannians
+   - embedding theorem for vector bundles
+
+* Part IV — Degree of a projective variety
+** TODO Define degree of a k-dimensional projective variety V ⊂ P^n
+   via its fundamental class in H_{2k}(P^n,Z) ≅ Z
+
+** TODO Prove alternative characterization:
+   degree = number of points in intersection with generic complementary linear space P^{n-k}
+
+** TODO Prove alternative characterization:
+   degree = volume(V) / k!
+   via ∫_V ω^k where ω is the standard Kahler form
+
+** TODO For hypersurface V=(F=0), prove degree(V)=deg(F)
+** NEXT Break hypersurface proof into steps
+*** TODO Show η_V = c₁(H^d) = d times hyperplane class
+*** TODO Alternatively pull back to generic line and count roots of homogeneous polynomial
+*** TODO Prove both degree definitions agree in hypersurface case
+
+** TODO Package theorem
+   equivalent_definitions_of_degree
+
+* Part V — Degree under intersections
+** TODO State multiplicativity for proper transverse intersections
+   If V and W meet transversely almost everywhere in expected dimension,
+   deg(V ∩ W) = deg(V) deg(W) with multiplicities accounted for
+
+** TODO State/generalize Bezout-type formula
+   If irreducible components of V ∩ W are Z_i, then
+   deg(V) deg(W) = Σ mult_{Z_i}(V·W) deg(Z_i)
+
+** TODO Deduce weak Bezout theorem for plane curves
+   Two relatively prime plane curves of degrees d₁,d₂ have at most d₁d₂ intersection points
+
+** BLOCKED Depends on intersection multiplicity infrastructure from earlier sections
+** TODO Expose as theorem/interface if already established elsewhere
+
+* Part VI — Projection and coning
+** TODO Prove degree is preserved under generic projection
+   If p ∉ V and π_p : V -> P^{n-1} is projection from p, then
+   deg(V) = deg(π_p(V))
+
+** NEXT Break proof into steps
+*** TODO Generic complementary plane through p corresponds to complementary plane downstairs
+*** TODO Count points of generic linear section upstairs and downstairs
+*** TODO Conclude equality of degrees
+
+** TODO Define cone p*V over V from point p ∉ V
+   As union of lines through p meeting V
+
+** TODO Prove cone is an algebraic variety
+   Use incidence correspondence or explicit homogeneous equations
+
+** TODO Prove degree(cone_p(V)) = degree(V)
+   by intersecting with generic hyperplane not containing p
+
+** TODO Package theorem
+   degree_of_projection_and_cone
+
+* Part VII — Chordal / secant variety
+** TODO Define chordal variety C(V)
+   As union of secant lines and tangent lines to V
+
+** TODO Construct C(V) as image of an incidence correspondence
+** TODO Prove C(V) is an algebraic variety
+
+** TODO Prove dim C(V) ≤ 2 dim(V) + 1
+   by dimension count on the incidence correspondence
+
+** TODO Deduce embedding corollary
+   If n > 2 dim(V)+1 then V can be projected isomorphically/smoothly into a hyperplane
+
+** TODO Package corollary
+   any_smooth_k_dim_variety_embeds_in_P^{2k+1}
+
+** TODO Add note:
+   degree of chordal variety is not determined solely by degree of V
+   as documentation unless needed later
+
+* Part VIII — Minimal degree bound
+** TODO State theorem
+   If V ⊂ P^n is irreducible, nondegenerate, k-dimensional, then
+   deg(V) ≥ n-k+1
+
+** NEXT Prove curve case first
+*** TODO If V is irreducible nondegenerate curve in P^n
+*** TODO Any n points lie in a hyperplane
+*** TODO If deg(V)<n, hyperplane through n points meets V in too many points
+*** TODO By irreducibility hyperplane would contain V
+*** TODO Contradiction to nondegeneracy
+
+** NEXT Prove generic hyperplane section preserves irreducibility and nondegeneracy
+*** TODO Prove generic hyperplane section of nondegenerate V is nondegenerate
+   using openness/closedness and existence of spanning points
+
+*** TODO Prove generic hyperplane section of irreducible V is irreducible
+   Use the argument in the text with:
+   - smooth point p ∈ V
+   - P^{n-2} meeting V transversely at p
+   - pencil of hyperplanes through P^{n-2}
+   - component containing local piece Z
+   Or import Bertini/Lefschetz-based irreducibility if already formalized.
+
+** TODO Reduce general case to curve by taking k−1 generic hyperplane sections
+** TODO Conclude deg(V) ≥ n-k+1
+
+** TODO State corollary
+   Any irreducible k-dimensional variety of degree d lies in a linear space of dimension d+k−1
+
+** TODO Deduce:
+   any degree-1 variety is a linear subspace
+
+* Part IX — Tangent spaces
+** TODO Define tangent space at a smooth point p of V ⊂ P^n
+   First in affine chart via Euclidean coordinates:
+   T_p(V) given by vanishing of differentials of defining equations
+
+** TODO Prove homogeneous-coordinate formula
+   If V cut out by homogeneous polynomials F_α, then tangent space at p is
+   Σ (∂F_α/∂X_i)(p) X_i = 0
+
+** TODO Prove equivalence of affine and homogeneous formulas
+   using Euler relation for homogeneous polynomials
+
+** TODO Package theorem
+   tangent_space_to_projective_variety_local_and_homogeneous_formulas
+
+* Part X — Tangent cone
+** TODO Define tangent cone for hypersurface at possibly singular point p
+   via first nonzero homogeneous part / multiplicity-k jet:
+   Σ ∂^k F(p)/∂X^I · X^I = 0
+   or equivalent homogeneous degree-k term
+
+** TODO Define tangent cone for general variety
+   as intersection of tangent cones of hypersurfaces containing V near p
+
+** TODO Prove alternative descriptions
+   - union of tangent lines to curves on V through p
+   - limiting positions of secant lines p q(λ) as q(λ)->p
+
+** BLOCKED These equivalences may require local analytic curve-selection style arguments
+** TODO Implement at least the defining versions first, then add geometric characterizations later
+
+* Part XI — What to assume/import
+** TODO Assume/import if already available
+*** TODO Chow theorem
+*** TODO Bertini theorem
+*** TODO Riemann extension theorem
+*** TODO Poincare duality / homology class of projective linear spaces
+*** TODO intersection multiplicity and proper-intersection formulas
+*** TODO hard Lefschetz if using volume interpretation of degree
+*** TODO incidence-variety dimension lemmas
+
+* Part XII — Suggested file/module layout
+** TODO `Projective/FunctionFields.v`
+   rational/meromorphic functions on projective varieties, generic projection proof
+
+** TODO `Projective/GAGAPrinciple.v`
+   algebraicity of meromorphic forms/maps/bundles (as far as proved)
+
+** TODO `Projective/Degree.v`
+   degree definitions and equivalences
+
+** TODO `Projective/Intersections.v`
+   degree multiplicativity and Bezout-style corollaries
+
+** TODO `Projective/ProjectionConeChordal.v`
+   projection, cone, chordal variety, embedding into P^{2k+1}
+
+** TODO `Projective/MinimalDegree.v`
+   deg(V) ≥ n-k+1 and corollaries
+
+** TODO `Projective/TangentSpace.v`
+   tangent spaces in affine and homogeneous coordinates
+
+** TODO `Projective/TangentCone.v`
+   tangent cones and geometric characterizations
+
+* Part XIII — Priority order
+** Priority 1
+*** NEXT Prove meromorphic functions on P^n are rational
+*** NEXT Prove meromorphic functions on smooth projective varieties are rational
+*** NEXT Define degree and prove equivalent formulations
+*** NEXT Formalize tangent space formulas
+
+** Priority 2
+*** NEXT Prove projection and cone preserve degree
+*** NEXT Define and study chordal variety
+*** NEXT Prove embedding into P^{2k+1}
+
+** Priority 3
+*** NEXT Prove minimal degree inequality deg(V) ≥ n-k+1
+*** NEXT Deduce corollaries about degree-1 and varieties of minimal degree
+
+** Priority 4
+*** TODO Formalize GAGA-style statements for forms/maps/bundles
+*** TODO Formalize tangent cone geometric characterizations
+
+* Part XIV — Sanity tests
+** TODO P^n itself
+   degree(P^k in P^n)=1 and tangent spaces agree with the linear subspace
+
+** TODO Hypersurface of degree d
+   degree equals d by both homological and polynomial definitions
+
+** TODO Smooth plane curve
+   rational/meromorphic function field coincides with classical function field
+   weak Bezout matches d₁d₂ bound
+
+** TODO Cone over a curve
+   degree of cone equals degree of curve
+
+** TODO Nondegenerate curve in P^n
+   verify degree ≥ n in basic examples: rational normal curve realizes equality
+
+** TODO Tangent space of hypersurface at smooth point
+   matches kernel of gradient linear form
+
+* Part XV — Immediate next coding actions
+** NEXT Implement rational and meromorphic functions on P^n
+** NEXT Prove meromorphic = rational on P^n
+** NEXT Implement generic projection setup and prove meromorphic = rational on smooth projective varieties
+** NEXT Define degree and prove equivalent formulations
+** NEXT Implement projection/cone degree invariance
+** NEXT Define chordal variety and prove the P^{2k+1} embedding corollary
+** NEXT Prove deg(V) ≥ n-k+1 for irreducible nondegenerate varieties
+** NEXT Implement tangent space formulas in affine and homogeneous coordinates
+** NEXT Implement tangent cone definitions
+
+#+TITLE: Kodaira Embedding Theorem — Rocq TODO
+#+AUTHOR: Claude Code / Rocq planning
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize the proof and corollaries of the Kodaira Embedding Theorem in Rocq.
+
+  Main targets:
+  - blow-up geometry near the exceptional divisor
+  - positivity of twists π*L^k - nE
+  - canonical bundle formula for the blow-up
+  - surjectivity statements used to separate points and tangent vectors
+  - Kodaira embedding theorem
+  - intrinsic formulation using rational positive (1,1)-forms
+  - corollaries: products, blow-ups, finite unbranched covers, very ampleness
+
+  This section depends on:
+  - positive line bundles and curvature
+  - Kodaira vanishing
+  - blow-up construction
+  - exceptional divisor geometry
+  - canonical bundle computations
+  - projective embedding via global sections
+
+* Global strategy
+** TODO Split the development into layers
+*** TODO blow-up geometry layer
+    - exceptional divisor E
+    - line bundles [E], [-E]
+    - restriction of these bundles to E
+    - relation with universal/hyperplane bundles
+*** TODO positivity layer
+    - curvature computations for [E] and [-E]
+    - positivity of π*L^k - nE for k >> 0
+*** TODO canonical bundle layer
+    - formula K_{\tilde M} = π^*K_M + (n-1)E
+*** TODO embedding layer
+    - separate points by sections
+    - separate tangent directions by sections
+    - conclude projective embedding
+*** TODO corollary layer
+    - Hodge metric criterion
+    - products of algebraic varieties
+    - blow-ups are algebraic
+    - finite unbranched coverings preserve algebraicity
+    - eventual very ampleness
+
+** TODO Decide what to prove now vs assume
+   Recommended:
+*** TODO Prove now
+    - local bundle identifications on the blow-up
+    - curvature sign properties of [E] and [-E]
+    - positivity of π*L^k - nE for large k
+    - canonical bundle formula on blow-up
+    - formal reduction of embedding to two surjectivity statements
+    - Kodaira embedding theorem from these ingredients
+*** TODO Assume / import initially
+    - Kodaira vanishing theorem
+    - Hartogs extension where used
+    - blow-up construction as complex manifold
+    - positivity criterion via curvature
+    - compactness argument upgrading local k0 to global k0
+*** TODO Defer initially
+    - full detailed analytic construction of the glued metric on [E]
+    - any surface-specific refinements not needed here
+
+** TODO Fix notation
+   Need notation for:
+   - π : \tilde M -> M
+   - E exceptional divisor
+   - [E], [-E]
+   - K_M, K_{\tilde M}
+   - H hyperplane bundle
+   - J universal bundle
+   - tL^k map from M to projective space of sections
+   - dx : H^0(M,L^k)_x -> T_x^* ⊗ L_x^k
+
+* Part I — Geometry of the exceptional divisor
+** TODO Define blow-up π : \tilde M -> M at a point x
+   Need local chart model and exceptional divisor E = π^{-1}(x)
+
+** TODO Prove E ≅ P(T_x M)
+   This is the key identification used throughout
+
+** TODO Define the line bundle [E] on the blow-up
+** TODO Compute restriction [E]|_E
+   Show [E]|_E is the universal bundle J = -H on E ≅ P^{n-1}
+
+** TODO Dually define [-E] = [E]^*
+** TODO Prove restriction [-E]|_E is the hyperplane bundle on E
+
+** TODO Identify H^0(E, O_E(-E)) with T_x^*M
+   More precisely:
+   H^0(E, O_E(-E)) ≅ T_x^*M
+
+** NEXT Formalize the restriction-to-exceptional-divisor differential diagram
+   Need commuting diagram:
+   H^0(U, O_U) -> H^0(E, O_E(-E))
+   |                 |
+   v                 v
+   O_{U,x} --------> T_x^*U
+
+*** TODO Define the bottom map f ↦ df(x)
+*** TODO Define the top map f ↦ π^*f restricted to E
+*** TODO Prove these correspond under the identification H^0(E,O_E(-E)) ≅ T_x^*U
+
+* Part II — Curvature of [E] and [-E]
+** TODO Define two local metrics on [E]
+   - h1 on U via the tautological norm from the local blow-up model
+   - h2 on \tilde M - E via |σ|=1 for the canonical section σ with divisor E
+
+** TODO Glue h1 and h2 with partition of unity to obtain global metric h on [E]
+
+** TODO Define curvature form Ω_[E] = (sqrt(-1)/2π) Θ_[E]
+   Fix exact sign convention once
+
+** NEXT Compute curvature in three regions
+*** TODO On \tilde M - U_{2ε}, show Ω_[E] = 0
+*** TODO On U_ε - E, compute Ω_[E] = -π'^*ω_FS
+*** TODO On E, conclude -Ω_[E]|_E = ω_FS > 0
+
+** TODO Summarize positivity properties of Ω_[-E] = -Ω_[E]
+   Show:
+   - Ω_[-E] = 0 on \tilde M - U_{2ε}
+   - Ω_[-E] > 0 on U_ε
+   - Ω_[-E] positive on T_x(\tilde M) for x∈E modulo tangent directions to E
+
+** TODO Package theorem
+   curvature_of_exceptional_divisor_line_bundle
+
+* Part III — Positivity of π*L^k - nE
+** TODO Let L -> M be positive with curvature form Ω_L > 0
+** TODO Define pullback bundle π*L on \tilde M and its curvature Ω_{π*L}
+
+** TODO Prove:
+   Ω_{π*L} > 0 everywhere
+   Ω_{π*L} > 0 on \tilde M - E
+   Ω_{π*L} positive on normal directions to E
+
+** TODO Combine with Ω_[-E] to show:
+   Ω_{π*L} + ε Ω_[-E] > 0 near E and away from E in the appropriate ranges
+
+** NEXT Prove positivity for large twists
+   There exists k0 such that π*L^k - E is positive for k > k0
+
+** TODO Generalize:
+   for any fixed n > 0, π*L^k - nE is positive for k >> 0
+
+** TODO Package theorem
+   positivity_of_pullback_minus_exceptional_divisor
+
+* Part IV — Canonical bundle formula for blow-up
+** TODO State lemma
+   K_{\tilde M} = π^*K_M + (n-1)E
+
+** NEXT Prove lemma first in the existence-of-meromorphic-n-form case
+*** TODO Let ω be meromorphic n-form on M
+*** TODO Pull back ω to \tilde M
+*** TODO In blow-up coordinates compute divisor of π^*ω
+*** TODO Show divisor acquires extra factor (n-1)E
+
+** NEXT Prove general case via transition functions
+*** TODO Choose coordinate cover {U0, Ua}
+*** TODO Define induced cover on blow-up
+*** TODO Compute Jacobian determinants g_{ij} for K_{\tilde M}
+*** TODO Compute transition functions h_{ij} for [E]
+*** TODO Show transition functions of K_{\tilde M} - (n-1)E equal pullback transition functions of K_M
+*** TODO Conclude K_{\tilde M} - (n-1)E = π^*K_M
+
+** TODO Package theorem
+   canonical_bundle_of_blowup_at_point
+
+* Part V — Separate two points by sections
+** TODO State objective
+   For k >> 0, the restriction map
+   H^0(M, O(L^k)) -> L_x^k ⊕ L_y^k
+   is surjective for all x ≠ y
+
+** TODO Blow up M at x and y
+   Let π : \tilde M -> M, exceptional divisors E_x, E_y, and E = E_x + E_y
+
+** TODO Prove pullback on sections is an isomorphism
+   π^* : H^0(M,O(L^k)) -> H^0(\tilde M, O(π^*L^k))
+
+** TODO Identify H^0(E, O_E(π^*L^k)) with L_x^k ⊕ L_y^k
+
+** TODO Prove commuting diagram between restriction to E and evaluation at x,y
+
+** NEXT Use exact sequence
+   0 -> O_{\tilde M}(π^*L^k - E) -> O_{\tilde M}(π^*L^k) -> O_E(π^*L^k) -> 0
+
+*** TODO Choose k1 such that π^*L^{k1} + K_{\tilde M} is positive
+*** TODO Choose k2 such that π^*L^{k'} - nE is positive for k' > k2
+*** TODO Rewrite π^*L^k - E as
+    (π^*L^{k1} + K_{\tilde M}) + (π^*L^{k'} - nE)
+    using K_{\tilde M} = π^*K_M + (n-1)E
+*** TODO Apply Kodaira vanishing to get H^1(\tilde M, O(π^*L^k - E)) = 0 for k > k0
+*** TODO Conclude surjectivity of restriction H^0(\tilde M,O(π^*L^k)) -> H^0(E,O_E(π^*L^k))
+*** TODO Deduce evaluation map H^0(M,O(L^k)) -> L_x^k ⊕ L_y^k is surjective
+
+** TODO Package theorem
+   sections_of_large_positive_power_separate_points
+
+* Part VI — Separate tangent directions by sections
+** TODO State objective
+   For k >> 0, the differential map
+   dx : H^0(M,O(L^k))_x -> T_x^*M ⊗ L_x^k
+   is surjective for all x ∈ M
+
+** TODO Blow up M at x with exceptional divisor E
+** TODO Prove pullback induces isomorphism
+   π^* : H^0(M,O_x(L^k)) -> H^0(\tilde M, O_{\tilde M}(π^*L^k - E))
+
+** TODO Identify H^0(E, O_E(π^*L^k - E)) with T_x^*M ⊗ L_x^k
+
+** TODO Prove commuting diagram between restriction to E and the differential map dx
+
+** NEXT Use exact sequence
+   0 -> O_{\tilde M}(π^*L^k - 2E) -> O_{\tilde M}(π^*L^k - E) -> O_E(π^*L^k - E) -> 0
+
+*** TODO Choose k1 such that π^*L^{k1} + K_{\tilde M} is positive
+*** TODO Choose k2 such that π^*L^{k'} - (n+1)E is positive for k' > k2
+*** TODO Rewrite π^*L^k - 2E as
+    (π^*L^{k1} + K_{\tilde M}) + (π^*L^{k'} - (n+1)E)
+*** TODO Apply Kodaira vanishing to get H^1(\tilde M, O(π^*L^k - 2E)) = 0
+*** TODO Conclude surjectivity of restriction to E
+*** TODO Deduce dx is surjective
+
+** TODO Package theorem
+   sections_of_large_positive_power_separate_tangent_vectors
+
+* Part VII — Global projective embedding
+** TODO Prove local-to-global compactness argument
+   If tL^k separates points/tangent vectors at one pair or point, same holds nearby
+   Use compactness of M to get one uniform k0 for all x,y
+
+** TODO Define Kodaira map
+   t_{L^k} : M -> P(H^0(M,O(L^k))^*)
+
+** TODO Prove:
+   for k >> 0, t_{L^k} is injective
+   using separation of points
+
+** TODO Prove:
+   for k >> 0, dt_{L^k} is injective everywhere
+   using surjectivity of dx
+
+** TODO Conclude t_{L^k} is a holomorphic embedding
+
+** TODO State Kodaira Embedding Theorem
+   If L is a positive line bundle on compact complex manifold M,
+   then for k >> 0 the complete linear system |L^k| embeds M into projective space
+
+* Part VIII — Intrinsic formulation by rational Kahler class
+** TODO State intrinsic version
+   M is algebraic iff it has a closed positive (1,1)-form ω with rational cohomology class [ω]
+
+** NEXT Prove “if” direction
+*** TODO If [ω] ∈ H^2(M,Q), choose k with [kω] integral
+*** TODO Use exponential sequence to obtain holomorphic line bundle L with c1(L) = [kω]
+*** TODO Prove L is positive
+*** TODO Apply Kodaira embedding theorem
+
+** TODO Prove “only if” direction
+   Pull back hyperplane class from projective embedding to get rational positive (1,1)-form
+
+** TODO Define Hodge metric
+   A metric whose associated (1,1)-form is rational
+
+* Part IX — Corollaries
+** TODO Corollary: products of algebraic varieties are algebraic
+** NEXT Prove by positive forms
+*** TODO Let ω, ω' be closed integral positive (1,1)-forms on M,M'
+*** TODO Show π^*ω + π'^*ω' is closed, integral, positive on M×M'
+*** TODO Apply intrinsic Kodaira criterion
+
+** TODO Corollary: blow-up of algebraic variety at a point is algebraic
+** TODO Prove using positivity of π*L^k - E for k >> 0
+
+** TODO Corollary: finite unbranched cover preserves algebraicity
+** NEXT Prove “if M algebraic then \tilde M algebraic”
+*** TODO pull back positive line bundle or positive integral (1,1)-form
+
+** NEXT Prove converse
+*** TODO Given integral positive (1,1)-form ω on \tilde M, average over sheets:
+    ω' = (1/m) Σ ω_i on M
+*** TODO Show ω' is closed, positive, and rational
+*** TODO Apply intrinsic criterion
+
+** TODO Corollary: L^k + E is very ample for k >> 0 when L positive
+** TODO Prove from Kodaira embedding theorem
+
+* Part X — Very ample line bundles
+** TODO Define very ample line bundle
+   L is very ample iff H^0(M,O(L)) gives an embedding f : M -> P^N with L = f^*H
+
+** TODO Relate “positive” and “ample/very ample”
+   At least formalize the corollary:
+   if L positive and E arbitrary line bundle, then L^k + E is very ample for k >> 0
+
+* Part XI — Prerequisite infrastructure checklist
+** TODO Assume/import if already available
+*** TODO blow-up of a complex manifold at a point
+*** TODO exceptional divisor geometry
+*** TODO positivity of line bundles via curvature
+*** TODO Kodaira vanishing theorem
+*** TODO Hartogs theorem/extension
+*** TODO exponential sequence and c1
+*** TODO complete linear system map tL
+*** TODO compactness argument for uniform k0
+
+* Part XII — Suggested file/module layout
+** TODO `Blowup/ExceptionalDivisor.v`
+   geometry of E, restrictions [E]|E and [-E]|E
+
+** TODO `Blowup/CurvatureExceptional.v`
+   metric on [E], curvature sign computations
+
+** TODO `Blowup/CanonicalBundle.v`
+   K_{\tilde M} = π^*K_M + (n-1)E
+
+** TODO `Kodaira/SeparationOfPoints.v`
+   first surjectivity statement from blow-up at two points
+
+** TODO `Kodaira/SeparationOfTangents.v`
+   second surjectivity statement from blow-up at one point
+
+** TODO `Kodaira/Embedding.v`
+   global embedding theorem for large powers of positive line bundles
+
+** TODO `Kodaira/RationalKahlerCriterion.v`
+   intrinsic formulation with rational positive (1,1)-forms
+
+** TODO `Kodaira/Corollaries.v`
+   products, blow-ups, coverings, very ampleness
+
+* Part XIII — Priority order
+** Priority 1
+*** NEXT Formalize exceptional divisor bundle restrictions
+*** NEXT Compute curvature sign of [E] and [-E]
+*** NEXT Prove positivity of π*L^k - nE for k >> 0
+*** NEXT Prove canonical bundle formula for the blow-up
+
+** Priority 2
+*** NEXT Prove sections separate points
+*** NEXT Prove sections separate tangent vectors
+*** NEXT Deduce Kodaira embedding theorem
+
+** Priority 3
+*** NEXT Prove intrinsic rational-(1,1)-form criterion
+*** NEXT Prove corollaries on products, blow-ups, coverings
+
+** Priority 4
+*** TODO Formalize very ampleness consequences systematically
+
+* Part XIV — Sanity tests
+** TODO Blow-up of C^n at 0 in local model
+   Verify E ≅ P^{n-1} and [E]|E ≅ O(-1)
+
+** TODO Blow-up of P^n at a point
+   Check canonical bundle formula against known explicit formula
+
+** TODO Positive line bundle on P^n
+   Kodaira map for O(k), k>0, should recover Veronese embedding
+
+** TODO Product P^1 × P^1
+   Verify algebraicity via sum of pullback Kahler forms
+
+** TODO Finite étale cover of projective curve
+   Verify algebraicity preserved both ways
+
+* Part XV — Immediate next coding actions
+** NEXT Implement the blow-up exceptional divisor identifications
+** NEXT Implement curvature of [E] and [-E]
+** NEXT Prove positivity of π*L^k - nE for large k
+** NEXT Prove K_{\tilde M} = π^*K_M + (n-1)E
+** NEXT Prove surjectivity to separate two points
+** NEXT Prove surjectivity to separate tangent vectors
+** NEXT Assemble proof of Kodaira embedding theorem
+** NEXT Prove intrinsic rational positive (1,1)-form criterion
+** NEXT Add corollaries: products, blow-ups, covers, very ampleness

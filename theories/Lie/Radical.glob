@@ -1,0 +1,157 @@
+DIGEST 5af61823bbee4487ac125ad9e45d82fe
+FCAG.Lie.Radical
+R80:95 CAG.Galois.Field <> <> lib
+R113:128 CAG.Lie.BasicDef <> <> lib
+R146:159 CAG.Lie.Ideals <> <> lib
+R177:192 CAG.Lie.Solvable <> <> lib
+def 433:441 <> IsRadical
+binder 444:444 <> F:1
+R461:465 CAG.Galois.Field <> Field rec
+R467:467 CAG.Lie.Radical <> F:1 var
+binder 455:457 <> fld:2
+binder 471:471 <> L:3
+R491:501 CAG.Lie.BasicDef <> LieAlgebraF rec
+R507:507 CAG.Lie.Radical <> L:3 var
+R503:505 CAG.Lie.Radical <> fld:2 var
+binder 486:487 <> la:4
+R515:515 CAG.Lie.Radical <> L:3 var
+binder 511:511 <> x:5
+R530:537 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R551:557 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R543:546 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R542:542 CAG.Lie.Radical <> L:3 var
+binder 538:538 <> I:6
+R570:577 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R558:564 CAG.Lie.Ideals <> IsIdeal rec
+R569:569 CAG.Lie.Radical <> I:6 var
+R566:567 CAG.Lie.Radical <> la:4 var
+R591:651 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R578:587 CAG.Lie.Solvable <> IsSolvable def
+R589:590 CAG.Lie.Radical <> la:4 var
+R652:652 CAG.Lie.Radical <> I:6 var
+R654:654 CAG.Lie.Radical <> x:5 var
+ax 739:754 <> radical_is_ideal
+binder 766:766 <> F:7
+R783:787 CAG.Galois.Field <> Field rec
+R789:789 CAG.Lie.Radical <> F:7 var
+binder 777:779 <> fld:8
+binder 793:793 <> L:9
+R813:823 CAG.Lie.BasicDef <> LieAlgebraF rec
+R829:829 CAG.Lie.Radical <> L:9 var
+R825:827 CAG.Lie.Radical <> fld:8 var
+binder 808:809 <> la:10
+R833:839 CAG.Lie.Ideals <> IsIdeal rec
+R845:853 CAG.Lie.Radical <> IsRadical def
+R855:856 CAG.Lie.Radical <> la:10 var
+R841:842 CAG.Lie.Radical <> la:10 var
+ax 899:917 <> radical_is_solvable
+binder 929:929 <> F:13
+R946:950 CAG.Galois.Field <> Field rec
+R952:952 CAG.Lie.Radical <> F:13 var
+binder 940:942 <> fld:14
+binder 956:956 <> L:15
+R976:986 CAG.Lie.BasicDef <> LieAlgebraF rec
+R992:992 CAG.Lie.Radical <> L:15 var
+R988:990 CAG.Lie.Radical <> fld:14 var
+binder 971:972 <> la:16
+R1009:1016 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R996:1005 CAG.Lie.Solvable <> IsSolvable def
+R1007:1008 CAG.Lie.Radical <> la:16 var
+R1017:1023 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1025:1026 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1024:1024 <> n:17
+binder 1034:1034 <> x:18
+R1051:1054 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1037:1045 CAG.Lie.Radical <> IsRadical def
+R1050:1050 CAG.Lie.Radical <> x:18 var
+R1047:1048 CAG.Lie.Radical <> la:16 var
+R1076:1079 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1055:1068 CAG.Lie.Solvable <> derived_series def
+R1075:1075 CAG.Lie.Radical <> x:18 var
+R1073:1073 CAG.Lie.Radical <> n:17 var
+R1070:1071 CAG.Lie.Radical <> la:16 var
+R1081:1083 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1080:1080 CAG.Lie.Radical <> x:18 var
+R1084:1090 CAG.Lie.BasicDef <> la_zero abbrev
+R1092:1093 CAG.Lie.Radical <> la:16 var
+prf 1160:1184 <> solvable_ideal_in_radical
+binder 1187:1187 <> F:21
+R1204:1208 CAG.Galois.Field <> Field rec
+R1210:1210 CAG.Lie.Radical <> F:21 var
+binder 1198:1200 <> fld:22
+binder 1214:1214 <> L:23
+R1234:1244 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1250:1250 CAG.Lie.Radical <> L:23 var
+R1246:1248 CAG.Lie.Radical <> fld:22 var
+binder 1229:1230 <> la:24
+R1259:1262 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1258:1258 CAG.Lie.Radical <> L:23 var
+binder 1254:1254 <> I:25
+R1287:1294 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1275:1281 CAG.Lie.Ideals <> IsIdeal rec
+R1286:1286 CAG.Lie.Radical <> I:25 var
+R1283:1284 CAG.Lie.Radical <> la:24 var
+R1308:1315 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1295:1304 CAG.Lie.Solvable <> IsSolvable def
+R1306:1307 CAG.Lie.Radical <> la:24 var
+binder 1323:1323 <> x:26
+R1329:1332 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1326:1326 CAG.Lie.Radical <> I:25 var
+R1328:1328 CAG.Lie.Radical <> x:26 var
+R1333:1341 CAG.Lie.Radical <> IsRadical def
+R1346:1346 CAG.Lie.Radical <> x:26 var
+R1343:1344 CAG.Lie.Radical <> la:24 var
+def 1524:1535 <> IsSemisimple
+binder 1538:1538 <> F:27
+R1555:1559 CAG.Galois.Field <> Field rec
+R1561:1561 CAG.Lie.Radical <> F:27 var
+binder 1549:1551 <> fld:28
+binder 1565:1565 <> L:29
+R1585:1595 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1601:1601 CAG.Lie.Radical <> L:29 var
+R1597:1599 CAG.Lie.Radical <> fld:28 var
+binder 1580:1581 <> la:30
+binder 1623:1623 <> x:31
+R1640:1643 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1626:1634 CAG.Lie.Radical <> IsRadical def
+R1639:1639 CAG.Lie.Radical <> x:31 var
+R1636:1637 CAG.Lie.Radical <> la:30 var
+R1645:1647 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1644:1644 CAG.Lie.Radical <> x:31 var
+R1648:1654 CAG.Lie.BasicDef <> la_zero abbrev
+R1656:1657 CAG.Lie.Radical <> la:30 var
+prf 1714:1733 <> simple_is_semisimple
+binder 1736:1736 <> F:32
+R1753:1757 CAG.Galois.Field <> Field rec
+R1759:1759 CAG.Lie.Radical <> F:32 var
+binder 1747:1749 <> fld:33
+binder 1763:1763 <> L:34
+R1783:1793 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1799:1799 CAG.Lie.Radical <> L:34 var
+R1795:1797 CAG.Lie.Radical <> fld:33 var
+binder 1778:1779 <> la:35
+R1819:1822 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1808:1815 CAG.Lie.Ideals <> IsSimple def
+R1817:1818 CAG.Lie.Radical <> la:35 var
+R1823:1834 CAG.Lie.Radical <> IsSemisimple def
+R1836:1837 CAG.Lie.Radical <> la:35 var
+R1898:1916 CAG.Lie.Solvable <> simple_not_solvable thm
+R1898:1916 CAG.Lie.Solvable <> simple_not_solvable thm
+ax 1977:2003 <> quotient_radical_semisimple
+binder 2017:2017 <> F:36
+R2034:2038 CAG.Galois.Field <> Field rec
+R2040:2040 CAG.Lie.Radical <> F:36 var
+binder 2028:2030 <> fld:37
+binder 2044:2044 <> L:38
+R2060:2070 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2076:2076 CAG.Lie.Radical <> L:38 var
+R2072:2074 CAG.Lie.Radical <> fld:37 var
+binder 2055:2056 <> la:39
+R2082:2089 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2112:2114 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2095:2105 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2111:2111 CAG.Lie.Radical <> L:38 var
+R2107:2109 CAG.Lie.Radical <> fld:37 var
+binder 2090:2091 <> lq:40
+R2115:2126 CAG.Lie.Radical <> IsSemisimple def
+R2128:2129 CAG.Lie.Radical <> lq:40 var

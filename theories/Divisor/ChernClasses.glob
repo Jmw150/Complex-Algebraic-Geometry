@@ -1,0 +1,186 @@
+DIGEST 6f33492b589fcaceae77be725139c68f
+FCAG.Divisor.ChernClasses
+R822:825 Stdlib.Lists.List <> <> lib
+R827:831 Stdlib.Arith.Arith <> <> lib
+R833:838 Stdlib.ZArith.ZArith <> <> lib
+R840:842 Stdlib.micromega.Lia <> <> lib
+R869:875 CAG.Complex <> <> lib
+R902:917 CAG.ManifoldTopology <> <> lib
+R944:965 CAG.Divisor.LineBundleCech <> <> lib
+R992:1012 CAG.Divisor.DivisorBundle <> <> lib
+R1039:1055 CAG.Divisor.Curvature <> <> lib
+R1082:1091 CAG.LieAlgebra <> <> lib
+R1118:1143 CAG.Kahler.Lefschetz.Operators <> <> lib
+ax 1572:1573 <> c1
+R1589:1602 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1585:1585 <> M:1
+R1643:1646 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1610:1626 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R1629:1639 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R1641:1641 CAG.Divisor.ChernClasses <> M:1 var
+R1647:1649 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R1651:1651 CAG.Divisor.ChernClasses <> M:1 var
+prf 1727:1735 <> c1_tensor
+R1751:1764 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1747:1747 <> M:4
+R1779:1795 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R1798:1808 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R1810:1810 CAG.Divisor.ChernClasses <> M:4 var
+binder 1772:1772 <> L:5
+binder 1774:1775 <> L':6
+R1841:1847 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1819:1820 CAG.Divisor.ChernClasses <> c1 defax
+R1822:1822 CAG.Divisor.ChernClasses <> M:4 var
+R1825:1834 CAG.Divisor.LineBundleCech <> hlb_tensor defax
+R1838:1839 CAG.Divisor.ChernClasses <> L':6 var
+R1836:1836 CAG.Divisor.ChernClasses <> L:5 var
+R1848:1853 CAG.LieAlgebra <> vs_add proj
+R1878:1879 CAG.Divisor.ChernClasses <> c1 defax
+R1881:1881 CAG.Divisor.ChernClasses <> M:4 var
+R1883:1884 CAG.Divisor.ChernClasses <> L':6 var
+R1869:1870 CAG.Divisor.ChernClasses <> c1 defax
+R1872:1872 CAG.Divisor.ChernClasses <> M:4 var
+R1874:1874 CAG.Divisor.ChernClasses <> L:5 var
+R1856:1861 CAG.Kahler.Lefschetz.Operators <> HdR_vs defax
+R1863:1863 CAG.Divisor.ChernClasses <> M:4 var
+prf 1953:1959 <> c1_dual
+R1975:1988 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1971:1971 <> M:7
+R2000:2016 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R2019:2029 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R2031:2031 CAG.Divisor.ChernClasses <> M:7 var
+binder 1996:1996 <> L:8
+R2057:2063 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2040:2041 CAG.Divisor.ChernClasses <> c1 defax
+R2043:2043 CAG.Divisor.ChernClasses <> M:7 var
+R2046:2053 CAG.Divisor.LineBundleCech <> hlb_dual defax
+R2055:2055 CAG.Divisor.ChernClasses <> L:8 var
+R2064:2069 CAG.LieAlgebra <> vs_neg proj
+R2085:2086 CAG.Divisor.ChernClasses <> c1 defax
+R2088:2088 CAG.Divisor.ChernClasses <> M:7 var
+R2090:2090 CAG.Divisor.ChernClasses <> L:8 var
+R2072:2077 CAG.Kahler.Lefschetz.Operators <> HdR_vs defax
+R2079:2079 CAG.Divisor.ChernClasses <> M:7 var
+prf 2204:2215 <> c1_curvature
+R2231:2244 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2227:2227 <> M:9
+R2256:2272 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R2275:2285 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R2287:2287 CAG.Divisor.ChernClasses <> M:9 var
+binder 2252:2252 <> L:10
+R2300:2314 CAG.Divisor.Curvature <> HermitianMetric defax
+R2317:2327 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R2329:2329 CAG.Divisor.ChernClasses <> M:9 var
+R2332:2332 CAG.Divisor.ChernClasses <> L:10 var
+binder 2296:2296 <> h:11
+R2425:2428 Corelib.Init.Logic <> True ind
+R2452:2452 Corelib.Init.Logic <> I constr
+R2452:2452 Corelib.Init.Logic <> I constr
+prf 2588:2602 <> c1_positive_iff
+R2618:2631 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2614:2614 <> M:12
+R2643:2659 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R2662:2672 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R2674:2674 CAG.Divisor.ChernClasses <> M:12 var
+binder 2639:2639 <> L:13
+R2707:2794 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R2683:2702 CAG.Divisor.Curvature <> positive_line_bundle def
+R2704:2704 CAG.Divisor.ChernClasses <> M:12 var
+R2706:2706 CAG.Divisor.ChernClasses <> L:13 var
+R2795:2798 Corelib.Init.Logic <> True ind
+def 3143:3145 <> Pic
+R3152:3165 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3148:3148 <> M:14
+R3180:3196 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R3199:3209 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R3211:3211 CAG.Divisor.ChernClasses <> M:14 var
+prf 3388:3413 <> exponential_sequence_exact
+R3429:3442 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3425:3425 <> M:15
+R3583:3586 Corelib.Init.Logic <> True ind
+R3610:3610 Corelib.Init.Logic <> I constr
+R3610:3610 Corelib.Init.Logic <> I constr
+ax 3855:3862 <> beta_map
+R3878:3891 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3874:3874 <> M:16
+R3906:3909 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3899:3901 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R3903:3903 CAG.Divisor.ChernClasses <> M:16 var
+R3910:3912 CAG.Kahler.Lefschetz.Operators <> Hpq defax
+R3914:3914 CAG.Divisor.ChernClasses <> M:16 var
+prf 3930:3956 <> exponential_sequence_kernel
+R3972:3985 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3968:3968 <> M:19
+R3998:4000 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R4002:4002 CAG.Divisor.ChernClasses <> M:19 var
+binder 3993:3994 <> γ:20
+R4012:4012 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R4070:4158 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R4013:4019 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4057:4058 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4024:4040 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R4043:4053 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R4055:4055 CAG.Divisor.ChernClasses <> M:19 var
+binder 4020:4020 <> L:21
+R4065:4067 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4059:4060 CAG.Divisor.ChernClasses <> c1 defax
+R4062:4062 CAG.Divisor.ChernClasses <> M:19 var
+R4064:4064 CAG.Divisor.ChernClasses <> L:21 var
+R4068:4069 CAG.Divisor.ChernClasses <> γ:20 var
+R4159:4162 Corelib.Init.Logic <> True ind
+prf 4461:4477 <> c1_divisor_bundle
+R4493:4506 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 4489:4489 <> M:22
+R4518:4524 CAG.Divisor.DivisorBundle <> Divisor def
+R4527:4537 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R4539:4539 CAG.Divisor.ChernClasses <> M:22 var
+binder 4514:4514 <> D:23
+R4604:4607 Corelib.Init.Logic <> True ind
+R4631:4631 Corelib.Init.Logic <> I constr
+R4631:4631 Corelib.Init.Logic <> I constr
+prf 4741:4755 <> c1_hypersurface
+R4771:4784 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 4767:4767 <> M:24
+R4796:4802 CAG.Divisor.DivisorBundle <> Divisor def
+R4805:4815 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R4817:4817 CAG.Divisor.ChernClasses <> M:24 var
+binder 4792:4792 <> D:25
+R4897:4900 Corelib.Init.Logic <> True ind
+R4924:4924 Corelib.Init.Logic <> I constr
+R4924:4924 Corelib.Init.Logic <> I constr
+prf 5238:5248 <> c1_integral
+R5264:5277 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 5260:5260 <> M:26
+R5289:5305 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R5308:5318 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R5320:5320 CAG.Divisor.ChernClasses <> M:26 var
+binder 5285:5285 <> L:27
+R5394:5397 Corelib.Init.Logic <> True ind
+R5421:5421 Corelib.Init.Logic <> I constr
+R5421:5421 Corelib.Init.Logic <> I constr
+def 5539:5555 <> is_integral_class
+R5562:5575 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 5558:5558 <> M:28
+R5584:5586 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R5588:5588 CAG.Divisor.ChernClasses <> M:28 var
+binder 5579:5580 <> α:29
+R5605:5611 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5649:5650 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5616:5632 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R5635:5645 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R5647:5647 CAG.Divisor.ChernClasses <> M:28 var
+binder 5612:5612 <> L:30
+R5657:5659 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5651:5652 CAG.Divisor.ChernClasses <> c1 defax
+R5654:5654 CAG.Divisor.ChernClasses <> M:28 var
+R5656:5656 CAG.Divisor.ChernClasses <> L:30 var
+R5660:5661 CAG.Divisor.ChernClasses <> α:29 var
+prf 5750:5785 <> rational_class_has_integral_multiple
+R5801:5814 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 5797:5797 <> M:31
+R5827:5829 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R5831:5831 CAG.Divisor.ChernClasses <> M:31 var
+binder 5822:5823 <> α:32
+R5913:5916 Corelib.Init.Logic <> True ind
+R5940:5940 Corelib.Init.Logic <> I constr
+R5940:5940 Corelib.Init.Logic <> I constr

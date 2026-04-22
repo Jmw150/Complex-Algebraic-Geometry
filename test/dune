@@ -1,0 +1,6 @@
+(test
+ (name test_complex)
+ (libraries base core complex stdio )
+ (preprocess 
+  (pps ppx_assert))
+)

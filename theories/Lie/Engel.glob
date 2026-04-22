@@ -1,0 +1,303 @@
+DIGEST 81141dfd55f6f452a37c4998a196eefa
+FCAG.Lie.Engel
+R165:180 CAG.Galois.Field <> <> lib
+R198:213 CAG.Lie.BasicDef <> <> lib
+R231:244 CAG.Lie.Ideals <> <> lib
+R262:277 CAG.Lie.Solvable <> <> lib
+R295:311 CAG.Lie.Nilpotent <> <> lib
+ax 636:647 <> engel_linear
+binder 661:661 <> F:1
+R678:682 CAG.Galois.Field <> Field rec
+R684:684 CAG.Lie.Engel <> F:1 var
+binder 672:674 <> fld:2
+binder 688:688 <> L:3
+binder 690:690 <> V:4
+R710:720 CAG.Lie.BasicDef <> LieAlgebraF rec
+R726:726 CAG.Lie.Engel <> L:3 var
+R722:724 CAG.Lie.Engel <> fld:2 var
+binder 705:706 <> la:5
+R741:744 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R740:740 CAG.Lie.Engel <> L:3 var
+R746:749 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R745:745 CAG.Lie.Engel <> V:4 var
+R750:750 CAG.Lie.Engel <> V:4 var
+binder 734:736 <> act:6
+binder 801:801 <> x:7
+R804:816 CAG.Lie.Nilpotent <> IsAdNilpotent def
+R821:821 CAG.Lie.Engel <> x:7 var
+R818:819 CAG.Lie.Engel <> la:5 var
+binder 787:790 <> hnil:8
+R834:840 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R846:847 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R845:845 CAG.Lie.Engel <> V:4 var
+binder 841:841 <> v:9
+R849:853 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R872:872 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R848:848 CAG.Lie.Engel <> v:9 var
+R854:856 CAG.Lie.Engel <> act:6 var
+R871:871 CAG.Lie.Engel <> v:9 var
+R859:865 CAG.Lie.BasicDef <> la_zero abbrev
+R867:868 CAG.Lie.Engel <> la:5 var
+binder 829:830 <> hV:10
+R878:884 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R890:891 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R889:889 CAG.Lie.Engel <> V:4 var
+binder 885:885 <> v:11
+binder 899:899 <> x:12
+R909:911 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R902:904 CAG.Lie.Engel <> act:6 var
+R908:908 CAG.Lie.Engel <> v:11 var
+R906:906 CAG.Lie.Engel <> x:12 var
+R912:914 CAG.Lie.Engel <> act:6 var
+R929:929 CAG.Lie.Engel <> v:11 var
+R917:923 CAG.Lie.BasicDef <> la_zero abbrev
+R925:926 CAG.Lie.Engel <> la:5 var
+prf 1035:1047 <> engel_theorem
+binder 1050:1050 <> F:15
+R1067:1071 CAG.Galois.Field <> Field rec
+R1073:1073 CAG.Lie.Engel <> F:15 var
+binder 1061:1063 <> fld:16
+binder 1077:1077 <> L:17
+R1097:1107 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1113:1113 CAG.Lie.Engel <> L:17 var
+R1109:1111 CAG.Lie.Engel <> fld:16 var
+binder 1092:1093 <> la:18
+R1122:1122 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1151:1159 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 1130:1130 <> x:19
+R1133:1145 CAG.Lie.Nilpotent <> IsAdNilpotent def
+R1150:1150 CAG.Lie.Engel <> x:19 var
+R1147:1148 CAG.Lie.Engel <> la:18 var
+R1160:1170 CAG.Lie.Nilpotent <> IsNilpotent def
+R1172:1173 CAG.Lie.Engel <> la:18 var
+ax 1376:1385 <> engel_flag
+binder 1399:1399 <> F:20
+R1416:1420 CAG.Galois.Field <> Field rec
+R1422:1422 CAG.Lie.Engel <> F:20 var
+binder 1410:1412 <> fld:21
+binder 1426:1426 <> L:22
+R1446:1456 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1462:1462 CAG.Lie.Engel <> L:22 var
+R1458:1460 CAG.Lie.Engel <> fld:21 var
+binder 1441:1442 <> la:23
+binder 1484:1484 <> x:24
+R1487:1499 CAG.Lie.Nilpotent <> IsAdNilpotent def
+R1504:1504 CAG.Lie.Engel <> x:24 var
+R1501:1502 CAG.Lie.Engel <> la:23 var
+binder 1470:1473 <> hnil:25
+R1608:1611 Corelib.Init.Logic <> True ind
+prf 1750:1777 <> nilpotent_ideal_meets_center
+binder 1780:1780 <> F:28
+R1797:1801 CAG.Galois.Field <> Field rec
+R1803:1803 CAG.Lie.Engel <> F:28 var
+binder 1791:1793 <> fld:29
+binder 1807:1807 <> L:30
+R1827:1837 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1843:1843 CAG.Lie.Engel <> L:30 var
+R1839:1841 CAG.Lie.Engel <> fld:29 var
+binder 1822:1823 <> la:31
+R1852:1855 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1851:1851 CAG.Lie.Engel <> L:30 var
+binder 1847:1847 <> I:32
+R1882:1889 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1868:1878 CAG.Lie.Nilpotent <> IsNilpotent def
+R1880:1881 CAG.Lie.Engel <> la:31 var
+R1902:1909 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1890:1896 CAG.Lie.Ideals <> IsIdeal rec
+R1901:1901 CAG.Lie.Engel <> I:32 var
+R1898:1899 CAG.Lie.Engel <> la:31 var
+R1910:1910 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1943:1951 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1911:1917 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1919:1920 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1918:1918 <> x:33
+R1924:1927 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1921:1921 CAG.Lie.Engel <> I:32 var
+R1923:1923 CAG.Lie.Engel <> x:33 var
+R1929:1932 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R1928:1928 CAG.Lie.Engel <> x:33 var
+R1933:1939 CAG.Lie.BasicDef <> la_zero abbrev
+R1941:1942 CAG.Lie.Engel <> la:31 var
+R1952:1958 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1960:1961 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1959:1959 <> z:34
+R1965:1968 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1962:1962 CAG.Lie.Engel <> I:32 var
+R1964:1964 CAG.Lie.Engel <> z:34 var
+R1982:1985 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1969:1976 CAG.Lie.Ideals <> IsCenter def
+R1981:1981 CAG.Lie.Engel <> z:34 var
+R1978:1979 CAG.Lie.Engel <> la:31 var
+R1987:1990 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R1986:1986 CAG.Lie.Engel <> z:34 var
+R1991:1997 CAG.Lie.BasicDef <> la_zero abbrev
+R1999:2000 CAG.Lie.Engel <> la:31 var
+prf 2089:2114 <> nilpotent_normalizer_grows
+binder 2117:2117 <> F:35
+R2134:2138 CAG.Galois.Field <> Field rec
+R2140:2140 CAG.Lie.Engel <> F:35 var
+binder 2128:2130 <> fld:36
+binder 2144:2144 <> L:37
+R2164:2174 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2180:2180 CAG.Lie.Engel <> L:37 var
+R2176:2178 CAG.Lie.Engel <> fld:36 var
+binder 2159:2160 <> la:38
+R2189:2192 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2188:2188 CAG.Lie.Engel <> L:37 var
+binder 2184:2184 <> K:39
+R2219:2226 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2205:2215 CAG.Lie.Nilpotent <> IsNilpotent def
+R2217:2218 CAG.Lie.Engel <> la:38 var
+R2244:2251 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2227:2238 CAG.Lie.BasicDef <> IsSubalgebra rec
+R2243:2243 CAG.Lie.Engel <> K:39 var
+R2240:2241 CAG.Lie.Engel <> la:38 var
+R2252:2252 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2268:2276 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2253:2259 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2261:2262 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2260:2260 <> x:40
+R2263:2264 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R2265:2265 CAG.Lie.Engel <> K:39 var
+R2267:2267 CAG.Lie.Engel <> x:40 var
+R2277:2283 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2285:2286 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2284:2284 <> x:41
+R2306:2309 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2287:2298 CAG.Lie.Ideals <> IsNormalizer def
+R2305:2305 CAG.Lie.Engel <> x:41 var
+R2303:2303 CAG.Lie.Engel <> K:39 var
+R2300:2301 CAG.Lie.Engel <> la:38 var
+R2310:2311 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R2312:2312 CAG.Lie.Engel <> K:39 var
+R2314:2314 CAG.Lie.Engel <> x:41 var
+prf 2472:2493 <> nilpotent_codim1_ideal
+binder 2496:2496 <> F:42
+R2513:2517 CAG.Galois.Field <> Field rec
+R2519:2519 CAG.Lie.Engel <> F:42 var
+binder 2507:2509 <> fld:43
+binder 2523:2523 <> L:44
+R2543:2553 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2559:2559 CAG.Lie.Engel <> L:44 var
+R2555:2557 CAG.Lie.Engel <> fld:43 var
+binder 2538:2539 <> la:45
+R2582:2589 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2568:2578 CAG.Lie.Nilpotent <> IsNilpotent def
+R2580:2581 CAG.Lie.Engel <> la:45 var
+R2590:2590 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2620:2628 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2591:2597 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2603:2604 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2602:2602 CAG.Lie.Engel <> L:44 var
+binder 2598:2598 <> x:46
+R2606:2609 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R2605:2605 CAG.Lie.Engel <> x:46 var
+R2610:2616 CAG.Lie.BasicDef <> la_zero abbrev
+R2618:2619 CAG.Lie.Engel <> la:45 var
+R2629:2636 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2650:2652 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2642:2645 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2641:2641 CAG.Lie.Engel <> L:44 var
+binder 2637:2637 <> I:47
+R2665:2674 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2653:2659 CAG.Lie.Ideals <> IsIdeal rec
+R2664:2664 CAG.Lie.Engel <> I:47 var
+R2661:2662 CAG.Lie.Engel <> la:45 var
+R2675:2675 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2691:2702 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2781:2781 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2676:2682 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2684:2685 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2683:2683 <> x:48
+R2686:2687 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R2688:2688 CAG.Lie.Engel <> I:47 var
+R2690:2690 CAG.Lie.Engel <> x:48 var
+binder 2710:2710 <> J:49
+R2725:2728 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2713:2719 CAG.Lie.Ideals <> IsIdeal rec
+R2724:2724 CAG.Lie.Engel <> J:49 var
+R2721:2722 CAG.Lie.Engel <> la:45 var
+R2729:2729 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2750:2754 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 2737:2737 <> y:50
+R2743:2746 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2740:2740 CAG.Lie.Engel <> I:47 var
+R2742:2742 CAG.Lie.Engel <> y:50 var
+R2747:2747 CAG.Lie.Engel <> J:49 var
+R2749:2749 CAG.Lie.Engel <> y:50 var
+R2755:2755 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2771:2775 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2756:2762 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2764:2765 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2763:2763 <> x:51
+R2766:2767 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R2768:2768 CAG.Lie.Engel <> J:49 var
+R2770:2770 CAG.Lie.Engel <> x:51 var
+R2776:2780 Corelib.Init.Logic <> False ind
+prf 2929:2954 <> series_of_ideal_are_ideals
+binder 2957:2957 <> F:52
+R2974:2978 CAG.Galois.Field <> Field rec
+R2980:2980 CAG.Lie.Engel <> F:52 var
+binder 2968:2970 <> fld:53
+binder 2984:2984 <> L:54
+R3004:3014 CAG.Lie.BasicDef <> LieAlgebraF rec
+R3020:3020 CAG.Lie.Engel <> L:54 var
+R3016:3018 CAG.Lie.Engel <> fld:53 var
+binder 2999:3000 <> la:55
+R3029:3032 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3028:3028 CAG.Lie.Engel <> L:54 var
+binder 3024:3024 <> I:56
+R3044:3046 Corelib.Init.Datatypes <> nat ind
+binder 3040:3040 <> n:57
+R3067:3074 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3055:3061 CAG.Lie.Ideals <> IsIdeal rec
+R3066:3066 CAG.Lie.Engel <> I:56 var
+R3063:3064 CAG.Lie.Engel <> la:55 var
+R3075:3081 CAG.Lie.Ideals <> IsIdeal rec
+binder 3091:3091 <> x:58
+R3099:3102 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R3096:3096 CAG.Lie.Engel <> I:56 var
+R3098:3098 CAG.Lie.Engel <> x:58 var
+R3103:3116 CAG.Lie.Solvable <> derived_series def
+R3123:3123 CAG.Lie.Engel <> x:58 var
+R3121:3121 CAG.Lie.Engel <> n:57 var
+R3118:3119 CAG.Lie.Engel <> la:55 var
+R3083:3084 CAG.Lie.Engel <> la:55 var
+R3155:3165 CAG.Lie.Ideals <> inter_ideal thm
+R3198:3217 CAG.Lie.Solvable <> derived_series_ideal prfax
+R3173:3186 CAG.Lie.Solvable <> derived_series def
+R3155:3165 CAG.Lie.Ideals <> inter_ideal thm
+R3198:3217 CAG.Lie.Solvable <> derived_series_ideal prfax
+R3173:3186 CAG.Lie.Solvable <> derived_series def
+ax 3320:3347 <> lie_solvable_iff_ad_solvable
+binder 3361:3361 <> F:59
+R3378:3382 CAG.Galois.Field <> Field rec
+R3384:3384 CAG.Lie.Engel <> F:59 var
+binder 3372:3374 <> fld:60
+binder 3388:3388 <> L:61
+R3404:3414 CAG.Lie.BasicDef <> LieAlgebraF rec
+R3420:3420 CAG.Lie.Engel <> L:61 var
+R3416:3418 CAG.Lie.Engel <> fld:60 var
+binder 3399:3400 <> la:62
+R3441:3445 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R3428:3437 CAG.Lie.Solvable <> IsSolvable def
+R3439:3440 CAG.Lie.Engel <> la:62 var
+R3446:3449 Corelib.Init.Logic <> True ind
+ax 3477:3510 <> lie_nilpotent_iff_ad_nilpotent_alg
+binder 3524:3524 <> F:65
+R3541:3545 CAG.Galois.Field <> Field rec
+R3547:3547 CAG.Lie.Engel <> F:65 var
+binder 3535:3537 <> fld:66
+binder 3551:3551 <> L:67
+R3567:3577 CAG.Lie.BasicDef <> LieAlgebraF rec
+R3583:3583 CAG.Lie.Engel <> L:67 var
+R3579:3581 CAG.Lie.Engel <> fld:66 var
+binder 3562:3563 <> la:68
+R3605:3610 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R3639:3639 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R3591:3601 CAG.Lie.Nilpotent <> IsNilpotent def
+R3603:3604 CAG.Lie.Engel <> la:68 var
+binder 3618:3618 <> x:69
+R3621:3633 CAG.Lie.Nilpotent <> IsAdNilpotent def
+R3638:3638 CAG.Lie.Engel <> x:69 var
+R3635:3636 CAG.Lie.Engel <> la:68 var

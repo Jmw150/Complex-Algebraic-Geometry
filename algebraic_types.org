@@ -1,0 +1,459 @@
+#+TITLE: Algebraic Type Theory TODO — Classifying Category and Categorical Correspondence
+#+AUTHOR: Claude Code / Rocq planning
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize:
+  - the canonical/classifying category Cl(Th) of an algebraic theory Th
+  - the generic model G in Cl(Th)
+  - the equivalence between finite-product-preserving functors out of Cl(Th)
+    and models of Th
+  - the construction of the internal language Th(C) of a category with finite products
+  - the equivalence Cl(Th(C)) ~ C
+  - translations between algebraic theories via classifying categories
+  - soundness/completeness via the generic model
+
+  This section is the main bridge:
+  syntax <-> category with finite products
+
+* Global design decisions
+** TODO Fix the representation of algebraic theories
+   Must already have:
+   - algebraic signature Sg
+   - raw terms
+   - contexts
+   - typing judgments
+   - provable equality-in-context
+   - substitution
+   - models of an algebraic theory in a category with finite products
+   - interpretation of terms in a model
+
+** TODO Fix the representation of finite-product categories
+   Must already have:
+   - category
+   - terminal object
+   - binary / finite products
+   - finite-product-preserving functors
+
+** TODO Decide whether Cl(Th) objects are:
+   - finite lists of types
+   - contexts modulo renaming
+   The text uses finite lists of types, with contexts built from chosen variables.
+   This is probably the cleanest implementation.
+
+** TODO Fix notation for equivalence classes of terms in context
+   Need one notation for the equivalence class of a typed term:
+   - (Γ | M)
+   or a record with proof of typing and quotient by provable equality under renaming.
+   Must be stable before defining morphisms of Cl(Th).
+
+** TODO Decide quotient strategy
+   Cl(Th) morphisms are quotients by provable equality.
+   Need to choose whether to implement:
+   - actual quotient type
+   - setoid/quotient-style homs
+   Likely easiest in Rocq: setoid hom-sets first.
+
+* Part I — Equivalence classes of terms in context
+** TODO Define fixed-type context shape
+   For types α₁,...,αₙ, define contexts
+   Γ = [x₁:α₁,...,xₙ:αₙ]
+
+** TODO Define equivalence relation on pairs (Γ,M)
+   Preconditions:
+   - Γ has exactly the chosen types α₁,...,αₙ
+   - M is a raw term with Sg ⊢ Γ ⊢ M : β
+
+   Equivalence:
+   (Γ,M) ~ (Γ',M')
+   iff
+   Th ⊢ Γ ⊢ M = M'[x/x'] : β
+   where x are variables of Γ and x' variables of Γ'
+
+** TODO Prove this is an equivalence relation
+*** TODO reflexive
+*** TODO symmetric
+*** TODO transitive
+
+** TODO Define the quotient/equivalence-class object (Γ | M)
+** TODO Prove substitution under renaming is well defined on classes
+
+* Part II — Definition of the classifying category Cl(Th)
+** TODO Define objects of Cl(Th)
+   Objects are finite lists of types from the signature:
+   α = [α₁,...,αₙ]
+
+** TODO Define morphisms α -> β in Cl(Th)
+   If β = [β₁,...,βₘ], morphisms are finite lists
+   [(Γ|M₁),...,(Γ|Mₘ)]
+   where:
+   - Γ contains exactly the types in α
+   - each term has judgment Sg ⊢ Γ ⊢ M_j : β_j
+
+** TODO Decide implementation of empty-list cases
+   Need explicit treatment when:
+   - source α = []
+   - target β = []
+   The text leaves this to the reader.
+   We should define:
+   - empty target gives unique morphism to terminal object
+   - empty source corresponds to terms in empty context
+
+** TODO Define abbreviation (Γ | M) for morphism lists
+   Need a uniform internal representation that does not become ambiguous in code.
+
+** TODO Define identity morphism on α = [α₁,...,αₙ]
+   Identity should be
+   ([x₁:α₁,...,xₙ:αₙ] | x₁,...,xₙ)
+
+** TODO Define composition in Cl(Th)
+   Given:
+   - (Γ | M) : α -> β
+   - (Γ' | N) : β -> γ
+   define composition by substitution:
+   (Γ' | N) ∘ (Γ | M) := (Γ | N[M/y])
+
+** NEXT Verify composition is well defined
+   This is one of the important omitted proofs in the text.
+
+*** TODO Show typing is preserved under substitution
+*** TODO Show equivalent representatives compose to equivalent representatives
+*** TODO Show composition respects quotient relation on each component
+
+** NEXT Prove category laws for Cl(Th)
+*** TODO left identity
+*** TODO right identity
+*** TODO associativity
+   This will use substitution lemmas heavily.
+
+* Part III — Finite products in Cl(Th)
+** TODO Define terminal object of Cl(Th)
+   The empty list []
+
+** TODO Prove [] is terminal
+   Need unique morphism α -> [] for every α
+
+** TODO Define binary product by list concatenation
+   [α₁,...,αₙ] × [β₁,...,βₘ] := [α₁,...,αₙ,β₁,...,βₘ]
+
+** TODO Define product projections
+   Need explicit morphisms from concatenation to each factor
+
+** TODO Prove universal property of list concatenation as product
+   Given morphisms into α and β, construct pairing into α ++ β
+   and prove uniqueness
+
+** TODO Package theorem
+   Cl(Th) has finite products
+
+* Part IV — Generic model G in Cl(Th)
+** TODO Define generic model G of Th in Cl(Th)
+   On each type α:
+   - [α]_G := [α]
+
+   On each function symbol f : α₁,...,αₙ -> β:
+   - [f]_G := ([x₁:α₁,...,xₙ:αₙ] | f(x₁,...,xₙ))
+
+** TODO Prove G is a model of Th in Cl(Th)
+   Need to check:
+   - operations land in the right hom-sets
+   - axioms of Th are satisfied in G
+
+** TODO Prove interpretation lemma
+   For any proved term Γ ⊢ M : α,
+   show:
+   [Γ ⊢ M : α]_G = (Γ | M)
+
+   This is used later in completeness and should be an explicit theorem.
+
+* Part V — Functor from finite-product-preserving functors to models
+** TODO Define Ap_G
+   For category V with finite products:
+   Ap_G : FP(Cl(Th), V) -> Mod(Th, V)
+
+   On objects:
+   - F |-> F*G
+
+   On morphisms:
+   - φ : F -> F' maps to φ_G : F*G -> F'*G
+
+** TODO Prove Ap_G is well defined
+   Need:
+   - F*G is indeed a model
+   - natural transformation between finite-product-preserving functors induces homomorphism of models
+
+* Part VI — Construct inverse functor Ap_G^{-1}
+** TODO Define Ap_G^{-1} on a model M of Th in V
+   Need a finite-product-preserving functor
+   Ap_G^{-1}(M) : Cl(Th) -> V
+
+** TODO Define Ap_G^{-1}(M) on objects
+   [α₁,...,αₙ] |-> Π_i [α_i]_M
+
+** TODO Define Ap_G^{-1}(M) on morphisms
+   If (Γ | M₁,...,Mₘ) : α -> β
+   send it to:
+   ([Γ ⊢ M₁ : β₁]_M, ..., [Γ ⊢ Mₘ : βₘ]_M)
+   with codomain Π_j [β_j]_M
+   and unique map to terminal object if β is empty
+
+** NEXT Prove this functor is well defined
+*** TODO Equivalent term representatives have equal interpretations
+*** TODO Identity is preserved
+*** TODO Composition is preserved
+   This uses interpretation/substitution lemma for models.
+
+** NEXT Prove Ap_G^{-1}(M) preserves finite products
+   The text only sketches one example.
+   We should make all of this explicit.
+
+*** TODO Prove terminal object preserved
+*** TODO Prove binary products preserved
+*** TODO Generalize to all finite products
+
+* Part VII — Ap_G and Ap_G^{-1} are inverse equivalences
+** TODO Define counit ε_M : Ap_G(Ap_G^{-1}(M)) -> M
+   Components at each type α:
+   identity [α]_M -> [α]_M
+
+** TODO Prove ε_M is a model isomorphism
+   Need compatibility with every function symbol
+
+** TODO Define unit η_F : F -> Ap_G^{-1}(Ap_G(F))
+   At object α = [α₁,...,αₙ], component is the canonical isomorphism
+   F(α) -> Π_i F([α_i])
+
+   This uses that F preserves finite products.
+
+** TODO Prove η_F is natural
+** TODO Prove ε and η satisfy triangle identities / are inverse isomorphisms
+   Or enough to conclude equivalence by pointwise isomorphism
+
+** TODO Package theorem
+   Ap_G : FP(Cl(Th),V) ~ Mod(Th,V)
+
+** TODO State/corollary
+   Cl(Th) is a classifying category for Th
+
+* Part VIII — Strong universal property of canonical classifying category
+** TODO State Corollary 3.8.8
+   For any model M of Th in V, there is up to canonical isomorphism
+   a unique finite-product-preserving functor
+   F : Cl(Th) -> V
+   such that F*G = M
+
+** TODO Prove existence from Ap_G^{-1}(M)
+** TODO Prove uniqueness up to canonical isomorphism
+   If F' also has F'*G = M, define objectwise isomorphisms
+   Φ_α : F(α) -> F'(α)
+   from product decomposition and equality on generic model
+   then prove they are natural
+
+** TODO Package as
+   canonical_classifying_category_universal_property
+
+* Part IX — Internal language of a category with finite products
+** TODO Define algebraic signature Sg(C) for a category C with finite products
+   - one type A for each object A of C
+   - one constant symbol k : A for each morphism 1 -> A
+   - one function symbol f : A₁,...,Aₙ -> B
+     for each morphism A₁ × ... × Aₙ -> B
+
+** TODO Handle multiple arity presentations of a morphism
+   As the text notes, one morphism may induce multiple function symbols,
+   depending on parenthesization/arity.
+   Need a precise encoding choice to avoid ambiguity in code.
+
+** TODO Define canonical structure/model M of Sg(C) in C
+   - [A] := A
+   - [k] := k
+   - [f] := f
+
+** TODO Define Ax(C) to be equations satisfied by M
+** TODO Define the algebraic theory Th(C) := (Sg(C), Ax(C))
+** TODO Prove M is a model of Th(C) in C
+
+* Part X — Equivalence Cl(Th(C)) ~ C
+** TODO Define Eq : Cl(Th(C)) -> C
+   This is the functor induced by the universal property from the canonical model M.
+
+** TODO Give explicit definition of Eq on objects
+   [A₁,...,Aₙ] |-> Π_i A_i
+
+** TODO Give explicit definition of Eq on morphisms
+   As interpretation of term tuples in the canonical model
+
+** TODO Define Eq^{-1} : C -> Cl(Th(C))
+   - on objects: A |-> [A]
+   - on morphisms f : A -> B, map to ([x:A] | f(x))
+
+** NEXT Prove Eq ∘ Eq^{-1} = id_C
+   This should be mostly definitional.
+
+** NEXT Define natural transformations
+   μ : Eq^{-1} ∘ Eq -> id
+   η : id -> Eq^{-1} ∘ Eq
+
+** NEXT Prove μ and η are natural isomorphisms
+   The text sketches one key equation:
+   μ_α ∘ η_α = id
+   Need full proofs.
+
+*** TODO Prove components are well typed
+*** TODO Prove they are inverse in Cl(Th(C))
+*** TODO Prove naturality
+
+** TODO Package theorem
+   Cl(Th(C)) ~ C
+
+** TODO Record slogan
+   categories with finite products give syntax-independent algebraic theories
+
+* Part XI — Internal language reasoning principle
+** TODO Add theorem/documentation principle
+   If h, g∘f : A -> B in C correspond to terms h(x), g(f(x)),
+   then proving x:A ⊢ g(f(x)) = h(x):B in Th(C)
+   implies h = g∘f in C
+
+** TODO Package as internal-language reasoning lemma
+   This is one of the major practical benefits of the correspondence.
+
+** TODO Add product-language derived syntax
+   Define in the internal language of C:
+   - Fst
+   - Snd
+   - pairing
+   and prove the expected equations
+
+* Part XII — Translations between theories
+** TODO Define translation T : Th -> Th'
+   As a finite-product-preserving functor
+   T : Cl(Th) -> Cl(Th')
+
+** TODO Unpack translation into syntactic data
+   Need theorem / documentation:
+   a translation consists of:
+   - a list of types of Th' for each type of Th
+   - a list of proved terms of Th' for each function symbol of Th
+   - axioms of Th transported to theorems of Th'
+
+** TODO Define equivalence of theories
+   Th ~ Th' iff Cl(Th) ~ Cl(Th')
+
+** TODO State/prove Theorem 3.9.6
+   For every algebraic theory Th:
+   Th ~ Th(Cl(Th))
+
+   This is probably a routine consequence of previous theorems, but should still be explicit.
+
+* Part XIII — Soundness and completeness
+** TODO State soundness theorem
+   Already proved earlier:
+   if Th ⊢ Γ ⊢ M = M' : α
+   then every model satisfies it
+
+** TODO State completeness theorem
+   If an equation-in-context is satisfied by all models in all categories with finite products,
+   then it is provable in Th
+
+** NEXT Prove completeness using the generic model
+*** TODO Assume equation satisfied by all models
+*** TODO In particular, satisfied by generic model G in Cl(Th)
+*** TODO Use interpretation lemma
+   [Γ ⊢ M : α]_G = (Γ | M)
+*** TODO Conclude (Γ | M) = (Γ | M')
+*** TODO Unpack quotient definition to get
+   Th ⊢ Γ ⊢ M = M' : α
+
+** TODO Package theorem
+   algebraic_theory_semantics_sound_and_complete
+
+* Part XIV — Key proof obligations the text leaves implicit
+** TODO Verify composition in Cl(Th) is well defined
+** TODO Verify identities in Cl(Th) are well defined
+** TODO Verify Ap_G^{-1}(M) is a functor
+** TODO Verify Ap_G^{-1}(M) preserves finite products fully, not just one sample case
+** TODO Verify η and ε are natural
+** TODO Verify the objectwise isomorphisms in Corollary 3.8.8 induce a natural isomorphism
+** TODO Verify Theorem 3.9.6 “routine” details explicitly
+
+* Part XV — Suggested file/module layout
+** TODO `ATT/Signature.v`
+   algebraic signatures, types, function symbols
+
+** TODO `ATT/Theory.v`
+   algebraic theories, axioms, derivability
+
+** TODO `ATT/Syntax.v`
+   contexts, raw terms, substitution, typing
+
+** TODO `ATT/Model.v`
+   models in finite-product categories, term interpretation
+
+** TODO `ATT/ClassifyingCategory.v`
+   Cl(Th): objects, morphisms, composition, finite products
+
+** TODO `ATT/GenericModel.v`
+   generic model G in Cl(Th)
+
+** TODO `ATT/ClassifyingEquivalence.v`
+   Ap_G and Ap_G^{-1}, equivalence with models
+
+** TODO `ATT/InternalLanguage.v`
+   construction Th(C), canonical model, Eq : Cl(Th(C)) ~ C
+
+** TODO `ATT/Translation.v`
+   translations between theories, equivalence of theories
+
+** TODO `ATT/SoundComplete.v`
+   generic-model proof of completeness
+
+* Part XVI — Priority order
+** Priority 1
+*** NEXT Define Cl(Th)
+*** NEXT Prove it is a category
+*** NEXT Prove it has finite products
+*** NEXT Define generic model G
+
+** Priority 2
+*** NEXT Define Ap_G
+*** NEXT Define Ap_G^{-1}
+*** NEXT Prove equivalence FP(Cl(Th),V) ~ Mod(Th,V)
+
+** Priority 3
+*** NEXT Define Th(C)
+*** NEXT Prove Cl(Th(C)) ~ C
+*** NEXT Package internal language reasoning principle
+
+** Priority 4
+*** TODO Define theory translations via classifying categories
+*** TODO Prove Th ~ Th(Cl(Th))
+
+** Priority 5
+*** TODO Prove completeness from generic model
+
+* Part XVII — Sanity tests
+** TODO Test Cl(Th) on a tiny algebraic theory
+   e.g. one type, one unary function, no axioms
+
+** TODO Test generic model interpretation
+   [Γ ⊢ M]_G = (Γ | M)
+
+** TODO Test Ap_G^{-1}(M) on a concrete model in Set
+** TODO Test Eq^{-1}(f) = ([x:A] | f(x)) on simple morphisms
+** TODO Test internal-language proof implies categorical equality on a simple example
+** TODO Test translation of a trivial theory into itself gives identity functor
+
+* Part XVIII — Immediate next coding actions
+** NEXT Implement equivalence relation on typed terms in context
+** NEXT Implement morphisms of Cl(Th) as tuples of equivalence classes
+** NEXT Prove composition respects quotient
+** NEXT Prove category laws for Cl(Th)
+** NEXT Implement finite products in Cl(Th)
+** NEXT Define generic model G
+** NEXT Implement Ap_G and Ap_G^{-1}
+** NEXT Prove equivalence between models and finite-product-preserving functors
+** NEXT Implement Th(C)
+** NEXT Prove Cl(Th(C)) ~ C
+** NEXT Prove completeness via the generic model
