@@ -86,10 +86,6 @@ If you want a quick sense of the project, a good reading path is:
 5. [theories/Galois/Field.v](theories/Galois/Field.v)
 6. [theories/Kahler/sl2/Basic.v](theories/Kahler/sl2/Basic.v)
 
-If you want examples of presentation-friendly proof candidates, see:
-
-- [docs/presentation-proof-candidates.md](docs/presentation-proof-candidates.md)
-
 ## Building
 
 The project includes generated Rocq/Coq makefiles at the repository root.
