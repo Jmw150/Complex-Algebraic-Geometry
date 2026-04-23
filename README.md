@@ -20,7 +20,7 @@ The intended mathematical story is:
 6. representation theory as a tool for Lefschetz and Hodge-type arguments
 
 That is why the repository contains both foundational files like
-[`Complex.v`](theories/Complex.v:1)
+[`Complex.v`](theories/Complex.v)
 and higher-level targets such as Kodaira-style, Lefschetz-style, vanishing, and
 adjunction-type developments.
 
@@ -79,16 +79,16 @@ route taken by the project is distinctive.
 
 If you want a quick sense of the project, a good reading path is:
 
-1. [theories/Complex.v](theories/Complex.v:1)
-2. [theories/ComplexAnalysis.v](theories/ComplexAnalysis.v:1)
-3. [theories/Category/Yoneda.v](theories/Category/Yoneda.v:1)
-4. [theories/Order/Ideal.v](theories/Order/Ideal.v:1)
-5. [theories/Galois/Field.v](theories/Galois/Field.v:1)
-6. [theories/Kahler/sl2/Basic.v](theories/Kahler/sl2/Basic.v:1)
+1. [theories/Complex.v](theories/Complex.v)
+2. [theories/ComplexAnalysis.v](theories/ComplexAnalysis.v)
+3. [theories/Category/Yoneda.v](theories/Category/Yoneda.v)
+4. [theories/Order/Ideal.v](theories/Order/Ideal.v)
+5. [theories/Galois/Field.v](theories/Galois/Field.v)
+6. [theories/Kahler/sl2/Basic.v](theories/Kahler/sl2/Basic.v)
 
 If you want examples of presentation-friendly proof candidates, see:
 
-- [docs/presentation-proof-candidates.md](docs/presentation-proof-candidates.md:1)
+- [docs/presentation-proof-candidates.md](docs/presentation-proof-candidates.md)
 
 ## Building
 
