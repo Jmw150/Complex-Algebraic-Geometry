@@ -1,0 +1,309 @@
+DIGEST 4a609783cd54fbcf91e6eced71a3ea43
+FCAG.ATT.GenericModel
+R676:692 CAG.ATT.Signature <> <> lib
+R710:723 CAG.ATT.Syntax <> <> lib
+R741:754 CAG.ATT.Theory <> <> lib
+R772:784 CAG.ATT.Model <> <> lib
+R802:828 CAG.ATT.ClassifyingCategory <> <> lib
+R846:862 CAG.Category.Core <> <> lib
+R880:900 CAG.Category.Products <> <> lib
+R930:939 Stdlib.Lists.List <> <> lib
+R969:981 Stdlib.micromega.Lia <> <> lib
+R991:1003 Stdlib.Lists.List ListNotations <> mod
+def 1162:1165 <> G_ty
+R1173:1181 CAG.ATT.Signature <> Signature rec
+binder 1168:1169 <> Sg:1
+R1194:1198 CAG.ATT.Signature <> sg_ty proj
+R1190:1191 CAG.ATT.GenericModel <> Sg:1 var
+binder 1185:1186 <> α:2
+R1213:1214 CAG.Category.Core <> Ob proj
+R1205:1207 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R1208:1209 CAG.ATT.GenericModel <> Sg:1 var
+R1220:1220 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1223:1223 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1221:1222 CAG.ATT.GenericModel <> α:2 var
+def 1453:1462 <> G_fun_term
+R1470:1478 CAG.ATT.Signature <> Signature rec
+binder 1465:1466 <> Sg:3
+R1490:1495 CAG.ATT.Signature <> sg_fun proj
+R1486:1487 CAG.ATT.GenericModel <> Sg:3 var
+binder 1482:1482 <> f:4
+R1501:1504 CAG.ATT.Syntax <> Term ind
+R1506:1507 CAG.ATT.GenericModel <> Sg:3 var
+R1514:1518 CAG.ATT.Syntax <> t_app constr
+R1523:1530 Stdlib.Lists.List <> map abbrev
+R1539:1546 Stdlib.Lists.List <> seq abbrev
+R1551:1556 Corelib.Init.Datatypes <> length def
+R1563:1568 CAG.ATT.Signature <> sg_dom proj
+R1559:1560 CAG.ATT.GenericModel <> Sg:3 var
+R1571:1571 CAG.ATT.GenericModel <> f:4 var
+R1532:1536 CAG.ATT.Syntax <> t_var constr
+R1520:1520 CAG.ATT.GenericModel <> f:4 var
+prf 1585:1600 <> G_fun_term_typed
+R1608:1616 CAG.ATT.Signature <> Signature rec
+binder 1603:1604 <> Sg:5
+R1628:1633 CAG.ATT.Signature <> sg_fun proj
+R1624:1625 CAG.ATT.GenericModel <> Sg:5 var
+binder 1620:1620 <> f:6
+R1643:1649 CAG.ATT.Syntax <> HasType ind
+R1651:1652 CAG.ATT.GenericModel <> Sg:5 var
+R1659:1664 CAG.ATT.Signature <> sg_dom proj
+R1655:1656 CAG.ATT.GenericModel <> Sg:5 var
+R1667:1667 CAG.ATT.GenericModel <> f:6 var
+R1671:1680 CAG.ATT.GenericModel <> G_fun_term def
+R1682:1683 CAG.ATT.GenericModel <> Sg:5 var
+R1685:1685 CAG.ATT.GenericModel <> f:6 var
+R1693:1698 CAG.ATT.Signature <> sg_cod proj
+R1689:1690 CAG.ATT.GenericModel <> Sg:5 var
+R1701:1701 CAG.ATT.GenericModel <> f:6 var
+R1721:1730 CAG.ATT.GenericModel <> G_fun_term def
+R1741:1746 CAG.ATT.Syntax <> ht_app constr
+R1741:1746 CAG.ATT.Syntax <> ht_app constr
+R1836:1851 CAG.ATT.ClassifyingCategory <> id_vars_typed_ok thm
+R1836:1851 CAG.ATT.ClassifyingCategory <> id_vars_typed_ok thm
+prf 1930:1951 <> fp_prod_singleton_list
+R1959:1967 CAG.ATT.Signature <> Signature rec
+binder 1954:1955 <> Sg:7
+R1976:1979 Corelib.Init.Datatypes <> list ind
+R1985:1989 CAG.ATT.Signature <> sg_ty proj
+R1981:1982 CAG.ATT.GenericModel <> Sg:7 var
+binder 1971:1972 <> xs:8
+R2061:2063 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1999:2005 CAG.ATT.Model <> fp_prod def
+R2032:2039 Stdlib.Lists.List <> map abbrev
+R2058:2059 CAG.ATT.GenericModel <> xs:8 var
+binder 2046:2047 <> α:9
+R2052:2052 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2055:2055 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2053:2054 CAG.ATT.GenericModel <> α:9 var
+R2008:2025 CAG.ATT.ClassifyingCategory <> cl_finite_products def
+R2027:2028 CAG.ATT.GenericModel <> Sg:7 var
+R2064:2065 CAG.ATT.GenericModel <> xs:8 var
+R2434:2436 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2331:2334 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R2327:2327 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2330:2330 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2335:2341 CAG.ATT.Model <> fp_prod def
+R2398:2405 Stdlib.Lists.List <> map abbrev
+R2425:2428 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+binder 2412:2412 <> a:10
+R2417:2417 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2419:2419 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2418:2418 CAG.ATT.GenericModel <> a:10 var
+R2344:2361 CAG.ATT.ClassifyingCategory <> cl_finite_products def
+R2439:2442 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R2445:2448 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R2434:2436 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2331:2334 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R2327:2327 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2330:2330 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2335:2341 CAG.ATT.Model <> fp_prod def
+R2398:2405 Stdlib.Lists.List <> map abbrev
+R2425:2428 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+binder 2412:2412 <> a:11
+R2417:2417 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2419:2419 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2418:2418 CAG.ATT.GenericModel <> a:11 var
+R2344:2361 CAG.ATT.ClassifyingCategory <> cl_finite_products def
+R2439:2442 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R2445:2448 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+def 2567:2571 <> G_fun
+R2579:2587 CAG.ATT.Signature <> Signature rec
+binder 2574:2575 <> Sg:12
+R2599:2604 CAG.ATT.Signature <> sg_fun proj
+R2595:2596 CAG.ATT.GenericModel <> Sg:12 var
+binder 2591:2591 <> f:13
+R2619:2623 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2637:2638 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2654:2657 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2614:2616 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R2617:2618 CAG.ATT.GenericModel <> Sg:12 var
+R2628:2633 CAG.ATT.Signature <> sg_dom proj
+R2624:2625 CAG.ATT.GenericModel <> Sg:12 var
+R2636:2636 CAG.ATT.GenericModel <> f:13 var
+R2639:2639 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2653:2653 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2644:2649 CAG.ATT.Signature <> sg_cod proj
+R2640:2641 CAG.ATT.GenericModel <> Sg:12 var
+R2652:2652 CAG.ATT.GenericModel <> f:13 var
+R2667:2677 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R2667:2677 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R2667:2677 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R2706:2716 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R2706:2716 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R2682:2682 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2698:2698 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2683:2692 CAG.ATT.GenericModel <> G_fun_term def
+R2694:2695 CAG.ATT.GenericModel <> Sg:12 var
+R2697:2697 CAG.ATT.GenericModel <> f:13 var
+R2721:2732 Stdlib.Lists.List <> Forall2_cons constr
+R2763:2773 Stdlib.Lists.List <> Forall2_nil constr
+R2739:2754 CAG.ATT.GenericModel <> G_fun_term_typed thm
+R2756:2757 CAG.ATT.GenericModel <> Sg:12 var
+R2759:2759 CAG.ATT.GenericModel <> f:13 var
+def 3092:3111 <> GenericModel_mod_fun
+R3119:3127 CAG.ATT.Signature <> Signature rec
+binder 3114:3115 <> Sg:14
+R3139:3144 CAG.ATT.Signature <> sg_fun proj
+R3135:3136 CAG.ATT.GenericModel <> Sg:14 var
+binder 3131:3131 <> f:15
+R3159:3163 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3259:3273 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3289:3292 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3154:3156 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R3157:3158 CAG.ATT.GenericModel <> Sg:14 var
+R3164:3170 CAG.ATT.Model <> fp_prod def
+R3217:3224 Stdlib.Lists.List <> map abbrev
+R3248:3253 CAG.ATT.Signature <> sg_dom proj
+R3244:3245 CAG.ATT.GenericModel <> Sg:14 var
+R3256:3256 CAG.ATT.GenericModel <> f:15 var
+binder 3231:3232 <> α:16
+R3237:3237 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R3240:3240 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R3238:3239 CAG.ATT.GenericModel <> α:16 var
+R3173:3190 CAG.ATT.ClassifyingCategory <> cl_finite_products def
+R3192:3193 CAG.ATT.GenericModel <> Sg:14 var
+R3274:3274 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R3288:3288 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R3279:3284 CAG.ATT.Signature <> sg_cod proj
+R3275:3276 CAG.ATT.GenericModel <> Sg:14 var
+R3287:3287 CAG.ATT.GenericModel <> f:15 var
+R3312:3333 CAG.ATT.GenericModel <> fp_prod_singleton_list thm
+R3312:3333 CAG.ATT.GenericModel <> fp_prod_singleton_list thm
+R3312:3333 CAG.ATT.GenericModel <> fp_prod_singleton_list thm
+R3345:3349 CAG.ATT.GenericModel <> G_fun def
+R3345:3349 CAG.ATT.GenericModel <> G_fun def
+def 3379:3390 <> GenericModel
+R3398:3406 CAG.ATT.Signature <> Signature rec
+binder 3393:3394 <> Sg:17
+R3415:3419 CAG.ATT.Model <> Model rec
+R3424:3429 CAG.ATT.Theory <> th_sig proj
+R3424:3429 CAG.ATT.Theory <> th_sig proj
+R3424:3429 CAG.ATT.Theory <> th_sig proj
+R3438:3442 CAG.ATT.Theory <> th_ax proj
+R3438:3442 CAG.ATT.Theory <> th_ax proj
+R3434:3435 CAG.ATT.GenericModel <> Sg:17 var
+R3447:3448 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R3464:3466 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R3467:3468 CAG.ATT.GenericModel <> Sg:17 var
+R3482:3499 CAG.ATT.ClassifyingCategory <> cl_finite_products def
+R3501:3502 CAG.ATT.GenericModel <> Sg:17 var
+R3523:3533 CAG.ATT.Model <> Build_Model constr
+R3542:3547 CAG.ATT.Theory <> th_sig proj
+R3542:3547 CAG.ATT.Theory <> th_sig proj
+R3542:3547 CAG.ATT.Theory <> th_sig proj
+R3556:3560 CAG.ATT.Theory <> th_ax proj
+R3556:3560 CAG.ATT.Theory <> th_ax proj
+R3565:3566 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R3576:3578 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R3588:3605 CAG.ATT.ClassifyingCategory <> cl_finite_products def
+R3629:3633 CAG.ATT.Signature <> sg_ty proj
+binder 3620:3621 <> α:18
+R3639:3639 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R3642:3642 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R3640:3641 CAG.ATT.GenericModel <> α:18 var
+R3650:3669 CAG.ATT.GenericModel <> GenericModel_mod_fun def
+R3691:3691 Corelib.Init.Logic <> I constr
+R3523:3533 CAG.ATT.Model <> Build_Model constr
+R3542:3547 CAG.ATT.Theory <> th_sig proj
+R3542:3547 CAG.ATT.Theory <> th_sig proj
+R3542:3547 CAG.ATT.Theory <> th_sig proj
+R3556:3560 CAG.ATT.Theory <> th_ax proj
+R3556:3560 CAG.ATT.Theory <> th_ax proj
+R3565:3566 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R3576:3578 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R3588:3605 CAG.ATT.ClassifyingCategory <> cl_finite_products def
+R3629:3633 CAG.ATT.Signature <> sg_ty proj
+binder 3620:3621 <> α:19
+R3639:3639 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R3642:3642 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R3640:3641 CAG.ATT.GenericModel <> α:19 var
+R3650:3669 CAG.ATT.GenericModel <> GenericModel_mod_fun def
+R3691:3691 Corelib.Init.Logic <> I constr
+prf 4152:4171 <> interpretation_lemma
+R4179:4187 CAG.ATT.Signature <> Signature rec
+binder 4174:4175 <> Sg:20
+R4196:4199 Corelib.Init.Datatypes <> list ind
+R4202:4212 CAG.ATT.Syntax <> TheoryAxiom rec
+R4214:4215 CAG.ATT.GenericModel <> Sg:20 var
+binder 4191:4192 <> ax:21
+R4229:4232 Corelib.Init.Datatypes <> list ind
+R4238:4242 CAG.ATT.Signature <> sg_ty proj
+R4234:4235 CAG.ATT.GenericModel <> Sg:20 var
+binder 4224:4225 <> Γ:22
+R4254:4257 CAG.ATT.Syntax <> Term ind
+R4259:4260 CAG.ATT.GenericModel <> Sg:20 var
+binder 4247:4247 <> t:23
+binder 4249:4250 <> t':24
+R4273:4277 CAG.ATT.Signature <> sg_ty proj
+R4269:4270 CAG.ATT.GenericModel <> Sg:20 var
+binder 4264:4265 <> τ:25
+R4292:4298 CAG.ATT.Syntax <> HasType ind
+R4300:4301 CAG.ATT.GenericModel <> Sg:20 var
+R4303:4304 CAG.ATT.GenericModel <> Γ:22 var
+R4306:4306 CAG.ATT.GenericModel <> t:23 var
+R4309:4310 CAG.ATT.GenericModel <> τ:25 var
+binder 4286:4287 <> Ht:26
+R4324:4330 CAG.ATT.Syntax <> HasType ind
+R4332:4333 CAG.ATT.GenericModel <> Sg:20 var
+R4335:4336 CAG.ATT.GenericModel <> Γ:22 var
+R4338:4339 CAG.ATT.GenericModel <> t':24 var
+R4341:4342 CAG.ATT.GenericModel <> τ:25 var
+binder 4318:4320 <> Ht':27
+R4372:4379 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4351:4354 CAG.ATT.Syntax <> ThEq ind
+R4356:4357 CAG.ATT.GenericModel <> Sg:20 var
+R4359:4360 CAG.ATT.GenericModel <> ax:21 var
+R4362:4363 CAG.ATT.GenericModel <> Γ:22 var
+R4365:4365 CAG.ATT.GenericModel <> t:23 var
+R4367:4368 CAG.ATT.GenericModel <> t':24 var
+R4370:4371 CAG.ATT.GenericModel <> τ:25 var
+R4380:4389 CAG.ATT.ClassifyingCategory <> ClMor_theq def
+R4394:4399 CAG.ATT.Theory <> th_sig proj
+R4394:4399 CAG.ATT.Theory <> th_sig proj
+R4394:4399 CAG.ATT.Theory <> th_sig proj
+R4408:4412 CAG.ATT.Theory <> th_ax proj
+R4408:4412 CAG.ATT.Theory <> th_ax proj
+R4404:4405 CAG.ATT.GenericModel <> Sg:20 var
+R4417:4418 CAG.ATT.GenericModel <> ax:21 var
+R4429:4430 CAG.ATT.GenericModel <> Γ:22 var
+R4432:4432 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4435:4435 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4433:4434 CAG.ATT.GenericModel <> τ:25 var
+R4446:4456 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R4446:4456 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R4446:4456 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R4475:4485 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R4475:4485 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R4461:4461 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4463:4463 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4462:4462 CAG.ATT.GenericModel <> t:23 var
+R4490:4501 Stdlib.Lists.List <> Forall2_cons constr
+R4511:4521 Stdlib.Lists.List <> Forall2_nil constr
+R4507:4508 CAG.ATT.GenericModel <> Ht:26 var
+R4538:4548 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R4538:4548 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R4538:4548 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R4568:4578 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R4568:4578 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R4553:4553 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4556:4556 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4554:4555 CAG.ATT.GenericModel <> t':24 var
+R4583:4594 Stdlib.Lists.List <> Forall2_cons constr
+R4605:4615 Stdlib.Lists.List <> Forall2_nil constr
+R4600:4602 CAG.ATT.GenericModel <> Ht':27 var
+R4653:4662 CAG.ATT.ClassifyingCategory <> ClMor_theq def
+R4875:4877 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4850:4863 Stdlib.Lists.List <> nth_error def
+R4870:4870 Corelib.Init.Datatypes <> S constr
+R4865:4865 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4867:4867 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4878:4881 Corelib.Init.Datatypes <> None constr
+R4875:4877 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4850:4863 Stdlib.Lists.List <> nth_error def
+R4870:4870 Corelib.Init.Datatypes <> S constr
+R4865:4865 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4867:4867 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4878:4881 Corelib.Init.Datatypes <> None constr
+R4897:4915 Stdlib.Lists.List <> nth_error_None thm
+R4897:4915 Stdlib.Lists.List <> nth_error_None thm

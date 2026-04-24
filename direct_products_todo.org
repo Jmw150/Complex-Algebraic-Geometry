@@ -1,0 +1,385 @@
+#+TITLE: TODO — Direct Products, Semidirect Products, and Abelian Groups (Rocq Formalization Plan)
+#+AUTHOR: OpenAI
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize the theory from the supplied Chapter 5 excerpt in Rocq, centered on:
+  - direct products of groups
+  - component embeddings and projections
+  - element orders in direct products
+  - elementary abelian p-groups
+  - arbitrary direct products and restricted direct products
+  - selected structural exercises
+  - preparatory infrastructure for later semidirect products and finitely generated abelian groups
+
+* Suggested file split
+** DONE Core files
+   - Groups/DirectProduct.v
+   - Groups/DirectProductIndexed.v
+   - Groups/RestrictedDirectProduct.v
+   - Groups/ElementaryAbelian.v
+   - Groups/CentralProduct.v
+   - Groups/DirectProductExercises.v
+
+* Dependencies
+** DONE Reuse group basics
+   Need:
+   - group structure, subgroup, normal subgroup
+   - quotient group
+   - cyclic groups Z/nZ
+   - centers and centralizers
+   - Sylow theory for one exercise
+   - automorphism groups if available
+   - isomorphism theorems
+
+** DONE Reuse finite product / tuple infrastructure
+   - finite cartesian products
+   - indexed families
+   - componentwise operations
+   - extensionality for functions if indexed products are represented as dependent functions
+
+* Part I — Basic direct products
+** DONE Define binary and finite direct products
+   For groups G_1, ..., G_n:
+   - carrier = tuples
+   - multiplication componentwise
+   - identity componentwise
+   - inverse componentwise
+
+** DONE Prove Proposition 1
+   The direct product of finitely many groups is a group.
+   Also formalize cardinality statement for finite groups:
+   - |G_1 × ... × G_n| = Π |G_i|
+   - if some factor is infinite, product is infinite
+
+** TODO Name suggestion
+   `direct_product_group`
+   `finite_card_direct_product`
+
+** DONE Add notation and simplification lemmas
+   - multiplication unfolds componentwise
+   - identity components
+   - inverse components
+   - extensionality for tuple equality
+
+* Part II — Canonical embeddings and projections
+** DONE Formalize Proposition 2(1): coordinate-factor embedding
+   For each i:
+   - embed G_i into G_1 × ... × G_n as identity in all other coordinates
+   - prove image is subgroup
+   - prove embedding is an isomorphism onto its image
+
+** DONE Formalize the quotient identification
+   Under the standard embedding of G_i, prove
+   (G_1 × ... × G_n) / G_i ≅ G_1 × ... × G_{i-1} × G_{i+1} × ... × G_n
+
+** DONE Formalize Proposition 2(2): projections
+   For each i:
+   - π_i : product -> G_i
+   - π_i is surjective homomorphism
+   - kernel = elements with identity in the i-th coordinate
+   - kernel is isomorphic to product of all other factors
+
+** DONE Formalize Proposition 2(3): distinct coordinate factors commute
+   If x ∈ G_i and y ∈ G_j with i ≠ j, then xy = yx inside the ambient product.
+
+** TODO Name suggestions
+   - `direct_product_embed_factor`
+   - `direct_product_proj_hom`
+   - `kernel_proj_is_other_factors`
+   - `distinct_factors_commute`
+
+* Part III — Immediate consequences and examples
+** DONE Formalize order of an element in a direct product
+   For x_i ∈ G_i:
+   - ord(x_1 ... x_n) = lcm(ord(x_1), ..., ord(x_n))
+   taking infinite order conventions carefully if desired
+
+** TODO Start with finite-order version first
+   Easier theorem:
+   if all ord(x_i) finite, then order in product is lcm of component orders.
+
+** DONE Define elementary abelian p-group E_{p^n}
+   As direct product of n copies of Z/pZ.
+
+** DONE Prove basic properties of E_{p^n}
+   - abelian
+   - order p^n
+   - every element satisfies x^p = 1
+
+** DONE Formalize E_{p^2} subgroup count
+   Prove the elementary abelian group of order p^2 has exactly p+1 subgroups of order p.
+
+** TODO Name suggestions
+   - `elementary_abelian_group`
+   - `order_element_direct_product`
+   - `subgroups_order_p_in_Ep2`
+
+* Part IV — Standard exercise lemmas on direct products
+** DONE Exercise 1
+   Prove:
+   Z(G_1 × ... × G_n) = Z(G_1) × ... × Z(G_n)
+
+   Deduce:
+   direct product is abelian iff each factor is abelian.
+
+** DONE Exercise 2
+   For arbitrary subset I of factor indices:
+   - define G_I as subgroup supported on coordinates in I
+   - prove G_I ≅ product of factors indexed by I
+   - prove G_I ◁ G
+   - prove G / G_I ≅ G_J where J is complement of I
+   - conclude G ≅ G_I × G_J
+
+** DONE Exercise 3
+   For disjoint nonempty I,K:
+   - prove every x ∈ G_I commutes with every y ∈ G_K
+
+** DONE Exercise 4
+   For finite groups A,B and prime p:
+   - Sylow p-subgroups of A × B are exactly P × Q with P ∈ Syl_p(A), Q ∈ Syl_p(B)
+   - n_p(A × B) = n_p(A) n_p(B)
+   - generalize to finitely many factors
+
+** DONE Exercise 5
+   Find or formalize existence of a nonnormal subgroup of Q_8 × Z_4
+   Since this is an existence/counterexample exercise, formalize one explicit subgroup and prove it is not normal.
+
+** DONE Exercise 6
+   Show all subgroups of Q_8 × E_{2^n} are normal
+   This may require using Hamiltonian 2-group structure, or proving directly with known classification if available.
+   Mark as stretch goal unless prior theory exists.
+
+** DONE Exercise 7
+   Factor reordering isomorphism
+   For permutation π of {1,...,n}, define
+   φ_π(g_1,...,g_n) = (g_{π^{-1}(1)},...,g_{π^{-1}(n)})
+   and prove it is an isomorphism.
+
+** DONE Exercise 8
+   Specialize Exercise 7 to identical factors G:
+   - obtain homomorphism S_n -> Aut(G^n)
+   - prove injective
+
+** DONE Exercise 9
+   Use permutation action on basis vectors to embed S_n into GL_n(F) as permutation matrices.
+
+** DONE Exercise 10
+   For E = A × B with A,B cyclic of order p generated by x,y:
+   prove distinct subgroups of order p are exactly
+   <x>, <xy>, <xy^2>, ..., <xy^{p-1}>, <y>
+
+** DONE Exercise 11
+   Find formula for number of subgroups of order p in E_{p^n}
+   Expected result:
+   (p^n - 1)/(p - 1)
+
+* Part V — Central products
+** DONE Define central product data
+   Inputs:
+   - groups A,B
+   - central subgroups Z_1 ≤ Z(A), Z_2 ≤ Z(B)
+   - isomorphism Z_1 ≅ Z_2
+   Define Z = {(x_i, y_i^{-1})}
+   Define central product (A × B)/Z.
+
+** DONE Prove basic structure theorem for central products
+   - images of A and B in A * B are isomorphic to A and B
+   - these images intersect in a central subgroup isomorphic to Z_1
+   - compute order |A * B| = |A||B|/|Z_1| in finite case
+
+** DONE Exercise 12(b)
+   Formalize Z_4 * D_8 and Z_4 * Q_8 using the specified identifications
+   Prove they are not isomorphic.
+
+** DONE Exercise 13
+   Give presentations for Z_4 * D_8 and Z_4 * Q_8
+   This is a nice optional module if your presentation framework is mature.
+
+** TODO Mark central products as moderately advanced
+   Good to implement after quotients and direct products are stable.
+
+* Part VI — Quotients of direct products
+** DONE Exercise 14
+   For normal subgroups B_i ◁ A_i:
+   - prove B_1 × ... × B_n ◁ A_1 × ... × A_n
+   - prove quotient isomorphism
+     (A_1 × ... × A_n)/(B_1 × ... × B_n) ≅ (A_1/B_1) × ... × (A_n/B_n)
+
+** TODO Name suggestion
+   `quotient_direct_product_iso_product_quotients`
+
+* Part VII — Arbitrary direct products
+** DONE Exercise 15
+   Define arbitrary indexed direct product Π_{i∈I} G_i
+   likely as dependent functions f : I -> Σ_i carrier(G_i), or simply family-valued functions
+
+** DONE Prove group laws for indexed direct product
+   - multiplication pointwise
+   - identity pointwise
+   - inverse pointwise
+
+** DONE Exercise 16
+   Generalize Proposition 2 to arbitrary direct products
+   - factor embeddings
+   - projections
+   - kernels
+   - commuting supported factors
+
+* Part VIII — Restricted direct products / direct sums
+** DONE Exercise 17
+   Define restricted direct product / direct sum
+   as elements of Π_i G_i equal to identity for all but finitely many i
+
+** DONE Prove restricted direct product is subgroup
+** DONE Prove it is normal in the full direct product
+
+** DONE Exercise 17(c)
+   For G_i = Z/p_i Z where p_i is the i-th prime:
+   - every element of restricted product has finite order
+   - full direct product has elements of infinite order
+   - restricted product equals torsion subgroup of full direct product
+
+** TODO This is a strong and useful formalized example
+
+* Part IX — Example bank / existence exercises
+** DONE Exercise 18(a)
+   Construct an infinite group in which every element has order 1 or 2
+   Example: direct sum of countably many copies of Z/2Z
+
+** DONE Exercise 18(b)
+   Construct an infinite torsion group with elements of arbitrarily large finite order
+   Example: direct sum over n of Z/nZ
+
+** DONE Exercise 18(c)
+   Construct a group with an element of infinite order and an element of order 2
+   Example: Z × Z/2Z
+
+** DONE Exercise 18(d)
+   Construct a group G such that every finite group embeds in G
+   Example: restricted direct product of representatives of all finite groups
+   or direct product over all finite groups
+
+** DONE Exercise 18(e)
+   Construct nontrivial G with G ≅ G × G
+   Example: countable direct sum of Z/2Z or countable direct product of a fixed nontrivial group
+
+** TODO These are good theorem statements plus examples
+   Keep in an `Examples` section with proof terms.
+
+* Part X — Proof engineering guidance for Claude
+** DONE Implement finite direct products first, indexed products second
+   Avoid dependent complexity at the start.
+
+** DONE Use reusable lemmas for componentwise equality
+   Many proofs reduce to coordinate projection extensionality.
+
+** DONE Package “support finite” predicate early for restricted products
+   You will use:
+   - support of f = {i | f(i) ≠ 1}
+   - finite support preserved by multiplication and inversion
+
+** DONE Separate algebraic structure from cardinality theorems
+   This keeps the API usable for infinite groups.
+
+** DONE Keep explicit isomorphisms
+   Do not prove merely existence; define the maps.
+   Especially for:
+   - factor embeddings
+   - projections
+   - quotient/product isomorphisms
+   - reindexing isomorphisms
+
+* Part XI — Milestones
+** DONE Milestone 1
+   Finish:
+   - finite direct product group structure
+   - factor embeddings
+   - projections
+   - commuting factors
+   - center of direct product
+
+** DONE Milestone 2
+   Finish:
+   - element order in direct products
+   - elementary abelian p-groups
+   - subgroup count for E_{p^2}
+   - Sylow product theorem for direct products
+
+** DONE Milestone 3
+   Finish:
+   - arbitrary indexed product
+   - restricted direct product
+   - torsion example with direct sum of cyclic groups
+
+** DONE Milestone 4
+   Finish:
+   - central product construction
+   - quotient-of-product = product-of-quotients
+   - existence-example bank from Exercise 18
+
+* Part XII — Nice-to-have later extensions
+** TODO Semidirect products
+   Since the chapter title includes semidirect products, likely next tasks:
+   - define homomorphism H -> Aut(N)
+   - define N ⋊ H
+   - prove multiplication, inverse, embeddings, quotient properties
+   - connect with internal semidirect product theorem
+
+** TODO Finitely generated abelian groups
+   Later file ideas:
+   - Abelian/InvariantFactor.v
+   - Abelian/ElementaryDivisors.v
+   - Abelian/FGAbelianClassification.v
+
+** TODO Internal direct product criterion
+   Helpful bridge to semidirect products:
+   - commuting normal subgroups
+   - trivial intersections
+   - product whole group implies external direct product isomorphism
+
+* Small theorem checklist
+** DONE `direct_product_is_group`
+** DONE `finite_direct_product_cardinality`
+** DONE `embed_factor_subgroup`
+** DONE `projection_hom_surjective`
+** DONE `kernel_projection_other_factors`
+** DONE `distinct_factors_commute`
+** DONE `center_direct_product`
+** DONE `abelian_iff_factors_abelian`
+** DONE `sylow_in_product`
+** DONE `num_sylow_in_product`
+** DONE `reindex_direct_product_iso`
+** DONE `symmetric_group_acts_by_factor_permutation`
+** DONE `indexed_direct_product_group`
+** DONE `restricted_direct_product_subgroup`
+** DONE `restricted_direct_product_normal`
+** DONE `quotient_product_iso_product_quotients`
+** DONE `elementary_abelian_group_order`
+** DONE `subgroups_order_p_in_Ep2`
+** TODO `count_subgroups_order_p_in_Epn`
+** TODO `central_product_basic_structure`
+
+* Notes for formalization choices
+** DONE Decide representation of cyclic groups
+   Either:
+   - quotient integers modulo n
+   - finite additive group Zmod n
+   Use whatever integrates best with existing library.
+
+** DONE Decide finite product representation
+   Two good options:
+   - nested binary products
+   - vectors/tuples indexed by Fin n
+   Binary products are easier initially; tuples scale better.
+
+** DONE For arbitrary indexed products
+   Prefer functions `∀ i, G_i`
+   Group operations can be pointwise.
+
+** DONE For restricted direct product
+   Define with sigma type:
+   - element f : Π_i G_i
+   - proof that {i | f(i) ≠ 1} is finite
+   Or use finitely-supported maps if existing library supports it.

@@ -1,0 +1,378 @@
+DIGEST 3f7f50cf4da26658a34d63ef49c60078
+FCAG.ATT.InternalLanguage
+R710:726 CAG.ATT.Signature <> <> lib
+R744:757 CAG.ATT.Syntax <> <> lib
+R775:788 CAG.ATT.Theory <> <> lib
+R806:818 CAG.ATT.Model <> <> lib
+R836:862 CAG.ATT.ClassifyingCategory <> <> lib
+R880:896 CAG.Category.Core <> <> lib
+R914:933 CAG.Category.Functor <> <> lib
+R951:971 CAG.Category.Products <> <> lib
+R1001:1010 Stdlib.Lists.List <> <> lib
+R1020:1032 Stdlib.Lists.List ListNotations <> mod
+rec 1278:1284 <> FunData
+proj 1342:1349 <> fdat_dom
+proj 1368:1375 <> fdat_cod
+proj 1389:1396 <> fdat_mor
+R1291:1298 CAG.Category.Core <> Category rec
+binder 1287:1287 <> C:1
+R1307:1323 CAG.Category.Products <> HasFiniteProducts rec
+R1325:1325 CAG.ATT.InternalLanguage <> C:1 var
+binder 1302:1303 <> hp:2
+R1353:1356 Corelib.Init.Datatypes <> list ind
+R1361:1362 CAG.Category.Core <> Ob proj
+R1358:1358 CAG.ATT.InternalLanguage <> C:1 var
+R1382:1383 CAG.Category.Core <> Ob proj
+R1379:1379 CAG.ATT.InternalLanguage <> C:1 var
+R1401:1404 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1424:1425 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1434:1437 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1400:1400 CAG.ATT.InternalLanguage <> C:1 var
+R1405:1411 CAG.ATT.Model <> fp_prod def
+R1416:1423 CAG.ATT.InternalLanguage <> fdat_dom:4 meth
+R1413:1414 CAG.ATT.InternalLanguage <> hp:2 var
+R1426:1433 CAG.ATT.InternalLanguage <> fdat_cod:5 meth
+def 1455:1466 <> CatSignature
+R1473:1480 CAG.Category.Core <> Category rec
+binder 1469:1469 <> C:7
+R1489:1505 CAG.Category.Products <> HasFiniteProducts rec
+R1507:1507 CAG.ATT.InternalLanguage <> C:7 var
+binder 1484:1485 <> hp:8
+R1512:1520 CAG.ATT.Signature <> Signature rec
+R1530:1534 CAG.ATT.Signature <> sg_ty proj
+R1530:1534 CAG.ATT.Signature <> sg_ty proj
+R1530:1534 CAG.ATT.Signature <> sg_ty proj
+R1550:1555 CAG.ATT.Signature <> sg_fun proj
+R1550:1555 CAG.ATT.Signature <> sg_fun proj
+R1576:1581 CAG.ATT.Signature <> sg_dom proj
+R1576:1581 CAG.ATT.Signature <> sg_dom proj
+R1615:1620 CAG.ATT.Signature <> sg_cod proj
+R1615:1620 CAG.ATT.Signature <> sg_cod proj
+R1543:1544 CAG.Category.Core <> Ob proj
+R1540:1540 CAG.ATT.InternalLanguage <> C:7 var
+R1560:1566 CAG.ATT.InternalLanguage <> FunData rec
+R1568:1568 CAG.ATT.InternalLanguage <> C:7 var
+R1570:1571 CAG.ATT.InternalLanguage <> hp:8 var
+binder 1590:1590 <> d:9
+R1596:1603 CAG.ATT.InternalLanguage <> fdat_dom proj
+R1605:1605 CAG.ATT.InternalLanguage <> C:7 var
+R1607:1608 CAG.ATT.InternalLanguage <> hp:8 var
+R1610:1610 CAG.ATT.InternalLanguage <> d:9 var
+binder 1629:1629 <> d:10
+R1635:1642 CAG.ATT.InternalLanguage <> fdat_cod proj
+R1644:1644 CAG.ATT.InternalLanguage <> C:7 var
+R1646:1647 CAG.ATT.InternalLanguage <> hp:8 var
+R1649:1649 CAG.ATT.InternalLanguage <> d:10 var
+def 1709:1716 <> CatModel
+R1723:1730 CAG.Category.Core <> Category rec
+binder 1719:1719 <> C:11
+R1739:1755 CAG.Category.Products <> HasFiniteProducts rec
+R1757:1757 CAG.ATT.InternalLanguage <> C:11 var
+binder 1734:1735 <> hp:12
+R1766:1770 CAG.ATT.Model <> Model rec
+R1775:1780 CAG.ATT.Theory <> th_sig proj
+R1775:1780 CAG.ATT.Theory <> th_sig proj
+R1775:1780 CAG.ATT.Theory <> th_sig proj
+R1804:1808 CAG.ATT.Theory <> th_ax proj
+R1804:1808 CAG.ATT.Theory <> th_ax proj
+R1785:1796 CAG.ATT.InternalLanguage <> CatSignature def
+R1798:1798 CAG.ATT.InternalLanguage <> C:11 var
+R1800:1801 CAG.ATT.InternalLanguage <> hp:12 var
+R1813:1814 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R1819:1819 CAG.ATT.InternalLanguage <> C:11 var
+R1821:1822 CAG.ATT.InternalLanguage <> hp:12 var
+R1852:1862 CAG.ATT.Model <> Build_Model constr
+R1867:1872 CAG.ATT.Theory <> th_sig proj
+R1867:1872 CAG.ATT.Theory <> th_sig proj
+R1867:1872 CAG.ATT.Theory <> th_sig proj
+R1896:1900 CAG.ATT.Theory <> th_ax proj
+R1896:1900 CAG.ATT.Theory <> th_ax proj
+R1877:1888 CAG.ATT.InternalLanguage <> CatSignature def
+R1905:1906 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R1852:1862 CAG.ATT.Model <> Build_Model constr
+R1867:1872 CAG.ATT.Theory <> th_sig proj
+R1867:1872 CAG.ATT.Theory <> th_sig proj
+R1867:1872 CAG.ATT.Theory <> th_sig proj
+R1896:1900 CAG.ATT.Theory <> th_ax proj
+R1896:1900 CAG.ATT.Theory <> th_ax proj
+R1877:1888 CAG.ATT.InternalLanguage <> CatSignature def
+R1905:1906 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+binder 2086:2086 <> T:13
+R2101:2104 Corelib.Init.Datatypes <> list ind
+R2106:2106 CAG.ATT.InternalLanguage <> T:13 var
+binder 2097:2097 <> l:14
+R2133:2135 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2110:2117 Stdlib.Lists.List <> map abbrev
+R2132:2132 CAG.ATT.InternalLanguage <> l:14 var
+binder 2124:2124 <> x:15
+R2129:2129 CAG.ATT.InternalLanguage <> x:15 var
+R2136:2136 CAG.ATT.InternalLanguage <> l:14 var
+binder 2086:2086 <> T:16
+R2101:2104 Corelib.Init.Datatypes <> list ind
+R2106:2106 CAG.ATT.InternalLanguage <> T:16 var
+binder 2097:2097 <> l:17
+R2133:2135 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2110:2117 Stdlib.Lists.List <> map abbrev
+R2132:2132 CAG.ATT.InternalLanguage <> l:17 var
+binder 2124:2124 <> x:18
+R2129:2129 CAG.ATT.InternalLanguage <> x:18 var
+R2136:2136 CAG.ATT.InternalLanguage <> l:17 var
+R2275:2282 CAG.ATT.InternalLanguage <> fdat_mor proj
+R2275:2282 CAG.ATT.InternalLanguage <> fdat_mor proj
+R2332:2332 Corelib.Init.Logic <> I constr
+R2332:2332 Corelib.Init.Logic <> I constr
+def 2383:2391 <> CatAxioms
+R2398:2405 CAG.Category.Core <> Category rec
+binder 2394:2394 <> C:19
+R2414:2430 CAG.Category.Products <> HasFiniteProducts rec
+R2432:2432 CAG.ATT.InternalLanguage <> C:19 var
+binder 2409:2410 <> hp:20
+R2441:2444 Corelib.Init.Datatypes <> list ind
+R2447:2457 CAG.ATT.Syntax <> TheoryAxiom rec
+R2460:2471 CAG.ATT.InternalLanguage <> CatSignature def
+R2473:2473 CAG.ATT.InternalLanguage <> C:19 var
+R2475:2476 CAG.ATT.InternalLanguage <> hp:20 var
+R2483:2484 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+def 2499:2507 <> CatTheory
+R2514:2521 CAG.Category.Core <> Category rec
+binder 2510:2510 <> C:21
+R2530:2546 CAG.Category.Products <> HasFiniteProducts rec
+R2548:2548 CAG.ATT.InternalLanguage <> C:21 var
+binder 2525:2526 <> hp:22
+R2553:2558 CAG.ATT.Theory <> Theory rec
+R2568:2573 CAG.ATT.Theory <> th_sig proj
+R2568:2573 CAG.ATT.Theory <> th_sig proj
+R2568:2573 CAG.ATT.Theory <> th_sig proj
+R2599:2603 CAG.ATT.Theory <> th_ax proj
+R2599:2603 CAG.ATT.Theory <> th_ax proj
+R2578:2589 CAG.ATT.InternalLanguage <> CatSignature def
+R2591:2591 CAG.ATT.InternalLanguage <> C:21 var
+R2593:2594 CAG.ATT.InternalLanguage <> hp:22 var
+R2609:2617 CAG.ATT.InternalLanguage <> CatAxioms def
+R2619:2619 CAG.ATT.InternalLanguage <> C:21 var
+R2621:2622 CAG.ATT.InternalLanguage <> hp:22 var
+def 2687:2694 <> Eq_C_obj
+R2701:2708 CAG.Category.Core <> Category rec
+binder 2697:2697 <> C:23
+R2717:2733 CAG.Category.Products <> HasFiniteProducts rec
+R2735:2735 CAG.ATT.InternalLanguage <> C:23 var
+binder 2712:2713 <> hp:24
+R2748:2751 Corelib.Init.Datatypes <> list ind
+R2756:2757 CAG.Category.Core <> Ob proj
+R2753:2753 CAG.ATT.InternalLanguage <> C:23 var
+binder 2743:2744 <> α:25
+R2766:2767 CAG.Category.Core <> Ob proj
+R2763:2763 CAG.ATT.InternalLanguage <> C:23 var
+R2775:2781 CAG.ATT.Model <> fp_prod def
+R2786:2787 CAG.ATT.InternalLanguage <> α:25 var
+R2783:2784 CAG.ATT.InternalLanguage <> hp:24 var
+prf 2799:2806 <> Eq_C_map
+R2822:2829 CAG.Category.Core <> Category rec
+binder 2818:2818 <> C:26
+R2838:2854 CAG.Category.Products <> HasFiniteProducts rec
+R2856:2856 CAG.ATT.InternalLanguage <> C:26 var
+binder 2833:2834 <> hp:27
+R2872:2875 Corelib.Init.Datatypes <> list ind
+R2880:2881 CAG.Category.Core <> Ob proj
+R2877:2877 CAG.ATT.InternalLanguage <> C:26 var
+binder 2864:2865 <> α:28
+binder 2867:2868 <> β:29
+R2916:2920 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2923:2924 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2927:2930 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2894:2897 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R2915:2915 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R2898:2909 CAG.ATT.InternalLanguage <> CatSignature def
+R2911:2911 CAG.ATT.InternalLanguage <> C:26 var
+R2913:2914 CAG.ATT.InternalLanguage <> hp:27 var
+R2921:2922 CAG.ATT.InternalLanguage <> α:28 var
+R2925:2926 CAG.ATT.InternalLanguage <> β:29 var
+binder 2890:2890 <> f:30
+R2939:2942 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2959:2960 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2977:2980 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2938:2938 CAG.ATT.InternalLanguage <> C:26 var
+R2943:2950 CAG.ATT.InternalLanguage <> Eq_C_obj def
+R2952:2952 CAG.ATT.InternalLanguage <> C:26 var
+R2954:2955 CAG.ATT.InternalLanguage <> hp:27 var
+R2957:2958 CAG.ATT.InternalLanguage <> α:28 var
+R2961:2968 CAG.ATT.InternalLanguage <> Eq_C_obj def
+R2970:2970 CAG.ATT.InternalLanguage <> C:26 var
+R2972:2973 CAG.ATT.InternalLanguage <> hp:27 var
+R2975:2976 CAG.ATT.InternalLanguage <> β:29 var
+R3022:3029 CAG.ATT.InternalLanguage <> Eq_C_obj def
+R3040:3047 CAG.ATT.Model <> fp_tuple thm
+R3040:3047 CAG.ATT.Model <> fp_tuple thm
+R3079:3092 Stdlib.Lists.List <> nth_error def
+R3097:3107 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R3079:3092 Stdlib.Lists.List <> nth_error def
+R3097:3107 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R3152:3170 CAG.ATT.Model <> forall2_nth_hastype thm
+R3175:3185 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R3152:3170 CAG.ATT.Model <> forall2_nth_hastype thm
+R3175:3185 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R3222:3232 CAG.ATT.Model <> interp_term thm
+R3235:3242 CAG.ATT.InternalLanguage <> CatModel def
+R3222:3232 CAG.ATT.Model <> interp_term thm
+R3235:3242 CAG.ATT.InternalLanguage <> CatModel def
+R3362:3365 Corelib.Init.Datatypes <> list ind
+R3370:3371 CAG.Category.Core <> Ob proj
+binder 3358:3358 <> l:31
+R3419:3421 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3384:3391 Stdlib.Lists.List <> map abbrev
+R3418:3418 CAG.ATT.InternalLanguage <> l:31 var
+R3394:3399 CAG.ATT.Model <> mod_ty proj
+R3402:3409 CAG.ATT.InternalLanguage <> CatModel def
+R3422:3422 CAG.ATT.InternalLanguage <> l:31 var
+R3362:3365 Corelib.Init.Datatypes <> list ind
+R3370:3371 CAG.Category.Core <> Ob proj
+binder 3358:3358 <> l:32
+R3419:3421 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3384:3391 Stdlib.Lists.List <> map abbrev
+R3418:3418 CAG.ATT.InternalLanguage <> l:32 var
+R3394:3399 CAG.ATT.Model <> mod_ty proj
+R3402:3409 CAG.ATT.InternalLanguage <> CatModel def
+R3422:3422 CAG.ATT.InternalLanguage <> l:32 var
+R3585:3603 CAG.ATT.Syntax <> Forall2_nth_error_l thm
+R3614:3624 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R3585:3603 CAG.ATT.Syntax <> Forall2_nth_error_l thm
+R3614:3624 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+def 3709:3712 <> Eq_C
+R3719:3726 CAG.Category.Core <> Category rec
+binder 3715:3715 <> C:33
+R3735:3751 CAG.Category.Products <> HasFiniteProducts rec
+R3753:3753 CAG.ATT.InternalLanguage <> C:33 var
+binder 3730:3731 <> hp:34
+R3762:3768 CAG.Category.Functor <> Functor rec
+R3771:3774 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R3792:3792 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R3775:3786 CAG.ATT.InternalLanguage <> CatSignature def
+R3788:3788 CAG.ATT.InternalLanguage <> C:33 var
+R3790:3791 CAG.ATT.InternalLanguage <> hp:34 var
+R3795:3795 CAG.ATT.InternalLanguage <> C:33 var
+def 3887:3898 <> Eq_C_inv_map
+R3905:3912 CAG.Category.Core <> Category rec
+binder 3901:3901 <> C:35
+R3921:3937 CAG.Category.Products <> HasFiniteProducts rec
+R3939:3939 CAG.ATT.InternalLanguage <> C:35 var
+binder 3916:3917 <> hp:36
+R3956:3957 CAG.Category.Core <> Ob proj
+R3953:3953 CAG.ATT.InternalLanguage <> C:35 var
+binder 3947:3947 <> A:37
+binder 3949:3949 <> B:38
+R3967:3969 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3971:3972 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3974:3976 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3966:3966 CAG.ATT.InternalLanguage <> C:35 var
+R3970:3970 CAG.ATT.InternalLanguage <> A:37 var
+R3973:3973 CAG.ATT.InternalLanguage <> B:38 var
+binder 3962:3962 <> f:39
+R4007:4011 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4015:4016 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4020:4023 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3985:3988 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R4006:4006 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R3989:4000 CAG.ATT.InternalLanguage <> CatSignature def
+R4002:4002 CAG.ATT.InternalLanguage <> C:35 var
+R4004:4005 CAG.ATT.InternalLanguage <> hp:36 var
+R4012:4012 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4014:4014 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4013:4013 CAG.ATT.InternalLanguage <> A:37 var
+R4017:4017 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4019:4019 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4018:4018 CAG.ATT.InternalLanguage <> B:38 var
+R4101:4107 CAG.ATT.InternalLanguage <> FunData rec
+R4050:4057 CAG.ATT.InternalLanguage <> fdat_dom proj
+R4050:4057 CAG.ATT.InternalLanguage <> fdat_dom proj
+R4050:4057 CAG.ATT.InternalLanguage <> fdat_dom proj
+R4067:4074 CAG.ATT.InternalLanguage <> fdat_cod proj
+R4067:4074 CAG.ATT.InternalLanguage <> fdat_cod proj
+R4082:4089 CAG.ATT.InternalLanguage <> fdat_mor proj
+R4082:4089 CAG.ATT.InternalLanguage <> fdat_mor proj
+R4062:4062 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4064:4064 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4101:4107 CAG.ATT.InternalLanguage <> FunData rec
+R4050:4057 CAG.ATT.InternalLanguage <> fdat_dom proj
+R4050:4057 CAG.ATT.InternalLanguage <> fdat_dom proj
+R4050:4057 CAG.ATT.InternalLanguage <> fdat_dom proj
+R4067:4074 CAG.ATT.InternalLanguage <> fdat_cod proj
+R4067:4074 CAG.ATT.InternalLanguage <> fdat_cod proj
+R4082:4089 CAG.ATT.InternalLanguage <> fdat_mor proj
+R4082:4089 CAG.ATT.InternalLanguage <> fdat_mor proj
+R4062:4062 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4064:4064 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4127:4137 CAG.ATT.ClassifyingCategory <> Build_ClMor constr
+R4140:4151 CAG.ATT.InternalLanguage <> CatSignature def
+R4159:4159 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4161:4161 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4163:4163 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4165:4165 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4171:4171 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4232:4232 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4173:4177 CAG.ATT.Syntax <> t_app constr
+R4180:4191 CAG.ATT.InternalLanguage <> CatSignature def
+R4202:4202 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4231:4231 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4204:4208 CAG.ATT.Syntax <> t_var constr
+R4211:4222 CAG.ATT.InternalLanguage <> CatSignature def
+R4127:4137 CAG.ATT.ClassifyingCategory <> Build_ClMor constr
+R4140:4151 CAG.ATT.InternalLanguage <> CatSignature def
+R4159:4159 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4161:4161 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4163:4163 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4165:4165 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4171:4171 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4232:4232 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4173:4177 CAG.ATT.Syntax <> t_app constr
+R4180:4191 CAG.ATT.InternalLanguage <> CatSignature def
+R4202:4202 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4231:4231 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R4204:4208 CAG.ATT.Syntax <> t_var constr
+R4211:4222 CAG.ATT.InternalLanguage <> CatSignature def
+R4263:4268 CAG.ATT.Syntax <> ht_app constr
+R4263:4268 CAG.ATT.Syntax <> ht_app constr
+R4296:4301 CAG.ATT.Syntax <> ht_var constr
+R4296:4301 CAG.ATT.Syntax <> ht_var constr
+def 4370:4377 <> Eq_C_inv
+R4384:4391 CAG.Category.Core <> Category rec
+binder 4380:4380 <> C:40
+R4400:4416 CAG.Category.Products <> HasFiniteProducts rec
+R4418:4418 CAG.ATT.InternalLanguage <> C:40 var
+binder 4395:4396 <> hp:41
+R4427:4433 CAG.Category.Functor <> Functor rec
+R4435:4435 CAG.ATT.InternalLanguage <> C:40 var
+R4438:4441 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R4459:4459 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R4442:4453 CAG.ATT.InternalLanguage <> CatSignature def
+R4455:4455 CAG.ATT.InternalLanguage <> C:40 var
+R4457:4458 CAG.ATT.InternalLanguage <> hp:41 var
+prf 4534:4549 <> CatClEquivalence
+R4556:4563 CAG.Category.Core <> Category rec
+binder 4552:4552 <> C:42
+R4572:4588 CAG.Category.Products <> HasFiniteProducts rec
+R4590:4590 CAG.ATT.InternalLanguage <> C:42 var
+binder 4567:4568 <> hp:43
+R4599:4602 Corelib.Init.Logic <> True ind
+R4669:4669 Corelib.Init.Logic <> I constr
+R4669:4669 Corelib.Init.Logic <> I constr
+prf 4899:4925 <> internal_language_principle
+R4932:4939 CAG.Category.Core <> Category rec
+binder 4928:4928 <> C:44
+R4948:4964 CAG.Category.Products <> HasFiniteProducts rec
+R4966:4966 CAG.ATT.InternalLanguage <> C:44 var
+binder 4943:4944 <> hp:45
+R4983:4984 CAG.Category.Core <> Ob proj
+R4980:4980 CAG.ATT.InternalLanguage <> C:44 var
+binder 4974:4974 <> A:46
+binder 4976:4976 <> B:47
+R4996:4998 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R5000:5001 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R5003:5005 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4995:4995 CAG.ATT.InternalLanguage <> C:44 var
+R4999:4999 CAG.ATT.InternalLanguage <> A:46 var
+R5002:5002 CAG.ATT.InternalLanguage <> B:47 var
+binder 4989:4989 <> f:48
+binder 4991:4991 <> g:49
+R5182:5185 Corelib.Init.Logic <> True ind
+R5203:5203 Corelib.Init.Logic <> I constr
+R5203:5203 Corelib.Init.Logic <> I constr

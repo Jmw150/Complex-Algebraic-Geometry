@@ -1,0 +1,162 @@
+DIGEST 9777d3cdd91643dc68fa9a97b5b0cda7
+FCAG.Harmonic.Garding
+R595:598 Stdlib.Lists.List <> <> lib
+R600:604 Stdlib.Arith.Arith <> <> lib
+R606:608 Stdlib.micromega.Lia <> <> lib
+R638:673 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> <> lib
+R700:706 CAG.Complex <> <> lib
+R733:734 CAG.AG <> <> lib
+R761:776 CAG.ManifoldTopology <> <> lib
+R803:812 CAG.LieAlgebra <> <> lib
+R839:873 CAG.Harmonic.BundleCovariantDerivatives <> <> lib
+R900:915 CAG.Harmonic.Sobolev <> <> lib
+R942:959 CAG.Harmonic.Laplacian <> <> lib
+ax 1566:1574 <> garding_c
+R1590:1606 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 1586:1586 <> M:1
+R1614:1628 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R1630:1630 CAG.Harmonic.Garding <> M:1 var
+binder 1610:1610 <> E:2
+R1644:1646 Corelib.Init.Datatypes <> nat ind
+binder 1638:1638 <> p:3
+binder 1640:1640 <> q:4
+R1657:1666 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R1668:1668 CAG.Harmonic.Garding <> E:2 var
+binder 1650:1653 <> conn:5
+R1672:1676 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+ax 1724:1733 <> garding_C0
+R1749:1765 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 1745:1745 <> M:8
+R1773:1787 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R1789:1789 CAG.Harmonic.Garding <> M:8 var
+binder 1769:1769 <> E:9
+R1803:1805 Corelib.Init.Datatypes <> nat ind
+binder 1797:1797 <> p:10
+binder 1799:1799 <> q:11
+R1816:1825 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R1827:1827 CAG.Harmonic.Garding <> E:9 var
+binder 1809:1812 <> conn:12
+R1831:1835 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+prf 1847:1859 <> garding_c_pos
+R1875:1891 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 1871:1871 <> M:15
+R1899:1913 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R1915:1915 CAG.Harmonic.Garding <> M:15 var
+binder 1895:1895 <> E:16
+R1929:1931 Corelib.Init.Datatypes <> nat ind
+binder 1923:1923 <> p:17
+binder 1925:1925 <> q:18
+R1942:1951 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R1953:1953 CAG.Harmonic.Garding <> E:16 var
+binder 1935:1938 <> conn:19
+R1962:1964 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> ::CReal_scope:x_'<'_x not
+R1965:1973 CAG.Harmonic.Garding <> garding_c defax
+R1979:1982 CAG.Harmonic.Garding <> conn:19 var
+R1977:1977 CAG.Harmonic.Garding <> q:18 var
+R1975:1975 CAG.Harmonic.Garding <> p:17 var
+prf 2018:2034 <> garding_C0_nonneg
+R2050:2066 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 2046:2046 <> M:20
+R2074:2088 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R2090:2090 CAG.Harmonic.Garding <> M:20 var
+binder 2070:2070 <> E:21
+R2104:2106 Corelib.Init.Datatypes <> nat ind
+binder 2098:2098 <> p:22
+binder 2100:2100 <> q:23
+R2117:2126 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R2128:2128 CAG.Harmonic.Garding <> E:21 var
+binder 2110:2113 <> conn:24
+R2137:2140 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> ::CReal_scope:x_'<='_x not
+R2141:2150 CAG.Harmonic.Garding <> garding_C0 defax
+R2156:2159 CAG.Harmonic.Garding <> conn:24 var
+R2154:2154 CAG.Harmonic.Garding <> q:23 var
+R2152:2152 CAG.Harmonic.Garding <> p:22 var
+prf 2226:2243 <> garding_inequality
+R2259:2275 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 2255:2255 <> M:25
+R2283:2297 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R2299:2299 CAG.Harmonic.Garding <> M:25 var
+binder 2279:2279 <> E:26
+R2313:2315 Corelib.Init.Datatypes <> nat ind
+binder 2307:2307 <> p:27
+binder 2309:2309 <> q:28
+R2326:2335 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R2337:2337 CAG.Harmonic.Garding <> E:26 var
+binder 2319:2322 <> conn:29
+R2346:2353 CAG.Harmonic.Sobolev <> Forms_pq defax
+R2359:2359 CAG.Harmonic.Garding <> q:28 var
+R2357:2357 CAG.Harmonic.Garding <> p:27 var
+R2355:2355 CAG.Harmonic.Garding <> E:26 var
+binder 2341:2342 <> φ:30
+R2453:2456 Corelib.Init.Logic <> True ind
+R2480:2480 Corelib.Init.Logic <> I constr
+R2480:2480 Corelib.Init.Logic <> I constr
+prf 2779:2799 <> shifted_form_coercive
+R2815:2831 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 2811:2811 <> M:31
+R2843:2857 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R2859:2859 CAG.Harmonic.Garding <> M:31 var
+binder 2839:2839 <> E:32
+R2869:2871 Corelib.Init.Datatypes <> nat ind
+binder 2863:2863 <> p:33
+binder 2865:2865 <> q:34
+R2882:2891 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R2893:2893 CAG.Harmonic.Garding <> E:32 var
+binder 2875:2878 <> conn:35
+R2902:2909 CAG.Harmonic.Sobolev <> Forms_pq defax
+R2915:2915 CAG.Harmonic.Garding <> q:34 var
+R2913:2913 CAG.Harmonic.Garding <> p:33 var
+R2911:2911 CAG.Harmonic.Garding <> E:32 var
+binder 2897:2898 <> φ:36
+R2993:2996 Corelib.Init.Logic <> True ind
+R3020:3020 Corelib.Init.Logic <> I constr
+R3020:3020 Corelib.Init.Logic <> I constr
+prf 3126:3150 <> lax_milgram_for_laplacian
+R3166:3182 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 3162:3162 <> M:37
+R3194:3208 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R3210:3210 CAG.Harmonic.Garding <> M:37 var
+binder 3190:3190 <> E:38
+R3220:3222 Corelib.Init.Datatypes <> nat ind
+binder 3214:3214 <> p:39
+binder 3216:3216 <> q:40
+R3233:3242 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R3244:3244 CAG.Harmonic.Garding <> E:38 var
+binder 3226:3229 <> conn:41
+R3252:3255 Corelib.Init.Logic <> True ind
+R3333:3333 Corelib.Init.Logic <> I constr
+R3333:3333 Corelib.Init.Logic <> I constr
+prf 3416:3437 <> T_bounded_from_garding
+R3453:3469 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 3449:3449 <> M:42
+R3481:3495 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R3497:3497 CAG.Harmonic.Garding <> M:42 var
+binder 3477:3477 <> E:43
+R3507:3509 Corelib.Init.Datatypes <> nat ind
+binder 3501:3501 <> p:44
+binder 3503:3503 <> q:45
+R3520:3529 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R3531:3531 CAG.Harmonic.Garding <> E:43 var
+binder 3513:3516 <> conn:46
+R3539:3542 Corelib.Init.Logic <> True ind
+R3627:3627 Corelib.Init.Logic <> I constr
+R3627:3627 Corelib.Init.Logic <> I constr
+prf 4165:4188 <> garding_from_weitzenbock
+R4204:4220 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 4200:4200 <> M:47
+R4232:4246 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R4248:4248 CAG.Harmonic.Garding <> M:47 var
+binder 4228:4228 <> E:48
+R4258:4260 Corelib.Init.Datatypes <> nat ind
+binder 4252:4252 <> p:49
+binder 4254:4254 <> q:50
+R4271:4280 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R4282:4282 CAG.Harmonic.Garding <> E:48 var
+binder 4264:4267 <> conn:51
+R4290:4294 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 4286:4286 <> C:52
+R4377:4457 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4373:4376 Corelib.Init.Logic <> True ind
+R4458:4461 Corelib.Init.Logic <> True ind
+R4485:4485 Corelib.Init.Logic <> I constr
+R4485:4485 Corelib.Init.Logic <> I constr

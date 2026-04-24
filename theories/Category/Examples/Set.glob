@@ -1,0 +1,204 @@
+DIGEST fa9894b604acb55863676bc9a72c2842
+FCAG.Category.Examples.Set
+R117:133 CAG.Category.Core <> <> lib
+R151:171 CAG.Category.Products <> <> lib
+R189:211 CAG.Category.Coproducts <> <> lib
+R229:248 CAG.Category.Functor <> <> lib
+R266:291 CAG.Category.Representable <> <> lib
+R309:327 CAG.Category.Yoneda <> <> lib
+R357:386 Stdlib.Logic.FunctionalExtensionality <> <> lib
+R416:437 Stdlib.Logic.ProofIrrelevance <> <> lib
+def 564:584 <> TypeCat_BinaryProduct
+binder 587:587 <> A:1
+binder 589:589 <> B:2
+R606:620 CAG.Category.Products <> IsBinaryProduct rec
+R622:628 CAG.Category.Representable <> TypeCat def
+R630:630 CAG.Category.Examples.Set <> A:1 var
+R632:632 CAG.Category.Examples.Set <> B:2 var
+R636:638 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R635:635 CAG.Category.Examples.Set <> A:1 var
+R639:639 CAG.Category.Examples.Set <> B:2 var
+R665:685 CAG.Category.Products <> Build_IsBinaryProduct constr
+R687:693 CAG.Category.Representable <> TypeCat def
+R701:703 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R716:718 Corelib.Init.Datatypes <> fst def
+R720:722 Corelib.Init.Datatypes <> snd def
+binder 729:729 <> X:3
+binder 731:731 <> f:4
+binder 733:733 <> g:5
+binder 735:735 <> x:6
+R740:740 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R744:745 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R749:749 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R741:741 CAG.Category.Examples.Set <> f:4 var
+R743:743 CAG.Category.Examples.Set <> x:6 var
+R746:746 CAG.Category.Examples.Set <> g:5 var
+R748:748 CAG.Category.Examples.Set <> x:6 var
+binder 761:761 <> X:7
+binder 763:763 <> f:8
+binder 765:765 <> g:9
+R770:776 Corelib.Init.Logic <> eq_refl constr
+binder 784:784 <> X:10
+binder 786:786 <> f:11
+binder 788:788 <> g:12
+R793:799 Corelib.Init.Logic <> eq_refl constr
+R665:685 CAG.Category.Products <> Build_IsBinaryProduct constr
+R687:693 CAG.Category.Representable <> TypeCat def
+R701:703 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R716:718 Corelib.Init.Datatypes <> fst def
+R720:722 Corelib.Init.Datatypes <> snd def
+binder 729:729 <> X:13
+binder 731:731 <> f:14
+binder 733:733 <> g:15
+binder 735:735 <> x:16
+R740:740 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R744:745 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R749:749 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R741:741 CAG.Category.Examples.Set <> f:14 var
+R743:743 CAG.Category.Examples.Set <> x:16 var
+R746:746 CAG.Category.Examples.Set <> g:15 var
+R748:748 CAG.Category.Examples.Set <> x:16 var
+binder 761:761 <> X:17
+binder 763:763 <> f:18
+binder 765:765 <> g:19
+R770:776 Corelib.Init.Logic <> eq_refl constr
+binder 784:784 <> X:20
+binder 786:786 <> f:21
+binder 788:788 <> g:22
+R793:799 Corelib.Init.Logic <> eq_refl constr
+def 941:956 <> TypeCat_Terminal
+R961:970 CAG.Category.Core <> IsTerminal rec
+R972:978 CAG.Category.Representable <> TypeCat def
+R980:983 Corelib.Init.Datatypes <> unit ind
+R1003:1018 CAG.Category.Core <> Build_IsTerminal constr
+R1020:1026 CAG.Category.Representable <> TypeCat def
+R1028:1031 Corelib.Init.Datatypes <> unit ind
+binder 1038:1038 <> A:23
+R1045:1046 Corelib.Init.Datatypes <> tt constr
+R1003:1018 CAG.Category.Core <> Build_IsTerminal constr
+R1020:1026 CAG.Category.Representable <> TypeCat def
+R1028:1031 Corelib.Init.Datatypes <> unit ind
+binder 1038:1038 <> A:24
+R1045:1046 Corelib.Init.Datatypes <> tt constr
+def 1196:1218 <> TypeCat_BinaryCoproduct
+binder 1221:1221 <> A:25
+binder 1223:1223 <> B:26
+R1240:1256 CAG.Category.Coproducts <> IsBinaryCoproduct rec
+R1258:1264 CAG.Category.Representable <> TypeCat def
+R1266:1266 CAG.Category.Examples.Set <> A:25 var
+R1268:1268 CAG.Category.Examples.Set <> B:26 var
+R1272:1274 Corelib.Init.Datatypes <> ::type_scope:x_'+'_x not
+R1271:1271 CAG.Category.Examples.Set <> A:25 var
+R1275:1275 CAG.Category.Examples.Set <> B:26 var
+R1301:1323 CAG.Category.Coproducts <> Build_IsBinaryCoproduct constr
+R1325:1331 CAG.Category.Representable <> TypeCat def
+R1339:1341 Corelib.Init.Datatypes <> ::type_scope:x_'+'_x not
+R1354:1356 Corelib.Init.Datatypes <> inl constr
+R1358:1360 Corelib.Init.Datatypes <> inr constr
+binder 1367:1367 <> X:27
+binder 1369:1369 <> f:28
+binder 1371:1371 <> g:29
+binder 1373:1373 <> s:30
+R1384:1384 CAG.Category.Examples.Set <> s:30 var
+R1391:1393 Corelib.Init.Datatypes <> inl constr
+R1400:1400 CAG.Category.Examples.Set <> f:28 var
+R1406:1408 Corelib.Init.Datatypes <> inr constr
+R1415:1415 CAG.Category.Examples.Set <> g:29 var
+binder 1433:1433 <> X:32
+binder 1435:1435 <> f:33
+binder 1437:1437 <> g:34
+R1442:1448 Corelib.Init.Logic <> eq_refl constr
+binder 1456:1456 <> X:35
+binder 1458:1458 <> f:36
+binder 1460:1460 <> g:37
+R1465:1471 Corelib.Init.Logic <> eq_refl constr
+R1301:1323 CAG.Category.Coproducts <> Build_IsBinaryCoproduct constr
+R1325:1331 CAG.Category.Representable <> TypeCat def
+R1339:1341 Corelib.Init.Datatypes <> ::type_scope:x_'+'_x not
+R1354:1356 Corelib.Init.Datatypes <> inl constr
+R1358:1360 Corelib.Init.Datatypes <> inr constr
+binder 1367:1367 <> X:38
+binder 1369:1369 <> f:39
+binder 1371:1371 <> g:40
+binder 1373:1373 <> s:41
+R1384:1384 CAG.Category.Examples.Set <> s:41 var
+R1391:1393 Corelib.Init.Datatypes <> inl constr
+R1400:1400 CAG.Category.Examples.Set <> f:39 var
+R1406:1408 Corelib.Init.Datatypes <> inr constr
+R1415:1415 CAG.Category.Examples.Set <> g:40 var
+binder 1433:1433 <> X:43
+binder 1435:1435 <> f:44
+binder 1437:1437 <> g:45
+R1442:1448 Corelib.Init.Logic <> eq_refl constr
+binder 1456:1456 <> X:46
+binder 1458:1458 <> f:47
+binder 1460:1460 <> g:48
+R1465:1471 Corelib.Init.Logic <> eq_refl constr
+def 1611:1625 <> TypeCat_Initial
+R1630:1638 CAG.Category.Core <> IsInitial rec
+R1640:1646 CAG.Category.Representable <> TypeCat def
+R1648:1652 Corelib.Init.Logic <> False ind
+R1672:1686 CAG.Category.Core <> Build_IsInitial constr
+R1688:1694 CAG.Category.Representable <> TypeCat def
+R1696:1700 Corelib.Init.Logic <> False ind
+binder 1707:1707 <> A:49
+R1714:1718 Corelib.Init.Logic <> False ind
+binder 1710:1710 <> x:50
+R1730:1730 CAG.Category.Examples.Set <> x:50 var
+R1672:1686 CAG.Category.Core <> Build_IsInitial constr
+R1688:1694 CAG.Category.Representable <> TypeCat def
+R1696:1700 Corelib.Init.Logic <> False ind
+binder 1707:1707 <> A:52
+R1714:1718 Corelib.Init.Logic <> False ind
+binder 1710:1710 <> x:53
+R1730:1730 CAG.Category.Examples.Set <> x:53 var
+def 1940:1954 <> PowersetFunctor
+R1958:1964 CAG.Category.Functor <> Functor rec
+R1974:1976 CAG.Category.Core <> ::cat_scope:x_'^op' not
+R1967:1973 CAG.Category.Representable <> TypeCat def
+R1979:1985 CAG.Category.Representable <> TypeCat def
+R2004:2016 CAG.Category.Functor <> Build_Functor constr
+R2026:2028 CAG.Category.Core <> ::cat_scope:x_'^op' not
+R2019:2025 CAG.Category.Representable <> TypeCat def
+R2031:2037 CAG.Category.Representable <> TypeCat def
+binder 2048:2048 <> X:55
+R2054:2057 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2053:2053 CAG.Category.Examples.Set <> X:55 var
+R2058:2061 Corelib.Init.Datatypes <> bool ind
+binder 2073:2073 <> X:56
+binder 2075:2075 <> Y:57
+binder 2077:2077 <> f:58
+binder 2079:2079 <> p:59
+binder 2081:2081 <> y:60
+R2086:2086 CAG.Category.Examples.Set <> p:59 var
+R2089:2089 CAG.Category.Examples.Set <> f:58 var
+R2091:2091 CAG.Category.Examples.Set <> y:60 var
+R2004:2016 CAG.Category.Functor <> Build_Functor constr
+R2026:2028 CAG.Category.Core <> ::cat_scope:x_'^op' not
+R2019:2025 CAG.Category.Representable <> TypeCat def
+R2031:2037 CAG.Category.Representable <> TypeCat def
+binder 2048:2048 <> X:61
+R2054:2057 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2053:2053 CAG.Category.Examples.Set <> X:61 var
+R2058:2061 Corelib.Init.Datatypes <> bool ind
+binder 2073:2073 <> X:62
+binder 2075:2075 <> Y:63
+binder 2077:2077 <> f:64
+binder 2079:2079 <> p:65
+binder 2081:2081 <> y:66
+R2086:2086 CAG.Category.Examples.Set <> p:65 var
+R2089:2089 CAG.Category.Examples.Set <> f:64 var
+R2091:2091 CAG.Category.Examples.Set <> y:66 var
+prf 2303:2324 <> powerset_representable
+binder 2327:2327 <> X:67
+R2343:2343 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2353:2356 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2345:2348 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2344:2344 CAG.Category.Examples.Set <> X:67 var
+R2349:2352 Corelib.Init.Datatypes <> bool ind
+R2364:2366 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2368:2369 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2374:2376 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2357:2363 CAG.Category.Representable <> TypeCat def
+R2367:2367 CAG.Category.Examples.Set <> X:67 var
+R2370:2373 Corelib.Init.Datatypes <> bool ind

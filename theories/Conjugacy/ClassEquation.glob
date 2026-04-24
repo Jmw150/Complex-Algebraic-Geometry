@@ -1,0 +1,999 @@
+DIGEST ed0708b7ea7b59eebc05f2d4bcdf02e6
+FCAG.Conjugacy.ClassEquation
+R500:504 CAG.Group <> <> lib
+R531:548 CAG.GroupActions.Basic <> <> lib
+R578:582 Stdlib.Arith.Arith <> <> lib
+R584:586 Stdlib.micromega.Lia <> <> lib
+R588:591 Stdlib.Lists.List <> <> lib
+R621:644 Stdlib.Logic.FunctionalExtensionality <> <> lib
+R646:663 Stdlib.Logic.PropExtensionality <> <> lib
+R673:685 Stdlib.Lists.List ListNotations <> mod
+def 1189:1194 <> center
+binder 1197:1197 <> G:1
+R1213:1223 CAG.Group <> StrictGroup rec
+R1225:1225 CAG.Conjugacy.ClassEquation <> G:1 var
+binder 1208:1209 <> sg:2
+R1231:1234 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1230:1230 CAG.Conjugacy.ClassEquation <> G:1 var
+binder 1249:1249 <> x:3
+R1254:1263 CAG.Group <> is_central def
+R1291:1291 CAG.Conjugacy.ClassEquation <> x:3 var
+R1266:1285 CAG.Group <> StrictGroup_to_Group def
+R1287:1288 CAG.Conjugacy.ClassEquation <> sg:2 var
+prf 1301:1324 <> center_eq_conj_singleton
+binder 1327:1327 <> G:4
+R1343:1353 CAG.Group <> StrictGroup rec
+R1355:1355 CAG.Conjugacy.ClassEquation <> G:4 var
+binder 1338:1339 <> sg:5
+R1363:1363 CAG.Conjugacy.ClassEquation <> G:4 var
+binder 1359:1359 <> x:6
+R1383:1389 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R1372:1377 CAG.Conjugacy.ClassEquation <> center def
+R1382:1382 CAG.Conjugacy.ClassEquation <> x:6 var
+R1379:1380 CAG.Conjugacy.ClassEquation <> sg:5 var
+R1401:1401 CAG.Conjugacy.ClassEquation <> G:4 var
+binder 1397:1397 <> g:7
+R1419:1421 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1404:1411 CAG.GroupActions.Basic <> conj_act def
+R1418:1418 CAG.Conjugacy.ClassEquation <> x:6 var
+R1416:1416 CAG.Conjugacy.ClassEquation <> g:7 var
+R1413:1414 CAG.Conjugacy.ClassEquation <> sg:5 var
+R1422:1422 CAG.Conjugacy.ClassEquation <> x:6 var
+R1441:1446 CAG.Conjugacy.ClassEquation <> center def
+R1449:1458 CAG.Group <> is_central def
+R1461:1468 CAG.GroupActions.Basic <> conj_act def
+R1554:1565 CAG.Group <> right_cancel thm
+R1554:1565 CAG.Group <> right_cancel thm
+R1589:1594 CAG.Group <> sassoc proj
+R1597:1605 CAG.Group <> sinv_left proj
+R1608:1616 CAG.Group <> sid_right proj
+R1589:1594 CAG.Group <> sassoc proj
+R1589:1594 CAG.Group <> sassoc proj
+R1597:1605 CAG.Group <> sinv_left proj
+R1597:1605 CAG.Group <> sinv_left proj
+R1608:1616 CAG.Group <> sid_right proj
+R1608:1616 CAG.Group <> sid_right proj
+R1630:1635 Corelib.Init.Logic <> eq_sym thm
+R1630:1635 Corelib.Init.Logic <> eq_sym thm
+R1745:1756 CAG.Group <> right_cancel thm
+R1762:1765 CAG.Group <> sinv proj
+R1745:1756 CAG.Group <> right_cancel thm
+R1762:1765 CAG.Group <> sinv proj
+R1792:1797 CAG.Group <> sassoc proj
+R1800:1809 CAG.Group <> sinv_right proj
+R1812:1820 CAG.Group <> sid_right proj
+R1792:1797 CAG.Group <> sassoc proj
+R1792:1797 CAG.Group <> sassoc proj
+R1800:1809 CAG.Group <> sinv_right proj
+R1800:1809 CAG.Group <> sinv_right proj
+R1812:1820 CAG.Group <> sid_right proj
+R1812:1820 CAG.Group <> sid_right proj
+R1834:1839 Corelib.Init.Logic <> eq_sym thm
+R1834:1839 Corelib.Init.Logic <> eq_sym thm
+prf 1908:1929 <> center_singleton_class
+binder 1932:1932 <> G:8
+R1948:1958 CAG.Group <> StrictGroup rec
+R1960:1960 CAG.Conjugacy.ClassEquation <> G:8 var
+binder 1943:1944 <> sg:9
+R1968:1968 CAG.Conjugacy.ClassEquation <> G:8 var
+binder 1964:1964 <> x:10
+R1988:1994 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R1977:1982 CAG.Conjugacy.ClassEquation <> center def
+R1987:1987 CAG.Conjugacy.ClassEquation <> x:10 var
+R1984:1985 CAG.Conjugacy.ClassEquation <> sg:9 var
+R2006:2006 CAG.Conjugacy.ClassEquation <> G:8 var
+binder 2002:2002 <> y:11
+R2026:2029 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2009:2018 CAG.GroupActions.Basic <> conj_class def
+R2025:2025 CAG.Conjugacy.ClassEquation <> y:11 var
+R2023:2023 CAG.Conjugacy.ClassEquation <> x:10 var
+R2020:2021 CAG.Conjugacy.ClassEquation <> sg:9 var
+R2031:2033 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2030:2030 CAG.Conjugacy.ClassEquation <> y:11 var
+R2034:2034 CAG.Conjugacy.ClassEquation <> x:10 var
+R2054:2077 CAG.Conjugacy.ClassEquation <> center_eq_conj_singleton thm
+R2054:2077 CAG.Conjugacy.ClassEquation <> center_eq_conj_singleton thm
+R2054:2077 CAG.Conjugacy.ClassEquation <> center_eq_conj_singleton thm
+R2089:2098 CAG.GroupActions.Basic <> conj_class def
+R2101:2105 CAG.GroupActions.Basic <> orbit def
+R2108:2115 CAG.GroupActions.Basic <> conj_act def
+def 2983:2996 <> subgroup_index
+binder 2999:2999 <> G:12
+R3015:3025 CAG.Group <> StrictGroup rec
+R3027:3027 CAG.Conjugacy.ClassEquation <> G:12 var
+binder 3010:3011 <> sg:13
+R3044:3047 Corelib.Init.Datatypes <> list ind
+R3049:3049 CAG.Conjugacy.ClassEquation <> G:12 var
+binder 3035:3040 <> G_list:14
+R3058:3061 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3057:3057 CAG.Conjugacy.ClassEquation <> G:12 var
+binder 3053:3053 <> H:15
+R3070:3072 Corelib.Init.Datatypes <> nat ind
+R3259:3264 Corelib.Init.Datatypes <> length def
+R3266:3271 CAG.Conjugacy.ClassEquation <> G_list:14 var
+ax 3395:3408 <> class_equation
+binder 3422:3422 <> G:16
+R3438:3448 CAG.Group <> StrictGroup rec
+R3450:3450 CAG.Conjugacy.ClassEquation <> G:16 var
+binder 3433:3434 <> sg:17
+R3484:3484 CAG.Conjugacy.ClassEquation <> G:16 var
+binder 3478:3478 <> x:18
+binder 3480:3480 <> y:19
+R3487:3487 Corelib.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3493:3497 Corelib.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3504:3504 Corelib.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3489:3491 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3488:3488 CAG.Conjugacy.ClassEquation <> x:18 var
+R3492:3492 CAG.Conjugacy.ClassEquation <> y:19 var
+R3499:3502 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R3498:3498 CAG.Conjugacy.ClassEquation <> x:18 var
+R3503:3503 CAG.Conjugacy.ClassEquation <> y:19 var
+binder 3463:3467 <> G_dec:20
+R3526:3529 Corelib.Init.Datatypes <> list ind
+R3531:3531 CAG.Conjugacy.ClassEquation <> G:16 var
+binder 3517:3522 <> G_list:21
+R3554:3558 Stdlib.Lists.List <> NoDup ind
+R3560:3565 CAG.Conjugacy.ClassEquation <> G_list:21 var
+binder 3544:3550 <> G_nodup:22
+R3602:3602 CAG.Conjugacy.ClassEquation <> G:16 var
+binder 3598:3598 <> x:23
+R3605:3606 Stdlib.Lists.List <> In def
+R3610:3615 CAG.Conjugacy.ClassEquation <> G_list:21 var
+R3608:3608 CAG.Conjugacy.ClassEquation <> x:23 var
+binder 3578:3587 <> G_complete:24
+R3636:3642 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3623:3628 Corelib.Init.Datatypes <> length def
+R3630:3635 CAG.Conjugacy.ClassEquation <> G_list:21 var
+R3643:3648 Corelib.Init.Datatypes <> length def
+R3651:3661 Stdlib.Lists.List <> filter def
+R3744:3754 Stdlib.Lists.List <> filter def
+R3772:3777 CAG.Conjugacy.ClassEquation <> G_list:21 var
+binder 3761:3761 <> x:25
+R3766:3769 Corelib.Init.Datatypes <> true constr
+binder 3668:3668 <> x:26
+R3676:3680 CAG.Conjugacy.ClassEquation <> G_dec:20 var
+R3684:3684 CAG.Conjugacy.ClassEquation <> x:26 var
+R3682:3682 CAG.Conjugacy.ClassEquation <> x:26 var
+R3701:3705 Corelib.Init.Datatypes <> false constr
+R3691:3694 Corelib.Init.Datatypes <> true constr
+def 4042:4050 <> is_pgroup
+binder 4053:4053 <> G:29
+R4069:4079 CAG.Group <> StrictGroup rec
+R4081:4081 CAG.Conjugacy.ClassEquation <> G:29 var
+binder 4064:4065 <> sg:30
+R4089:4091 Corelib.Init.Datatypes <> nat ind
+binder 4085:4085 <> p:31
+R4117:4117 CAG.Conjugacy.ClassEquation <> G:29 var
+binder 4113:4113 <> g:32
+R4120:4126 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4134:4135 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4131:4133 Corelib.Init.Datatypes <> nat ind
+binder 4127:4127 <> k:33
+R4182:4184 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4136:4139 CAG.Group <> gpow def
+R4167:4167 CAG.Conjugacy.ClassEquation <> g:32 var
+R4170:4176 Stdlib.Arith.PeanoNat Nat pow def
+R4178:4178 CAG.Conjugacy.ClassEquation <> p:31 var
+R4180:4180 CAG.Conjugacy.ClassEquation <> k:33 var
+R4142:4161 CAG.Group <> StrictGroup_to_Group def
+R4163:4164 CAG.Conjugacy.ClassEquation <> sg:30 var
+R4185:4186 CAG.Group <> se proj
+R4188:4188 CAG.Conjugacy.ClassEquation <> G:29 var
+R4190:4191 CAG.Conjugacy.ClassEquation <> sg:30 var
+ax 4601:4624 <> pgroup_center_nontrivial
+binder 4638:4638 <> G:34
+R4654:4664 CAG.Group <> StrictGroup rec
+R4666:4666 CAG.Conjugacy.ClassEquation <> G:34 var
+binder 4649:4650 <> sg:35
+R4676:4678 Corelib.Init.Datatypes <> nat ind
+binder 4670:4670 <> p:36
+binder 4672:4672 <> a:37
+R4702:4705 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R4706:4706 CAG.Conjugacy.ClassEquation <> p:36 var
+binder 4691:4697 <> p_prime:38
+R4728:4731 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R4732:4732 CAG.Conjugacy.ClassEquation <> a:37 var
+binder 4719:4723 <> a_pos:39
+R4754:4757 Corelib.Init.Datatypes <> list ind
+R4759:4759 CAG.Conjugacy.ClassEquation <> G:34 var
+binder 4745:4750 <> G_list:40
+R4782:4786 Stdlib.Lists.List <> NoDup ind
+R4788:4793 CAG.Conjugacy.ClassEquation <> G_list:40 var
+binder 4772:4778 <> G_nodup:41
+R4830:4830 CAG.Conjugacy.ClassEquation <> G:34 var
+binder 4826:4826 <> x:42
+R4833:4834 Stdlib.Lists.List <> In def
+R4838:4843 CAG.Conjugacy.ClassEquation <> G_list:40 var
+R4836:4836 CAG.Conjugacy.ClassEquation <> x:42 var
+binder 4806:4815 <> G_complete:43
+R4879:4881 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4866:4871 Corelib.Init.Datatypes <> length def
+R4873:4878 CAG.Conjugacy.ClassEquation <> G_list:40 var
+R4882:4888 Stdlib.Arith.PeanoNat Nat pow def
+R4890:4890 CAG.Conjugacy.ClassEquation <> p:36 var
+R4892:4892 CAG.Conjugacy.ClassEquation <> a:37 var
+binder 4856:4862 <> G_order:44
+R4911:4919 CAG.Conjugacy.ClassEquation <> is_pgroup def
+R4924:4924 CAG.Conjugacy.ClassEquation <> p:36 var
+R4921:4922 CAG.Conjugacy.ClassEquation <> sg:35 var
+binder 4905:4907 <> Hpg:45
+R4932:4938 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4944:4945 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4943:4943 CAG.Conjugacy.ClassEquation <> G:34 var
+binder 4939:4939 <> x:46
+R4957:4960 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R4946:4951 CAG.Conjugacy.ClassEquation <> center def
+R4956:4956 CAG.Conjugacy.ClassEquation <> x:46 var
+R4953:4954 CAG.Conjugacy.ClassEquation <> sg:35 var
+R4962:4965 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R4961:4961 CAG.Conjugacy.ClassEquation <> x:46 var
+R4966:4967 CAG.Group <> se proj
+R4969:4969 CAG.Conjugacy.ClassEquation <> G:34 var
+R4971:4972 CAG.Conjugacy.ClassEquation <> sg:35 var
+ax 5669:5709 <> quotient_by_center_cyclic_implies_abelian
+binder 5723:5723 <> G:49
+R5739:5749 CAG.Group <> StrictGroup rec
+R5751:5751 CAG.Conjugacy.ClassEquation <> G:49 var
+binder 5734:5735 <> sg:50
+R5820:5820 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5924:5932 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5821:5827 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5833:5834 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5832:5832 CAG.Conjugacy.ClassEquation <> G:49 var
+binder 5828:5828 <> g:51
+R5846:5846 CAG.Conjugacy.ClassEquation <> G:49 var
+binder 5842:5842 <> x:52
+R5849:5855 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5863:5871 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5860:5862 Corelib.Init.Datatypes <> nat ind
+binder 5856:5856 <> n:53
+R5872:5881 CAG.GroupActions.Basic <> conj_class def
+R5889:5892 CAG.Group <> gpow def
+R5920:5920 CAG.Conjugacy.ClassEquation <> x:52 var
+R5922:5922 CAG.Conjugacy.ClassEquation <> n:53 var
+R5895:5914 CAG.Group <> StrictGroup_to_Group def
+R5916:5917 CAG.Conjugacy.ClassEquation <> sg:50 var
+R5886:5886 CAG.Conjugacy.ClassEquation <> g:51 var
+R5883:5884 CAG.Conjugacy.ClassEquation <> sg:50 var
+R5946:5946 CAG.Conjugacy.ClassEquation <> G:49 var
+binder 5940:5940 <> a:54
+binder 5942:5942 <> b:55
+R5962:5964 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5949:5952 CAG.Group <> smul proj
+R5954:5954 CAG.Conjugacy.ClassEquation <> G:49 var
+R5956:5957 CAG.Conjugacy.ClassEquation <> sg:50 var
+R5959:5959 CAG.Conjugacy.ClassEquation <> a:54 var
+R5961:5961 CAG.Conjugacy.ClassEquation <> b:55 var
+R5965:5968 CAG.Group <> smul proj
+R5970:5970 CAG.Conjugacy.ClassEquation <> G:49 var
+R5972:5973 CAG.Conjugacy.ClassEquation <> sg:50 var
+R5975:5975 CAG.Conjugacy.ClassEquation <> b:55 var
+R5977:5977 CAG.Conjugacy.ClassEquation <> a:54 var
+ax 5987:6010 <> group_order_p_sq_abelian
+binder 6024:6024 <> G:58
+R6040:6050 CAG.Group <> StrictGroup rec
+R6052:6052 CAG.Conjugacy.ClassEquation <> G:58 var
+binder 6035:6036 <> sg:59
+R6060:6062 Corelib.Init.Datatypes <> nat ind
+binder 6056:6056 <> p:60
+R6086:6089 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R6090:6090 CAG.Conjugacy.ClassEquation <> p:60 var
+binder 6075:6081 <> p_prime:61
+R6112:6115 Corelib.Init.Datatypes <> list ind
+R6117:6117 CAG.Conjugacy.ClassEquation <> G:58 var
+binder 6103:6108 <> G_list:62
+R6140:6144 Stdlib.Lists.List <> NoDup ind
+R6146:6151 CAG.Conjugacy.ClassEquation <> G_list:62 var
+binder 6130:6136 <> G_nodup:63
+R6188:6188 CAG.Conjugacy.ClassEquation <> G:58 var
+binder 6184:6184 <> x:64
+R6191:6192 Stdlib.Lists.List <> In def
+R6196:6201 CAG.Conjugacy.ClassEquation <> G_list:62 var
+R6194:6194 CAG.Conjugacy.ClassEquation <> x:64 var
+binder 6164:6173 <> G_complete:65
+R6237:6239 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6224:6229 Corelib.Init.Datatypes <> length def
+R6231:6236 CAG.Conjugacy.ClassEquation <> G_list:62 var
+R6240:6246 Stdlib.Arith.PeanoNat Nat pow def
+R6248:6248 CAG.Conjugacy.ClassEquation <> p:60 var
+binder 6214:6220 <> G_order:66
+R6269:6277 CAG.Conjugacy.ClassEquation <> is_pgroup def
+R6282:6282 CAG.Conjugacy.ClassEquation <> p:60 var
+R6279:6280 CAG.Conjugacy.ClassEquation <> sg:59 var
+binder 6263:6265 <> Hpg:67
+R6303:6303 CAG.Conjugacy.ClassEquation <> G:58 var
+binder 6297:6297 <> a:68
+binder 6299:6299 <> b:69
+R6319:6321 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6306:6309 CAG.Group <> smul proj
+R6311:6311 CAG.Conjugacy.ClassEquation <> G:58 var
+R6313:6314 CAG.Conjugacy.ClassEquation <> sg:59 var
+R6316:6316 CAG.Conjugacy.ClassEquation <> a:68 var
+R6318:6318 CAG.Conjugacy.ClassEquation <> b:69 var
+R6322:6325 CAG.Group <> smul proj
+R6327:6327 CAG.Conjugacy.ClassEquation <> G:58 var
+R6329:6330 CAG.Conjugacy.ClassEquation <> sg:59 var
+R6332:6332 CAG.Conjugacy.ClassEquation <> b:69 var
+R6334:6334 CAG.Conjugacy.ClassEquation <> a:68 var
+ax 6414:6462 <> group_order_p_sq_iso_cyclic_or_elementary_abelian
+binder 6476:6476 <> G:72
+R6492:6502 CAG.Group <> StrictGroup rec
+R6504:6504 CAG.Conjugacy.ClassEquation <> G:72 var
+binder 6487:6488 <> sg:73
+R6512:6514 Corelib.Init.Datatypes <> nat ind
+binder 6508:6508 <> p:74
+R6538:6541 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R6542:6542 CAG.Conjugacy.ClassEquation <> p:74 var
+binder 6527:6533 <> p_prime:75
+R6564:6567 Corelib.Init.Datatypes <> list ind
+R6569:6569 CAG.Conjugacy.ClassEquation <> G:72 var
+binder 6555:6560 <> G_list:76
+R6592:6596 Stdlib.Lists.List <> NoDup ind
+R6598:6603 CAG.Conjugacy.ClassEquation <> G_list:76 var
+binder 6582:6588 <> G_nodup:77
+R6640:6640 CAG.Conjugacy.ClassEquation <> G:72 var
+binder 6636:6636 <> x:78
+R6643:6644 Stdlib.Lists.List <> In def
+R6648:6653 CAG.Conjugacy.ClassEquation <> G_list:76 var
+R6646:6646 CAG.Conjugacy.ClassEquation <> x:78 var
+binder 6616:6625 <> G_complete:79
+R6689:6691 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6676:6681 Corelib.Init.Datatypes <> length def
+R6683:6688 CAG.Conjugacy.ClassEquation <> G_list:76 var
+R6692:6698 Stdlib.Arith.PeanoNat Nat pow def
+R6700:6700 CAG.Conjugacy.ClassEquation <> p:74 var
+binder 6666:6672 <> G_order:80
+R6721:6729 CAG.Conjugacy.ClassEquation <> is_pgroup def
+R6734:6734 CAG.Conjugacy.ClassEquation <> p:74 var
+R6731:6732 CAG.Conjugacy.ClassEquation <> sg:73 var
+binder 6715:6717 <> Hpg:81
+R6784:6784 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R6874:6939 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R7021:7021 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R6785:6791 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6797:6798 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6796:6796 CAG.Conjugacy.ClassEquation <> G:72 var
+binder 6792:6792 <> g:82
+R6810:6810 CAG.Conjugacy.ClassEquation <> G:72 var
+binder 6806:6806 <> x:83
+R6813:6819 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6827:6835 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6824:6826 Corelib.Init.Datatypes <> nat ind
+binder 6820:6820 <> n:84
+R6870:6872 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6836:6839 CAG.Group <> gpow def
+R6867:6867 CAG.Conjugacy.ClassEquation <> g:82 var
+R6869:6869 CAG.Conjugacy.ClassEquation <> n:84 var
+R6842:6861 CAG.Group <> StrictGroup_to_Group def
+R6863:6864 CAG.Conjugacy.ClassEquation <> sg:73 var
+R6873:6873 CAG.Conjugacy.ClassEquation <> x:83 var
+R6951:6951 CAG.Conjugacy.ClassEquation <> G:72 var
+binder 6947:6947 <> x:85
+R6966:6976 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6955:6958 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R6954:6954 CAG.Conjugacy.ClassEquation <> x:85 var
+R6959:6960 CAG.Group <> se proj
+R6962:6962 CAG.Conjugacy.ClassEquation <> G:72 var
+R6964:6965 CAG.Conjugacy.ClassEquation <> sg:73 var
+R7011:7013 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6977:6980 CAG.Group <> gpow def
+R7008:7008 CAG.Conjugacy.ClassEquation <> x:85 var
+R7010:7010 CAG.Conjugacy.ClassEquation <> p:74 var
+R6983:7002 CAG.Group <> StrictGroup_to_Group def
+R7004:7005 CAG.Conjugacy.ClassEquation <> sg:73 var
+R7014:7015 CAG.Group <> se proj
+R7017:7017 CAG.Conjugacy.ClassEquation <> G:72 var
+R7019:7020 CAG.Conjugacy.ClassEquation <> sg:73 var
+prf 7303:7325 <> conj_perm_cycle_entries
+R7332:7334 Corelib.Init.Datatypes <> nat ind
+binder 7328:7328 <> n:88
+R7350:7353 CAG.Group <> Perm rec
+R7355:7355 CAG.Conjugacy.ClassEquation <> n:88 var
+binder 7338:7342 <> sigma:89
+binder 7344:7346 <> tau:90
+R7363:7367 Stdlib.Vectors.Fin <> t ind
+R7369:7369 CAG.Conjugacy.ClassEquation <> n:88 var
+binder 7359:7359 <> i:91
+R7433:7439 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7378:7381 CAG.Group <> pfun proj
+R7432:7432 CAG.Conjugacy.ClassEquation <> i:91 var
+R7384:7392 CAG.Group <> perm_comp def
+R7399:7407 CAG.Group <> perm_comp def
+R7416:7423 CAG.Group <> perm_inv def
+R7425:7427 CAG.Conjugacy.ClassEquation <> tau:90 var
+R7409:7413 CAG.Conjugacy.ClassEquation <> sigma:89 var
+R7394:7396 CAG.Conjugacy.ClassEquation <> tau:90 var
+R7440:7443 CAG.Group <> pfun proj
+R7450:7453 CAG.Group <> pfun proj
+R7462:7465 CAG.Group <> pfun proj
+R7482:7482 CAG.Conjugacy.ClassEquation <> i:91 var
+R7468:7475 CAG.Group <> perm_inv def
+R7477:7479 CAG.Conjugacy.ClassEquation <> tau:90 var
+R7455:7459 CAG.Conjugacy.ClassEquation <> sigma:89 var
+R7445:7447 CAG.Conjugacy.ClassEquation <> tau:90 var
+ax 7661:7695 <> conjugate_in_Sn_iff_same_cycle_type
+R7713:7715 Corelib.Init.Datatypes <> nat ind
+binder 7709:7709 <> n:92
+R7731:7734 CAG.Group <> Perm rec
+R7736:7736 CAG.Conjugacy.ClassEquation <> n:92 var
+binder 7719:7723 <> sigma:93
+binder 7725:7727 <> tau:94
+R7740:7743 Corelib.Init.Logic <> True ind
+ax 7838:7869 <> conj_classes_Sn_equiv_partitions
+R7887:7889 Corelib.Init.Datatypes <> nat ind
+binder 7883:7883 <> n:97
+R7893:7896 Corelib.Init.Logic <> True ind
+ax 8355:8385 <> A5_simple_via_conjugacy_classes
+R8389:8392 Corelib.Init.Logic <> True ind
+prf 8657:8669 <> sinv_conj_lem
+binder 8672:8672 <> G:102
+R8688:8698 CAG.Group <> StrictGroup rec
+R8700:8700 CAG.Conjugacy.ClassEquation <> G:102 var
+binder 8683:8684 <> sg:103
+R8710:8710 CAG.Conjugacy.ClassEquation <> G:102 var
+binder 8704:8704 <> g:104
+binder 8706:8706 <> h:105
+R8768:8772 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8717:8720 CAG.Group <> sinv proj
+R8722:8722 CAG.Conjugacy.ClassEquation <> G:102 var
+R8724:8725 CAG.Conjugacy.ClassEquation <> sg:103 var
+R8728:8731 CAG.Group <> smul proj
+R8733:8733 CAG.Conjugacy.ClassEquation <> G:102 var
+R8735:8736 CAG.Conjugacy.ClassEquation <> sg:103 var
+R8739:8742 CAG.Group <> smul proj
+R8744:8744 CAG.Conjugacy.ClassEquation <> G:102 var
+R8746:8747 CAG.Conjugacy.ClassEquation <> sg:103 var
+R8749:8749 CAG.Conjugacy.ClassEquation <> g:104 var
+R8751:8751 CAG.Conjugacy.ClassEquation <> h:105 var
+R8755:8758 CAG.Group <> sinv proj
+R8760:8760 CAG.Conjugacy.ClassEquation <> G:102 var
+R8762:8763 CAG.Conjugacy.ClassEquation <> sg:103 var
+R8765:8765 CAG.Conjugacy.ClassEquation <> g:104 var
+R8773:8776 CAG.Group <> smul proj
+R8778:8778 CAG.Conjugacy.ClassEquation <> G:102 var
+R8780:8781 CAG.Conjugacy.ClassEquation <> sg:103 var
+R8783:8783 CAG.Conjugacy.ClassEquation <> g:104 var
+R8786:8789 CAG.Group <> smul proj
+R8791:8791 CAG.Conjugacy.ClassEquation <> G:102 var
+R8793:8794 CAG.Conjugacy.ClassEquation <> sg:103 var
+R8797:8800 CAG.Group <> sinv proj
+R8802:8802 CAG.Conjugacy.ClassEquation <> G:102 var
+R8804:8805 CAG.Conjugacy.ClassEquation <> sg:103 var
+R8807:8807 CAG.Conjugacy.ClassEquation <> h:105 var
+R8811:8814 CAG.Group <> sinv proj
+R8816:8816 CAG.Conjugacy.ClassEquation <> G:102 var
+R8818:8819 CAG.Conjugacy.ClassEquation <> sg:103 var
+R8821:8821 CAG.Conjugacy.ClassEquation <> g:104 var
+R8844:8850 CAG.Group <> inv_mul thm
+R8856:8859 CAG.Group <> smul proj
+R8872:8875 CAG.Group <> sinv proj
+R8844:8850 CAG.Group <> inv_mul thm
+R8856:8859 CAG.Group <> smul proj
+R8872:8875 CAG.Group <> sinv proj
+R8844:8850 CAG.Group <> inv_mul thm
+R8856:8859 CAG.Group <> smul proj
+R8872:8875 CAG.Group <> sinv proj
+R8898:8904 CAG.Group <> inv_mul thm
+R8916:8929 CAG.Group <> double_inverse thm
+R8898:8904 CAG.Group <> inv_mul thm
+R8898:8904 CAG.Group <> inv_mul thm
+R8916:8929 CAG.Group <> double_inverse thm
+R8916:8929 CAG.Group <> double_inverse thm
+R8956:8961 CAG.Group <> sassoc proj
+R8956:8961 CAG.Group <> sassoc proj
+R8956:8961 CAG.Group <> sassoc proj
+R8956:8961 CAG.Group <> sassoc proj
+prf 9078:9094 <> conj_act_conj_lem
+binder 9097:9097 <> G:106
+R9113:9123 CAG.Group <> StrictGroup rec
+R9125:9125 CAG.Conjugacy.ClassEquation <> G:106 var
+binder 9108:9109 <> sg:107
+R9137:9137 CAG.Conjugacy.ClassEquation <> G:106 var
+binder 9129:9129 <> g:108
+binder 9131:9131 <> h:109
+binder 9133:9133 <> x:110
+R9175:9179 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9144:9151 CAG.GroupActions.Basic <> conj_act def
+R9159:9166 CAG.GroupActions.Basic <> conj_act def
+R9173:9173 CAG.Conjugacy.ClassEquation <> x:110 var
+R9171:9171 CAG.Conjugacy.ClassEquation <> h:109 var
+R9168:9169 CAG.Conjugacy.ClassEquation <> sg:107 var
+R9156:9156 CAG.Conjugacy.ClassEquation <> g:108 var
+R9153:9154 CAG.Conjugacy.ClassEquation <> sg:107 var
+R9180:9187 CAG.GroupActions.Basic <> conj_act def
+R9211:9218 CAG.GroupActions.Basic <> conj_act def
+R9225:9225 CAG.Conjugacy.ClassEquation <> x:110 var
+R9223:9223 CAG.Conjugacy.ClassEquation <> g:108 var
+R9220:9221 CAG.Conjugacy.ClassEquation <> sg:107 var
+R9193:9200 CAG.GroupActions.Basic <> conj_act def
+R9207:9207 CAG.Conjugacy.ClassEquation <> h:109 var
+R9205:9205 CAG.Conjugacy.ClassEquation <> g:108 var
+R9202:9203 CAG.Conjugacy.ClassEquation <> sg:107 var
+R9189:9190 CAG.Conjugacy.ClassEquation <> sg:107 var
+R9245:9252 CAG.GroupActions.Basic <> conj_act def
+R9263:9275 CAG.Conjugacy.ClassEquation <> sinv_conj_lem thm
+R9263:9275 CAG.Conjugacy.ClassEquation <> sinv_conj_lem thm
+R9263:9275 CAG.Conjugacy.ClassEquation <> sinv_conj_lem thm
+R9296:9301 CAG.Group <> sassoc proj
+R9296:9301 CAG.Group <> sassoc proj
+R9296:9301 CAG.Group <> sassoc proj
+R9296:9301 CAG.Group <> sassoc proj
+R9296:9301 CAG.Group <> sassoc proj
+R9296:9301 CAG.Group <> sassoc proj
+R9296:9301 CAG.Group <> sassoc proj
+R9296:9301 CAG.Group <> sassoc proj
+R9296:9301 CAG.Group <> sassoc proj
+R9296:9301 CAG.Group <> sassoc proj
+R9296:9301 CAG.Group <> sassoc proj
+R9296:9301 CAG.Group <> sassoc proj
+R9296:9301 CAG.Group <> sassoc proj
+R9296:9301 CAG.Group <> sassoc proj
+R9324:9329 CAG.Group <> sassoc proj
+R9337:9340 CAG.Group <> smul proj
+R9353:9356 CAG.Group <> sinv proj
+R9324:9329 CAG.Group <> sassoc proj
+R9337:9340 CAG.Group <> smul proj
+R9353:9356 CAG.Group <> sinv proj
+R9324:9329 CAG.Group <> sassoc proj
+R9337:9340 CAG.Group <> smul proj
+R9353:9356 CAG.Group <> sinv proj
+R9381:9389 CAG.Group <> sinv_left proj
+R9401:9409 CAG.Group <> sid_right proj
+R9381:9389 CAG.Group <> sinv_left proj
+R9381:9389 CAG.Group <> sinv_left proj
+R9401:9409 CAG.Group <> sid_right proj
+R9401:9409 CAG.Group <> sid_right proj
+R9436:9441 CAG.Group <> sassoc proj
+R9436:9441 CAG.Group <> sassoc proj
+R9464:9469 CAG.Group <> sassoc proj
+R9477:9480 CAG.Group <> smul proj
+R9488:9491 CAG.Group <> smul proj
+R9507:9510 CAG.Group <> sinv proj
+R9464:9469 CAG.Group <> sassoc proj
+R9477:9480 CAG.Group <> smul proj
+R9488:9491 CAG.Group <> smul proj
+R9507:9510 CAG.Group <> sinv proj
+R9464:9469 CAG.Group <> sassoc proj
+R9477:9480 CAG.Group <> smul proj
+R9488:9491 CAG.Group <> smul proj
+R9507:9510 CAG.Group <> sinv proj
+R9535:9543 CAG.Group <> sinv_left proj
+R9555:9563 CAG.Group <> sid_right proj
+R9535:9543 CAG.Group <> sinv_left proj
+R9535:9543 CAG.Group <> sinv_left proj
+R9555:9563 CAG.Group <> sid_right proj
+R9555:9563 CAG.Group <> sid_right proj
+prf 9652:9675 <> conj_act_sinv_cancel_lem
+binder 9678:9678 <> G:111
+R9694:9704 CAG.Group <> StrictGroup rec
+R9706:9706 CAG.Conjugacy.ClassEquation <> G:111 var
+binder 9689:9690 <> sg:112
+R9716:9716 CAG.Conjugacy.ClassEquation <> G:111 var
+binder 9710:9710 <> g:113
+binder 9712:9712 <> y:114
+R9766:9768 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9723:9730 CAG.GroupActions.Basic <> conj_act def
+R9738:9745 CAG.GroupActions.Basic <> conj_act def
+R9764:9764 CAG.Conjugacy.ClassEquation <> y:114 var
+R9751:9754 CAG.Group <> sinv proj
+R9756:9756 CAG.Conjugacy.ClassEquation <> G:111 var
+R9758:9759 CAG.Conjugacy.ClassEquation <> sg:112 var
+R9761:9761 CAG.Conjugacy.ClassEquation <> g:113 var
+R9747:9748 CAG.Conjugacy.ClassEquation <> sg:112 var
+R9735:9735 CAG.Conjugacy.ClassEquation <> g:113 var
+R9732:9733 CAG.Conjugacy.ClassEquation <> sg:112 var
+R9769:9769 CAG.Conjugacy.ClassEquation <> y:114 var
+R9788:9795 CAG.GroupActions.Basic <> conj_act def
+R9809:9822 CAG.Group <> double_inverse thm
+R9809:9822 CAG.Group <> double_inverse thm
+R9809:9822 CAG.Group <> double_inverse thm
+R9849:9854 CAG.Group <> sassoc proj
+R9849:9854 CAG.Group <> sassoc proj
+R9849:9854 CAG.Group <> sassoc proj
+R9849:9854 CAG.Group <> sassoc proj
+R9849:9854 CAG.Group <> sassoc proj
+R9849:9854 CAG.Group <> sassoc proj
+R9874:9883 CAG.Group <> sinv_right proj
+R9895:9902 CAG.Group <> sid_left proj
+R9874:9883 CAG.Group <> sinv_right proj
+R9874:9883 CAG.Group <> sinv_right proj
+R9895:9902 CAG.Group <> sid_left proj
+R9895:9902 CAG.Group <> sid_left proj
+R9925:9930 CAG.Group <> sassoc proj
+R9942:9945 CAG.Group <> sinv proj
+R9925:9930 CAG.Group <> sassoc proj
+R9942:9945 CAG.Group <> sinv proj
+R9925:9930 CAG.Group <> sassoc proj
+R9942:9945 CAG.Group <> sinv proj
+R9968:9977 CAG.Group <> sinv_right proj
+R9989:9997 CAG.Group <> sid_right proj
+R9968:9977 CAG.Group <> sinv_right proj
+R9968:9977 CAG.Group <> sinv_right proj
+R9989:9997 CAG.Group <> sid_right proj
+R9989:9997 CAG.Group <> sid_right proj
+prf 10201:10218 <> conj_normalizer_eq
+binder 10221:10221 <> G:115
+R10237:10247 CAG.Group <> StrictGroup rec
+R10249:10249 CAG.Conjugacy.ClassEquation <> G:115 var
+binder 10232:10233 <> sg:116
+R10258:10261 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10257:10257 CAG.Conjugacy.ClassEquation <> G:115 var
+binder 10253:10253 <> S:117
+R10273:10273 CAG.Conjugacy.ClassEquation <> G:115 var
+binder 10269:10269 <> g:118
+R10326:10333 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10376:10376 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10282:10291 CAG.GroupActions.Basic <> normalizer def
+binder 10301:10301 <> x:119
+R10306:10306 CAG.Conjugacy.ClassEquation <> S:117 var
+R10309:10316 CAG.GroupActions.Basic <> conj_act def
+R10323:10323 CAG.Conjugacy.ClassEquation <> x:119 var
+R10321:10321 CAG.Conjugacy.ClassEquation <> g:118 var
+R10318:10319 CAG.Conjugacy.ClassEquation <> sg:116 var
+R10293:10294 CAG.Conjugacy.ClassEquation <> sg:116 var
+binder 10338:10338 <> h:120
+R10343:10352 CAG.GroupActions.Basic <> normalizer def
+R10360:10367 CAG.GroupActions.Basic <> conj_act def
+R10374:10374 CAG.Conjugacy.ClassEquation <> h:120 var
+R10372:10372 CAG.Conjugacy.ClassEquation <> g:118 var
+R10369:10370 CAG.Conjugacy.ClassEquation <> sg:116 var
+R10357:10357 CAG.Conjugacy.ClassEquation <> S:117 var
+R10354:10355 CAG.Conjugacy.ClassEquation <> sg:116 var
+R10394:10418 Stdlib.Logic.FunctionalExtensionality <> functional_extensionality thm
+R10394:10418 Stdlib.Logic.FunctionalExtensionality <> functional_extensionality thm
+R10438:10465 Stdlib.Logic.PropExtensionality <> propositional_extensionality prfax
+R10438:10465 Stdlib.Logic.PropExtensionality <> propositional_extensionality prfax
+R10477:10486 CAG.GroupActions.Basic <> normalizer def
+R10563:10570 CAG.GroupActions.Basic <> conj_act def
+R10576:10579 CAG.Group <> sinv proj
+R10563:10570 CAG.GroupActions.Basic <> conj_act def
+R10576:10579 CAG.Group <> sinv proj
+R10629:10631 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10613:10620 CAG.GroupActions.Basic <> conj_act def
+R10645:10668 CAG.Conjugacy.ClassEquation <> conj_act_sinv_cancel_lem thm
+R10629:10631 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10613:10620 CAG.GroupActions.Basic <> conj_act def
+R10645:10668 CAG.Conjugacy.ClassEquation <> conj_act_sinv_cancel_lem thm
+R10704:10720 CAG.Conjugacy.ClassEquation <> conj_act_conj_lem thm
+R10704:10720 CAG.Conjugacy.ClassEquation <> conj_act_conj_lem thm
+R10704:10720 CAG.Conjugacy.ClassEquation <> conj_act_conj_lem thm
+R10800:10807 CAG.GroupActions.Basic <> conj_act def
+R10813:10816 CAG.Group <> sinv proj
+R10800:10807 CAG.GroupActions.Basic <> conj_act def
+R10813:10816 CAG.Group <> sinv proj
+R10866:10868 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10850:10857 CAG.GroupActions.Basic <> conj_act def
+R10882:10905 CAG.Conjugacy.ClassEquation <> conj_act_sinv_cancel_lem thm
+R10866:10868 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10850:10857 CAG.GroupActions.Basic <> conj_act def
+R10882:10905 CAG.Conjugacy.ClassEquation <> conj_act_sinv_cancel_lem thm
+R10941:10957 CAG.Conjugacy.ClassEquation <> conj_act_conj_lem thm
+R10941:10957 CAG.Conjugacy.ClassEquation <> conj_act_conj_lem thm
+R10941:10957 CAG.Conjugacy.ClassEquation <> conj_act_conj_lem thm
+R11083:11099 CAG.Conjugacy.ClassEquation <> conj_act_conj_lem thm
+R11083:11099 CAG.Conjugacy.ClassEquation <> conj_act_conj_lem thm
+R11083:11099 CAG.Conjugacy.ClassEquation <> conj_act_conj_lem thm
+R11115:11122 CAG.GroupActions.Basic <> conj_act def
+R11115:11122 CAG.GroupActions.Basic <> conj_act def
+R11170:11186 CAG.Conjugacy.ClassEquation <> conj_act_conj_lem thm
+R11170:11186 CAG.Conjugacy.ClassEquation <> conj_act_conj_lem thm
+R11170:11186 CAG.Conjugacy.ClassEquation <> conj_act_conj_lem thm
+R11208:11215 CAG.GroupActions.Basic <> conj_act def
+R11208:11215 CAG.GroupActions.Basic <> conj_act def
+ax 11319:11352 <> conj_class_bounded_by_center_index
+binder 11366:11366 <> G:121
+R11382:11392 CAG.Group <> StrictGroup rec
+R11394:11394 CAG.Conjugacy.ClassEquation <> G:121 var
+binder 11377:11378 <> sg:122
+R11423:11426 Corelib.Init.Datatypes <> list ind
+R11428:11428 CAG.Conjugacy.ClassEquation <> G:121 var
+binder 11407:11412 <> G_list:123
+binder 11414:11419 <> Z_list:124
+R11465:11465 CAG.Conjugacy.ClassEquation <> G:121 var
+binder 11461:11461 <> x:125
+R11468:11469 Stdlib.Lists.List <> In def
+R11473:11478 CAG.Conjugacy.ClassEquation <> G_list:123 var
+R11471:11471 CAG.Conjugacy.ClassEquation <> x:125 var
+binder 11441:11450 <> G_complete:126
+R11515:11515 CAG.Conjugacy.ClassEquation <> G:121 var
+binder 11511:11511 <> x:127
+R11529:11533 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R11518:11519 Stdlib.Lists.List <> In def
+R11523:11528 CAG.Conjugacy.ClassEquation <> Z_list:124 var
+R11521:11521 CAG.Conjugacy.ClassEquation <> x:127 var
+R11534:11539 CAG.Conjugacy.ClassEquation <> center def
+R11544:11544 CAG.Conjugacy.ClassEquation <> x:127 var
+R11541:11542 CAG.Conjugacy.ClassEquation <> sg:122 var
+binder 11491:11500 <> Z_complete:128
+R11561:11563 Corelib.Init.Datatypes <> nat ind
+binder 11557:11557 <> n:129
+R11598:11600 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11585:11590 Corelib.Init.Datatypes <> length def
+R11592:11597 CAG.Conjugacy.ClassEquation <> G_list:123 var
+R11602:11604 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R11601:11601 CAG.Conjugacy.ClassEquation <> n:129 var
+R11605:11610 Corelib.Init.Datatypes <> length def
+R11612:11617 CAG.Conjugacy.ClassEquation <> Z_list:124 var
+binder 11576:11581 <> Hindex:130
+R11634:11634 CAG.Conjugacy.ClassEquation <> G:121 var
+binder 11630:11630 <> g:131
+R11651:11654 Corelib.Init.Datatypes <> list ind
+R11656:11656 CAG.Conjugacy.ClassEquation <> G:121 var
+binder 11638:11647 <> class_list:132
+R11697:11697 CAG.Conjugacy.ClassEquation <> G:121 var
+binder 11693:11693 <> x:133
+R11715:11719 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R11700:11701 Stdlib.Lists.List <> In def
+R11705:11714 CAG.Conjugacy.ClassEquation <> class_list:132 var
+R11703:11703 CAG.Conjugacy.ClassEquation <> x:133 var
+R11720:11729 CAG.GroupActions.Basic <> conj_class def
+R11736:11736 CAG.Conjugacy.ClassEquation <> x:133 var
+R11734:11734 CAG.Conjugacy.ClassEquation <> g:131 var
+R11731:11732 CAG.Conjugacy.ClassEquation <> sg:122 var
+binder 11669:11682 <> class_complete:134
+R11761:11764 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R11744:11749 Corelib.Init.Datatypes <> length def
+R11751:11760 CAG.Conjugacy.ClassEquation <> class_list:132 var
+R11765:11765 CAG.Conjugacy.ClassEquation <> n:129 var
+ax 11820:11836 <> center_Sn_trivial
+R11853:11855 Corelib.Init.Datatypes <> nat ind
+binder 11849:11849 <> n:137
+R11864:11871 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11859:11862 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R11863:11863 CAG.Conjugacy.ClassEquation <> n:137 var
+R11887:11890 CAG.Group <> Perm rec
+R11892:11892 CAG.Conjugacy.ClassEquation <> n:137 var
+binder 11879:11883 <> sigma:138
+R11931:11940 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11901:11910 CAG.Group <> is_central def
+R11926:11930 CAG.Conjugacy.ClassEquation <> sigma:138 var
+R11913:11921 CAG.Group <> PermGroup def
+R11923:11923 CAG.Conjugacy.ClassEquation <> n:137 var
+binder 11948:11948 <> i:139
+R11963:11965 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11951:11954 CAG.Group <> pfun proj
+R11962:11962 CAG.Conjugacy.ClassEquation <> i:139 var
+R11956:11960 CAG.Conjugacy.ClassEquation <> sigma:138 var
+R11966:11966 CAG.Conjugacy.ClassEquation <> i:139 var
+ax 12069:12095 <> two_conj_classes_order_le_2
+binder 12109:12109 <> G:142
+R12125:12135 CAG.Group <> StrictGroup rec
+R12137:12137 CAG.Conjugacy.ClassEquation <> G:142 var
+binder 12120:12121 <> sg:143
+R12164:12167 Corelib.Init.Datatypes <> list ind
+R12169:12169 CAG.Conjugacy.ClassEquation <> G:142 var
+binder 12150:12155 <> G_list:144
+binder 12157:12160 <> reps:145
+R12206:12206 CAG.Conjugacy.ClassEquation <> G:142 var
+binder 12202:12202 <> x:146
+R12209:12210 Stdlib.Lists.List <> In def
+R12214:12219 CAG.Conjugacy.ClassEquation <> G_list:144 var
+R12212:12212 CAG.Conjugacy.ClassEquation <> x:146 var
+binder 12182:12191 <> G_complete:147
+R12258:12273 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R12248:12252 Stdlib.Lists.List <> NoDup ind
+R12254:12257 CAG.Conjugacy.ClassEquation <> reps:145 var
+R12285:12285 CAG.Conjugacy.ClassEquation <> G:142 var
+binder 12281:12281 <> x:148
+R12288:12294 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R12296:12297 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 12295:12295 <> r:149
+R12307:12310 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R12298:12299 Stdlib.Lists.List <> In def
+R12303:12306 CAG.Conjugacy.ClassEquation <> reps:145 var
+R12301:12301 CAG.Conjugacy.ClassEquation <> r:149 var
+R12311:12320 CAG.GroupActions.Basic <> conj_class def
+R12327:12327 CAG.Conjugacy.ClassEquation <> x:148 var
+R12325:12325 CAG.Conjugacy.ClassEquation <> r:149 var
+R12322:12323 CAG.Conjugacy.ClassEquation <> sg:143 var
+binder 12232:12244 <> reps_classify:150
+R12358:12360 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12347:12352 Corelib.Init.Datatypes <> length def
+R12354:12357 CAG.Conjugacy.ClassEquation <> reps:145 var
+binder 12340:12343 <> Htwo:151
+R12382:12385 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R12369:12374 Corelib.Init.Datatypes <> length def
+R12376:12381 CAG.Conjugacy.ClassEquation <> G_list:144 var
+ax 12473:12495 <> not_union_of_conjugates
+binder 12509:12509 <> G:154
+R12525:12535 CAG.Group <> StrictGroup rec
+R12537:12537 CAG.Conjugacy.ClassEquation <> G:154 var
+binder 12520:12521 <> sg:155
+R12559:12562 Corelib.Init.Datatypes <> list ind
+R12564:12564 CAG.Conjugacy.ClassEquation <> G:154 var
+binder 12550:12555 <> G_list:156
+R12601:12601 CAG.Conjugacy.ClassEquation <> G:154 var
+binder 12597:12597 <> x:157
+R12604:12605 Stdlib.Lists.List <> In def
+R12609:12614 CAG.Conjugacy.ClassEquation <> G_list:156 var
+R12607:12607 CAG.Conjugacy.ClassEquation <> x:157 var
+binder 12577:12586 <> G_complete:158
+R12637:12641 Stdlib.Lists.List <> NoDup ind
+R12643:12648 CAG.Conjugacy.ClassEquation <> G_list:156 var
+binder 12627:12633 <> G_nodup:159
+R12666:12669 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12665:12665 CAG.Conjugacy.ClassEquation <> G:154 var
+binder 12661:12661 <> H:160
+R12697:12703 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R12709:12710 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R12708:12708 CAG.Conjugacy.ClassEquation <> G:154 var
+binder 12704:12704 <> x:161
+R12711:12712 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R12713:12713 CAG.Conjugacy.ClassEquation <> H:160 var
+R12715:12715 CAG.Conjugacy.ClassEquation <> x:161 var
+binder 12686:12693 <> H_proper:162
+R12741:12747 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R12753:12754 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R12752:12752 CAG.Conjugacy.ClassEquation <> G:154 var
+binder 12748:12748 <> x:163
+R12755:12755 CAG.Conjugacy.ClassEquation <> H:160 var
+R12757:12757 CAG.Conjugacy.ClassEquation <> x:163 var
+binder 12728:12737 <> H_nonempty:164
+R12778:12788 CAG.Group <> is_subgroup def
+R12816:12816 CAG.Conjugacy.ClassEquation <> H:160 var
+R12791:12810 CAG.Group <> StrictGroup_to_Group def
+R12812:12813 CAG.Conjugacy.ClassEquation <> sg:155 var
+binder 12770:12774 <> H_sub:165
+R12824:12830 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R12836:12843 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R12835:12835 CAG.Conjugacy.ClassEquation <> G:154 var
+binder 12831:12831 <> y:166
+R12844:12846 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R12880:12880 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R12847:12853 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R12859:12860 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R12858:12858 CAG.Conjugacy.ClassEquation <> G:154 var
+binder 12854:12854 <> g:167
+R12861:12861 CAG.Conjugacy.ClassEquation <> H:160 var
+R12864:12871 CAG.GroupActions.Basic <> conj_act def
+R12878:12878 CAG.Conjugacy.ClassEquation <> y:166 var
+R12876:12876 CAG.Conjugacy.ClassEquation <> g:167 var
+R12873:12874 CAG.Conjugacy.ClassEquation <> sg:155 var
+ax 12984:13011 <> transitive_has_fixpoint_free
+binder 13025:13025 <> G:170
+binder 13027:13027 <> A:171
+R13043:13053 CAG.Group <> StrictGroup rec
+R13055:13055 CAG.Conjugacy.ClassEquation <> G:170 var
+binder 13038:13039 <> sg:172
+R13070:13073 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13069:13069 CAG.Conjugacy.ClassEquation <> G:170 var
+R13075:13078 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13074:13074 CAG.Conjugacy.ClassEquation <> A:171 var
+R13079:13079 CAG.Conjugacy.ClassEquation <> A:171 var
+binder 13063:13065 <> act:173
+R13088:13100 CAG.GroupActions.Basic <> IsGroupAction rec
+R13105:13107 CAG.Conjugacy.ClassEquation <> act:173 var
+R13102:13103 CAG.Conjugacy.ClassEquation <> sg:172 var
+binder 13083:13084 <> ga:174
+R13125:13128 Corelib.Init.Datatypes <> list ind
+R13130:13130 CAG.Conjugacy.ClassEquation <> A:171 var
+binder 13115:13121 <> A_elems:175
+R13142:13144 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R13145:13150 Corelib.Init.Datatypes <> length def
+R13152:13158 CAG.Conjugacy.ClassEquation <> A_elems:175 var
+binder 13134:13137 <> A_ne:176
+R13175:13191 CAG.GroupActions.Basic <> transitive_action def
+R13193:13194 CAG.Conjugacy.ClassEquation <> ga:174 var
+binder 13166:13171 <> Htrans:177
+R13202:13208 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R13214:13215 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R13213:13213 CAG.Conjugacy.ClassEquation <> G:170 var
+binder 13209:13209 <> g:178
+R13234:13237 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13216:13228 CAG.GroupActions.Basic <> kernel_action def
+R13233:13233 CAG.Conjugacy.ClassEquation <> g:178 var
+R13230:13231 CAG.Conjugacy.ClassEquation <> ga:174 var
+R13238:13242 Corelib.Init.Logic <> False ind
+ax 13334:13360 <> pgroup_subgroups_all_orders
+binder 13374:13374 <> G:181
+R13390:13400 CAG.Group <> StrictGroup rec
+R13402:13402 CAG.Conjugacy.ClassEquation <> G:181 var
+binder 13385:13386 <> sg:182
+R13412:13414 Corelib.Init.Datatypes <> nat ind
+binder 13406:13406 <> p:183
+binder 13408:13408 <> a:184
+R13438:13441 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R13442:13442 CAG.Conjugacy.ClassEquation <> p:183 var
+binder 13427:13433 <> p_prime:185
+R13464:13467 Corelib.Init.Datatypes <> list ind
+R13469:13469 CAG.Conjugacy.ClassEquation <> G:181 var
+binder 13455:13460 <> G_list:186
+R13506:13506 CAG.Conjugacy.ClassEquation <> G:181 var
+binder 13502:13502 <> x:187
+R13509:13510 Stdlib.Lists.List <> In def
+R13514:13519 CAG.Conjugacy.ClassEquation <> G_list:186 var
+R13512:13512 CAG.Conjugacy.ClassEquation <> x:187 var
+binder 13482:13491 <> G_complete:188
+R13542:13546 Stdlib.Lists.List <> NoDup ind
+R13548:13553 CAG.Conjugacy.ClassEquation <> G_list:186 var
+binder 13532:13538 <> G_nodup:189
+R13589:13591 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R13576:13581 Corelib.Init.Datatypes <> length def
+R13583:13588 CAG.Conjugacy.ClassEquation <> G_list:186 var
+R13592:13598 Stdlib.Arith.PeanoNat Nat pow def
+R13600:13600 CAG.Conjugacy.ClassEquation <> p:183 var
+R13602:13602 CAG.Conjugacy.ClassEquation <> a:184 var
+binder 13566:13572 <> G_order:190
+R13621:13629 CAG.Conjugacy.ClassEquation <> is_pgroup def
+R13634:13634 CAG.Conjugacy.ClassEquation <> p:183 var
+R13631:13632 CAG.Conjugacy.ClassEquation <> sg:182 var
+binder 13615:13617 <> Hpg:191
+R13654:13656 Corelib.Init.Datatypes <> nat ind
+binder 13647:13650 <> beta:192
+R13672:13675 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R13668:13671 CAG.Conjugacy.ClassEquation <> beta:192 var
+R13676:13676 CAG.Conjugacy.ClassEquation <> a:184 var
+binder 13660:13664 <> Hbeta:193
+R13684:13690 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R13704:13711 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R13696:13699 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13695:13695 CAG.Conjugacy.ClassEquation <> G:181 var
+binder 13691:13691 <> H:194
+R13751:13760 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R13712:13722 CAG.Group <> is_subgroup def
+R13750:13750 CAG.Conjugacy.ClassEquation <> H:194 var
+R13725:13744 CAG.Group <> StrictGroup_to_Group def
+R13746:13747 CAG.Conjugacy.ClassEquation <> sg:182 var
+R13761:13767 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R13783:13792 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R13777:13780 Corelib.Init.Datatypes <> list ind
+R13782:13782 CAG.Conjugacy.ClassEquation <> G:181 var
+binder 13768:13773 <> H_list:195
+R13805:13816 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R13793:13797 Stdlib.Lists.List <> NoDup ind
+R13799:13804 CAG.Conjugacy.ClassEquation <> H_list:195 var
+R13817:13817 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R13851:13863 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R13829:13829 CAG.Conjugacy.ClassEquation <> G:181 var
+binder 13825:13825 <> x:196
+R13843:13847 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R13832:13833 Stdlib.Lists.List <> In def
+R13837:13842 CAG.Conjugacy.ClassEquation <> H_list:195 var
+R13835:13835 CAG.Conjugacy.ClassEquation <> x:196 var
+R13848:13848 CAG.Conjugacy.ClassEquation <> H:194 var
+R13850:13850 CAG.Conjugacy.ClassEquation <> x:196 var
+R13877:13879 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R13864:13869 Corelib.Init.Datatypes <> length def
+R13871:13876 CAG.Conjugacy.ClassEquation <> H_list:195 var
+R13880:13886 Stdlib.Arith.PeanoNat Nat pow def
+R13888:13888 CAG.Conjugacy.ClassEquation <> p:183 var
+R13890:13893 CAG.Conjugacy.ClassEquation <> beta:192 var
+ax 13979:14000 <> odd_order_not_conj_inv
+binder 14014:14014 <> G:199
+R14030:14040 CAG.Group <> StrictGroup rec
+R14042:14042 CAG.Conjugacy.ClassEquation <> G:199 var
+binder 14025:14026 <> sg:200
+R14064:14067 Corelib.Init.Datatypes <> list ind
+R14069:14069 CAG.Conjugacy.ClassEquation <> G:199 var
+binder 14055:14060 <> G_list:201
+R14106:14106 CAG.Conjugacy.ClassEquation <> G:199 var
+binder 14102:14102 <> x:202
+R14109:14110 Stdlib.Lists.List <> In def
+R14114:14119 CAG.Conjugacy.ClassEquation <> G_list:201 var
+R14112:14112 CAG.Conjugacy.ClassEquation <> x:202 var
+binder 14082:14091 <> G_complete:203
+R14142:14146 Stdlib.Lists.List <> NoDup ind
+R14148:14153 CAG.Conjugacy.ClassEquation <> G_list:201 var
+binder 14132:14138 <> G_nodup:204
+R14197:14199 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R14174:14180 Stdlib.Arith.PeanoNat Nat odd def
+R14183:14188 Corelib.Init.Datatypes <> length def
+R14190:14195 CAG.Conjugacy.ClassEquation <> G_list:201 var
+R14200:14203 Corelib.Init.Datatypes <> true constr
+binder 14166:14170 <> G_odd:205
+R14220:14220 CAG.Conjugacy.ClassEquation <> G:199 var
+binder 14216:14216 <> x:206
+R14230:14233 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R14229:14229 CAG.Conjugacy.ClassEquation <> x:206 var
+R14234:14235 CAG.Group <> se proj
+R14237:14237 CAG.Conjugacy.ClassEquation <> G:199 var
+R14239:14240 CAG.Conjugacy.ClassEquation <> sg:200 var
+binder 14224:14225 <> Hx:207
+R14248:14249 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R14250:14259 CAG.GroupActions.Basic <> conj_class def
+R14267:14270 CAG.Group <> sinv proj
+R14272:14272 CAG.Conjugacy.ClassEquation <> G:199 var
+R14274:14275 CAG.Conjugacy.ClassEquation <> sg:200 var
+R14277:14277 CAG.Conjugacy.ClassEquation <> x:206 var
+R14264:14264 CAG.Conjugacy.ClassEquation <> x:206 var
+R14261:14262 CAG.Conjugacy.ClassEquation <> sg:200 var

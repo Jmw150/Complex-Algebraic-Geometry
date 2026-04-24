@@ -1,0 +1,350 @@
+#+TITLE: Structural Requirements for Admit Resolution
+#+AUTHOR: Claude Code / Rocq planning
+#+STARTUP: overview
+#+TODO: TODO BLOCKED DONE
+
+* Overview
+
+  This file catalogs the structural prerequisites needed to close the
+  ~Admitted~ and ~Axiom~ stubs throughout the project.  Items are
+  grouped by the root obstruction; within each group, leaf lemmas are
+  listed first so that a bottom-up implementation order is visible.
+
+  Current admit count: ~455 (as of 2026-04-23).
+  Tractable admits already closed this session: bracket_span_ideal,
+  derived_series_ideal, lower_central_ideal, and 5 gl/mat equality
+  lemmas in SpecialLinear.v.
+
+* I. Propositional CReal / CComplex Arithmetic
+  :PROPERTIES:
+  :BLOCKER:  CReal uses setoid equality (CRealEq), not propositional equality (=)
+  :FILES:    LieAlgebra.v, Character.v, NeuralOp/DFT.v, NeuralOp/FNO.v,
+             Kahler/sl2/Vm.v, ComplexAnalysis.v, ComplexAnalysis2.v, AG.v
+  :END:
+
+  CReal is defined in Stdlib as a Cauchy-sequence type with setoid equality.
+  Operations like ~CRealPlus~, ~CRealMult~, etc. satisfy ~CRealEq~-level
+  equalities but NOT propositional ~=~.  Every lemma of the form
+  ~Cadd a b = Cadd c d~ (propositionally) is blocked.
+
+** BLOCKED Cadd_assoc, Cadd_comm
+   ~Cadd a (Cadd b c) = Cadd (Cadd a b) c~
+   Requires propositional equality of CReal sums; impossible without
+   funext + propext at the CReal level or a quotient type.
+
+** BLOCKED Cmul_add_distr_l/r
+   Same root cause as above.
+
+** BLOCKED trace_madd
+   ~trace (madd A B) = Cadd (trace A) (trace B)~
+   Depends on Cadd_assoc/comm for CComplex diagonals.
+
+** BLOCKED csum_zero, csum_linear (NeuralOp/DFT.v)
+   Sums over CComplex require Cadd a C0 = a propositionally.
+
+** BLOCKED mat_vs_add_zero_r, mat_vs_add_neg_r (LieAlgebra.v)
+   ~madd A (mzero n) = A~ — depends on ~Cadd a C0 = a~.
+
+** BLOCKED Vm_add_assoc, Vm_add_comm, ... (Kahler/sl2/Vm.v)
+   Vector space axioms for VmType (nat -> CComplex) all require CReal arithmetic.
+
+*** Resolution path
+    Option A: Define a propositional wrapper type (e.g. quotiented CComplex)
+              and re-derive all operations.
+    Option B: Replace CComplex throughout with a concrete data type
+              (e.g. pairs of rationals or Dedekind reals).
+    Option C: Accept these as permanent axioms documenting the gap.
+
+* II. Matrix Dimension Tracking
+  :PROPERTIES:
+  :BLOCKER:  mat_zero fld m ≠ mat_zero fld n propositionally (different repeat counts)
+  :FILES:    Lie/Linear.v, Lie/SpecialLinear.v, LieAlgebra.v
+  :END:
+
+  ~mat_zero fld n = List.repeat (List.repeat (cr_zero fld) n) n~.
+  After bracket computations, the output matrix has size 0×0 (from the
+  List.combine-based definition), not n×n.  All size-uniformity results
+  require the axiom ~mat_zero_any~.
+
+** BLOCKED mat_unit_mul (Lie/Linear.v:261)
+   ~mat_mul fld (mat_unit fld n i j) (mat_unit fld n k l) = ...~
+   Full list-level induction over ~List.seq / List.combine~;
+   depends on ~nth_error~, ~fold_left~ and CReal arithmetic.
+
+** BLOCKED mat_unit_bracket (Lie/Linear.v:265)
+   Follows from mat_unit_mul + mat_add properties.
+
+** BLOCKED trace_cyclic (Character.v:39)
+   ~trace (mmul A B p) = trace (mmul B A p)~
+   Would require a full cyclic trace proof over CComplex lists.
+
+** BLOCKED mmul_assoc, mmul_mident_left/right (AG.v:374–384)
+   Standard matrix algebra; the list encoding makes these very long.
+
+*** Resolution path
+    Introduce a sized matrix type (e.g., ~Matrix n m F = Fin n -> Fin m -> F~)
+    and reprove all operations at that level.  The current list-based
+    encoding makes dimension uniformity impossible to state cleanly.
+
+* III. AxTheory Syntactic Category — Beta/Eta Rules
+  :PROPERTIES:
+  :BLOCKER:  Morphism equality in AxCl is propositional on terms,
+             but beta/eta only hold after quotienting by AxThEq.
+  :FILES:    AxTheory/ClassifyingCategory.v, AxTheory/Syntax.v
+  :END:
+
+  ~ax_fst (ax_pair M N)~ is a SYNTACTIC term; it does NOT reduce to ~M~
+  propositionally.  Beta-reduction is only provable as a theorem of AxThEq,
+  not as a propositional equality of AxTerm.  Similarly for eta.
+
+** BLOCKED axcl_terminal_unique (line 120)
+   Any well-typed term of type ax_unit must PROPOSITIONALLY equal ax_tt.
+   Requires eta for unit; true in AxThEq but not syntactically.
+
+** BLOCKED axcl_bp_beta1 / axcl_bp_beta2 (lines 171, 177)
+   ~ax_subst [pair f g] (ax_fst (ax_var 0)) = f.term~
+   reduces to ~ax_fst (ax_pair f g) = f~, which is beta for products.
+   NOT propositionally true on raw terms.
+
+** BLOCKED axcl_bp_uniq (line 185)
+   Eta for products: ~h = pair (fst h) (snd h)~ propositionally.
+
+** BLOCKED axcl_exp_beta / axcl_exp_eta (lines 247, 257)
+   Beta/eta for exponentials; same root cause.
+
+** FIXED ax_subst_comp (was false; now corrected Axiom)
+   The untyped statement ~ax_subst sub1 (ax_subst sub2 M) = ax_subst (map (ax_subst sub1) sub2) M~
+   is FALSE for open terms.  Counter-example: sub2=[], M=ax_var 0, sub1=[ax_tt]:
+     LHS = ax_tt,  RHS = ax_var 0.
+   FIXED 2026-04-23: now stated as an Axiom restricted to terms typed in a context
+   of length = length sub2, matching actual usage in axcl_comp_assoc.
+
+*** Resolution path
+    Quotient AxClMor by AxThEq, making morphism equality definitionally
+    equal to provable equality in the theory.  This requires:
+    - a setoid/quotient type for AxClMor
+    - proof that composition respects the quotient
+    - the beta/eta rules follow from AxThEq constructors
+
+* IV. Untyped Substitution Associativity (ax_subst_comp untyped)
+  :PROPERTIES:
+  :BLOCKER:  See Section III above; fixed.
+  :FILES:    AxTheory/Syntax.v
+  :END:
+
+  Resolved by restricting to typed terms (see III).
+
+* V. Category Theory Deep Results
+  :PROPERTIES:
+  :BLOCKER:  Require substantial categorical machinery not yet in the project
+  :FILES:    Category/Gluing.v, Category/InitialObjectCriteria.v,
+             Category/Subobject.v, Category/Yoneda.v, Presheaf/YonedaProducts.v,
+             AxTheory/GluingSetup.v, AxTheory/RelativeFreeCCC.v,
+             AxTheory/Conservativity.v
+  :END:
+
+** BLOCKED gl_prod_ob, gl_binary_product, gl_finite_products (Category/Gluing.v)
+   Product in the gluing category Gl(T).
+   Requires pullback-based construction; non-trivial.
+
+** BLOCKED gl_exp_ob, gl_is_exponential, P2_is_ccc_functor
+   Exponential in Gl(T); requires full CCC structure on D.
+
+** BLOCKED covering_family_gives_initial (Category/InitialObjectCriteria.v)
+   Freyd's adjoint functor theorem fragment; requires limit construction.
+
+** BLOCKED id_pullback_gives_monic (Category/Subobject.v)
+   The converse direction requires regular category hypothesis or
+   knowledge that the projections are the identity.
+
+** BLOCKED representable_of_element (Category/Yoneda.v)
+   Every a ∈ F(A) gives a full representation.  FALSE without a
+   representability assumption on F; requires inverse natural transformation.
+
+** BLOCKED yoneda_preserves_product (Presheaf/YonedaProducts.v)
+   States as a TYPE equality C(X, A×B) = C(X,A) × C(X,B);
+   true as an iso but not propositionally without univalence.
+
+** BLOCKED T_functor, gluing_data_exists, I_is_full, I_is_faithful
+   Core of the conservativity proof; requires full gluing construction.
+
+** BLOCKED classifying_CCC_is_relatively_free
+   Main result of Section 4.10; requires gluing + Prop 4.10.2.
+
+*** Resolution path
+    These require a systematic development of:
+    1. Pullbacks and their properties in Category/Limits.v
+    2. The Gl(T) CCC construction following Streicher/Jacobs
+    3. The universal property of AxCl as a relatively free CCC
+    4. Connectivity between Cl and AxCl via the gluing argument
+
+* VI. Deep Lie Theory
+  :PROPERTIES:
+  :BLOCKER:  Require basis calculus, dimension arguments, or heavy algebra
+  :FILES:    Lie/Engel.v, Lie/Nilpotent.v, Lie/Solvable.v,
+             Lie/LowDimensional.v, Kahler/sl2/FiniteDimensional.v
+  :END:
+
+** BLOCKED engel_theorem (Lie/Engel.v:33)
+   If every element is ad-nilpotent, L is nilpotent.
+   Requires the linear Engel theorem as a black box over gl(L).
+
+** BLOCKED nilpotent_ideal_meets_center, nilpotent_normalizer_grows
+   Consequences of Engel; require the linear result.
+
+** BLOCKED solvable_image, nilpotent_image (Solvable.v, Nilpotent.v)
+   Homomorphic image is solvable/nilpotent.
+   Stated for arbitrary φ : LieHom la lb; false for non-surjective φ unless
+   stated as "image" (i.e., only the actual image algebra is solvable).
+
+** BLOCKED solvable_extension (Solvable.v)
+   Requires tracking derived series through the quotient map.
+
+** BLOCKED nilpotent_from_quotient_center, nilpotent_center_nontrivial
+   Require induction on the lower central series.
+
+** BLOCKED dim2_classification (LowDimensional.v)
+   Requires a basis-change argument in dimension 2.
+
+** BLOCKED sl2_X/Y_nilpotent, sl2_primitive_exists (FiniteDimensional.v)
+   Require finite-dimensionality and Jordan decomposition.
+
+*** Resolution path
+    - Prove the linear Engel theorem first (Lemma 3.3 in Humphreys).
+    - Derive the abstract Engel theorem from it.
+    - Fix solvable_image/nilpotent_image by restricting to the image subalgebra.
+    - dim2_classification requires a finite-dimensional basis framework.
+
+* VII. Group Theory Isomorphism Theorems
+  :PROPERTIES:
+  :BLOCKER:  Quotient groups QuotCarrier/QuotStrictGroup are themselves admitted
+  :FILES:    Group.v
+  :END:
+
+** BLOCKED QuotCarrier, qmap, QuotStrictGroup (Group.v:532–534)
+   The quotient group construction is admitted as Definitions.
+   All isomorphism theorems depend on these.
+
+** BLOCKED H_inter_N_normal, second_isomorphism_theorem
+** BLOCKED third_isomorphism_theorem
+   All blocked pending the quotient group construction.
+
+*** Resolution path
+    Implement QuotCarrier as a setoid quotient or use Coq's existing
+    quotient library.  Then derive the isomorphism theorems.
+
+* VIII. Galois Correspondence
+  :PROPERTIES:
+  :BLOCKER:  Requires the Artin argument (field theory / degree arguments)
+  :FILES:    Galois/Correspondence.v
+  :END:
+
+** BLOCKED galois_adj_lr
+   Forward Galois adjunction; requires Artin's theorem.
+
+** BLOCKED galois_adj_rl, galois_counit
+   Backward Galois adjunction; deeper direction of FT.
+
+** BLOCKED fundamental_theorem_galois
+   Main result; requires normality, separability, and degree arguments.
+
+*** Resolution path
+    Develop finite field extensions with degree theory, then prove Artin's
+    lemma (a field is algebraic over its fixed field).
+
+* IX. Semisimple Lie Algebras (Killing Form / Cartan Criterion)
+  :PROPERTIES:
+  :BLOCKER:  Require trace computations on abstract vector spaces
+  :FILES:    Lie/KillingForm.v, Lie/Semisimple.v
+  :END:
+
+** BLOCKED trace_end_cyclic (KillingForm.v)
+   ~killing_form fld la x y = killing_form fld la y x~
+   Requires Tr(AB) = Tr(BA) on abstract endomorphisms.
+
+** BLOCKED killing_nondeg_iff_semisimple
+   Forward: requires Cartan's criterion (Tr(ad x ad y)=0 => solvable).
+   Backward: requires abelian ideal argument.
+
+** BLOCKED semisimple_direct_sum, semisimple_has_simple_factor
+   Decomposition into simple ideals; induction on dim L.
+
+** BLOCKED abstract_jordan, abstract_jordan_unique
+   Requires Der(L) = ad(L) and Jordan decomposition of endomorphisms.
+
+*** Resolution path
+    - Prove trace_cyclic for abstract linear maps first.
+    - Prove Cartan's criterion as a standalone lemma.
+    - Then derive the Killing form criterion.
+
+* X. Complex Analysis and Differential Geometry
+  :PROPERTIES:
+  :BLOCKER:  Require real analysis (integrals, limits, differential forms)
+             not constructively available via CReal
+  :FILES:    ComplexAnalysis.v, ComplexAnalysis2.v, ManifoldTopology.v,
+             Harmonic/*, Kodaira/*, Vanishing/*, Blowup/*, Divisor/*,
+             Residue/*, Hodge/*, Kahler/*
+  :END:
+
+  All admits in these files require either:
+  - Existence and uniqueness of holomorphic functions (non-constructive)
+  - Integration theory (not in CReal stdlib)
+  - Elliptic PDE theory (Garding's inequality, Sobolev embedding)
+  - Kodaira vanishing / Lefschetz theory
+  - Resolution of singularities / blow-up formulas
+
+*** Resolution path
+    These require a full classical real analysis library (e.g., Coquelicot or
+    Mathcomp-analysis) and are long-term research items.
+
+* XI. Neural Operator Theory (FNO, DFT)
+  :PROPERTIES:
+  :BLOCKER:  CReal arithmetic (Section I) + approximation theory
+  :FILES:    NeuralOp/DFT.v, NeuralOp/FNO.v, NeuralOp/Approximation.v
+  :END:
+
+** BLOCKED omega_pow, geometric_sum_zero/nonzero
+   Require Cpow properties + CReal arithmetic.
+
+** BLOCKED dft_inverse, dft_plancherel, dft_convolution
+   Standard Fourier analysis; require integration / infinite sums.
+
+** BLOCKED fno_universality, fno_error_bound
+   Approximation theory results; require functional analysis.
+
+*** Resolution path
+    These are long-term; address Section I first (CReal), then build
+    DFT theory on top.
+
+* XII. Sheaf Theory and Cohomology
+  :PROPERTIES:
+  :BLOCKER:  Require constructed kernel/cokernel presheaves, exact sequences
+  :FILES:    Sheaves.v, Divisor/*, Residue/*
+  :END:
+
+** BLOCKED ker_presheaf, ker_sheaf
+   Construction of kernel sheaf; requires building the record.
+
+** BLOCKED Čech cohomology long exact sequence
+   Standard sheaf cohomology; requires injective resolutions or Čech complex.
+
+*** Resolution path
+    Build a concrete AbGroup-valued presheaf framework first, then derive
+    the kernel construction and exact sequence machinery.
+
+* Summary Table
+
+| Section | Root Blocker | Approx. Admits | Resolution Difficulty |
+|---------+--------------+----------------+-----------------------|
+| I       | CReal setoid equality | ~70 | Very High (type theory) |
+| II      | Matrix dimension types | ~20 | High (new matrix type) |
+| III     | AxTheory unquotiented | ~10 | High (setoid quotient) |
+| IV      | Fixed (ax_subst_comp) | 0 | Done |
+| V       | Category machinery | ~30 | High (systematic) |
+| VI      | Linear algebra / basis | ~25 | Medium–High |
+| VII     | Quotient groups | ~10 | Medium |
+| VIII    | Field theory / Artin | ~5 | High |
+| IX      | Cartan criterion | ~15 | High |
+| X       | Classical analysis | ~200 | Very High (long-term) |
+| XI      | CReal + approx theory | ~25 | High |
+| XII     | Sheaf machinery | ~20 | Medium |

@@ -71,12 +71,20 @@ Record LieAlgebra (L : Type) : Type := mkLA
   { la_vs      :> VectorSpace L
   ; la_bracket : L -> L -> L
 
-  (** Bilinearity in the left argument (right follows by antisymmetry) *)
+  (** Bilinearity in the left argument *)
   ; la_bracket_add_l : forall x y z,
       la_bracket (vs_add la_vs x y) z =
       vs_add la_vs (la_bracket x z) (la_bracket y z)
   ; la_bracket_scale_l : forall a x y,
       la_bracket (vs_scale la_vs a x) y =
+      vs_scale la_vs a (la_bracket x y)
+
+  (** Bilinearity in the right argument *)
+  ; la_bracket_add_r : forall x y z,
+      la_bracket x (vs_add la_vs y z) =
+      vs_add la_vs (la_bracket x y) (la_bracket x z)
+  ; la_bracket_scale_r : forall a x y,
+      la_bracket x (vs_scale la_vs a y) =
       vs_scale la_vs a (la_bracket x y)
 
   (** Antisymmetry: [x, x] = 0 *)
@@ -95,31 +103,48 @@ Record LieAlgebra (L : Type) : Type := mkLA
 
 Arguments la_bracket {L} _ _ _.
 
+(** Helper: 0 + v = v *)
+Local Lemma vs_add_zero_l {L : Type} (la : LieAlgebra L) (v : L) :
+  vs_add la (vs_zero la) v = v.
+Proof.
+  rewrite (vs_add_comm L la). exact (vs_add_zero_r L la v).
+Qed.
+
 (** Derived: [x,y] = -[y,x]. *)
 Lemma bracket_anticomm : forall {L : Type} (la : LieAlgebra L) (x y : L),
   la_bracket la x y = vs_neg la (la_bracket la y x).
 Proof.
   intros L la x y.
-  (* [x,y] + [y,x] = [x+y, x+y] - [x,x] - [y,y] = 0 *)
-  (* Standard: use [x+y,x+y]=0 and expand *)
   pose proof (la_bracket_antisymm L la (vs_add la x y)) as H.
-  rewrite la_bracket_add_l in H.
-  (* H: ([x,x+y] + [y,x+y]) = 0 *)
-  (* need to expand right argument too — requires bilinearity in right *)
-  (* which follows from antisymmetry + left bilinearity *)
-  (* Admit the full derivation; the statement is standard *)
-  Admitted.
+  rewrite (la_bracket_add_l L la x y (vs_add la x y)) in H.
+  rewrite (la_bracket_add_r L la x x y) in H.
+  rewrite (la_bracket_add_r L la y x y) in H.
+  rewrite (la_bracket_antisymm L la x) in H.
+  rewrite (la_bracket_antisymm L la y) in H.
+  rewrite (vs_add_zero_l la (la_bracket la x y)) in H.
+  rewrite (vs_add_zero_r L la (la_bracket la y x)) in H.
+  (* H : [x,y] + [y,x] = 0 *)
+  rewrite <- (vs_add_zero_r L la (la_bracket la x y)).
+  rewrite <- (vs_add_neg_r L la (la_bracket la y x)).
+  rewrite (vs_add_assoc L la (la_bracket la x y) (la_bracket la y x)
+                        (vs_neg la (la_bracket la y x))).
+  rewrite H. exact (vs_add_zero_l la (vs_neg la (la_bracket la y x))).
+Qed.
 
-(** Bilinearity in the right argument (derived from left + antisymmetry). *)
+(** Bilinearity in the right argument (follows directly from record field). *)
 Lemma bracket_add_r : forall {L : Type} (la : LieAlgebra L) (x y z : L),
   la_bracket la x (vs_add la y z) =
   vs_add la (la_bracket la x y) (la_bracket la x z).
-Proof. Admitted.
+Proof.
+  intros L la x y z. exact (la_bracket_add_r L la x y z).
+Qed.
 
 Lemma bracket_scale_r : forall {L : Type} (la : LieAlgebra L) (a : CComplex) (x y : L),
   la_bracket la x (vs_scale la a y) =
   vs_scale la a (la_bracket la x y).
-Proof. Admitted.
+Proof.
+  intros L la a x y. exact (la_bracket_scale_r L la a x y).
+Qed.
 
 (* ------------------------------------------------------------------ *)
 (** * 3. The matrix Lie algebra gl(n,ℂ)                                *)
@@ -290,6 +315,14 @@ Lemma gl_bracket_scale_l : forall n a A B,
   gl_bracket n (mscale a A) B = mscale a (gl_bracket n A B).
 Proof. Admitted.
 
+Lemma gl_bracket_add_r : forall n A B C,
+  gl_bracket n A (madd B C) = madd (gl_bracket n A B) (gl_bracket n A C).
+Proof. Admitted.
+
+Lemma gl_bracket_scale_r : forall n a A B,
+  gl_bracket n A (mscale a B) = mscale a (gl_bracket n A B).
+Proof. Admitted.
+
 Lemma gl_bracket_antisymm : forall n A,
   gl_bracket n A A = mzero n.
 Proof.
@@ -311,6 +344,8 @@ Definition gl (n : nat) : LieAlgebra (Mat CComplex) :=
     (gl_bracket n)
     (fun A B C => gl_bracket_add_l n A B C)
     (fun a A B => gl_bracket_scale_l n a A B)
+    (fun A B C => gl_bracket_add_r n A B C)
+    (fun a A B => gl_bracket_scale_r n a A B)
     (fun A     => gl_bracket_antisymm n A)
     (fun A B C => gl_jacobi n A B C).
 
@@ -342,6 +377,46 @@ Arguments lahom_fn {L M la lb} _ _.
 Definition adjoint {L : Type} (la : LieAlgebra L) (x y : L) : L :=
   la_bracket la x y.
 
+(** [x, 0] = 0 *)
+Local Lemma bracket_zero_r {L : Type} (la : LieAlgebra L) (x : L) :
+  la_bracket la x (vs_zero la) = vs_zero la.
+Proof.
+  assert (H : la_bracket la x (vs_zero la) =
+              vs_add la (la_bracket la x (vs_zero la)) (la_bracket la x (vs_zero la))).
+  { rewrite <- (vs_add_zero_r L la (vs_zero la)) at 1.
+    exact (la_bracket_add_r L la x (vs_zero la) (vs_zero la)). }
+  assert (Hneg : vs_add la (la_bracket la x (vs_zero la)) (vs_neg la (la_bracket la x (vs_zero la))) = vs_zero la)
+    by exact (vs_add_neg_r L la (la_bracket la x (vs_zero la))).
+  rewrite H in Hneg at 1.
+  rewrite <- (vs_add_assoc L la
+    (la_bracket la x (vs_zero la))
+    (la_bracket la x (vs_zero la))
+    (vs_neg la (la_bracket la x (vs_zero la)))) in Hneg.
+  rewrite (vs_add_neg_r L la (la_bracket la x (vs_zero la))) in Hneg.
+  rewrite (vs_add_zero_r L la (la_bracket la x (vs_zero la))) in Hneg.
+  exact Hneg.
+Qed.
+
+(** [x, -y] = -[x, y] *)
+Local Lemma bracket_neg_r {L : Type} (la : LieAlgebra L) (x y : L) :
+  la_bracket la x (vs_neg la y) = vs_neg la (la_bracket la x y).
+Proof.
+  assert (H : la_bracket la x (vs_zero la) =
+              vs_add la (la_bracket la x y) (la_bracket la x (vs_neg la y))).
+  { rewrite <- (vs_add_neg_r L la y).
+    exact (la_bracket_add_r L la x y (vs_neg la y)). }
+  rewrite (bracket_zero_r la x) in H.
+  rewrite <- (vs_add_zero_r L la (la_bracket la x (vs_neg la y))).
+  rewrite <- (vs_add_neg_r L la (la_bracket la x y)).
+  rewrite (vs_add_assoc L la
+    (la_bracket la x (vs_neg la y))
+    (la_bracket la x y)
+    (vs_neg la (la_bracket la x y))).
+  rewrite (vs_add_comm L la (la_bracket la x (vs_neg la y)) (la_bracket la x y)).
+  rewrite <- H.
+  exact (vs_add_zero_l la (vs_neg la (la_bracket la x y))).
+Qed.
+
 (** ad is a Lie algebra homomorphism L → gl(L)
     (where gl(L) = End(L) with bracket [f,g] = f∘g − g∘f).
     We state this as a lemma; the proof is exactly the Jacobi identity. *)
@@ -352,9 +427,26 @@ Lemma adjoint_bracket : forall {L : Type} (la : LieAlgebra L) (x y z : L),
     (vs_neg la (adjoint la y (adjoint la x z))).
 Proof.
   intros L la x y z. unfold adjoint.
-  (* [xy, z] = [x,[y,z]] - [y,[x,z]]
-     this is the Jacobi identity rearranged *)
-  Admitted.
+  (* [[x,y],z] = -[z,[x,y]] by anticomm *)
+  rewrite (bracket_anticomm la (la_bracket la x y) z).
+  (* Jacobi: [x,[y,z]] + [y,[z,x]] + [z,[x,y]] = 0 *)
+  pose proof (la_jacobi L la x y z) as J.
+  (* [y,[z,x]] = -[y,[x,z]] *)
+  assert (Hyzx : la_bracket la y (la_bracket la z x) = vs_neg la (la_bracket la y (la_bracket la x z))).
+  { rewrite (bracket_anticomm la z x).
+    exact (bracket_neg_r la y (la_bracket la x z)). }
+  rewrite Hyzx in J.
+  (* J: ([x,[y,z]] + (-[y,[x,z]])) + [z,[x,y]] = 0 => -[z,[x,y]] = [x,[y,z]] + (-[y,[x,z]]) *)
+  set (P := vs_add la (la_bracket la x (la_bracket la y z))
+                       (vs_neg la (la_bracket la y (la_bracket la x z)))).
+  set (Q := la_bracket la z (la_bracket la x y)).
+  change (vs_add la P Q = vs_zero la) in J.
+  rewrite <- (vs_add_zero_r L la P).
+  rewrite <- (vs_add_neg_r L la Q).
+  rewrite (vs_add_assoc L la P Q (vs_neg la Q)).
+  rewrite J.
+  symmetry. exact (vs_add_zero_l la (vs_neg la Q)).
+Qed.
 
 (** The adjoint map for gl(n,ℂ): ad(A)(B) = [A,B] = AB − BA. *)
 Definition gl_adjoint (n : nat) (A B : Mat CComplex) : Mat CComplex :=

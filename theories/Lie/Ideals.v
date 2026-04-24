@@ -73,6 +73,132 @@ Proof.
     + apply HJ.(ideal_bracket_l); assumption.
 Qed.
 
+(** Sum of two ideals is an ideal.
+    (I+J)(x) := exists x_I x_J, I x_I /\ J x_J /\ x = x_I + x_J. *)
+Definition IdealSum {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (I J : L -> Prop) (x : L) : Prop :=
+  exists xI xJ, I xI /\ J xJ /\ x = la_add la xI xJ.
+
+Lemma sum_ideal {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (I J : L -> Prop) :
+    IsIdeal la I -> IsIdeal la J -> IsIdeal la (IdealSum la I J).
+Proof.
+  intros HI HJ. constructor.
+  - (* zero = 0_I + 0_J *)
+    unfold IdealSum.
+    exists (la_zero la), (la_zero la). split.
+    + apply HI.(ideal_zero).
+    + split. apply HJ.(ideal_zero).
+      symmetry. apply (laF_vs la).(vsF_add_zero_r).
+  - (* add: (xI+xJ) + (yI+yJ) = (xI+yI) + (xJ+yJ) *)
+    intros x y [xI [xJ [HxI [HxJ Hx]]]] [yI [yJ [HyI [HyJ Hy]]]].
+    unfold IdealSum.
+    exists (la_add la xI yI), (la_add la xJ yJ). split.
+    + apply HI.(ideal_add); assumption.
+    + split.
+      * apply HJ.(ideal_add); assumption.
+      * rewrite Hx, Hy.
+        (* (xI+xJ)+(yI+yJ) = (xI+yI)+(xJ+yJ) *)
+        set (vs := laF_vs la).
+        assert (step1 : vsF_add vs (vsF_add vs xI xJ) (vsF_add vs yI yJ) =
+                        vsF_add vs xI (vsF_add vs xJ (vsF_add vs yI yJ)))
+          by (symmetry; apply vsF_add_assoc).
+        assert (step2 : vsF_add vs xJ (vsF_add vs yI yJ) =
+                        vsF_add vs yI (vsF_add vs xJ yJ)).
+        { rewrite (vsF_add_assoc vs xJ yI yJ).
+          rewrite (vsF_add_comm vs xJ yI).
+          symmetry; apply vsF_add_assoc. }
+        assert (step3 : vsF_add vs xI (vsF_add vs yI (vsF_add vs xJ yJ)) =
+                        vsF_add vs (vsF_add vs xI yI) (vsF_add vs xJ yJ))
+          by apply vsF_add_assoc.
+        rewrite step1, step2, step3. reflexivity.
+  - (* neg: -(xI+xJ) = (-xI)+(-xJ) *)
+    intros x [xI [xJ [HxI [HxJ Hx]]]].
+    unfold IdealSum.
+    exists (la_neg la xI), (la_neg la xJ). split.
+    + apply HI.(ideal_neg); assumption.
+    + split.
+      * apply HJ.(ideal_neg); assumption.
+      * rewrite Hx.
+        (* Show la_neg la (xI+xJ) = (-xI)+(-xJ) using neg uniqueness *)
+        set (vs := laF_vs la).
+        (* Show ((-xI)+(-xJ)) + (xI+xJ) = 0 *)
+        assert (Hsum : vsF_add vs (vsF_add vs (vsF_neg vs xI) (vsF_neg vs xJ))
+                                  (vsF_add vs xI xJ) = vsF_zero vs).
+        { assert (H1 : vsF_add vs (vsF_neg vs xJ) xJ = vsF_zero vs).
+          { rewrite (vsF_add_comm vs). apply (vsF_add_neg_r vs). }
+          assert (H2 : vsF_add vs (vsF_neg vs xI) xI = vsF_zero vs).
+          { rewrite (vsF_add_comm vs). apply (vsF_add_neg_r vs). }
+          (* rearrange: -xI+((-xJ+xI)+xJ) *)
+          assert (step1 : vsF_add vs (vsF_add vs (vsF_neg vs xI) (vsF_neg vs xJ))
+                                     (vsF_add vs xI xJ) =
+                          vsF_add vs (vsF_neg vs xI)
+                            (vsF_add vs (vsF_neg vs xJ) (vsF_add vs xI xJ)))
+            by (symmetry; apply vsF_add_assoc).
+          assert (step2 : vsF_add vs (vsF_neg vs xJ) (vsF_add vs xI xJ) =
+                          vsF_add vs xI (vsF_add vs (vsF_neg vs xJ) xJ)).
+          { assert (A : vsF_add vs (vsF_neg vs xJ) (vsF_add vs xI xJ) =
+                        vsF_add vs (vsF_add vs (vsF_neg vs xJ) xI) xJ)
+              by apply vsF_add_assoc.
+            assert (B : vsF_add vs (vsF_neg vs xJ) xI = vsF_add vs xI (vsF_neg vs xJ))
+              by apply vsF_add_comm.
+            assert (C : vsF_add vs (vsF_add vs xI (vsF_neg vs xJ)) xJ =
+                        vsF_add vs xI (vsF_add vs (vsF_neg vs xJ) xJ))
+              by (symmetry; apply vsF_add_assoc).
+            rewrite A, B, C. reflexivity. }
+          rewrite step1, step2, H1.
+          rewrite (vsF_add_zero_r vs xI). apply H2. }
+        (* Now use: nI+nJ = (nI+nJ)+0 = (nI+nJ)+((xI+xJ)+neg) = ((nI+nJ+xI+xJ))+neg = neg *)
+        rewrite <- (vsF_add_zero_r vs (vsF_add vs (vsF_neg vs xI) (vsF_neg vs xJ))).
+        rewrite <- (vsF_add_neg_r vs (vsF_add vs xI xJ)).
+        rewrite (vsF_add_assoc vs).
+        rewrite Hsum.
+        symmetry; apply vsF_add_zero_l.
+  - (* scale: a*(xI+xJ) = (a*xI)+(a*xJ) *)
+    intros a x [xI [xJ [HxI [HxJ Hx]]]].
+    unfold IdealSum.
+    exists (la_scale la a xI), (la_scale la a xJ). split.
+    + apply HI.(ideal_scale); assumption.
+    + split.
+      * apply HJ.(ideal_scale); assumption.
+      * rewrite Hx. apply (laF_vs la).(vsF_scale_add_v).
+  - (* bracket_l: [z, xI+xJ] = [z,xI]+[z,xJ] ∈ I+J *)
+    intros z x [xI [xJ [HxI [HxJ Hx]]]].
+    unfold IdealSum.
+    exists (laF_bracket la z xI), (laF_bracket la z xJ). split.
+    + apply HI.(ideal_bracket_l); assumption.
+    + split.
+      * apply HJ.(ideal_bracket_l); assumption.
+      * rewrite Hx. apply la.(laF_bracket_add_r).
+Qed.
+
+(** I ⊆ I+J and J ⊆ I+J. *)
+Lemma sub_sum_ideal_l {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (I J : L -> Prop) :
+    IsIdeal la J ->
+    forall x, I x -> IdealSum la I J x.
+Proof.
+  intros HJ x Hx. unfold IdealSum.
+  exists x, (la_zero la). split.
+  - exact Hx.
+  - split.
+    + apply HJ.(ideal_zero).
+    + symmetry. apply (laF_vs la).(vsF_add_zero_r).
+Qed.
+
+Lemma sub_sum_ideal_r {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (I J : L -> Prop) :
+    IsIdeal la I ->
+    forall x, J x -> IdealSum la I J x.
+Proof.
+  intros HI x Hx. unfold IdealSum.
+  exists (la_zero la), x. split.
+  - apply HI.(ideal_zero).
+  - split.
+    + exact Hx.
+    + symmetry. rewrite (laF_vs la).(vsF_add_comm). apply (laF_vs la).(vsF_add_zero_r).
+Qed.
+
 (** ** Center *)
 
 (** The center Z(L) = { z | [x,z] = 0 for all x }. *)

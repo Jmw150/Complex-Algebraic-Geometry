@@ -1,0 +1,402 @@
+DIGEST 31c8bb6713ecc5b479d93b4eb3114d8b
+FCAG.Category.Coproducts
+R159:175 CAG.Category.Core <> <> lib
+R193:213 CAG.Category.Products <> <> lib
+rec 302:318 <> IsBinaryCoproduct
+proj 366:373 <> bcp_inj1
+proj 393:400 <> bcp_inj2
+proj 420:427 <> bcp_case
+proj 489:497 <> bcp_beta1
+proj 586:594 <> bcp_beta2
+proj 683:690 <> bcp_uniq
+R325:332 CAG.Category.Core <> Category rec
+binder 321:321 <> C:1
+R347:348 CAG.Category.Core <> Ob proj
+R344:344 CAG.Category.Coproducts <> C:1 var
+binder 336:336 <> A:2
+binder 338:338 <> B:3
+binder 340:340 <> S:4
+R379:381 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R383:384 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R386:388 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R378:378 CAG.Category.Coproducts <> C:1 var
+R382:382 CAG.Category.Coproducts <> A:2 var
+R385:385 CAG.Category.Coproducts <> S:4 var
+R406:408 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R410:411 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R413:415 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R405:405 CAG.Category.Coproducts <> C:1 var
+R409:409 CAG.Category.Coproducts <> B:3 var
+R412:412 CAG.Category.Coproducts <> S:4 var
+binder 440:440 <> X:8
+R455:458 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R445:447 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R449:450 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R452:454 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R444:444 CAG.Category.Coproducts <> C:1 var
+R448:448 CAG.Category.Coproducts <> A:2 var
+R451:451 CAG.Category.Coproducts <> X:8 var
+R470:473 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R460:462 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R464:465 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R467:469 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R459:459 CAG.Category.Coproducts <> C:1 var
+R463:463 CAG.Category.Coproducts <> B:3 var
+R466:466 CAG.Category.Coproducts <> X:8 var
+R475:477 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R479:480 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R482:484 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R474:474 CAG.Category.Coproducts <> C:1 var
+R478:478 CAG.Category.Coproducts <> S:4 var
+R481:481 CAG.Category.Coproducts <> X:8 var
+binder 509:509 <> X:10
+R518:520 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R522:523 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R525:527 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R517:517 CAG.Category.Coproducts <> C:1 var
+R521:521 CAG.Category.Coproducts <> A:2 var
+R524:524 CAG.Category.Coproducts <> X:10 var
+binder 513:513 <> f:11
+R536:538 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R540:541 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R543:545 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R535:535 CAG.Category.Coproducts <> C:1 var
+R539:539 CAG.Category.Coproducts <> B:3 var
+R542:542 CAG.Category.Coproducts <> X:10 var
+binder 531:531 <> g:12
+R578:580 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R565:569 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R553:560 CAG.Category.Coproducts <> bcp_case:9 meth
+R564:564 CAG.Category.Coproducts <> g:12 var
+R562:562 CAG.Category.Coproducts <> f:11 var
+R570:577 CAG.Category.Coproducts <> bcp_inj1:6 meth
+R581:581 CAG.Category.Coproducts <> f:11 var
+binder 606:606 <> X:14
+R615:617 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R619:620 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R622:624 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R614:614 CAG.Category.Coproducts <> C:1 var
+R618:618 CAG.Category.Coproducts <> A:2 var
+R621:621 CAG.Category.Coproducts <> X:14 var
+binder 610:610 <> f:15
+R633:635 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R637:638 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R640:642 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R632:632 CAG.Category.Coproducts <> C:1 var
+R636:636 CAG.Category.Coproducts <> B:3 var
+R639:639 CAG.Category.Coproducts <> X:14 var
+binder 628:628 <> g:16
+R675:677 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R662:666 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R650:657 CAG.Category.Coproducts <> bcp_case:9 meth
+R661:661 CAG.Category.Coproducts <> g:16 var
+R659:659 CAG.Category.Coproducts <> f:15 var
+R667:674 CAG.Category.Coproducts <> bcp_inj2:7 meth
+R678:678 CAG.Category.Coproducts <> g:16 var
+binder 703:703 <> X:18
+R712:714 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R716:717 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R719:721 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R711:711 CAG.Category.Coproducts <> C:1 var
+R715:715 CAG.Category.Coproducts <> S:4 var
+R718:718 CAG.Category.Coproducts <> X:18 var
+binder 707:707 <> h:19
+R730:732 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R729:729 CAG.Category.Coproducts <> h:19 var
+R733:740 CAG.Category.Coproducts <> bcp_case:9 meth
+R761:765 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R760:760 CAG.Category.Coproducts <> h:19 var
+R766:773 CAG.Category.Coproducts <> bcp_inj2:7 meth
+R744:748 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R743:743 CAG.Category.Coproducts <> h:19 var
+R749:756 CAG.Category.Coproducts <> bcp_inj1:6 meth
+R791:798 CAG.Category.Coproducts <> bcp_inj1 proj
+R791:798 CAG.Category.Coproducts <> bcp_inj1 proj
+R824:831 CAG.Category.Coproducts <> bcp_inj2 proj
+R824:831 CAG.Category.Coproducts <> bcp_inj2 proj
+R857:864 CAG.Category.Coproducts <> bcp_case proj
+R857:864 CAG.Category.Coproducts <> bcp_case proj
+R898:906 CAG.Category.Coproducts <> bcp_beta1 proj
+R898:906 CAG.Category.Coproducts <> bcp_beta1 proj
+R939:947 CAG.Category.Coproducts <> bcp_beta2 proj
+R939:947 CAG.Category.Coproducts <> bcp_beta2 proj
+R980:987 CAG.Category.Coproducts <> bcp_uniq proj
+R980:987 CAG.Category.Coproducts <> bcp_uniq proj
+R1042:1049 CAG.Category.Coproducts <> bcp_case proj
+not 1019:1019 <> ::cat_scope:'['_x_','_x_']{'_x_'}'
+prf 1197:1205 <> case_comp
+R1212:1219 CAG.Category.Core <> Category rec
+binder 1208:1208 <> C:21
+R1234:1235 CAG.Category.Core <> Ob proj
+R1231:1231 CAG.Category.Coproducts <> C:21 var
+binder 1223:1223 <> A:22
+binder 1225:1225 <> B:23
+binder 1227:1227 <> S:24
+R1246:1262 CAG.Category.Coproducts <> IsBinaryCoproduct rec
+R1268:1268 CAG.Category.Coproducts <> S:24 var
+R1266:1266 CAG.Category.Coproducts <> B:23 var
+R1264:1264 CAG.Category.Coproducts <> A:22 var
+binder 1240:1242 <> bcp:25
+binder 1276:1276 <> X:26
+binder 1278:1278 <> Y:27
+R1287:1289 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1291:1292 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1294:1296 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1286:1286 CAG.Category.Coproducts <> C:21 var
+R1290:1290 CAG.Category.Coproducts <> A:22 var
+R1293:1293 CAG.Category.Coproducts <> X:26 var
+binder 1282:1282 <> f:28
+R1305:1307 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1309:1310 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1312:1314 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1304:1304 CAG.Category.Coproducts <> C:21 var
+R1308:1308 CAG.Category.Coproducts <> B:23 var
+R1311:1311 CAG.Category.Coproducts <> X:26 var
+binder 1300:1300 <> g:29
+R1323:1325 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1327:1328 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1330:1332 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1322:1322 CAG.Category.Coproducts <> C:21 var
+R1326:1326 CAG.Category.Coproducts <> X:26 var
+R1329:1329 CAG.Category.Coproducts <> Y:27 var
+binder 1318:1318 <> l:30
+R1358:1360 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1342:1346 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1341:1341 CAG.Category.Coproducts <> l:30 var
+R1347:1347 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1349:1350 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1352:1353 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1357:1357 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1354:1356 CAG.Category.Coproducts <> bcp:25 var
+R1348:1348 CAG.Category.Coproducts <> f:28 var
+R1351:1351 CAG.Category.Coproducts <> g:29 var
+R1361:1361 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1369:1370 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1378:1379 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1383:1383 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1380:1382 CAG.Category.Coproducts <> bcp:25 var
+R1363:1367 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1362:1362 CAG.Category.Coproducts <> l:30 var
+R1368:1368 CAG.Category.Coproducts <> f:28 var
+R1372:1376 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1371:1371 CAG.Category.Coproducts <> l:30 var
+R1377:1377 CAG.Category.Coproducts <> g:29 var
+R1409:1416 CAG.Category.Coproducts <> bcp_uniq proj
+R1421:1425 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1426:1426 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1428:1429 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1431:1432 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1436:1436 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1409:1416 CAG.Category.Coproducts <> bcp_uniq proj
+R1421:1425 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1426:1426 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1428:1429 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1431:1432 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1436:1436 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1409:1416 CAG.Category.Coproducts <> bcp_uniq proj
+R1421:1425 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1426:1426 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1428:1429 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1431:1432 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1436:1436 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1470:1479 CAG.Category.Core <> comp_assoc proj
+R1470:1479 CAG.Category.Core <> comp_assoc proj
+R1470:1479 CAG.Category.Core <> comp_assoc proj
+R1496:1504 CAG.Category.Coproducts <> bcp_beta1 proj
+R1496:1504 CAG.Category.Coproducts <> bcp_beta1 proj
+R1496:1504 CAG.Category.Coproducts <> bcp_beta1 proj
+R1539:1548 CAG.Category.Core <> comp_assoc proj
+R1539:1548 CAG.Category.Core <> comp_assoc proj
+R1539:1548 CAG.Category.Core <> comp_assoc proj
+R1565:1573 CAG.Category.Coproducts <> bcp_beta2 proj
+R1565:1573 CAG.Category.Coproducts <> bcp_beta2 proj
+R1565:1573 CAG.Category.Coproducts <> bcp_beta2 proj
+prf 1676:1698 <> binary_coproduct_unique
+R1705:1712 CAG.Category.Core <> Category rec
+binder 1701:1701 <> C:31
+R1730:1731 CAG.Category.Core <> Ob proj
+R1727:1727 CAG.Category.Coproducts <> C:31 var
+binder 1716:1716 <> A:32
+binder 1718:1718 <> B:33
+binder 1720:1720 <> S:34
+binder 1722:1723 <> S':35
+R1747:1763 CAG.Category.Coproducts <> IsBinaryCoproduct rec
+R1769:1769 CAG.Category.Coproducts <> S:34 var
+R1767:1767 CAG.Category.Coproducts <> B:33 var
+R1765:1765 CAG.Category.Coproducts <> A:32 var
+binder 1740:1742 <> bcp:36
+R1784:1800 CAG.Category.Coproducts <> IsBinaryCoproduct rec
+R1806:1807 CAG.Category.Coproducts <> S':35 var
+R1804:1804 CAG.Category.Coproducts <> B:33 var
+R1802:1802 CAG.Category.Coproducts <> A:32 var
+binder 1777:1780 <> bcp':37
+R1813:1817 CAG.Category.Core <> ::cat_scope:x_'≅['_x_']'_x not
+R1819:1820 CAG.Category.Core <> ::cat_scope:x_'≅['_x_']'_x not
+R1818:1818 CAG.Category.Coproducts <> C:31 var
+R1812:1812 CAG.Category.Coproducts <> S:34 var
+R1821:1822 CAG.Category.Coproducts <> S':35 var
+R1848:1854 CAG.Category.Core <> iso_fwd proj
+R1848:1854 CAG.Category.Core <> iso_fwd proj
+R1848:1854 CAG.Category.Core <> iso_fwd proj
+R1904:1910 CAG.Category.Core <> iso_bwd proj
+R1904:1910 CAG.Category.Core <> iso_bwd proj
+R1859:1859 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1875:1876 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1892:1893 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1897:1897 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1866:1873 CAG.Category.Coproducts <> bcp_inj1 proj
+R1883:1890 CAG.Category.Coproducts <> bcp_inj2 proj
+R1915:1915 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1930:1932 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1947:1948 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1953:1953 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1921:1928 CAG.Category.Coproducts <> bcp_inj1 proj
+R1938:1945 CAG.Category.Coproducts <> bcp_inj2 proj
+R1848:1854 CAG.Category.Core <> iso_fwd proj
+R1848:1854 CAG.Category.Core <> iso_fwd proj
+R1848:1854 CAG.Category.Core <> iso_fwd proj
+R1904:1910 CAG.Category.Core <> iso_bwd proj
+R1904:1910 CAG.Category.Core <> iso_bwd proj
+R1859:1859 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1875:1876 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1892:1893 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1897:1897 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1866:1873 CAG.Category.Coproducts <> bcp_inj1 proj
+R1883:1890 CAG.Category.Coproducts <> bcp_inj2 proj
+R1915:1915 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1930:1932 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1947:1948 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1953:1953 CAG.Category.Coproducts <> ::cat_scope:'['_x_','_x_']{'_x_'}' not
+R1921:1928 CAG.Category.Coproducts <> bcp_inj1 proj
+R1938:1945 CAG.Category.Coproducts <> bcp_inj2 proj
+R1974:1982 CAG.Category.Coproducts <> case_comp thm
+R1974:1982 CAG.Category.Coproducts <> case_comp thm
+R1974:1982 CAG.Category.Coproducts <> case_comp thm
+R2003:2011 CAG.Category.Coproducts <> bcp_beta1 proj
+R2003:2011 CAG.Category.Coproducts <> bcp_beta1 proj
+R2003:2011 CAG.Category.Coproducts <> bcp_beta1 proj
+R2029:2037 CAG.Category.Coproducts <> bcp_beta2 proj
+R2029:2037 CAG.Category.Coproducts <> bcp_beta2 proj
+R2029:2037 CAG.Category.Coproducts <> bcp_beta2 proj
+R2073:2080 CAG.Category.Coproducts <> bcp_uniq proj
+R2087:2088 CAG.Category.Core <> id proj
+R2073:2080 CAG.Category.Coproducts <> bcp_uniq proj
+R2087:2088 CAG.Category.Core <> id proj
+R2073:2080 CAG.Category.Coproducts <> bcp_uniq proj
+R2087:2088 CAG.Category.Core <> id proj
+R2111:2117 CAG.Category.Core <> id_left proj
+R2111:2117 CAG.Category.Core <> id_left proj
+R2111:2117 CAG.Category.Core <> id_left proj
+R2132:2138 CAG.Category.Core <> id_left proj
+R2132:2138 CAG.Category.Core <> id_left proj
+R2132:2138 CAG.Category.Core <> id_left proj
+R2167:2175 CAG.Category.Coproducts <> case_comp thm
+R2167:2175 CAG.Category.Coproducts <> case_comp thm
+R2167:2175 CAG.Category.Coproducts <> case_comp thm
+R2195:2203 CAG.Category.Coproducts <> bcp_beta1 proj
+R2195:2203 CAG.Category.Coproducts <> bcp_beta1 proj
+R2195:2203 CAG.Category.Coproducts <> bcp_beta1 proj
+R2220:2228 CAG.Category.Coproducts <> bcp_beta2 proj
+R2220:2228 CAG.Category.Coproducts <> bcp_beta2 proj
+R2220:2228 CAG.Category.Coproducts <> bcp_beta2 proj
+R2265:2272 CAG.Category.Coproducts <> bcp_uniq proj
+R2279:2280 CAG.Category.Core <> id proj
+R2265:2272 CAG.Category.Coproducts <> bcp_uniq proj
+R2279:2280 CAG.Category.Core <> id proj
+R2265:2272 CAG.Category.Coproducts <> bcp_uniq proj
+R2279:2280 CAG.Category.Core <> id proj
+R2304:2310 CAG.Category.Core <> id_left proj
+R2304:2310 CAG.Category.Core <> id_left proj
+R2304:2310 CAG.Category.Core <> id_left proj
+R2325:2331 CAG.Category.Core <> id_left proj
+R2325:2331 CAG.Category.Core <> id_left proj
+R2325:2331 CAG.Category.Core <> id_left proj
+rec 2404:2422 <> HasBinaryCoproducts
+proj 2453:2462 <> coprod_obj
+proj 2496:2505 <> coprod_bcp
+R2429:2436 CAG.Category.Core <> Category rec
+binder 2425:2425 <> C:38
+R2472:2475 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2469:2470 CAG.Category.Core <> Ob proj
+R2466:2466 CAG.Category.Coproducts <> C:38 var
+R2482:2485 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2479:2480 CAG.Category.Core <> Ob proj
+R2476:2476 CAG.Category.Coproducts <> C:38 var
+R2489:2490 CAG.Category.Core <> Ob proj
+R2486:2486 CAG.Category.Coproducts <> C:38 var
+binder 2516:2516 <> A:41
+binder 2518:2518 <> B:42
+R2521:2537 CAG.Category.Coproducts <> IsBinaryCoproduct rec
+R2544:2553 CAG.Category.Coproducts <> coprod_obj:40 meth
+R2557:2557 CAG.Category.Coproducts <> B:42 var
+R2555:2555 CAG.Category.Coproducts <> A:41 var
+R2541:2541 CAG.Category.Coproducts <> B:42 var
+R2539:2539 CAG.Category.Coproducts <> A:41 var
+R2575:2584 CAG.Category.Coproducts <> coprod_obj proj
+R2575:2584 CAG.Category.Coproducts <> coprod_obj proj
+R2607:2616 CAG.Category.Coproducts <> coprod_bcp proj
+R2607:2616 CAG.Category.Coproducts <> coprod_bcp proj
+R2658:2667 CAG.Category.Coproducts <> coprod_obj proj
+not 2639:2639 <> ::cat_scope:x_'+{'_x_'}'_x
+prf 2765:2787 <> op_product_is_coproduct
+R2794:2801 CAG.Category.Core <> Category rec
+binder 2790:2790 <> C:44
+R2816:2817 CAG.Category.Core <> Ob proj
+R2813:2813 CAG.Category.Coproducts <> C:44 var
+binder 2805:2805 <> A:45
+binder 2807:2807 <> B:46
+binder 2809:2809 <> P:47
+R2832:2846 CAG.Category.Products <> IsBinaryProduct rec
+R2850:2852 CAG.Category.Core <> ::cat_scope:x_'^op' not
+R2849:2849 CAG.Category.Coproducts <> C:44 var
+R2855:2855 CAG.Category.Coproducts <> A:45 var
+R2857:2857 CAG.Category.Coproducts <> B:46 var
+R2859:2859 CAG.Category.Coproducts <> P:47 var
+binder 2826:2827 <> bp:48
+R2868:2884 CAG.Category.Coproducts <> IsBinaryCoproduct rec
+R2890:2890 CAG.Category.Coproducts <> P:47 var
+R2888:2888 CAG.Category.Coproducts <> B:46 var
+R2886:2886 CAG.Category.Coproducts <> A:45 var
+R2939:2946 CAG.Category.Products <> bp_proj1 proj
+R2939:2946 CAG.Category.Products <> bp_proj1 proj
+R2964:2971 CAG.Category.Products <> bp_proj2 proj
+R2964:2971 CAG.Category.Products <> bp_proj2 proj
+R3004:3010 CAG.Category.Products <> bp_pair proj
+R3004:3010 CAG.Category.Products <> bp_pair proj
+R3048:3055 CAG.Category.Products <> bp_beta1 proj
+R3048:3055 CAG.Category.Products <> bp_beta1 proj
+R3093:3100 CAG.Category.Products <> bp_beta2 proj
+R3093:3100 CAG.Category.Products <> bp_beta2 proj
+R3136:3142 CAG.Category.Products <> bp_uniq proj
+R3136:3142 CAG.Category.Products <> bp_uniq proj
+prf 3161:3183 <> op_coproduct_is_product
+R3190:3197 CAG.Category.Core <> Category rec
+binder 3186:3186 <> C:49
+R3212:3213 CAG.Category.Core <> Ob proj
+R3209:3209 CAG.Category.Coproducts <> C:49 var
+binder 3201:3201 <> A:50
+binder 3203:3203 <> B:51
+binder 3205:3205 <> S:52
+R3228:3244 CAG.Category.Coproducts <> IsBinaryCoproduct rec
+R3250:3250 CAG.Category.Coproducts <> S:52 var
+R3248:3248 CAG.Category.Coproducts <> B:51 var
+R3246:3246 CAG.Category.Coproducts <> A:50 var
+binder 3222:3224 <> bcp:53
+R3260:3274 CAG.Category.Products <> IsBinaryProduct rec
+R3278:3280 CAG.Category.Core <> ::cat_scope:x_'^op' not
+R3277:3277 CAG.Category.Coproducts <> C:49 var
+R3283:3283 CAG.Category.Coproducts <> A:50 var
+R3285:3285 CAG.Category.Coproducts <> B:51 var
+R3287:3287 CAG.Category.Coproducts <> S:52 var
+R3337:3344 CAG.Category.Coproducts <> bcp_inj1 proj
+R3337:3344 CAG.Category.Coproducts <> bcp_inj1 proj
+R3363:3370 CAG.Category.Coproducts <> bcp_inj2 proj
+R3363:3370 CAG.Category.Coproducts <> bcp_inj2 proj
+R3404:3411 CAG.Category.Coproducts <> bcp_case proj
+R3404:3411 CAG.Category.Coproducts <> bcp_case proj
+R3450:3458 CAG.Category.Coproducts <> bcp_beta1 proj
+R3450:3458 CAG.Category.Coproducts <> bcp_beta1 proj
+R3497:3505 CAG.Category.Coproducts <> bcp_beta2 proj
+R3497:3505 CAG.Category.Coproducts <> bcp_beta2 proj
+R3542:3549 CAG.Category.Coproducts <> bcp_uniq proj
+R3542:3549 CAG.Category.Coproducts <> bcp_uniq proj

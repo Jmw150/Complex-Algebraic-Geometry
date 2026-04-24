@@ -1,0 +1,486 @@
+DIGEST 16283460b7e3a4f8298782e0699851a5
+FCAG.Category.Yoneda
+R104:120 CAG.Category.Core <> <> lib
+R138:157 CAG.Category.Functor <> <> lib
+R175:200 CAG.Category.Representable <> <> lib
+R230:259 Stdlib.Logic.FunctionalExtensionality <> <> lib
+R289:310 Stdlib.Logic.ProofIrrelevance <> <> lib
+sec 557:567 <> YonedaLemma
+var  582:582 YonedaLemma C
+var  597:597 YonedaLemma F
+R586:593 CAG.Category.Core <> Category rec
+R601:607 CAG.Category.Functor <> Functor rec
+R609:609 CAG.Category.Yoneda <> C:1 var
+R611:617 CAG.Category.Representable <> TypeCat def
+def 663:676 <> yoneda_forward
+R686:687 CAG.Category.Core <> Ob proj
+R683:683 CAG.Category.Yoneda <> YonedaLemma.C var
+binder 679:679 <> A:3
+R697:704 CAG.Category.Functor <> NatTrans rec
+R711:711 CAG.Category.Yoneda <> YonedaLemma.F var
+R706:707 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R709:709 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R708:708 CAG.Category.Yoneda <> A:3 var
+binder 692:693 <> α:4
+R717:720 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R716:716 CAG.Category.Yoneda <> YonedaLemma.F var
+R721:721 CAG.Category.Yoneda <> A:3 var
+R734:742 CAG.Category.Functor <> component proj
+R730:731 CAG.Category.Yoneda <> α:4 var
+R751:752 CAG.Category.Core <> id proj
+R748:748 CAG.Category.Yoneda <> YonedaLemma.C var
+R755:755 CAG.Category.Yoneda <> A:3 var
+R745:745 CAG.Category.Yoneda <> A:3 var
+def 802:816 <> yoneda_backward
+R826:827 CAG.Category.Core <> Ob proj
+R823:823 CAG.Category.Yoneda <> YonedaLemma.C var
+binder 819:819 <> A:5
+R837:840 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R836:836 CAG.Category.Yoneda <> YonedaLemma.F var
+R841:841 CAG.Category.Yoneda <> A:5 var
+binder 832:832 <> a:6
+R846:853 CAG.Category.Functor <> NatTrans rec
+R860:860 CAG.Category.Yoneda <> YonedaLemma.F var
+R855:856 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R858:858 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R857:857 CAG.Category.Yoneda <> A:5 var
+binder 920:920 <> B:7
+R930:932 CAG.Category.Core <> Hom proj
+R927:927 CAG.Category.Yoneda <> YonedaLemma.C var
+R937:937 CAG.Category.Yoneda <> B:7 var
+binder 923:923 <> f:8
+R944:947 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R949:950 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R943:943 CAG.Category.Yoneda <> YonedaLemma.F var
+R948:948 CAG.Category.Yoneda <> f:8 var
+R882:895 CAG.Category.Functor <> Build_NatTrans constr
+binder 920:920 <> B:9
+R930:932 CAG.Category.Core <> Hom proj
+R927:927 CAG.Category.Yoneda <> YonedaLemma.C var
+R937:937 CAG.Category.Yoneda <> B:9 var
+binder 923:923 <> f:10
+R944:947 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R949:950 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R943:943 CAG.Category.Yoneda <> YonedaLemma.F var
+R948:948 CAG.Category.Yoneda <> f:10 var
+R882:895 CAG.Category.Functor <> Build_NatTrans constr
+R1020:1026 Corelib.Init.Logic <> f_equal thm
+R1049:1057 CAG.Category.Functor <> fmap_comp proj
+R1046:1046 CAG.Category.Yoneda <> YonedaLemma.F var
+binder 1033:1034 <> φ:11
+R1039:1040 CAG.Category.Yoneda <> φ:11 var
+R1020:1026 Corelib.Init.Logic <> f_equal thm
+R1049:1057 CAG.Category.Functor <> fmap_comp proj
+R1046:1046 CAG.Category.Yoneda <> YonedaLemma.F var
+binder 1033:1034 <> φ:12
+R1039:1040 CAG.Category.Yoneda <> φ:12 var
+prf 1115:1128 <> yoneda_bwd_fwd
+R1138:1139 CAG.Category.Core <> Ob proj
+R1135:1135 CAG.Category.Yoneda <> YonedaLemma.C var
+binder 1131:1131 <> A:13
+R1149:1152 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R1148:1148 CAG.Category.Yoneda <> YonedaLemma.F var
+R1153:1153 CAG.Category.Yoneda <> A:13 var
+binder 1144:1144 <> a:14
+R1202:1204 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1164:1177 CAG.Category.Yoneda <> yoneda_forward def
+R1179:1179 CAG.Category.Yoneda <> A:13 var
+R1182:1196 CAG.Category.Yoneda <> yoneda_backward def
+R1198:1198 CAG.Category.Yoneda <> A:13 var
+R1200:1200 CAG.Category.Yoneda <> a:14 var
+R1205:1205 CAG.Category.Yoneda <> a:14 var
+R1228:1241 CAG.Category.Yoneda <> yoneda_forward def
+R1260:1266 Corelib.Init.Logic <> f_equal thm
+R1289:1295 CAG.Category.Functor <> fmap_id proj
+R1286:1286 CAG.Category.Yoneda <> YonedaLemma.F var
+binder 1273:1274 <> φ:15
+R1279:1280 CAG.Category.Yoneda <> φ:15 var
+R1260:1266 Corelib.Init.Logic <> f_equal thm
+R1289:1295 CAG.Category.Functor <> fmap_id proj
+R1286:1286 CAG.Category.Yoneda <> YonedaLemma.F var
+binder 1273:1274 <> φ:16
+R1279:1280 CAG.Category.Yoneda <> φ:16 var
+prf 1347:1360 <> yoneda_fwd_bwd
+R1370:1371 CAG.Category.Core <> Ob proj
+R1367:1367 CAG.Category.Yoneda <> YonedaLemma.C var
+binder 1363:1363 <> A:17
+R1381:1388 CAG.Category.Functor <> NatTrans rec
+R1395:1395 CAG.Category.Yoneda <> YonedaLemma.F var
+R1390:1391 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R1393:1393 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R1392:1392 CAG.Category.Yoneda <> A:17 var
+binder 1376:1377 <> α:18
+R1445:1447 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1406:1420 CAG.Category.Yoneda <> yoneda_backward def
+R1422:1422 CAG.Category.Yoneda <> A:17 var
+R1425:1438 CAG.Category.Yoneda <> yoneda_forward def
+R1440:1440 CAG.Category.Yoneda <> A:17 var
+R1442:1443 CAG.Category.Yoneda <> α:18 var
+R1448:1449 CAG.Category.Yoneda <> α:18 var
+R1471:1481 CAG.Category.Functor <> nattrans_eq thm
+R1471:1481 CAG.Category.Functor <> nattrans_eq thm
+R1523:1536 CAG.Category.Yoneda <> yoneda_forward def
+R1633:1639 Corelib.Init.Logic <> f_equal thm
+R1672:1681 CAG.Category.Functor <> naturality proj
+binder 1646:1647 <> φ:19
+R1652:1653 CAG.Category.Yoneda <> φ:19 var
+R1659:1660 CAG.Category.Core <> id proj
+R1656:1656 CAG.Category.Yoneda <> YonedaLemma.C var
+R1633:1639 Corelib.Init.Logic <> f_equal thm
+R1672:1681 CAG.Category.Functor <> naturality proj
+binder 1646:1647 <> φ:20
+R1652:1653 CAG.Category.Yoneda <> φ:20 var
+R1659:1660 CAG.Category.Core <> id proj
+R1656:1656 CAG.Category.Yoneda <> YonedaLemma.C var
+R1721:1728 CAG.Category.Core <> id_right proj
+R1718:1718 CAG.Category.Yoneda <> YonedaLemma.C var
+R1721:1728 CAG.Category.Core <> id_right proj
+R1718:1718 CAG.Category.Yoneda <> YonedaLemma.C var
+R1721:1728 CAG.Category.Core <> id_right proj
+R1718:1718 CAG.Category.Yoneda <> YonedaLemma.C var
+R1768:1778 CAG.Category.Yoneda YonedaLemma <> sec
+def 1906:1920 <> YonedaEmbedding
+R1927:1934 CAG.Category.Core <> Category rec
+binder 1923:1923 <> C:21
+R1939:1945 CAG.Category.Functor <> Functor rec
+R1949:1951 CAG.Category.Core <> ::cat_scope:x_'^op' not
+R1948:1948 CAG.Category.Yoneda <> C:21 var
+R1955:1964 CAG.Category.Functor <> FunctorCat def
+R1966:1966 CAG.Category.Yoneda <> C:21 var
+R1968:1974 CAG.Category.Representable <> TypeCat def
+R1994:2006 CAG.Category.Functor <> Build_Functor constr
+R2010:2012 CAG.Category.Core <> ::cat_scope:x_'^op' not
+R2016:2025 CAG.Category.Functor <> FunctorCat def
+R2029:2035 CAG.Category.Representable <> TypeCat def
+binder 2047:2047 <> A:22
+R2052:2065 CAG.Category.Representable <> HomFunctor_cov def
+R2076:2076 CAG.Category.Yoneda <> A:22 var
+binder 2088:2088 <> A:23
+binder 2090:2091 <> A':24
+binder 2093:2093 <> h:25
+R2099:2109 CAG.Category.Representable <> HomNatTrans def
+R2113:2113 CAG.Category.Yoneda <> A:23 var
+R2115:2116 CAG.Category.Yoneda <> A':24 var
+R2118:2118 CAG.Category.Yoneda <> h:25 var
+R1994:2006 CAG.Category.Functor <> Build_Functor constr
+R2010:2012 CAG.Category.Core <> ::cat_scope:x_'^op' not
+R2016:2025 CAG.Category.Functor <> FunctorCat def
+R2029:2035 CAG.Category.Representable <> TypeCat def
+binder 2047:2047 <> A:26
+R2052:2065 CAG.Category.Representable <> HomFunctor_cov def
+R2076:2076 CAG.Category.Yoneda <> A:26 var
+binder 2088:2088 <> A:27
+binder 2090:2091 <> A':28
+binder 2093:2093 <> h:29
+R2099:2109 CAG.Category.Representable <> HomNatTrans def
+R2113:2113 CAG.Category.Yoneda <> A:27 var
+R2115:2116 CAG.Category.Yoneda <> A':28 var
+R2118:2118 CAG.Category.Yoneda <> h:29 var
+R2143:2153 CAG.Category.Functor <> nattrans_eq thm
+R2143:2153 CAG.Category.Functor <> nattrans_eq thm
+R2202:2209 CAG.Category.Core <> id_right proj
+R2202:2209 CAG.Category.Core <> id_right proj
+R2248:2258 CAG.Category.Functor <> nattrans_eq thm
+R2248:2258 CAG.Category.Functor <> nattrans_eq thm
+R2307:2316 CAG.Category.Core <> comp_assoc proj
+R2307:2316 CAG.Category.Core <> comp_assoc proj
+prf 2472:2490 <> yoneda_natural_in_F
+R2497:2504 CAG.Category.Core <> Category rec
+binder 2493:2493 <> C:30
+R2518:2524 CAG.Category.Functor <> Functor rec
+R2526:2526 CAG.Category.Yoneda <> C:30 var
+R2528:2534 CAG.Category.Representable <> TypeCat def
+binder 2512:2512 <> F:31
+binder 2514:2514 <> G:32
+R2543:2550 CAG.Category.Functor <> NatTrans rec
+R2554:2554 CAG.Category.Yoneda <> G:32 var
+R2552:2552 CAG.Category.Yoneda <> F:31 var
+binder 2538:2539 <> β:33
+R2565:2566 CAG.Category.Core <> Ob proj
+R2562:2562 CAG.Category.Yoneda <> C:30 var
+binder 2558:2558 <> A:34
+R2580:2587 CAG.Category.Functor <> NatTrans rec
+R2594:2594 CAG.Category.Yoneda <> F:31 var
+R2589:2590 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R2592:2592 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R2591:2591 CAG.Category.Yoneda <> A:34 var
+binder 2575:2576 <> α:35
+R2637:2639 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2603:2616 CAG.Category.Yoneda <> yoneda_forward def
+R2620:2620 CAG.Category.Yoneda <> A:34 var
+R2623:2629 CAG.Category.Functor <> NatComp def
+R2634:2635 CAG.Category.Yoneda <> α:35 var
+R2631:2632 CAG.Category.Yoneda <> β:33 var
+R2618:2618 CAG.Category.Yoneda <> G:32 var
+R2644:2652 CAG.Category.Functor <> component proj
+R2640:2641 CAG.Category.Yoneda <> β:33 var
+R2658:2671 CAG.Category.Yoneda <> yoneda_forward def
+R2675:2675 CAG.Category.Yoneda <> A:34 var
+R2677:2678 CAG.Category.Yoneda <> α:35 var
+R2673:2673 CAG.Category.Yoneda <> F:31 var
+R2655:2655 CAG.Category.Yoneda <> A:34 var
+R2698:2711 CAG.Category.Yoneda <> yoneda_forward def
+prf 2891:2909 <> yoneda_natural_in_A
+R2916:2923 CAG.Category.Core <> Category rec
+binder 2912:2912 <> C:36
+R2935:2941 CAG.Category.Functor <> Functor rec
+R2943:2943 CAG.Category.Yoneda <> C:36 var
+R2945:2951 CAG.Category.Representable <> TypeCat def
+binder 2931:2931 <> F:37
+R2965:2966 CAG.Category.Core <> Ob proj
+R2962:2962 CAG.Category.Yoneda <> C:36 var
+binder 2955:2955 <> A:38
+binder 2957:2958 <> A':39
+R2976:2978 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2980:2981 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2984:2986 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R2975:2975 CAG.Category.Yoneda <> C:36 var
+R2979:2979 CAG.Category.Yoneda <> A:38 var
+R2982:2983 CAG.Category.Yoneda <> A':39 var
+binder 2971:2971 <> h:40
+R2999:3006 CAG.Category.Functor <> NatTrans rec
+R3013:3013 CAG.Category.Yoneda <> F:37 var
+R3008:3009 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R3011:3011 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R3010:3010 CAG.Category.Yoneda <> A:38 var
+binder 2994:2995 <> α:41
+R3070:3076 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3022:3035 CAG.Category.Yoneda <> yoneda_forward def
+R3039:3040 CAG.Category.Yoneda <> A':39 var
+R3043:3049 CAG.Category.Functor <> NatComp def
+R3055:3065 CAG.Category.Representable <> HomNatTrans def
+R3067:3067 CAG.Category.Yoneda <> h:40 var
+R3051:3052 CAG.Category.Yoneda <> α:41 var
+R3037:3037 CAG.Category.Yoneda <> F:37 var
+R3078:3081 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3083:3106 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3077:3077 CAG.Category.Yoneda <> F:37 var
+R3082:3082 CAG.Category.Yoneda <> h:40 var
+R3085:3098 CAG.Category.Yoneda <> yoneda_forward def
+R3102:3102 CAG.Category.Yoneda <> A:38 var
+R3104:3105 CAG.Category.Yoneda <> α:41 var
+R3100:3100 CAG.Category.Yoneda <> F:37 var
+R3125:3138 CAG.Category.Yoneda <> yoneda_forward def
+R3159:3165 CAG.Category.Core <> id_left proj
+R3159:3165 CAG.Category.Core <> id_left proj
+R3159:3165 CAG.Category.Core <> id_left proj
+R3187:3193 Corelib.Init.Logic <> f_equal thm
+R3226:3235 CAG.Category.Functor <> naturality proj
+binder 3200:3201 <> φ:42
+R3206:3207 CAG.Category.Yoneda <> φ:42 var
+R3213:3214 CAG.Category.Core <> id proj
+R3187:3193 Corelib.Init.Logic <> f_equal thm
+R3226:3235 CAG.Category.Functor <> naturality proj
+binder 3200:3201 <> φ:43
+R3206:3207 CAG.Category.Yoneda <> φ:43 var
+R3213:3214 CAG.Category.Core <> id proj
+R3271:3278 CAG.Category.Core <> id_right proj
+R3271:3278 CAG.Category.Core <> id_right proj
+R3271:3278 CAG.Category.Core <> id_right proj
+R3299:3304 Corelib.Init.Logic <> eq_sym thm
+R3299:3304 Corelib.Init.Logic <> eq_sym thm
+rec 3365:3373 <> YonedaIso
+proj 3441:3450 <> yi_forward
+proj 3484:3494 <> yi_backward
+proj 3527:3536 <> yi_bwd_fwd
+proj 3585:3594 <> yi_fwd_bwd
+R3380:3387 CAG.Category.Core <> Category rec
+binder 3376:3376 <> C:44
+R3395:3401 CAG.Category.Functor <> Functor rec
+R3403:3403 CAG.Category.Yoneda <> C:44 var
+R3405:3411 CAG.Category.Representable <> TypeCat def
+binder 3391:3391 <> F:45
+R3422:3423 CAG.Category.Core <> Ob proj
+R3419:3419 CAG.Category.Yoneda <> C:44 var
+binder 3415:3415 <> A:46
+R3470:3473 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3455:3462 CAG.Category.Functor <> NatTrans rec
+R3469:3469 CAG.Category.Yoneda <> F:45 var
+R3464:3465 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R3467:3467 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R3466:3466 CAG.Category.Yoneda <> A:46 var
+R3475:3478 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R3474:3474 CAG.Category.Yoneda <> F:45 var
+R3479:3479 CAG.Category.Yoneda <> A:46 var
+R3504:3507 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3499:3502 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R3498:3498 CAG.Category.Yoneda <> F:45 var
+R3503:3503 CAG.Category.Yoneda <> A:46 var
+R3508:3515 CAG.Category.Functor <> NatTrans rec
+R3522:3522 CAG.Category.Yoneda <> F:45 var
+R3517:3518 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R3520:3520 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R3519:3519 CAG.Category.Yoneda <> A:46 var
+binder 3548:3548 <> a:50
+R3577:3579 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3551:3560 CAG.Category.Yoneda <> yi_forward:48 meth
+R3563:3573 CAG.Category.Yoneda <> yi_backward:49 meth
+R3575:3575 CAG.Category.Yoneda <> a:50 var
+R3580:3580 CAG.Category.Yoneda <> a:50 var
+binder 3606:3607 <> α:52
+R3637:3639 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3610:3620 CAG.Category.Yoneda <> yi_backward:49 meth
+R3623:3632 CAG.Category.Yoneda <> yi_forward:48 meth
+R3634:3635 CAG.Category.Yoneda <> α:52 var
+R3640:3641 CAG.Category.Yoneda <> α:52 var
+def 3659:3668 <> yoneda_iso
+R3675:3682 CAG.Category.Core <> Category rec
+binder 3671:3671 <> C:54
+R3690:3696 CAG.Category.Functor <> Functor rec
+R3698:3698 CAG.Category.Yoneda <> C:54 var
+R3700:3706 CAG.Category.Representable <> TypeCat def
+binder 3686:3686 <> F:55
+R3717:3718 CAG.Category.Core <> Ob proj
+R3714:3714 CAG.Category.Yoneda <> C:54 var
+binder 3710:3710 <> A:56
+R3728:3736 CAG.Category.Yoneda <> YonedaIso rec
+R3740:3740 CAG.Category.Yoneda <> A:56 var
+R3738:3738 CAG.Category.Yoneda <> F:55 var
+R3750:3759 CAG.Category.Yoneda <> yi_forward proj
+R3750:3759 CAG.Category.Yoneda <> yi_forward proj
+R3750:3759 CAG.Category.Yoneda <> yi_forward proj
+R3787:3797 CAG.Category.Yoneda <> yi_backward proj
+R3787:3797 CAG.Category.Yoneda <> yi_backward proj
+R3825:3834 CAG.Category.Yoneda <> yi_bwd_fwd proj
+R3825:3834 CAG.Category.Yoneda <> yi_bwd_fwd proj
+R3862:3871 CAG.Category.Yoneda <> yi_fwd_bwd proj
+R3862:3871 CAG.Category.Yoneda <> yi_fwd_bwd proj
+R3765:3778 CAG.Category.Yoneda <> yoneda_forward def
+R3782:3782 CAG.Category.Yoneda <> A:56 var
+R3780:3780 CAG.Category.Yoneda <> F:55 var
+R3802:3816 CAG.Category.Yoneda <> yoneda_backward def
+R3820:3820 CAG.Category.Yoneda <> A:56 var
+R3818:3818 CAG.Category.Yoneda <> F:55 var
+R3840:3853 CAG.Category.Yoneda <> yoneda_bwd_fwd thm
+R3857:3857 CAG.Category.Yoneda <> A:56 var
+R3855:3855 CAG.Category.Yoneda <> F:55 var
+R3877:3890 CAG.Category.Yoneda <> yoneda_fwd_bwd thm
+R3894:3894 CAG.Category.Yoneda <> A:56 var
+R3892:3892 CAG.Category.Yoneda <> F:55 var
+def 4294:4311 <> yoneda_emb_forward
+R4318:4325 CAG.Category.Core <> Category rec
+binder 4314:4314 <> C:57
+R4339:4340 CAG.Category.Core <> Ob proj
+R4336:4336 CAG.Category.Yoneda <> C:57 var
+binder 4329:4329 <> A:58
+binder 4331:4332 <> A':59
+R4354:4361 CAG.Category.Functor <> NatTrans rec
+R4368:4369 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4372:4372 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4370:4371 CAG.Category.Yoneda <> A':59 var
+R4363:4364 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4366:4366 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4365:4365 CAG.Category.Yoneda <> A:58 var
+binder 4349:4350 <> α:60
+R4378:4380 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4383:4384 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4386:4388 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4377:4377 CAG.Category.Yoneda <> C:57 var
+R4381:4382 CAG.Category.Yoneda <> A':59 var
+R4385:4385 CAG.Category.Yoneda <> A:58 var
+R4395:4408 CAG.Category.Yoneda <> yoneda_forward def
+R4416:4416 CAG.Category.Yoneda <> A:58 var
+R4418:4419 CAG.Category.Yoneda <> α:60 var
+R4410:4411 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4414:4414 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4412:4413 CAG.Category.Yoneda <> A':59 var
+def 4499:4517 <> yoneda_emb_backward
+R4524:4531 CAG.Category.Core <> Category rec
+binder 4520:4520 <> C:61
+R4545:4546 CAG.Category.Core <> Ob proj
+R4542:4542 CAG.Category.Yoneda <> C:61 var
+binder 4535:4535 <> A:62
+binder 4537:4538 <> A':63
+R4560:4562 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4565:4566 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4568:4570 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4559:4559 CAG.Category.Yoneda <> C:61 var
+R4563:4564 CAG.Category.Yoneda <> A':63 var
+R4567:4567 CAG.Category.Yoneda <> A:62 var
+binder 4555:4555 <> h:64
+R4575:4582 CAG.Category.Functor <> NatTrans rec
+R4589:4590 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4593:4593 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4591:4592 CAG.Category.Yoneda <> A':63 var
+R4584:4585 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4587:4587 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4586:4586 CAG.Category.Yoneda <> A:62 var
+R4600:4614 CAG.Category.Yoneda <> yoneda_backward def
+R4622:4622 CAG.Category.Yoneda <> A:62 var
+R4624:4624 CAG.Category.Yoneda <> h:64 var
+R4616:4617 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4620:4620 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4618:4619 CAG.Category.Yoneda <> A':63 var
+prf 4634:4651 <> yoneda_emb_bwd_fwd
+R4658:4665 CAG.Category.Core <> Category rec
+binder 4654:4654 <> C:65
+R4679:4680 CAG.Category.Core <> Ob proj
+R4676:4676 CAG.Category.Yoneda <> C:65 var
+binder 4669:4669 <> A:66
+binder 4671:4672 <> A':67
+R4690:4692 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4695:4696 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4698:4700 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R4689:4689 CAG.Category.Yoneda <> C:65 var
+R4693:4694 CAG.Category.Yoneda <> A':67 var
+R4697:4697 CAG.Category.Yoneda <> A:66 var
+binder 4685:4685 <> h:68
+R4751:4753 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4709:4726 CAG.Category.Yoneda <> yoneda_emb_forward def
+R4729:4747 CAG.Category.Yoneda <> yoneda_emb_backward def
+R4749:4749 CAG.Category.Yoneda <> h:68 var
+R4754:4754 CAG.Category.Yoneda <> h:68 var
+R4773:4790 CAG.Category.Yoneda <> yoneda_emb_forward def
+R4793:4811 CAG.Category.Yoneda <> yoneda_emb_backward def
+R4823:4836 CAG.Category.Yoneda <> yoneda_bwd_fwd thm
+R4838:4839 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4842:4842 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4823:4836 CAG.Category.Yoneda <> yoneda_bwd_fwd thm
+R4838:4839 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4842:4842 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+prf 4862:4879 <> yoneda_emb_fwd_bwd
+R4886:4893 CAG.Category.Core <> Category rec
+binder 4882:4882 <> C:69
+R4907:4908 CAG.Category.Core <> Ob proj
+R4904:4904 CAG.Category.Yoneda <> C:69 var
+binder 4897:4897 <> A:70
+binder 4899:4900 <> A':71
+R4922:4929 CAG.Category.Functor <> NatTrans rec
+R4936:4937 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4940:4940 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4938:4939 CAG.Category.Yoneda <> A':71 var
+R4931:4932 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4934:4934 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4933:4933 CAG.Category.Yoneda <> A:70 var
+binder 4917:4918 <> α:72
+R4992:4994 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4949:4967 CAG.Category.Yoneda <> yoneda_emb_backward def
+R4970:4987 CAG.Category.Yoneda <> yoneda_emb_forward def
+R4989:4990 CAG.Category.Yoneda <> α:72 var
+R4995:4996 CAG.Category.Yoneda <> α:72 var
+R5015:5032 CAG.Category.Yoneda <> yoneda_emb_forward def
+R5035:5053 CAG.Category.Yoneda <> yoneda_emb_backward def
+R5065:5078 CAG.Category.Yoneda <> yoneda_fwd_bwd thm
+R5080:5081 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R5084:5084 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R5065:5078 CAG.Category.Yoneda <> yoneda_fwd_bwd thm
+R5080:5081 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R5084:5084 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+def 5278:5301 <> representable_of_element
+R5308:5315 CAG.Category.Core <> Category rec
+binder 5304:5304 <> C:73
+R5323:5329 CAG.Category.Functor <> Functor rec
+R5331:5331 CAG.Category.Yoneda <> C:73 var
+R5333:5339 CAG.Category.Representable <> TypeCat def
+binder 5319:5319 <> F:74
+R5354:5355 CAG.Category.Core <> Ob proj
+R5351:5351 CAG.Category.Yoneda <> C:73 var
+binder 5347:5347 <> A:75
+R5365:5368 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R5364:5364 CAG.Category.Yoneda <> F:74 var
+R5369:5369 CAG.Category.Yoneda <> A:75 var
+binder 5360:5360 <> a:76
+R5374:5389 CAG.Category.Representable <> IsRepresentation rec
+R5395:5395 CAG.Category.Yoneda <> a:76 var
+R5393:5393 CAG.Category.Yoneda <> A:75 var
+R5391:5391 CAG.Category.Yoneda <> F:74 var

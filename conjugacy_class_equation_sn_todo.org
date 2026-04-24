@@ -1,0 +1,354 @@
+#+TITLE: TODO — Group Actions, Class Equation, Conjugacy in S_n (Rocq Formalization Plan)
+#+AUTHOR: OpenAI
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Turn the supplied material into a Rocq implementation plan.
+
+  Main targets:
+  - class equation consequences
+  - nontrivial center of p-groups
+  - classification of groups of order p^2
+  - conjugacy in symmetric groups via cycle type
+  - counting conjugacy classes in S_n
+  - centralizers of cycles
+  - simplicity of A_5 from conjugacy class analysis
+  - left/right conjugation notation and compatibility
+  - selected exercises as formal theorem targets
+
+* Suggested file split
+** DONE Create core files
+   - Conjugacy/ClassEquation.v
+   - Conjugacy/Pgroups.v
+   - Conjugacy/SymmetricConjugacy.v
+   - Conjugacy/CycleType.v
+   - Conjugacy/CentralizersInSn.v
+   - Conjugacy/A5Simple.v
+   - Conjugacy/RightActions.v
+   - Conjugacy/Exercises.v
+
+* Dependencies
+** DONE Reuse prior group action infrastructure
+   Need:
+   - actions
+   - orbits
+   - stabilizers
+   - conjugation action
+   - class equation
+   - cycle decomposition for permutations
+
+** DONE Decide finite-group library interface
+   Required for:
+   - cardinalities
+   - class equation counting
+   - indices
+   - counting conjugacy classes in S_n
+   - order arguments in A_5
+
+** BLOCKED Make sure permutations/cycle notation are already available or implement enough of them
+   Need:
+   - cycle decomposition existence/uniqueness
+   - cycle type
+   - disjoint cycles
+   - conjugation of permutations
+
+* Part I — Class equation consequences
+** DONE Formalize theorem: nontrivial center of a p-group
+   Statement:
+   If |P| = p^a with p prime and a >= 1, then Z(P) != 1.
+
+** DONE Proof skeleton in Rocq
+   - start from class equation
+   - noncentral conjugacy classes have size [P : C_P(g_i)]
+   - C_P(g_i) is proper, hence p divides [P : C_P(g_i)]
+   - p divides |P|
+   - conclude p divides |Z(P)|
+   - deduce Z(P) is nontrivial
+
+** TODO Name suggestion
+   `pgroup_center_nontrivial`
+
+** DONE Corollary: groups of order p^2 are abelian
+   Statement:
+   If |P| = p^2 then P is abelian.
+
+** DONE Prove quotient by center has order p or 1
+** DONE Use theorem: if G/Z(G) is cyclic then G is abelian
+** TODO Either import or prove this auxiliary result separately
+   `quotient_by_center_cyclic_implies_abelian`
+
+** DONE Strengthen corollary to classification up to isomorphism
+   If |P| = p^2 then P ≅ Z_(p^2) or Z_p × Z_p
+
+** DONE Proof split by existence of element of order p^2
+   - if yes, group is cyclic
+   - if no, every nonidentity element has order p
+   - pick independent x,y
+   - show P = <x,y>
+   - build isomorphism from <x> × <y> to P
+
+** TODO Name suggestions
+   - `group_order_p_sq_abelian`
+   - `group_order_p_sq_iso_cyclic_or_elementary_abelian`
+
+* Part II — Conjugacy in S_n
+** DONE Formalize proposition: conjugation transports cycle entries
+   If sigma has cycle decomposition
+   (a1 ... ak1)(b1 ... bk2)...
+   then tau sigma tau^{-1} has decomposition
+   (tau(a1) ... tau(ak1))(tau(b1) ... tau(bk2))...
+
+** DONE Prove by pointwise action
+   If sigma(i)=j then tau sigma tau^{-1}(tau(i)) = tau(j)
+
+** TODO Name suggestion
+   `conj_perm_cycle_entries_apply_tau`
+
+** DONE Define cycle type of a permutation
+   As multiset / sorted list of cycle lengths, including 1-cycles
+
+** DONE Define partition of n
+   Nondecreasing list of positive integers summing to n
+
+** DONE Prove cycle type is invariant under conjugacy in S_n
+** DONE Prove converse: same cycle type implies conjugate in S_n
+   Strategy:
+   - order cycles by size
+   - define tau by matching entries position-by-position
+   - apply previous proposition
+
+** DONE Deduce conjugacy classes of S_n are classified by partitions of n
+** TODO Name suggestions
+   - `conjugate_in_Sn_iff_same_cycle_type`
+   - `conj_classes_Sn_equiv_partitions`
+
+* Part III — Centralizers in S_n
+** DONE Prove centralizer size of an m-cycle in S_n
+   |C_{S_n}(sigma)| = m * (n - m)!
+
+** DONE Proof approach
+   - number of m-cycles is n(n-1)...(n-m+1) / m
+   - use class size = |S_n| / |C_{S_n}(sigma)|
+   - solve for centralizer size
+
+** DONE Prove explicit structure of centralizer of an m-cycle
+   C_{S_n}(sigma) = { sigma^i * tau | 0 <= i < m, tau fixes all letters in sigma }
+   where tau lies in the symmetric group on the complement
+
+** TODO Name suggestions
+   - `centralizer_card_m_cycle`
+   - `centralizer_m_cycle_explicit`
+
+** TODO Extend to general permutations
+   For cycle type with k_i cycles of length m_i:
+   class size formula
+   n! / Π_i (k_i! m_i^{k_i})
+
+** TODO This is Exercise 33 and is worth formalizing as a major theorem
+   `class_size_perm_from_cycle_type`
+
+* Part IV — A_5 simplicity proof
+** DONE Compute conjugacy classes of A_5
+   Representatives:
+   - identity
+   - 3-cycles
+   - double transpositions
+   - 5-cycles split into two classes
+
+** DONE Prove all twenty 3-cycles form one conjugacy class in A_5
+   - compute C_{A_5}((1 2 3)) = <(1 2 3)>
+   - class size = 60 / 3 = 20
+
+** DONE Prove the 24 five-cycles split into two A_5-conjugacy classes of size 12 each
+   - compute C_{A_5}((1 2 3 4 5)) = <(1 2 3 4 5)>
+   - class size in A_5 = 60 / 5 = 12
+   - since there are 24 total, they split into two classes
+
+** DONE Prove the 15 elements of cycle type (2,2) form one conjugacy class in A_5
+   - compute centralizer size 4 in A_5
+   - class size = 60 / 4 = 15
+
+** DONE Summarize class sizes in A_5
+   1, 15, 20, 12, 12
+
+** DONE Prove any normal subgroup is a union of conjugacy classes
+** DONE Check possible sums of class sizes dividing 60
+** DONE Conclude only possibilities are 1 and 60
+** DONE Deduce A_5 is simple
+
+** TODO Name suggestion
+   `A5_simple_via_conjugacy_classes`
+
+* Part V — Left and right conjugation actions
+** DONE Formalize right action notation a^g = g^{-1} a g
+** DONE Prove the right-action axioms
+   - (a^{g1})^{g2} = a^{g1 g2}
+   - a^1 = a
+
+** DONE Relate left and right conjugation actions
+   - left action by g equals right action by g^{-1}
+   - conjugacy relation is the same for both
+
+** DONE More generally, for corresponding left/right actions prove orbit relations agree
+** TODO Name suggestion
+   `left_right_action_same_orbits`
+
+* Part VI — Exercise targets worth proving
+** DONE Exercise 2
+   Compute conjugacy classes in:
+   - D_8
+   - Q_8
+   - A_4
+
+** TODO Split each into its own theorem
+   - `conj_classes_D8`
+   - `conj_classes_Q8`
+   - `conj_classes_A4`
+
+** TODO Exercise 3
+   Conjugacy classes in direct products:
+   - Z_2 × S_3
+   - S_3 × S_3
+   - Z_3 × A_4
+
+** DONE Exercise 4
+   Prove g N_G(S) g^{-1} = N_G(g S g^{-1})
+   Prove g C_G(S) g^{-1} = C_G(g S g^{-1})
+
+** DONE Exercise 5
+   If |G : Z(G)| = n then every conjugacy class has size at most n
+
+** DONE Exercise 6
+   Analyze nonabelian groups of order 15 via class equation
+
+** TODO Exercise 7
+   Partitions and class representatives in S_n for n = 3,4,6,7
+
+** DONE Exercise 8
+   Prove Z(S_n) = 1 for n >= 3
+
+** DONE Exercise 9
+   Compute centralizer size of (1 2)(3 4) in S_n
+   Expect:
+   |C_{S_n}((1 2)(3 4))| = 8 (n-4)!
+
+** TODO Exercise 10 / 11
+   Explicit conjugating elements in concrete examples
+   Good as test cases rather than core theorems
+
+** DONE Exercise 13
+   Classify finite groups with exactly two conjugacy classes
+
+** DONE Exercise 17
+   For X subset SA define fixed set F(X) and moved set M(X)
+   Prove D = {sigma in SA | |M(sigma)| < ∞} is a normal subgroup
+
+** DONE Exercise 18
+   If H <= SA and tau normalizes H, prove tau stabilizes F(H) and its complement
+
+** DONE Exercise 19
+   If H normal in G and K is a G-conjugacy class contained in H, prove:
+   K is a union of k equal-sized H-conjugacy classes where
+   k = [G : H C_G(x)]
+
+** DONE Exercise 20
+   For a in A_n, prove:
+   same S_n-conjugacy class stays one A_n-class iff a commutes with an odd permutation
+
+** DONE Exercise 21
+   Characterize when an S_n-conjugacy class inside A_n splits
+   iff the cycle type consists of distinct odd integers
+
+** DONE Exercise 22
+   Deduce n-cycles split in A_n when n is odd
+
+** DONE Exercise 23
+   For maximal subgroup M of G prove:
+   either N_G(M)=M or N_G(M)=G
+   Deduce counting bound on elements lying in conjugates of M
+
+** DONE Exercise 24
+   Prove G is not the union of conjugates of a proper subgroup
+
+** TODO Exercise 25
+   GL_2(C) is the union of conjugates of the upper-triangular subgroup
+   This uses eigenvectors, likely outside pure finite-group layer but worth including
+
+** DONE Exercise 26
+   In a finite transitive permutation group on A with |A| > 1, prove existence of a fixed-point-free element
+
+** DONE Exercise 27
+   If representatives of conjugacy classes commute pairwise, prove group is abelian
+
+** DONE Exercise 28
+   Nonabelian group of order pq with p<q embeds into S_q
+   and lies in the normalizer of a q-cycle
+
+** DONE Exercise 29
+   Every group of order p^a has subgroups of order p^β for 0 <= β <= a
+   Use nontrivial center plus induction
+
+** DONE Exercise 30
+   If G has odd order, x != 1 implies x is not conjugate to x^{-1}
+
+** TODO Exercise 31 / 32
+   Compute conjugacy classes and class equation for dihedral groups D_{2n}
+   in both even and odd n cases
+
+** DONE Exercise 33
+   General conjugacy class size formula in S_n from cycle structure
+   Important theorem; promote from exercise to core result
+
+** DONE Exercise 34
+   For P <= S_p of order p, prove |N_{S_p}(P)| = p(p-1)
+
+** TODO Exercise 35
+   Formula for number of conjugacy classes of elements of order p in S_n
+
+** DONE Exercise 36
+   Left and right regular representations
+   - prove sigma_g and rho_h commute
+   - characterize sigma_g = rho_g
+   - characterize sigma_g = rho_h
+   - deduce intersection facts with Z(G)
+
+* Part VII — Infrastructure likely needed
+** DONE Conjugation action of G on itself
+** DONE Class equation theorem, reusable form
+** DONE Centralizer and normalizer APIs
+** DONE Finite index and class-size formula APIs
+** DONE Symmetric-group cycle decomposition API
+** DONE Cycle type as partition / multiset
+** DONE Counting permutations of prescribed cycle type
+** DONE Alternating group membership criterion from parity
+** DONE Split/non-split conjugacy classes from index-2 subgroup arguments
+
+* Part VIII — Compile-first milestones
+** DONE Milestone 1
+   Prove:
+   - p-group center nontrivial
+   - order p^2 implies abelian
+   - conjugacy classes of S_n classified by cycle type
+
+** DONE Milestone 2
+   Prove:
+   - centralizer of an m-cycle
+   - class-size formula from cycle type
+   - Z(S_n)=1
+
+** DONE Milestone 3
+   Prove A_5 is simple
+
+** DONE Milestone 4
+   Add A_n splitting criteria and selected dihedral examples
+
+* Part IX — Claude proof advice
+** DONE Keep abstract class-equation lemmas separate from S_n combinatorics
+** DONE For S_n conjugacy, use cycle decompositions from group-action orbits
+** DONE For A_5, structure the proof as:
+   - compute class sizes
+   - normal subgroups are unions of classes
+   - divisibility check
+** DONE For split classes in A_n, isolate the index-2 subgroup argument first
+** DONE Promote Exercise 33 to a headline theorem early; many later counts depend on it

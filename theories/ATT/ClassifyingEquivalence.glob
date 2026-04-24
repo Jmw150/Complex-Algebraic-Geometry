@@ -1,0 +1,327 @@
+DIGEST 0bd5112537b12912a4a6e18b1c750baa
+FCAG.ATT.ClassifyingEquivalence
+R400:416 CAG.ATT.Signature <> <> lib
+R434:447 CAG.ATT.Syntax <> <> lib
+R465:478 CAG.ATT.Theory <> <> lib
+R496:508 CAG.ATT.Model <> <> lib
+R526:552 CAG.ATT.ClassifyingCategory <> <> lib
+R570:589 CAG.ATT.GenericModel <> <> lib
+R607:623 CAG.Category.Core <> <> lib
+R641:660 CAG.Category.Functor <> <> lib
+R678:698 CAG.Category.Products <> <> lib
+R728:737 Stdlib.Lists.List <> <> lib
+R767:793 Stdlib.Logic.IndefiniteDescription <> <> lib
+R803:815 Stdlib.Lists.List ListNotations <> mod
+rec 968:976 <> FPFunctor
+proj 1063:1070 <> fp_funct
+proj 1094:1105 <> fp_pres_term
+proj 1199:1210 <> fp_pres_prod
+R985:992 CAG.Category.Core <> Category rec
+binder 979:979 <> C:1
+binder 981:981 <> D:2
+R1001:1017 CAG.Category.Products <> HasFiniteProducts rec
+R1019:1019 CAG.ATT.ClassifyingEquivalence <> C:1 var
+binder 996:997 <> hC:3
+R1028:1044 CAG.Category.Products <> HasFiniteProducts rec
+R1046:1046 CAG.ATT.ClassifyingEquivalence <> D:2 var
+binder 1023:1024 <> hD:4
+R1079:1085 CAG.Category.Functor <> Functor rec
+R1087:1087 CAG.ATT.ClassifyingEquivalence <> C:1 var
+R1089:1089 CAG.ATT.ClassifyingEquivalence <> D:2 var
+R1149:1168 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1117:1121 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R1148:1148 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R1109:1116 CAG.ATT.ClassifyingEquivalence <> fp_funct:6 meth
+R1122:1127 Corelib.Init.Specif <> projT1 def
+R1131:1141 CAG.Category.Products <> fp_terminal proj
+R1143:1143 CAG.ATT.ClassifyingEquivalence <> C:1 var
+R1145:1146 CAG.ATT.ClassifyingEquivalence <> hC:3 var
+R1169:1174 Corelib.Init.Specif <> projT1 def
+R1178:1188 CAG.Category.Products <> fp_terminal proj
+R1190:1190 CAG.ATT.ClassifyingEquivalence <> D:2 var
+R1192:1193 CAG.ATT.ClassifyingEquivalence <> hD:4 var
+binder 1221:1221 <> A:8
+binder 1223:1223 <> B:9
+R1282:1303 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1253:1257 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R1281:1281 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R1245:1252 CAG.ATT.ClassifyingEquivalence <> fp_funct:6 meth
+R1259:1262 CAG.Category.Products <> ::cat_scope:x_'×{'_x_'}'_x not
+R1278:1279 CAG.Category.Products <> ::cat_scope:x_'×{'_x_'}'_x not
+R1264:1272 CAG.Category.Products <> fp_binary proj
+R1274:1274 CAG.ATT.ClassifyingEquivalence <> C:1 var
+R1276:1277 CAG.ATT.ClassifyingEquivalence <> hC:3 var
+R1258:1258 CAG.ATT.ClassifyingEquivalence <> A:8 var
+R1280:1280 CAG.ATT.ClassifyingEquivalence <> B:9 var
+R1317:1320 CAG.Category.Products <> ::cat_scope:x_'×{'_x_'}'_x not
+R1336:1337 CAG.Category.Products <> ::cat_scope:x_'×{'_x_'}'_x not
+R1322:1330 CAG.Category.Products <> fp_binary proj
+R1332:1332 CAG.ATT.ClassifyingEquivalence <> D:2 var
+R1334:1335 CAG.ATT.ClassifyingEquivalence <> hD:4 var
+R1312:1315 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R1304:1311 CAG.ATT.ClassifyingEquivalence <> fp_funct:6 meth
+R1316:1316 CAG.ATT.ClassifyingEquivalence <> A:8 var
+R1346:1349 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R1338:1345 CAG.ATT.ClassifyingEquivalence <> fp_funct:6 meth
+R1350:1350 CAG.ATT.ClassifyingEquivalence <> B:9 var
+def 1635:1638 <> Ap_G
+R1646:1651 CAG.ATT.Theory <> Theory rec
+binder 1641:1642 <> Th:11
+R1659:1666 CAG.Category.Core <> Category rec
+binder 1655:1655 <> V:12
+R1675:1691 CAG.Category.Products <> HasFiniteProducts rec
+R1693:1693 CAG.ATT.ClassifyingEquivalence <> V:12 var
+binder 1670:1671 <> hV:13
+R1705:1713 CAG.ATT.ClassifyingEquivalence <> FPFunctor rec
+R1748:1749 CAG.ATT.ClassifyingEquivalence <> hV:13 var
+R1716:1733 CAG.ATT.ClassifyingCategory <> cl_finite_products def
+R1739:1744 CAG.ATT.Theory <> th_sig proj
+R1735:1736 CAG.ATT.ClassifyingEquivalence <> Th:11 var
+binder 1701:1701 <> F:14
+R1758:1762 CAG.ATT.Model <> Model rec
+R1764:1765 CAG.ATT.ClassifyingEquivalence <> Th:11 var
+R1767:1767 CAG.ATT.ClassifyingEquivalence <> V:12 var
+R1769:1770 CAG.ATT.ClassifyingEquivalence <> hV:13 var
+R1797:1802 CAG.ATT.Theory <> th_sig proj
+R1797:1802 CAG.ATT.Theory <> th_sig proj
+R1823:1840 CAG.ATT.ClassifyingCategory <> cl_finite_products def
+R1823:1840 CAG.ATT.ClassifyingCategory <> cl_finite_products def
+R2007:2010 Corelib.Init.Datatypes <> list ind
+R2021:2022 CAG.Category.Core <> Ob proj
+R2013:2015 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+binder 2000:2003 <> objs:15
+R2078:2084 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2031:2037 CAG.ATT.Model <> fp_prod def
+R2043:2050 Stdlib.Lists.List <> map abbrev
+R2073:2076 CAG.ATT.ClassifyingEquivalence <> objs:15 var
+binder 2057:2058 <> ob:16
+R2065:2068 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R2069:2070 CAG.ATT.ClassifyingEquivalence <> ob:16 var
+R2087:2091 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R2110:2110 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R2092:2098 CAG.ATT.Model <> fp_prod def
+R2106:2109 CAG.ATT.ClassifyingEquivalence <> objs:15 var
+R2007:2010 Corelib.Init.Datatypes <> list ind
+R2021:2022 CAG.Category.Core <> Ob proj
+R2013:2015 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+binder 2000:2003 <> objs:17
+R2078:2084 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2031:2037 CAG.ATT.Model <> fp_prod def
+R2043:2050 Stdlib.Lists.List <> map abbrev
+R2073:2076 CAG.ATT.ClassifyingEquivalence <> objs:17 var
+binder 2057:2058 <> ob:18
+R2065:2068 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R2069:2070 CAG.ATT.ClassifyingEquivalence <> ob:18 var
+R2087:2091 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R2110:2110 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R2092:2098 CAG.ATT.Model <> fp_prod def
+R2106:2109 CAG.ATT.ClassifyingEquivalence <> objs:17 var
+R2339:2345 CAG.ATT.Model <> fp_prod def
+R2355:2358 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R2339:2345 CAG.ATT.Model <> fp_prod def
+R2355:2358 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R2383:2388 CAG.ATT.Model <> mod_ty proj
+R2383:2388 CAG.ATT.Model <> mod_ty proj
+R2383:2388 CAG.ATT.Model <> mod_ty proj
+R2427:2433 CAG.ATT.Model <> mod_fun proj
+R2427:2433 CAG.ATT.Model <> mod_fun proj
+R2462:2467 CAG.ATT.Model <> mod_ax proj
+R2462:2467 CAG.ATT.Model <> mod_ax proj
+binder 2397:2398 <> α:19
+R2405:2408 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R2409:2409 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2412:2412 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2410:2411 CAG.ATT.ClassifyingEquivalence <> α:19 var
+binder 2442:2442 <> f:20
+R2483:2483 Corelib.Init.Logic <> I constr
+R2383:2388 CAG.ATT.Model <> mod_ty proj
+R2383:2388 CAG.ATT.Model <> mod_ty proj
+R2383:2388 CAG.ATT.Model <> mod_ty proj
+R2427:2433 CAG.ATT.Model <> mod_fun proj
+R2427:2433 CAG.ATT.Model <> mod_fun proj
+R2462:2467 CAG.ATT.Model <> mod_ax proj
+R2462:2467 CAG.ATT.Model <> mod_ax proj
+binder 2397:2398 <> α:21
+R2405:2408 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R2409:2409 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2412:2412 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2410:2411 CAG.ATT.ClassifyingEquivalence <> α:21 var
+binder 2442:2442 <> f:22
+R2483:2483 Corelib.Init.Logic <> I constr
+R2512:2523 Stdlib.Lists.List <> map_map thm
+binder 2547:2548 <> ob:23
+R2555:2558 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R2559:2560 CAG.ATT.ClassifyingEquivalence <> ob:23 var
+binder 2530:2531 <> α:24
+R2536:2536 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2539:2539 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2537:2538 CAG.ATT.ClassifyingEquivalence <> α:24 var
+R2512:2523 Stdlib.Lists.List <> map_map thm
+binder 2547:2548 <> ob:25
+R2555:2558 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R2559:2560 CAG.ATT.ClassifyingEquivalence <> ob:25 var
+binder 2530:2531 <> α:26
+R2536:2536 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2539:2539 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2537:2538 CAG.ATT.ClassifyingEquivalence <> α:26 var
+R2512:2523 Stdlib.Lists.List <> map_map thm
+binder 2547:2548 <> ob:27
+R2555:2558 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R2559:2560 CAG.ATT.ClassifyingEquivalence <> ob:27 var
+binder 2530:2531 <> α:28
+R2536:2536 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2539:2539 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2537:2538 CAG.ATT.ClassifyingEquivalence <> α:28 var
+R2592:2613 CAG.ATT.GenericModel <> fp_prod_singleton_list thm
+R2592:2613 CAG.ATT.GenericModel <> fp_prod_singleton_list thm
+R2592:2613 CAG.ATT.GenericModel <> fp_prod_singleton_list thm
+R2627:2631 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R2651:2651 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R2632:2636 CAG.ATT.GenericModel <> G_fun def
+R2639:2644 CAG.ATT.Theory <> th_sig proj
+R2627:2631 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R2651:2651 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R2632:2636 CAG.ATT.GenericModel <> G_fun def
+R2639:2644 CAG.ATT.Theory <> th_sig proj
+def 2975:2986 <> Ap_G_inv_obj
+R2994:2999 CAG.ATT.Theory <> Theory rec
+binder 2989:2990 <> Th:29
+R3007:3014 CAG.Category.Core <> Category rec
+binder 3003:3003 <> V:30
+R3023:3039 CAG.Category.Products <> HasFiniteProducts rec
+R3041:3041 CAG.ATT.ClassifyingEquivalence <> V:30 var
+binder 3018:3019 <> hV:31
+R3053:3057 CAG.ATT.Model <> Model rec
+R3059:3060 CAG.ATT.ClassifyingEquivalence <> Th:29 var
+R3062:3062 CAG.ATT.ClassifyingEquivalence <> V:30 var
+R3064:3065 CAG.ATT.ClassifyingEquivalence <> hV:31 var
+binder 3049:3049 <> M:32
+R3092:3093 CAG.Category.Core <> Ob proj
+R3075:3077 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R3082:3087 CAG.ATT.Theory <> th_sig proj
+R3078:3079 CAG.ATT.ClassifyingEquivalence <> Th:29 var
+binder 3069:3070 <> α:33
+R3102:3103 CAG.Category.Core <> Ob proj
+R3099:3099 CAG.ATT.ClassifyingEquivalence <> V:30 var
+R3111:3117 CAG.ATT.Model <> fp_prod def
+R3123:3130 Stdlib.Lists.List <> map abbrev
+R3143:3144 CAG.ATT.ClassifyingEquivalence <> α:33 var
+R3135:3140 CAG.ATT.Model <> mod_ty proj
+R3132:3132 CAG.ATT.ClassifyingEquivalence <> M:32 var
+R3119:3120 CAG.ATT.ClassifyingEquivalence <> hV:31 var
+def 3213:3224 <> Ap_G_inv_map
+R3232:3237 CAG.ATT.Theory <> Theory rec
+binder 3227:3228 <> Th:34
+R3245:3252 CAG.Category.Core <> Category rec
+binder 3241:3241 <> V:35
+R3261:3277 CAG.Category.Products <> HasFiniteProducts rec
+R3279:3279 CAG.ATT.ClassifyingEquivalence <> V:35 var
+binder 3256:3257 <> hV:36
+R3291:3295 CAG.ATT.Model <> Model rec
+R3297:3298 CAG.ATT.ClassifyingEquivalence <> Th:34 var
+R3300:3300 CAG.ATT.ClassifyingEquivalence <> V:35 var
+R3302:3303 CAG.ATT.ClassifyingEquivalence <> hV:36 var
+binder 3287:3287 <> M:37
+R3333:3334 CAG.Category.Core <> Ob proj
+R3316:3318 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R3323:3328 CAG.ATT.Theory <> th_sig proj
+R3319:3320 CAG.ATT.ClassifyingEquivalence <> Th:34 var
+binder 3307:3308 <> α:38
+binder 3310:3311 <> β:39
+R3361:3365 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3368:3369 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3372:3375 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3347:3349 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R3354:3359 CAG.ATT.Theory <> th_sig proj
+R3350:3351 CAG.ATT.ClassifyingEquivalence <> Th:34 var
+R3366:3367 CAG.ATT.ClassifyingEquivalence <> α:38 var
+R3370:3371 CAG.ATT.ClassifyingEquivalence <> β:39 var
+binder 3343:3343 <> f:40
+R3385:3388 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3406:3407 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3425:3428 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3384:3384 CAG.ATT.ClassifyingEquivalence <> V:35 var
+R3389:3400 CAG.ATT.ClassifyingEquivalence <> Ap_G_inv_obj def
+R3404:3405 CAG.ATT.ClassifyingEquivalence <> α:38 var
+R3402:3402 CAG.ATT.ClassifyingEquivalence <> M:37 var
+R3408:3419 CAG.ATT.ClassifyingEquivalence <> Ap_G_inv_obj def
+R3423:3424 CAG.ATT.ClassifyingEquivalence <> β:39 var
+R3421:3421 CAG.ATT.ClassifyingEquivalence <> M:37 var
+R3447:3458 CAG.ATT.ClassifyingEquivalence <> Ap_G_inv_obj def
+R3469:3476 CAG.ATT.Model <> fp_tuple thm
+R3469:3476 CAG.ATT.Model <> fp_tuple thm
+R3507:3524 Stdlib.Lists.List <> nth_error_map thm
+R3507:3524 Stdlib.Lists.List <> nth_error_map thm
+R3507:3524 Stdlib.Lists.List <> nth_error_map thm
+R3546:3559 Stdlib.Lists.List <> nth_error def
+R3546:3559 Stdlib.Lists.List <> nth_error def
+R3642:3676 Stdlib.Logic.IndefiniteDescription <> constructive_indefinite_description prfax
+R3697:3715 CAG.ATT.Syntax <> Forall2_nth_error_l thm
+R3726:3736 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R3642:3676 Stdlib.Logic.IndefiniteDescription <> constructive_indefinite_description prfax
+R3697:3715 CAG.ATT.Syntax <> Forall2_nth_error_l thm
+R3726:3736 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R3801:3811 CAG.ATT.Model <> interp_term thm
+R3801:3811 CAG.ATT.Model <> interp_term thm
+def 3929:3936 <> Ap_G_inv
+R3944:3949 CAG.ATT.Theory <> Theory rec
+binder 3939:3940 <> Th:41
+R3957:3964 CAG.Category.Core <> Category rec
+binder 3953:3953 <> V:42
+R3973:3989 CAG.Category.Products <> HasFiniteProducts rec
+R3991:3991 CAG.ATT.ClassifyingEquivalence <> V:42 var
+binder 3968:3969 <> hV:43
+R4003:4007 CAG.ATT.Model <> Model rec
+R4009:4010 CAG.ATT.ClassifyingEquivalence <> Th:41 var
+R4012:4012 CAG.ATT.ClassifyingEquivalence <> V:42 var
+R4014:4015 CAG.ATT.ClassifyingEquivalence <> hV:43 var
+binder 3999:3999 <> M:44
+R4024:4032 CAG.ATT.ClassifyingEquivalence <> FPFunctor rec
+R4067:4068 CAG.ATT.ClassifyingEquivalence <> hV:43 var
+R4035:4052 CAG.ATT.ClassifyingCategory <> cl_finite_products def
+R4058:4063 CAG.ATT.Theory <> th_sig proj
+R4054:4055 CAG.ATT.ClassifyingEquivalence <> Th:41 var
+prf 4178:4198 <> Ap_G_inv_then_Ap_G_id
+R4206:4211 CAG.ATT.Theory <> Theory rec
+binder 4201:4202 <> Th:45
+R4219:4226 CAG.Category.Core <> Category rec
+binder 4215:4215 <> V:46
+R4235:4251 CAG.Category.Products <> HasFiniteProducts rec
+R4253:4253 CAG.ATT.ClassifyingEquivalence <> V:46 var
+binder 4230:4231 <> hV:47
+R4265:4269 CAG.ATT.Model <> Model rec
+R4271:4272 CAG.ATT.ClassifyingEquivalence <> Th:45 var
+R4274:4274 CAG.ATT.ClassifyingEquivalence <> V:46 var
+R4276:4277 CAG.ATT.ClassifyingEquivalence <> hV:47 var
+binder 4261:4261 <> M:48
+R4330:4333 Corelib.Init.Logic <> True ind
+R4351:4351 Corelib.Init.Logic <> I constr
+R4351:4351 Corelib.Init.Logic <> I constr
+prf 4368:4383 <> Ap_G_then_inv_id
+R4391:4396 CAG.ATT.Theory <> Theory rec
+binder 4386:4387 <> Th:49
+R4404:4411 CAG.Category.Core <> Category rec
+binder 4400:4400 <> V:50
+R4420:4436 CAG.Category.Products <> HasFiniteProducts rec
+R4438:4438 CAG.ATT.ClassifyingEquivalence <> V:50 var
+binder 4415:4416 <> hV:51
+R4450:4458 CAG.ATT.ClassifyingEquivalence <> FPFunctor rec
+R4493:4494 CAG.ATT.ClassifyingEquivalence <> hV:51 var
+R4461:4478 CAG.ATT.ClassifyingCategory <> cl_finite_products def
+R4484:4489 CAG.ATT.Theory <> th_sig proj
+R4480:4481 CAG.ATT.ClassifyingEquivalence <> Th:49 var
+binder 4446:4446 <> F:52
+R4552:4555 Corelib.Init.Logic <> True ind
+R4573:4573 Corelib.Init.Logic <> I constr
+R4573:4573 Corelib.Init.Logic <> I constr
+prf 4666:4697 <> classifying_category_equivalence
+R4705:4710 CAG.ATT.Theory <> Theory rec
+binder 4700:4701 <> Th:53
+R4718:4725 CAG.Category.Core <> Category rec
+binder 4714:4714 <> V:54
+R4734:4750 CAG.Category.Products <> HasFiniteProducts rec
+R4752:4752 CAG.ATT.ClassifyingEquivalence <> V:54 var
+binder 4729:4730 <> hV:55
+R4761:4764 Corelib.Init.Logic <> True ind
+R4815:4815 Corelib.Init.Logic <> I constr
+R4815:4815 Corelib.Init.Logic <> I constr

@@ -157,9 +157,26 @@ CoFixpoint const_series (c : CComplex) : PSeries :=
   PSCons c (PSCons C0 (const_series C0)).
 
 (** The partial sums of a constant series stabilize immediately. *)
+Lemma ps_coeff_const_C0_all : forall n, ps_coeff (const_series C0) n = C0.
+Proof.
+  fix IH 1. intro n.
+  destruct n as [| n'].
+  - reflexivity.
+  - destruct n' as [| n''].
+    + reflexivity.
+    + change (ps_coeff (const_series C0) (S (S n''))) with
+             (ps_coeff (const_series C0) n'').
+      exact (IH n'').
+Qed.
+
 Lemma const_series_coeff_zero :
   forall c n, ps_coeff (const_series c) (S (S n)) = C0.
-Proof. Admitted.
+Proof.
+  intros c n.
+  change (ps_coeff (const_series c) (S (S n))) with
+         (ps_coeff (const_series C0) n).
+  exact (ps_coeff_const_C0_all n).
+Qed.
 
 (* ------------------------------------------------------------------ *)
 (** * 4. Paths and coinductive Riemann sum sequences                    *)

@@ -50,7 +50,7 @@ R761:772 CAG.Lie.BasicDef <> IsSubalgebra rec
 R786:802 CAG.Lie.Triangular <> IsUpperTriangular def
 R808:808 CAG.Lie.Triangular <> n:9 var
 R804:806 CAG.Lie.Triangular <> fld:8 var
-R775:776 CAG.Lie.Linear <> gl prfax
+R775:776 CAG.Lie.Linear <> gl def
 R782:782 CAG.Lie.Triangular <> n:9 var
 R778:780 CAG.Lie.Triangular <> fld:8 var
 def 973:997 <> IsStrictlyUpperTriangular
@@ -96,7 +96,7 @@ R1320:1331 CAG.Lie.BasicDef <> IsSubalgebra rec
 R1345:1369 CAG.Lie.Triangular <> IsStrictlyUpperTriangular def
 R1375:1375 CAG.Lie.Triangular <> n:20 var
 R1371:1373 CAG.Lie.Triangular <> fld:19 var
-R1334:1335 CAG.Lie.Linear <> gl prfax
+R1334:1335 CAG.Lie.Linear <> gl def
 R1341:1341 CAG.Lie.Triangular <> n:20 var
 R1337:1339 CAG.Lie.Triangular <> fld:19 var
 ax 1423:1456 <> strictly_upper_triangular_is_ideal
@@ -110,7 +110,7 @@ R1511:1517 CAG.Lie.Ideals <> IsIdeal rec
 R1531:1555 CAG.Lie.Triangular <> IsStrictlyUpperTriangular def
 R1561:1561 CAG.Lie.Triangular <> n:25 var
 R1557:1559 CAG.Lie.Triangular <> fld:24 var
-R1520:1521 CAG.Lie.Linear <> gl prfax
+R1520:1521 CAG.Lie.Linear <> gl def
 R1527:1527 CAG.Lie.Triangular <> n:25 var
 R1523:1525 CAG.Lie.Triangular <> fld:24 var
 def 1679:1688 <> IsDiagonal
@@ -156,7 +156,7 @@ R1988:1999 CAG.Lie.BasicDef <> IsSubalgebra rec
 R2013:2022 CAG.Lie.Triangular <> IsDiagonal def
 R2028:2028 CAG.Lie.Triangular <> n:36 var
 R2024:2026 CAG.Lie.Triangular <> fld:35 var
-R2002:2003 CAG.Lie.Linear <> gl prfax
+R2002:2003 CAG.Lie.Linear <> gl def
 R2009:2009 CAG.Lie.Triangular <> n:36 var
 R2005:2007 CAG.Lie.Triangular <> fld:35 var
 ax 2073:2103 <> diagonal_strictly_upper_bracket

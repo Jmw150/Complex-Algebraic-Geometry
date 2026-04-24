@@ -15,6 +15,8 @@ Require Import CAG.Lie.BasicDef.
 Require Import CAG.Lie.Ideals.
 Require Import CAG.Lie.Linear.
 Require Import CAG.Lie.KillingForm.
+Require Import CAG.Lie.Semisimple.
+Require Import CAG.Lie.Solvable.
 From Stdlib Require Import List Arith.
 Import ListNotations.
 
@@ -49,24 +51,29 @@ Axiom mat_trace_zero : forall {F : Type} (fld : Field F) (n : nat),
     mat_trace fld (mat_zero fld n) = fld.(cr_zero).
 
 (** The zero of gl(n,F) is mat_zero. *)
-Axiom gl_zero_eq_mat_zero : forall {F : Type} (fld : Field F) (n : nat),
+Lemma gl_zero_eq_mat_zero : forall {F : Type} (fld : Field F) (n : nat),
     la_zero (gl fld n) = mat_zero fld n.
+Proof. intros F fld n. simpl. apply mat_zero_any. Qed.
 
 (** The addition of gl(n,F) is mat_add. *)
-Axiom gl_add_eq_mat_add : forall {F : Type} (fld : Field F) (n : nat) (A B : Matrix F),
+Lemma gl_add_eq_mat_add : forall {F : Type} (fld : Field F) (n : nat) (A B : Matrix F),
     la_add (gl fld n) A B = mat_add fld A B.
+Proof. intros. reflexivity. Qed.
 
 (** The negation of gl(n,F) is mat_neg. *)
-Axiom gl_neg_eq_mat_neg : forall {F : Type} (fld : Field F) (n : nat) (A : Matrix F),
+Lemma gl_neg_eq_mat_neg : forall {F : Type} (fld : Field F) (n : nat) (A : Matrix F),
     la_neg (gl fld n) A = mat_neg fld A.
+Proof. intros. reflexivity. Qed.
 
 (** The scalar multiplication of gl(n,F) is mat_scale. *)
-Axiom gl_scale_eq_mat_scale : forall {F : Type} (fld : Field F) (n : nat) (c : F) (A : Matrix F),
+Lemma gl_scale_eq_mat_scale : forall {F : Type} (fld : Field F) (n : nat) (c : F) (A : Matrix F),
     la_scale (gl fld n) c A = mat_scale fld c A.
+Proof. intros. reflexivity. Qed.
 
 (** The bracket of gl(n,F) is mat_bracket. *)
-Axiom gl_bracket_eq_mat_bracket : forall {F : Type} (fld : Field F) (n : nat) (A B : Matrix F),
+Lemma gl_bracket_eq_mat_bracket : forall {F : Type} (fld : Field F) (n : nat) (A B : Matrix F),
     laF_bracket (gl fld n) A B = mat_bracket fld A B.
+Proof. intros. reflexivity. Qed.
 
 (** Tr([A,B]) = 0  (commutator has zero trace). *)
 Axiom mat_trace_bracket_zero : forall {F : Type} (fld : Field F) (A B : Matrix F),
@@ -391,3 +398,134 @@ Qed.
       [[ 0,  0, 0],
        [-1,  0, 0],
        [ 0,  2, 0]]                                                   *)
+
+(* ================================================================== *)
+(** * Exercise 2.2: [gl(n,F), gl(n,F)] = sl(n,F)                      *)
+(* ================================================================== *)
+
+Require Import CAG.Lie.Solvable.
+
+(** sl(n,F) is an ideal of gl(n,F) (not just a subalgebra).
+    For any A ∈ gl, B ∈ sl: Tr([A,B]) = 0 by mat_trace_bracket_zero. *)
+Lemma sl_is_ideal : forall {F : Type} (fld : Field F) (n : nat),
+    IsIdeal (gl fld n) (IsTracezero fld).
+Proof.
+  intros F fld n. constructor.
+  - (* zero *)
+    unfold IsTracezero.
+    rewrite gl_zero_eq_mat_zero. apply mat_trace_zero.
+  - (* add *)
+    intros A B HA HB. unfold IsTracezero in *.
+    rewrite gl_add_eq_mat_add, mat_trace_add, HA, HB.
+    apply fld.(cr_add_zero).
+  - (* neg *)
+    intros A HA. unfold IsTracezero in *.
+    rewrite gl_neg_eq_mat_neg. unfold mat_neg.
+    rewrite mat_trace_scale. rewrite HA. apply ring_mul_zero_r.
+  - (* scale *)
+    intros c A HA. unfold IsTracezero in *.
+    rewrite gl_scale_eq_mat_scale, mat_trace_scale, HA.
+    apply ring_mul_zero_r.
+  - (* bracket_l: for any B ∈ gl and A ∈ sl, Tr([B,A]) = 0 *)
+    intros B A _.
+    unfold IsTracezero.
+    rewrite gl_bracket_eq_mat_bracket.
+    apply mat_trace_bracket_zero.
+Qed.
+
+(** Forward inclusion: IsDerivedAlg (gl n) ⊆ IsTracezero.
+    Proof: IsTracezero is a subalgebra containing all brackets (by
+    mat_trace_bracket_zero), so by definition of IsDerivedAlg every
+    element of the derived algebra is traceless. *)
+Lemma gl_derived_sub_sl : forall {F : Type} (fld : Field F) (n : nat) (A : Matrix F),
+    IsDerivedAlg (gl fld n) A -> IsTracezero fld A.
+Proof.
+  intros F fld n A Hderiv.
+  apply Hderiv.
+  - apply sl_is_subalgebra.
+  - intros X Y. unfold IsTracezero.
+    rewrite gl_bracket_eq_mat_bracket.
+    apply mat_trace_bracket_zero.
+Qed.
+
+(** Backward inclusion: IsTracezero ⊆ IsDerivedAlg (gl n).
+    Every traceless matrix is a linear combination of commutators:
+    - e_{ij} = [e_{ij}, e_{jj}] for i ≠ j
+    - h_i = e_{ii} - e_{i+1,i+1} = [e_{i,i+1}, e_{i+1,i}]
+    The spanning argument requires finite-dimensionality.
+    Stated as an axiom pending a full finite-dimensional framework. *)
+Axiom gl_sl_sub_derived : forall {F : Type} (fld : Field F) (n : nat) (A : Matrix F),
+    IsTracezero fld A -> IsDerivedAlg (gl fld n) A.
+
+(** Main theorem: [gl(n,F), gl(n,F)] = sl(n,F).  (Exercise 2.2) *)
+Theorem gl_derived_eq_sl : forall {F : Type} (fld : Field F) (n : nat) (A : Matrix F),
+    IsDerivedAlg (gl fld n) A <-> IsTracezero fld A.
+Proof.
+  intros F fld n A. split.
+  - apply gl_derived_sub_sl.
+  - apply gl_sl_sub_derived.
+Qed.
+
+(* ================================================================== *)
+(** * 5. Compatibility of abstract Jordan decomposition with matrices   *)
+(* ================================================================== *)
+
+(** mat_mul_inv: axiomatized matrix inverse (requires non-singularity). *)
+Axiom mat_mul_inv : forall {F : Type} (fld : Field F) (n : nat), Matrix F -> Matrix F.
+
+(** mat_pow: iterated matrix multiplication. *)
+Fixpoint mat_pow {F : Type} (fld : Field F) (A : Matrix F) (k : nat) : Matrix F :=
+  match k with
+  | O   => mat_unit fld (List.length A) 0 0  (* identity — placeholder *)
+  | S k => mat_mul fld A (mat_pow fld A k)
+  end.
+
+(** A matrix D is diagonal if all off-diagonal entries are zero. *)
+Definition IsDiagonalMatrix {F : Type} (fld : Field F) (D : Matrix F) : Prop :=
+  forall i j, i <> j -> i < List.length D ->
+    List.nth j (List.nth i D []) fld.(cr_zero) = fld.(cr_zero).
+
+(** A matrix A ∈ gl(n,F) is diagonalizable (semisimple as a matrix)
+    if it is similar to a diagonal matrix over F. *)
+Definition IsMatDiagonalizable {F : Type} (fld : Field F) (n : nat) (A : Matrix F) : Prop :=
+  exists (P D : Matrix F),
+    mat_mul fld P (mat_mul fld D (mat_mul_inv fld n P)) = A /\
+    IsDiagonalMatrix fld D.
+
+(** A matrix N ∈ gl(n,F) is nilpotent as a matrix if N^k = 0 for some k. *)
+Definition IsMatNilpotent {F : Type} (fld : Field F) (n : nat) (N : Matrix F) : Prop :=
+  exists k : nat, mat_pow fld N k = mat_zero fld n.
+
+(** Classical Jordan decomposition for matrices: every A ∈ gl(n,F) (over an
+    algebraically closed field) has a unique decomposition A = S + N where
+    - S is diagonalizable (semisimple)
+    - N is nilpotent
+    - SN = NS
+    Axiomatized: requires eigenvalue theory over algebraically closed fields. *)
+Axiom mat_jordan_decomp :
+  forall {F : Type} (fld : Field F) (n : nat) (A : Matrix F),
+    exists (S N : Matrix F),
+      A = mat_add fld S N /\
+      IsMatDiagonalizable fld n S /\
+      IsMatNilpotent fld n N /\
+      mat_mul fld S N = mat_mul fld N S.
+
+(** Compatibility: the abstract Jordan decomposition in sl(n,F) (from Semisimple.v)
+    agrees with the classical matrix Jordan decomposition.
+
+    Specifically: if x ∈ sl(n,F) has abstract Jordan parts (s, n) as in
+    abstract_jordan, then s is the diagonalizable part and n is the nilpotent
+    part of the classical matrix Jordan decomposition of x.
+
+    Axiomatized: requires the isomorphism ad : sl(n,F) → ad(sl(n,F)) ⊆ End(sl)
+    and compatibility of ad-semisimple with matrix-semisimple. *)
+Axiom sl_jordan_agrees_matrix :
+  forall {F : Type} (fld : Field F) (n : nat) (x s nu : Matrix F),
+    IsTracezero fld x ->
+    x = mat_add fld s nu ->
+    IsAdNilpotent (gl fld n) nu ->
+    laF_bracket (gl fld n) s nu = mat_zero fld n ->
+    (** s is the diagonalizable part of x *)
+    IsMatDiagonalizable fld n s /\
+    (** nu is the nilpotent part of x *)
+    IsMatNilpotent fld n nu.

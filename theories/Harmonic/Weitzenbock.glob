@@ -1,0 +1,267 @@
+DIGEST cb99eeafe5bbb50951d78bfb7f84e6a6
+FCAG.Harmonic.Weitzenbock
+R462:465 Stdlib.Lists.List <> <> lib
+R467:471 Stdlib.Arith.Arith <> <> lib
+R473:475 Stdlib.micromega.Lia <> <> lib
+R505:540 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> <> lib
+R567:573 CAG.Complex <> <> lib
+R600:601 CAG.AG <> <> lib
+R628:643 CAG.ManifoldTopology <> <> lib
+R670:679 CAG.LieAlgebra <> <> lib
+R706:740 CAG.Harmonic.BundleCovariantDerivatives <> <> lib
+R767:782 CAG.Harmonic.Sobolev <> <> lib
+R809:826 CAG.Harmonic.Laplacian <> <> lib
+R853:875 CAG.Harmonic.RieszResolvent <> <> lib
+R902:918 CAG.Harmonic.Spectral <> <> lib
+ax 1322:1336 <> rough_laplacian
+R1352:1368 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 1348:1348 <> M:1
+R1376:1390 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R1392:1392 CAG.Harmonic.Weitzenbock <> M:1 var
+binder 1372:1372 <> E:2
+R1407:1416 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R1418:1418 CAG.Harmonic.Weitzenbock <> E:2 var
+binder 1400:1403 <> conn:3
+R1428:1430 Corelib.Init.Datatypes <> nat ind
+binder 1422:1422 <> p:4
+binder 1424:1424 <> q:5
+R1452:1455 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1438:1445 CAG.Harmonic.Sobolev <> Forms_pq defax
+R1451:1451 CAG.Harmonic.Weitzenbock <> q:5 var
+R1449:1449 CAG.Harmonic.Weitzenbock <> p:4 var
+R1447:1447 CAG.Harmonic.Weitzenbock <> E:2 var
+R1456:1463 CAG.Harmonic.Sobolev <> Forms_pq defax
+R1469:1469 CAG.Harmonic.Weitzenbock <> q:5 var
+R1467:1467 CAG.Harmonic.Weitzenbock <> p:4 var
+R1465:1465 CAG.Harmonic.Weitzenbock <> E:2 var
+prf 1548:1569 <> rough_laplacian_nonneg
+R1585:1601 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 1581:1581 <> M:8
+R1609:1623 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R1625:1625 CAG.Harmonic.Weitzenbock <> M:8 var
+binder 1605:1605 <> E:9
+R1640:1649 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R1651:1651 CAG.Harmonic.Weitzenbock <> E:9 var
+binder 1633:1636 <> conn:10
+R1661:1663 Corelib.Init.Datatypes <> nat ind
+binder 1655:1655 <> p:11
+binder 1657:1657 <> q:12
+R1672:1679 CAG.Harmonic.Sobolev <> Forms_pq defax
+R1685:1685 CAG.Harmonic.Weitzenbock <> q:12 var
+R1683:1683 CAG.Harmonic.Weitzenbock <> p:11 var
+R1681:1681 CAG.Harmonic.Weitzenbock <> E:9 var
+binder 1667:1668 <> φ:13
+R1694:1697 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> ::CReal_scope:x_'<='_x not
+R1698:1705 CAG.Harmonic.Sobolev <> L2_inner defax
+R1737:1738 CAG.Harmonic.Weitzenbock <> φ:13 var
+R1708:1722 CAG.Harmonic.Weitzenbock <> rough_laplacian defax
+R1733:1734 CAG.Harmonic.Weitzenbock <> φ:13 var
+R1731:1731 CAG.Harmonic.Weitzenbock <> q:12 var
+R1729:1729 CAG.Harmonic.Weitzenbock <> p:11 var
+R1724:1727 CAG.Harmonic.Weitzenbock <> conn:10 var
+prf 1818:1845 <> rough_laplacian_self_adjoint
+R1861:1877 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 1857:1857 <> M:14
+R1889:1903 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R1905:1905 CAG.Harmonic.Weitzenbock <> M:14 var
+binder 1885:1885 <> E:15
+R1916:1925 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R1927:1927 CAG.Harmonic.Weitzenbock <> E:15 var
+binder 1909:1912 <> conn:16
+R1937:1939 Corelib.Init.Datatypes <> nat ind
+binder 1931:1931 <> p:17
+binder 1933:1933 <> q:18
+R1955:1962 CAG.Harmonic.Sobolev <> Forms_pq defax
+R1968:1968 CAG.Harmonic.Weitzenbock <> q:18 var
+R1966:1966 CAG.Harmonic.Weitzenbock <> p:17 var
+R1964:1964 CAG.Harmonic.Weitzenbock <> E:15 var
+binder 1947:1948 <> φ:19
+binder 1950:1951 <> ψ:20
+R2017:2023 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1976:1983 CAG.Harmonic.Sobolev <> L2_inner defax
+R2015:2016 CAG.Harmonic.Weitzenbock <> ψ:20 var
+R1986:2000 CAG.Harmonic.Weitzenbock <> rough_laplacian defax
+R2011:2012 CAG.Harmonic.Weitzenbock <> φ:19 var
+R2009:2009 CAG.Harmonic.Weitzenbock <> q:18 var
+R2007:2007 CAG.Harmonic.Weitzenbock <> p:17 var
+R2002:2005 CAG.Harmonic.Weitzenbock <> conn:16 var
+R2024:2031 CAG.Harmonic.Sobolev <> L2_inner defax
+R2037:2051 CAG.Harmonic.Weitzenbock <> rough_laplacian defax
+R2062:2063 CAG.Harmonic.Weitzenbock <> ψ:20 var
+R2060:2060 CAG.Harmonic.Weitzenbock <> q:18 var
+R2058:2058 CAG.Harmonic.Weitzenbock <> p:17 var
+R2053:2056 CAG.Harmonic.Weitzenbock <> conn:16 var
+R2033:2034 CAG.Harmonic.Weitzenbock <> φ:19 var
+ax 2498:2514 <> curv_endomorphism
+R2530:2546 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 2526:2526 <> M:21
+R2554:2568 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R2570:2570 CAG.Harmonic.Weitzenbock <> M:21 var
+binder 2550:2550 <> E:22
+R2585:2594 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R2596:2596 CAG.Harmonic.Weitzenbock <> E:22 var
+binder 2578:2581 <> conn:23
+R2606:2608 Corelib.Init.Datatypes <> nat ind
+binder 2600:2600 <> p:24
+binder 2602:2602 <> q:25
+R2630:2633 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2616:2623 CAG.Harmonic.Sobolev <> Forms_pq defax
+R2629:2629 CAG.Harmonic.Weitzenbock <> q:25 var
+R2627:2627 CAG.Harmonic.Weitzenbock <> p:24 var
+R2625:2625 CAG.Harmonic.Weitzenbock <> E:22 var
+R2634:2641 CAG.Harmonic.Sobolev <> Forms_pq defax
+R2647:2647 CAG.Harmonic.Weitzenbock <> q:25 var
+R2645:2645 CAG.Harmonic.Weitzenbock <> p:24 var
+R2643:2643 CAG.Harmonic.Weitzenbock <> E:22 var
+prf 2710:2739 <> curv_endomorphism_self_adjoint
+R2755:2771 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 2751:2751 <> M:28
+R2783:2797 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R2799:2799 CAG.Harmonic.Weitzenbock <> M:28 var
+binder 2779:2779 <> E:29
+R2810:2819 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R2821:2821 CAG.Harmonic.Weitzenbock <> E:29 var
+binder 2803:2806 <> conn:30
+R2831:2833 Corelib.Init.Datatypes <> nat ind
+binder 2825:2825 <> p:31
+binder 2827:2827 <> q:32
+R2849:2856 CAG.Harmonic.Sobolev <> Forms_pq defax
+R2862:2862 CAG.Harmonic.Weitzenbock <> q:32 var
+R2860:2860 CAG.Harmonic.Weitzenbock <> p:31 var
+R2858:2858 CAG.Harmonic.Weitzenbock <> E:29 var
+binder 2841:2842 <> φ:33
+binder 2844:2845 <> ψ:34
+R2913:2919 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2870:2877 CAG.Harmonic.Sobolev <> L2_inner defax
+R2911:2912 CAG.Harmonic.Weitzenbock <> ψ:34 var
+R2880:2896 CAG.Harmonic.Weitzenbock <> curv_endomorphism defax
+R2907:2908 CAG.Harmonic.Weitzenbock <> φ:33 var
+R2905:2905 CAG.Harmonic.Weitzenbock <> q:32 var
+R2903:2903 CAG.Harmonic.Weitzenbock <> p:31 var
+R2898:2901 CAG.Harmonic.Weitzenbock <> conn:30 var
+R2920:2927 CAG.Harmonic.Sobolev <> L2_inner defax
+R2933:2949 CAG.Harmonic.Weitzenbock <> curv_endomorphism defax
+R2960:2961 CAG.Harmonic.Weitzenbock <> ψ:34 var
+R2958:2958 CAG.Harmonic.Weitzenbock <> q:32 var
+R2956:2956 CAG.Harmonic.Weitzenbock <> p:31 var
+R2951:2954 CAG.Harmonic.Weitzenbock <> conn:30 var
+R2929:2930 CAG.Harmonic.Weitzenbock <> φ:33 var
+prf 3519:3529 <> weitzenbock
+R3545:3561 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 3541:3541 <> M:35
+R3569:3583 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R3585:3585 CAG.Harmonic.Weitzenbock <> M:35 var
+binder 3565:3565 <> E:36
+R3600:3609 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R3611:3611 CAG.Harmonic.Weitzenbock <> E:36 var
+binder 3593:3596 <> conn:37
+R3621:3623 Corelib.Init.Datatypes <> nat ind
+binder 3615:3615 <> p:38
+binder 3617:3617 <> q:39
+R3632:3639 CAG.Harmonic.Sobolev <> Forms_pq defax
+R3645:3645 CAG.Harmonic.Weitzenbock <> q:39 var
+R3643:3643 CAG.Harmonic.Weitzenbock <> p:38 var
+R3641:3641 CAG.Harmonic.Weitzenbock <> E:36 var
+binder 3627:3628 <> φ:40
+R3674:3680 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3653:3666 CAG.Harmonic.Laplacian <> dbar_laplacian def
+R3672:3673 CAG.Harmonic.Weitzenbock <> φ:40 var
+R3670:3670 CAG.Harmonic.Weitzenbock <> q:39 var
+R3668:3668 CAG.Harmonic.Weitzenbock <> p:38 var
+R3681:3692 CAG.Harmonic.Sobolev <> forms_pq_add defax
+R3725:3741 CAG.Harmonic.Weitzenbock <> curv_endomorphism defax
+R3752:3753 CAG.Harmonic.Weitzenbock <> φ:40 var
+R3750:3750 CAG.Harmonic.Weitzenbock <> q:39 var
+R3748:3748 CAG.Harmonic.Weitzenbock <> p:38 var
+R3743:3746 CAG.Harmonic.Weitzenbock <> conn:37 var
+R3695:3709 CAG.Harmonic.Weitzenbock <> rough_laplacian defax
+R3720:3721 CAG.Harmonic.Weitzenbock <> φ:40 var
+R3718:3718 CAG.Harmonic.Weitzenbock <> q:39 var
+R3716:3716 CAG.Harmonic.Weitzenbock <> p:38 var
+R3711:3714 CAG.Harmonic.Weitzenbock <> conn:37 var
+prf 4206:4244 <> dbar_laplacian_elliptic_via_weitzenbock
+R4264:4280 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 4260:4260 <> M:41
+R4288:4302 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R4304:4304 CAG.Harmonic.Weitzenbock <> M:41 var
+binder 4284:4284 <> E:42
+R4319:4328 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R4330:4330 CAG.Harmonic.Weitzenbock <> E:42 var
+binder 4312:4315 <> conn:43
+R4340:4342 Corelib.Init.Datatypes <> nat ind
+binder 4334:4334 <> p:44
+binder 4336:4336 <> q:45
+R4407:4410 Corelib.Init.Logic <> True ind
+R4446:4446 Corelib.Init.Logic <> I constr
+R4446:4446 Corelib.Init.Logic <> I constr
+prf 5025:5047 <> bochner_vanishing_setup
+R5063:5079 CAG.Harmonic.BundleCovariantDerivatives <> HermitianManifold rec
+binder 5059:5059 <> M:46
+R5091:5105 CAG.Harmonic.BundleCovariantDerivatives <> HermitianBundle rec
+R5107:5107 CAG.Harmonic.Weitzenbock <> M:46 var
+binder 5087:5087 <> E:47
+R5118:5127 CAG.Harmonic.BundleCovariantDerivatives <> Connection rec
+R5129:5129 CAG.Harmonic.Weitzenbock <> E:47 var
+binder 5111:5114 <> conn:48
+R5139:5141 Corelib.Init.Datatypes <> nat ind
+binder 5133:5133 <> p:49
+binder 5135:5135 <> q:50
+R5222:5222 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5330:5383 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5236:5243 CAG.Harmonic.Sobolev <> Forms_pq defax
+R5249:5249 CAG.Harmonic.Weitzenbock <> q:50 var
+R5247:5247 CAG.Harmonic.Weitzenbock <> p:49 var
+R5245:5245 CAG.Harmonic.Weitzenbock <> E:47 var
+binder 5231:5232 <> φ:51
+R5308:5311 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5303:5306 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> ::CReal_scope:x_'<='_x not
+R5260:5267 CAG.Harmonic.Sobolev <> L2_inner defax
+R5301:5302 CAG.Harmonic.Weitzenbock <> φ:51 var
+R5270:5286 CAG.Harmonic.Weitzenbock <> curv_endomorphism defax
+R5297:5298 CAG.Harmonic.Weitzenbock <> φ:51 var
+R5295:5295 CAG.Harmonic.Weitzenbock <> q:50 var
+R5293:5293 CAG.Harmonic.Weitzenbock <> p:49 var
+R5288:5291 CAG.Harmonic.Weitzenbock <> conn:48 var
+R5314:5316 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5312:5313 CAG.Harmonic.Weitzenbock <> φ:51 var
+R5317:5329 CAG.Harmonic.Sobolev <> forms_pq_zero defax
+R5397:5404 CAG.Harmonic.Sobolev <> Forms_pq defax
+R5410:5410 CAG.Harmonic.Weitzenbock <> q:50 var
+R5408:5408 CAG.Harmonic.Weitzenbock <> p:49 var
+R5406:5406 CAG.Harmonic.Weitzenbock <> E:47 var
+binder 5392:5393 <> φ:52
+R5428:5431 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5414:5424 CAG.Harmonic.Spectral <> is_harmonic def
+R5426:5427 CAG.Harmonic.Weitzenbock <> φ:52 var
+R5434:5436 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5432:5433 CAG.Harmonic.Weitzenbock <> φ:52 var
+R5437:5449 CAG.Harmonic.Sobolev <> forms_pq_zero defax
+R5606:5608 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5571:5578 CAG.Harmonic.Sobolev <> L2_inner defax
+R5581:5594 CAG.Harmonic.Laplacian <> dbar_laplacian def
+R5606:5608 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5571:5578 CAG.Harmonic.Sobolev <> L2_inner defax
+R5581:5594 CAG.Harmonic.Laplacian <> dbar_laplacian def
+R5624:5634 CAG.Harmonic.Spectral <> is_harmonic def
+R5667:5684 CAG.Harmonic.Sobolev <> L2_inner_zero_left prfax
+R5667:5684 CAG.Harmonic.Sobolev <> L2_inner_zero_left prfax
+R5772:5782 CAG.Harmonic.Weitzenbock <> weitzenbock prfax
+R5772:5782 CAG.Harmonic.Weitzenbock <> weitzenbock prfax
+R5772:5782 CAG.Harmonic.Weitzenbock <> weitzenbock prfax
+R5823:5839 CAG.Harmonic.Sobolev <> L2_inner_add_left prfax
+R5823:5839 CAG.Harmonic.Sobolev <> L2_inner_add_left prfax
+R5823:5839 CAG.Harmonic.Sobolev <> L2_inner_add_left prfax
+R5928:5949 CAG.Harmonic.Weitzenbock <> rough_laplacian_nonneg prfax
+R5928:5949 CAG.Harmonic.Weitzenbock <> rough_laplacian_nonneg prfax
+R6039:6042 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> ::CReal_scope:x_'<='_x not
+R5996:6003 CAG.Harmonic.Sobolev <> L2_inner defax
+R6006:6022 CAG.Harmonic.Weitzenbock <> curv_endomorphism defax
+R6039:6042 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> ::CReal_scope:x_'<='_x not
+R5996:6003 CAG.Harmonic.Sobolev <> L2_inner defax
+R6006:6022 CAG.Harmonic.Weitzenbock <> curv_endomorphism defax
+R6058:6085 CAG.Harmonic.Sobolev <> CReal_nonneg_add_zero_rhs_le thm
+R6088:6095 CAG.Harmonic.Sobolev <> L2_inner defax
+R6098:6112 CAG.Harmonic.Weitzenbock <> rough_laplacian defax
+R6058:6085 CAG.Harmonic.Sobolev <> CReal_nonneg_add_zero_rhs_le thm
+R6088:6095 CAG.Harmonic.Sobolev <> L2_inner defax
+R6098:6112 CAG.Harmonic.Weitzenbock <> rough_laplacian defax

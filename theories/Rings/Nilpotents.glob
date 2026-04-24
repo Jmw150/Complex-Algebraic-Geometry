@@ -1,0 +1,144 @@
+DIGEST e65c548da75681d2a1b1af76ed867202
+FCAG.Rings.Nilpotents
+R89:98 CAG.Rings.Ring <> <> lib
+R100:111 CAG.Rings.Ideals <> <> lib
+R141:145 Stdlib.Arith.Arith <> <> lib
+R147:149 Stdlib.micromega.Lia <> <> lib
+def 340:351 <> is_nilpotent
+binder 354:354 <> R:1
+R369:372 CAG.Rings.Ring <> Ring rec
+R374:374 CAG.Rings.Nilpotents <> R:1 var
+binder 365:365 <> r:2
+R382:382 CAG.Rings.Nilpotents <> R:1 var
+binder 378:378 <> x:3
+R397:403 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R411:412 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R408:410 Corelib.Init.Datatypes <> nat ind
+binder 404:404 <> n:4
+R418:421 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R414:416 Corelib.Init.Peano <> ::nat_scope:x_'>'_x not
+R413:413 CAG.Rings.Nilpotents <> n:4 var
+R436:438 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R422:429 CAG.Rings.Ring <> ring_pow def
+R435:435 CAG.Rings.Nilpotents <> n:4 var
+R433:433 CAG.Rings.Nilpotents <> x:3 var
+R431:431 CAG.Rings.Nilpotents <> r:2 var
+R439:443 CAG.Rings.Ring <> rzero proj
+R445:445 CAG.Rings.Nilpotents <> R:1 var
+R447:447 CAG.Rings.Nilpotents <> r:2 var
+def 508:517 <> nilradical
+binder 520:520 <> R:5
+R535:538 CAG.Rings.Ring <> Ring rec
+R540:540 CAG.Rings.Nilpotents <> R:5 var
+binder 531:531 <> r:6
+R546:549 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R545:545 CAG.Rings.Nilpotents <> R:5 var
+binder 564:564 <> x:7
+R569:580 CAG.Rings.Nilpotents <> is_nilpotent def
+R584:584 CAG.Rings.Nilpotents <> x:7 var
+R582:582 CAG.Rings.Nilpotents <> r:6 var
+sec 770:784 <> NilpotentLemmas
+var  798:798 NilpotentLemmas R
+var  809:809 NilpotentLemmas r
+R813:816 CAG.Rings.Ring <> Ring rec
+R818:818 CAG.Rings.Nilpotents <> R:8 var
+prf 864:877 <> zero_nilpotent
+R881:892 CAG.Rings.Nilpotents <> is_nilpotent def
+R897:901 CAG.Rings.Ring <> rzero proj
+R903:903 CAG.Rings.Nilpotents <> NilpotentLemmas.R var
+R905:905 CAG.Rings.Nilpotents <> NilpotentLemmas.r var
+R894:894 CAG.Rings.Nilpotents <> NilpotentLemmas.r var
+R929:940 CAG.Rings.Nilpotents <> is_nilpotent def
+R990:1000 CAG.Rings.Ring <> rmul_zero_l thm
+R990:1000 CAG.Rings.Ring <> rmul_zero_l thm
+prf 1068:1090 <> hom_preserves_nilpotent
+binder 1106:1106 <> S:10
+R1121:1124 CAG.Rings.Ring <> Ring rec
+R1126:1126 CAG.Rings.Nilpotents <> S:10 var
+binder 1117:1117 <> s:11
+R1135:1141 CAG.Rings.Ring <> RingHom rec
+R1145:1145 CAG.Rings.Nilpotents <> s:11 var
+R1143:1143 CAG.Rings.Nilpotents <> NilpotentLemmas.r var
+binder 1130:1131 <> rh:12
+R1153:1153 CAG.Rings.Nilpotents <> NilpotentLemmas.R var
+binder 1149:1149 <> x:13
+R1179:1182 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1163:1174 CAG.Rings.Nilpotents <> is_nilpotent def
+R1178:1178 CAG.Rings.Nilpotents <> x:13 var
+R1176:1176 CAG.Rings.Nilpotents <> NilpotentLemmas.r var
+R1183:1194 CAG.Rings.Nilpotents <> is_nilpotent def
+R1199:1205 CAG.Rings.Ring <> rhom_fn proj
+R1210:1210 CAG.Rings.Nilpotents <> x:13 var
+R1207:1208 CAG.Rings.Nilpotents <> rh:12 var
+R1196:1196 CAG.Rings.Nilpotents <> s:11 var
+R1269:1280 CAG.Rings.Nilpotents <> is_nilpotent def
+binder 1376:1376 <> m:14
+R1406:1441 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1379:1385 CAG.Rings.Ring <> rhom_fn proj
+R1391:1398 CAG.Rings.Ring <> ring_pow def
+R1404:1404 CAG.Rings.Nilpotents <> m:14 var
+R1400:1400 CAG.Rings.Nilpotents <> NilpotentLemmas.r var
+R1442:1449 CAG.Rings.Ring <> ring_pow def
+R1468:1468 CAG.Rings.Nilpotents <> m:14 var
+R1454:1460 CAG.Rings.Ring <> rhom_fn proj
+binder 1376:1376 <> m:15
+R1406:1441 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1379:1385 CAG.Rings.Ring <> rhom_fn proj
+R1391:1398 CAG.Rings.Ring <> ring_pow def
+R1404:1404 CAG.Rings.Nilpotents <> m:15 var
+R1400:1400 CAG.Rings.Nilpotents <> NilpotentLemmas.r var
+R1442:1449 CAG.Rings.Ring <> ring_pow def
+R1468:1468 CAG.Rings.Nilpotents <> m:15 var
+R1454:1460 CAG.Rings.Ring <> rhom_fn proj
+R1533:1540 CAG.Rings.Ring <> rhom_one proj
+R1533:1540 CAG.Rings.Ring <> rhom_one proj
+R1566:1573 CAG.Rings.Ring <> rhom_mul proj
+R1566:1573 CAG.Rings.Ring <> rhom_mul proj
+R1566:1573 CAG.Rings.Ring <> rhom_mul proj
+R1636:1644 CAG.Rings.Ring <> rhom_zero thm
+R1636:1644 CAG.Rings.Ring <> rhom_zero thm
+prf 1744:1762 <> nilradical_is_ideal
+binder 1780:1780 <> a:16
+binder 1782:1782 <> b:17
+R1797:1799 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1785:1788 CAG.Rings.Ring <> rmul proj
+R1790:1790 CAG.Rings.Nilpotents <> NilpotentLemmas.R var
+R1792:1792 CAG.Rings.Nilpotents <> NilpotentLemmas.r var
+R1794:1794 CAG.Rings.Nilpotents <> a:16 var
+R1796:1796 CAG.Rings.Nilpotents <> b:17 var
+R1800:1803 CAG.Rings.Ring <> rmul proj
+R1805:1805 CAG.Rings.Nilpotents <> NilpotentLemmas.R var
+R1807:1807 CAG.Rings.Nilpotents <> NilpotentLemmas.r var
+R1809:1809 CAG.Rings.Nilpotents <> b:17 var
+R1811:1811 CAG.Rings.Nilpotents <> a:16 var
+binder 1765:1769 <> Hcomm:18
+R1822:1829 CAG.Rings.Ideals <> is_ideal def
+R1834:1843 CAG.Rings.Nilpotents <> nilradical def
+R1845:1845 CAG.Rings.Nilpotents <> NilpotentLemmas.r var
+R1831:1831 CAG.Rings.Nilpotents <> NilpotentLemmas.r var
+R1869:1876 CAG.Rings.Ideals <> is_ideal def
+R1879:1891 CAG.Rings.Ideals <> is_left_ideal def
+R1894:1907 CAG.Rings.Ideals <> is_right_ideal def
+R1910:1924 CAG.Rings.Ideals <> is_add_subgroup def
+R1927:1936 CAG.Rings.Nilpotents <> nilradical def
+R2015:2028 CAG.Rings.Nilpotents <> zero_nilpotent thm
+R2015:2028 CAG.Rings.Nilpotents <> zero_nilpotent thm
+R2150:2161 CAG.Rings.Nilpotents <> is_nilpotent def
+R2179:2193 CAG.Rings.Nilpotents NilpotentLemmas <> sec
+ax 2394:2420 <> nilradical_quotient_reduced
+binder 2434:2434 <> R:19
+R2449:2452 CAG.Rings.Ring <> Ring rec
+R2454:2454 CAG.Rings.Nilpotents <> R:19 var
+binder 2445:2445 <> r:20
+R2472:2479 CAG.Rings.Ideals <> is_ideal def
+R2484:2493 CAG.Rings.Nilpotents <> nilradical def
+R2495:2495 CAG.Rings.Nilpotents <> r:20 var
+R2481:2481 CAG.Rings.Nilpotents <> r:20 var
+binder 2467:2468 <> HN:21
+R2502:2505 Corelib.Init.Logic <> True ind
+ax 2603:2621 <> poly_unit_criterion
+binder 2635:2635 <> R:24
+R2650:2664 CAG.Rings.Ring <> CommutativeRing rec
+R2666:2666 CAG.Rings.Nilpotents <> R:24 var
+binder 2646:2646 <> r:25
+R2672:2675 Corelib.Init.Logic <> True ind

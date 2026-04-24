@@ -1,0 +1,614 @@
+DIGEST 7273945a41d55f93321fbe4193166415
+FCAG.Lie.Orthogonal
+R565:580 CAG.Galois.Field <> <> lib
+R598:613 CAG.Lie.BasicDef <> <> lib
+R631:644 CAG.Lie.Ideals <> <> lib
+R662:675 CAG.Lie.Linear <> <> lib
+R693:713 CAG.Lie.SpecialLinear <> <> lib
+R731:748 CAG.Lie.Symplectic <> <> lib
+R778:781 Stdlib.Lists.List <> <> lib
+R783:787 Stdlib.Arith.Arith <> <> lib
+R797:809 Stdlib.Lists.List ListNotations <> mod
+def 1309:1320 <> IsOrthogonal
+binder 1323:1323 <> F:1
+R1340:1344 CAG.Galois.Field <> Field rec
+R1346:1346 CAG.Lie.Orthogonal <> F:1 var
+binder 1334:1336 <> fld:2
+R1354:1359 CAG.Lie.Linear <> Matrix def
+R1361:1361 CAG.Lie.Orthogonal <> F:1 var
+binder 1350:1350 <> s:3
+R1369:1374 CAG.Lie.Linear <> Matrix def
+R1376:1376 CAG.Lie.Orthogonal <> F:1 var
+binder 1365:1365 <> A:4
+R1466:1470 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1391:1397 CAG.Lie.Linear <> mat_add def
+R1450:1456 CAG.Lie.Linear <> mat_mul def
+R1464:1464 CAG.Lie.Orthogonal <> A:4 var
+R1462:1462 CAG.Lie.Orthogonal <> s:3 var
+R1458:1460 CAG.Lie.Orthogonal <> fld:2 var
+R1408:1414 CAG.Lie.Linear <> mat_mul def
+R1442:1442 CAG.Lie.Orthogonal <> s:3 var
+R1421:1433 CAG.Lie.Symplectic <> mat_transpose def
+R1439:1439 CAG.Lie.Orthogonal <> A:4 var
+R1435:1437 CAG.Lie.Orthogonal <> fld:2 var
+R1416:1418 CAG.Lie.Orthogonal <> fld:2 var
+R1399:1401 CAG.Lie.Orthogonal <> fld:2 var
+R1471:1478 CAG.Lie.Linear <> mat_zero def
+R1480:1482 CAG.Lie.Orthogonal <> fld:2 var
+prf 1552:1562 <> orth_cond_l
+binder 1565:1565 <> F:5
+R1582:1586 CAG.Galois.Field <> Field rec
+R1588:1588 CAG.Lie.Orthogonal <> F:5 var
+binder 1576:1578 <> fld:6
+R1598:1603 CAG.Lie.Linear <> Matrix def
+R1605:1605 CAG.Lie.Orthogonal <> F:5 var
+binder 1592:1592 <> s:7
+binder 1594:1594 <> A:8
+R1634:1641 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1614:1625 CAG.Lie.Orthogonal <> IsOrthogonal def
+R1633:1633 CAG.Lie.Orthogonal <> A:8 var
+R1631:1631 CAG.Lie.Orthogonal <> s:7 var
+R1627:1629 CAG.Lie.Orthogonal <> fld:6 var
+R1677:1679 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1642:1648 CAG.Lie.Linear <> mat_mul def
+R1676:1676 CAG.Lie.Orthogonal <> s:7 var
+R1655:1667 CAG.Lie.Symplectic <> mat_transpose def
+R1673:1673 CAG.Lie.Orthogonal <> A:8 var
+R1669:1671 CAG.Lie.Orthogonal <> fld:6 var
+R1650:1652 CAG.Lie.Orthogonal <> fld:6 var
+R1680:1686 CAG.Lie.Linear <> mat_neg def
+R1693:1699 CAG.Lie.Linear <> mat_mul def
+R1707:1707 CAG.Lie.Orthogonal <> A:8 var
+R1705:1705 CAG.Lie.Orthogonal <> s:7 var
+R1701:1703 CAG.Lie.Orthogonal <> fld:6 var
+R1688:1690 CAG.Lie.Orthogonal <> fld:6 var
+R1727:1738 CAG.Lie.Orthogonal <> IsOrthogonal def
+R1764:1777 CAG.Lie.Symplectic <> mat_add_zero_r prfax
+R1784:1790 CAG.Lie.Linear <> mat_mul def
+R1797:1809 CAG.Lie.Symplectic <> mat_transpose def
+R1764:1777 CAG.Lie.Symplectic <> mat_add_zero_r prfax
+R1784:1790 CAG.Lie.Linear <> mat_mul def
+R1797:1809 CAG.Lie.Symplectic <> mat_transpose def
+R1764:1777 CAG.Lie.Symplectic <> mat_add_zero_r prfax
+R1784:1790 CAG.Lie.Linear <> mat_mul def
+R1797:1809 CAG.Lie.Symplectic <> mat_transpose def
+R1837:1847 CAG.Lie.Symplectic <> mat_add_neg prfax
+R1854:1860 CAG.Lie.Linear <> mat_mul def
+R1837:1847 CAG.Lie.Symplectic <> mat_add_neg prfax
+R1854:1860 CAG.Lie.Linear <> mat_mul def
+R1837:1847 CAG.Lie.Symplectic <> mat_add_neg prfax
+R1854:1860 CAG.Lie.Linear <> mat_mul def
+R1886:1900 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R1886:1900 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R1886:1900 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R1912:1925 CAG.Lie.Symplectic <> mat_add_zero_l prfax
+R1912:1925 CAG.Lie.Symplectic <> mat_add_zero_l prfax
+prf 1998:2008 <> orth_cond_r
+binder 2011:2011 <> F:9
+R2028:2032 CAG.Galois.Field <> Field rec
+R2034:2034 CAG.Lie.Orthogonal <> F:9 var
+binder 2022:2024 <> fld:10
+R2044:2049 CAG.Lie.Linear <> Matrix def
+R2051:2051 CAG.Lie.Orthogonal <> F:9 var
+binder 2038:2038 <> s:11
+binder 2040:2040 <> A:12
+R2080:2087 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2060:2071 CAG.Lie.Orthogonal <> IsOrthogonal def
+R2079:2079 CAG.Lie.Orthogonal <> A:12 var
+R2077:2077 CAG.Lie.Orthogonal <> s:11 var
+R2073:2075 CAG.Lie.Orthogonal <> fld:10 var
+R2103:2105 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2088:2094 CAG.Lie.Linear <> mat_mul def
+R2102:2102 CAG.Lie.Orthogonal <> A:12 var
+R2100:2100 CAG.Lie.Orthogonal <> s:11 var
+R2096:2098 CAG.Lie.Orthogonal <> fld:10 var
+R2106:2112 CAG.Lie.Linear <> mat_neg def
+R2119:2125 CAG.Lie.Linear <> mat_mul def
+R2153:2153 CAG.Lie.Orthogonal <> s:11 var
+R2132:2144 CAG.Lie.Symplectic <> mat_transpose def
+R2150:2150 CAG.Lie.Orthogonal <> A:12 var
+R2146:2148 CAG.Lie.Orthogonal <> fld:10 var
+R2127:2129 CAG.Lie.Orthogonal <> fld:10 var
+R2114:2116 CAG.Lie.Orthogonal <> fld:10 var
+R2173:2184 CAG.Lie.Orthogonal <> IsOrthogonal def
+R2210:2223 CAG.Lie.Symplectic <> mat_add_zero_l prfax
+R2230:2236 CAG.Lie.Linear <> mat_mul def
+R2210:2223 CAG.Lie.Symplectic <> mat_add_zero_l prfax
+R2230:2236 CAG.Lie.Linear <> mat_mul def
+R2210:2223 CAG.Lie.Symplectic <> mat_add_zero_l prfax
+R2230:2236 CAG.Lie.Linear <> mat_mul def
+R2263:2275 CAG.Lie.Symplectic <> mat_add_neg_l prfax
+R2282:2288 CAG.Lie.Linear <> mat_mul def
+R2295:2307 CAG.Lie.Symplectic <> mat_transpose def
+R2263:2275 CAG.Lie.Symplectic <> mat_add_neg_l prfax
+R2282:2288 CAG.Lie.Linear <> mat_mul def
+R2295:2307 CAG.Lie.Symplectic <> mat_transpose def
+R2263:2275 CAG.Lie.Symplectic <> mat_add_neg_l prfax
+R2282:2288 CAG.Lie.Linear <> mat_mul def
+R2295:2307 CAG.Lie.Symplectic <> mat_transpose def
+R2331:2345 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R2331:2345 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R2331:2345 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R2357:2370 CAG.Lie.Symplectic <> mat_add_zero_r prfax
+R2357:2370 CAG.Lie.Symplectic <> mat_add_zero_r prfax
+prf 2546:2563 <> orth_is_subalgebra
+binder 2566:2566 <> F:13
+R2583:2587 CAG.Galois.Field <> Field rec
+R2589:2589 CAG.Lie.Orthogonal <> F:13 var
+binder 2577:2579 <> fld:14
+R2597:2599 Corelib.Init.Datatypes <> nat ind
+binder 2593:2593 <> n:15
+R2607:2612 CAG.Lie.Linear <> Matrix def
+R2614:2614 CAG.Lie.Orthogonal <> F:13 var
+binder 2603:2603 <> s:16
+R2623:2634 CAG.Lie.BasicDef <> IsSubalgebra rec
+R2648:2659 CAG.Lie.Orthogonal <> IsOrthogonal def
+R2665:2665 CAG.Lie.Orthogonal <> s:16 var
+R2661:2663 CAG.Lie.Orthogonal <> fld:14 var
+R2637:2638 CAG.Lie.Linear <> gl def
+R2644:2644 CAG.Lie.Orthogonal <> n:15 var
+R2640:2642 CAG.Lie.Orthogonal <> fld:14 var
+R2719:2730 CAG.Lie.Orthogonal <> IsOrthogonal def
+R2745:2763 CAG.Lie.SpecialLinear <> gl_zero_eq_mat_zero thm
+R2766:2783 CAG.Lie.Symplectic <> mat_transpose_zero prfax
+R2745:2763 CAG.Lie.SpecialLinear <> gl_zero_eq_mat_zero thm
+R2745:2763 CAG.Lie.SpecialLinear <> gl_zero_eq_mat_zero thm
+R2766:2783 CAG.Lie.Symplectic <> mat_transpose_zero prfax
+R2766:2783 CAG.Lie.Symplectic <> mat_transpose_zero prfax
+R2798:2813 CAG.Lie.Symplectic <> mat_mul_zero_l_n prfax
+R2816:2831 CAG.Lie.Symplectic <> mat_mul_zero_r_n prfax
+R2798:2813 CAG.Lie.Symplectic <> mat_mul_zero_l_n prfax
+R2798:2813 CAG.Lie.Symplectic <> mat_mul_zero_l_n prfax
+R2816:2831 CAG.Lie.Symplectic <> mat_mul_zero_r_n prfax
+R2816:2831 CAG.Lie.Symplectic <> mat_mul_zero_r_n prfax
+R2840:2853 CAG.Lie.Symplectic <> mat_add_zero_l prfax
+R2840:2853 CAG.Lie.Symplectic <> mat_add_zero_l prfax
+R2906:2917 CAG.Lie.Orthogonal <> IsOrthogonal def
+R2937:2953 CAG.Lie.SpecialLinear <> gl_add_eq_mat_add thm
+R2956:2972 CAG.Lie.Symplectic <> mat_transpose_add prfax
+R2937:2953 CAG.Lie.SpecialLinear <> gl_add_eq_mat_add thm
+R2937:2953 CAG.Lie.SpecialLinear <> gl_add_eq_mat_add thm
+R2956:2972 CAG.Lie.Symplectic <> mat_transpose_add prfax
+R2956:2972 CAG.Lie.Symplectic <> mat_transpose_add prfax
+R2987:3005 CAG.Lie.Symplectic <> mat_mul_add_distr_r prfax
+R3008:3026 CAG.Lie.Symplectic <> mat_mul_add_distr_l prfax
+R2987:3005 CAG.Lie.Symplectic <> mat_mul_add_distr_r prfax
+R2987:3005 CAG.Lie.Symplectic <> mat_mul_add_distr_r prfax
+R3008:3026 CAG.Lie.Symplectic <> mat_mul_add_distr_l prfax
+R3008:3026 CAG.Lie.Symplectic <> mat_mul_add_distr_l prfax
+R3042:3056 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R3184:3190 CAG.Lie.Linear <> mat_add def
+R3215:3221 CAG.Lie.Linear <> mat_mul def
+R3197:3203 CAG.Lie.Linear <> mat_mul def
+R3131:3137 CAG.Lie.Linear <> mat_mul def
+R3144:3156 CAG.Lie.Symplectic <> mat_transpose def
+R3078:3084 CAG.Lie.Linear <> mat_mul def
+R3091:3103 CAG.Lie.Symplectic <> mat_transpose def
+R3042:3056 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R3184:3190 CAG.Lie.Linear <> mat_add def
+R3215:3221 CAG.Lie.Linear <> mat_mul def
+R3197:3203 CAG.Lie.Linear <> mat_mul def
+R3131:3137 CAG.Lie.Linear <> mat_mul def
+R3144:3156 CAG.Lie.Symplectic <> mat_transpose def
+R3078:3084 CAG.Lie.Linear <> mat_mul def
+R3091:3103 CAG.Lie.Symplectic <> mat_transpose def
+R3042:3056 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R3184:3190 CAG.Lie.Linear <> mat_add def
+R3215:3221 CAG.Lie.Linear <> mat_mul def
+R3197:3203 CAG.Lie.Linear <> mat_mul def
+R3131:3137 CAG.Lie.Linear <> mat_mul def
+R3144:3156 CAG.Lie.Symplectic <> mat_transpose def
+R3078:3084 CAG.Lie.Linear <> mat_mul def
+R3091:3103 CAG.Lie.Symplectic <> mat_transpose def
+R3251:3265 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R3382:3388 CAG.Lie.Linear <> mat_mul def
+R3346:3352 CAG.Lie.Linear <> mat_mul def
+R3290:3296 CAG.Lie.Linear <> mat_mul def
+R3303:3315 CAG.Lie.Symplectic <> mat_transpose def
+R3251:3265 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R3382:3388 CAG.Lie.Linear <> mat_mul def
+R3346:3352 CAG.Lie.Linear <> mat_mul def
+R3290:3296 CAG.Lie.Linear <> mat_mul def
+R3303:3315 CAG.Lie.Symplectic <> mat_transpose def
+R3251:3265 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R3382:3388 CAG.Lie.Linear <> mat_mul def
+R3346:3352 CAG.Lie.Linear <> mat_mul def
+R3290:3296 CAG.Lie.Linear <> mat_mul def
+R3303:3315 CAG.Lie.Symplectic <> mat_transpose def
+R3414:3425 CAG.Lie.Symplectic <> mat_add_comm prfax
+R3470:3476 CAG.Lie.Linear <> mat_mul def
+R3432:3438 CAG.Lie.Linear <> mat_mul def
+R3445:3457 CAG.Lie.Symplectic <> mat_transpose def
+R3414:3425 CAG.Lie.Symplectic <> mat_add_comm prfax
+R3470:3476 CAG.Lie.Linear <> mat_mul def
+R3432:3438 CAG.Lie.Linear <> mat_mul def
+R3445:3457 CAG.Lie.Symplectic <> mat_transpose def
+R3414:3425 CAG.Lie.Symplectic <> mat_add_comm prfax
+R3470:3476 CAG.Lie.Linear <> mat_mul def
+R3432:3438 CAG.Lie.Linear <> mat_mul def
+R3445:3457 CAG.Lie.Symplectic <> mat_transpose def
+R3502:3516 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R3579:3585 CAG.Lie.Linear <> mat_mul def
+R3541:3547 CAG.Lie.Linear <> mat_mul def
+R3554:3566 CAG.Lie.Symplectic <> mat_transpose def
+R3523:3529 CAG.Lie.Linear <> mat_mul def
+R3502:3516 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R3579:3585 CAG.Lie.Linear <> mat_mul def
+R3541:3547 CAG.Lie.Linear <> mat_mul def
+R3554:3566 CAG.Lie.Symplectic <> mat_transpose def
+R3523:3529 CAG.Lie.Linear <> mat_mul def
+R3502:3516 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R3579:3585 CAG.Lie.Linear <> mat_mul def
+R3541:3547 CAG.Lie.Linear <> mat_mul def
+R3554:3566 CAG.Lie.Symplectic <> mat_transpose def
+R3523:3529 CAG.Lie.Linear <> mat_mul def
+R3614:3628 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R3745:3751 CAG.Lie.Linear <> mat_add def
+R3796:3802 CAG.Lie.Linear <> mat_mul def
+R3758:3764 CAG.Lie.Linear <> mat_mul def
+R3771:3783 CAG.Lie.Symplectic <> mat_transpose def
+R3709:3715 CAG.Lie.Linear <> mat_mul def
+R3653:3659 CAG.Lie.Linear <> mat_mul def
+R3666:3678 CAG.Lie.Symplectic <> mat_transpose def
+R3614:3628 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R3745:3751 CAG.Lie.Linear <> mat_add def
+R3796:3802 CAG.Lie.Linear <> mat_mul def
+R3758:3764 CAG.Lie.Linear <> mat_mul def
+R3771:3783 CAG.Lie.Symplectic <> mat_transpose def
+R3709:3715 CAG.Lie.Linear <> mat_mul def
+R3653:3659 CAG.Lie.Linear <> mat_mul def
+R3666:3678 CAG.Lie.Symplectic <> mat_transpose def
+R3614:3628 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R3745:3751 CAG.Lie.Linear <> mat_add def
+R3796:3802 CAG.Lie.Linear <> mat_mul def
+R3758:3764 CAG.Lie.Linear <> mat_mul def
+R3771:3783 CAG.Lie.Symplectic <> mat_transpose def
+R3709:3715 CAG.Lie.Linear <> mat_mul def
+R3653:3659 CAG.Lie.Linear <> mat_mul def
+R3666:3678 CAG.Lie.Symplectic <> mat_transpose def
+R3842:3855 CAG.Lie.Symplectic <> mat_add_zero_l prfax
+R3842:3855 CAG.Lie.Symplectic <> mat_add_zero_l prfax
+R3903:3914 CAG.Lie.Orthogonal <> IsOrthogonal def
+R3934:3950 CAG.Lie.SpecialLinear <> gl_neg_eq_mat_neg thm
+R3953:3969 CAG.Lie.Symplectic <> mat_transpose_neg prfax
+R3934:3950 CAG.Lie.SpecialLinear <> gl_neg_eq_mat_neg thm
+R3934:3950 CAG.Lie.SpecialLinear <> gl_neg_eq_mat_neg thm
+R3953:3969 CAG.Lie.Symplectic <> mat_transpose_neg prfax
+R3953:3969 CAG.Lie.Symplectic <> mat_transpose_neg prfax
+R3984:3996 CAG.Lie.Symplectic <> mat_mul_neg_l prfax
+R3999:4011 CAG.Lie.Symplectic <> mat_mul_neg_r prfax
+R3984:3996 CAG.Lie.Symplectic <> mat_mul_neg_l prfax
+R3984:3996 CAG.Lie.Symplectic <> mat_mul_neg_l prfax
+R3999:4011 CAG.Lie.Symplectic <> mat_mul_neg_r prfax
+R3999:4011 CAG.Lie.Symplectic <> mat_mul_neg_r prfax
+R4029:4039 CAG.Lie.Symplectic <> mat_neg_add prfax
+R4029:4039 CAG.Lie.Symplectic <> mat_neg_add prfax
+R4029:4039 CAG.Lie.Symplectic <> mat_neg_add prfax
+R4060:4071 CAG.Lie.Symplectic <> mat_neg_zero prfax
+R4060:4071 CAG.Lie.Symplectic <> mat_neg_zero prfax
+R4134:4145 CAG.Lie.Orthogonal <> IsOrthogonal def
+R4165:4185 CAG.Lie.SpecialLinear <> gl_scale_eq_mat_scale thm
+R4188:4206 CAG.Lie.Symplectic <> mat_transpose_scale prfax
+R4165:4185 CAG.Lie.SpecialLinear <> gl_scale_eq_mat_scale thm
+R4165:4185 CAG.Lie.SpecialLinear <> gl_scale_eq_mat_scale thm
+R4188:4206 CAG.Lie.Symplectic <> mat_transpose_scale prfax
+R4188:4206 CAG.Lie.Symplectic <> mat_transpose_scale prfax
+R4221:4235 CAG.Lie.Symplectic <> mat_mul_scale_l prfax
+R4238:4252 CAG.Lie.Symplectic <> mat_mul_scale_r prfax
+R4221:4235 CAG.Lie.Symplectic <> mat_mul_scale_l prfax
+R4221:4235 CAG.Lie.Symplectic <> mat_mul_scale_l prfax
+R4238:4252 CAG.Lie.Symplectic <> mat_mul_scale_r prfax
+R4238:4252 CAG.Lie.Symplectic <> mat_mul_scale_r prfax
+R4270:4286 CAG.Lie.Symplectic <> mat_scale_add_mat prfax
+R4270:4286 CAG.Lie.Symplectic <> mat_scale_add_mat prfax
+R4270:4286 CAG.Lie.Symplectic <> mat_scale_add_mat prfax
+R4307:4324 CAG.Lie.Symplectic <> mat_scale_zero_mat prfax
+R4307:4324 CAG.Lie.Symplectic <> mat_scale_zero_mat prfax
+R4428:4439 CAG.Lie.Orthogonal <> IsOrthogonal def
+R4459:4483 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket thm
+R4459:4483 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket thm
+R4459:4483 CAG.Lie.SpecialLinear <> gl_bracket_eq_mat_bracket thm
+R4498:4518 CAG.Lie.Symplectic <> mat_transpose_bracket thm
+R4498:4518 CAG.Lie.Symplectic <> mat_transpose_bracket thm
+R4498:4518 CAG.Lie.Symplectic <> mat_transpose_bracket thm
+R4532:4542 CAG.Lie.Linear <> mat_bracket def
+R4557:4575 CAG.Lie.Symplectic <> mat_mul_add_distr_r prfax
+R4578:4596 CAG.Lie.Symplectic <> mat_mul_add_distr_l prfax
+R4557:4575 CAG.Lie.Symplectic <> mat_mul_add_distr_r prfax
+R4557:4575 CAG.Lie.Symplectic <> mat_mul_add_distr_r prfax
+R4578:4596 CAG.Lie.Symplectic <> mat_mul_add_distr_l prfax
+R4578:4596 CAG.Lie.Symplectic <> mat_mul_add_distr_l prfax
+R4611:4623 CAG.Lie.Symplectic <> mat_mul_neg_l prfax
+R4626:4638 CAG.Lie.Symplectic <> mat_mul_neg_r prfax
+R4611:4623 CAG.Lie.Symplectic <> mat_mul_neg_l prfax
+R4611:4623 CAG.Lie.Symplectic <> mat_mul_neg_l prfax
+R4626:4638 CAG.Lie.Symplectic <> mat_mul_neg_r prfax
+R4626:4638 CAG.Lie.Symplectic <> mat_mul_neg_r prfax
+R4654:4668 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R4697:4709 CAG.Lie.Symplectic <> mat_transpose def
+R4675:4687 CAG.Lie.Symplectic <> mat_transpose def
+R4654:4668 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R4697:4709 CAG.Lie.Symplectic <> mat_transpose def
+R4675:4687 CAG.Lie.Symplectic <> mat_transpose def
+R4654:4668 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R4697:4709 CAG.Lie.Symplectic <> mat_transpose def
+R4675:4687 CAG.Lie.Symplectic <> mat_transpose def
+R4735:4749 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R4778:4790 CAG.Lie.Symplectic <> mat_transpose def
+R4756:4768 CAG.Lie.Symplectic <> mat_transpose def
+R4735:4749 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R4778:4790 CAG.Lie.Symplectic <> mat_transpose def
+R4756:4768 CAG.Lie.Symplectic <> mat_transpose def
+R4735:4749 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R4778:4790 CAG.Lie.Symplectic <> mat_transpose def
+R4756:4768 CAG.Lie.Symplectic <> mat_transpose def
+R4819:4833 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R4819:4833 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R4819:4833 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R4863:4877 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R4863:4877 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R4863:4877 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R4904:4914 CAG.Lie.Orthogonal <> orth_cond_l thm
+R4930:4940 CAG.Lie.Orthogonal <> orth_cond_l thm
+R4904:4914 CAG.Lie.Orthogonal <> orth_cond_l thm
+R4904:4914 CAG.Lie.Orthogonal <> orth_cond_l thm
+R4930:4940 CAG.Lie.Orthogonal <> orth_cond_l thm
+R4930:4940 CAG.Lie.Orthogonal <> orth_cond_l thm
+R4967:4979 CAG.Lie.Symplectic <> mat_mul_neg_r prfax
+R4982:4994 CAG.Lie.Symplectic <> mat_mul_neg_r prfax
+R4967:4979 CAG.Lie.Symplectic <> mat_mul_neg_r prfax
+R4967:4979 CAG.Lie.Symplectic <> mat_mul_neg_r prfax
+R4982:4994 CAG.Lie.Symplectic <> mat_mul_neg_r prfax
+R4982:4994 CAG.Lie.Symplectic <> mat_mul_neg_r prfax
+R5009:5019 CAG.Lie.Symplectic <> mat_neg_neg prfax
+R5009:5019 CAG.Lie.Symplectic <> mat_neg_neg prfax
+R5009:5019 CAG.Lie.Symplectic <> mat_neg_neg prfax
+R5038:5052 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R5059:5071 CAG.Lie.Symplectic <> mat_transpose def
+R5038:5052 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R5059:5071 CAG.Lie.Symplectic <> mat_transpose def
+R5038:5052 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R5059:5071 CAG.Lie.Symplectic <> mat_transpose def
+R5102:5116 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R5123:5135 CAG.Lie.Symplectic <> mat_transpose def
+R5102:5116 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R5123:5135 CAG.Lie.Symplectic <> mat_transpose def
+R5102:5116 CAG.Lie.Symplectic <> mat_mul_assoc_m prfax
+R5123:5135 CAG.Lie.Symplectic <> mat_transpose def
+R5163:5173 CAG.Lie.Orthogonal <> orth_cond_l thm
+R5189:5199 CAG.Lie.Orthogonal <> orth_cond_l thm
+R5163:5173 CAG.Lie.Orthogonal <> orth_cond_l thm
+R5163:5173 CAG.Lie.Orthogonal <> orth_cond_l thm
+R5189:5199 CAG.Lie.Orthogonal <> orth_cond_l thm
+R5189:5199 CAG.Lie.Orthogonal <> orth_cond_l thm
+R5226:5238 CAG.Lie.Symplectic <> mat_mul_neg_l prfax
+R5241:5253 CAG.Lie.Symplectic <> mat_mul_neg_l prfax
+R5226:5238 CAG.Lie.Symplectic <> mat_mul_neg_l prfax
+R5226:5238 CAG.Lie.Symplectic <> mat_mul_neg_l prfax
+R5241:5253 CAG.Lie.Symplectic <> mat_mul_neg_l prfax
+R5241:5253 CAG.Lie.Symplectic <> mat_mul_neg_l prfax
+R5268:5278 CAG.Lie.Symplectic <> mat_neg_neg prfax
+R5268:5278 CAG.Lie.Symplectic <> mat_neg_neg prfax
+R5268:5278 CAG.Lie.Symplectic <> mat_neg_neg prfax
+R5294:5308 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R5415:5421 CAG.Lie.Linear <> mat_add def
+R5478:5484 CAG.Lie.Linear <> mat_neg def
+R5491:5497 CAG.Lie.Linear <> mat_mul def
+R5504:5510 CAG.Lie.Linear <> mat_mul def
+R5436:5442 CAG.Lie.Linear <> mat_mul def
+R5449:5455 CAG.Lie.Linear <> mat_mul def
+R5361:5367 CAG.Lie.Linear <> mat_neg def
+R5374:5380 CAG.Lie.Linear <> mat_mul def
+R5387:5393 CAG.Lie.Linear <> mat_mul def
+R5321:5327 CAG.Lie.Linear <> mat_mul def
+R5334:5340 CAG.Lie.Linear <> mat_mul def
+R5294:5308 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R5415:5421 CAG.Lie.Linear <> mat_add def
+R5478:5484 CAG.Lie.Linear <> mat_neg def
+R5491:5497 CAG.Lie.Linear <> mat_mul def
+R5504:5510 CAG.Lie.Linear <> mat_mul def
+R5436:5442 CAG.Lie.Linear <> mat_mul def
+R5449:5455 CAG.Lie.Linear <> mat_mul def
+R5361:5367 CAG.Lie.Linear <> mat_neg def
+R5374:5380 CAG.Lie.Linear <> mat_mul def
+R5387:5393 CAG.Lie.Linear <> mat_mul def
+R5321:5327 CAG.Lie.Linear <> mat_mul def
+R5334:5340 CAG.Lie.Linear <> mat_mul def
+R5294:5308 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R5415:5421 CAG.Lie.Linear <> mat_add def
+R5478:5484 CAG.Lie.Linear <> mat_neg def
+R5491:5497 CAG.Lie.Linear <> mat_mul def
+R5504:5510 CAG.Lie.Linear <> mat_mul def
+R5436:5442 CAG.Lie.Linear <> mat_mul def
+R5449:5455 CAG.Lie.Linear <> mat_mul def
+R5361:5367 CAG.Lie.Linear <> mat_neg def
+R5374:5380 CAG.Lie.Linear <> mat_mul def
+R5387:5393 CAG.Lie.Linear <> mat_mul def
+R5321:5327 CAG.Lie.Linear <> mat_mul def
+R5334:5340 CAG.Lie.Linear <> mat_mul def
+R5544:5558 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R5665:5671 CAG.Lie.Linear <> mat_neg def
+R5678:5684 CAG.Lie.Linear <> mat_mul def
+R5691:5697 CAG.Lie.Linear <> mat_mul def
+R5625:5631 CAG.Lie.Linear <> mat_mul def
+R5638:5644 CAG.Lie.Linear <> mat_mul def
+R5571:5577 CAG.Lie.Linear <> mat_neg def
+R5584:5590 CAG.Lie.Linear <> mat_mul def
+R5597:5603 CAG.Lie.Linear <> mat_mul def
+R5544:5558 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R5665:5671 CAG.Lie.Linear <> mat_neg def
+R5678:5684 CAG.Lie.Linear <> mat_mul def
+R5691:5697 CAG.Lie.Linear <> mat_mul def
+R5625:5631 CAG.Lie.Linear <> mat_mul def
+R5638:5644 CAG.Lie.Linear <> mat_mul def
+R5571:5577 CAG.Lie.Linear <> mat_neg def
+R5584:5590 CAG.Lie.Linear <> mat_mul def
+R5597:5603 CAG.Lie.Linear <> mat_mul def
+R5544:5558 CAG.Lie.Symplectic <> mat_add_assoc_m prfax
+R5665:5671 CAG.Lie.Linear <> mat_neg def
+R5678:5684 CAG.Lie.Linear <> mat_mul def
+R5691:5697 CAG.Lie.Linear <> mat_mul def
+R5625:5631 CAG.Lie.Linear <> mat_mul def
+R5638:5644 CAG.Lie.Linear <> mat_mul def
+R5571:5577 CAG.Lie.Linear <> mat_neg def
+R5584:5590 CAG.Lie.Linear <> mat_mul def
+R5597:5603 CAG.Lie.Linear <> mat_mul def
+R5726:5738 CAG.Lie.Symplectic <> mat_add_neg_l prfax
+R5741:5754 CAG.Lie.Symplectic <> mat_add_zero_l prfax
+R5726:5738 CAG.Lie.Symplectic <> mat_add_neg_l prfax
+R5726:5738 CAG.Lie.Symplectic <> mat_add_neg_l prfax
+R5741:5754 CAG.Lie.Symplectic <> mat_add_zero_l prfax
+R5741:5754 CAG.Lie.Symplectic <> mat_add_zero_l prfax
+R5767:5777 CAG.Lie.Symplectic <> mat_add_neg prfax
+R5767:5777 CAG.Lie.Symplectic <> mat_add_neg prfax
+ax 6087:6093 <> bl_form
+binder 6105:6105 <> F:17
+R6122:6126 CAG.Galois.Field <> Field rec
+R6128:6128 CAG.Lie.Orthogonal <> F:17 var
+binder 6116:6118 <> fld:18
+R6136:6138 Corelib.Init.Datatypes <> nat ind
+binder 6132:6132 <> l:19
+R6142:6147 CAG.Lie.Linear <> Matrix def
+R6149:6149 CAG.Lie.Orthogonal <> F:17 var
+ax 6220:6226 <> dl_form
+binder 6238:6238 <> F:22
+R6255:6259 CAG.Galois.Field <> Field rec
+R6261:6261 CAG.Lie.Orthogonal <> F:22 var
+binder 6249:6251 <> fld:23
+R6269:6271 Corelib.Init.Datatypes <> nat ind
+binder 6265:6265 <> l:24
+R6275:6280 CAG.Lie.Linear <> Matrix def
+R6282:6282 CAG.Lie.Orthogonal <> F:22 var
+ax 6334:6345 <> bl_form_symm
+binder 6359:6359 <> F:27
+R6376:6380 CAG.Galois.Field <> Field rec
+R6382:6382 CAG.Lie.Orthogonal <> F:27 var
+binder 6370:6372 <> fld:28
+R6390:6392 Corelib.Init.Datatypes <> nat ind
+binder 6386:6386 <> l:29
+R6433:6435 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6400:6412 CAG.Lie.Symplectic <> mat_transpose def
+R6419:6425 CAG.Lie.Orthogonal <> bl_form prfax
+R6431:6431 CAG.Lie.Orthogonal <> l:29 var
+R6427:6429 CAG.Lie.Orthogonal <> fld:28 var
+R6414:6416 CAG.Lie.Orthogonal <> fld:28 var
+R6436:6442 CAG.Lie.Orthogonal <> bl_form prfax
+R6448:6448 CAG.Lie.Orthogonal <> l:29 var
+R6444:6446 CAG.Lie.Orthogonal <> fld:28 var
+ax 6458:6469 <> dl_form_symm
+binder 6483:6483 <> F:32
+R6500:6504 CAG.Galois.Field <> Field rec
+R6506:6506 CAG.Lie.Orthogonal <> F:32 var
+binder 6494:6496 <> fld:33
+R6514:6516 Corelib.Init.Datatypes <> nat ind
+binder 6510:6510 <> l:34
+R6557:6559 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6524:6536 CAG.Lie.Symplectic <> mat_transpose def
+R6543:6549 CAG.Lie.Orthogonal <> dl_form prfax
+R6555:6555 CAG.Lie.Orthogonal <> l:34 var
+R6551:6553 CAG.Lie.Orthogonal <> fld:33 var
+R6538:6540 CAG.Lie.Orthogonal <> fld:33 var
+R6560:6566 CAG.Lie.Orthogonal <> dl_form prfax
+R6572:6572 CAG.Lie.Orthogonal <> l:34 var
+R6568:6570 CAG.Lie.Orthogonal <> fld:33 var
+def 6806:6809 <> IsBl
+binder 6812:6812 <> F:37
+R6829:6833 CAG.Galois.Field <> Field rec
+R6835:6835 CAG.Lie.Orthogonal <> F:37 var
+binder 6823:6825 <> fld:38
+R6843:6845 Corelib.Init.Datatypes <> nat ind
+binder 6839:6839 <> l:39
+R6853:6858 CAG.Lie.Linear <> Matrix def
+R6860:6860 CAG.Lie.Orthogonal <> F:37 var
+binder 6849:6849 <> A:40
+R6875:6886 CAG.Lie.Orthogonal <> IsOrthogonal def
+R6908:6908 CAG.Lie.Orthogonal <> A:40 var
+R6893:6899 CAG.Lie.Orthogonal <> bl_form prfax
+R6905:6905 CAG.Lie.Orthogonal <> l:39 var
+R6901:6903 CAG.Lie.Orthogonal <> fld:38 var
+R6888:6890 CAG.Lie.Orthogonal <> fld:38 var
+prf 6918:6933 <> bl_is_subalgebra
+binder 6936:6936 <> F:41
+R6953:6957 CAG.Galois.Field <> Field rec
+R6959:6959 CAG.Lie.Orthogonal <> F:41 var
+binder 6947:6949 <> fld:42
+R6967:6969 Corelib.Init.Datatypes <> nat ind
+binder 6963:6963 <> l:43
+R6978:6989 CAG.Lie.BasicDef <> IsSubalgebra rec
+R7013:7016 CAG.Lie.Orthogonal <> IsBl def
+R7022:7022 CAG.Lie.Orthogonal <> l:43 var
+R7018:7020 CAG.Lie.Orthogonal <> fld:42 var
+R6992:6993 CAG.Lie.Linear <> gl def
+R7005:7007 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R7001:7003 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R7004:7004 CAG.Lie.Orthogonal <> l:43 var
+R6995:6997 CAG.Lie.Orthogonal <> fld:42 var
+R7042:7045 CAG.Lie.Orthogonal <> IsBl def
+R7054:7071 CAG.Lie.Orthogonal <> orth_is_subalgebra thm
+R7054:7071 CAG.Lie.Orthogonal <> orth_is_subalgebra thm
+def 7310:7313 <> IsDl
+binder 7316:7316 <> F:44
+R7333:7337 CAG.Galois.Field <> Field rec
+R7339:7339 CAG.Lie.Orthogonal <> F:44 var
+binder 7327:7329 <> fld:45
+R7347:7349 Corelib.Init.Datatypes <> nat ind
+binder 7343:7343 <> l:46
+R7357:7362 CAG.Lie.Linear <> Matrix def
+R7364:7364 CAG.Lie.Orthogonal <> F:44 var
+binder 7353:7353 <> A:47
+R7379:7390 CAG.Lie.Orthogonal <> IsOrthogonal def
+R7412:7412 CAG.Lie.Orthogonal <> A:47 var
+R7397:7403 CAG.Lie.Orthogonal <> dl_form prfax
+R7409:7409 CAG.Lie.Orthogonal <> l:46 var
+R7405:7407 CAG.Lie.Orthogonal <> fld:45 var
+R7392:7394 CAG.Lie.Orthogonal <> fld:45 var
+prf 7422:7437 <> dl_is_subalgebra
+binder 7440:7440 <> F:48
+R7457:7461 CAG.Galois.Field <> Field rec
+R7463:7463 CAG.Lie.Orthogonal <> F:48 var
+binder 7451:7453 <> fld:49
+R7471:7473 Corelib.Init.Datatypes <> nat ind
+binder 7467:7467 <> l:50
+R7482:7493 CAG.Lie.BasicDef <> IsSubalgebra rec
+R7513:7516 CAG.Lie.Orthogonal <> IsDl def
+R7522:7522 CAG.Lie.Orthogonal <> l:50 var
+R7518:7520 CAG.Lie.Orthogonal <> fld:49 var
+R7496:7497 CAG.Lie.Linear <> gl def
+R7505:7507 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R7508:7508 CAG.Lie.Orthogonal <> l:50 var
+R7499:7501 CAG.Lie.Orthogonal <> fld:49 var
+R7542:7545 CAG.Lie.Orthogonal <> IsDl def
+R7554:7571 CAG.Lie.Orthogonal <> orth_is_subalgebra thm
+R7554:7571 CAG.Lie.Orthogonal <> orth_is_subalgebra thm
+ax 7994:8006 <> bl_block_char
+binder 8018:8018 <> F:51
+R8035:8039 CAG.Galois.Field <> Field rec
+R8041:8041 CAG.Lie.Orthogonal <> F:51 var
+binder 8029:8031 <> fld:52
+R8049:8051 Corelib.Init.Datatypes <> nat ind
+binder 8045:8045 <> l:53
+R8059:8064 CAG.Lie.Linear <> Matrix def
+R8066:8066 CAG.Lie.Orthogonal <> F:51 var
+binder 8055:8055 <> A:54
+R8086:8089 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8074:8077 CAG.Lie.Orthogonal <> IsBl def
+R8085:8085 CAG.Lie.Orthogonal <> A:54 var
+R8083:8083 CAG.Lie.Orthogonal <> l:53 var
+R8079:8081 CAG.Lie.Orthogonal <> fld:52 var
+R8090:8093 Corelib.Init.Logic <> True ind
+ax 8255:8267 <> dl_block_char
+binder 8279:8279 <> F:57
+R8296:8300 CAG.Galois.Field <> Field rec
+R8302:8302 CAG.Lie.Orthogonal <> F:57 var
+binder 8290:8292 <> fld:58
+R8310:8312 Corelib.Init.Datatypes <> nat ind
+binder 8306:8306 <> l:59
+R8320:8325 CAG.Lie.Linear <> Matrix def
+R8327:8327 CAG.Lie.Orthogonal <> F:57 var
+binder 8316:8316 <> A:60
+R8347:8350 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8335:8338 CAG.Lie.Orthogonal <> IsDl def
+R8346:8346 CAG.Lie.Orthogonal <> A:60 var
+R8344:8344 CAG.Lie.Orthogonal <> l:59 var
+R8340:8342 CAG.Lie.Orthogonal <> fld:58 var
+R8351:8354 Corelib.Init.Logic <> True ind

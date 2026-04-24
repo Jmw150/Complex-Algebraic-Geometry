@@ -1,0 +1,1709 @@
+DIGEST dba80d7b1960b93b0d7cb265aa3289df
+FCAG.Groups.DirectProduct
+R513:517 CAG.Group <> <> lib
+R547:551 Stdlib.Arith.Arith <> <> lib
+R553:555 Stdlib.micromega.Lia <> <> lib
+R557:560 Stdlib.Lists.List <> <> lib
+R562:569 Stdlib.Arith.PeanoNat <> <> lib
+R579:591 Stdlib.Lists.List ListNotations <> mod
+sec 793:805 <> DirectProduct
+var  820:820 DirectProduct G
+var  822:822 DirectProduct H
+var  844:845 DirectProduct sg
+var  865:866 DirectProduct sh
+R849:859 CAG.Group <> StrictGroup rec
+R861:861 CAG.Groups.DirectProduct <> DirectProduct.G var
+R870:880 CAG.Group <> StrictGroup rec
+R882:882 CAG.Groups.DirectProduct <> DirectProduct.H var
+def 933:938 <> dp_mul
+R948:950 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R947:947 CAG.Groups.DirectProduct <> DirectProduct.G var
+R951:951 CAG.Groups.DirectProduct <> DirectProduct.H var
+binder 941:941 <> x:5
+binder 943:943 <> y:6
+R957:959 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R956:956 CAG.Groups.DirectProduct <> DirectProduct.G var
+R960:960 CAG.Groups.DirectProduct <> DirectProduct.H var
+R969:969 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R995:996 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1022:1022 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R970:973 CAG.Group <> smul proj
+R975:975 CAG.Groups.DirectProduct <> DirectProduct.G var
+R977:978 CAG.Groups.DirectProduct <> DirectProduct.sg var
+R981:983 Corelib.Init.Datatypes <> fst def
+R985:985 CAG.Groups.DirectProduct <> x:5 var
+R989:991 Corelib.Init.Datatypes <> fst def
+R993:993 CAG.Groups.DirectProduct <> y:6 var
+R997:1000 CAG.Group <> smul proj
+R1002:1002 CAG.Groups.DirectProduct <> DirectProduct.H var
+R1004:1005 CAG.Groups.DirectProduct <> DirectProduct.sh var
+R1008:1010 Corelib.Init.Datatypes <> snd def
+R1012:1012 CAG.Groups.DirectProduct <> x:5 var
+R1016:1018 Corelib.Init.Datatypes <> snd def
+R1020:1020 CAG.Groups.DirectProduct <> y:6 var
+def 1039:1042 <> dp_e
+R1047:1049 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R1046:1046 CAG.Groups.DirectProduct <> DirectProduct.G var
+R1050:1050 CAG.Groups.DirectProduct <> DirectProduct.H var
+R1059:1059 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1067:1068 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1076:1076 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1060:1061 CAG.Group <> se proj
+R1063:1063 CAG.Groups.DirectProduct <> DirectProduct.G var
+R1065:1066 CAG.Groups.DirectProduct <> DirectProduct.sg var
+R1069:1070 CAG.Group <> se proj
+R1072:1072 CAG.Groups.DirectProduct <> DirectProduct.H var
+R1074:1075 CAG.Groups.DirectProduct <> DirectProduct.sh var
+def 1093:1098 <> dp_inv
+R1106:1108 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R1105:1105 CAG.Groups.DirectProduct <> DirectProduct.G var
+R1109:1109 CAG.Groups.DirectProduct <> DirectProduct.H var
+binder 1101:1101 <> x:7
+R1115:1117 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R1114:1114 CAG.Groups.DirectProduct <> DirectProduct.G var
+R1118:1118 CAG.Groups.DirectProduct <> DirectProduct.H var
+R1127:1127 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1145:1146 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1164:1164 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1128:1131 CAG.Group <> sinv proj
+R1133:1133 CAG.Groups.DirectProduct <> DirectProduct.G var
+R1135:1136 CAG.Groups.DirectProduct <> DirectProduct.sg var
+R1139:1141 Corelib.Init.Datatypes <> fst def
+R1143:1143 CAG.Groups.DirectProduct <> x:7 var
+R1147:1150 CAG.Group <> sinv proj
+R1152:1152 CAG.Groups.DirectProduct <> DirectProduct.H var
+R1154:1155 CAG.Groups.DirectProduct <> DirectProduct.sh var
+R1158:1160 Corelib.Init.Datatypes <> snd def
+R1162:1162 CAG.Groups.DirectProduct <> x:7 var
+def 1181:1198 <> DirectProductGroup
+R1202:1212 CAG.Group <> StrictGroup rec
+R1216:1218 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R1215:1215 CAG.Groups.DirectProduct <> DirectProduct.G var
+R1219:1219 CAG.Groups.DirectProduct <> DirectProduct.H var
+R1244:1247 CAG.Group <> mkSG constr
+R1251:1253 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R1250:1250 CAG.Groups.DirectProduct <> DirectProduct.G var
+R1254:1254 CAG.Groups.DirectProduct <> DirectProduct.H var
+R1257:1262 CAG.Groups.DirectProduct <> dp_mul def
+R1264:1267 CAG.Groups.DirectProduct <> dp_e def
+R1269:1274 CAG.Groups.DirectProduct <> dp_inv def
+R1244:1247 CAG.Group <> mkSG constr
+R1251:1253 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R1250:1250 CAG.Groups.DirectProduct <> DirectProduct.G var
+R1254:1254 CAG.Groups.DirectProduct <> DirectProduct.H var
+R1257:1262 CAG.Groups.DirectProduct <> dp_mul def
+R1264:1267 CAG.Groups.DirectProduct <> dp_e def
+R1269:1274 CAG.Groups.DirectProduct <> dp_inv def
+R1352:1357 CAG.Groups.DirectProduct <> dp_mul def
+R1389:1394 CAG.Group <> sassoc proj
+R1404:1409 CAG.Group <> sassoc proj
+R1389:1394 CAG.Group <> sassoc proj
+R1404:1409 CAG.Group <> sassoc proj
+R1462:1467 CAG.Groups.DirectProduct <> dp_mul def
+R1470:1473 CAG.Groups.DirectProduct <> dp_e def
+R1505:1513 CAG.Group <> sid_right proj
+R1523:1531 CAG.Group <> sid_right proj
+R1505:1513 CAG.Group <> sid_right proj
+R1523:1531 CAG.Group <> sid_right proj
+R1583:1588 CAG.Groups.DirectProduct <> dp_mul def
+R1591:1594 CAG.Groups.DirectProduct <> dp_e def
+R1626:1633 CAG.Group <> sid_left proj
+R1643:1650 CAG.Group <> sid_left proj
+R1626:1633 CAG.Group <> sid_left proj
+R1643:1650 CAG.Group <> sid_left proj
+R1704:1709 CAG.Groups.DirectProduct <> dp_mul def
+R1712:1717 CAG.Groups.DirectProduct <> dp_inv def
+R1720:1723 CAG.Groups.DirectProduct <> dp_e def
+R1755:1764 CAG.Group <> sinv_right proj
+R1774:1783 CAG.Group <> sinv_right proj
+R1755:1764 CAG.Group <> sinv_right proj
+R1774:1783 CAG.Group <> sinv_right proj
+R1836:1841 CAG.Groups.DirectProduct <> dp_mul def
+R1844:1849 CAG.Groups.DirectProduct <> dp_inv def
+R1852:1855 CAG.Groups.DirectProduct <> dp_e def
+R1887:1895 CAG.Group <> sinv_left proj
+R1905:1913 CAG.Group <> sinv_left proj
+R1887:1895 CAG.Group <> sinv_left proj
+R1905:1913 CAG.Group <> sinv_left proj
+prf 1984:1993 <> dp_mul_fst
+R2003:2005 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2002:2002 CAG.Groups.DirectProduct <> DirectProduct.G var
+R2006:2006 CAG.Groups.DirectProduct <> DirectProduct.H var
+binder 1996:1996 <> a:8
+binder 1998:1998 <> b:9
+R2058:2060 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2017:2019 Corelib.Init.Datatypes <> fst def
+R2022:2025 CAG.Group <> smul proj
+R2029:2031 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2028:2028 CAG.Groups.DirectProduct <> DirectProduct.G var
+R2032:2032 CAG.Groups.DirectProduct <> DirectProduct.H var
+R2035:2052 CAG.Groups.DirectProduct <> DirectProductGroup def
+R2054:2054 CAG.Groups.DirectProduct <> a:8 var
+R2056:2056 CAG.Groups.DirectProduct <> b:9 var
+R2061:2064 CAG.Group <> smul proj
+R2066:2066 CAG.Groups.DirectProduct <> DirectProduct.G var
+R2068:2069 CAG.Groups.DirectProduct <> DirectProduct.sg var
+R2072:2074 Corelib.Init.Datatypes <> fst def
+R2076:2076 CAG.Groups.DirectProduct <> a:8 var
+R2080:2082 Corelib.Init.Datatypes <> fst def
+R2084:2084 CAG.Groups.DirectProduct <> b:9 var
+prf 2124:2133 <> dp_mul_snd
+R2143:2145 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2142:2142 CAG.Groups.DirectProduct <> DirectProduct.G var
+R2146:2146 CAG.Groups.DirectProduct <> DirectProduct.H var
+binder 2136:2136 <> a:10
+binder 2138:2138 <> b:11
+R2198:2200 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2157:2159 Corelib.Init.Datatypes <> snd def
+R2162:2165 CAG.Group <> smul proj
+R2169:2171 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2168:2168 CAG.Groups.DirectProduct <> DirectProduct.G var
+R2172:2172 CAG.Groups.DirectProduct <> DirectProduct.H var
+R2175:2192 CAG.Groups.DirectProduct <> DirectProductGroup def
+R2194:2194 CAG.Groups.DirectProduct <> a:10 var
+R2196:2196 CAG.Groups.DirectProduct <> b:11 var
+R2201:2204 CAG.Group <> smul proj
+R2206:2206 CAG.Groups.DirectProduct <> DirectProduct.H var
+R2208:2209 CAG.Groups.DirectProduct <> DirectProduct.sh var
+R2212:2214 Corelib.Init.Datatypes <> snd def
+R2216:2216 CAG.Groups.DirectProduct <> a:10 var
+R2220:2222 Corelib.Init.Datatypes <> snd def
+R2224:2224 CAG.Groups.DirectProduct <> b:11 var
+prf 2264:2272 <> dp_id_fst
+R2317:2319 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2282:2284 Corelib.Init.Datatypes <> fst def
+R2287:2288 CAG.Group <> se proj
+R2292:2294 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2291:2291 CAG.Groups.DirectProduct <> DirectProduct.G var
+R2295:2295 CAG.Groups.DirectProduct <> DirectProduct.H var
+R2298:2315 CAG.Groups.DirectProduct <> DirectProductGroup def
+R2320:2321 CAG.Group <> se proj
+R2323:2323 CAG.Groups.DirectProduct <> DirectProduct.G var
+R2325:2326 CAG.Groups.DirectProduct <> DirectProduct.sg var
+prf 2365:2373 <> dp_id_snd
+R2418:2420 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2383:2385 Corelib.Init.Datatypes <> snd def
+R2388:2389 CAG.Group <> se proj
+R2393:2395 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2392:2392 CAG.Groups.DirectProduct <> DirectProduct.G var
+R2396:2396 CAG.Groups.DirectProduct <> DirectProduct.H var
+R2399:2416 CAG.Groups.DirectProduct <> DirectProductGroup def
+R2421:2422 CAG.Group <> se proj
+R2424:2424 CAG.Groups.DirectProduct <> DirectProduct.H var
+R2426:2427 CAG.Groups.DirectProduct <> DirectProduct.sh var
+prf 2466:2475 <> dp_inv_fst
+R2483:2485 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2482:2482 CAG.Groups.DirectProduct <> DirectProduct.G var
+R2486:2486 CAG.Groups.DirectProduct <> DirectProduct.H var
+binder 2478:2478 <> a:12
+R2536:2538 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2497:2499 Corelib.Init.Datatypes <> fst def
+R2502:2505 CAG.Group <> sinv proj
+R2509:2511 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2508:2508 CAG.Groups.DirectProduct <> DirectProduct.G var
+R2512:2512 CAG.Groups.DirectProduct <> DirectProduct.H var
+R2515:2532 CAG.Groups.DirectProduct <> DirectProductGroup def
+R2534:2534 CAG.Groups.DirectProduct <> a:12 var
+R2539:2542 CAG.Group <> sinv proj
+R2544:2544 CAG.Groups.DirectProduct <> DirectProduct.G var
+R2546:2547 CAG.Groups.DirectProduct <> DirectProduct.sg var
+R2550:2552 Corelib.Init.Datatypes <> fst def
+R2554:2554 CAG.Groups.DirectProduct <> a:12 var
+prf 2594:2603 <> dp_inv_snd
+R2611:2613 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2610:2610 CAG.Groups.DirectProduct <> DirectProduct.G var
+R2614:2614 CAG.Groups.DirectProduct <> DirectProduct.H var
+binder 2606:2606 <> a:13
+R2664:2666 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2625:2627 Corelib.Init.Datatypes <> snd def
+R2630:2633 CAG.Group <> sinv proj
+R2637:2639 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2636:2636 CAG.Groups.DirectProduct <> DirectProduct.G var
+R2640:2640 CAG.Groups.DirectProduct <> DirectProduct.H var
+R2643:2660 CAG.Groups.DirectProduct <> DirectProductGroup def
+R2662:2662 CAG.Groups.DirectProduct <> a:13 var
+R2667:2670 CAG.Group <> sinv proj
+R2672:2672 CAG.Groups.DirectProduct <> DirectProduct.H var
+R2674:2675 CAG.Groups.DirectProduct <> DirectProduct.sh var
+R2678:2680 Corelib.Init.Datatypes <> snd def
+R2682:2682 CAG.Groups.DirectProduct <> a:13 var
+prf 2757:2762 <> dp_ext
+R2772:2774 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2771:2771 CAG.Groups.DirectProduct <> DirectProduct.G var
+R2775:2775 CAG.Groups.DirectProduct <> DirectProduct.H var
+binder 2765:2765 <> a:14
+binder 2767:2767 <> b:15
+R2799:2802 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2791:2793 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2786:2788 Corelib.Init.Datatypes <> fst def
+R2790:2790 CAG.Groups.DirectProduct <> a:14 var
+R2794:2796 Corelib.Init.Datatypes <> fst def
+R2798:2798 CAG.Groups.DirectProduct <> b:15 var
+R2816:2819 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2808:2810 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2803:2805 Corelib.Init.Datatypes <> snd def
+R2807:2807 CAG.Groups.DirectProduct <> a:14 var
+R2811:2813 Corelib.Init.Datatypes <> snd def
+R2815:2815 CAG.Groups.DirectProduct <> b:15 var
+R2821:2823 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2820:2820 CAG.Groups.DirectProduct <> a:14 var
+R2824:2824 CAG.Groups.DirectProduct <> b:15 var
+R2901:2913 CAG.Groups.DirectProduct DirectProduct <> sec
+R2927:2944 CAG.Groups.DirectProduct <> DirectProductGroup def
+R2927:2944 CAG.Groups.DirectProduct <> DirectProductGroup def
+sec 3174:3183 <> Embeddings
+var  3198:3198 Embeddings G
+var  3200:3200 Embeddings H
+var  3222:3223 Embeddings sg
+var  3243:3244 Embeddings sh
+R3227:3237 CAG.Group <> StrictGroup rec
+R3239:3239 CAG.Groups.DirectProduct <> Embeddings.G var
+R3248:3258 CAG.Group <> StrictGroup rec
+R3260:3260 CAG.Groups.DirectProduct <> Embeddings.H var
+abbrev 3282:3283 <> GH
+R3289:3306 CAG.Groups.DirectProduct <> DirectProductGroup def
+R3311:3312 CAG.Groups.DirectProduct <> Embeddings.sh var
+R3308:3309 CAG.Groups.DirectProduct <> Embeddings.sg var
+def 3371:3380 <> embed_left
+R3387:3387 CAG.Groups.DirectProduct <> Embeddings.G var
+binder 3383:3383 <> g:20
+R3393:3395 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R3392:3392 CAG.Groups.DirectProduct <> Embeddings.G var
+R3396:3396 CAG.Groups.DirectProduct <> Embeddings.H var
+R3401:3401 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3403:3404 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3412:3412 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3402:3402 CAG.Groups.DirectProduct <> g:20 var
+R3405:3406 CAG.Group <> se proj
+R3408:3408 CAG.Groups.DirectProduct <> Embeddings.H var
+R3410:3411 CAG.Groups.DirectProduct <> Embeddings.sh var
+def 3470:3480 <> embed_right
+R3487:3487 CAG.Groups.DirectProduct <> Embeddings.H var
+binder 3483:3483 <> h:21
+R3493:3495 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R3492:3492 CAG.Groups.DirectProduct <> Embeddings.G var
+R3496:3496 CAG.Groups.DirectProduct <> Embeddings.H var
+R3501:3501 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3509:3510 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3512:3512 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R3502:3503 CAG.Group <> se proj
+R3505:3505 CAG.Groups.DirectProduct <> Embeddings.G var
+R3507:3508 CAG.Groups.DirectProduct <> Embeddings.sg var
+R3511:3511 CAG.Groups.DirectProduct <> h:21 var
+prf 3569:3582 <> embed_left_hom
+R3607:3607 CAG.Groups.DirectProduct <> Embeddings.G var
+binder 3599:3600 <> g1:22
+binder 3602:3603 <> g2:23
+R3646:3656 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3618:3627 CAG.Groups.DirectProduct <> embed_left def
+R3630:3633 CAG.Group <> smul proj
+R3635:3635 CAG.Groups.DirectProduct <> Embeddings.G var
+R3637:3638 CAG.Groups.DirectProduct <> Embeddings.sg var
+R3640:3641 CAG.Groups.DirectProduct <> g1:22 var
+R3643:3644 CAG.Groups.DirectProduct <> g2:23 var
+R3657:3660 CAG.Group <> smul proj
+R3664:3666 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R3663:3663 CAG.Groups.DirectProduct <> Embeddings.G var
+R3667:3667 CAG.Groups.DirectProduct <> Embeddings.H var
+R3670:3671 CAG.Groups.DirectProduct <> GH abbrev
+R3674:3683 CAG.Groups.DirectProduct <> embed_left def
+R3685:3686 CAG.Groups.DirectProduct <> g1:22 var
+R3690:3699 CAG.Groups.DirectProduct <> embed_left def
+R3701:3702 CAG.Groups.DirectProduct <> g2:23 var
+R3740:3749 CAG.Groups.DirectProduct <> embed_left def
+R3752:3753 CAG.Groups.DirectProduct <> DirectProductGroup def
+R3756:3773 CAG.Groups.DirectProduct <> DirectProductGroup def
+R3776:3781 CAG.Groups.DirectProduct <> dp_mul def
+R3821:3828 CAG.Group <> sid_left proj
+R3830:3830 CAG.Groups.DirectProduct <> Embeddings.H var
+R3832:3833 CAG.Groups.DirectProduct <> Embeddings.sh var
+R3821:3828 CAG.Group <> sid_left proj
+R3830:3830 CAG.Groups.DirectProduct <> Embeddings.H var
+R3832:3833 CAG.Groups.DirectProduct <> Embeddings.sh var
+prf 3899:3913 <> embed_right_hom
+R3938:3938 CAG.Groups.DirectProduct <> Embeddings.H var
+binder 3930:3931 <> h1:24
+binder 3933:3934 <> h2:25
+R3978:3988 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3949:3959 CAG.Groups.DirectProduct <> embed_right def
+R3962:3965 CAG.Group <> smul proj
+R3967:3967 CAG.Groups.DirectProduct <> Embeddings.H var
+R3969:3970 CAG.Groups.DirectProduct <> Embeddings.sh var
+R3972:3973 CAG.Groups.DirectProduct <> h1:24 var
+R3975:3976 CAG.Groups.DirectProduct <> h2:25 var
+R3989:3992 CAG.Group <> smul proj
+R3996:3998 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R3995:3995 CAG.Groups.DirectProduct <> Embeddings.G var
+R3999:3999 CAG.Groups.DirectProduct <> Embeddings.H var
+R4002:4003 CAG.Groups.DirectProduct <> GH abbrev
+R4006:4016 CAG.Groups.DirectProduct <> embed_right def
+R4018:4019 CAG.Groups.DirectProduct <> h1:24 var
+R4023:4033 CAG.Groups.DirectProduct <> embed_right def
+R4035:4036 CAG.Groups.DirectProduct <> h2:25 var
+R4074:4084 CAG.Groups.DirectProduct <> embed_right def
+R4087:4088 CAG.Groups.DirectProduct <> DirectProductGroup def
+R4091:4108 CAG.Groups.DirectProduct <> DirectProductGroup def
+R4111:4116 CAG.Groups.DirectProduct <> dp_mul def
+R4156:4163 CAG.Group <> sid_left proj
+R4165:4165 CAG.Groups.DirectProduct <> Embeddings.G var
+R4167:4168 CAG.Groups.DirectProduct <> Embeddings.sg var
+R4156:4163 CAG.Group <> sid_left proj
+R4165:4165 CAG.Groups.DirectProduct <> Embeddings.G var
+R4167:4168 CAG.Groups.DirectProduct <> Embeddings.sg var
+prf 4222:4235 <> embed_left_inj
+R4254:4254 CAG.Groups.DirectProduct <> Embeddings.G var
+binder 4246:4247 <> g1:26
+binder 4249:4250 <> g2:27
+R4292:4295 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4276:4278 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4263:4272 CAG.Groups.DirectProduct <> embed_left def
+R4274:4275 CAG.Groups.DirectProduct <> g1:26 var
+R4279:4288 CAG.Groups.DirectProduct <> embed_left def
+R4290:4291 CAG.Groups.DirectProduct <> g2:27 var
+R4298:4300 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4296:4297 CAG.Groups.DirectProduct <> g1:26 var
+R4301:4302 CAG.Groups.DirectProduct <> g2:27 var
+prf 4422:4436 <> embed_right_inj
+R4455:4455 CAG.Groups.DirectProduct <> Embeddings.H var
+binder 4447:4448 <> h1:28
+binder 4450:4451 <> h2:29
+R4495:4498 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4478:4480 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4464:4474 CAG.Groups.DirectProduct <> embed_right def
+R4476:4477 CAG.Groups.DirectProduct <> h1:28 var
+R4481:4491 CAG.Groups.DirectProduct <> embed_right def
+R4493:4494 CAG.Groups.DirectProduct <> h2:29 var
+R4501:4503 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4499:4500 CAG.Groups.DirectProduct <> h1:28 var
+R4504:4505 CAG.Groups.DirectProduct <> h2:29 var
+def 4648:4655 <> img_left
+R4664:4667 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4660:4662 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R4659:4659 CAG.Groups.DirectProduct <> Embeddings.G var
+R4663:4663 CAG.Groups.DirectProduct <> Embeddings.H var
+binder 4684:4684 <> x:30
+R4694:4696 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4689:4691 Corelib.Init.Datatypes <> snd def
+R4693:4693 CAG.Groups.DirectProduct <> x:30 var
+R4697:4698 CAG.Group <> se proj
+R4700:4700 CAG.Groups.DirectProduct <> Embeddings.H var
+R4702:4703 CAG.Groups.DirectProduct <> Embeddings.sh var
+def 4774:4782 <> img_right
+R4791:4794 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4787:4789 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R4786:4786 CAG.Groups.DirectProduct <> Embeddings.G var
+R4790:4790 CAG.Groups.DirectProduct <> Embeddings.H var
+binder 4811:4811 <> x:31
+R4821:4823 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4816:4818 Corelib.Init.Datatypes <> fst def
+R4820:4820 CAG.Groups.DirectProduct <> x:31 var
+R4824:4825 CAG.Group <> se proj
+R4827:4827 CAG.Groups.DirectProduct <> Embeddings.G var
+R4829:4830 CAG.Groups.DirectProduct <> Embeddings.sg var
+prf 4875:4891 <> img_left_subgroup
+R4901:4911 CAG.Group <> is_subgroup def
+R4939:4946 CAG.Groups.DirectProduct <> img_left def
+R4914:4933 CAG.Group <> StrictGroup_to_Group def
+R4935:4936 CAG.Groups.DirectProduct <> GH abbrev
+R4969:4979 CAG.Group <> is_subgroup def
+R4982:4989 CAG.Groups.DirectProduct <> img_left def
+R4992:5002 CAG.Group <> contains_id def
+R5005:5020 CAG.Group <> closed_under_mul def
+R5023:5038 CAG.Group <> closed_under_inv def
+R5162:5169 CAG.Group <> sid_left proj
+R5162:5169 CAG.Group <> sid_left proj
+R5227:5227 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R5239:5240 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R5248:5248 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R5228:5231 CAG.Group <> sinv proj
+R5233:5233 CAG.Groups.DirectProduct <> Embeddings.G var
+R5235:5236 CAG.Groups.DirectProduct <> Embeddings.sg var
+R5241:5242 CAG.Group <> se proj
+R5244:5244 CAG.Groups.DirectProduct <> Embeddings.H var
+R5246:5247 CAG.Groups.DirectProduct <> Embeddings.sh var
+R5227:5227 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R5239:5240 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R5248:5248 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R5228:5231 CAG.Group <> sinv proj
+R5233:5233 CAG.Groups.DirectProduct <> Embeddings.G var
+R5235:5236 CAG.Groups.DirectProduct <> Embeddings.sg var
+R5241:5242 CAG.Group <> se proj
+R5244:5244 CAG.Groups.DirectProduct <> Embeddings.H var
+R5246:5247 CAG.Groups.DirectProduct <> Embeddings.sh var
+R5301:5313 CAG.Group <> is_inverse_of def
+R5346:5351 CAG.Groups.DirectProduct <> dp_ext thm
+R5346:5351 CAG.Groups.DirectProduct <> dp_ext thm
+R5360:5369 CAG.Group <> sinv_right proj
+R5360:5369 CAG.Group <> sinv_right proj
+R5378:5385 CAG.Group <> sid_left proj
+R5378:5385 CAG.Group <> sid_left proj
+R5404:5409 CAG.Groups.DirectProduct <> dp_ext thm
+R5404:5409 CAG.Groups.DirectProduct <> dp_ext thm
+R5418:5426 CAG.Group <> sinv_left proj
+R5418:5426 CAG.Group <> sinv_left proj
+R5435:5442 CAG.Group <> sid_left proj
+R5435:5442 CAG.Group <> sid_left proj
+prf 5495:5512 <> img_right_subgroup
+R5522:5532 CAG.Group <> is_subgroup def
+R5560:5568 CAG.Groups.DirectProduct <> img_right def
+R5535:5554 CAG.Group <> StrictGroup_to_Group def
+R5556:5557 CAG.Groups.DirectProduct <> GH abbrev
+R5591:5601 CAG.Group <> is_subgroup def
+R5604:5612 CAG.Groups.DirectProduct <> img_right def
+R5615:5625 CAG.Group <> contains_id def
+R5628:5643 CAG.Group <> closed_under_mul def
+R5646:5661 CAG.Group <> closed_under_inv def
+R5785:5792 CAG.Group <> sid_left proj
+R5785:5792 CAG.Group <> sid_left proj
+R5850:5850 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R5858:5859 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R5871:5871 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R5851:5852 CAG.Group <> se proj
+R5854:5854 CAG.Groups.DirectProduct <> Embeddings.G var
+R5856:5857 CAG.Groups.DirectProduct <> Embeddings.sg var
+R5860:5863 CAG.Group <> sinv proj
+R5865:5865 CAG.Groups.DirectProduct <> Embeddings.H var
+R5867:5868 CAG.Groups.DirectProduct <> Embeddings.sh var
+R5850:5850 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R5858:5859 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R5871:5871 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R5851:5852 CAG.Group <> se proj
+R5854:5854 CAG.Groups.DirectProduct <> Embeddings.G var
+R5856:5857 CAG.Groups.DirectProduct <> Embeddings.sg var
+R5860:5863 CAG.Group <> sinv proj
+R5865:5865 CAG.Groups.DirectProduct <> Embeddings.H var
+R5867:5868 CAG.Groups.DirectProduct <> Embeddings.sh var
+R5924:5936 CAG.Group <> is_inverse_of def
+R5969:5974 CAG.Groups.DirectProduct <> dp_ext thm
+R5969:5974 CAG.Groups.DirectProduct <> dp_ext thm
+R5983:5990 CAG.Group <> sid_left proj
+R5983:5990 CAG.Group <> sid_left proj
+R5999:6008 CAG.Group <> sinv_right proj
+R5999:6008 CAG.Group <> sinv_right proj
+R6027:6032 CAG.Groups.DirectProduct <> dp_ext thm
+R6027:6032 CAG.Groups.DirectProduct <> dp_ext thm
+R6041:6048 CAG.Group <> sid_left proj
+R6041:6048 CAG.Group <> sid_left proj
+R6057:6065 CAG.Group <> sinv_left proj
+R6057:6065 CAG.Group <> sinv_left proj
+R6080:6089 CAG.Groups.DirectProduct Embeddings <> sec
+sec 6302:6312 <> Projections
+var  6327:6327 Projections G
+var  6329:6329 Projections H
+var  6351:6352 Projections sg
+var  6372:6373 Projections sh
+R6356:6366 CAG.Group <> StrictGroup rec
+R6368:6368 CAG.Groups.DirectProduct <> Projections.G var
+R6377:6387 CAG.Group <> StrictGroup rec
+R6389:6389 CAG.Groups.DirectProduct <> Projections.H var
+abbrev 6411:6412 <> GH
+R6418:6435 CAG.Groups.DirectProduct <> DirectProductGroup def
+R6440:6441 CAG.Groups.DirectProduct <> Projections.sh var
+R6437:6438 CAG.Groups.DirectProduct <> Projections.sg var
+def 6500:6508 <> proj_left
+R6512:6519 CAG.Group <> GroupHom rec
+R6524:6525 CAG.Groups.DirectProduct <> Projections.sg var
+R6521:6522 CAG.Groups.DirectProduct <> GH abbrev
+R6534:6538 CAG.Group <> mkHom constr
+R6542:6544 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R6541:6541 CAG.Groups.DirectProduct <> Projections.G var
+R6545:6545 CAG.Groups.DirectProduct <> Projections.H var
+R6548:6548 CAG.Groups.DirectProduct <> Projections.G var
+R6550:6551 CAG.Groups.DirectProduct <> GH abbrev
+R6553:6554 CAG.Groups.DirectProduct <> Projections.sg var
+R6562:6564 Corelib.Init.Datatypes <> fst def
+binder 6577:6577 <> a:36
+binder 6579:6579 <> b:37
+R6584:6590 Corelib.Init.Logic <> eq_refl constr
+def 6650:6659 <> proj_right
+R6663:6670 CAG.Group <> GroupHom rec
+R6675:6676 CAG.Groups.DirectProduct <> Projections.sh var
+R6672:6673 CAG.Groups.DirectProduct <> GH abbrev
+R6685:6689 CAG.Group <> mkHom constr
+R6693:6695 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R6692:6692 CAG.Groups.DirectProduct <> Projections.G var
+R6696:6696 CAG.Groups.DirectProduct <> Projections.H var
+R6699:6699 CAG.Groups.DirectProduct <> Projections.H var
+R6701:6702 CAG.Groups.DirectProduct <> GH abbrev
+R6704:6705 CAG.Groups.DirectProduct <> Projections.sh var
+R6713:6715 Corelib.Init.Datatypes <> snd def
+binder 6728:6728 <> a:38
+binder 6730:6730 <> b:39
+R6735:6741 Corelib.Init.Logic <> eq_refl constr
+prf 6788:6801 <> proj_left_surj
+R6816:6816 CAG.Groups.DirectProduct <> Projections.G var
+binder 6812:6812 <> g:40
+R6819:6825 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6835:6836 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6831:6833 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R6830:6830 CAG.Groups.DirectProduct <> Projections.G var
+R6834:6834 CAG.Groups.DirectProduct <> Projections.H var
+binder 6826:6826 <> x:41
+R6855:6857 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6837:6842 CAG.Group <> hom_fn proj
+R6854:6854 CAG.Groups.DirectProduct <> x:41 var
+R6844:6852 CAG.Groups.DirectProduct <> proj_left def
+R6858:6858 CAG.Groups.DirectProduct <> g:40 var
+R6890:6890 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R6892:6893 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R6901:6901 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R6894:6895 CAG.Group <> se proj
+R6897:6897 CAG.Groups.DirectProduct <> Projections.H var
+R6899:6900 CAG.Groups.DirectProduct <> Projections.sh var
+R6890:6890 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R6892:6893 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R6901:6901 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R6894:6895 CAG.Group <> se proj
+R6897:6897 CAG.Groups.DirectProduct <> Projections.H var
+R6899:6900 CAG.Groups.DirectProduct <> Projections.sh var
+prf 6968:6982 <> proj_right_surj
+R6997:6997 CAG.Groups.DirectProduct <> Projections.H var
+binder 6993:6993 <> h:42
+R7000:7006 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7016:7017 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7012:7014 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R7011:7011 CAG.Groups.DirectProduct <> Projections.G var
+R7015:7015 CAG.Groups.DirectProduct <> Projections.H var
+binder 7007:7007 <> x:43
+R7037:7039 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7018:7023 CAG.Group <> hom_fn proj
+R7036:7036 CAG.Groups.DirectProduct <> x:43 var
+R7025:7034 CAG.Groups.DirectProduct <> proj_right def
+R7040:7040 CAG.Groups.DirectProduct <> h:42 var
+R7072:7072 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R7080:7081 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R7083:7083 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R7073:7074 CAG.Group <> se proj
+R7076:7076 CAG.Groups.DirectProduct <> Projections.G var
+R7078:7079 CAG.Groups.DirectProduct <> Projections.sg var
+R7072:7072 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R7080:7081 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R7083:7083 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R7073:7074 CAG.Group <> se proj
+R7076:7076 CAG.Groups.DirectProduct <> Projections.G var
+R7078:7079 CAG.Groups.DirectProduct <> Projections.sg var
+prf 7166:7191 <> ker_proj_left_eq_img_right
+R7213:7215 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R7212:7212 CAG.Groups.DirectProduct <> Projections.G var
+R7216:7216 CAG.Groups.DirectProduct <> Projections.H var
+binder 7208:7208 <> x:44
+R7255:7261 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R7245:7247 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7227:7232 CAG.Group <> hom_fn proj
+R7244:7244 CAG.Groups.DirectProduct <> x:44 var
+R7234:7242 CAG.Groups.DirectProduct <> proj_left def
+R7248:7249 CAG.Group <> se proj
+R7251:7251 CAG.Groups.DirectProduct <> Projections.G var
+R7253:7254 CAG.Groups.DirectProduct <> Projections.sg var
+R7267:7269 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7262:7264 Corelib.Init.Datatypes <> fst def
+R7266:7266 CAG.Groups.DirectProduct <> x:44 var
+R7270:7271 CAG.Group <> se proj
+R7273:7273 CAG.Groups.DirectProduct <> Projections.G var
+R7275:7276 CAG.Groups.DirectProduct <> Projections.sg var
+prf 7383:7408 <> ker_proj_right_eq_img_left
+R7430:7432 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R7429:7429 CAG.Groups.DirectProduct <> Projections.G var
+R7433:7433 CAG.Groups.DirectProduct <> Projections.H var
+binder 7425:7425 <> x:45
+R7473:7479 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R7463:7465 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7444:7449 CAG.Group <> hom_fn proj
+R7462:7462 CAG.Groups.DirectProduct <> x:45 var
+R7451:7460 CAG.Groups.DirectProduct <> proj_right def
+R7466:7467 CAG.Group <> se proj
+R7469:7469 CAG.Groups.DirectProduct <> Projections.H var
+R7471:7472 CAG.Groups.DirectProduct <> Projections.sh var
+R7485:7487 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7480:7482 Corelib.Init.Datatypes <> snd def
+R7484:7484 CAG.Groups.DirectProduct <> x:45 var
+R7488:7489 CAG.Group <> se proj
+R7491:7491 CAG.Groups.DirectProduct <> Projections.H var
+R7493:7494 CAG.Groups.DirectProduct <> Projections.sh var
+R7545:7555 CAG.Groups.DirectProduct Projections <> sec
+sec 7780:7792 <> FactorCommute
+var  7807:7807 FactorCommute G
+var  7809:7809 FactorCommute H
+var  7831:7832 FactorCommute sg
+var  7852:7853 FactorCommute sh
+R7836:7846 CAG.Group <> StrictGroup rec
+R7848:7848 CAG.Groups.DirectProduct <> FactorCommute.G var
+R7857:7867 CAG.Group <> StrictGroup rec
+R7869:7869 CAG.Groups.DirectProduct <> FactorCommute.H var
+abbrev 7891:7892 <> GH
+R7898:7915 CAG.Groups.DirectProduct <> DirectProductGroup def
+R7920:7921 CAG.Groups.DirectProduct <> FactorCommute.sh var
+R7917:7918 CAG.Groups.DirectProduct <> FactorCommute.sg var
+prf 8003:8026 <> distinct_factors_commute
+R8033:8033 CAG.Groups.DirectProduct <> FactorCommute.G var
+binder 8029:8029 <> g:50
+R8041:8041 CAG.Groups.DirectProduct <> FactorCommute.H var
+binder 8037:8037 <> h:51
+R8093:8101 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8052:8055 CAG.Group <> smul proj
+R8059:8061 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R8058:8058 CAG.Groups.DirectProduct <> FactorCommute.G var
+R8062:8062 CAG.Groups.DirectProduct <> FactorCommute.H var
+R8065:8066 CAG.Groups.DirectProduct <> GH abbrev
+R8068:8068 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8070:8071 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8079:8079 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8069:8069 CAG.Groups.DirectProduct <> g:50 var
+R8072:8073 CAG.Group <> se proj
+R8075:8075 CAG.Groups.DirectProduct <> FactorCommute.H var
+R8077:8078 CAG.Groups.DirectProduct <> FactorCommute.sh var
+R8081:8081 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8089:8090 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8092:8092 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8082:8083 CAG.Group <> se proj
+R8085:8085 CAG.Groups.DirectProduct <> FactorCommute.G var
+R8087:8088 CAG.Groups.DirectProduct <> FactorCommute.sg var
+R8091:8091 CAG.Groups.DirectProduct <> h:51 var
+R8102:8105 CAG.Group <> smul proj
+R8109:8111 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R8108:8108 CAG.Groups.DirectProduct <> FactorCommute.G var
+R8112:8112 CAG.Groups.DirectProduct <> FactorCommute.H var
+R8115:8116 CAG.Groups.DirectProduct <> GH abbrev
+R8118:8118 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8126:8127 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8129:8129 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8119:8120 CAG.Group <> se proj
+R8122:8122 CAG.Groups.DirectProduct <> FactorCommute.G var
+R8124:8125 CAG.Groups.DirectProduct <> FactorCommute.sg var
+R8128:8128 CAG.Groups.DirectProduct <> h:51 var
+R8131:8131 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8133:8134 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8142:8142 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8132:8132 CAG.Groups.DirectProduct <> g:50 var
+R8135:8136 CAG.Group <> se proj
+R8138:8138 CAG.Groups.DirectProduct <> FactorCommute.H var
+R8140:8141 CAG.Groups.DirectProduct <> FactorCommute.sh var
+R8164:8169 CAG.Groups.DirectProduct <> dp_ext thm
+R8164:8169 CAG.Groups.DirectProduct <> dp_ext thm
+R8193:8201 CAG.Group <> sid_right proj
+R8204:8211 CAG.Group <> sid_left proj
+R8193:8201 CAG.Group <> sid_right proj
+R8193:8201 CAG.Group <> sid_right proj
+R8204:8211 CAG.Group <> sid_left proj
+R8204:8211 CAG.Group <> sid_left proj
+R8241:8248 CAG.Group <> sid_left proj
+R8251:8259 CAG.Group <> sid_right proj
+R8241:8248 CAG.Group <> sid_left proj
+R8241:8248 CAG.Group <> sid_left proj
+R8251:8259 CAG.Group <> sid_right proj
+R8251:8259 CAG.Group <> sid_right proj
+R8287:8299 CAG.Groups.DirectProduct FactorCommute <> sec
+sec 8519:8537 <> CenterDirectProduct
+var  8552:8552 CenterDirectProduct G
+var  8554:8554 CenterDirectProduct H
+var  8576:8577 CenterDirectProduct sg
+var  8597:8598 CenterDirectProduct sh
+R8581:8591 CAG.Group <> StrictGroup rec
+R8593:8593 CAG.Groups.DirectProduct <> CenterDirectProduct.G var
+R8602:8612 CAG.Group <> StrictGroup rec
+R8614:8614 CAG.Groups.DirectProduct <> CenterDirectProduct.H var
+abbrev 8636:8637 <> GH
+R8643:8660 CAG.Groups.DirectProduct <> DirectProductGroup def
+R8665:8666 CAG.Groups.DirectProduct <> CenterDirectProduct.sh var
+R8662:8663 CAG.Groups.DirectProduct <> CenterDirectProduct.sg var
+prf 8714:8734 <> center_direct_product
+R8742:8744 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R8741:8741 CAG.Groups.DirectProduct <> CenterDirectProduct.G var
+R8745:8745 CAG.Groups.DirectProduct <> CenterDirectProduct.H var
+binder 8737:8737 <> x:56
+R8794:8805 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R8756:8765 CAG.Group <> is_central def
+R8793:8793 CAG.Groups.DirectProduct <> x:56 var
+R8768:8787 CAG.Group <> StrictGroup_to_Group def
+R8789:8790 CAG.Groups.DirectProduct <> GH abbrev
+R8850:8859 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R8806:8815 CAG.Group <> is_central def
+R8844:8846 Corelib.Init.Datatypes <> fst def
+R8848:8848 CAG.Groups.DirectProduct <> x:56 var
+R8818:8837 CAG.Group <> StrictGroup_to_Group def
+R8839:8840 CAG.Groups.DirectProduct <> CenterDirectProduct.sg var
+R8860:8869 CAG.Group <> is_central def
+R8898:8900 Corelib.Init.Datatypes <> snd def
+R8902:8902 CAG.Groups.DirectProduct <> x:56 var
+R8872:8891 CAG.Group <> StrictGroup_to_Group def
+R8893:8894 CAG.Groups.DirectProduct <> CenterDirectProduct.sh var
+R8926:8935 CAG.Group <> is_central def
+R9027:9027 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9029:9030 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9038:9038 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9031:9032 CAG.Group <> se proj
+R9034:9034 CAG.Groups.DirectProduct <> CenterDirectProduct.H var
+R9036:9037 CAG.Groups.DirectProduct <> CenterDirectProduct.sh var
+R9027:9027 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9029:9030 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9038:9038 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9031:9032 CAG.Group <> se proj
+R9034:9034 CAG.Groups.DirectProduct <> CenterDirectProduct.H var
+R9036:9037 CAG.Groups.DirectProduct <> CenterDirectProduct.sh var
+R9147:9147 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9155:9156 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9158:9158 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9148:9149 CAG.Group <> se proj
+R9151:9151 CAG.Groups.DirectProduct <> CenterDirectProduct.G var
+R9153:9154 CAG.Groups.DirectProduct <> CenterDirectProduct.sg var
+R9147:9147 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9155:9156 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9158:9158 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9148:9149 CAG.Group <> se proj
+R9151:9151 CAG.Groups.DirectProduct <> CenterDirectProduct.G var
+R9153:9154 CAG.Groups.DirectProduct <> CenterDirectProduct.sg var
+R9265:9270 CAG.Groups.DirectProduct <> dp_ext thm
+R9265:9270 CAG.Groups.DirectProduct <> dp_ext thm
+prf 9389:9415 <> abelian_iff_factors_abelian
+R9425:9425 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R9487:9504 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R9440:9442 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R9439:9439 CAG.Groups.DirectProduct <> CenterDirectProduct.G var
+R9443:9443 CAG.Groups.DirectProduct <> CenterDirectProduct.H var
+binder 9433:9433 <> a:57
+binder 9435:9435 <> b:58
+R9465:9467 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9446:9449 CAG.Group <> smul proj
+R9453:9455 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R9452:9452 CAG.Groups.DirectProduct <> CenterDirectProduct.G var
+R9456:9456 CAG.Groups.DirectProduct <> CenterDirectProduct.H var
+R9459:9460 CAG.Groups.DirectProduct <> GH abbrev
+R9462:9462 CAG.Groups.DirectProduct <> a:57 var
+R9464:9464 CAG.Groups.DirectProduct <> b:58 var
+R9468:9471 CAG.Group <> smul proj
+R9475:9477 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R9474:9474 CAG.Groups.DirectProduct <> CenterDirectProduct.G var
+R9478:9478 CAG.Groups.DirectProduct <> CenterDirectProduct.H var
+R9481:9482 CAG.Groups.DirectProduct <> GH abbrev
+R9484:9484 CAG.Groups.DirectProduct <> b:58 var
+R9486:9486 CAG.Groups.DirectProduct <> a:57 var
+R9505:9505 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R9557:9568 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R9620:9620 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R9521:9521 CAG.Groups.DirectProduct <> CenterDirectProduct.G var
+binder 9513:9514 <> g1:59
+binder 9516:9517 <> g2:60
+R9539:9541 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9524:9527 CAG.Group <> smul proj
+R9529:9529 CAG.Groups.DirectProduct <> CenterDirectProduct.G var
+R9531:9532 CAG.Groups.DirectProduct <> CenterDirectProduct.sg var
+R9534:9535 CAG.Groups.DirectProduct <> g1:59 var
+R9537:9538 CAG.Groups.DirectProduct <> g2:60 var
+R9542:9545 CAG.Group <> smul proj
+R9547:9547 CAG.Groups.DirectProduct <> CenterDirectProduct.G var
+R9549:9550 CAG.Groups.DirectProduct <> CenterDirectProduct.sg var
+R9552:9553 CAG.Groups.DirectProduct <> g2:60 var
+R9555:9556 CAG.Groups.DirectProduct <> g1:59 var
+R9584:9584 CAG.Groups.DirectProduct <> CenterDirectProduct.H var
+binder 9576:9577 <> h1:61
+binder 9579:9580 <> h2:62
+R9602:9604 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9587:9590 CAG.Group <> smul proj
+R9592:9592 CAG.Groups.DirectProduct <> CenterDirectProduct.H var
+R9594:9595 CAG.Groups.DirectProduct <> CenterDirectProduct.sh var
+R9597:9598 CAG.Groups.DirectProduct <> h1:61 var
+R9600:9601 CAG.Groups.DirectProduct <> h2:62 var
+R9605:9608 CAG.Group <> smul proj
+R9610:9610 CAG.Groups.DirectProduct <> CenterDirectProduct.H var
+R9612:9613 CAG.Groups.DirectProduct <> CenterDirectProduct.sh var
+R9615:9616 CAG.Groups.DirectProduct <> h2:62 var
+R9618:9619 CAG.Groups.DirectProduct <> h1:61 var
+R9715:9715 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9718:9719 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9727:9727 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9720:9721 CAG.Group <> se proj
+R9723:9723 CAG.Groups.DirectProduct <> CenterDirectProduct.H var
+R9725:9726 CAG.Groups.DirectProduct <> CenterDirectProduct.sh var
+R9729:9729 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9732:9733 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9741:9741 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9734:9735 CAG.Group <> se proj
+R9737:9737 CAG.Groups.DirectProduct <> CenterDirectProduct.H var
+R9739:9740 CAG.Groups.DirectProduct <> CenterDirectProduct.sh var
+R9715:9715 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9718:9719 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9727:9727 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9720:9721 CAG.Group <> se proj
+R9723:9723 CAG.Groups.DirectProduct <> CenterDirectProduct.H var
+R9725:9726 CAG.Groups.DirectProduct <> CenterDirectProduct.sh var
+R9729:9729 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9732:9733 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9741:9741 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9734:9735 CAG.Group <> se proj
+R9737:9737 CAG.Groups.DirectProduct <> CenterDirectProduct.H var
+R9739:9740 CAG.Groups.DirectProduct <> CenterDirectProduct.sh var
+R9831:9831 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9839:9840 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9843:9843 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9832:9833 CAG.Group <> se proj
+R9835:9835 CAG.Groups.DirectProduct <> CenterDirectProduct.G var
+R9837:9838 CAG.Groups.DirectProduct <> CenterDirectProduct.sg var
+R9845:9845 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9853:9854 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9857:9857 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9846:9847 CAG.Group <> se proj
+R9849:9849 CAG.Groups.DirectProduct <> CenterDirectProduct.G var
+R9851:9852 CAG.Groups.DirectProduct <> CenterDirectProduct.sg var
+R9831:9831 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9839:9840 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9843:9843 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9832:9833 CAG.Group <> se proj
+R9835:9835 CAG.Groups.DirectProduct <> CenterDirectProduct.G var
+R9837:9838 CAG.Groups.DirectProduct <> CenterDirectProduct.sg var
+R9845:9845 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9853:9854 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9857:9857 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9846:9847 CAG.Group <> se proj
+R9849:9849 CAG.Groups.DirectProduct <> CenterDirectProduct.G var
+R9851:9852 CAG.Groups.DirectProduct <> CenterDirectProduct.sg var
+R9949:9954 CAG.Groups.DirectProduct <> dp_ext thm
+R9949:9954 CAG.Groups.DirectProduct <> dp_ext thm
+R9999:10017 CAG.Groups.DirectProduct CenterDirectProduct <> sec
+sec 10232:10243 <> ElementOrder
+var  10258:10258 ElementOrder G
+var  10260:10260 ElementOrder H
+var  10282:10283 ElementOrder sg
+var  10303:10304 ElementOrder sh
+R10287:10297 CAG.Group <> StrictGroup rec
+R10299:10299 CAG.Groups.DirectProduct <> ElementOrder.G var
+R10308:10318 CAG.Group <> StrictGroup rec
+R10320:10320 CAG.Groups.DirectProduct <> ElementOrder.H var
+abbrev 10342:10343 <> GH
+R10349:10366 CAG.Groups.DirectProduct <> DirectProductGroup def
+R10371:10372 CAG.Groups.DirectProduct <> ElementOrder.sh var
+R10368:10369 CAG.Groups.DirectProduct <> ElementOrder.sg var
+prf 10443:10449 <> dp_gpow
+R10456:10456 CAG.Groups.DirectProduct <> ElementOrder.G var
+binder 10452:10452 <> g:67
+R10464:10464 CAG.Groups.DirectProduct <> ElementOrder.H var
+binder 10460:10460 <> h:68
+R10472:10474 Corelib.Init.Datatypes <> nat ind
+binder 10468:10468 <> n:69
+R10524:10532 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10485:10488 CAG.Group <> gpow def
+R10516:10516 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R10518:10519 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R10521:10521 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R10517:10517 CAG.Groups.DirectProduct <> g:67 var
+R10520:10520 CAG.Groups.DirectProduct <> h:68 var
+R10523:10523 CAG.Groups.DirectProduct <> n:69 var
+R10491:10510 CAG.Group <> StrictGroup_to_Group def
+R10512:10513 CAG.Groups.DirectProduct <> GH abbrev
+R10533:10533 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R10568:10576 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R10611:10611 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R10534:10537 CAG.Group <> gpow def
+R10565:10565 CAG.Groups.DirectProduct <> g:67 var
+R10567:10567 CAG.Groups.DirectProduct <> n:69 var
+R10540:10559 CAG.Group <> StrictGroup_to_Group def
+R10561:10562 CAG.Groups.DirectProduct <> ElementOrder.sg var
+R10577:10580 CAG.Group <> gpow def
+R10608:10608 CAG.Groups.DirectProduct <> h:68 var
+R10610:10610 CAG.Groups.DirectProduct <> n:69 var
+R10583:10602 CAG.Group <> StrictGroup_to_Group def
+R10604:10605 CAG.Groups.DirectProduct <> ElementOrder.sh var
+prf 10779:10789 <> gpow_add_sg
+binder 10792:10792 <> X:70
+R10807:10817 CAG.Group <> StrictGroup rec
+R10819:10819 CAG.Groups.DirectProduct <> X:70 var
+binder 10803:10803 <> s:71
+R10827:10827 CAG.Groups.DirectProduct <> X:70 var
+binder 10823:10823 <> x:72
+R10837:10839 Corelib.Init.Datatypes <> nat ind
+binder 10831:10831 <> a:73
+binder 10833:10833 <> b:74
+R10889:10897 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10850:10853 CAG.Group <> gpow def
+R10880:10880 CAG.Groups.DirectProduct <> x:72 var
+R10884:10886 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R10883:10883 CAG.Groups.DirectProduct <> a:73 var
+R10887:10887 CAG.Groups.DirectProduct <> b:74 var
+R10856:10875 CAG.Group <> StrictGroup_to_Group def
+R10877:10877 CAG.Groups.DirectProduct <> s:71 var
+R10898:10901 CAG.Group <> smul proj
+R10903:10903 CAG.Groups.DirectProduct <> X:70 var
+R10905:10905 CAG.Groups.DirectProduct <> s:71 var
+R10908:10911 CAG.Group <> gpow def
+R10938:10938 CAG.Groups.DirectProduct <> x:72 var
+R10940:10940 CAG.Groups.DirectProduct <> a:73 var
+R10914:10933 CAG.Group <> StrictGroup_to_Group def
+R10935:10935 CAG.Groups.DirectProduct <> s:71 var
+R10944:10947 CAG.Group <> gpow def
+R10974:10974 CAG.Groups.DirectProduct <> x:72 var
+R10976:10976 CAG.Groups.DirectProduct <> b:74 var
+R10950:10969 CAG.Group <> StrictGroup_to_Group def
+R10971:10971 CAG.Groups.DirectProduct <> s:71 var
+R11049:11056 CAG.Group <> sid_left proj
+R11049:11056 CAG.Group <> sid_left proj
+R11096:11101 CAG.Group <> sassoc proj
+R11096:11101 CAG.Group <> sassoc proj
+prf 11181:11193 <> gpow_mul_zero
+binder 11196:11196 <> X:75
+R11211:11221 CAG.Group <> StrictGroup rec
+R11223:11223 CAG.Groups.DirectProduct <> X:75 var
+binder 11207:11207 <> s:76
+R11231:11231 CAG.Groups.DirectProduct <> X:75 var
+binder 11227:11227 <> x:77
+R11241:11243 Corelib.Init.Datatypes <> nat ind
+binder 11235:11235 <> m:78
+binder 11237:11237 <> k:79
+R11296:11305 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11287:11289 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11254:11257 CAG.Group <> gpow def
+R11284:11284 CAG.Groups.DirectProduct <> x:77 var
+R11286:11286 CAG.Groups.DirectProduct <> m:78 var
+R11260:11279 CAG.Group <> StrictGroup_to_Group def
+R11281:11281 CAG.Groups.DirectProduct <> s:76 var
+R11290:11291 CAG.Group <> se proj
+R11293:11293 CAG.Groups.DirectProduct <> X:75 var
+R11295:11295 CAG.Groups.DirectProduct <> s:76 var
+R11345:11347 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11306:11309 CAG.Group <> gpow def
+R11336:11336 CAG.Groups.DirectProduct <> x:77 var
+R11340:11342 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R11339:11339 CAG.Groups.DirectProduct <> k:79 var
+R11343:11343 CAG.Groups.DirectProduct <> m:78 var
+R11312:11331 CAG.Group <> StrictGroup_to_Group def
+R11333:11333 CAG.Groups.DirectProduct <> s:76 var
+R11348:11349 CAG.Group <> se proj
+R11351:11351 CAG.Groups.DirectProduct <> X:75 var
+R11353:11353 CAG.Groups.DirectProduct <> s:76 var
+R11450:11460 CAG.Groups.DirectProduct <> gpow_add_sg thm
+R11468:11475 CAG.Group <> sid_left proj
+R11450:11460 CAG.Groups.DirectProduct <> gpow_add_sg thm
+R11450:11460 CAG.Groups.DirectProduct <> gpow_add_sg thm
+R11468:11475 CAG.Group <> sid_left proj
+R11468:11475 CAG.Group <> sid_left proj
+prf 11596:11615 <> dp_order_divides_lcm
+R11622:11622 CAG.Groups.DirectProduct <> ElementOrder.G var
+binder 11618:11618 <> g:80
+R11630:11630 CAG.Groups.DirectProduct <> ElementOrder.H var
+binder 11626:11626 <> h:81
+R11640:11642 Corelib.Init.Datatypes <> nat ind
+binder 11634:11634 <> m:82
+binder 11636:11636 <> n:83
+R11691:11693 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11657:11660 CAG.Group <> gpow def
+R11688:11688 CAG.Groups.DirectProduct <> g:80 var
+R11690:11690 CAG.Groups.DirectProduct <> m:82 var
+R11663:11682 CAG.Group <> StrictGroup_to_Group def
+R11684:11685 CAG.Groups.DirectProduct <> ElementOrder.sg var
+R11694:11695 CAG.Group <> se proj
+R11697:11697 CAG.Groups.DirectProduct <> ElementOrder.G var
+R11699:11700 CAG.Groups.DirectProduct <> ElementOrder.sg var
+binder 11652:11653 <> Hm:84
+R11749:11751 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11715:11718 CAG.Group <> gpow def
+R11746:11746 CAG.Groups.DirectProduct <> h:81 var
+R11748:11748 CAG.Groups.DirectProduct <> n:83 var
+R11721:11740 CAG.Group <> StrictGroup_to_Group def
+R11742:11743 CAG.Groups.DirectProduct <> ElementOrder.sh var
+R11752:11753 CAG.Group <> se proj
+R11755:11755 CAG.Groups.DirectProduct <> ElementOrder.H var
+R11757:11758 CAG.Groups.DirectProduct <> ElementOrder.sh var
+binder 11710:11711 <> Hn:85
+R11820:11822 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11769:11772 CAG.Group <> gpow def
+R11800:11800 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11802:11803 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11805:11805 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11801:11801 CAG.Groups.DirectProduct <> g:80 var
+R11804:11804 CAG.Groups.DirectProduct <> h:81 var
+R11808:11814 Stdlib.Arith.PeanoNat Nat lcm def
+R11816:11816 CAG.Groups.DirectProduct <> m:82 var
+R11818:11818 CAG.Groups.DirectProduct <> n:83 var
+R11775:11794 CAG.Group <> StrictGroup_to_Group def
+R11796:11797 CAG.Groups.DirectProduct <> GH abbrev
+R11823:11824 CAG.Group <> se proj
+R11828:11830 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R11827:11827 CAG.Groups.DirectProduct <> ElementOrder.G var
+R11831:11831 CAG.Groups.DirectProduct <> ElementOrder.H var
+R11834:11835 CAG.Groups.DirectProduct <> GH abbrev
+R11859:11865 CAG.Groups.DirectProduct <> dp_gpow thm
+R11859:11865 CAG.Groups.DirectProduct <> dp_gpow thm
+R11859:11865 CAG.Groups.DirectProduct <> dp_gpow thm
+R11882:11897 Stdlib.Arith.PeanoNat Nat divide_lcm_l def
+R11882:11897 Stdlib.Arith.PeanoNat Nat divide_lcm_l def
+R11931:11946 Stdlib.Arith.PeanoNat Nat divide_lcm_r def
+R11931:11946 Stdlib.Arith.PeanoNat Nat divide_lcm_r def
+R12029:12031 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11983:11986 CAG.Group <> gpow def
+R12017:12023 Stdlib.Arith.PeanoNat Nat lcm def
+R11989:12008 CAG.Group <> StrictGroup_to_Group def
+R12010:12011 CAG.Groups.DirectProduct <> ElementOrder.sg var
+R12032:12033 CAG.Group <> se proj
+R12035:12035 CAG.Groups.DirectProduct <> ElementOrder.G var
+R12037:12038 CAG.Groups.DirectProduct <> ElementOrder.sg var
+R12029:12031 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11983:11986 CAG.Group <> gpow def
+R12017:12023 Stdlib.Arith.PeanoNat Nat lcm def
+R11989:12008 CAG.Group <> StrictGroup_to_Group def
+R12010:12011 CAG.Groups.DirectProduct <> ElementOrder.sg var
+R12032:12033 CAG.Group <> se proj
+R12035:12035 CAG.Groups.DirectProduct <> ElementOrder.G var
+R12037:12038 CAG.Groups.DirectProduct <> ElementOrder.sg var
+R12067:12079 CAG.Groups.DirectProduct <> gpow_mul_zero thm
+R12067:12079 CAG.Groups.DirectProduct <> gpow_mul_zero thm
+R12157:12159 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12111:12114 CAG.Group <> gpow def
+R12145:12151 Stdlib.Arith.PeanoNat Nat lcm def
+R12117:12136 CAG.Group <> StrictGroup_to_Group def
+R12138:12139 CAG.Groups.DirectProduct <> ElementOrder.sh var
+R12160:12161 CAG.Group <> se proj
+R12163:12163 CAG.Groups.DirectProduct <> ElementOrder.H var
+R12165:12166 CAG.Groups.DirectProduct <> ElementOrder.sh var
+R12157:12159 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12111:12114 CAG.Group <> gpow def
+R12145:12151 Stdlib.Arith.PeanoNat Nat lcm def
+R12117:12136 CAG.Group <> StrictGroup_to_Group def
+R12138:12139 CAG.Groups.DirectProduct <> ElementOrder.sh var
+R12160:12161 CAG.Group <> se proj
+R12163:12163 CAG.Groups.DirectProduct <> ElementOrder.H var
+R12165:12166 CAG.Groups.DirectProduct <> ElementOrder.sh var
+R12195:12207 CAG.Groups.DirectProduct <> gpow_mul_zero thm
+R12195:12207 CAG.Groups.DirectProduct <> gpow_mul_zero thm
+R12267:12278 CAG.Groups.DirectProduct ElementOrder <> sec
+sec 12488:12504 <> ElementaryAbelian
+var 12719:12719 ElementaryAbelian p
+R12723:12725 Corelib.Init.Datatypes <> nat ind
+var 12741:12745 ElementaryAbelian p_pos
+R12750:12752 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R12753:12753 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+def 12817:12824 <> Zmod_mul
+R12833:12835 Corelib.Init.Datatypes <> nat ind
+binder 12827:12827 <> a:90
+binder 12829:12829 <> b:91
+R12840:12842 Corelib.Init.Datatypes <> nat ind
+R12847:12847 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R12853:12858 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R12849:12851 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R12848:12848 CAG.Groups.DirectProduct <> a:90 var
+R12852:12852 CAG.Groups.DirectProduct <> b:91 var
+R12859:12859 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+def 12875:12880 <> Zmod_e
+R12884:12886 Corelib.Init.Datatypes <> nat ind
+def 12907:12914 <> Zmod_inv
+R12921:12923 Corelib.Init.Datatypes <> nat ind
+binder 12917:12917 <> a:92
+R12928:12930 Corelib.Init.Datatypes <> nat ind
+R12935:12935 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R12947:12952 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R12937:12939 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R12936:12936 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R12941:12945 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R12940:12940 CAG.Groups.DirectProduct <> a:92 var
+R12946:12946 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R12953:12953 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+prf 12965:12974 <> Zmod_assoc
+R12993:12995 Corelib.Init.Datatypes <> nat ind
+binder 12985:12985 <> a:93
+binder 12987:12987 <> b:94
+binder 12989:12989 <> c:95
+R13029:13031 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R13004:13011 CAG.Groups.DirectProduct <> Zmod_mul def
+R13013:13013 CAG.Groups.DirectProduct <> a:93 var
+R13016:13023 CAG.Groups.DirectProduct <> Zmod_mul def
+R13025:13025 CAG.Groups.DirectProduct <> b:94 var
+R13027:13027 CAG.Groups.DirectProduct <> c:95 var
+R13032:13039 CAG.Groups.DirectProduct <> Zmod_mul def
+R13042:13049 CAG.Groups.DirectProduct <> Zmod_mul def
+R13051:13051 CAG.Groups.DirectProduct <> a:93 var
+R13053:13053 CAG.Groups.DirectProduct <> b:94 var
+R13056:13056 CAG.Groups.DirectProduct <> c:95 var
+R13093:13100 CAG.Groups.DirectProduct <> Zmod_mul def
+R13115:13138 Stdlib.Arith.PeanoNat Nat.Div0 add_mod_idemp_r thm
+R13115:13138 Stdlib.Arith.PeanoNat Nat.Div0 add_mod_idemp_r thm
+R13115:13138 Stdlib.Arith.PeanoNat Nat.Div0 add_mod_idemp_r thm
+R13153:13176 Stdlib.Arith.PeanoNat Nat.Div0 add_mod_idemp_l thm
+R13153:13176 Stdlib.Arith.PeanoNat Nat.Div0 add_mod_idemp_l thm
+R13153:13176 Stdlib.Arith.PeanoNat Nat.Div0 add_mod_idemp_l thm
+R13191:13203 Stdlib.Arith.PeanoNat Nat add_assoc thm
+R13191:13203 Stdlib.Arith.PeanoNat Nat add_assoc thm
+R13191:13203 Stdlib.Arith.PeanoNat Nat add_assoc thm
+prf 13239:13251 <> Zmod_right_id
+R13266:13268 Corelib.Init.Datatypes <> nat ind
+binder 13262:13262 <> a:96
+R13288:13290 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R13271:13278 CAG.Groups.DirectProduct <> Zmod_mul def
+R13280:13280 CAG.Groups.DirectProduct <> a:96 var
+R13282:13287 CAG.Groups.DirectProduct <> Zmod_e def
+R13291:13291 CAG.Groups.DirectProduct <> a:96 var
+prf 13391:13402 <> Zmod_left_id
+R13417:13419 Corelib.Init.Datatypes <> nat ind
+binder 13413:13413 <> a:97
+R13439:13441 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R13422:13429 CAG.Groups.DirectProduct <> Zmod_mul def
+R13431:13436 CAG.Groups.DirectProduct <> Zmod_e def
+R13438:13438 CAG.Groups.DirectProduct <> a:97 var
+R13442:13442 CAG.Groups.DirectProduct <> a:97 var
+prf 13466:13479 <> Zmod_right_inv
+R13494:13496 Corelib.Init.Datatypes <> nat ind
+binder 13490:13490 <> a:98
+R13522:13524 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R13499:13506 CAG.Groups.DirectProduct <> Zmod_mul def
+R13508:13508 CAG.Groups.DirectProduct <> a:98 var
+R13511:13518 CAG.Groups.DirectProduct <> Zmod_inv def
+R13520:13520 CAG.Groups.DirectProduct <> a:98 var
+R13525:13530 CAG.Groups.DirectProduct <> Zmod_e def
+R13562:13569 CAG.Groups.DirectProduct <> Zmod_mul def
+R13572:13579 CAG.Groups.DirectProduct <> Zmod_inv def
+R13582:13587 CAG.Groups.DirectProduct <> Zmod_e def
+R13602:13625 Stdlib.Arith.PeanoNat Nat.Div0 add_mod_idemp_r thm
+R13602:13625 Stdlib.Arith.PeanoNat Nat.Div0 add_mod_idemp_r thm
+R13602:13625 Stdlib.Arith.PeanoNat Nat.Div0 add_mod_idemp_r thm
+R13653:13655 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R13647:13651 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R13652:13652 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13656:13656 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13669:13687 Stdlib.Arith.PeanoNat Nat mod_upper_bound def
+R13653:13655 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R13647:13651 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R13652:13652 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13656:13656 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13669:13687 Stdlib.Arith.PeanoNat Nat mod_upper_bound def
+R13715:13717 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R13729:13731 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R13719:13722 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13728:13728 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13718:13718 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13724:13726 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R13727:13727 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13733:13737 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R13738:13738 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13751:13761 Stdlib.Arith.PeanoNat Nat div_mod thm
+R13715:13717 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R13729:13731 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R13719:13722 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13728:13728 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13718:13718 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13724:13726 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R13727:13727 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13733:13737 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R13738:13738 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13751:13761 Stdlib.Arith.PeanoNat Nat div_mod thm
+R13805:13807 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R13789:13792 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R13804:13804 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R13794:13796 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R13793:13793 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13798:13802 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R13803:13803 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13808:13808 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13818:13821 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13814:13816 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R13810:13812 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R13813:13813 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13822:13822 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13805:13807 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R13789:13792 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R13804:13804 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R13794:13796 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R13793:13793 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13798:13802 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R13803:13803 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13808:13808 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13818:13821 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13814:13816 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R13810:13812 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R13813:13813 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13822:13822 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13863:13863 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13873:13876 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13869:13871 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R13865:13867 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R13868:13868 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13877:13877 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13887:13889 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R13890:13890 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13900:13903 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13896:13898 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R13892:13894 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R13895:13895 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13904:13904 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13863:13863 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13873:13876 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13869:13871 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R13865:13867 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R13868:13868 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13877:13877 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13887:13889 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R13890:13890 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13900:13903 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R13896:13898 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R13892:13894 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R13895:13895 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13904:13904 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R13927:13942 Stdlib.Arith.PeanoNat Nat.Div0 mod_add thm
+R13927:13942 Stdlib.Arith.PeanoNat Nat.Div0 mod_add thm
+R13927:13942 Stdlib.Arith.PeanoNat Nat.Div0 mod_add thm
+R13955:13970 Stdlib.Arith.PeanoNat Nat.Div0 mod_0_l thm
+R13955:13970 Stdlib.Arith.PeanoNat Nat.Div0 mod_0_l thm
+prf 13989:14001 <> Zmod_left_inv
+R14016:14018 Corelib.Init.Datatypes <> nat ind
+binder 14012:14012 <> a:99
+R14044:14046 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R14021:14028 CAG.Groups.DirectProduct <> Zmod_mul def
+R14031:14038 CAG.Groups.DirectProduct <> Zmod_inv def
+R14040:14040 CAG.Groups.DirectProduct <> a:99 var
+R14043:14043 CAG.Groups.DirectProduct <> a:99 var
+R14047:14052 CAG.Groups.DirectProduct <> Zmod_e def
+R14084:14091 CAG.Groups.DirectProduct <> Zmod_mul def
+R14094:14101 CAG.Groups.DirectProduct <> Zmod_inv def
+R14104:14109 CAG.Groups.DirectProduct <> Zmod_e def
+R14124:14147 Stdlib.Arith.PeanoNat Nat.Div0 add_mod_idemp_l thm
+R14124:14147 Stdlib.Arith.PeanoNat Nat.Div0 add_mod_idemp_l thm
+R14124:14147 Stdlib.Arith.PeanoNat Nat.Div0 add_mod_idemp_l thm
+R14175:14177 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R14169:14173 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R14174:14174 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14178:14178 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14191:14209 Stdlib.Arith.PeanoNat Nat mod_upper_bound def
+R14175:14177 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R14169:14173 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R14174:14174 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14178:14178 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14191:14209 Stdlib.Arith.PeanoNat Nat mod_upper_bound def
+R14237:14239 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R14251:14253 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R14241:14244 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14250:14250 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14240:14240 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14246:14248 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R14249:14249 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14255:14259 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R14260:14260 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14273:14283 Stdlib.Arith.PeanoNat Nat div_mod thm
+R14237:14239 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R14251:14253 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R14241:14244 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14250:14250 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14240:14240 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14246:14248 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R14249:14249 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14255:14259 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R14260:14260 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14273:14283 Stdlib.Arith.PeanoNat Nat div_mod thm
+R14325:14327 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R14321:14323 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R14311:14313 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R14310:14310 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14315:14319 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R14320:14320 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14328:14328 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14338:14341 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14334:14336 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R14330:14332 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R14333:14333 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14342:14342 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14325:14327 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R14321:14323 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R14311:14313 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R14310:14310 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14315:14319 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'mod'_x not
+R14320:14320 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14328:14328 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14338:14341 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14334:14336 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R14330:14332 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R14333:14333 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14342:14342 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14383:14383 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14393:14396 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14389:14391 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R14385:14387 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R14388:14388 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14397:14397 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14407:14409 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R14410:14410 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14420:14423 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14416:14418 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R14412:14414 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R14415:14415 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14424:14424 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14383:14383 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14393:14396 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14389:14391 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R14385:14387 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R14388:14388 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14397:14397 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14407:14409 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R14410:14410 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14420:14423 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R14416:14418 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R14412:14414 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R14415:14415 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14424:14424 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14447:14462 Stdlib.Arith.PeanoNat Nat.Div0 mod_add thm
+R14447:14462 Stdlib.Arith.PeanoNat Nat.Div0 mod_add thm
+R14447:14462 Stdlib.Arith.PeanoNat Nat.Div0 mod_add thm
+R14475:14490 Stdlib.Arith.PeanoNat Nat.Div0 mod_0_l thm
+R14475:14490 Stdlib.Arith.PeanoNat Nat.Div0 mod_0_l thm
+def 14514:14522 <> ZmodGroup
+R14526:14536 CAG.Group <> StrictGroup rec
+R14538:14540 Corelib.Init.Datatypes <> nat ind
+R14549:14552 CAG.Group <> mkSG constr
+R14554:14556 Corelib.Init.Datatypes <> nat ind
+R14558:14565 CAG.Groups.DirectProduct <> Zmod_mul def
+R14567:14572 CAG.Groups.DirectProduct <> Zmod_e def
+R14574:14581 CAG.Groups.DirectProduct <> Zmod_inv def
+R14589:14598 CAG.Groups.DirectProduct <> Zmod_assoc thm
+R14600:14612 CAG.Groups.DirectProduct <> Zmod_right_id prfax
+R14614:14625 CAG.Groups.DirectProduct <> Zmod_left_id prfax
+R14627:14640 CAG.Groups.DirectProduct <> Zmod_right_inv thm
+R14642:14654 CAG.Groups.DirectProduct <> Zmod_left_inv thm
+var 14720:14731 ElementaryAbelian Zmod_order_p
+R14746:14748 Corelib.Init.Datatypes <> nat ind
+binder 14742:14742 <> a:100
+R14798:14800 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R14757:14760 CAG.Group <> gpow def
+R14795:14795 CAG.Groups.DirectProduct <> a:100 var
+R14797:14797 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R14763:14782 CAG.Group <> StrictGroup_to_Group def
+R14784:14792 CAG.Groups.DirectProduct <> ZmodGroup def
+R14801:14806 CAG.Groups.DirectProduct <> Zmod_e def
+def 14984:14990 <> NfoldDP
+R14997:14999 Corelib.Init.Datatypes <> nat ind
+binder 14993:14993 <> n:103
+R15022:15022 CAG.Groups.DirectProduct <> n:103 var
+R15035:15035 Corelib.Init.Datatypes <> O constr
+R15043:15046 Corelib.Init.Datatypes <> unit ind
+R15054:15054 Corelib.Init.Datatypes <> S constr
+R15065:15067 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R15062:15064 Corelib.Init.Datatypes <> nat ind
+R15068:15074 CAG.Groups.DirectProduct <> NfoldDP:104 def
+def 15100:15107 <> NfoldMul
+R15114:15116 Corelib.Init.Datatypes <> nat ind
+binder 15110:15110 <> n:106
+R15130:15133 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15121:15127 CAG.Groups.DirectProduct <> NfoldDP def
+R15129:15129 CAG.Groups.DirectProduct <> n:106 var
+R15143:15146 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15134:15140 CAG.Groups.DirectProduct <> NfoldDP def
+R15142:15142 CAG.Groups.DirectProduct <> n:106 var
+R15147:15153 CAG.Groups.DirectProduct <> NfoldDP def
+R15155:15155 CAG.Groups.DirectProduct <> n:106 var
+R15170:15170 CAG.Groups.DirectProduct <> n:106 var
+R15183:15183 Corelib.Init.Datatypes <> O constr
+R15202:15203 Corelib.Init.Datatypes <> tt constr
+R15211:15211 Corelib.Init.Datatypes <> S constr
+binder 15223:15223 <> x:109
+binder 15225:15225 <> y:110
+R15230:15230 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R15255:15256 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R15284:15284 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R15231:15238 CAG.Groups.DirectProduct <> Zmod_mul def
+R15241:15243 Corelib.Init.Datatypes <> fst def
+R15245:15245 CAG.Groups.DirectProduct <> x:109 var
+R15249:15251 Corelib.Init.Datatypes <> fst def
+R15253:15253 CAG.Groups.DirectProduct <> y:110 var
+R15257:15264 CAG.Groups.DirectProduct <> NfoldMul:107 def
+R15278:15280 Corelib.Init.Datatypes <> snd def
+R15282:15282 CAG.Groups.DirectProduct <> y:110 var
+R15270:15272 Corelib.Init.Datatypes <> snd def
+R15274:15274 CAG.Groups.DirectProduct <> x:109 var
+def 15307:15312 <> NfoldE
+R15319:15321 Corelib.Init.Datatypes <> nat ind
+binder 15315:15315 <> n:111
+R15326:15332 CAG.Groups.DirectProduct <> NfoldDP def
+R15334:15334 CAG.Groups.DirectProduct <> n:111 var
+R15349:15349 CAG.Groups.DirectProduct <> n:111 var
+R15362:15362 Corelib.Init.Datatypes <> O constr
+R15370:15371 Corelib.Init.Datatypes <> tt constr
+R15379:15379 Corelib.Init.Datatypes <> S constr
+R15387:15387 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R15394:15395 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R15405:15405 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R15388:15393 CAG.Groups.DirectProduct <> Zmod_e def
+R15396:15401 CAG.Groups.DirectProduct <> NfoldE:112 def
+def 15428:15435 <> NfoldInv
+R15442:15444 Corelib.Init.Datatypes <> nat ind
+binder 15438:15438 <> n:114
+R15458:15461 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15449:15455 CAG.Groups.DirectProduct <> NfoldDP def
+R15457:15457 CAG.Groups.DirectProduct <> n:114 var
+R15462:15468 CAG.Groups.DirectProduct <> NfoldDP def
+R15470:15470 CAG.Groups.DirectProduct <> n:114 var
+R15485:15485 CAG.Groups.DirectProduct <> n:114 var
+R15498:15498 Corelib.Init.Datatypes <> O constr
+R15515:15516 Corelib.Init.Datatypes <> tt constr
+R15524:15524 Corelib.Init.Datatypes <> S constr
+binder 15536:15536 <> x:117
+R15541:15541 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R15558:15559 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R15579:15579 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R15542:15549 CAG.Groups.DirectProduct <> Zmod_inv def
+R15552:15554 Corelib.Init.Datatypes <> fst def
+R15556:15556 CAG.Groups.DirectProduct <> x:117 var
+R15560:15567 CAG.Groups.DirectProduct <> NfoldInv:115 def
+R15573:15575 Corelib.Init.Datatypes <> snd def
+R15577:15577 CAG.Groups.DirectProduct <> x:117 var
+var 15599:15611 ElementaryAbelian NfoldDP_assoc
+binder 15622:15622 <> n:118
+binder 15624:15624 <> a:119
+binder 15626:15626 <> b:120
+binder 15628:15628 <> c:121
+R15666:15668 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15637:15644 CAG.Groups.DirectProduct <> NfoldMul def
+R15646:15646 CAG.Groups.DirectProduct <> n:118 var
+R15648:15648 CAG.Groups.DirectProduct <> a:119 var
+R15651:15658 CAG.Groups.DirectProduct <> NfoldMul def
+R15660:15660 CAG.Groups.DirectProduct <> n:118 var
+R15662:15662 CAG.Groups.DirectProduct <> b:120 var
+R15664:15664 CAG.Groups.DirectProduct <> c:121 var
+R15669:15676 CAG.Groups.DirectProduct <> NfoldMul def
+R15678:15678 CAG.Groups.DirectProduct <> n:118 var
+R15681:15688 CAG.Groups.DirectProduct <> NfoldMul def
+R15690:15690 CAG.Groups.DirectProduct <> n:118 var
+R15692:15692 CAG.Groups.DirectProduct <> a:119 var
+R15694:15694 CAG.Groups.DirectProduct <> b:120 var
+R15697:15697 CAG.Groups.DirectProduct <> c:121 var
+var 15708:15723 ElementaryAbelian NfoldDP_right_id
+binder 15734:15734 <> n:124
+binder 15736:15736 <> a:125
+R15762:15764 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15739:15746 CAG.Groups.DirectProduct <> NfoldMul def
+R15748:15748 CAG.Groups.DirectProduct <> n:124 var
+R15750:15750 CAG.Groups.DirectProduct <> a:125 var
+R15753:15758 CAG.Groups.DirectProduct <> NfoldE def
+R15760:15760 CAG.Groups.DirectProduct <> n:124 var
+R15765:15765 CAG.Groups.DirectProduct <> a:125 var
+var 15776:15790 ElementaryAbelian NfoldDP_left_id
+binder 15802:15802 <> n:128
+binder 15804:15804 <> a:129
+R15830:15832 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15807:15814 CAG.Groups.DirectProduct <> NfoldMul def
+R15816:15816 CAG.Groups.DirectProduct <> n:128 var
+R15819:15824 CAG.Groups.DirectProduct <> NfoldE def
+R15826:15826 CAG.Groups.DirectProduct <> n:128 var
+R15829:15829 CAG.Groups.DirectProduct <> a:129 var
+R15833:15833 CAG.Groups.DirectProduct <> a:129 var
+var 15844:15860 ElementaryAbelian NfoldDP_right_inv
+binder 15871:15871 <> n:132
+binder 15873:15873 <> a:133
+R15903:15905 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15876:15883 CAG.Groups.DirectProduct <> NfoldMul def
+R15885:15885 CAG.Groups.DirectProduct <> n:132 var
+R15887:15887 CAG.Groups.DirectProduct <> a:133 var
+R15890:15897 CAG.Groups.DirectProduct <> NfoldInv def
+R15899:15899 CAG.Groups.DirectProduct <> n:132 var
+R15901:15901 CAG.Groups.DirectProduct <> a:133 var
+R15906:15911 CAG.Groups.DirectProduct <> NfoldE def
+R15913:15913 CAG.Groups.DirectProduct <> n:132 var
+var 15924:15939 ElementaryAbelian NfoldDP_left_inv
+binder 15951:15951 <> n:136
+binder 15953:15953 <> a:137
+R15983:15985 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15956:15963 CAG.Groups.DirectProduct <> NfoldMul def
+R15965:15965 CAG.Groups.DirectProduct <> n:136 var
+R15968:15975 CAG.Groups.DirectProduct <> NfoldInv def
+R15977:15977 CAG.Groups.DirectProduct <> n:136 var
+R15979:15979 CAG.Groups.DirectProduct <> a:137 var
+R15982:15982 CAG.Groups.DirectProduct <> a:137 var
+R15986:15991 CAG.Groups.DirectProduct <> NfoldE def
+R15993:15993 CAG.Groups.DirectProduct <> n:136 var
+def 16010:16026 <> ElementaryAbelian
+R16033:16035 Corelib.Init.Datatypes <> nat ind
+binder 16029:16029 <> n:140
+R16040:16050 CAG.Group <> StrictGroup rec
+R16053:16059 CAG.Groups.DirectProduct <> NfoldDP def
+R16061:16061 CAG.Groups.DirectProduct <> n:140 var
+R16071:16074 CAG.Group <> mkSG constr
+R16077:16083 CAG.Groups.DirectProduct <> NfoldDP def
+R16085:16085 CAG.Groups.DirectProduct <> n:140 var
+R16095:16102 CAG.Groups.DirectProduct <> NfoldMul def
+R16104:16104 CAG.Groups.DirectProduct <> n:140 var
+R16108:16113 CAG.Groups.DirectProduct <> NfoldE def
+R16115:16115 CAG.Groups.DirectProduct <> n:140 var
+R16119:16126 CAG.Groups.DirectProduct <> NfoldInv def
+R16128:16128 CAG.Groups.DirectProduct <> n:140 var
+R16138:16150 CAG.Groups.DirectProduct <> NfoldDP_assoc prfax
+R16152:16152 CAG.Groups.DirectProduct <> n:140 var
+R16156:16171 CAG.Groups.DirectProduct <> NfoldDP_right_id prfax
+R16173:16173 CAG.Groups.DirectProduct <> n:140 var
+R16177:16191 CAG.Groups.DirectProduct <> NfoldDP_left_id prfax
+R16193:16193 CAG.Groups.DirectProduct <> n:140 var
+R16203:16219 CAG.Groups.DirectProduct <> NfoldDP_right_inv prfax
+R16221:16221 CAG.Groups.DirectProduct <> n:140 var
+R16225:16240 CAG.Groups.DirectProduct <> NfoldDP_left_inv prfax
+R16242:16242 CAG.Groups.DirectProduct <> n:140 var
+var 16284:16306 ElementaryAbelian elementary_abelian_comm
+binder 16317:16317 <> n:141
+binder 16319:16319 <> a:142
+binder 16321:16321 <> b:143
+R16344:16346 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R16330:16337 CAG.Groups.DirectProduct <> NfoldMul def
+R16339:16339 CAG.Groups.DirectProduct <> n:141 var
+R16341:16341 CAG.Groups.DirectProduct <> a:142 var
+R16343:16343 CAG.Groups.DirectProduct <> b:143 var
+R16347:16354 CAG.Groups.DirectProduct <> NfoldMul def
+R16356:16356 CAG.Groups.DirectProduct <> n:141 var
+R16358:16358 CAG.Groups.DirectProduct <> b:143 var
+R16360:16360 CAG.Groups.DirectProduct <> a:142 var
+var 16421:16446 ElementaryAbelian elementary_abelian_order_p
+binder 16457:16457 <> n:146
+R16464:16470 CAG.Groups.DirectProduct <> NfoldDP def
+R16472:16472 CAG.Groups.DirectProduct <> n:146 var
+binder 16460:16460 <> a:147
+R16535:16537 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R16482:16485 CAG.Group <> gpow def
+R16532:16532 CAG.Groups.DirectProduct <> a:147 var
+R16534:16534 CAG.Groups.DirectProduct <> ElementaryAbelian.p var
+R16488:16507 CAG.Group <> StrictGroup_to_Group def
+R16510:16526 CAG.Groups.DirectProduct <> ElementaryAbelian def
+R16528:16528 CAG.Groups.DirectProduct <> n:146 var
+R16538:16543 CAG.Groups.DirectProduct <> NfoldE def
+R16545:16545 CAG.Groups.DirectProduct <> n:146 var
+var 16679:16702 ElementaryAbelian subgroups_order_p_in_Ep2
+R16792:16795 Corelib.Init.Logic <> True ind
+R16803:16819 CAG.Groups.DirectProduct ElementaryAbelian <> sec
+ax 17131:17175 <> quotient_direct_product_iso_product_quotients
+binder 17189:17190 <> G1:152
+binder 17192:17193 <> G2:153
+R17219:17229 CAG.Group <> StrictGroup rec
+R17231:17232 CAG.Groups.DirectProduct <> G1:152 var
+binder 17213:17215 <> sg1:154
+R17242:17252 CAG.Group <> StrictGroup rec
+R17254:17255 CAG.Groups.DirectProduct <> G2:153 var
+binder 17236:17238 <> sg2:155
+R17275:17278 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R17273:17274 CAG.Groups.DirectProduct <> G1:152 var
+binder 17268:17269 <> B1:156
+R17293:17296 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R17291:17292 CAG.Groups.DirectProduct <> G2:153 var
+binder 17286:17287 <> B2:157
+R17319:17336 CAG.Group <> is_normal_subgroup def
+R17365:17366 CAG.Groups.DirectProduct <> B1:156 var
+R17339:17358 CAG.Group <> StrictGroup_to_Group def
+R17360:17362 CAG.Groups.DirectProduct <> sg1:154 var
+binder 17313:17315 <> HB1:158
+R17385:17402 CAG.Group <> is_normal_subgroup def
+R17431:17432 CAG.Groups.DirectProduct <> B2:157 var
+R17405:17424 CAG.Group <> StrictGroup_to_Group def
+R17426:17428 CAG.Groups.DirectProduct <> sg2:155 var
+binder 17379:17381 <> HB2:159
+R17438:17441 Corelib.Init.Logic <> True ind
+sec 17770:17773 <> Swap
+var  17788:17788 Swap G
+var  17790:17790 Swap H
+var  17812:17813 Swap sg
+var  17833:17834 Swap sh
+R17817:17827 CAG.Group <> StrictGroup rec
+R17829:17829 CAG.Groups.DirectProduct <> Swap.G var
+R17838:17848 CAG.Group <> StrictGroup rec
+R17850:17850 CAG.Groups.DirectProduct <> Swap.H var
+abbrev 17872:17873 <> GH
+R17879:17896 CAG.Groups.DirectProduct <> DirectProductGroup def
+R17901:17902 CAG.Groups.DirectProduct <> Swap.sh var
+R17898:17899 CAG.Groups.DirectProduct <> Swap.sg var
+abbrev 17923:17924 <> HG
+R17930:17947 CAG.Groups.DirectProduct <> DirectProductGroup def
+R17952:17953 CAG.Groups.DirectProduct <> Swap.sg var
+R17949:17950 CAG.Groups.DirectProduct <> Swap.sh var
+def 17971:17977 <> swap_fn
+R17985:17987 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R17984:17984 CAG.Groups.DirectProduct <> Swap.G var
+R17988:17988 CAG.Groups.DirectProduct <> Swap.H var
+binder 17980:17980 <> x:166
+R17994:17996 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R17993:17993 CAG.Groups.DirectProduct <> Swap.H var
+R17997:17997 CAG.Groups.DirectProduct <> Swap.G var
+R18002:18002 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18008:18009 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18015:18015 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18003:18005 Corelib.Init.Datatypes <> snd def
+R18007:18007 CAG.Groups.DirectProduct <> x:166 var
+R18010:18012 Corelib.Init.Datatypes <> fst def
+R18014:18014 CAG.Groups.DirectProduct <> x:166 var
+prf 18027:18034 <> swap_hom
+R18058:18060 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18057:18057 CAG.Groups.DirectProduct <> Swap.G var
+R18061:18061 CAG.Groups.DirectProduct <> Swap.H var
+binder 18051:18051 <> a:167
+binder 18053:18053 <> b:168
+R18101:18111 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R18072:18078 CAG.Groups.DirectProduct <> swap_fn def
+R18081:18084 CAG.Group <> smul proj
+R18088:18090 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18087:18087 CAG.Groups.DirectProduct <> Swap.G var
+R18091:18091 CAG.Groups.DirectProduct <> Swap.H var
+R18094:18095 CAG.Groups.DirectProduct <> GH abbrev
+R18097:18097 CAG.Groups.DirectProduct <> a:167 var
+R18099:18099 CAG.Groups.DirectProduct <> b:168 var
+R18112:18115 CAG.Group <> smul proj
+R18119:18121 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18118:18118 CAG.Groups.DirectProduct <> Swap.H var
+R18122:18122 CAG.Groups.DirectProduct <> Swap.G var
+R18125:18126 CAG.Groups.DirectProduct <> HG abbrev
+R18129:18135 CAG.Groups.DirectProduct <> swap_fn def
+R18137:18137 CAG.Groups.DirectProduct <> a:167 var
+R18141:18147 CAG.Groups.DirectProduct <> swap_fn def
+R18149:18149 CAG.Groups.DirectProduct <> b:168 var
+def 18224:18234 <> swap_fn_inv
+R18242:18244 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18241:18241 CAG.Groups.DirectProduct <> Swap.H var
+R18245:18245 CAG.Groups.DirectProduct <> Swap.G var
+binder 18237:18237 <> x:169
+R18251:18253 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18250:18250 CAG.Groups.DirectProduct <> Swap.G var
+R18254:18254 CAG.Groups.DirectProduct <> Swap.H var
+R18259:18259 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18265:18266 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18272:18272 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18260:18262 Corelib.Init.Datatypes <> snd def
+R18264:18264 CAG.Groups.DirectProduct <> x:169 var
+R18267:18269 Corelib.Init.Datatypes <> fst def
+R18271:18271 CAG.Groups.DirectProduct <> x:169 var
+def 18289:18296 <> swap_iso
+R18300:18307 CAG.Group <> GroupIso rec
+R18312:18313 CAG.Groups.DirectProduct <> HG abbrev
+R18309:18310 CAG.Groups.DirectProduct <> GH abbrev
+R18322:18326 CAG.Group <> mkIso constr
+R18330:18332 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18329:18329 CAG.Groups.DirectProduct <> Swap.G var
+R18333:18333 CAG.Groups.DirectProduct <> Swap.H var
+R18338:18340 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18337:18337 CAG.Groups.DirectProduct <> Swap.H var
+R18341:18341 CAG.Groups.DirectProduct <> Swap.G var
+R18344:18345 CAG.Groups.DirectProduct <> GH abbrev
+R18347:18348 CAG.Groups.DirectProduct <> HG abbrev
+R18357:18361 CAG.Group <> mkHom constr
+R18367:18368 CAG.Groups.DirectProduct <> GH abbrev
+R18370:18371 CAG.Groups.DirectProduct <> HG abbrev
+R18373:18379 CAG.Groups.DirectProduct <> swap_fn def
+binder 18386:18386 <> a:170
+binder 18388:18388 <> b:171
+R18393:18400 CAG.Groups.DirectProduct <> swap_hom thm
+R18402:18402 CAG.Groups.DirectProduct <> a:170 var
+R18404:18404 CAG.Groups.DirectProduct <> b:171 var
+R18414:18424 CAG.Groups.DirectProduct <> swap_fn_inv def
+binder 18437:18437 <> x:172
+R18448:18448 CAG.Groups.DirectProduct <> x:172 var
+R18455:18455 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18457:18458 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18460:18460 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18465:18471 Corelib.Init.Logic <> eq_refl constr
+binder 18489:18489 <> x:174
+R18500:18500 CAG.Groups.DirectProduct <> x:174 var
+R18507:18507 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18509:18510 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18512:18512 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18517:18523 Corelib.Init.Logic <> eq_refl constr
+R18536:18539 CAG.Groups.DirectProduct Swap <> sec
+ax 18907:18922 <> sylow_in_product
+binder 18936:18936 <> G:176
+binder 18938:18938 <> H:177
+R18954:18964 CAG.Group <> StrictGroup rec
+R18966:18966 CAG.Groups.DirectProduct <> G:176 var
+binder 18949:18950 <> sg:178
+R18975:18985 CAG.Group <> StrictGroup rec
+R18987:18987 CAG.Groups.DirectProduct <> H:177 var
+binder 18970:18971 <> sh:179
+R19004:19006 Corelib.Init.Datatypes <> nat ind
+binder 19000:19000 <> p:180
+R19015:19018 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R19014:19014 CAG.Groups.DirectProduct <> G:176 var
+binder 19010:19010 <> P:181
+R19031:19034 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R19030:19030 CAG.Groups.DirectProduct <> H:177 var
+binder 19026:19026 <> Q:182
+R19044:19047 Corelib.Init.Logic <> True ind

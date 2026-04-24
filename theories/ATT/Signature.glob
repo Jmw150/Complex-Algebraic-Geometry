@@ -1,0 +1,70 @@
+DIGEST 0601bda984407b4766209d07f58e8f6d
+FCAG.ATT.Signature
+R119:128 Stdlib.Lists.List <> <> lib
+R138:150 Stdlib.Lists.List ListNotations <> mod
+rec 509:517 <> Signature
+proj 533:537 <> sg_ty
+proj 550:555 <> sg_fun
+proj 567:572 <> sg_dom
+proj 600:605 <> sg_cod
+R582:585 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R576:581 CAG.ATT.Signature <> sg_fun:3 meth
+R586:589 Corelib.Init.Datatypes <> list ind
+R591:595 CAG.ATT.Signature <> sg_ty:2 meth
+R615:618 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R609:614 CAG.ATT.Signature <> sg_fun:3 meth
+R619:623 CAG.ATT.Signature <> sg_ty:2 meth
+def 720:727 <> EmptySig
+R731:739 CAG.ATT.Signature <> Signature rec
+R749:753 CAG.ATT.Signature <> sg_ty proj
+R749:753 CAG.ATT.Signature <> sg_ty proj
+R749:753 CAG.ATT.Signature <> sg_ty proj
+R772:777 CAG.ATT.Signature <> sg_fun proj
+R772:777 CAG.ATT.Signature <> sg_fun proj
+R795:800 CAG.ATT.Signature <> sg_dom proj
+R795:800 CAG.ATT.Signature <> sg_dom proj
+R834:839 CAG.ATT.Signature <> sg_cod proj
+R834:839 CAG.ATT.Signature <> sg_cod proj
+R759:767 Corelib.Init.Datatypes <> Empty_set ind
+R782:790 Corelib.Init.Datatypes <> Empty_set ind
+binder 809:809 <> f:6
+R820:820 CAG.ATT.Signature <> f:6 var
+binder 848:848 <> f:8
+R859:859 CAG.ATT.Signature <> f:8 var
+def 1035:1042 <> UnarySig
+binder 1045:1048 <> funs:10
+R1071:1074 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1067:1070 CAG.ATT.Signature <> funs:10 var
+R1075:1077 Corelib.Init.Datatypes <> nat ind
+binder 1059:1063 <> arity:11
+R1082:1090 CAG.ATT.Signature <> Signature rec
+R1116:1120 CAG.ATT.Signature <> sg_ty proj
+R1116:1120 CAG.ATT.Signature <> sg_ty proj
+R1116:1120 CAG.ATT.Signature <> sg_ty proj
+R1136:1141 CAG.ATT.Signature <> sg_fun proj
+R1136:1141 CAG.ATT.Signature <> sg_fun proj
+R1156:1161 CAG.ATT.Signature <> sg_dom proj
+R1156:1161 CAG.ATT.Signature <> sg_dom proj
+R1205:1210 CAG.ATT.Signature <> sg_cod proj
+R1205:1210 CAG.ATT.Signature <> sg_cod proj
+R1126:1129 Corelib.Init.Datatypes <> unit ind
+binder 1170:1170 <> f:12
+R1175:1185 Stdlib.Lists.List <> repeat abbrev
+R1197:1197 CAG.ATT.Signature <> f:12 var
+R1187:1188 Corelib.Init.Datatypes <> tt constr
+R1224:1225 Corelib.Init.Datatypes <> tt constr
+R1116:1120 CAG.ATT.Signature <> sg_ty proj
+R1116:1120 CAG.ATT.Signature <> sg_ty proj
+R1116:1120 CAG.ATT.Signature <> sg_ty proj
+R1136:1141 CAG.ATT.Signature <> sg_fun proj
+R1136:1141 CAG.ATT.Signature <> sg_fun proj
+R1156:1161 CAG.ATT.Signature <> sg_dom proj
+R1156:1161 CAG.ATT.Signature <> sg_dom proj
+R1205:1210 CAG.ATT.Signature <> sg_cod proj
+R1205:1210 CAG.ATT.Signature <> sg_cod proj
+R1126:1129 Corelib.Init.Datatypes <> unit ind
+binder 1170:1170 <> f:13
+R1175:1185 Stdlib.Lists.List <> repeat abbrev
+R1197:1197 CAG.ATT.Signature <> f:13 var
+R1187:1188 Corelib.Init.Datatypes <> tt constr
+R1224:1225 Corelib.Init.Datatypes <> tt constr

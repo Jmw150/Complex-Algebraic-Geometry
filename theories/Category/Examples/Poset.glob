@@ -1,0 +1,272 @@
+DIGEST 629a49c5dbeb915c1e2a8863bbfbdd3d
+FCAG.Category.Examples.Poset
+R153:169 CAG.Category.Core <> <> lib
+R187:207 CAG.Category.Products <> <> lib
+R225:247 CAG.Category.Coproducts <> <> lib
+R277:298 Stdlib.Logic.ProofIrrelevance <> <> lib
+rec 509:516 <> Preorder
+proj 532:541 <> po_carrier
+proj 553:557 <> po_le
+proj 602:608 <> po_refl
+proj 638:645 <> po_trans
+R576:579 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R566:575 CAG.Category.Examples.Poset <> po_carrier:2 meth
+R590:593 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R580:589 CAG.Category.Examples.Poset <> po_carrier:2 meth
+binder 622:622 <> x:4
+R625:629 CAG.Category.Examples.Poset <> po_le:3 meth
+R633:633 CAG.Category.Examples.Poset <> x:4 var
+R631:631 CAG.Category.Examples.Poset <> x:4 var
+binder 658:658 <> x:6
+binder 660:660 <> y:7
+binder 662:662 <> z:8
+R674:677 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R665:669 CAG.Category.Examples.Poset <> po_le:3 meth
+R673:673 CAG.Category.Examples.Poset <> y:7 var
+R671:671 CAG.Category.Examples.Poset <> x:6 var
+R687:690 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R678:682 CAG.Category.Examples.Poset <> po_le:3 meth
+R686:686 CAG.Category.Examples.Poset <> z:8 var
+R684:684 CAG.Category.Examples.Poset <> y:7 var
+R691:695 CAG.Category.Examples.Poset <> po_le:3 meth
+R699:699 CAG.Category.Examples.Poset <> z:8 var
+R697:697 CAG.Category.Examples.Poset <> x:6 var
+def 717:727 <> PreorderCat
+R734:741 CAG.Category.Examples.Poset <> Preorder rec
+binder 730:730 <> P:10
+R746:753 CAG.Category.Core <> Category rec
+R763:764 CAG.Category.Core <> Ob proj
+R763:764 CAG.Category.Core <> Ob proj
+R763:764 CAG.Category.Core <> Ob proj
+R788:790 CAG.Category.Core <> Hom proj
+R788:790 CAG.Category.Core <> Hom proj
+R823:824 CAG.Category.Core <> id proj
+R823:824 CAG.Category.Core <> id proj
+R856:859 CAG.Category.Core <> comp proj
+R856:859 CAG.Category.Core <> comp proj
+R907:916 CAG.Category.Core <> comp_assoc proj
+R907:916 CAG.Category.Core <> comp_assoc proj
+R969:975 CAG.Category.Core <> id_left proj
+R969:975 CAG.Category.Core <> id_left proj
+R1023:1030 CAG.Category.Core <> id_right proj
+R1023:1030 CAG.Category.Core <> id_right proj
+R773:782 CAG.Category.Examples.Poset <> po_carrier proj
+R770:770 CAG.Category.Examples.Poset <> P:10 var
+binder 799:799 <> a:11
+binder 801:801 <> b:12
+R809:813 CAG.Category.Examples.Poset <> po_le proj
+R806:806 CAG.Category.Examples.Poset <> P:10 var
+R816:816 CAG.Category.Examples.Poset <> a:11 var
+R818:818 CAG.Category.Examples.Poset <> b:12 var
+binder 834:834 <> a:13
+R842:848 CAG.Category.Examples.Poset <> po_refl proj
+R839:839 CAG.Category.Examples.Poset <> P:10 var
+R851:851 CAG.Category.Examples.Poset <> a:13 var
+binder 868:868 <> a:14
+binder 870:870 <> b:15
+binder 872:872 <> c:16
+binder 874:874 <> h:17
+binder 876:876 <> g:18
+R884:891 CAG.Category.Examples.Poset <> po_trans proj
+R881:881 CAG.Category.Examples.Poset <> P:10 var
+R894:894 CAG.Category.Examples.Poset <> a:14 var
+R896:896 CAG.Category.Examples.Poset <> b:15 var
+R898:898 CAG.Category.Examples.Poset <> c:16 var
+R900:900 CAG.Category.Examples.Poset <> g:18 var
+R902:902 CAG.Category.Examples.Poset <> h:17 var
+binder 925:925 <> a:19
+binder 927:927 <> b:20
+binder 929:929 <> c:21
+binder 931:931 <> d:22
+binder 933:933 <> f:23
+binder 935:935 <> g:24
+binder 937:937 <> h:25
+R942:958 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+binder 987:987 <> a:26
+binder 989:989 <> b:27
+binder 991:991 <> f:28
+R996:1012 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+binder 1041:1041 <> a:29
+binder 1043:1043 <> b:30
+binder 1045:1045 <> f:31
+R1050:1066 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+def 1125:1139 <> top_is_terminal
+R1146:1153 CAG.Category.Examples.Poset <> Preorder rec
+binder 1142:1142 <> P:32
+R1166:1175 CAG.Category.Examples.Poset <> po_carrier proj
+R1163:1163 CAG.Category.Examples.Poset <> P:32 var
+binder 1157:1159 <> top:33
+binder 1199:1199 <> x:34
+R1205:1209 CAG.Category.Examples.Poset <> po_le proj
+R1202:1202 CAG.Category.Examples.Poset <> P:32 var
+R1212:1212 CAG.Category.Examples.Poset <> x:34 var
+R1214:1216 CAG.Category.Examples.Poset <> top:33 var
+binder 1184:1188 <> h_top:35
+R1226:1235 CAG.Category.Core <> IsTerminal rec
+R1238:1248 CAG.Category.Examples.Poset <> PreorderCat def
+R1250:1250 CAG.Category.Examples.Poset <> P:32 var
+R1253:1255 CAG.Category.Examples.Poset <> top:33 var
+R1275:1290 CAG.Category.Core <> Build_IsTerminal constr
+R1293:1303 CAG.Category.Examples.Poset <> PreorderCat def
+binder 1317:1317 <> A:36
+R1328:1328 CAG.Category.Examples.Poset <> A:36 var
+R1275:1290 CAG.Category.Core <> Build_IsTerminal constr
+R1293:1303 CAG.Category.Examples.Poset <> PreorderCat def
+binder 1317:1317 <> A:37
+R1328:1328 CAG.Category.Examples.Poset <> A:37 var
+R1356:1372 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R1378:1382 CAG.Category.Examples.Poset <> po_le proj
+R1356:1372 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R1378:1382 CAG.Category.Examples.Poset <> po_le proj
+def 1463:1476 <> bot_is_initial
+R1483:1490 CAG.Category.Examples.Poset <> Preorder rec
+binder 1479:1479 <> P:38
+R1503:1512 CAG.Category.Examples.Poset <> po_carrier proj
+R1500:1500 CAG.Category.Examples.Poset <> P:38 var
+binder 1494:1496 <> bot:39
+binder 1536:1536 <> x:40
+R1542:1546 CAG.Category.Examples.Poset <> po_le proj
+R1539:1539 CAG.Category.Examples.Poset <> P:38 var
+R1549:1551 CAG.Category.Examples.Poset <> bot:39 var
+R1553:1553 CAG.Category.Examples.Poset <> x:40 var
+binder 1521:1525 <> h_bot:41
+R1563:1571 CAG.Category.Core <> IsInitial rec
+R1574:1584 CAG.Category.Examples.Poset <> PreorderCat def
+R1586:1586 CAG.Category.Examples.Poset <> P:38 var
+R1589:1591 CAG.Category.Examples.Poset <> bot:39 var
+R1611:1625 CAG.Category.Core <> Build_IsInitial constr
+R1628:1638 CAG.Category.Examples.Poset <> PreorderCat def
+binder 1652:1652 <> A:42
+R1663:1663 CAG.Category.Examples.Poset <> A:42 var
+R1611:1625 CAG.Category.Core <> Build_IsInitial constr
+R1628:1638 CAG.Category.Examples.Poset <> PreorderCat def
+binder 1652:1652 <> A:43
+R1663:1663 CAG.Category.Examples.Poset <> A:43 var
+R1691:1707 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R1713:1717 CAG.Category.Examples.Poset <> po_le proj
+R1691:1707 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R1713:1717 CAG.Category.Examples.Poset <> po_le proj
+def 1938:1952 <> meet_is_product
+R1959:1966 CAG.Category.Examples.Poset <> Preorder rec
+binder 1955:1955 <> P:44
+R1981:1990 CAG.Category.Examples.Poset <> po_carrier proj
+R1978:1978 CAG.Category.Examples.Poset <> P:44 var
+binder 1970:1970 <> a:45
+binder 1972:1972 <> b:46
+binder 1974:1974 <> m:47
+R2007:2011 CAG.Category.Examples.Poset <> po_le proj
+R2004:2004 CAG.Category.Examples.Poset <> P:44 var
+R2014:2014 CAG.Category.Examples.Poset <> m:47 var
+R2016:2016 CAG.Category.Examples.Poset <> a:45 var
+binder 1999:2000 <> h1:48
+R2032:2036 CAG.Category.Examples.Poset <> po_le proj
+R2029:2029 CAG.Category.Examples.Poset <> P:44 var
+R2039:2039 CAG.Category.Examples.Poset <> m:47 var
+R2041:2041 CAG.Category.Examples.Poset <> b:46 var
+binder 2024:2025 <> h2:49
+binder 2065:2065 <> x:50
+R2081:2084 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2071:2075 CAG.Category.Examples.Poset <> po_le proj
+R2068:2068 CAG.Category.Examples.Poset <> P:44 var
+R2078:2078 CAG.Category.Examples.Poset <> x:50 var
+R2080:2080 CAG.Category.Examples.Poset <> a:45 var
+R2098:2101 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2088:2092 CAG.Category.Examples.Poset <> po_le proj
+R2085:2085 CAG.Category.Examples.Poset <> P:44 var
+R2095:2095 CAG.Category.Examples.Poset <> x:50 var
+R2097:2097 CAG.Category.Examples.Poset <> b:46 var
+R2105:2109 CAG.Category.Examples.Poset <> po_le proj
+R2102:2102 CAG.Category.Examples.Poset <> P:44 var
+R2112:2112 CAG.Category.Examples.Poset <> x:50 var
+R2114:2114 CAG.Category.Examples.Poset <> m:47 var
+binder 2049:2054 <> h_univ:51
+R2124:2138 CAG.Category.Products <> IsBinaryProduct rec
+R2141:2151 CAG.Category.Examples.Poset <> PreorderCat def
+R2153:2153 CAG.Category.Examples.Poset <> P:44 var
+R2156:2156 CAG.Category.Examples.Poset <> a:45 var
+R2158:2158 CAG.Category.Examples.Poset <> b:46 var
+R2160:2160 CAG.Category.Examples.Poset <> m:47 var
+R2180:2200 CAG.Category.Products <> Build_IsBinaryProduct constr
+R2203:2213 CAG.Category.Examples.Poset <> PreorderCat def
+binder 2239:2239 <> X:52
+binder 2241:2241 <> f:53
+binder 2243:2243 <> g:54
+R2255:2255 CAG.Category.Examples.Poset <> X:52 var
+R2257:2257 CAG.Category.Examples.Poset <> f:53 var
+R2259:2259 CAG.Category.Examples.Poset <> g:54 var
+R2180:2200 CAG.Category.Products <> Build_IsBinaryProduct constr
+R2203:2213 CAG.Category.Examples.Poset <> PreorderCat def
+binder 2239:2239 <> X:55
+binder 2241:2241 <> f:56
+binder 2243:2243 <> g:57
+R2255:2255 CAG.Category.Examples.Poset <> X:55 var
+R2257:2257 CAG.Category.Examples.Poset <> f:56 var
+R2259:2259 CAG.Category.Examples.Poset <> g:57 var
+R2299:2315 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R2299:2315 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R2347:2363 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R2347:2363 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R2395:2411 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R2395:2411 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+def 2470:2486 <> join_is_coproduct
+R2493:2500 CAG.Category.Examples.Poset <> Preorder rec
+binder 2489:2489 <> P:58
+R2515:2524 CAG.Category.Examples.Poset <> po_carrier proj
+R2512:2512 CAG.Category.Examples.Poset <> P:58 var
+binder 2504:2504 <> a:59
+binder 2506:2506 <> b:60
+binder 2508:2508 <> j:61
+R2541:2545 CAG.Category.Examples.Poset <> po_le proj
+R2538:2538 CAG.Category.Examples.Poset <> P:58 var
+R2548:2548 CAG.Category.Examples.Poset <> a:59 var
+R2550:2550 CAG.Category.Examples.Poset <> j:61 var
+binder 2533:2534 <> i1:62
+R2566:2570 CAG.Category.Examples.Poset <> po_le proj
+R2563:2563 CAG.Category.Examples.Poset <> P:58 var
+R2573:2573 CAG.Category.Examples.Poset <> b:60 var
+R2575:2575 CAG.Category.Examples.Poset <> j:61 var
+binder 2558:2559 <> i2:63
+binder 2599:2599 <> x:64
+R2615:2618 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2605:2609 CAG.Category.Examples.Poset <> po_le proj
+R2602:2602 CAG.Category.Examples.Poset <> P:58 var
+R2612:2612 CAG.Category.Examples.Poset <> a:59 var
+R2614:2614 CAG.Category.Examples.Poset <> x:64 var
+R2632:2635 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2622:2626 CAG.Category.Examples.Poset <> po_le proj
+R2619:2619 CAG.Category.Examples.Poset <> P:58 var
+R2629:2629 CAG.Category.Examples.Poset <> b:60 var
+R2631:2631 CAG.Category.Examples.Poset <> x:64 var
+R2639:2643 CAG.Category.Examples.Poset <> po_le proj
+R2636:2636 CAG.Category.Examples.Poset <> P:58 var
+R2646:2646 CAG.Category.Examples.Poset <> j:61 var
+R2648:2648 CAG.Category.Examples.Poset <> x:64 var
+binder 2583:2588 <> h_univ:65
+R2658:2674 CAG.Category.Coproducts <> IsBinaryCoproduct rec
+R2677:2687 CAG.Category.Examples.Poset <> PreorderCat def
+R2689:2689 CAG.Category.Examples.Poset <> P:58 var
+R2692:2692 CAG.Category.Examples.Poset <> a:59 var
+R2694:2694 CAG.Category.Examples.Poset <> b:60 var
+R2696:2696 CAG.Category.Examples.Poset <> j:61 var
+R2716:2738 CAG.Category.Coproducts <> Build_IsBinaryCoproduct constr
+R2741:2751 CAG.Category.Examples.Poset <> PreorderCat def
+binder 2777:2777 <> X:66
+binder 2779:2779 <> f:67
+binder 2781:2781 <> g:68
+R2793:2793 CAG.Category.Examples.Poset <> X:66 var
+R2795:2795 CAG.Category.Examples.Poset <> f:67 var
+R2797:2797 CAG.Category.Examples.Poset <> g:68 var
+R2716:2738 CAG.Category.Coproducts <> Build_IsBinaryCoproduct constr
+R2741:2751 CAG.Category.Examples.Poset <> PreorderCat def
+binder 2777:2777 <> X:69
+binder 2779:2779 <> f:70
+binder 2781:2781 <> g:71
+R2793:2793 CAG.Category.Examples.Poset <> X:69 var
+R2795:2795 CAG.Category.Examples.Poset <> f:70 var
+R2797:2797 CAG.Category.Examples.Poset <> g:71 var
+R2837:2853 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R2837:2853 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R2885:2901 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R2885:2901 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R2933:2949 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R2933:2949 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax

@@ -1,0 +1,1731 @@
+DIGEST 5130820136c0e8e1b58d4d6d59d5a3c3
+FCAG.DecisionProblems.TraceProperties
+R816:820 CAG.Group <> <> lib
+R850:853 Stdlib.Lists.List <> <> lib
+R855:859 Stdlib.Arith.Arith <> <> lib
+R861:863 Stdlib.micromega.Lia <> <> lib
+R873:885 Stdlib.Lists.List ListNotations <> mod
+rec 1173:1179 <> FGGroup
+proj 1218:1223 <> fgg_sg
+proj 1248:1255 <> fgg_gens
+proj 1428:1434 <> fgg_gen
+binder 1182:1182 <> G:1
+R1229:1239 CAG.Group <> StrictGroup rec
+R1241:1241 CAG.DecisionProblems.TraceProperties <> G:1 var
+R1259:1262 Corelib.Init.Datatypes <> list ind
+R1264:1264 CAG.DecisionProblems.TraceProperties <> G:1 var
+R1450:1450 CAG.DecisionProblems.TraceProperties <> G:1 var
+binder 1446:1446 <> x:5
+R1453:1459 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1471:1490 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1465:1468 Corelib.Init.Datatypes <> list ind
+R1470:1470 CAG.DecisionProblems.TraceProperties <> G:1 var
+binder 1460:1461 <> ws:6
+R1491:1491 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1588:1610 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 1499:1499 <> w:7
+R1509:1512 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1502:1503 Stdlib.Lists.List <> In def
+R1507:1508 CAG.DecisionProblems.TraceProperties <> ws:6 var
+R1505:1505 CAG.DecisionProblems.TraceProperties <> w:7 var
+R1526:1558 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R1513:1514 Stdlib.Lists.List <> In def
+R1518:1525 CAG.DecisionProblems.TraceProperties <> fgg_gens:4 meth
+R1516:1516 CAG.DecisionProblems.TraceProperties <> w:7 var
+R1559:1560 Stdlib.Lists.List <> In def
+R1580:1587 CAG.DecisionProblems.TraceProperties <> fgg_gens:4 meth
+R1563:1566 CAG.Group <> sinv proj
+R1568:1568 CAG.DecisionProblems.TraceProperties <> G:1 var
+R1570:1575 CAG.DecisionProblems.TraceProperties <> fgg_sg:3 meth
+R1577:1577 CAG.DecisionProblems.TraceProperties <> w:7 var
+R1659:1661 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1611:1625 Stdlib.Lists.List <> fold_right def
+R1657:1658 CAG.DecisionProblems.TraceProperties <> ws:6 var
+R1644:1645 CAG.Group <> se proj
+R1647:1647 CAG.DecisionProblems.TraceProperties <> G:1 var
+R1649:1654 CAG.DecisionProblems.TraceProperties <> fgg_sg:3 meth
+R1628:1631 CAG.Group <> smul proj
+R1633:1633 CAG.DecisionProblems.TraceProperties <> G:1 var
+R1635:1640 CAG.DecisionProblems.TraceProperties <> fgg_sg:3 meth
+R1662:1662 CAG.DecisionProblems.TraceProperties <> x:5 var
+R1681:1686 CAG.DecisionProblems.TraceProperties <> fgg_sg proj
+R1681:1686 CAG.DecisionProblems.TraceProperties <> fgg_sg proj
+R1707:1714 CAG.DecisionProblems.TraceProperties <> fgg_gens proj
+R1707:1714 CAG.DecisionProblems.TraceProperties <> fgg_gens proj
+R1733:1739 CAG.DecisionProblems.TraceProperties <> fgg_gen proj
+R1733:1739 CAG.DecisionProblems.TraceProperties <> fgg_gen proj
+def 1876:1886 <> word_length
+binder 1889:1889 <> G:9
+R1906:1912 CAG.DecisionProblems.TraceProperties <> FGGroup rec
+R1914:1914 CAG.DecisionProblems.TraceProperties <> G:9 var
+binder 1900:1902 <> fgg:10
+R1922:1922 CAG.DecisionProblems.TraceProperties <> G:9 var
+binder 1918:1918 <> x:11
+R1927:1929 Corelib.Init.Datatypes <> nat ind
+R1951:1956 CAG.DecisionProblems.TraceProperties <> fgg_sg proj
+R1946:1948 CAG.DecisionProblems.TraceProperties <> fgg:10 var
+binder 1940:1941 <> sg:12
+binder 2093:2093 <> n:13
+R2102:2108 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2120:2127 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2114:2117 Corelib.Init.Datatypes <> list ind
+R2119:2119 CAG.DecisionProblems.TraceProperties <> G:9 var
+binder 2109:2110 <> ws:14
+R2141:2150 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2137:2139 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2128:2133 Corelib.Init.Datatypes <> length def
+R2135:2136 CAG.DecisionProblems.TraceProperties <> ws:14 var
+R2140:2140 CAG.DecisionProblems.TraceProperties <> n:13 var
+R2151:2151 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2255:2265 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 2159:2159 <> w:15
+R2169:2172 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2162:2163 Stdlib.Lists.List <> In def
+R2167:2168 CAG.DecisionProblems.TraceProperties <> ws:14 var
+R2165:2165 CAG.DecisionProblems.TraceProperties <> w:15 var
+R2192:2223 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R2173:2174 Stdlib.Lists.List <> In def
+R2183:2190 CAG.DecisionProblems.TraceProperties <> fgg_gens proj
+R2178:2180 CAG.DecisionProblems.TraceProperties <> fgg:10 var
+R2176:2176 CAG.DecisionProblems.TraceProperties <> w:15 var
+R2224:2225 Stdlib.Lists.List <> In def
+R2246:2253 CAG.DecisionProblems.TraceProperties <> fgg_gens proj
+R2241:2243 CAG.DecisionProblems.TraceProperties <> fgg:10 var
+R2228:2231 CAG.Group <> sinv proj
+R2233:2233 CAG.DecisionProblems.TraceProperties <> G:9 var
+R2235:2236 CAG.DecisionProblems.TraceProperties <> sg:12 var
+R2238:2238 CAG.DecisionProblems.TraceProperties <> w:15 var
+R2306:2308 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2266:2280 Stdlib.Lists.List <> fold_right def
+R2304:2305 CAG.DecisionProblems.TraceProperties <> ws:14 var
+R2295:2296 CAG.Group <> se proj
+R2298:2298 CAG.DecisionProblems.TraceProperties <> G:9 var
+R2300:2301 CAG.DecisionProblems.TraceProperties <> sg:12 var
+R2283:2286 CAG.Group <> smul proj
+R2288:2288 CAG.DecisionProblems.TraceProperties <> G:9 var
+R2290:2291 CAG.DecisionProblems.TraceProperties <> sg:12 var
+R2309:2309 CAG.DecisionProblems.TraceProperties <> x:11 var
+binder 2084:2084 <> P:16
+def 2578:2581 <> ball
+binder 2584:2584 <> G:17
+R2601:2607 CAG.DecisionProblems.TraceProperties <> FGGroup rec
+R2609:2609 CAG.DecisionProblems.TraceProperties <> G:17 var
+binder 2595:2597 <> fgg:18
+R2617:2619 Corelib.Init.Datatypes <> nat ind
+binder 2613:2613 <> n:19
+R2625:2628 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2624:2624 CAG.DecisionProblems.TraceProperties <> G:17 var
+binder 2643:2643 <> x:20
+R2665:2668 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R2648:2658 CAG.DecisionProblems.TraceProperties <> word_length def
+R2664:2664 CAG.DecisionProblems.TraceProperties <> x:20 var
+R2660:2662 CAG.DecisionProblems.TraceProperties <> fgg:18 var
+R2669:2669 CAG.DecisionProblems.TraceProperties <> n:19 var
+def 2756:2762 <> asym_le
+R2774:2777 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2771:2773 Corelib.Init.Datatypes <> nat ind
+R2778:2780 Corelib.Init.Datatypes <> nat ind
+binder 2765:2765 <> f:21
+binder 2767:2767 <> g:22
+R2795:2801 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2809:2810 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2806:2808 Corelib.Init.Datatypes <> nat ind
+binder 2802:2802 <> C:23
+R2816:2819 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2812:2814 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R2815:2815 CAG.DecisionProblems.TraceProperties <> C:23 var
+R2831:2833 Corelib.Init.Datatypes <> nat ind
+binder 2827:2827 <> n:24
+R2839:2842 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R2836:2836 CAG.DecisionProblems.TraceProperties <> f:21 var
+R2838:2838 CAG.DecisionProblems.TraceProperties <> n:24 var
+R2844:2846 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R2843:2843 CAG.DecisionProblems.TraceProperties <> C:23 var
+R2847:2847 CAG.DecisionProblems.TraceProperties <> g:22 var
+R2851:2853 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R2850:2850 CAG.DecisionProblems.TraceProperties <> C:23 var
+R2854:2854 CAG.DecisionProblems.TraceProperties <> n:24 var
+def 2934:2940 <> asym_eq
+R2952:2955 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2949:2951 Corelib.Init.Datatypes <> nat ind
+R2956:2958 Corelib.Init.Datatypes <> nat ind
+binder 2943:2943 <> f:25
+binder 2945:2945 <> g:26
+R2984:2987 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2973:2979 CAG.DecisionProblems.TraceProperties <> asym_le def
+R2981:2981 CAG.DecisionProblems.TraceProperties <> f:25 var
+R2983:2983 CAG.DecisionProblems.TraceProperties <> g:26 var
+R2988:2994 CAG.DecisionProblems.TraceProperties <> asym_le def
+R2996:2996 CAG.DecisionProblems.TraceProperties <> g:26 var
+R2998:2998 CAG.DecisionProblems.TraceProperties <> f:25 var
+prf 3008:3019 <> asym_le_refl
+R3029:3032 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3026:3028 Corelib.Init.Datatypes <> nat ind
+R3033:3035 Corelib.Init.Datatypes <> nat ind
+binder 3022:3022 <> f:27
+R3040:3046 CAG.DecisionProblems.TraceProperties <> asym_le def
+R3048:3048 CAG.DecisionProblems.TraceProperties <> f:27 var
+R3050:3050 CAG.DecisionProblems.TraceProperties <> f:27 var
+R3104:3114 Stdlib.Arith.PeanoNat Nat mul_1_l thm
+R3104:3114 Stdlib.Arith.PeanoNat Nat mul_1_l thm
+R3104:3114 Stdlib.Arith.PeanoNat Nat mul_1_l thm
+R3104:3114 Stdlib.Arith.PeanoNat Nat mul_1_l thm
+R3104:3114 Stdlib.Arith.PeanoNat Nat mul_1_l thm
+prf 3134:3145 <> asym_eq_refl
+R3155:3158 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3152:3154 Corelib.Init.Datatypes <> nat ind
+R3159:3161 Corelib.Init.Datatypes <> nat ind
+binder 3148:3148 <> f:28
+R3166:3172 CAG.DecisionProblems.TraceProperties <> asym_eq def
+R3174:3174 CAG.DecisionProblems.TraceProperties <> f:28 var
+R3176:3176 CAG.DecisionProblems.TraceProperties <> f:28 var
+R3201:3212 CAG.DecisionProblems.TraceProperties <> asym_le_refl thm
+R3201:3212 CAG.DecisionProblems.TraceProperties <> asym_le_refl thm
+R3201:3212 CAG.DecisionProblems.TraceProperties <> asym_le_refl thm
+prf 3227:3239 <> asym_le_trans
+R3253:3256 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3250:3252 Corelib.Init.Datatypes <> nat ind
+R3257:3259 Corelib.Init.Datatypes <> nat ind
+binder 3242:3242 <> f:29
+binder 3244:3244 <> g:30
+binder 3246:3246 <> h:31
+R3279:3282 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3268:3274 CAG.DecisionProblems.TraceProperties <> asym_le def
+R3276:3276 CAG.DecisionProblems.TraceProperties <> f:29 var
+R3278:3278 CAG.DecisionProblems.TraceProperties <> g:30 var
+R3294:3297 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3283:3289 CAG.DecisionProblems.TraceProperties <> asym_le def
+R3291:3291 CAG.DecisionProblems.TraceProperties <> g:30 var
+R3293:3293 CAG.DecisionProblems.TraceProperties <> h:31 var
+R3298:3304 CAG.DecisionProblems.TraceProperties <> asym_le def
+R3306:3306 CAG.DecisionProblems.TraceProperties <> f:29 var
+R3308:3308 CAG.DecisionProblems.TraceProperties <> h:31 var
+R3368:3370 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R3368:3370 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R3408:3419 Stdlib.Arith.PeanoNat Nat le_trans thm
+R3408:3419 Stdlib.Arith.PeanoNat Nat le_trans thm
+R3441:3452 Stdlib.Arith.PeanoNat Nat le_trans thm
+R3441:3452 Stdlib.Arith.PeanoNat Nat le_trans thm
+R3465:3481 Stdlib.Arith.PeanoNat Nat mul_le_mono_l thm
+R3465:3481 Stdlib.Arith.PeanoNat Nat mul_le_mono_l thm
+R3525:3527 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3514:3517 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R3524:3524 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R3520:3522 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R3535:3537 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R3530:3532 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R3525:3527 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3514:3517 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R3524:3524 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R3520:3522 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R3535:3537 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R3530:3532 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+def 3910:3913 <> D_rf
+binder 3916:3916 <> G:32
+R3932:3942 CAG.Group <> StrictGroup rec
+R3944:3944 CAG.DecisionProblems.TraceProperties <> G:32 var
+binder 3927:3928 <> sg:33
+R3956:3956 CAG.DecisionProblems.TraceProperties <> G:32 var
+binder 3948:3952 <> gamma:34
+R3961:3963 Corelib.Init.Datatypes <> nat ind
+def 4120:4123 <> F_rf
+binder 4126:4126 <> G:35
+R4143:4149 CAG.DecisionProblems.TraceProperties <> FGGroup rec
+R4151:4151 CAG.DecisionProblems.TraceProperties <> G:35 var
+binder 4137:4139 <> fgg:36
+R4159:4161 Corelib.Init.Datatypes <> nat ind
+binder 4155:4155 <> n:37
+R4166:4168 Corelib.Init.Datatypes <> nat ind
+def 4335:4341 <> CD_conj
+binder 4344:4344 <> G:38
+R4360:4370 CAG.Group <> StrictGroup rec
+R4372:4372 CAG.DecisionProblems.TraceProperties <> G:38 var
+binder 4355:4356 <> sg:39
+R4388:4388 CAG.DecisionProblems.TraceProperties <> G:38 var
+binder 4376:4380 <> gamma:40
+binder 4382:4384 <> eta:41
+R4393:4395 Corelib.Init.Datatypes <> nat ind
+def 4510:4518 <> Conj_func
+binder 4521:4521 <> G:42
+R4538:4544 CAG.DecisionProblems.TraceProperties <> FGGroup rec
+R4546:4546 CAG.DecisionProblems.TraceProperties <> G:42 var
+binder 4532:4534 <> fgg:43
+R4554:4556 Corelib.Init.Datatypes <> nat ind
+binder 4550:4550 <> n:44
+R4561:4563 Corelib.Init.Datatypes <> nat ind
+def 4724:4731 <> Conj_rel
+binder 4734:4734 <> G:45
+R4751:4757 CAG.DecisionProblems.TraceProperties <> FGGroup rec
+R4759:4759 CAG.DecisionProblems.TraceProperties <> G:45 var
+binder 4745:4747 <> fgg:46
+R4771:4771 CAG.DecisionProblems.TraceProperties <> G:45 var
+binder 4763:4767 <> gamma:47
+R4779:4781 Corelib.Init.Datatypes <> nat ind
+binder 4775:4775 <> n:48
+R4786:4788 Corelib.Init.Datatypes <> nat ind
+ax 4874:4893 <> F_rf_gen_independent
+binder 4907:4907 <> G:49
+R4930:4936 CAG.DecisionProblems.TraceProperties <> FGGroup rec
+R4938:4938 CAG.DecisionProblems.TraceProperties <> G:49 var
+binder 4918:4921 <> fgg1:50
+binder 4923:4926 <> fgg2:51
+R4975:4982 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4959:4961 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4952:4957 CAG.DecisionProblems.TraceProperties <> fgg_sg proj
+R4946:4949 CAG.DecisionProblems.TraceProperties <> fgg1:50 var
+R4968:4973 CAG.DecisionProblems.TraceProperties <> fgg_sg proj
+R4962:4965 CAG.DecisionProblems.TraceProperties <> fgg2:51 var
+R4983:4989 CAG.DecisionProblems.TraceProperties <> asym_eq def
+R4992:4995 CAG.DecisionProblems.TraceProperties <> F_rf def
+R4997:5000 CAG.DecisionProblems.TraceProperties <> fgg1:50 var
+R5004:5007 CAG.DecisionProblems.TraceProperties <> F_rf def
+R5009:5012 CAG.DecisionProblems.TraceProperties <> fgg2:51 var
+ax 5077:5101 <> Conj_func_gen_independent
+binder 5115:5115 <> G:54
+R5138:5144 CAG.DecisionProblems.TraceProperties <> FGGroup rec
+R5146:5146 CAG.DecisionProblems.TraceProperties <> G:54 var
+binder 5126:5129 <> fgg1:55
+binder 5131:5134 <> fgg2:56
+R5183:5190 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5167:5169 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5160:5165 CAG.DecisionProblems.TraceProperties <> fgg_sg proj
+R5154:5157 CAG.DecisionProblems.TraceProperties <> fgg1:55 var
+R5176:5181 CAG.DecisionProblems.TraceProperties <> fgg_sg proj
+R5170:5173 CAG.DecisionProblems.TraceProperties <> fgg2:56 var
+R5191:5197 CAG.DecisionProblems.TraceProperties <> asym_eq def
+R5200:5208 CAG.DecisionProblems.TraceProperties <> Conj_func def
+R5210:5213 CAG.DecisionProblems.TraceProperties <> fgg1:55 var
+R5217:5225 CAG.DecisionProblems.TraceProperties <> Conj_func def
+R5227:5230 CAG.DecisionProblems.TraceProperties <> fgg2:56 var
+rec 5608:5618 <> MatrixGroup
+proj 5656:5665 <> mg_carrier
+proj 5679:5683 <> mg_sg
+proj 5720:5727 <> mg_trace
+proj 5754:5759 <> mg_dim
+binder 5621:5621 <> F:59
+R5692:5702 CAG.Group <> StrictGroup rec
+R5704:5713 CAG.DecisionProblems.TraceProperties <> mg_carrier:61 meth
+R5743:5746 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5733:5742 CAG.DecisionProblems.TraceProperties <> mg_carrier:61 meth
+R5747:5747 CAG.DecisionProblems.TraceProperties <> F:59 var
+R5767:5769 Corelib.Init.Datatypes <> nat ind
+R5788:5797 CAG.DecisionProblems.TraceProperties <> mg_carrier proj
+R5788:5797 CAG.DecisionProblems.TraceProperties <> mg_carrier proj
+R5816:5820 CAG.DecisionProblems.TraceProperties <> mg_sg proj
+R5816:5820 CAG.DecisionProblems.TraceProperties <> mg_sg proj
+R5844:5851 CAG.DecisionProblems.TraceProperties <> mg_trace proj
+R5844:5851 CAG.DecisionProblems.TraceProperties <> mg_trace proj
+R5872:5877 CAG.DecisionProblems.TraceProperties <> mg_dim proj
+R5872:5877 CAG.DecisionProblems.TraceProperties <> mg_dim proj
+rec 5944:5957 <> Representation
+proj 6044:6049 <> rep_fn
+proj 6078:6084 <> rep_hom
+binder 5960:5960 <> G:65
+binder 5962:5962 <> F:66
+R5982:5992 CAG.Group <> StrictGroup rec
+R5994:5994 CAG.DecisionProblems.TraceProperties <> G:65 var
+binder 5977:5978 <> sg:67
+R6003:6013 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R6015:6015 CAG.DecisionProblems.TraceProperties <> F:66 var
+binder 5998:5999 <> MG:68
+R6055:6058 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6054:6054 CAG.DecisionProblems.TraceProperties <> G:65 var
+R6059:6068 CAG.DecisionProblems.TraceProperties <> mg_carrier proj
+R6070:6071 CAG.DecisionProblems.TraceProperties <> MG:68 var
+R6101:6101 CAG.DecisionProblems.TraceProperties <> G:65 var
+binder 6095:6095 <> g:71
+binder 6097:6097 <> h:72
+R6142:6160 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6120:6125 CAG.DecisionProblems.TraceProperties <> rep_fn:70 meth
+R6128:6131 CAG.Group <> smul proj
+R6133:6133 CAG.DecisionProblems.TraceProperties <> G:65 var
+R6135:6136 CAG.DecisionProblems.TraceProperties <> sg:67 var
+R6138:6138 CAG.DecisionProblems.TraceProperties <> g:71 var
+R6140:6140 CAG.DecisionProblems.TraceProperties <> h:72 var
+R6161:6164 CAG.Group <> smul proj
+R6167:6176 CAG.DecisionProblems.TraceProperties <> mg_carrier proj
+R6178:6179 CAG.DecisionProblems.TraceProperties <> MG:68 var
+R6183:6187 CAG.DecisionProblems.TraceProperties <> mg_sg proj
+R6189:6190 CAG.DecisionProblems.TraceProperties <> MG:68 var
+R6194:6199 CAG.DecisionProblems.TraceProperties <> rep_fn:70 meth
+R6201:6201 CAG.DecisionProblems.TraceProperties <> g:71 var
+R6205:6210 CAG.DecisionProblems.TraceProperties <> rep_fn:70 meth
+R6212:6212 CAG.DecisionProblems.TraceProperties <> h:72 var
+R6232:6237 CAG.DecisionProblems.TraceProperties <> rep_fn proj
+R6232:6237 CAG.DecisionProblems.TraceProperties <> rep_fn proj
+R6265:6271 CAG.DecisionProblems.TraceProperties <> rep_hom proj
+R6265:6271 CAG.DecisionProblems.TraceProperties <> rep_hom proj
+def 6330:6337 <> trace_at
+binder 6340:6340 <> G:74
+binder 6342:6342 <> F:75
+R6358:6368 CAG.Group <> StrictGroup rec
+R6370:6370 CAG.DecisionProblems.TraceProperties <> G:74 var
+binder 6353:6354 <> sg:76
+R6379:6389 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R6391:6391 CAG.DecisionProblems.TraceProperties <> F:75 var
+binder 6374:6375 <> MG:77
+R6405:6418 CAG.DecisionProblems.TraceProperties <> Representation rec
+R6423:6424 CAG.DecisionProblems.TraceProperties <> MG:77 var
+R6420:6421 CAG.DecisionProblems.TraceProperties <> sg:76 var
+binder 6399:6401 <> rho:78
+R6436:6436 CAG.DecisionProblems.TraceProperties <> G:74 var
+binder 6428:6432 <> gamma:79
+R6441:6441 CAG.DecisionProblems.TraceProperties <> F:75 var
+R6448:6455 CAG.DecisionProblems.TraceProperties <> mg_trace proj
+R6461:6466 CAG.DecisionProblems.TraceProperties <> rep_fn proj
+R6472:6476 CAG.DecisionProblems.TraceProperties <> gamma:79 var
+R6468:6470 CAG.DecisionProblems.TraceProperties <> rho:78 var
+R6457:6458 CAG.DecisionProblems.TraceProperties <> MG:77 var
+def 6731:6743 <> are_conjugate
+binder 6746:6746 <> G:80
+R6762:6772 CAG.Group <> StrictGroup rec
+R6774:6774 CAG.DecisionProblems.TraceProperties <> G:80 var
+binder 6757:6758 <> sg:81
+R6790:6790 CAG.DecisionProblems.TraceProperties <> G:80 var
+binder 6778:6782 <> gamma:82
+binder 6784:6786 <> eta:83
+R6805:6811 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6817:6818 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6816:6816 CAG.DecisionProblems.TraceProperties <> G:80 var
+binder 6812:6812 <> g:84
+R6862:6864 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6819:6822 CAG.Group <> smul proj
+R6824:6824 CAG.DecisionProblems.TraceProperties <> G:80 var
+R6826:6827 CAG.DecisionProblems.TraceProperties <> sg:81 var
+R6830:6833 CAG.Group <> smul proj
+R6835:6835 CAG.DecisionProblems.TraceProperties <> G:80 var
+R6837:6838 CAG.DecisionProblems.TraceProperties <> sg:81 var
+R6840:6840 CAG.DecisionProblems.TraceProperties <> g:84 var
+R6842:6846 CAG.DecisionProblems.TraceProperties <> gamma:82 var
+R6850:6853 CAG.Group <> sinv proj
+R6855:6855 CAG.DecisionProblems.TraceProperties <> G:80 var
+R6857:6858 CAG.DecisionProblems.TraceProperties <> sg:81 var
+R6860:6860 CAG.DecisionProblems.TraceProperties <> g:84 var
+R6865:6867 CAG.DecisionProblems.TraceProperties <> eta:83 var
+def 7083:7099 <> trace_equiv_in_MG
+binder 7102:7102 <> G:85
+binder 7104:7104 <> F:86
+R7120:7130 CAG.Group <> StrictGroup rec
+R7132:7132 CAG.DecisionProblems.TraceProperties <> G:85 var
+binder 7115:7116 <> sg:87
+R7141:7151 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R7153:7153 CAG.DecisionProblems.TraceProperties <> F:86 var
+binder 7136:7137 <> MG:88
+R7173:7173 CAG.DecisionProblems.TraceProperties <> G:85 var
+binder 7161:7165 <> gamma:89
+binder 7167:7169 <> eta:90
+R7201:7214 CAG.DecisionProblems.TraceProperties <> Representation rec
+R7219:7220 CAG.DecisionProblems.TraceProperties <> MG:88 var
+R7216:7217 CAG.DecisionProblems.TraceProperties <> sg:87 var
+binder 7195:7197 <> rho:91
+R7245:7247 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7227:7234 CAG.DecisionProblems.TraceProperties <> trace_at def
+R7240:7244 CAG.DecisionProblems.TraceProperties <> gamma:89 var
+R7236:7238 CAG.DecisionProblems.TraceProperties <> rho:91 var
+R7248:7255 CAG.DecisionProblems.TraceProperties <> trace_at def
+R7261:7263 CAG.DecisionProblems.TraceProperties <> eta:90 var
+R7257:7259 CAG.DecisionProblems.TraceProperties <> rho:91 var
+def 7278:7292 <> SLn_trace_equiv
+binder 7295:7295 <> G:92
+binder 7297:7297 <> F:93
+R7313:7323 CAG.Group <> StrictGroup rec
+R7325:7325 CAG.DecisionProblems.TraceProperties <> G:92 var
+binder 7308:7309 <> sg:94
+R7348:7351 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7345:7347 Corelib.Init.Datatypes <> nat ind
+R7352:7362 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R7364:7364 CAG.DecisionProblems.TraceProperties <> F:93 var
+binder 7333:7341 <> MG_family:95
+R7380:7380 CAG.DecisionProblems.TraceProperties <> G:92 var
+binder 7368:7372 <> gamma:96
+binder 7374:7376 <> eta:97
+R7406:7408 Corelib.Init.Datatypes <> nat ind
+binder 7402:7402 <> n:98
+R7412:7428 CAG.DecisionProblems.TraceProperties <> trace_equiv_in_MG def
+R7430:7430 CAG.DecisionProblems.TraceProperties <> G:92 var
+R7432:7432 CAG.DecisionProblems.TraceProperties <> F:93 var
+R7434:7435 CAG.DecisionProblems.TraceProperties <> sg:94 var
+R7438:7446 CAG.DecisionProblems.TraceProperties <> MG_family:95 var
+R7448:7448 CAG.DecisionProblems.TraceProperties <> n:98 var
+R7451:7455 CAG.DecisionProblems.TraceProperties <> gamma:96 var
+R7457:7459 CAG.DecisionProblems.TraceProperties <> eta:97 var
+def 7616:7625 <> property_D
+binder 7628:7628 <> G:99
+binder 7630:7630 <> F:100
+R7646:7656 CAG.Group <> StrictGroup rec
+R7658:7658 CAG.DecisionProblems.TraceProperties <> G:99 var
+binder 7641:7642 <> sg:101
+R7681:7684 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7678:7680 Corelib.Init.Datatypes <> nat ind
+R7685:7695 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R7697:7697 CAG.DecisionProblems.TraceProperties <> F:100 var
+binder 7666:7674 <> MG_family:102
+R7731:7731 CAG.DecisionProblems.TraceProperties <> G:99 var
+binder 7719:7723 <> gamma:103
+binder 7725:7727 <> eta:104
+R7766:7773 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7738:7739 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R7740:7752 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R7763:7765 CAG.DecisionProblems.TraceProperties <> eta:104 var
+R7757:7761 CAG.DecisionProblems.TraceProperties <> gamma:103 var
+R7754:7755 CAG.DecisionProblems.TraceProperties <> sg:101 var
+R7774:7781 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7829:7837 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7786:7788 Corelib.Init.Datatypes <> nat ind
+binder 7782:7782 <> n:105
+R7798:7811 CAG.DecisionProblems.TraceProperties <> Representation rec
+R7817:7825 CAG.DecisionProblems.TraceProperties <> MG_family:102 var
+R7827:7827 CAG.DecisionProblems.TraceProperties <> n:105 var
+R7813:7814 CAG.DecisionProblems.TraceProperties <> sg:101 var
+binder 7792:7794 <> rho:106
+R7856:7859 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R7838:7845 CAG.DecisionProblems.TraceProperties <> trace_at def
+R7851:7855 CAG.DecisionProblems.TraceProperties <> gamma:103 var
+R7847:7849 CAG.DecisionProblems.TraceProperties <> rho:106 var
+R7860:7867 CAG.DecisionProblems.TraceProperties <> trace_at def
+R7873:7875 CAG.DecisionProblems.TraceProperties <> eta:104 var
+R7869:7871 CAG.DecisionProblems.TraceProperties <> rho:106 var
+def 8013:8022 <> property_C
+binder 8025:8025 <> G:107
+binder 8027:8027 <> F:108
+R8043:8053 CAG.Group <> StrictGroup rec
+R8055:8055 CAG.DecisionProblems.TraceProperties <> G:107 var
+binder 8038:8039 <> sg:109
+R8078:8081 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8075:8077 Corelib.Init.Datatypes <> nat ind
+R8082:8092 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R8094:8094 CAG.DecisionProblems.TraceProperties <> F:108 var
+binder 8063:8071 <> MG_family:110
+R8126:8129 Corelib.Init.Datatypes <> list ind
+R8131:8131 CAG.DecisionProblems.TraceProperties <> G:107 var
+binder 8117:8122 <> gammas:111
+R8139:8146 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R8194:8202 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R8151:8153 Corelib.Init.Datatypes <> nat ind
+binder 8147:8147 <> n:112
+R8163:8176 CAG.DecisionProblems.TraceProperties <> Representation rec
+R8182:8190 CAG.DecisionProblems.TraceProperties <> MG_family:110 var
+R8192:8192 CAG.DecisionProblems.TraceProperties <> n:112 var
+R8178:8179 CAG.DecisionProblems.TraceProperties <> sg:109 var
+binder 8157:8159 <> rho:113
+R8222:8222 CAG.DecisionProblems.TraceProperties <> G:107 var
+binder 8210:8214 <> gamma:114
+binder 8216:8218 <> eta:115
+R8248:8251 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8233:8234 Stdlib.Lists.List <> In def
+R8242:8247 CAG.DecisionProblems.TraceProperties <> gammas:111 var
+R8236:8240 CAG.DecisionProblems.TraceProperties <> gamma:114 var
+R8265:8276 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8252:8253 Stdlib.Lists.List <> In def
+R8259:8264 CAG.DecisionProblems.TraceProperties <> gammas:111 var
+R8255:8257 CAG.DecisionProblems.TraceProperties <> eta:115 var
+R8305:8316 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8277:8278 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R8279:8291 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R8302:8304 CAG.DecisionProblems.TraceProperties <> eta:115 var
+R8296:8300 CAG.DecisionProblems.TraceProperties <> gamma:114 var
+R8293:8294 CAG.DecisionProblems.TraceProperties <> sg:109 var
+R8335:8338 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R8317:8324 CAG.DecisionProblems.TraceProperties <> trace_at def
+R8330:8334 CAG.DecisionProblems.TraceProperties <> gamma:114 var
+R8326:8328 CAG.DecisionProblems.TraceProperties <> rho:113 var
+R8339:8346 CAG.DecisionProblems.TraceProperties <> trace_at def
+R8352:8354 CAG.DecisionProblems.TraceProperties <> eta:115 var
+R8348:8350 CAG.DecisionProblems.TraceProperties <> rho:113 var
+def 8520:8529 <> property_B
+binder 8532:8532 <> G:116
+binder 8534:8534 <> F:117
+R8550:8560 CAG.Group <> StrictGroup rec
+R8562:8562 CAG.DecisionProblems.TraceProperties <> G:116 var
+binder 8545:8546 <> sg:118
+R8585:8588 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8582:8584 Corelib.Init.Datatypes <> nat ind
+R8589:8599 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R8601:8601 CAG.DecisionProblems.TraceProperties <> F:117 var
+binder 8570:8578 <> MG_family:119
+R8631:8631 CAG.DecisionProblems.TraceProperties <> G:116 var
+binder 8623:8627 <> gamma:120
+R8638:8645 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R8693:8701 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R8650:8652 Corelib.Init.Datatypes <> nat ind
+binder 8646:8646 <> n:121
+R8662:8675 CAG.DecisionProblems.TraceProperties <> Representation rec
+R8681:8689 CAG.DecisionProblems.TraceProperties <> MG_family:119 var
+R8691:8691 CAG.DecisionProblems.TraceProperties <> n:121 var
+R8677:8678 CAG.DecisionProblems.TraceProperties <> sg:118 var
+binder 8656:8658 <> rho:122
+R8715:8715 CAG.DecisionProblems.TraceProperties <> G:116 var
+binder 8709:8711 <> eta:123
+R8754:8765 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8726:8727 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R8728:8740 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R8751:8753 CAG.DecisionProblems.TraceProperties <> eta:123 var
+R8745:8749 CAG.DecisionProblems.TraceProperties <> gamma:120 var
+R8742:8743 CAG.DecisionProblems.TraceProperties <> sg:118 var
+R8784:8787 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R8766:8773 CAG.DecisionProblems.TraceProperties <> trace_at def
+R8779:8783 CAG.DecisionProblems.TraceProperties <> gamma:120 var
+R8775:8777 CAG.DecisionProblems.TraceProperties <> rho:122 var
+R8788:8795 CAG.DecisionProblems.TraceProperties <> trace_at def
+R8801:8803 CAG.DecisionProblems.TraceProperties <> eta:123 var
+R8797:8799 CAG.DecisionProblems.TraceProperties <> rho:122 var
+def 8908:8917 <> property_A
+binder 8920:8920 <> G:124
+binder 8922:8922 <> F:125
+R8938:8948 CAG.Group <> StrictGroup rec
+R8950:8950 CAG.DecisionProblems.TraceProperties <> G:124 var
+binder 8933:8934 <> sg:126
+R8973:8976 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8970:8972 Corelib.Init.Datatypes <> nat ind
+R8977:8987 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R8989:8989 CAG.DecisionProblems.TraceProperties <> F:125 var
+binder 8958:8966 <> MG_family:127
+R9004:9011 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9059:9065 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9016:9018 Corelib.Init.Datatypes <> nat ind
+binder 9012:9012 <> n:128
+R9028:9041 CAG.DecisionProblems.TraceProperties <> Representation rec
+R9047:9055 CAG.DecisionProblems.TraceProperties <> MG_family:127 var
+R9057:9057 CAG.DecisionProblems.TraceProperties <> n:128 var
+R9043:9044 CAG.DecisionProblems.TraceProperties <> sg:126 var
+binder 9022:9024 <> rho:129
+R9085:9085 CAG.DecisionProblems.TraceProperties <> G:124 var
+binder 9073:9077 <> gamma:130
+binder 9079:9081 <> eta:131
+R9122:9131 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9094:9095 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R9096:9108 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R9119:9121 CAG.DecisionProblems.TraceProperties <> eta:131 var
+R9113:9117 CAG.DecisionProblems.TraceProperties <> gamma:130 var
+R9110:9111 CAG.DecisionProblems.TraceProperties <> sg:126 var
+R9150:9153 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R9132:9139 CAG.DecisionProblems.TraceProperties <> trace_at def
+R9145:9149 CAG.DecisionProblems.TraceProperties <> gamma:130 var
+R9141:9143 CAG.DecisionProblems.TraceProperties <> rho:129 var
+R9154:9161 CAG.DecisionProblems.TraceProperties <> trace_at def
+R9167:9169 CAG.DecisionProblems.TraceProperties <> eta:131 var
+R9163:9165 CAG.DecisionProblems.TraceProperties <> rho:129 var
+def 9291:9299 <> uniform_D
+binder 9302:9302 <> G:132
+binder 9304:9304 <> F:133
+R9320:9330 CAG.Group <> StrictGroup rec
+R9332:9332 CAG.DecisionProblems.TraceProperties <> G:132 var
+binder 9315:9316 <> sg:134
+R9355:9358 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9352:9354 Corelib.Init.Datatypes <> nat ind
+R9359:9369 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R9371:9371 CAG.DecisionProblems.TraceProperties <> F:133 var
+binder 9340:9348 <> MG_family:135
+R9386:9392 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9401:9406 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9398:9400 Corelib.Init.Datatypes <> nat ind
+binder 9393:9394 <> n0:136
+R9426:9426 CAG.DecisionProblems.TraceProperties <> G:132 var
+binder 9414:9418 <> gamma:137
+binder 9420:9422 <> eta:138
+R9463:9472 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9435:9436 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R9437:9449 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R9460:9462 CAG.DecisionProblems.TraceProperties <> eta:138 var
+R9454:9458 CAG.DecisionProblems.TraceProperties <> gamma:137 var
+R9451:9452 CAG.DecisionProblems.TraceProperties <> sg:134 var
+R9473:9479 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9518:9527 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9486:9499 CAG.DecisionProblems.TraceProperties <> Representation rec
+R9505:9513 CAG.DecisionProblems.TraceProperties <> MG_family:135 var
+R9515:9516 CAG.DecisionProblems.TraceProperties <> n0:136 var
+R9501:9502 CAG.DecisionProblems.TraceProperties <> sg:134 var
+binder 9480:9482 <> rho:139
+R9546:9549 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R9528:9535 CAG.DecisionProblems.TraceProperties <> trace_at def
+R9541:9545 CAG.DecisionProblems.TraceProperties <> gamma:137 var
+R9537:9539 CAG.DecisionProblems.TraceProperties <> rho:139 var
+R9550:9557 CAG.DecisionProblems.TraceProperties <> trace_at def
+R9563:9565 CAG.DecisionProblems.TraceProperties <> eta:138 var
+R9559:9561 CAG.DecisionProblems.TraceProperties <> rho:139 var
+def 9647:9655 <> uniform_C
+binder 9658:9658 <> G:140
+binder 9660:9660 <> F:141
+R9676:9686 CAG.Group <> StrictGroup rec
+R9688:9688 CAG.DecisionProblems.TraceProperties <> G:140 var
+binder 9671:9672 <> sg:142
+R9711:9714 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9708:9710 Corelib.Init.Datatypes <> nat ind
+R9715:9725 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R9727:9727 CAG.DecisionProblems.TraceProperties <> F:141 var
+binder 9696:9704 <> MG_family:143
+R9742:9748 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9757:9762 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9754:9756 Corelib.Init.Datatypes <> nat ind
+binder 9749:9750 <> n0:144
+R9780:9783 Corelib.Init.Datatypes <> list ind
+R9785:9785 CAG.DecisionProblems.TraceProperties <> G:140 var
+binder 9771:9776 <> gammas:145
+R9795:9801 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9840:9849 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9808:9821 CAG.DecisionProblems.TraceProperties <> Representation rec
+R9827:9835 CAG.DecisionProblems.TraceProperties <> MG_family:143 var
+R9837:9838 CAG.DecisionProblems.TraceProperties <> n0:144 var
+R9823:9824 CAG.DecisionProblems.TraceProperties <> sg:142 var
+binder 9802:9804 <> rho:146
+R9869:9869 CAG.DecisionProblems.TraceProperties <> G:140 var
+binder 9857:9861 <> gamma:147
+binder 9863:9865 <> eta:148
+R9897:9900 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9882:9883 Stdlib.Lists.List <> In def
+R9891:9896 CAG.DecisionProblems.TraceProperties <> gammas:145 var
+R9885:9889 CAG.DecisionProblems.TraceProperties <> gamma:147 var
+R9914:9927 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9901:9902 Stdlib.Lists.List <> In def
+R9908:9913 CAG.DecisionProblems.TraceProperties <> gammas:145 var
+R9904:9906 CAG.DecisionProblems.TraceProperties <> eta:148 var
+R9956:9969 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9928:9929 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R9930:9942 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R9953:9955 CAG.DecisionProblems.TraceProperties <> eta:148 var
+R9947:9951 CAG.DecisionProblems.TraceProperties <> gamma:147 var
+R9944:9945 CAG.DecisionProblems.TraceProperties <> sg:142 var
+R9988:9991 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R9970:9977 CAG.DecisionProblems.TraceProperties <> trace_at def
+R9983:9987 CAG.DecisionProblems.TraceProperties <> gamma:147 var
+R9979:9981 CAG.DecisionProblems.TraceProperties <> rho:146 var
+R9992:9999 CAG.DecisionProblems.TraceProperties <> trace_at def
+R10005:10007 CAG.DecisionProblems.TraceProperties <> eta:148 var
+R10001:10003 CAG.DecisionProblems.TraceProperties <> rho:146 var
+def 10220:10230 <> property_D'
+binder 10233:10233 <> G:149
+R10249:10259 CAG.Group <> StrictGroup rec
+R10261:10261 CAG.DecisionProblems.TraceProperties <> G:149 var
+binder 10244:10245 <> sg:150
+binder 10284:10284 <> F:151
+R10310:10313 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10307:10309 Corelib.Init.Datatypes <> nat ind
+R10314:10324 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R10326:10326 CAG.DecisionProblems.TraceProperties <> F:151 var
+binder 10295:10303 <> MG_family:152
+R10334:10343 CAG.DecisionProblems.TraceProperties <> property_D def
+R10348:10356 CAG.DecisionProblems.TraceProperties <> MG_family:152 var
+R10345:10346 CAG.DecisionProblems.TraceProperties <> sg:150 var
+prf 10589:10608 <> property_A_implies_B
+binder 10611:10611 <> G:153
+binder 10613:10613 <> F:154
+R10629:10639 CAG.Group <> StrictGroup rec
+R10641:10641 CAG.DecisionProblems.TraceProperties <> G:153 var
+binder 10624:10625 <> sg:155
+R10664:10667 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10661:10663 Corelib.Init.Datatypes <> nat ind
+R10668:10678 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R10680:10680 CAG.DecisionProblems.TraceProperties <> F:154 var
+binder 10649:10657 <> MG_family:156
+R10693:10702 CAG.DecisionProblems.TraceProperties <> property_A def
+R10707:10715 CAG.DecisionProblems.TraceProperties <> MG_family:156 var
+R10704:10705 CAG.DecisionProblems.TraceProperties <> sg:155 var
+binder 10688:10689 <> HA:157
+R10720:10729 CAG.DecisionProblems.TraceProperties <> property_B def
+R10734:10742 CAG.DecisionProblems.TraceProperties <> MG_family:156 var
+R10731:10732 CAG.DecisionProblems.TraceProperties <> sg:155 var
+R10761:10770 CAG.DecisionProblems.TraceProperties <> property_A def
+R10788:10797 CAG.DecisionProblems.TraceProperties <> property_B def
+prf 10923:10942 <> property_B_implies_D
+binder 10945:10945 <> G:158
+binder 10947:10947 <> F:159
+R10963:10973 CAG.Group <> StrictGroup rec
+R10975:10975 CAG.DecisionProblems.TraceProperties <> G:158 var
+binder 10958:10959 <> sg:160
+R10998:11001 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10995:10997 Corelib.Init.Datatypes <> nat ind
+R11002:11012 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R11014:11014 CAG.DecisionProblems.TraceProperties <> F:159 var
+binder 10983:10991 <> MG_family:161
+R11027:11036 CAG.DecisionProblems.TraceProperties <> property_B def
+R11041:11049 CAG.DecisionProblems.TraceProperties <> MG_family:161 var
+R11038:11039 CAG.DecisionProblems.TraceProperties <> sg:160 var
+binder 11022:11023 <> HB:162
+R11054:11063 CAG.DecisionProblems.TraceProperties <> property_D def
+R11068:11076 CAG.DecisionProblems.TraceProperties <> MG_family:161 var
+R11065:11066 CAG.DecisionProblems.TraceProperties <> sg:160 var
+R11095:11104 CAG.DecisionProblems.TraceProperties <> property_B def
+R11122:11131 CAG.DecisionProblems.TraceProperties <> property_D def
+prf 11272:11291 <> property_C_implies_D
+binder 11294:11294 <> G:163
+binder 11296:11296 <> F:164
+R11312:11322 CAG.Group <> StrictGroup rec
+R11324:11324 CAG.DecisionProblems.TraceProperties <> G:163 var
+binder 11307:11308 <> sg:165
+R11347:11350 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11344:11346 Corelib.Init.Datatypes <> nat ind
+R11351:11361 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R11363:11363 CAG.DecisionProblems.TraceProperties <> F:164 var
+binder 11332:11340 <> MG_family:166
+R11376:11385 CAG.DecisionProblems.TraceProperties <> property_C def
+R11390:11398 CAG.DecisionProblems.TraceProperties <> MG_family:166 var
+R11387:11388 CAG.DecisionProblems.TraceProperties <> sg:165 var
+binder 11371:11372 <> HC:167
+R11403:11412 CAG.DecisionProblems.TraceProperties <> property_D def
+R11417:11425 CAG.DecisionProblems.TraceProperties <> MG_family:166 var
+R11414:11415 CAG.DecisionProblems.TraceProperties <> sg:165 var
+R11444:11453 CAG.DecisionProblems.TraceProperties <> property_C def
+R11471:11480 CAG.DecisionProblems.TraceProperties <> property_D def
+R11522:11522 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11528:11529 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11533:11533 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11522:11522 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11528:11529 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11533:11533 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+prf 11695:11713 <> uniform_C_implies_C
+binder 11716:11716 <> G:168
+binder 11718:11718 <> F:169
+R11734:11744 CAG.Group <> StrictGroup rec
+R11746:11746 CAG.DecisionProblems.TraceProperties <> G:168 var
+binder 11729:11730 <> sg:170
+R11769:11772 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11766:11768 Corelib.Init.Datatypes <> nat ind
+R11773:11783 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R11785:11785 CAG.DecisionProblems.TraceProperties <> F:169 var
+binder 11754:11762 <> MG_family:171
+R11799:11807 CAG.DecisionProblems.TraceProperties <> uniform_C def
+R11812:11820 CAG.DecisionProblems.TraceProperties <> MG_family:171 var
+R11809:11810 CAG.DecisionProblems.TraceProperties <> sg:170 var
+binder 11793:11795 <> HuC:172
+R11825:11834 CAG.DecisionProblems.TraceProperties <> property_C def
+R11839:11847 CAG.DecisionProblems.TraceProperties <> MG_family:171 var
+R11836:11837 CAG.DecisionProblems.TraceProperties <> sg:170 var
+R11866:11874 CAG.DecisionProblems.TraceProperties <> uniform_C def
+R11893:11902 CAG.DecisionProblems.TraceProperties <> property_C def
+prf 12059:12077 <> uniform_D_implies_D
+binder 12080:12080 <> G:173
+binder 12082:12082 <> F:174
+R12098:12108 CAG.Group <> StrictGroup rec
+R12110:12110 CAG.DecisionProblems.TraceProperties <> G:173 var
+binder 12093:12094 <> sg:175
+R12133:12136 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12130:12132 Corelib.Init.Datatypes <> nat ind
+R12137:12147 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R12149:12149 CAG.DecisionProblems.TraceProperties <> F:174 var
+binder 12118:12126 <> MG_family:176
+R12163:12171 CAG.DecisionProblems.TraceProperties <> uniform_D def
+R12176:12184 CAG.DecisionProblems.TraceProperties <> MG_family:176 var
+R12173:12174 CAG.DecisionProblems.TraceProperties <> sg:175 var
+binder 12157:12159 <> HuD:177
+R12189:12198 CAG.DecisionProblems.TraceProperties <> property_D def
+R12203:12211 CAG.DecisionProblems.TraceProperties <> MG_family:176 var
+R12200:12201 CAG.DecisionProblems.TraceProperties <> sg:175 var
+R12230:12238 CAG.DecisionProblems.TraceProperties <> uniform_D def
+R12257:12266 CAG.DecisionProblems.TraceProperties <> property_D def
+def 12895:12918 <> is_n_trace_distinguished
+binder 12921:12921 <> G:178
+binder 12923:12923 <> F:179
+R12939:12949 CAG.Group <> StrictGroup rec
+R12951:12951 CAG.DecisionProblems.TraceProperties <> G:178 var
+binder 12934:12935 <> sg:180
+R12971:12974 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12968:12970 Corelib.Init.Datatypes <> nat ind
+R12975:12978 Corelib.Init.Datatypes <> list ind
+R12981:12991 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R12993:12993 CAG.DecisionProblems.TraceProperties <> F:179 var
+binder 12959:12964 <> MG_fin:181
+R13006:13006 CAG.DecisionProblems.TraceProperties <> G:178 var
+binder 12998:13002 <> gamma:182
+R13014:13016 Corelib.Init.Datatypes <> nat ind
+binder 13010:13010 <> n:183
+R13044:13044 CAG.DecisionProblems.TraceProperties <> G:178 var
+binder 13038:13040 <> eta:184
+R13079:13086 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13051:13052 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R13053:13065 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R13076:13078 CAG.DecisionProblems.TraceProperties <> eta:184 var
+R13070:13074 CAG.DecisionProblems.TraceProperties <> gamma:182 var
+R13067:13068 CAG.DecisionProblems.TraceProperties <> sg:180 var
+R13087:13094 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R13113:13121 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R13100:13110 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R13112:13112 CAG.DecisionProblems.TraceProperties <> F:179 var
+binder 13095:13096 <> MG:185
+R13138:13147 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R13122:13123 Stdlib.Lists.List <> In def
+R13129:13134 CAG.DecisionProblems.TraceProperties <> MG_fin:181 var
+R13136:13136 CAG.DecisionProblems.TraceProperties <> n:183 var
+R13125:13126 CAG.DecisionProblems.TraceProperties <> MG:185 var
+R13148:13154 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R13181:13190 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R13161:13174 CAG.DecisionProblems.TraceProperties <> Representation rec
+R13179:13180 CAG.DecisionProblems.TraceProperties <> MG:185 var
+R13176:13177 CAG.DecisionProblems.TraceProperties <> sg:180 var
+binder 13155:13157 <> rho:186
+R13209:13212 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R13191:13198 CAG.DecisionProblems.TraceProperties <> trace_at def
+R13204:13208 CAG.DecisionProblems.TraceProperties <> gamma:182 var
+R13200:13202 CAG.DecisionProblems.TraceProperties <> rho:186 var
+R13213:13220 CAG.DecisionProblems.TraceProperties <> trace_at def
+R13226:13228 CAG.DecisionProblems.TraceProperties <> eta:184 var
+R13222:13224 CAG.DecisionProblems.TraceProperties <> rho:186 var
+def 13384:13413 <> is_fully_n_trace_distinguished
+binder 13416:13416 <> G:187
+binder 13418:13418 <> F:188
+R13434:13444 CAG.Group <> StrictGroup rec
+R13446:13446 CAG.DecisionProblems.TraceProperties <> G:187 var
+binder 13429:13430 <> sg:189
+R13466:13469 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13463:13465 Corelib.Init.Datatypes <> nat ind
+R13470:13473 Corelib.Init.Datatypes <> list ind
+R13476:13486 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R13488:13488 CAG.DecisionProblems.TraceProperties <> F:188 var
+binder 13454:13459 <> MG_fin:190
+R13501:13501 CAG.DecisionProblems.TraceProperties <> G:187 var
+binder 13493:13497 <> gamma:191
+R13509:13511 Corelib.Init.Datatypes <> nat ind
+binder 13505:13505 <> n:192
+R13539:13539 CAG.DecisionProblems.TraceProperties <> G:187 var
+binder 13533:13535 <> eta:193
+R13574:13581 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13546:13547 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R13548:13560 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R13571:13573 CAG.DecisionProblems.TraceProperties <> eta:193 var
+R13565:13569 CAG.DecisionProblems.TraceProperties <> gamma:191 var
+R13562:13563 CAG.DecisionProblems.TraceProperties <> sg:189 var
+R13595:13605 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R13607:13607 CAG.DecisionProblems.TraceProperties <> F:188 var
+binder 13590:13591 <> MG:194
+R13633:13642 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13617:13618 Stdlib.Lists.List <> In def
+R13624:13629 CAG.DecisionProblems.TraceProperties <> MG_fin:190 var
+R13631:13631 CAG.DecisionProblems.TraceProperties <> n:192 var
+R13620:13621 CAG.DecisionProblems.TraceProperties <> MG:194 var
+R13656:13669 CAG.DecisionProblems.TraceProperties <> Representation rec
+R13674:13675 CAG.DecisionProblems.TraceProperties <> MG:194 var
+R13671:13672 CAG.DecisionProblems.TraceProperties <> sg:189 var
+binder 13650:13652 <> rho:195
+R13704:13707 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R13686:13693 CAG.DecisionProblems.TraceProperties <> trace_at def
+R13699:13703 CAG.DecisionProblems.TraceProperties <> gamma:191 var
+R13695:13697 CAG.DecisionProblems.TraceProperties <> rho:195 var
+R13708:13715 CAG.DecisionProblems.TraceProperties <> trace_at def
+R13721:13723 CAG.DecisionProblems.TraceProperties <> eta:193 var
+R13717:13719 CAG.DecisionProblems.TraceProperties <> rho:195 var
+ax 14137:14147 <> theorem_3_1
+binder 14161:14161 <> G:196
+binder 14163:14163 <> F:197
+R14179:14189 CAG.Group <> StrictGroup rec
+R14191:14191 CAG.DecisionProblems.TraceProperties <> G:196 var
+binder 14174:14175 <> sg:198
+R14219:14222 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14216:14218 Corelib.Init.Datatypes <> nat ind
+R14223:14233 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R14235:14235 CAG.DecisionProblems.TraceProperties <> F:197 var
+binder 14204:14212 <> MG_family:199
+R14260:14263 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14257:14259 Corelib.Init.Datatypes <> nat ind
+R14264:14267 Corelib.Init.Datatypes <> list ind
+R14270:14280 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R14282:14282 CAG.DecisionProblems.TraceProperties <> F:197 var
+binder 14248:14253 <> MG_fin:200
+R14300:14302 Corelib.Init.Datatypes <> nat ind
+binder 14296:14296 <> n:201
+R14338:14338 CAG.DecisionProblems.TraceProperties <> G:196 var
+binder 14326:14330 <> gamma:202
+binder 14332:14334 <> eta:203
+R14382:14398 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14354:14355 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R14356:14368 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R14379:14381 CAG.DecisionProblems.TraceProperties <> eta:203 var
+R14373:14377 CAG.DecisionProblems.TraceProperties <> gamma:202 var
+R14370:14371 CAG.DecisionProblems.TraceProperties <> sg:198 var
+R14399:14428 CAG.DecisionProblems.TraceProperties <> is_fully_n_trace_distinguished def
+R14446:14446 CAG.DecisionProblems.TraceProperties <> n:201 var
+R14440:14444 CAG.DecisionProblems.TraceProperties <> gamma:202 var
+R14433:14438 CAG.DecisionProblems.TraceProperties <> MG_fin:200 var
+R14430:14431 CAG.DecisionProblems.TraceProperties <> sg:198 var
+binder 14315:14315 <> H:204
+R14454:14463 CAG.DecisionProblems.TraceProperties <> property_A def
+R14468:14476 CAG.DecisionProblems.TraceProperties <> MG_family:199 var
+R14465:14466 CAG.DecisionProblems.TraceProperties <> sg:198 var
+ax 14617:14627 <> theorem_3_2
+binder 14641:14641 <> G:207
+binder 14643:14643 <> F:208
+R14659:14669 CAG.Group <> StrictGroup rec
+R14671:14671 CAG.DecisionProblems.TraceProperties <> G:207 var
+binder 14654:14655 <> sg:209
+R14699:14702 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14696:14698 Corelib.Init.Datatypes <> nat ind
+R14703:14713 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R14715:14715 CAG.DecisionProblems.TraceProperties <> F:208 var
+binder 14684:14692 <> MG_family:210
+R14740:14743 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14737:14739 Corelib.Init.Datatypes <> nat ind
+R14744:14747 Corelib.Init.Datatypes <> list ind
+R14750:14760 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R14762:14762 CAG.DecisionProblems.TraceProperties <> F:208 var
+binder 14728:14733 <> MG_fin:211
+R14795:14795 CAG.DecisionProblems.TraceProperties <> G:207 var
+binder 14787:14791 <> gamma:212
+R14811:14817 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R14831:14847 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R14828:14830 Corelib.Init.Datatypes <> nat ind
+binder 14818:14824 <> n_gamma:213
+R14861:14861 CAG.DecisionProblems.TraceProperties <> G:207 var
+binder 14855:14857 <> eta:214
+R14909:14929 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14881:14882 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R14883:14895 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R14906:14908 CAG.DecisionProblems.TraceProperties <> eta:214 var
+R14900:14904 CAG.DecisionProblems.TraceProperties <> gamma:212 var
+R14897:14898 CAG.DecisionProblems.TraceProperties <> sg:209 var
+R14930:14959 CAG.DecisionProblems.TraceProperties <> is_fully_n_trace_distinguished def
+R14977:14983 CAG.DecisionProblems.TraceProperties <> n_gamma:213 var
+R14971:14975 CAG.DecisionProblems.TraceProperties <> gamma:212 var
+R14964:14969 CAG.DecisionProblems.TraceProperties <> MG_fin:211 var
+R14961:14962 CAG.DecisionProblems.TraceProperties <> sg:209 var
+binder 14776:14776 <> H:215
+R14991:15000 CAG.DecisionProblems.TraceProperties <> property_B def
+R15005:15013 CAG.DecisionProblems.TraceProperties <> MG_family:210 var
+R15002:15003 CAG.DecisionProblems.TraceProperties <> sg:209 var
+def 15427:15445 <> conjugacy_separable
+binder 15448:15448 <> G:218
+R15464:15474 CAG.Group <> StrictGroup rec
+R15476:15476 CAG.DecisionProblems.TraceProperties <> G:218 var
+binder 15459:15460 <> sg:219
+R15510:15510 CAG.DecisionProblems.TraceProperties <> G:218 var
+binder 15498:15502 <> gamma:220
+binder 15504:15506 <> eta:221
+R15545:15552 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15517:15518 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R15519:15531 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R15542:15544 CAG.DecisionProblems.TraceProperties <> eta:221 var
+R15536:15540 CAG.DecisionProblems.TraceProperties <> gamma:220 var
+R15533:15534 CAG.DecisionProblems.TraceProperties <> sg:219 var
+R15553:15560 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R15694:15702 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 15561:15561 <> Q:222
+R15577:15587 CAG.Group <> StrictGroup rec
+R15589:15589 CAG.DecisionProblems.TraceProperties <> Q:222 var
+binder 15572:15573 <> sq:223
+R15602:15605 Corelib.Init.Datatypes <> list ind
+R15607:15607 CAG.DecisionProblems.TraceProperties <> Q:222 var
+binder 15593:15598 <> Q_list:224
+R15646:15646 CAG.DecisionProblems.TraceProperties <> Q:222 var
+binder 15642:15642 <> x:225
+R15649:15650 Stdlib.Lists.List <> In def
+R15654:15659 CAG.DecisionProblems.TraceProperties <> Q_list:224 var
+R15652:15652 CAG.DecisionProblems.TraceProperties <> x:225 var
+binder 15622:15631 <> Q_complete:226
+R15680:15687 CAG.Group <> GroupHom rec
+R15692:15693 CAG.DecisionProblems.TraceProperties <> sq:223 var
+R15689:15690 CAG.DecisionProblems.TraceProperties <> sg:219 var
+binder 15674:15676 <> phi:227
+R15703:15704 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R15705:15717 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R15742:15747 CAG.Group <> hom_fn proj
+R15753:15755 CAG.DecisionProblems.TraceProperties <> eta:221 var
+R15749:15751 CAG.DecisionProblems.TraceProperties <> phi:227 var
+R15723:15728 CAG.Group <> hom_fn proj
+R15734:15738 CAG.DecisionProblems.TraceProperties <> gamma:220 var
+R15730:15732 CAG.DecisionProblems.TraceProperties <> phi:227 var
+R15719:15720 CAG.DecisionProblems.TraceProperties <> sq:223 var
+ax 15930:15949 <> specialization_lemma
+binder 15963:15963 <> F:228
+R15979:15989 CAG.Group <> StrictGroup rec
+R15991:15991 CAG.DecisionProblems.TraceProperties <> F:228 var
+binder 15974:15975 <> sg:229
+R16010:16010 CAG.DecisionProblems.TraceProperties <> F:228 var
+binder 15995:16006 <> nonzero_elem:230
+R16041:16048 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R16030:16033 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R16018:16029 CAG.DecisionProblems.TraceProperties <> nonzero_elem:230 var
+R16034:16035 CAG.Group <> se proj
+R16037:16037 CAG.DecisionProblems.TraceProperties <> F:228 var
+R16039:16040 CAG.DecisionProblems.TraceProperties <> sg:229 var
+R16049:16056 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R16190:16198 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 16057:16057 <> Q:231
+R16073:16083 CAG.Group <> StrictGroup rec
+R16085:16085 CAG.DecisionProblems.TraceProperties <> Q:231 var
+binder 16068:16069 <> sq:232
+R16098:16101 Corelib.Init.Datatypes <> list ind
+R16103:16103 CAG.DecisionProblems.TraceProperties <> Q:231 var
+binder 16089:16094 <> Q_list:233
+R16142:16142 CAG.DecisionProblems.TraceProperties <> Q:231 var
+binder 16138:16138 <> x:234
+R16145:16146 Stdlib.Lists.List <> In def
+R16150:16155 CAG.DecisionProblems.TraceProperties <> Q_list:233 var
+R16148:16148 CAG.DecisionProblems.TraceProperties <> x:234 var
+binder 16118:16127 <> Q_complete:235
+R16176:16183 CAG.Group <> GroupHom rec
+R16188:16189 CAG.DecisionProblems.TraceProperties <> sq:232 var
+R16185:16186 CAG.DecisionProblems.TraceProperties <> sg:229 var
+binder 16170:16172 <> phi:236
+R16222:16225 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R16199:16204 CAG.Group <> hom_fn proj
+R16210:16221 CAG.DecisionProblems.TraceProperties <> nonzero_elem:230 var
+R16206:16208 CAG.DecisionProblems.TraceProperties <> phi:236 var
+R16226:16227 CAG.Group <> se proj
+R16229:16229 CAG.DecisionProblems.TraceProperties <> Q:231 var
+R16231:16232 CAG.DecisionProblems.TraceProperties <> sq:232 var
+ax 16780:16794 <> proposition_1_3
+binder 16808:16808 <> G:239
+binder 16810:16810 <> F:240
+R16826:16836 CAG.Group <> StrictGroup rec
+R16838:16838 CAG.DecisionProblems.TraceProperties <> G:239 var
+binder 16821:16822 <> sg:241
+R16857:16860 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R16854:16856 Corelib.Init.Datatypes <> nat ind
+R16861:16871 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R16873:16873 CAG.DecisionProblems.TraceProperties <> F:240 var
+binder 16842:16850 <> MG_family:242
+R16891:16900 CAG.DecisionProblems.TraceProperties <> property_D def
+R16905:16913 CAG.DecisionProblems.TraceProperties <> MG_family:242 var
+R16902:16903 CAG.DecisionProblems.TraceProperties <> sg:241 var
+binder 16886:16887 <> HD:243
+R16921:16939 CAG.DecisionProblems.TraceProperties <> conjugacy_separable def
+R16941:16942 CAG.DecisionProblems.TraceProperties <> sg:241 var
+def 17292:17315 <> has_effective_linear_rep
+binder 17318:17318 <> G:246
+R17335:17341 CAG.DecisionProblems.TraceProperties <> FGGroup rec
+R17343:17343 CAG.DecisionProblems.TraceProperties <> G:246 var
+binder 17329:17331 <> fgg:247
+R17357:17359 Corelib.Init.Datatypes <> nat ind
+binder 17351:17353 <> dim:248
+R17381:17384 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R17378:17380 Corelib.Init.Datatypes <> nat ind
+R17385:17387 Corelib.Init.Datatypes <> nat ind
+binder 17363:17374 <> growth_bound:249
+R17520:17523 Corelib.Init.Logic <> True ind
+ax 17676:17705 <> effective_rep_gives_poly_bound
+binder 17719:17719 <> G:250
+R17736:17742 CAG.DecisionProblems.TraceProperties <> FGGroup rec
+R17744:17744 CAG.DecisionProblems.TraceProperties <> G:250 var
+binder 17730:17732 <> fgg:251
+R17764:17766 Corelib.Init.Datatypes <> nat ind
+binder 17757:17758 <> n0:252
+binder 17760:17760 <> d:253
+R17786:17809 CAG.DecisionProblems.TraceProperties <> has_effective_linear_rep def
+binder 17823:17823 <> k:254
+R17828:17834 Stdlib.Arith.PeanoNat Nat pow def
+R17836:17836 CAG.DecisionProblems.TraceProperties <> k:254 var
+R17838:17838 CAG.DecisionProblems.TraceProperties <> d:253 var
+R17815:17816 CAG.DecisionProblems.TraceProperties <> n0:252 var
+R17811:17813 CAG.DecisionProblems.TraceProperties <> fgg:251 var
+binder 17779:17782 <> Heff:255
+R17847:17853 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R17861:17862 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R17858:17860 Corelib.Init.Datatypes <> nat ind
+binder 17854:17854 <> C:256
+R17874:17876 Corelib.Init.Datatypes <> nat ind
+binder 17870:17870 <> n:257
+R17894:17897 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R17879:17887 CAG.DecisionProblems.TraceProperties <> Conj_func def
+R17893:17893 CAG.DecisionProblems.TraceProperties <> n:257 var
+R17889:17891 CAG.DecisionProblems.TraceProperties <> fgg:251 var
+R17899:17901 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R17898:17898 CAG.DecisionProblems.TraceProperties <> C:256 var
+R17902:17908 Stdlib.Arith.PeanoNat Nat pow def
+R17910:17910 CAG.DecisionProblems.TraceProperties <> n:257 var
+R17912:17912 CAG.DecisionProblems.TraceProperties <> d:253 var
+ax 18168:18178 <> theorem_1_4
+binder 18192:18192 <> G:260
+binder 18194:18194 <> F:261
+R18211:18217 CAG.DecisionProblems.TraceProperties <> FGGroup rec
+R18219:18219 CAG.DecisionProblems.TraceProperties <> G:260 var
+binder 18205:18207 <> fgg:262
+R18238:18241 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R18235:18237 Corelib.Init.Datatypes <> nat ind
+R18242:18252 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R18254:18254 CAG.DecisionProblems.TraceProperties <> F:261 var
+binder 18223:18231 <> MG_family:263
+R18272:18281 CAG.DecisionProblems.TraceProperties <> property_A def
+R18298:18306 CAG.DecisionProblems.TraceProperties <> MG_family:263 var
+R18289:18294 CAG.DecisionProblems.TraceProperties <> fgg_sg proj
+R18284:18286 CAG.DecisionProblems.TraceProperties <> fgg:262 var
+binder 18267:18268 <> HA:264
+R18314:18320 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R18328:18329 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R18325:18327 Corelib.Init.Datatypes <> nat ind
+binder 18321:18321 <> d:265
+R18330:18336 CAG.DecisionProblems.TraceProperties <> asym_le def
+R18339:18347 CAG.DecisionProblems.TraceProperties <> Conj_func def
+R18349:18351 CAG.DecisionProblems.TraceProperties <> fgg:262 var
+binder 18359:18359 <> n:266
+R18364:18370 Stdlib.Arith.PeanoNat Nat pow def
+R18372:18372 CAG.DecisionProblems.TraceProperties <> n:266 var
+R18374:18374 CAG.DecisionProblems.TraceProperties <> d:265 var
+ax 18456:18466 <> theorem_1_5
+binder 18480:18480 <> G:269
+binder 18482:18482 <> F:270
+R18499:18505 CAG.DecisionProblems.TraceProperties <> FGGroup rec
+R18507:18507 CAG.DecisionProblems.TraceProperties <> G:269 var
+binder 18493:18495 <> fgg:271
+R18526:18529 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R18523:18525 Corelib.Init.Datatypes <> nat ind
+R18530:18540 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R18542:18542 CAG.DecisionProblems.TraceProperties <> F:270 var
+binder 18511:18519 <> MG_family:272
+R18560:18569 CAG.DecisionProblems.TraceProperties <> property_B def
+R18586:18594 CAG.DecisionProblems.TraceProperties <> MG_family:272 var
+R18577:18582 CAG.DecisionProblems.TraceProperties <> fgg_sg proj
+R18572:18574 CAG.DecisionProblems.TraceProperties <> fgg:271 var
+binder 18555:18556 <> HB:273
+R18615:18615 CAG.DecisionProblems.TraceProperties <> G:269 var
+binder 18607:18611 <> gamma:274
+R18623:18629 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R18643:18644 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R18640:18642 Corelib.Init.Datatypes <> nat ind
+binder 18630:18636 <> d_gamma:275
+R18645:18651 CAG.DecisionProblems.TraceProperties <> asym_le def
+R18654:18661 CAG.DecisionProblems.TraceProperties <> Conj_rel def
+R18667:18671 CAG.DecisionProblems.TraceProperties <> gamma:274 var
+R18663:18665 CAG.DecisionProblems.TraceProperties <> fgg:271 var
+binder 18679:18679 <> n:276
+R18684:18690 Stdlib.Arith.PeanoNat Nat pow def
+R18692:18692 CAG.DecisionProblems.TraceProperties <> n:276 var
+R18694:18700 CAG.DecisionProblems.TraceProperties <> d_gamma:275 var
+rec 19032:19045 <> InducedRepData
+proj 19243:19249 <> ird_rho
+proj 19280:19286 <> ird_ind
+proj 19310:19316 <> ird_rep
+proj 19352:19358 <> ird_dim
+binder 19048:19048 <> G:279
+binder 19050:19050 <> H:280
+binder 19052:19052 <> F:281
+R19072:19082 CAG.Group <> StrictGroup rec
+R19084:19084 CAG.DecisionProblems.TraceProperties <> G:279 var
+binder 19067:19068 <> sg:282
+R19093:19103 CAG.Group <> StrictGroup rec
+R19105:19105 CAG.DecisionProblems.TraceProperties <> H:280 var
+binder 19088:19089 <> sh:283
+R19123:19126 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R19122:19122 CAG.DecisionProblems.TraceProperties <> G:279 var
+binder 19113:19118 <> H_pred:284
+R19146:19156 CAG.Group <> is_subgroup def
+R19184:19189 CAG.DecisionProblems.TraceProperties <> H_pred:284 var
+R19159:19178 CAG.Group <> StrictGroup_to_Group def
+R19180:19181 CAG.DecisionProblems.TraceProperties <> sg:282 var
+binder 19138:19142 <> H_sub:285
+R19202:19212 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R19214:19214 CAG.DecisionProblems.TraceProperties <> F:281 var
+binder 19197:19198 <> MG:286
+R19254:19267 CAG.DecisionProblems.TraceProperties <> Representation rec
+R19272:19273 CAG.DecisionProblems.TraceProperties <> MG:286 var
+R19269:19270 CAG.DecisionProblems.TraceProperties <> sh:283 var
+R19291:19301 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R19303:19303 CAG.DecisionProblems.TraceProperties <> F:281 var
+R19321:19334 CAG.DecisionProblems.TraceProperties <> Representation rec
+R19339:19345 CAG.DecisionProblems.TraceProperties <> ird_ind:289 meth
+R19336:19337 CAG.DecisionProblems.TraceProperties <> sg:282 var
+R19377:19379 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R19363:19368 CAG.DecisionProblems.TraceProperties <> mg_dim proj
+R19370:19376 CAG.DecisionProblems.TraceProperties <> ird_ind:289 meth
+ax 19635:19657 <> frobenius_trace_formula
+binder 19671:19671 <> G:292
+binder 19673:19673 <> H:293
+binder 19675:19675 <> F:294
+R19700:19710 CAG.Group <> StrictGroup rec
+R19712:19712 CAG.DecisionProblems.TraceProperties <> G:292 var
+binder 19695:19696 <> sg:295
+R19721:19731 CAG.Group <> StrictGroup rec
+R19733:19733 CAG.DecisionProblems.TraceProperties <> H:293 var
+binder 19716:19717 <> sh:296
+R19756:19759 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R19755:19755 CAG.DecisionProblems.TraceProperties <> G:292 var
+binder 19746:19751 <> H_pred:297
+R19784:19794 CAG.Group <> is_subgroup def
+R19822:19827 CAG.DecisionProblems.TraceProperties <> H_pred:297 var
+R19797:19816 CAG.Group <> StrictGroup_to_Group def
+R19818:19819 CAG.DecisionProblems.TraceProperties <> sg:295 var
+binder 19776:19780 <> H_sub:298
+R19845:19855 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R19857:19857 CAG.DecisionProblems.TraceProperties <> F:294 var
+binder 19840:19841 <> MG:299
+R19867:19880 CAG.DecisionProblems.TraceProperties <> InducedRepData rec
+R19901:19902 CAG.DecisionProblems.TraceProperties <> MG:299 var
+R19895:19899 CAG.DecisionProblems.TraceProperties <> H_sub:298 var
+R19888:19893 CAG.DecisionProblems.TraceProperties <> H_pred:297 var
+R19885:19886 CAG.DecisionProblems.TraceProperties <> sh:296 var
+R19882:19883 CAG.DecisionProblems.TraceProperties <> sg:295 var
+binder 19861:19863 <> ird:300
+R19910:19913 Corelib.Init.Logic <> True ind
+ax 20315:20338 <> hall_theorem_free_groups
+binder 20352:20352 <> G:303
+R20368:20378 CAG.Group <> StrictGroup rec
+R20380:20380 CAG.DecisionProblems.TraceProperties <> G:303 var
+binder 20363:20364 <> sg:304
+R20405:20407 Corelib.Init.Datatypes <> nat ind
+binder 20393:20401 <> free_rank:305
+R20428:20428 CAG.DecisionProblems.TraceProperties <> G:303 var
+binder 20420:20424 <> gamma:306
+R20436:20443 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R20461:20469 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R20453:20456 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R20452:20452 CAG.DecisionProblems.TraceProperties <> G:303 var
+binder 20444:20448 <> Delta:307
+R20513:20523 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R20641:20641 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R20470:20480 CAG.Group <> is_subgroup def
+R20508:20512 CAG.DecisionProblems.TraceProperties <> Delta:307 var
+R20483:20502 CAG.Group <> StrictGroup_to_Group def
+R20504:20505 CAG.DecisionProblems.TraceProperties <> sg:304 var
+R20535:20535 CAG.DecisionProblems.TraceProperties <> G:303 var
+binder 20531:20531 <> g:308
+R20538:20545 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R20561:20573 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R20550:20552 Corelib.Init.Datatypes <> nat ind
+binder 20546:20546 <> k:309
+R20560:20560 CAG.DecisionProblems.TraceProperties <> G:303 var
+binder 20556:20556 <> d:310
+R20581:20584 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R20574:20578 CAG.DecisionProblems.TraceProperties <> Delta:307 var
+R20580:20580 CAG.DecisionProblems.TraceProperties <> d:310 var
+R20586:20588 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R20585:20585 CAG.DecisionProblems.TraceProperties <> g:308 var
+R20589:20592 CAG.Group <> smul proj
+R20594:20594 CAG.DecisionProblems.TraceProperties <> G:303 var
+R20596:20597 CAG.DecisionProblems.TraceProperties <> sg:304 var
+R20600:20603 CAG.Group <> gpow def
+R20631:20635 CAG.DecisionProblems.TraceProperties <> gamma:306 var
+R20637:20637 CAG.DecisionProblems.TraceProperties <> k:309 var
+R20606:20625 CAG.Group <> StrictGroup_to_Group def
+R20627:20628 CAG.DecisionProblems.TraceProperties <> sg:304 var
+R20640:20640 CAG.DecisionProblems.TraceProperties <> d:310 var
+ax 20721:20743 <> theorem_1_6_free_groups
+binder 20757:20757 <> G:313
+binder 20759:20759 <> F:314
+R20775:20785 CAG.Group <> StrictGroup rec
+R20787:20787 CAG.DecisionProblems.TraceProperties <> G:313 var
+binder 20770:20771 <> sg:315
+R20806:20809 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R20803:20805 Corelib.Init.Datatypes <> nat ind
+R20810:20820 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R20822:20822 CAG.DecisionProblems.TraceProperties <> F:314 var
+binder 20791:20799 <> MG_family:316
+R20839:20841 Corelib.Init.Datatypes <> nat ind
+binder 20835:20835 <> r:317
+R20849:20858 CAG.DecisionProblems.TraceProperties <> property_B def
+R20863:20871 CAG.DecisionProblems.TraceProperties <> MG_family:316 var
+R20860:20861 CAG.DecisionProblems.TraceProperties <> sg:315 var
+ax 20881:20906 <> theorem_1_6_surface_groups
+binder 20920:20920 <> G:320
+binder 20922:20922 <> F:321
+R20938:20948 CAG.Group <> StrictGroup rec
+R20950:20950 CAG.DecisionProblems.TraceProperties <> G:320 var
+binder 20933:20934 <> sg:322
+R20969:20972 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R20966:20968 Corelib.Init.Datatypes <> nat ind
+R20973:20983 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R20985:20985 CAG.DecisionProblems.TraceProperties <> F:321 var
+binder 20954:20962 <> MG_family:323
+R21006:21008 Corelib.Init.Datatypes <> nat ind
+binder 20998:21002 <> genus:324
+R21018:21021 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R21022:21026 CAG.DecisionProblems.TraceProperties <> genus:324 var
+binder 21012:21013 <> Hg:325
+R21034:21043 CAG.DecisionProblems.TraceProperties <> property_B def
+R21048:21056 CAG.DecisionProblems.TraceProperties <> MG_family:323 var
+R21045:21046 CAG.DecisionProblems.TraceProperties <> sg:322 var
+def 21412:21432 <> fully_residually_free
+binder 21435:21435 <> G:328
+binder 21437:21438 <> GF:329
+R21458:21468 CAG.Group <> StrictGroup rec
+R21470:21470 CAG.DecisionProblems.TraceProperties <> G:328 var
+binder 21453:21454 <> sg:330
+R21479:21489 CAG.Group <> StrictGroup rec
+R21491:21492 CAG.DecisionProblems.TraceProperties <> GF:329 var
+binder 21474:21475 <> sf:331
+R21519:21522 Corelib.Init.Datatypes <> list ind
+R21524:21524 CAG.DecisionProblems.TraceProperties <> G:328 var
+binder 21515:21515 <> S:332
+binder 21549:21549 <> x:333
+R21558:21561 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R21552:21553 Stdlib.Lists.List <> In def
+R21557:21557 CAG.DecisionProblems.TraceProperties <> S:332 var
+R21555:21555 CAG.DecisionProblems.TraceProperties <> x:333 var
+R21563:21566 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R21562:21562 CAG.DecisionProblems.TraceProperties <> x:333 var
+R21567:21568 CAG.Group <> se proj
+R21570:21570 CAG.DecisionProblems.TraceProperties <> G:328 var
+R21572:21573 CAG.DecisionProblems.TraceProperties <> sg:330 var
+binder 21537:21538 <> HS:334
+R21581:21588 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R21609:21618 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R21700:21700 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R21595:21602 CAG.Group <> GroupHom rec
+R21607:21608 CAG.DecisionProblems.TraceProperties <> sf:331 var
+R21604:21605 CAG.DecisionProblems.TraceProperties <> sg:330 var
+binder 21589:21591 <> phi:335
+R21632:21632 CAG.DecisionProblems.TraceProperties <> G:328 var
+binder 21626:21626 <> x:336
+binder 21628:21628 <> y:337
+R21641:21644 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R21635:21636 Stdlib.Lists.List <> In def
+R21640:21640 CAG.DecisionProblems.TraceProperties <> S:332 var
+R21638:21638 CAG.DecisionProblems.TraceProperties <> x:336 var
+R21651:21663 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R21645:21646 Stdlib.Lists.List <> In def
+R21650:21650 CAG.DecisionProblems.TraceProperties <> S:332 var
+R21648:21648 CAG.DecisionProblems.TraceProperties <> y:337 var
+R21691:21694 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R21676:21678 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R21664:21669 CAG.Group <> hom_fn proj
+R21675:21675 CAG.DecisionProblems.TraceProperties <> x:336 var
+R21671:21673 CAG.DecisionProblems.TraceProperties <> phi:335 var
+R21679:21684 CAG.Group <> hom_fn proj
+R21690:21690 CAG.DecisionProblems.TraceProperties <> y:337 var
+R21686:21688 CAG.DecisionProblems.TraceProperties <> phi:335 var
+R21696:21698 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R21695:21695 CAG.DecisionProblems.TraceProperties <> x:336 var
+R21699:21699 CAG.DecisionProblems.TraceProperties <> y:337 var
+ax 21864:21874 <> theorem_1_8
+binder 21888:21888 <> G:338
+binder 21890:21891 <> GF:339
+R21907:21917 CAG.Group <> StrictGroup rec
+R21919:21919 CAG.DecisionProblems.TraceProperties <> G:338 var
+binder 21902:21903 <> sg:340
+R21928:21938 CAG.Group <> StrictGroup rec
+R21940:21941 CAG.DecisionProblems.TraceProperties <> GF:339 var
+binder 21923:21924 <> sf:341
+R21961:21981 CAG.DecisionProblems.TraceProperties <> fully_residually_free def
+R21986:21987 CAG.DecisionProblems.TraceProperties <> sf:341 var
+R21983:21984 CAG.DecisionProblems.TraceProperties <> sg:340 var
+binder 21954:21957 <> Hfrf:342
+R22009:22012 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R22008:22008 CAG.DecisionProblems.TraceProperties <> G:338 var
+binder 22000:22004 <> Delta:343
+R22038:22055 CAG.Group <> is_normal_subgroup def
+R22083:22087 CAG.DecisionProblems.TraceProperties <> Delta:343 var
+R22058:22077 CAG.Group <> StrictGroup_to_Group def
+R22079:22080 CAG.DecisionProblems.TraceProperties <> sg:340 var
+binder 22029:22034 <> HDnorm:344
+R22108:22115 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R22131:22146 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R22125:22128 Corelib.Init.Datatypes <> list ind
+R22130:22130 CAG.DecisionProblems.TraceProperties <> G:338 var
+binder 22116:22121 <> D_list:345
+R22159:22163 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R22197:22197 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R22147:22151 Stdlib.Lists.List <> NoDup ind
+R22153:22158 CAG.DecisionProblems.TraceProperties <> D_list:345 var
+binder 22171:22171 <> x:346
+R22185:22189 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R22174:22175 Stdlib.Lists.List <> In def
+R22179:22184 CAG.DecisionProblems.TraceProperties <> D_list:345 var
+R22177:22177 CAG.DecisionProblems.TraceProperties <> x:346 var
+R22190:22194 CAG.DecisionProblems.TraceProperties <> Delta:343 var
+R22196:22196 CAG.DecisionProblems.TraceProperties <> x:346 var
+binder 22100:22104 <> HDfin:347
+R22205:22208 Corelib.Init.Logic <> True ind
+def 22565:22584 <> SLn_trace_equivalent
+binder 22587:22587 <> G:350
+binder 22589:22589 <> F:351
+R22605:22615 CAG.Group <> StrictGroup rec
+R22617:22617 CAG.DecisionProblems.TraceProperties <> G:350 var
+binder 22600:22601 <> sg:352
+R22640:22643 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R22637:22639 Corelib.Init.Datatypes <> nat ind
+R22644:22654 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R22656:22656 CAG.DecisionProblems.TraceProperties <> F:351 var
+binder 22625:22633 <> MG_family:353
+R22664:22666 Corelib.Init.Datatypes <> nat ind
+binder 22660:22660 <> n:354
+R22682:22682 CAG.DecisionProblems.TraceProperties <> G:350 var
+binder 22670:22674 <> gamma:355
+binder 22676:22678 <> eta:356
+R22698:22714 CAG.DecisionProblems.TraceProperties <> trace_equiv_in_MG def
+R22716:22716 CAG.DecisionProblems.TraceProperties <> G:350 var
+R22718:22718 CAG.DecisionProblems.TraceProperties <> F:351 var
+R22720:22721 CAG.DecisionProblems.TraceProperties <> sg:352 var
+R22724:22732 CAG.DecisionProblems.TraceProperties <> MG_family:353 var
+R22734:22734 CAG.DecisionProblems.TraceProperties <> n:354 var
+R22737:22741 CAG.DecisionProblems.TraceProperties <> gamma:355 var
+R22743:22745 CAG.DecisionProblems.TraceProperties <> eta:356 var
+ax 22876:22884 <> lemma_4_1
+binder 22898:22898 <> G:357
+binder 22900:22900 <> F:358
+R22916:22926 CAG.Group <> StrictGroup rec
+R22928:22928 CAG.DecisionProblems.TraceProperties <> G:357 var
+binder 22911:22912 <> sg:359
+R22947:22950 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R22944:22946 Corelib.Init.Datatypes <> nat ind
+R22951:22961 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R22963:22963 CAG.DecisionProblems.TraceProperties <> F:358 var
+binder 22932:22940 <> MG_family:360
+R22980:22982 Corelib.Init.Datatypes <> nat ind
+binder 22976:22976 <> n:361
+R23006:23012 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R23026:23040 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R23025:23025 CAG.DecisionProblems.TraceProperties <> G:357 var
+binder 23013:23017 <> gamma:362
+R23025:23025 CAG.DecisionProblems.TraceProperties <> G:357 var
+binder 23019:23021 <> eta:363
+R23069:23085 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R23041:23042 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R23043:23055 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R23066:23068 CAG.DecisionProblems.TraceProperties <> eta:363 var
+R23060:23064 CAG.DecisionProblems.TraceProperties <> gamma:362 var
+R23057:23058 CAG.DecisionProblems.TraceProperties <> sg:359 var
+R23086:23105 CAG.DecisionProblems.TraceProperties <> SLn_trace_equivalent def
+R23128:23130 CAG.DecisionProblems.TraceProperties <> eta:363 var
+R23122:23126 CAG.DecisionProblems.TraceProperties <> gamma:362 var
+R23120:23120 CAG.DecisionProblems.TraceProperties <> n:361 var
+R23110:23118 CAG.DecisionProblems.TraceProperties <> MG_family:360 var
+R23107:23108 CAG.DecisionProblems.TraceProperties <> sg:359 var
+binder 22995:23002 <> HFr_pair:364
+R23138:23141 Corelib.Init.Logic <> True ind
+ax 23345:23372 <> reverse_word_SL2_trace_equiv
+binder 23386:23386 <> G:367
+binder 23388:23388 <> F:368
+R23404:23414 CAG.Group <> StrictGroup rec
+R23416:23416 CAG.DecisionProblems.TraceProperties <> G:367 var
+binder 23399:23400 <> sg:369
+R23426:23436 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R23438:23438 CAG.DecisionProblems.TraceProperties <> F:368 var
+binder 23420:23422 <> MG2:370
+R23457:23470 CAG.DecisionProblems.TraceProperties <> Representation rec
+R23475:23477 CAG.DecisionProblems.TraceProperties <> MG2:370 var
+R23472:23473 CAG.DecisionProblems.TraceProperties <> sg:369 var
+binder 23451:23453 <> rho:371
+R23485:23485 CAG.DecisionProblems.TraceProperties <> G:367 var
+binder 23481:23481 <> w:372
+R23507:23509 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R23493:23500 CAG.DecisionProblems.TraceProperties <> trace_at def
+R23506:23506 CAG.DecisionProblems.TraceProperties <> w:372 var
+R23502:23504 CAG.DecisionProblems.TraceProperties <> rho:371 var
+R23510:23517 CAG.DecisionProblems.TraceProperties <> trace_at def
+R23524:23527 CAG.Group <> sinv proj
+R23529:23529 CAG.DecisionProblems.TraceProperties <> G:367 var
+R23531:23532 CAG.DecisionProblems.TraceProperties <> sg:369 var
+R23534:23534 CAG.DecisionProblems.TraceProperties <> w:372 var
+R23519:23521 CAG.DecisionProblems.TraceProperties <> rho:371 var
+def 23850:23871 <> conjecture_1_free_no_A
+binder 23874:23874 <> G:375
+binder 23876:23876 <> F:376
+R23892:23902 CAG.Group <> StrictGroup rec
+R23904:23904 CAG.DecisionProblems.TraceProperties <> G:375 var
+binder 23887:23888 <> sg:377
+R23927:23930 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R23924:23926 Corelib.Init.Datatypes <> nat ind
+R23931:23941 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R23943:23943 CAG.DecisionProblems.TraceProperties <> F:376 var
+binder 23912:23920 <> MG_family:378
+R23958:23959 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R23960:23969 CAG.DecisionProblems.TraceProperties <> property_A def
+R23974:23982 CAG.DecisionProblems.TraceProperties <> MG_family:378 var
+R23971:23972 CAG.DecisionProblems.TraceProperties <> sg:377 var
+def 24063:24087 <> open_uniformC_eq_uniformD
+binder 24090:24090 <> G:379
+binder 24092:24092 <> F:380
+R24108:24118 CAG.Group <> StrictGroup rec
+R24120:24120 CAG.DecisionProblems.TraceProperties <> G:379 var
+binder 24103:24104 <> sg:381
+R24143:24146 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R24140:24142 Corelib.Init.Datatypes <> nat ind
+R24147:24157 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R24159:24159 CAG.DecisionProblems.TraceProperties <> F:380 var
+binder 24128:24136 <> MG_family:382
+R24196:24200 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R24174:24182 CAG.DecisionProblems.TraceProperties <> uniform_C def
+R24187:24195 CAG.DecisionProblems.TraceProperties <> MG_family:382 var
+R24184:24185 CAG.DecisionProblems.TraceProperties <> sg:381 var
+R24201:24209 CAG.DecisionProblems.TraceProperties <> uniform_D def
+R24214:24222 CAG.DecisionProblems.TraceProperties <> MG_family:382 var
+R24211:24212 CAG.DecisionProblems.TraceProperties <> sg:381 var
+def 24321:24346 <> open_SLn_trace_equiv_pairs
+binder 24349:24349 <> G:383
+binder 24351:24351 <> F:384
+R24367:24377 CAG.Group <> StrictGroup rec
+R24379:24379 CAG.DecisionProblems.TraceProperties <> G:383 var
+binder 24362:24363 <> sg:385
+R24402:24405 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R24399:24401 Corelib.Init.Datatypes <> nat ind
+R24406:24416 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R24418:24418 CAG.DecisionProblems.TraceProperties <> F:384 var
+binder 24387:24395 <> MG_family:386
+R24426:24428 Corelib.Init.Datatypes <> nat ind
+binder 24422:24422 <> n:387
+R24438:24440 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R24441:24441 CAG.DecisionProblems.TraceProperties <> n:387 var
+binder 24432:24433 <> Hn:388
+R24456:24462 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R24476:24481 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R24475:24475 CAG.DecisionProblems.TraceProperties <> G:383 var
+binder 24463:24467 <> gamma:389
+R24475:24475 CAG.DecisionProblems.TraceProperties <> G:383 var
+binder 24469:24471 <> eta:390
+R24510:24517 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R24482:24483 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R24484:24496 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R24507:24509 CAG.DecisionProblems.TraceProperties <> eta:390 var
+R24501:24505 CAG.DecisionProblems.TraceProperties <> gamma:389 var
+R24498:24499 CAG.DecisionProblems.TraceProperties <> sg:385 var
+R24518:24537 CAG.DecisionProblems.TraceProperties <> SLn_trace_equivalent def
+R24560:24562 CAG.DecisionProblems.TraceProperties <> eta:390 var
+R24554:24558 CAG.DecisionProblems.TraceProperties <> gamma:389 var
+R24552:24552 CAG.DecisionProblems.TraceProperties <> n:387 var
+R24542:24550 CAG.DecisionProblems.TraceProperties <> MG_family:386 var
+R24539:24540 CAG.DecisionProblems.TraceProperties <> sg:385 var
+def 24663:24689 <> conjecture_2_positive_words
+binder 24692:24692 <> G:391
+binder 24694:24694 <> F:392
+R24710:24720 CAG.Group <> StrictGroup rec
+R24722:24722 CAG.DecisionProblems.TraceProperties <> G:391 var
+binder 24705:24706 <> sg:393
+R24745:24748 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R24742:24744 Corelib.Init.Datatypes <> nat ind
+R24749:24759 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R24761:24761 CAG.DecisionProblems.TraceProperties <> F:392 var
+binder 24730:24738 <> MG_family:394
+R24769:24771 Corelib.Init.Datatypes <> nat ind
+binder 24765:24765 <> n:395
+R24799:24802 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R24798:24798 CAG.DecisionProblems.TraceProperties <> G:391 var
+binder 24779:24794 <> is_positive_word:396
+R24821:24821 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R24933:24943 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R25111:25111 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R24822:24828 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R24842:24849 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R24841:24841 CAG.DecisionProblems.TraceProperties <> G:391 var
+binder 24829:24833 <> gamma:397
+R24841:24841 CAG.DecisionProblems.TraceProperties <> G:391 var
+binder 24835:24837 <> eta:398
+R24878:24887 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R24850:24851 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R24852:24864 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R24875:24877 CAG.DecisionProblems.TraceProperties <> eta:398 var
+R24869:24873 CAG.DecisionProblems.TraceProperties <> gamma:397 var
+R24866:24867 CAG.DecisionProblems.TraceProperties <> sg:393 var
+R24888:24907 CAG.DecisionProblems.TraceProperties <> SLn_trace_equivalent def
+R24930:24932 CAG.DecisionProblems.TraceProperties <> eta:398 var
+R24924:24928 CAG.DecisionProblems.TraceProperties <> gamma:397 var
+R24922:24922 CAG.DecisionProblems.TraceProperties <> n:395 var
+R24912:24920 CAG.DecisionProblems.TraceProperties <> MG_family:394 var
+R24909:24910 CAG.DecisionProblems.TraceProperties <> sg:393 var
+R24944:24950 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R24964:24971 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R24963:24963 CAG.DecisionProblems.TraceProperties <> G:391 var
+binder 24951:24955 <> gamma:399
+R24963:24963 CAG.DecisionProblems.TraceProperties <> G:391 var
+binder 24957:24959 <> eta:400
+R24994:24997 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R24972:24987 CAG.DecisionProblems.TraceProperties <> is_positive_word:396 var
+R24989:24993 CAG.DecisionProblems.TraceProperties <> gamma:399 var
+R25018:25027 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R24998:25013 CAG.DecisionProblems.TraceProperties <> is_positive_word:396 var
+R25015:25017 CAG.DecisionProblems.TraceProperties <> eta:400 var
+R25056:25065 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R25028:25029 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R25030:25042 CAG.DecisionProblems.TraceProperties <> are_conjugate def
+R25053:25055 CAG.DecisionProblems.TraceProperties <> eta:400 var
+R25047:25051 CAG.DecisionProblems.TraceProperties <> gamma:399 var
+R25044:25045 CAG.DecisionProblems.TraceProperties <> sg:393 var
+R25066:25085 CAG.DecisionProblems.TraceProperties <> SLn_trace_equivalent def
+R25108:25110 CAG.DecisionProblems.TraceProperties <> eta:400 var
+R25102:25106 CAG.DecisionProblems.TraceProperties <> gamma:399 var
+R25100:25100 CAG.DecisionProblems.TraceProperties <> n:395 var
+R25090:25098 CAG.DecisionProblems.TraceProperties <> MG_family:394 var
+R25087:25088 CAG.DecisionProblems.TraceProperties <> sg:393 var
+def 25200:25221 <> open_Conj_poly_bounded
+binder 25224:25224 <> G:401
+R25241:25247 CAG.DecisionProblems.TraceProperties <> FGGroup rec
+R25249:25249 CAG.DecisionProblems.TraceProperties <> G:401 var
+binder 25235:25237 <> fgg:402
+R25264:25270 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R25280:25281 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R25277:25279 Corelib.Init.Datatypes <> nat ind
+binder 25271:25271 <> d:403
+R25277:25279 Corelib.Init.Datatypes <> nat ind
+binder 25273:25273 <> C:404
+R25293:25295 Corelib.Init.Datatypes <> nat ind
+binder 25289:25289 <> n:405
+R25313:25316 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R25298:25306 CAG.DecisionProblems.TraceProperties <> Conj_func def
+R25312:25312 CAG.DecisionProblems.TraceProperties <> n:405 var
+R25308:25310 CAG.DecisionProblems.TraceProperties <> fgg:402 var
+R25318:25320 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R25317:25317 CAG.DecisionProblems.TraceProperties <> C:404 var
+R25321:25327 Stdlib.Arith.PeanoNat Nat pow def
+R25329:25329 CAG.DecisionProblems.TraceProperties <> n:405 var
+R25331:25331 CAG.DecisionProblems.TraceProperties <> d:403 var
+ax 25907:25936 <> theorem_1_1_uniformC_implies_A
+binder 25950:25950 <> G:406
+binder 25952:25952 <> F:407
+R25968:25978 CAG.Group <> StrictGroup rec
+R25980:25980 CAG.DecisionProblems.TraceProperties <> G:406 var
+binder 25963:25964 <> sg:408
+R25999:26002 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R25996:25998 Corelib.Init.Datatypes <> nat ind
+R26003:26013 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R26015:26015 CAG.DecisionProblems.TraceProperties <> F:407 var
+binder 25984:25992 <> MG_family:409
+R26034:26042 CAG.DecisionProblems.TraceProperties <> uniform_C def
+R26047:26055 CAG.DecisionProblems.TraceProperties <> MG_family:409 var
+R26044:26045 CAG.DecisionProblems.TraceProperties <> sg:408 var
+binder 26028:26030 <> HuC:410
+R26063:26072 CAG.DecisionProblems.TraceProperties <> property_A def
+R26077:26085 CAG.DecisionProblems.TraceProperties <> MG_family:409 var
+R26074:26075 CAG.DecisionProblems.TraceProperties <> sg:408 var
+ax 26167:26202 <> theorem_1_1_uniformD_irred_implies_A
+binder 26216:26216 <> G:413
+binder 26218:26218 <> F:414
+R26234:26244 CAG.Group <> StrictGroup rec
+R26246:26246 CAG.DecisionProblems.TraceProperties <> G:413 var
+binder 26229:26230 <> sg:415
+R26265:26268 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R26262:26264 Corelib.Init.Datatypes <> nat ind
+R26269:26279 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R26281:26281 CAG.DecisionProblems.TraceProperties <> F:414 var
+binder 26250:26258 <> MG_family:416
+R26299:26301 Corelib.Init.Datatypes <> nat ind
+binder 26294:26295 <> n0:417
+R26320:26328 CAG.DecisionProblems.TraceProperties <> uniform_D def
+R26333:26341 CAG.DecisionProblems.TraceProperties <> MG_family:416 var
+R26330:26331 CAG.DecisionProblems.TraceProperties <> sg:415 var
+binder 26314:26316 <> HuD:418
+R26363:26366 Corelib.Init.Logic <> True ind
+binder 26354:26359 <> Hirred:419
+R26441:26450 CAG.DecisionProblems.TraceProperties <> property_A def
+R26455:26463 CAG.DecisionProblems.TraceProperties <> MG_family:416 var
+R26452:26453 CAG.DecisionProblems.TraceProperties <> sg:415 var
+ax 26556:26580 <> corollary_1_2_free_groups
+binder 26594:26594 <> G:422
+binder 26596:26596 <> F:423
+R26612:26622 CAG.Group <> StrictGroup rec
+R26624:26624 CAG.DecisionProblems.TraceProperties <> G:422 var
+binder 26607:26608 <> sg:424
+R26643:26646 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R26640:26642 Corelib.Init.Datatypes <> nat ind
+R26647:26657 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R26659:26659 CAG.DecisionProblems.TraceProperties <> F:423 var
+binder 26628:26636 <> MG_family:425
+R26676:26678 Corelib.Init.Datatypes <> nat ind
+binder 26672:26672 <> r:426
+R26700:26703 Corelib.Init.Logic <> True ind
+binder 26691:26696 <> Hirred:427
+R26787:26791 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R26765:26773 CAG.DecisionProblems.TraceProperties <> uniform_D def
+R26778:26786 CAG.DecisionProblems.TraceProperties <> MG_family:425 var
+R26775:26776 CAG.DecisionProblems.TraceProperties <> sg:424 var
+R26792:26801 CAG.DecisionProblems.TraceProperties <> property_A def
+R26806:26814 CAG.DecisionProblems.TraceProperties <> MG_family:425 var
+R26803:26804 CAG.DecisionProblems.TraceProperties <> sg:424 var
+ax 26824:26851 <> corollary_1_2_surface_groups
+binder 26865:26865 <> G:430
+binder 26867:26867 <> F:431
+R26883:26893 CAG.Group <> StrictGroup rec
+R26895:26895 CAG.DecisionProblems.TraceProperties <> G:430 var
+binder 26878:26879 <> sg:432
+R26914:26917 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R26911:26913 Corelib.Init.Datatypes <> nat ind
+R26918:26928 CAG.DecisionProblems.TraceProperties <> MatrixGroup rec
+R26930:26930 CAG.DecisionProblems.TraceProperties <> F:431 var
+binder 26899:26907 <> MG_family:433
+R26951:26953 Corelib.Init.Datatypes <> nat ind
+binder 26943:26947 <> genus:434
+R26963:26966 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R26967:26971 CAG.DecisionProblems.TraceProperties <> genus:434 var
+binder 26957:26958 <> Hg:435
+R26993:26996 Corelib.Init.Logic <> True ind
+binder 26984:26989 <> Hirred:436
+R27078:27082 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R27056:27064 CAG.DecisionProblems.TraceProperties <> uniform_D def
+R27069:27077 CAG.DecisionProblems.TraceProperties <> MG_family:433 var
+R27066:27067 CAG.DecisionProblems.TraceProperties <> sg:432 var
+R27083:27092 CAG.DecisionProblems.TraceProperties <> property_A def
+R27097:27105 CAG.DecisionProblems.TraceProperties <> MG_family:433 var
+R27094:27095 CAG.DecisionProblems.TraceProperties <> sg:432 var

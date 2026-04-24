@@ -1,402 +1,637 @@
-DIGEST 505119941be38de7d4aef757f52a62d2
+DIGEST dc92f4be4b7bcf6a5c0c329f75efae7b
 FCAG.Lie.Solvable
 R103:118 CAG.Galois.Field <> <> lib
 R136:151 CAG.Lie.BasicDef <> <> lib
 R169:182 CAG.Lie.Ideals <> <> lib
-def 368:379 <> bracket_span
-binder 382:382 <> F:1
-R399:403 CAG.Galois.Field <> Field rec
-R405:405 CAG.Lie.Solvable <> F:1 var
-binder 393:395 <> fld:2
-binder 409:409 <> L:3
-R429:439 CAG.Lie.BasicDef <> LieAlgebraF rec
-R445:445 CAG.Lie.Solvable <> L:3 var
-R441:443 CAG.Lie.Solvable <> fld:2 var
-binder 424:425 <> la:4
-R456:459 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R455:455 CAG.Lie.Solvable <> L:3 var
-binder 449:449 <> S:5
-binder 451:451 <> T:6
-R471:471 CAG.Lie.Solvable <> L:3 var
-binder 467:467 <> z:7
-R499:502 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R498:498 CAG.Lie.Solvable <> L:3 var
-binder 494:494 <> U:8
-R531:538 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R514:525 CAG.Lie.BasicDef <> IsSubalgebra rec
-R530:530 CAG.Lie.Solvable <> U:8 var
-R527:528 CAG.Lie.Solvable <> la:4 var
-R539:539 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R588:596 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-binder 547:547 <> x:9
-binder 549:549 <> y:10
-R555:558 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R552:552 CAG.Lie.Solvable <> S:5 var
-R554:554 CAG.Lie.Solvable <> x:9 var
-R562:565 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R559:559 CAG.Lie.Solvable <> T:6 var
-R561:561 CAG.Lie.Solvable <> y:10 var
-R566:566 CAG.Lie.Solvable <> U:8 var
-R569:579 CAG.Lie.BasicDef <> laF_bracket proj
-R586:586 CAG.Lie.Solvable <> y:10 var
-R584:584 CAG.Lie.Solvable <> x:9 var
-R581:582 CAG.Lie.Solvable <> la:4 var
-R597:597 CAG.Lie.Solvable <> U:8 var
-R599:599 CAG.Lie.Solvable <> z:7 var
-prf 670:687 <> bracket_span_ideal
-binder 690:690 <> F:11
-R707:711 CAG.Galois.Field <> Field rec
-R713:713 CAG.Lie.Solvable <> F:11 var
-binder 701:703 <> fld:12
-binder 717:717 <> L:13
-R737:747 CAG.Lie.BasicDef <> LieAlgebraF rec
-R753:753 CAG.Lie.Solvable <> L:13 var
-R749:751 CAG.Lie.Solvable <> fld:12 var
-binder 732:733 <> la:14
-R764:767 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R763:763 CAG.Lie.Solvable <> L:13 var
-binder 757:757 <> S:15
-binder 759:759 <> T:16
-R792:795 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R780:786 CAG.Lie.Ideals <> IsIdeal rec
-R791:791 CAG.Lie.Solvable <> S:15 var
-R788:789 CAG.Lie.Solvable <> la:14 var
-R808:815 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R796:802 CAG.Lie.Ideals <> IsIdeal rec
-R807:807 CAG.Lie.Solvable <> T:16 var
-R804:805 CAG.Lie.Solvable <> la:14 var
-R816:822 CAG.Lie.Ideals <> IsIdeal rec
-R828:839 CAG.Lie.Solvable <> bracket_span def
-R846:846 CAG.Lie.Solvable <> T:16 var
-R844:844 CAG.Lie.Solvable <> S:15 var
-R841:842 CAG.Lie.Solvable <> la:14 var
-R824:825 CAG.Lie.Solvable <> la:14 var
-def 933:946 <> derived_series
-binder 949:949 <> F:17
-R966:970 CAG.Galois.Field <> Field rec
-R972:972 CAG.Lie.Solvable <> F:17 var
-binder 960:962 <> fld:18
-binder 976:976 <> L:19
-R996:1006 CAG.Lie.BasicDef <> LieAlgebraF rec
-R1012:1012 CAG.Lie.Solvable <> L:19 var
-R1008:1010 CAG.Lie.Solvable <> fld:18 var
-binder 991:992 <> la:20
-R1020:1022 Corelib.Init.Datatypes <> nat ind
-binder 1016:1016 <> n:21
-R1030:1030 CAG.Lie.Solvable <> L:19 var
-binder 1026:1026 <> x:22
-R1051:1051 CAG.Lie.Solvable <> n:21 var
-R1069:1072 Corelib.Init.Logic <> True ind
-R1078:1078 Corelib.Init.Datatypes <> S constr
-R1085:1096 CAG.Lie.Solvable <> bracket_span def
-R1145:1145 CAG.Lie.Solvable <> x:22 var
-R1124:1137 CAG.Lie.Solvable <> derived_series:23 def
-R1139:1140 CAG.Lie.Solvable <> la:20 var
-R1102:1115 CAG.Lie.Solvable <> derived_series:23 def
-R1117:1118 CAG.Lie.Solvable <> la:20 var
-R1098:1099 CAG.Lie.Solvable <> la:20 var
-prf 1220:1239 <> derived_series_ideal
-binder 1242:1242 <> F:25
-R1259:1263 CAG.Galois.Field <> Field rec
-R1265:1265 CAG.Lie.Solvable <> F:25 var
-binder 1253:1255 <> fld:26
-binder 1269:1269 <> L:27
-R1289:1299 CAG.Lie.BasicDef <> LieAlgebraF rec
-R1305:1305 CAG.Lie.Solvable <> L:27 var
-R1301:1303 CAG.Lie.Solvable <> fld:26 var
-binder 1284:1285 <> la:28
-R1313:1315 Corelib.Init.Datatypes <> nat ind
-binder 1309:1309 <> n:29
-R1324:1330 CAG.Lie.Ideals <> IsIdeal rec
-R1336:1349 CAG.Lie.Solvable <> derived_series def
-R1354:1354 CAG.Lie.Solvable <> n:29 var
-R1351:1352 CAG.Lie.Solvable <> la:28 var
-R1332:1333 CAG.Lie.Solvable <> la:28 var
-prf 1408:1430 <> derived_series_antitone
-binder 1433:1433 <> F:30
-R1450:1454 CAG.Galois.Field <> Field rec
-R1456:1456 CAG.Lie.Solvable <> F:30 var
-binder 1444:1446 <> fld:31
-binder 1460:1460 <> L:32
-R1480:1490 CAG.Lie.BasicDef <> LieAlgebraF rec
-R1496:1496 CAG.Lie.Solvable <> L:32 var
-R1492:1494 CAG.Lie.Solvable <> fld:31 var
-binder 1475:1476 <> la:33
-R1504:1506 Corelib.Init.Datatypes <> nat ind
-binder 1500:1500 <> n:34
-R1514:1514 CAG.Lie.Solvable <> L:32 var
-binder 1510:1510 <> x:35
-R1548:1551 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R1523:1536 CAG.Lie.Solvable <> derived_series def
-R1547:1547 CAG.Lie.Solvable <> x:35 var
-R1542:1542 Corelib.Init.Datatypes <> S constr
-R1544:1544 CAG.Lie.Solvable <> n:34 var
-R1538:1539 CAG.Lie.Solvable <> la:33 var
-R1552:1565 CAG.Lie.Solvable <> derived_series def
-R1572:1572 CAG.Lie.Solvable <> x:35 var
-R1570:1570 CAG.Lie.Solvable <> n:34 var
-R1567:1568 CAG.Lie.Solvable <> la:33 var
-R1620:1633 CAG.Lie.Solvable <> derived_series def
-R1620:1633 CAG.Lie.Solvable <> derived_series def
-R1653:1671 CAG.Lie.Ideals <> ideal_is_subalgebra thm
-R1653:1671 CAG.Lie.Ideals <> ideal_is_subalgebra thm
-R1680:1699 CAG.Lie.Solvable <> derived_series_ideal prfax
-R1680:1699 CAG.Lie.Solvable <> derived_series_ideal prfax
-R1790:1800 CAG.Lie.BasicDef <> sub_bracket proj
-R1735:1753 CAG.Lie.Ideals <> ideal_is_subalgebra thm
-R1761:1780 CAG.Lie.Solvable <> derived_series_ideal prfax
-R1790:1800 CAG.Lie.BasicDef <> sub_bracket proj
-R1735:1753 CAG.Lie.Ideals <> ideal_is_subalgebra thm
-R1761:1780 CAG.Lie.Solvable <> derived_series_ideal prfax
-def 1913:1922 <> IsSolvable
-binder 1925:1925 <> F:36
-R1942:1946 CAG.Galois.Field <> Field rec
-R1948:1948 CAG.Lie.Solvable <> F:36 var
-binder 1936:1938 <> fld:37
-binder 1952:1952 <> L:38
-R1972:1982 CAG.Lie.BasicDef <> LieAlgebraF rec
-R1988:1988 CAG.Lie.Solvable <> L:38 var
-R1984:1986 CAG.Lie.Solvable <> fld:37 var
-binder 1967:1968 <> la:39
-R2003:2009 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R2011:2012 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 2010:2010 <> n:40
-binder 2020:2020 <> x:41
-R2044:2047 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R2023:2036 CAG.Lie.Solvable <> derived_series def
-R2043:2043 CAG.Lie.Solvable <> x:41 var
-R2041:2041 CAG.Lie.Solvable <> n:40 var
-R2038:2039 CAG.Lie.Solvable <> la:39 var
-R2049:2051 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R2048:2048 CAG.Lie.Solvable <> x:41 var
-R2052:2058 CAG.Lie.BasicDef <> la_zero abbrev
-R2060:2061 CAG.Lie.Solvable <> la:39 var
-prf 2117:2135 <> abelian_is_solvable
-binder 2138:2138 <> F:42
-R2155:2159 CAG.Galois.Field <> Field rec
-R2161:2161 CAG.Lie.Solvable <> F:42 var
-binder 2149:2151 <> fld:43
-binder 2165:2165 <> L:44
-R2185:2195 CAG.Lie.BasicDef <> LieAlgebraF rec
-R2201:2201 CAG.Lie.Solvable <> L:44 var
-R2197:2199 CAG.Lie.Solvable <> fld:43 var
-binder 2180:2181 <> la:45
-R2210:2210 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R2254:2262 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-binder 2218:2218 <> x:46
-binder 2220:2220 <> y:47
-R2241:2243 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R2223:2233 CAG.Lie.BasicDef <> laF_bracket proj
-R2240:2240 CAG.Lie.Solvable <> y:47 var
-R2238:2238 CAG.Lie.Solvable <> x:46 var
-R2235:2236 CAG.Lie.Solvable <> la:45 var
-R2244:2250 CAG.Lie.BasicDef <> la_zero abbrev
-R2252:2253 CAG.Lie.Solvable <> la:45 var
-R2263:2272 CAG.Lie.Solvable <> IsSolvable def
-R2274:2275 CAG.Lie.Solvable <> la:45 var
-R2345:2362 CAG.Lie.BasicDef <> zero_is_subalgebra thm
-R2345:2362 CAG.Lie.BasicDef <> zero_is_subalgebra thm
-prf 2473:2491 <> simple_not_solvable
-binder 2494:2494 <> F:48
-R2511:2515 CAG.Galois.Field <> Field rec
-R2517:2517 CAG.Lie.Solvable <> F:48 var
-binder 2505:2507 <> fld:49
-binder 2521:2521 <> L:50
-R2541:2551 CAG.Lie.BasicDef <> LieAlgebraF rec
-R2557:2557 CAG.Lie.Solvable <> L:50 var
-R2553:2555 CAG.Lie.Solvable <> fld:49 var
-binder 2536:2537 <> la:51
-R2577:2580 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R2566:2573 CAG.Lie.Ideals <> IsSimple def
-R2575:2576 CAG.Lie.Solvable <> la:51 var
-R2581:2582 Corelib.Init.Logic <> ::type_scope:'~'_x not
-R2583:2592 CAG.Lie.Solvable <> IsSolvable def
-R2594:2595 CAG.Lie.Solvable <> la:51 var
-binder 2724:2724 <> z:52
-R2727:2738 CAG.Lie.Ideals <> IsDerivedAlg def
-R2743:2743 CAG.Lie.Solvable <> z:52 var
-binder 2724:2724 <> z:53
-R2727:2738 CAG.Lie.Ideals <> IsDerivedAlg def
-R2743:2743 CAG.Lie.Solvable <> z:53 var
-R2769:2780 CAG.Lie.Ideals <> IsDerivedAlg def
-R2787:2806 CAG.Lie.Ideals <> derived_alg_is_ideal thm
-R2769:2780 CAG.Lie.Ideals <> IsDerivedAlg def
-R2787:2806 CAG.Lie.Ideals <> derived_alg_is_ideal thm
-R2871:2875 Corelib.Init.Logic <> proj2 thm
-R2878:2901 CAG.Lie.Ideals <> abelian_iff_derived_zero thm
-R2871:2875 Corelib.Init.Logic <> proj2 thm
-R2878:2901 CAG.Lie.Ideals <> abelian_iff_derived_zero thm
-binder 3019:3019 <> k:54
-binder 3021:3021 <> x:55
-R3024:3037 CAG.Lie.Solvable <> derived_series def
-R3044:3044 CAG.Lie.Solvable <> x:55 var
-R3042:3042 CAG.Lie.Solvable <> k:54 var
-binder 3019:3019 <> k:56
-binder 3021:3021 <> x:57
-R3024:3037 CAG.Lie.Solvable <> derived_series def
-R3044:3044 CAG.Lie.Solvable <> x:57 var
-R3042:3042 CAG.Lie.Solvable <> k:56 var
-prf 3462:3480 <> solvable_subalgebra
-binder 3483:3483 <> F:58
-R3500:3504 CAG.Galois.Field <> Field rec
-R3506:3506 CAG.Lie.Solvable <> F:58 var
-binder 3494:3496 <> fld:59
-binder 3510:3510 <> L:60
-R3530:3540 CAG.Lie.BasicDef <> LieAlgebraF rec
-R3546:3546 CAG.Lie.Solvable <> L:60 var
-R3542:3544 CAG.Lie.Solvable <> fld:59 var
-binder 3525:3526 <> la:61
-R3568:3575 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R3555:3564 CAG.Lie.Solvable <> IsSolvable def
-R3566:3567 CAG.Lie.Solvable <> la:61 var
-R3589:3592 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R3588:3588 CAG.Lie.Solvable <> L:60 var
-binder 3584:3584 <> S:62
-R3617:3624 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R3600:3611 CAG.Lie.BasicDef <> IsSubalgebra rec
-R3616:3616 CAG.Lie.Solvable <> S:62 var
-R3613:3614 CAG.Lie.Solvable <> la:61 var
-R3625:3632 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R3655:3657 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R3638:3648 CAG.Lie.BasicDef <> LieAlgebraF rec
-R3654:3654 CAG.Lie.Solvable <> L:60 var
-R3650:3652 CAG.Lie.Solvable <> fld:59 var
-binder 3633:3634 <> lb:63
-R3658:3667 CAG.Lie.Solvable <> IsSolvable def
-R3669:3670 CAG.Lie.Solvable <> lb:63 var
-prf 3776:3789 <> solvable_image
-binder 3792:3792 <> F:64
-R3809:3813 CAG.Galois.Field <> Field rec
-R3815:3815 CAG.Lie.Solvable <> F:64 var
-binder 3803:3805 <> fld:65
-binder 3819:3819 <> L:66
-binder 3821:3821 <> M:67
-R3841:3851 CAG.Lie.BasicDef <> LieAlgebraF rec
-R3857:3857 CAG.Lie.Solvable <> L:66 var
-R3853:3855 CAG.Lie.Solvable <> fld:65 var
-binder 3836:3837 <> la:68
-R3866:3876 CAG.Lie.BasicDef <> LieAlgebraF rec
-R3882:3882 CAG.Lie.Solvable <> M:67 var
-R3878:3880 CAG.Lie.Solvable <> fld:65 var
-binder 3861:3862 <> lb:69
-R3895:3900 CAG.Lie.BasicDef <> LieHom rec
-R3905:3906 CAG.Lie.Solvable <> lb:69 var
-R3902:3903 CAG.Lie.Solvable <> la:68 var
-binder 3890:3891 <> φ:70
-R3928:3931 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R3915:3924 CAG.Lie.Solvable <> IsSolvable def
-R3926:3927 CAG.Lie.Solvable <> la:68 var
-R3932:3941 CAG.Lie.Solvable <> IsSolvable def
-R3943:3944 CAG.Lie.Solvable <> lb:69 var
-prf 4030:4047 <> solvable_extension
-binder 4050:4050 <> F:71
-R4067:4071 CAG.Galois.Field <> Field rec
-R4073:4073 CAG.Lie.Solvable <> F:71 var
-binder 4061:4063 <> fld:72
-binder 4077:4077 <> L:73
-R4097:4107 CAG.Lie.BasicDef <> LieAlgebraF rec
-R4113:4113 CAG.Lie.Solvable <> L:73 var
-R4109:4111 CAG.Lie.Solvable <> fld:72 var
-binder 4092:4093 <> la:74
-R4122:4125 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4121:4121 CAG.Lie.Solvable <> L:73 var
-binder 4117:4117 <> I:75
-R4150:4157 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4138:4144 CAG.Lie.Ideals <> IsIdeal rec
-R4149:4149 CAG.Lie.Solvable <> I:75 var
-R4146:4147 CAG.Lie.Solvable <> la:74 var
-R4158:4158 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4197:4223 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-binder 4166:4166 <> x:76
-R4190:4193 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4169:4182 CAG.Lie.Solvable <> derived_series def
-R4189:4189 CAG.Lie.Solvable <> x:76 var
-R4184:4185 CAG.Lie.Solvable <> la:74 var
-R4194:4194 CAG.Lie.Solvable <> I:75 var
-R4196:4196 CAG.Lie.Solvable <> x:76 var
-R4224:4233 CAG.Lie.Solvable <> IsSolvable def
-R4235:4236 CAG.Lie.Solvable <> la:74 var
-prf 4310:4328 <> solvable_sum_ideals
-binder 4331:4331 <> F:77
-R4348:4352 CAG.Galois.Field <> Field rec
-R4354:4354 CAG.Lie.Solvable <> F:77 var
-binder 4342:4344 <> fld:78
-binder 4358:4358 <> L:79
-R4378:4388 CAG.Lie.BasicDef <> LieAlgebraF rec
-R4394:4394 CAG.Lie.Solvable <> L:79 var
-R4390:4392 CAG.Lie.Solvable <> fld:78 var
-binder 4373:4374 <> la:80
-R4405:4408 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4404:4404 CAG.Lie.Solvable <> L:79 var
-binder 4398:4398 <> I:81
-binder 4400:4400 <> J:82
-R4433:4436 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4421:4427 CAG.Lie.Ideals <> IsIdeal rec
-R4432:4432 CAG.Lie.Solvable <> I:81 var
-R4429:4430 CAG.Lie.Solvable <> la:80 var
-R4449:4456 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4437:4443 CAG.Lie.Ideals <> IsIdeal rec
-R4448:4448 CAG.Lie.Solvable <> J:82 var
-R4445:4446 CAG.Lie.Solvable <> la:80 var
-R4457:4457 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4526:4534 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4458:4464 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R4467:4468 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 4465:4466 <> nI:83
-binder 4476:4476 <> x:84
-R4501:4504 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4479:4492 CAG.Lie.Solvable <> derived_series def
-R4500:4500 CAG.Lie.Solvable <> x:84 var
-R4497:4498 CAG.Lie.Solvable <> nI:83 var
-R4494:4495 CAG.Lie.Solvable <> la:80 var
-R4508:4511 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4505:4505 CAG.Lie.Solvable <> I:81 var
-R4507:4507 CAG.Lie.Solvable <> x:84 var
-R4513:4515 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R4512:4512 CAG.Lie.Solvable <> x:84 var
-R4516:4522 CAG.Lie.BasicDef <> la_zero abbrev
-R4524:4525 CAG.Lie.Solvable <> la:80 var
-R4535:4535 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4604:4612 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4536:4542 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R4545:4546 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 4543:4544 <> nJ:85
-binder 4554:4554 <> x:86
-R4579:4582 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4557:4570 CAG.Lie.Solvable <> derived_series def
-R4578:4578 CAG.Lie.Solvable <> x:86 var
-R4575:4576 CAG.Lie.Solvable <> nJ:85 var
-R4572:4573 CAG.Lie.Solvable <> la:80 var
-R4586:4589 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4583:4583 CAG.Lie.Solvable <> J:82 var
-R4585:4585 CAG.Lie.Solvable <> x:86 var
-R4591:4593 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R4590:4590 CAG.Lie.Solvable <> x:86 var
-R4594:4600 CAG.Lie.BasicDef <> la_zero abbrev
-R4602:4603 CAG.Lie.Solvable <> la:80 var
-R4613:4620 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R4634:4636 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R4626:4629 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4625:4625 CAG.Lie.Solvable <> L:79 var
-binder 4621:4621 <> K:87
-R4649:4652 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
-R4637:4643 CAG.Lie.Ideals <> IsIdeal rec
-R4648:4648 CAG.Lie.Solvable <> K:87 var
-R4645:4646 CAG.Lie.Solvable <> la:80 var
-R4653:4662 CAG.Lie.Solvable <> IsSolvable def
-R4664:4665 CAG.Lie.Solvable <> la:80 var
-ax 4765:4789 <> upper_triangular_solvable
-binder 4803:4803 <> F:88
-R4820:4824 CAG.Galois.Field <> Field rec
-R4826:4826 CAG.Lie.Solvable <> F:88 var
-binder 4814:4816 <> fld:89
-R4834:4836 Corelib.Init.Datatypes <> nat ind
-binder 4830:4830 <> n:90
-R4849:4859 CAG.Lie.BasicDef <> LieAlgebraF rec
-R4866:4869 Corelib.Init.Datatypes <> list ind
-R4872:4875 Corelib.Init.Datatypes <> list ind
-R4877:4877 CAG.Lie.Solvable <> F:88 var
-R4861:4863 CAG.Lie.Solvable <> fld:89 var
-binder 4844:4845 <> la:91
-R4887:4896 CAG.Lie.Solvable <> IsSolvable def
-R4898:4899 CAG.Lie.Solvable <> la:91 var
+R212:215 Stdlib.Lists.List <> <> lib
+def 491:502 <> bracket_span
+binder 505:505 <> F:1
+R522:526 CAG.Galois.Field <> Field rec
+R528:528 CAG.Lie.Solvable <> F:1 var
+binder 516:518 <> fld:2
+binder 532:532 <> L:3
+R552:562 CAG.Lie.BasicDef <> LieAlgebraF rec
+R568:568 CAG.Lie.Solvable <> L:3 var
+R564:566 CAG.Lie.Solvable <> fld:2 var
+binder 547:548 <> la:4
+R579:582 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R578:578 CAG.Lie.Solvable <> L:3 var
+binder 572:572 <> S:5
+binder 574:574 <> T:6
+R594:594 CAG.Lie.Solvable <> L:3 var
+binder 590:590 <> z:7
+R622:625 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R621:621 CAG.Lie.Solvable <> L:3 var
+binder 617:617 <> U:8
+R649:656 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R637:643 CAG.Lie.Ideals <> IsIdeal rec
+R648:648 CAG.Lie.Solvable <> U:8 var
+R645:646 CAG.Lie.Solvable <> la:4 var
+R657:657 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R706:714 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 665:665 <> x:9
+binder 667:667 <> y:10
+R673:676 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R670:670 CAG.Lie.Solvable <> S:5 var
+R672:672 CAG.Lie.Solvable <> x:9 var
+R680:683 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R677:677 CAG.Lie.Solvable <> T:6 var
+R679:679 CAG.Lie.Solvable <> y:10 var
+R684:684 CAG.Lie.Solvable <> U:8 var
+R687:697 CAG.Lie.BasicDef <> laF_bracket proj
+R704:704 CAG.Lie.Solvable <> y:10 var
+R702:702 CAG.Lie.Solvable <> x:9 var
+R699:700 CAG.Lie.Solvable <> la:4 var
+R715:715 CAG.Lie.Solvable <> U:8 var
+R717:717 CAG.Lie.Solvable <> z:7 var
+prf 788:805 <> bracket_span_ideal
+binder 808:808 <> F:11
+R825:829 CAG.Galois.Field <> Field rec
+R831:831 CAG.Lie.Solvable <> F:11 var
+binder 819:821 <> fld:12
+binder 835:835 <> L:13
+R855:865 CAG.Lie.BasicDef <> LieAlgebraF rec
+R871:871 CAG.Lie.Solvable <> L:13 var
+R867:869 CAG.Lie.Solvable <> fld:12 var
+binder 850:851 <> la:14
+R882:885 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R881:881 CAG.Lie.Solvable <> L:13 var
+binder 875:875 <> S:15
+binder 877:877 <> T:16
+R910:913 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R898:904 CAG.Lie.Ideals <> IsIdeal rec
+R909:909 CAG.Lie.Solvable <> S:15 var
+R906:907 CAG.Lie.Solvable <> la:14 var
+R926:933 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R914:920 CAG.Lie.Ideals <> IsIdeal rec
+R925:925 CAG.Lie.Solvable <> T:16 var
+R922:923 CAG.Lie.Solvable <> la:14 var
+R934:940 CAG.Lie.Ideals <> IsIdeal rec
+R946:957 CAG.Lie.Solvable <> bracket_span def
+R964:964 CAG.Lie.Solvable <> T:16 var
+R962:962 CAG.Lie.Solvable <> S:15 var
+R959:960 CAG.Lie.Solvable <> la:14 var
+R942:943 CAG.Lie.Solvable <> la:14 var
+R1044:1053 CAG.Lie.Ideals <> ideal_zero proj
+R1044:1053 CAG.Lie.Ideals <> ideal_zero proj
+R1111:1119 CAG.Lie.Ideals <> ideal_add proj
+R1111:1119 CAG.Lie.Ideals <> ideal_add proj
+R1207:1215 CAG.Lie.Ideals <> ideal_neg proj
+R1207:1215 CAG.Lie.Ideals <> ideal_neg proj
+R1294:1304 CAG.Lie.Ideals <> ideal_scale proj
+R1294:1304 CAG.Lie.Ideals <> ideal_scale proj
+R1387:1401 CAG.Lie.Ideals <> ideal_bracket_l proj
+R1387:1401 CAG.Lie.Ideals <> ideal_bracket_l proj
+def 1498:1511 <> derived_series
+binder 1514:1514 <> F:17
+R1531:1535 CAG.Galois.Field <> Field rec
+R1537:1537 CAG.Lie.Solvable <> F:17 var
+binder 1525:1527 <> fld:18
+binder 1541:1541 <> L:19
+R1561:1571 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1577:1577 CAG.Lie.Solvable <> L:19 var
+R1573:1575 CAG.Lie.Solvable <> fld:18 var
+binder 1556:1557 <> la:20
+R1585:1587 Corelib.Init.Datatypes <> nat ind
+binder 1581:1581 <> n:21
+R1595:1595 CAG.Lie.Solvable <> L:19 var
+binder 1591:1591 <> x:22
+R1616:1616 CAG.Lie.Solvable <> n:21 var
+R1634:1637 Corelib.Init.Logic <> True ind
+R1643:1643 Corelib.Init.Datatypes <> S constr
+R1650:1661 CAG.Lie.Solvable <> bracket_span def
+R1710:1710 CAG.Lie.Solvable <> x:22 var
+R1689:1702 CAG.Lie.Solvable <> derived_series:23 def
+R1704:1705 CAG.Lie.Solvable <> la:20 var
+R1667:1680 CAG.Lie.Solvable <> derived_series:23 def
+R1682:1683 CAG.Lie.Solvable <> la:20 var
+R1663:1664 CAG.Lie.Solvable <> la:20 var
+prf 1785:1804 <> derived_series_ideal
+binder 1807:1807 <> F:25
+R1824:1828 CAG.Galois.Field <> Field rec
+R1830:1830 CAG.Lie.Solvable <> F:25 var
+binder 1818:1820 <> fld:26
+binder 1834:1834 <> L:27
+R1854:1864 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1870:1870 CAG.Lie.Solvable <> L:27 var
+R1866:1868 CAG.Lie.Solvable <> fld:26 var
+binder 1849:1850 <> la:28
+R1878:1880 Corelib.Init.Datatypes <> nat ind
+binder 1874:1874 <> n:29
+R1889:1895 CAG.Lie.Ideals <> IsIdeal rec
+R1901:1914 CAG.Lie.Solvable <> derived_series def
+R1919:1919 CAG.Lie.Solvable <> n:29 var
+R1916:1917 CAG.Lie.Solvable <> la:28 var
+R1897:1898 CAG.Lie.Solvable <> la:28 var
+R1969:1978 CAG.Lie.Ideals <> full_ideal thm
+R1969:1978 CAG.Lie.Ideals <> full_ideal thm
+R2002:2019 CAG.Lie.Solvable <> bracket_span_ideal thm
+R2002:2019 CAG.Lie.Solvable <> bracket_span_ideal thm
+prf 2071:2093 <> derived_series_antitone
+binder 2096:2096 <> F:30
+R2113:2117 CAG.Galois.Field <> Field rec
+R2119:2119 CAG.Lie.Solvable <> F:30 var
+binder 2107:2109 <> fld:31
+binder 2123:2123 <> L:32
+R2143:2153 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2159:2159 CAG.Lie.Solvable <> L:32 var
+R2155:2157 CAG.Lie.Solvable <> fld:31 var
+binder 2138:2139 <> la:33
+R2167:2169 Corelib.Init.Datatypes <> nat ind
+binder 2163:2163 <> n:34
+R2177:2177 CAG.Lie.Solvable <> L:32 var
+binder 2173:2173 <> x:35
+R2211:2214 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2186:2199 CAG.Lie.Solvable <> derived_series def
+R2210:2210 CAG.Lie.Solvable <> x:35 var
+R2205:2205 Corelib.Init.Datatypes <> S constr
+R2207:2207 CAG.Lie.Solvable <> n:34 var
+R2201:2202 CAG.Lie.Solvable <> la:33 var
+R2215:2228 CAG.Lie.Solvable <> derived_series def
+R2235:2235 CAG.Lie.Solvable <> x:35 var
+R2233:2233 CAG.Lie.Solvable <> n:34 var
+R2230:2231 CAG.Lie.Solvable <> la:33 var
+R2283:2296 CAG.Lie.Solvable <> derived_series def
+R2305:2324 CAG.Lie.Solvable <> derived_series_ideal thm
+R2283:2296 CAG.Lie.Solvable <> derived_series def
+R2305:2324 CAG.Lie.Solvable <> derived_series_ideal thm
+R2362:2376 CAG.Lie.Ideals <> ideal_bracket_l proj
+R2379:2398 CAG.Lie.Solvable <> derived_series_ideal thm
+R2362:2376 CAG.Lie.Ideals <> ideal_bracket_l proj
+R2379:2398 CAG.Lie.Solvable <> derived_series_ideal thm
+def 2512:2521 <> IsSolvable
+binder 2524:2524 <> F:36
+R2541:2545 CAG.Galois.Field <> Field rec
+R2547:2547 CAG.Lie.Solvable <> F:36 var
+binder 2535:2537 <> fld:37
+binder 2551:2551 <> L:38
+R2571:2581 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2587:2587 CAG.Lie.Solvable <> L:38 var
+R2583:2585 CAG.Lie.Solvable <> fld:37 var
+binder 2566:2567 <> la:39
+R2602:2608 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2610:2611 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2609:2609 <> n:40
+binder 2619:2619 <> x:41
+R2643:2646 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2622:2635 CAG.Lie.Solvable <> derived_series def
+R2642:2642 CAG.Lie.Solvable <> x:41 var
+R2640:2640 CAG.Lie.Solvable <> n:40 var
+R2637:2638 CAG.Lie.Solvable <> la:39 var
+R2648:2650 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2647:2647 CAG.Lie.Solvable <> x:41 var
+R2651:2657 CAG.Lie.BasicDef <> la_zero abbrev
+R2659:2660 CAG.Lie.Solvable <> la:39 var
+prf 2716:2734 <> abelian_is_solvable
+binder 2737:2737 <> F:42
+R2754:2758 CAG.Galois.Field <> Field rec
+R2760:2760 CAG.Lie.Solvable <> F:42 var
+binder 2748:2750 <> fld:43
+binder 2764:2764 <> L:44
+R2784:2794 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2800:2800 CAG.Lie.Solvable <> L:44 var
+R2796:2798 CAG.Lie.Solvable <> fld:43 var
+binder 2779:2780 <> la:45
+R2809:2809 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2853:2861 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 2817:2817 <> x:46
+binder 2819:2819 <> y:47
+R2840:2842 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2822:2832 CAG.Lie.BasicDef <> laF_bracket proj
+R2839:2839 CAG.Lie.Solvable <> y:47 var
+R2837:2837 CAG.Lie.Solvable <> x:46 var
+R2834:2835 CAG.Lie.Solvable <> la:45 var
+R2843:2849 CAG.Lie.BasicDef <> la_zero abbrev
+R2851:2852 CAG.Lie.Solvable <> la:45 var
+R2862:2871 CAG.Lie.Solvable <> IsSolvable def
+R2873:2874 CAG.Lie.Solvable <> la:45 var
+R2944:2953 CAG.Lie.Ideals <> zero_ideal thm
+R2944:2953 CAG.Lie.Ideals <> zero_ideal thm
+prf 3064:3082 <> simple_not_solvable
+binder 3085:3085 <> F:48
+R3102:3106 CAG.Galois.Field <> Field rec
+R3108:3108 CAG.Lie.Solvable <> F:48 var
+binder 3096:3098 <> fld:49
+binder 3112:3112 <> L:50
+R3132:3142 CAG.Lie.BasicDef <> LieAlgebraF rec
+R3148:3148 CAG.Lie.Solvable <> L:50 var
+R3144:3146 CAG.Lie.Solvable <> fld:49 var
+binder 3127:3128 <> la:51
+R3168:3171 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3157:3164 CAG.Lie.Ideals <> IsSimple def
+R3166:3167 CAG.Lie.Solvable <> la:51 var
+R3172:3173 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R3174:3183 CAG.Lie.Solvable <> IsSolvable def
+R3185:3186 CAG.Lie.Solvable <> la:51 var
+binder 3315:3315 <> z:52
+R3318:3329 CAG.Lie.Ideals <> IsDerivedAlg def
+R3334:3334 CAG.Lie.Solvable <> z:52 var
+binder 3315:3315 <> z:53
+R3318:3329 CAG.Lie.Ideals <> IsDerivedAlg def
+R3334:3334 CAG.Lie.Solvable <> z:53 var
+R3360:3371 CAG.Lie.Ideals <> IsDerivedAlg def
+R3378:3397 CAG.Lie.Ideals <> derived_alg_is_ideal thm
+R3360:3371 CAG.Lie.Ideals <> IsDerivedAlg def
+R3378:3397 CAG.Lie.Ideals <> derived_alg_is_ideal thm
+R3462:3466 Corelib.Init.Logic <> proj2 thm
+R3469:3492 CAG.Lie.Ideals <> abelian_iff_derived_zero thm
+R3462:3466 Corelib.Init.Logic <> proj2 thm
+R3469:3492 CAG.Lie.Ideals <> abelian_iff_derived_zero thm
+binder 3610:3610 <> k:54
+binder 3612:3612 <> x:55
+R3615:3628 CAG.Lie.Solvable <> derived_series def
+R3635:3635 CAG.Lie.Solvable <> x:55 var
+R3633:3633 CAG.Lie.Solvable <> k:54 var
+binder 3610:3610 <> k:56
+binder 3612:3612 <> x:57
+R3615:3628 CAG.Lie.Solvable <> derived_series def
+R3635:3635 CAG.Lie.Solvable <> x:57 var
+R3633:3633 CAG.Lie.Solvable <> k:56 var
+R3766:3784 CAG.Lie.Ideals <> ideal_is_subalgebra thm
+R3766:3784 CAG.Lie.Ideals <> ideal_is_subalgebra thm
+prf 4066:4084 <> solvable_subalgebra
+binder 4087:4087 <> F:58
+R4104:4108 CAG.Galois.Field <> Field rec
+R4110:4110 CAG.Lie.Solvable <> F:58 var
+binder 4098:4100 <> fld:59
+binder 4114:4114 <> L:60
+R4134:4144 CAG.Lie.BasicDef <> LieAlgebraF rec
+R4150:4150 CAG.Lie.Solvable <> L:60 var
+R4146:4148 CAG.Lie.Solvable <> fld:59 var
+binder 4129:4130 <> la:61
+R4172:4179 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4159:4168 CAG.Lie.Solvable <> IsSolvable def
+R4170:4171 CAG.Lie.Solvable <> la:61 var
+R4193:4196 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4192:4192 CAG.Lie.Solvable <> L:60 var
+binder 4188:4188 <> S:62
+R4221:4228 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4204:4215 CAG.Lie.BasicDef <> IsSubalgebra rec
+R4220:4220 CAG.Lie.Solvable <> S:62 var
+R4217:4218 CAG.Lie.Solvable <> la:61 var
+R4229:4236 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4259:4261 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4242:4252 CAG.Lie.BasicDef <> LieAlgebraF rec
+R4258:4258 CAG.Lie.Solvable <> L:60 var
+R4254:4256 CAG.Lie.Solvable <> fld:59 var
+binder 4237:4238 <> lb:63
+R4262:4271 CAG.Lie.Solvable <> IsSolvable def
+R4273:4274 CAG.Lie.Solvable <> lb:63 var
+prf 4627:4647 <> hom_preserves_derived
+binder 4650:4650 <> F:64
+R4667:4671 CAG.Galois.Field <> Field rec
+R4673:4673 CAG.Lie.Solvable <> F:64 var
+binder 4661:4663 <> fld:65
+binder 4677:4677 <> L:66
+binder 4679:4679 <> M:67
+R4699:4709 CAG.Lie.BasicDef <> LieAlgebraF rec
+R4715:4715 CAG.Lie.Solvable <> L:66 var
+R4711:4713 CAG.Lie.Solvable <> fld:65 var
+binder 4694:4695 <> la:68
+R4724:4734 CAG.Lie.BasicDef <> LieAlgebraF rec
+R4740:4740 CAG.Lie.Solvable <> M:67 var
+R4736:4738 CAG.Lie.Solvable <> fld:65 var
+binder 4719:4720 <> lb:69
+R4753:4758 CAG.Lie.BasicDef <> LieHom rec
+R4763:4764 CAG.Lie.Solvable <> lb:69 var
+R4760:4761 CAG.Lie.Solvable <> la:68 var
+binder 4748:4749 <> φ:70
+R4772:4774 Corelib.Init.Datatypes <> nat ind
+binder 4768:4768 <> k:71
+R4782:4782 CAG.Lie.Solvable <> L:66 var
+binder 4778:4778 <> x:72
+R4812:4815 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4791:4804 CAG.Lie.Solvable <> derived_series def
+R4811:4811 CAG.Lie.Solvable <> x:72 var
+R4809:4809 CAG.Lie.Solvable <> k:71 var
+R4806:4807 CAG.Lie.Solvable <> la:68 var
+R4816:4829 CAG.Lie.Solvable <> derived_series def
+R4837:4841 CAG.Lie.BasicDef <> lh_fn proj
+R4846:4846 CAG.Lie.Solvable <> x:72 var
+R4843:4844 CAG.Lie.Solvable <> φ:70 var
+R4834:4834 CAG.Lie.Solvable <> k:71 var
+R4831:4832 CAG.Lie.Solvable <> lb:69 var
+binder 5200:5200 <> z:73
+R5208:5212 CAG.Lie.BasicDef <> lh_fn proj
+R5217:5217 CAG.Lie.Solvable <> z:73 var
+binder 5200:5200 <> z:74
+R5208:5212 CAG.Lie.BasicDef <> lh_fn proj
+R5217:5217 CAG.Lie.Solvable <> z:74 var
+R5239:5245 CAG.Lie.Ideals <> IsIdeal rec
+R5239:5245 CAG.Lie.Ideals <> IsIdeal rec
+R5299:5305 CAG.Lie.BasicDef <> lh_zero thm
+R5299:5305 CAG.Lie.BasicDef <> lh_zero thm
+R5299:5305 CAG.Lie.BasicDef <> lh_zero thm
+R5318:5327 CAG.Lie.Ideals <> ideal_zero proj
+R5318:5327 CAG.Lie.Ideals <> ideal_zero proj
+R5369:5374 CAG.Lie.BasicDef <> lh_add proj
+R5369:5374 CAG.Lie.BasicDef <> lh_add proj
+R5369:5374 CAG.Lie.BasicDef <> lh_add proj
+R5388:5396 CAG.Lie.Ideals <> ideal_add proj
+R5388:5396 CAG.Lie.Ideals <> ideal_add proj
+R5441:5446 CAG.Lie.BasicDef <> lh_neg thm
+R5441:5446 CAG.Lie.BasicDef <> lh_neg thm
+R5441:5446 CAG.Lie.BasicDef <> lh_neg thm
+R5459:5467 CAG.Lie.Ideals <> ideal_neg proj
+R5459:5467 CAG.Lie.Ideals <> ideal_neg proj
+R5518:5525 CAG.Lie.BasicDef <> lh_scale proj
+R5518:5525 CAG.Lie.BasicDef <> lh_scale proj
+R5518:5525 CAG.Lie.BasicDef <> lh_scale proj
+R5539:5549 CAG.Lie.Ideals <> ideal_scale proj
+R5539:5549 CAG.Lie.Ideals <> ideal_scale proj
+R5600:5609 CAG.Lie.BasicDef <> lh_bracket proj
+R5600:5609 CAG.Lie.BasicDef <> lh_bracket proj
+R5600:5609 CAG.Lie.BasicDef <> lh_bracket proj
+R5623:5637 CAG.Lie.Ideals <> ideal_bracket_l proj
+R5623:5637 CAG.Lie.Ideals <> ideal_bracket_l proj
+binder 5688:5688 <> a:75
+binder 5690:5690 <> b:76
+R5726:5729 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5705:5718 CAG.Lie.Solvable <> derived_series def
+R5725:5725 CAG.Lie.Solvable <> a:75 var
+R5751:5754 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5730:5743 CAG.Lie.Solvable <> derived_series def
+R5750:5750 CAG.Lie.Solvable <> b:76 var
+R5758:5768 CAG.Lie.BasicDef <> laF_bracket proj
+R5775:5775 CAG.Lie.Solvable <> b:76 var
+R5773:5773 CAG.Lie.Solvable <> a:75 var
+binder 5688:5688 <> a:77
+binder 5690:5690 <> b:78
+R5726:5729 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5705:5718 CAG.Lie.Solvable <> derived_series def
+R5725:5725 CAG.Lie.Solvable <> a:77 var
+R5751:5754 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5730:5743 CAG.Lie.Solvable <> derived_series def
+R5750:5750 CAG.Lie.Solvable <> b:78 var
+R5758:5768 CAG.Lie.BasicDef <> laF_bracket proj
+R5775:5775 CAG.Lie.Solvable <> b:78 var
+R5773:5773 CAG.Lie.Solvable <> a:77 var
+R5832:5841 CAG.Lie.BasicDef <> lh_bracket proj
+R5832:5841 CAG.Lie.BasicDef <> lh_bracket proj
+R5832:5841 CAG.Lie.BasicDef <> lh_bracket proj
+ax 6708:6726 <> solvable_image_lift
+binder 6740:6740 <> F:79
+R6757:6761 CAG.Galois.Field <> Field rec
+R6763:6763 CAG.Lie.Solvable <> F:79 var
+binder 6751:6753 <> fld:80
+binder 6767:6767 <> L:81
+binder 6769:6769 <> M:82
+R6789:6799 CAG.Lie.BasicDef <> LieAlgebraF rec
+R6805:6805 CAG.Lie.Solvable <> L:81 var
+R6801:6803 CAG.Lie.Solvable <> fld:80 var
+binder 6784:6785 <> la:83
+R6814:6824 CAG.Lie.BasicDef <> LieAlgebraF rec
+R6830:6830 CAG.Lie.Solvable <> M:82 var
+R6826:6828 CAG.Lie.Solvable <> fld:80 var
+binder 6809:6810 <> lb:84
+R6843:6848 CAG.Lie.BasicDef <> LieHom rec
+R6853:6854 CAG.Lie.Solvable <> lb:84 var
+R6850:6851 CAG.Lie.Solvable <> la:83 var
+binder 6838:6839 <> φ:85
+R6880:6880 CAG.Lie.Solvable <> M:82 var
+binder 6876:6876 <> y:86
+R6883:6889 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6895:6896 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6894:6894 CAG.Lie.Solvable <> L:81 var
+binder 6890:6890 <> x:87
+R6907:6909 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6897:6901 CAG.Lie.BasicDef <> lh_fn proj
+R6906:6906 CAG.Lie.Solvable <> x:87 var
+R6903:6904 CAG.Lie.Solvable <> φ:85 var
+R6910:6910 CAG.Lie.Solvable <> y:86 var
+binder 6862:6865 <> surj:88
+R6922:6924 Corelib.Init.Datatypes <> nat ind
+binder 6918:6918 <> n:89
+R6932:6932 CAG.Lie.Solvable <> M:82 var
+binder 6928:6928 <> y:90
+R6961:6968 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6940:6953 CAG.Lie.Solvable <> derived_series def
+R6960:6960 CAG.Lie.Solvable <> y:90 var
+R6958:6958 CAG.Lie.Solvable <> n:89 var
+R6955:6956 CAG.Lie.Solvable <> lb:84 var
+R6969:6975 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6981:6982 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6980:6980 CAG.Lie.Solvable <> L:81 var
+binder 6976:6976 <> x:91
+R6997:7000 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R6993:6995 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6983:6987 CAG.Lie.BasicDef <> lh_fn proj
+R6992:6992 CAG.Lie.Solvable <> x:91 var
+R6989:6990 CAG.Lie.Solvable <> φ:85 var
+R6996:6996 CAG.Lie.Solvable <> y:90 var
+R7001:7014 CAG.Lie.Solvable <> derived_series def
+R7021:7021 CAG.Lie.Solvable <> x:91 var
+R7019:7019 CAG.Lie.Solvable <> n:89 var
+R7016:7017 CAG.Lie.Solvable <> la:83 var
+prf 7102:7115 <> solvable_image
+binder 7118:7118 <> F:94
+R7135:7139 CAG.Galois.Field <> Field rec
+R7141:7141 CAG.Lie.Solvable <> F:94 var
+binder 7129:7131 <> fld:95
+binder 7145:7145 <> L:96
+binder 7147:7147 <> M:97
+R7167:7177 CAG.Lie.BasicDef <> LieAlgebraF rec
+R7183:7183 CAG.Lie.Solvable <> L:96 var
+R7179:7181 CAG.Lie.Solvable <> fld:95 var
+binder 7162:7163 <> la:98
+R7192:7202 CAG.Lie.BasicDef <> LieAlgebraF rec
+R7208:7208 CAG.Lie.Solvable <> M:97 var
+R7204:7206 CAG.Lie.Solvable <> fld:95 var
+binder 7187:7188 <> lb:99
+R7221:7226 CAG.Lie.BasicDef <> LieHom rec
+R7231:7232 CAG.Lie.Solvable <> lb:99 var
+R7228:7229 CAG.Lie.Solvable <> la:98 var
+binder 7216:7217 <> φ:100
+R7258:7258 CAG.Lie.Solvable <> M:97 var
+binder 7254:7254 <> y:101
+R7261:7267 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7273:7274 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7272:7272 CAG.Lie.Solvable <> L:96 var
+binder 7268:7268 <> x:102
+R7285:7287 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7275:7279 CAG.Lie.BasicDef <> lh_fn proj
+R7284:7284 CAG.Lie.Solvable <> x:102 var
+R7281:7282 CAG.Lie.Solvable <> φ:100 var
+R7288:7288 CAG.Lie.Solvable <> y:101 var
+binder 7240:7243 <> surj:103
+R7310:7313 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7297:7306 CAG.Lie.Solvable <> IsSolvable def
+R7308:7309 CAG.Lie.Solvable <> la:98 var
+R7314:7323 CAG.Lie.Solvable <> IsSolvable def
+R7325:7326 CAG.Lie.Solvable <> lb:99 var
+R7392:7410 CAG.Lie.Solvable <> solvable_image_lift prfax
+R7392:7410 CAG.Lie.Solvable <> solvable_image_lift prfax
+R7500:7506 CAG.Lie.BasicDef <> lh_zero thm
+R7500:7506 CAG.Lie.BasicDef <> lh_zero thm
+prf 7921:7938 <> solvable_extension
+binder 7941:7941 <> F:104
+R7958:7962 CAG.Galois.Field <> Field rec
+R7964:7964 CAG.Lie.Solvable <> F:104 var
+binder 7952:7954 <> fld:105
+binder 7968:7968 <> L:106
+R7988:7998 CAG.Lie.BasicDef <> LieAlgebraF rec
+R8004:8004 CAG.Lie.Solvable <> L:106 var
+R8000:8002 CAG.Lie.Solvable <> fld:105 var
+binder 7983:7984 <> la:107
+R8013:8016 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8012:8012 CAG.Lie.Solvable <> L:106 var
+binder 8008:8008 <> I:108
+R8041:8048 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8029:8035 CAG.Lie.Ideals <> IsIdeal rec
+R8040:8040 CAG.Lie.Solvable <> I:108 var
+R8037:8038 CAG.Lie.Solvable <> la:107 var
+R8049:8049 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8088:8114 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 8057:8057 <> x:109
+R8081:8084 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8060:8073 CAG.Lie.Solvable <> derived_series def
+R8080:8080 CAG.Lie.Solvable <> x:109 var
+R8075:8076 CAG.Lie.Solvable <> la:107 var
+R8085:8085 CAG.Lie.Solvable <> I:108 var
+R8087:8087 CAG.Lie.Solvable <> x:109 var
+R8115:8115 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8182:8190 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8116:8122 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R8124:8125 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 8123:8123 <> m:110
+binder 8133:8133 <> x:111
+R8157:8160 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8136:8149 CAG.Lie.Solvable <> derived_series def
+R8156:8156 CAG.Lie.Solvable <> x:111 var
+R8154:8154 CAG.Lie.Solvable <> m:110 var
+R8151:8152 CAG.Lie.Solvable <> la:107 var
+R8164:8167 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8161:8161 CAG.Lie.Solvable <> I:108 var
+R8163:8163 CAG.Lie.Solvable <> x:111 var
+R8169:8171 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8168:8168 CAG.Lie.Solvable <> x:111 var
+R8172:8178 CAG.Lie.BasicDef <> la_zero abbrev
+R8180:8181 CAG.Lie.Solvable <> la:107 var
+R8191:8200 CAG.Lie.Solvable <> IsSolvable def
+R8202:8203 CAG.Lie.Solvable <> la:107 var
+binder 8318:8318 <> k:112
+binder 8320:8320 <> x:113
+R8348:8351 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8323:8336 CAG.Lie.Solvable <> derived_series def
+R8347:8347 CAG.Lie.Solvable <> x:113 var
+R8342:8342 Corelib.Init.Datatypes <> S constr
+R8344:8344 CAG.Lie.Solvable <> k:112 var
+R8354:8354 CAG.Lie.Solvable <> x:113 var
+binder 8318:8318 <> k:114
+binder 8320:8320 <> x:115
+R8348:8351 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8323:8336 CAG.Lie.Solvable <> derived_series def
+R8347:8347 CAG.Lie.Solvable <> x:115 var
+R8342:8342 Corelib.Init.Datatypes <> S constr
+R8344:8344 CAG.Lie.Solvable <> k:114 var
+R8354:8354 CAG.Lie.Solvable <> x:115 var
+R8710:8724 CAG.Lie.Ideals <> ideal_bracket_l proj
+R8710:8724 CAG.Lie.Ideals <> ideal_bracket_l proj
+R8782:8782 Corelib.Init.Datatypes <> S constr
+R8782:8782 Corelib.Init.Datatypes <> S constr
+R8825:8847 CAG.Lie.Solvable <> derived_series_antitone thm
+R8825:8847 CAG.Lie.Solvable <> derived_series_antitone thm
+ax 9132:9150 <> solvable_sum_ideals
+binder 9164:9164 <> F:116
+R9181:9185 CAG.Galois.Field <> Field rec
+R9187:9187 CAG.Lie.Solvable <> F:116 var
+binder 9175:9177 <> fld:117
+binder 9191:9191 <> L:118
+R9211:9221 CAG.Lie.BasicDef <> LieAlgebraF rec
+R9227:9227 CAG.Lie.Solvable <> L:118 var
+R9223:9225 CAG.Lie.Solvable <> fld:117 var
+binder 9206:9207 <> la:119
+R9238:9241 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9237:9237 CAG.Lie.Solvable <> L:118 var
+binder 9231:9231 <> I:120
+binder 9233:9233 <> J:121
+R9265:9268 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9253:9259 CAG.Lie.Ideals <> IsIdeal rec
+R9264:9264 CAG.Lie.Solvable <> I:120 var
+R9261:9262 CAG.Lie.Solvable <> la:119 var
+R9281:9288 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9269:9275 CAG.Lie.Ideals <> IsIdeal rec
+R9280:9280 CAG.Lie.Solvable <> J:121 var
+R9277:9278 CAG.Lie.Solvable <> la:119 var
+R9289:9289 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9358:9366 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9290:9296 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9299:9300 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 9297:9298 <> nI:122
+binder 9308:9308 <> x:123
+R9333:9336 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9311:9324 CAG.Lie.Solvable <> derived_series def
+R9332:9332 CAG.Lie.Solvable <> x:123 var
+R9329:9330 CAG.Lie.Solvable <> nI:122 var
+R9326:9327 CAG.Lie.Solvable <> la:119 var
+R9340:9343 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9337:9337 CAG.Lie.Solvable <> I:120 var
+R9339:9339 CAG.Lie.Solvable <> x:123 var
+R9345:9347 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9344:9344 CAG.Lie.Solvable <> x:123 var
+R9348:9354 CAG.Lie.BasicDef <> la_zero abbrev
+R9356:9357 CAG.Lie.Solvable <> la:119 var
+R9367:9367 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9436:9444 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9368:9374 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9377:9378 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 9375:9376 <> nJ:124
+binder 9386:9386 <> x:125
+R9411:9414 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9389:9402 CAG.Lie.Solvable <> derived_series def
+R9410:9410 CAG.Lie.Solvable <> x:125 var
+R9407:9408 CAG.Lie.Solvable <> nJ:124 var
+R9404:9405 CAG.Lie.Solvable <> la:119 var
+R9418:9421 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9415:9415 CAG.Lie.Solvable <> J:121 var
+R9417:9417 CAG.Lie.Solvable <> x:125 var
+R9423:9425 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9422:9422 CAG.Lie.Solvable <> x:125 var
+R9426:9432 CAG.Lie.BasicDef <> la_zero abbrev
+R9434:9435 CAG.Lie.Solvable <> la:119 var
+R9445:9451 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9453:9454 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 9452:9452 <> n:126
+binder 9462:9462 <> x:127
+R9486:9495 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9465:9478 CAG.Lie.Solvable <> derived_series def
+R9485:9485 CAG.Lie.Solvable <> x:127 var
+R9483:9483 CAG.Lie.Solvable <> n:126 var
+R9480:9481 CAG.Lie.Solvable <> la:119 var
+R9496:9496 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9546:9556 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9497:9503 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9509:9510 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 9504:9505 <> xI:128
+binder 9507:9508 <> xJ:129
+R9515:9518 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R9511:9511 CAG.Lie.Solvable <> I:120 var
+R9513:9514 CAG.Lie.Solvable <> xI:128 var
+R9523:9526 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R9519:9519 CAG.Lie.Solvable <> J:121 var
+R9521:9522 CAG.Lie.Solvable <> xJ:129 var
+R9528:9530 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9527:9527 CAG.Lie.Solvable <> x:127 var
+R9531:9536 CAG.Lie.BasicDef <> la_add abbrev
+R9538:9539 CAG.Lie.Solvable <> la:119 var
+R9544:9545 CAG.Lie.Solvable <> xJ:129 var
+R9541:9542 CAG.Lie.Solvable <> xI:128 var
+R9558:9560 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9557:9557 CAG.Lie.Solvable <> x:127 var
+R9561:9567 CAG.Lie.BasicDef <> la_zero abbrev
+R9569:9570 CAG.Lie.Solvable <> la:119 var
+ax 9653:9677 <> upper_triangular_solvable
+binder 9691:9691 <> F:132
+R9708:9712 CAG.Galois.Field <> Field rec
+R9714:9714 CAG.Lie.Solvable <> F:132 var
+binder 9702:9704 <> fld:133
+R9722:9724 Corelib.Init.Datatypes <> nat ind
+binder 9718:9718 <> n:134
+R9737:9747 CAG.Lie.BasicDef <> LieAlgebraF rec
+R9754:9757 Corelib.Init.Datatypes <> list ind
+R9760:9763 Corelib.Init.Datatypes <> list ind
+R9765:9765 CAG.Lie.Solvable <> F:132 var
+R9749:9751 CAG.Lie.Solvable <> fld:133 var
+binder 9732:9733 <> la:135
+R9775:9784 CAG.Lie.Solvable <> IsSolvable def
+R9786:9787 CAG.Lie.Solvable <> la:135 var

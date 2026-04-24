@@ -1,0 +1,371 @@
+#+TITLE: TODO — Rocq Formalization Plan for Dummit & Foote Chapter 4 (Group Actions)
+#+AUTHOR: OpenAI
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize the theory of group actions from Chapter 4, Section 4.1, together with the
+  stated examples, cycle decomposition results, and exercises that are suitable as theorem
+  targets in Rocq.
+
+  Main themes:
+  - actions and permutation representations
+  - kernels and stabilizers
+  - faithful and transitive actions
+  - orbits and the orbit-stabilizer theorem
+  - cycle decomposition in S_n from orbits of cyclic subgroups
+  - blocks, primitivity, and double transitivity
+  - normal subgroup orbit decompositions
+  - double cosets and their counting formulas
+
+* High-level implementation strategy
+** DONE Split the development into 6 files
+   - GroupActions/Basic.v
+   - GroupActions/PermutationRepresentation.v
+   - GroupActions/Orbits.v
+   - GroupActions/SymmetricExamples.v
+   - GroupActions/BlocksAndPrimitivity.v
+   - GroupActions/DoubleCosets.v
+
+** DONE Decide finite vs general-set interface
+   Use a general set-level definition of action first, then add finite-set cardinality lemmas separately.
+
+** DONE Keep all finite counting results in a dedicated layer
+   Orbit-stabilizer and double-coset cardinality arguments will need finite types or finite sets.
+
+* Part I — Core definitions
+** DONE Define a left group action of G on a type A
+   Data:
+   - act : G -> A -> A
+   Axioms:
+   - 1 · a = a
+   - (gh) · a = g · (h · a)
+
+** DONE Define the permutation attached to g in an action
+   For each g : G, define sigma_g : A -> A by a |-> g · a
+
+** DONE Prove sigma_g is bijective
+   Inverse should be sigma_(g^{-1})
+
+** DONE Define the permutation representation
+   phi : G -> Sym(A)
+   g |-> sigma_g
+
+** DONE Prove phi is a group homomorphism
+
+** DONE Define kernel of the action
+   ker_action := { g in G | forall a, g · a = a }
+
+** DONE Prove kernel of action = kernel of permutation representation
+
+** DONE Define stabilizer of a point a
+   G_a := { g in G | g · a = a }
+
+** DONE Prove stabilizer is a subgroup
+
+** DONE Define faithful action
+   faithful iff kernel is trivial
+
+* Part II — Basic structural lemmas
+** DONE Prove kernel is a normal subgroup
+** DONE Prove kernel is contained in every stabilizer
+** DONE Prove two group elements induce the same permutation iff they differ by an element of the kernel
+** DONE Formalize the induced faithful action of G / ker(phi) on A
+
+** DONE State and prove the action-homomorphism correspondence
+   Bijective correspondence between:
+   - actions of G on A
+   - homomorphisms G -> Sym(A)
+
+** TODO Package this as an equivalence of structures if convenient
+
+* Part III — Standard examples from the text
+** DONE Formalize the natural action of S_n on {1,...,n}
+** DONE Prove the permutation representation is the identity homomorphism
+** DONE Prove the action is faithful
+** DONE Prove the stabilizer of i is isomorphic to S_(n-1)
+
+** DONE Formalize D_8 acting on vertices of a square
+   Choose vertex set {1,2,3,4}
+   Define:
+   - r = clockwise rotation by pi/2
+   - s = reflection across diagonal through 1 and 3
+
+** DONE Compute the induced permutations
+   - sigma_r = (1 2 3 4)
+   - sigma_s = (2 4)
+
+** DONE Prove the D_8 vertex action is faithful
+** DONE Compute the stabilizer of a vertex
+   e.g. stab(1) = <s>
+
+** DONE Formalize D_8 acting on the two unordered pairs of opposite vertices
+   A = {{1,3}, {2,4}}
+
+** DONE Compute the induced permutations in this action
+   - r swaps the two pairs
+   - s fixes both
+
+** DONE Prove this action is not faithful
+   Kernel = <s, r^2>
+
+** DONE Formalize the non-example from the text
+   Show D_8 does not act on {{1,2},{3,4}} because the set is not preserved
+
+* Part IV — Orbits and orbit-stabilizer
+** DONE Define the action relation a ~ b iff exists g, a = g · b
+** DONE Prove this relation is reflexive
+** DONE Prove this relation is symmetric
+** DONE Prove this relation is transitive
+** DONE Conclude it is an equivalence relation
+
+** DONE Define orbit of a point a
+   Orb(a) := { g · a | g in G }
+
+** DONE Define transitive action
+   One orbit / for all a,b exists g with a = g · b
+
+** DONE Prove equivalence class of a under ~ is Orb(a)
+
+** BLOCKED For the counting statement, choose a finite-set/cardinality library
+   Need a robust notion of subgroup index and finite quotient of finite sets
+
+** DONE Prove the orbit-stabilizer bijection
+   For fixed a:
+   left cosets G / G_a  <-> Orb(a)
+
+** DONE Deduce |Orb(a)| = [G : G_a] when finite hypotheses hold
+
+** DONE Add examples
+   - trivial action: all orbits are singletons
+   - S_n acting naturally is transitive
+   - subgroup <(1 2),(3 4)> in S_4 has two orbits {1,2} and {3,4}
+   - D_8 vertex action is transitive
+   - D_8 action on opposite pairs is transitive
+
+* Part V — Cycle decompositions in S_n
+** DONE Formalize the action of the cyclic subgroup <sigma> on {1,...,n}
+** DONE Define orbit of an element under <sigma>
+
+** DONE Prove each orbit of <sigma> is a cycle of sigma
+   For x in an orbit O:
+   O = {x, sigma(x), sigma^2(x), ..., sigma^(d-1)(x)}
+   where d is the orbit size
+
+** DONE Prove sigma acts as a d-cycle on O
+
+** DONE Prove existence of cycle decomposition
+   The disjoint orbits of <sigma> on {1,...,n} produce disjoint cycles whose product is sigma
+
+** DONE Prove uniqueness up to:
+   - reordering the cycles
+   - cyclic permutation within each cycle
+
+** TODO Decide how to encode cycles
+   Options:
+   - as explicit permutations with finite support
+   - as lists modulo cyclic permutation
+   The theorem can likely be stated at the permutation/orbit level first.
+
+* Part VI — Exercise-derived lemmas worth formalizing
+** DONE Exercise 1
+   If b = g · a, prove G_b = g G_a g^{-1}
+   Deduce for transitive action:
+   kernel = intersection over g in G of g G_a g^{-1}
+
+** DONE Exercise 2
+   For permutation group G <= Sym(A), prove sigma G_a sigma^{-1} = G_{sigma(a)}
+   Deduce for transitive action:
+   intersection over sigma in G of sigma G_a sigma^{-1} = 1
+
+** DONE Exercise 3
+   If G is abelian and transitive on finite A, prove:
+   - no nontrivial g fixes any a
+   - therefore |G| = |A|
+
+** TODO Add this as a reusable theorem:
+   finite abelian transitive actions are regular
+
+* Part VII — Blocks and primitivity
+** DONE Define a block for a transitive action
+   Nonempty B subset A such that for all g in G:
+   either g(B)=B or g(B) ∩ B = empty
+
+** DONE Exercise 7a
+   If B is a block containing a, define
+   G_B := { g in G | g(B)=B }
+   prove G_B is a subgroup containing G_a
+
+** DONE Exercise 7b
+   Distinct translates of a block partition A
+
+** DONE Define primitive action
+   Only blocks are singletons and all of A
+
+** DONE Exercise 7c
+   Prove S_4 is primitive on {1,2,3,4}
+   Prove D_8 on the 4 vertices of a square is not primitive
+
+** DONE Exercise 7d
+   Prove transitive action is primitive iff G_a is a maximal subgroup of G
+
+* Part VIII — Double transitivity
+** DONE Define doubly transitive action
+   For any a in A, stabilizer G_a acts transitively on A \ {a}
+
+** DONE Exercise 8a
+   Prove S_n is doubly transitive on {1,...,n} for n >= 2
+
+** DONE Exercise 8b
+   Prove doubly transitive implies primitive
+
+** DONE Deduce D_8 on vertices is not doubly transitive
+
+* Part IX — Orbits of normal subgroups
+** DONE Formalize action of a normal subgroup H normal in G on A
+** DONE Define the distinct H-orbits O_1, ..., O_r
+
+** DONE Exercise 9a
+   Prove G permutes the H-orbits
+   Prove G acts transitively on the set of H-orbits
+   Deduce all H-orbits have the same cardinality
+
+** DONE Exercise 9b
+   For a in O_1, prove:
+   - |O_1| = [H : H ∩ G_a]
+   - r = [G : H G_a]
+
+** TODO Use second isomorphism theorem where helpful
+
+* Part X — Double cosets
+** DONE Define double coset H x K = { h x k | h in H, k in K }
+
+** DONE Exercise 10a
+   Prove HxK is the union of left cosets x_i K
+   where {x_i K} is the H-orbit of xK under left multiplication on G/K
+
+** DONE Exercise 10b
+   Prove HxK is a union of right cosets of H
+
+** DONE Exercise 10c
+   Prove double cosets are either equal or disjoint
+   Deduce they partition G
+
+** DONE Exercise 10d
+   Prove |HxK| = |K| [H : H ∩ x K x^{-1}] under finiteness hypotheses
+
+** DONE Exercise 10e
+   Prove |HxK| = |H| [K : K ∩ x^{-1} H x] under finiteness hypotheses
+
+** TODO Package a reusable orbit-double-coset correspondence
+   H-orbits on G/K  <-> double cosets H \ G / K
+
+* Part XI — Optional concrete computational examples
+** TODO Exercise 4
+   S_3 acting on ordered pairs {(i,j) | 1 <= i,j <= 3}
+   - compute orbits
+   - compute cycle decompositions of each element
+   - compute stabilizers
+
+** TODO Exercise 5a
+   S_3 acting on triples {(i,j,k)}
+
+** TODO Exercise 5b
+   S_3 acting on nonempty subsets of {1,2,3}
+
+** TODO Exercise 6
+   S_4 acting on polynomial ring Z[x1,x2,x3,x4] by permuting indices
+   Compute orbit examples:
+   - x1 + x2
+   - x1 x2 + x3 x4
+   - (x1 + x2)(x3 + x4)
+   This can be deferred unless polynomial actions are already formalized.
+
+* Part XII — Supporting infrastructure likely needed
+** BLOCKED Finite set / finite type cardinality library
+   Needed for:
+   - orbit-stabilizer counts
+   - index computations
+   - double-coset cardinality formulas
+
+** DONE Subgroup index API
+   Enough to state [G : H] and use coset counting lemmas
+
+** DONE Left cosets and right cosets
+   Definitions and equality lemmas
+
+** DONE Quotient-by-subgroup as orbit set
+   Especially G / H as left-coset type
+
+** DONE Cyclic subgroup machinery
+   Needed for cycle decomposition proof
+
+** TODO Permutation group API
+   It may be useful to wrap:
+   - subgroup of Sym(A)
+   - induced action
+   - orbit/stabilizer in that setting
+
+* Part XIII — Suggested theorem names
+** TODO `action_kernel_normal`
+** TODO `stabilizer_subgroup`
+** TODO `action_to_perm_hom`
+** TODO `perm_hom_to_action`
+** TODO `actions_equiv_homs_to_sym`
+** TODO `orbit_equiv_relation`
+** TODO `orbit_stabilizer_bijection`
+** TODO `orbit_card_eq_index_stabilizer`
+** TODO `cyclic_orbits_give_cycles`
+** TODO `perm_has_cycle_decomposition`
+** TODO `cycle_decomposition_unique_up_to_reordering_and_rotation`
+** TODO `stabilizers_conjugate_along_orbit`
+** TODO `finite_abelian_transitive_action_regular`
+** TODO `block_stabilizer_subgroup`
+** TODO `block_translates_partition`
+** TODO `primitive_iff_point_stabilizer_maximal`
+** TODO `double_transitive_implies_primitive`
+** TODO `normal_subgroup_orbits_are_equipotent`
+** TODO `double_cosets_partition_group`
+** TODO `double_coset_card_formula_left`
+** TODO `double_coset_card_formula_right`
+
+* Part XIV — Minimal compile-first milestone
+** DONE Milestone 1
+   Implement:
+   - group action
+   - permutation representation
+   - kernel
+   - stabilizer
+   - faithfulness
+   - orbit relation and equivalence proof
+
+** DONE Milestone 2
+   Implement orbit-stabilizer bijection and counting theorem
+
+** DONE Milestone 3
+   Implement cycle decomposition existence/uniqueness for S_n via cyclic subgroup orbits
+
+** DONE Milestone 4
+   Implement blocks, primitivity, double transitivity
+
+** DONE Milestone 5
+   Implement normal subgroup orbit lemmas and double cosets
+
+* Part XV — Claude-specific proof advice
+** DONE Keep set-theoretic and finite-cardinality arguments separate
+   The abstract orbit equivalence proof should not depend on finiteness.
+
+** DONE Prove bijections before cardinality equalities
+   This will make the finite proofs cleaner.
+
+** DONE For cycle decomposition, use orbits rather than ad hoc list arguments
+   The text’s proof is orbit-theoretic already.
+
+** DONE Encode uniqueness of cycle decomposition at the orbit level first
+   Then derive the usual “up to order and cyclic rotation” statement.
+
+** DONE For primitivity, formalize blocks as subsets with a translate-disjointness property
+   This will make the equivalence with maximal stabilizers straightforward.
+
+** DONE For double cosets, reuse orbit language
+   H acting on G/K by left multiplication is the clean conceptual proof.

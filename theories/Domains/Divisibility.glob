@@ -1,0 +1,994 @@
+DIGEST 924bd49be33c9416e29c8d51f111fb79
+FCAG.Domains.Divisibility
+R243:252 CAG.Rings.Ring <> <> lib
+R282:286 Stdlib.Arith.Arith <> <> lib
+R288:290 Stdlib.micromega.Lia <> <> lib
+rec 624:637 <> IntegralDomain
+proj 669:672 <> id_r
+proj 695:701 <> id_comm
+proj 764:776 <> id_nontrivial
+proj 811:824 <> id_no_zero_div
+binder 640:640 <> R:1
+R685:688 CAG.Rings.Ring <> Ring rec
+R690:690 CAG.Domains.Divisibility <> R:1 var
+R724:724 CAG.Domains.Divisibility <> R:1 var
+binder 718:718 <> a:4
+binder 720:720 <> b:5
+R742:744 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R727:730 CAG.Rings.Ring <> rmul proj
+R732:732 CAG.Domains.Divisibility <> R:1 var
+R734:737 CAG.Domains.Divisibility <> id_r:3 meth
+R739:739 CAG.Domains.Divisibility <> a:4 var
+R741:741 CAG.Domains.Divisibility <> b:5 var
+R745:748 CAG.Rings.Ring <> rmul proj
+R750:750 CAG.Domains.Divisibility <> R:1 var
+R752:755 CAG.Domains.Divisibility <> id_r:3 meth
+R757:757 CAG.Domains.Divisibility <> b:5 var
+R759:759 CAG.Domains.Divisibility <> a:4 var
+R791:794 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R780:783 CAG.Rings.Ring <> rone proj
+R785:785 CAG.Domains.Divisibility <> R:1 var
+R787:790 CAG.Domains.Divisibility <> id_r:3 meth
+R795:799 CAG.Rings.Ring <> rzero proj
+R801:801 CAG.Domains.Divisibility <> R:1 var
+R803:806 CAG.Domains.Divisibility <> id_r:3 meth
+R841:841 CAG.Domains.Divisibility <> R:1 var
+binder 835:835 <> a:8
+binder 837:837 <> b:9
+R878:885 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R863:865 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R848:851 CAG.Rings.Ring <> rmul proj
+R853:853 CAG.Domains.Divisibility <> R:1 var
+R855:858 CAG.Domains.Divisibility <> id_r:3 meth
+R860:860 CAG.Domains.Divisibility <> a:8 var
+R862:862 CAG.Domains.Divisibility <> b:9 var
+R866:870 CAG.Rings.Ring <> rzero proj
+R872:872 CAG.Domains.Divisibility <> R:1 var
+R874:877 CAG.Domains.Divisibility <> id_r:3 meth
+R902:905 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R887:889 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R886:886 CAG.Domains.Divisibility <> a:8 var
+R890:894 CAG.Rings.Ring <> rzero proj
+R896:896 CAG.Domains.Divisibility <> R:1 var
+R898:901 CAG.Domains.Divisibility <> id_r:3 meth
+R907:909 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R906:906 CAG.Domains.Divisibility <> b:9 var
+R910:914 CAG.Rings.Ring <> rzero proj
+R916:916 CAG.Domains.Divisibility <> R:1 var
+R918:921 CAG.Domains.Divisibility <> id_r:3 meth
+R938:941 CAG.Domains.Divisibility <> id_r proj
+R938:941 CAG.Domains.Divisibility <> id_r proj
+R970:976 CAG.Domains.Divisibility <> id_comm proj
+R970:976 CAG.Domains.Divisibility <> id_comm proj
+R1006:1018 CAG.Domains.Divisibility <> id_nontrivial proj
+R1006:1018 CAG.Domains.Divisibility <> id_nontrivial proj
+R1038:1051 CAG.Domains.Divisibility <> id_no_zero_div proj
+R1038:1051 CAG.Domains.Divisibility <> id_no_zero_div proj
+sec 1276:1287 <> Divisibility
+var  1368:1368 Divisibility R
+var  1379:1379 Divisibility r
+R1383:1386 CAG.Rings.Ring <> Ring rec
+R1388:1388 CAG.Domains.Divisibility <> R:11 var
+var  1403:1407 Divisibility Hcomm
+R1424:1424 CAG.Domains.Divisibility <> Divisibility.R var
+binder 1418:1418 <> a:13
+binder 1420:1420 <> b:14
+R1439:1441 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1427:1430 CAG.Rings.Ring <> rmul proj
+R1432:1432 CAG.Domains.Divisibility <> Divisibility.R var
+R1434:1434 CAG.Domains.Divisibility <> Divisibility.r var
+R1436:1436 CAG.Domains.Divisibility <> a:13 var
+R1438:1438 CAG.Domains.Divisibility <> b:14 var
+R1442:1445 CAG.Rings.Ring <> rmul proj
+R1447:1447 CAG.Domains.Divisibility <> Divisibility.R var
+R1449:1449 CAG.Domains.Divisibility <> Divisibility.r var
+R1451:1451 CAG.Domains.Divisibility <> b:14 var
+R1453:1453 CAG.Domains.Divisibility <> a:13 var
+def 1510:1516 <> divides
+R1525:1525 CAG.Domains.Divisibility <> Divisibility.R var
+binder 1519:1519 <> a:16
+binder 1521:1521 <> b:17
+R1542:1548 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1554:1555 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1553:1553 CAG.Domains.Divisibility <> Divisibility.R var
+binder 1549:1549 <> c:18
+R1557:1559 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1556:1556 CAG.Domains.Divisibility <> b:17 var
+R1560:1563 CAG.Rings.Ring <> rmul proj
+R1565:1565 CAG.Domains.Divisibility <> Divisibility.R var
+R1567:1567 CAG.Domains.Divisibility <> Divisibility.r var
+R1569:1569 CAG.Domains.Divisibility <> a:16 var
+R1571:1571 CAG.Domains.Divisibility <> c:18 var
+prf 1619:1630 <> divides_zero
+R1645:1645 CAG.Domains.Divisibility <> Divisibility.R var
+binder 1641:1641 <> a:19
+R1648:1654 CAG.Domains.Divisibility <> divides def
+R1656:1656 CAG.Domains.Divisibility <> a:19 var
+R1659:1663 CAG.Rings.Ring <> rzero proj
+R1665:1665 CAG.Domains.Divisibility <> Divisibility.R var
+R1667:1667 CAG.Domains.Divisibility <> Divisibility.r var
+R1700:1706 CAG.Domains.Divisibility <> divides def
+R1721:1725 CAG.Rings.Ring <> rzero proj
+R1727:1727 CAG.Domains.Divisibility <> Divisibility.R var
+R1729:1729 CAG.Domains.Divisibility <> Divisibility.r var
+R1721:1725 CAG.Rings.Ring <> rzero proj
+R1727:1727 CAG.Domains.Divisibility <> Divisibility.R var
+R1729:1729 CAG.Domains.Divisibility <> Divisibility.r var
+R1749:1759 CAG.Rings.Ring <> rmul_zero_r thm
+R1749:1759 CAG.Rings.Ring <> rmul_zero_r thm
+prf 1810:1821 <> zero_divides
+R1836:1836 CAG.Domains.Divisibility <> Divisibility.R var
+binder 1832:1832 <> a:20
+R1866:1869 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1845:1851 CAG.Domains.Divisibility <> divides def
+R1854:1858 CAG.Rings.Ring <> rzero proj
+R1860:1860 CAG.Domains.Divisibility <> Divisibility.R var
+R1862:1862 CAG.Domains.Divisibility <> Divisibility.r var
+R1865:1865 CAG.Domains.Divisibility <> a:20 var
+R1871:1873 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1870:1870 CAG.Domains.Divisibility <> a:20 var
+R1874:1878 CAG.Rings.Ring <> rzero proj
+R1880:1880 CAG.Domains.Divisibility <> Divisibility.R var
+R1882:1882 CAG.Domains.Divisibility <> Divisibility.r var
+R1933:1943 CAG.Rings.Ring <> rmul_zero_l thm
+R1933:1943 CAG.Rings.Ring <> rmul_zero_l thm
+prf 1994:2004 <> one_divides
+R2019:2019 CAG.Domains.Divisibility <> Divisibility.R var
+binder 2015:2015 <> a:21
+R2022:2028 CAG.Domains.Divisibility <> divides def
+R2031:2034 CAG.Rings.Ring <> rone proj
+R2036:2036 CAG.Domains.Divisibility <> Divisibility.R var
+R2038:2038 CAG.Domains.Divisibility <> Divisibility.r var
+R2041:2041 CAG.Domains.Divisibility <> a:21 var
+R2092:2101 CAG.Rings.Ring <> rmul_one_l proj
+R2092:2101 CAG.Rings.Ring <> rmul_one_l proj
+prf 2155:2166 <> divides_refl
+R2181:2181 CAG.Domains.Divisibility <> Divisibility.R var
+binder 2177:2177 <> a:22
+R2184:2190 CAG.Domains.Divisibility <> divides def
+R2192:2192 CAG.Domains.Divisibility <> a:22 var
+R2194:2194 CAG.Domains.Divisibility <> a:22 var
+R2227:2230 CAG.Rings.Ring <> rone proj
+R2232:2232 CAG.Domains.Divisibility <> Divisibility.R var
+R2234:2234 CAG.Domains.Divisibility <> Divisibility.r var
+R2227:2230 CAG.Rings.Ring <> rone proj
+R2232:2232 CAG.Domains.Divisibility <> Divisibility.R var
+R2234:2234 CAG.Domains.Divisibility <> Divisibility.r var
+R2254:2263 CAG.Rings.Ring <> rmul_one_r proj
+R2254:2263 CAG.Rings.Ring <> rmul_one_r proj
+prf 2318:2330 <> divides_trans
+R2349:2349 CAG.Domains.Divisibility <> Divisibility.R var
+binder 2341:2341 <> a:23
+binder 2343:2343 <> b:24
+binder 2345:2345 <> c:25
+R2369:2372 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2358:2364 CAG.Domains.Divisibility <> divides def
+R2366:2366 CAG.Domains.Divisibility <> a:23 var
+R2368:2368 CAG.Domains.Divisibility <> b:24 var
+R2384:2387 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2373:2379 CAG.Domains.Divisibility <> divides def
+R2381:2381 CAG.Domains.Divisibility <> b:24 var
+R2383:2383 CAG.Domains.Divisibility <> c:25 var
+R2388:2394 CAG.Domains.Divisibility <> divides def
+R2396:2396 CAG.Domains.Divisibility <> a:23 var
+R2398:2398 CAG.Domains.Divisibility <> c:25 var
+R2454:2457 CAG.Rings.Ring <> rmul proj
+R2459:2459 CAG.Domains.Divisibility <> Divisibility.R var
+R2461:2461 CAG.Domains.Divisibility <> Divisibility.r var
+R2454:2457 CAG.Rings.Ring <> rmul proj
+R2459:2459 CAG.Domains.Divisibility <> Divisibility.R var
+R2461:2461 CAG.Domains.Divisibility <> Divisibility.r var
+R2509:2518 CAG.Rings.Ring <> rmul_assoc proj
+R2509:2518 CAG.Rings.Ring <> rmul_assoc proj
+prf 2589:2599 <> divides_add
+R2618:2618 CAG.Domains.Divisibility <> Divisibility.R var
+binder 2610:2610 <> a:26
+binder 2612:2612 <> b:27
+binder 2614:2614 <> c:28
+R2638:2641 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2627:2633 CAG.Domains.Divisibility <> divides def
+R2635:2635 CAG.Domains.Divisibility <> a:26 var
+R2637:2637 CAG.Domains.Divisibility <> b:27 var
+R2653:2656 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2642:2648 CAG.Domains.Divisibility <> divides def
+R2650:2650 CAG.Domains.Divisibility <> a:26 var
+R2652:2652 CAG.Domains.Divisibility <> c:28 var
+R2657:2663 CAG.Domains.Divisibility <> divides def
+R2665:2665 CAG.Domains.Divisibility <> a:26 var
+R2668:2671 CAG.Rings.Ring <> radd proj
+R2673:2673 CAG.Domains.Divisibility <> Divisibility.R var
+R2675:2675 CAG.Domains.Divisibility <> Divisibility.r var
+R2677:2677 CAG.Domains.Divisibility <> b:27 var
+R2679:2679 CAG.Domains.Divisibility <> c:28 var
+R2736:2739 CAG.Rings.Ring <> radd proj
+R2741:2741 CAG.Domains.Divisibility <> Divisibility.R var
+R2743:2743 CAG.Domains.Divisibility <> Divisibility.r var
+R2736:2739 CAG.Rings.Ring <> radd proj
+R2741:2741 CAG.Domains.Divisibility <> Divisibility.R var
+R2743:2743 CAG.Domains.Divisibility <> Divisibility.r var
+R2787:2800 CAG.Rings.Ring <> rmul_distrib_l proj
+R2787:2800 CAG.Rings.Ring <> rmul_distrib_l proj
+prf 2873:2885 <> divides_mul_l
+R2904:2904 CAG.Domains.Divisibility <> Divisibility.R var
+binder 2896:2896 <> a:29
+binder 2898:2898 <> b:30
+binder 2900:2900 <> x:31
+R2924:2927 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2913:2919 CAG.Domains.Divisibility <> divides def
+R2921:2921 CAG.Domains.Divisibility <> a:29 var
+R2923:2923 CAG.Domains.Divisibility <> b:30 var
+R2928:2934 CAG.Domains.Divisibility <> divides def
+R2936:2936 CAG.Domains.Divisibility <> a:29 var
+R2939:2942 CAG.Rings.Ring <> rmul proj
+R2944:2944 CAG.Domains.Divisibility <> Divisibility.R var
+R2946:2946 CAG.Domains.Divisibility <> Divisibility.r var
+R2948:2948 CAG.Domains.Divisibility <> x:31 var
+R2950:2950 CAG.Domains.Divisibility <> b:30 var
+R3000:3003 CAG.Rings.Ring <> rmul proj
+R3005:3005 CAG.Domains.Divisibility <> Divisibility.R var
+R3007:3007 CAG.Domains.Divisibility <> Divisibility.r var
+R3000:3003 CAG.Rings.Ring <> rmul proj
+R3005:3005 CAG.Domains.Divisibility <> Divisibility.R var
+R3007:3007 CAG.Domains.Divisibility <> Divisibility.r var
+R3043:3052 CAG.Rings.Ring <> rmul_assoc proj
+R3056:3060 CAG.Domains.Divisibility <> Divisibility.Hcomm var
+R3043:3052 CAG.Rings.Ring <> rmul_assoc proj
+R3043:3052 CAG.Rings.Ring <> rmul_assoc proj
+R3056:3060 CAG.Domains.Divisibility <> Divisibility.Hcomm var
+R3056:3060 CAG.Domains.Divisibility <> Divisibility.Hcomm var
+R3088:3097 CAG.Rings.Ring <> rmul_assoc proj
+R3088:3097 CAG.Rings.Ring <> rmul_assoc proj
+prf 3116:3128 <> divides_mul_r
+R3147:3147 CAG.Domains.Divisibility <> Divisibility.R var
+binder 3139:3139 <> a:32
+binder 3141:3141 <> b:33
+binder 3143:3143 <> x:34
+R3167:3170 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3156:3162 CAG.Domains.Divisibility <> divides def
+R3164:3164 CAG.Domains.Divisibility <> a:32 var
+R3166:3166 CAG.Domains.Divisibility <> b:33 var
+R3171:3177 CAG.Domains.Divisibility <> divides def
+R3179:3179 CAG.Domains.Divisibility <> a:32 var
+R3182:3185 CAG.Rings.Ring <> rmul proj
+R3187:3187 CAG.Domains.Divisibility <> Divisibility.R var
+R3189:3189 CAG.Domains.Divisibility <> Divisibility.r var
+R3191:3191 CAG.Domains.Divisibility <> b:33 var
+R3193:3193 CAG.Domains.Divisibility <> x:34 var
+R3243:3246 CAG.Rings.Ring <> rmul proj
+R3248:3248 CAG.Domains.Divisibility <> Divisibility.R var
+R3250:3250 CAG.Domains.Divisibility <> Divisibility.r var
+R3243:3246 CAG.Rings.Ring <> rmul proj
+R3248:3248 CAG.Domains.Divisibility <> Divisibility.R var
+R3250:3250 CAG.Domains.Divisibility <> Divisibility.r var
+R3290:3299 CAG.Rings.Ring <> rmul_assoc proj
+R3290:3299 CAG.Rings.Ring <> rmul_assoc proj
+prf 3353:3363 <> divides_neg
+R3380:3380 CAG.Domains.Divisibility <> Divisibility.R var
+binder 3374:3374 <> a:35
+binder 3376:3376 <> b:36
+R3400:3403 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3389:3395 CAG.Domains.Divisibility <> divides def
+R3397:3397 CAG.Domains.Divisibility <> a:35 var
+R3399:3399 CAG.Domains.Divisibility <> b:36 var
+R3404:3410 CAG.Domains.Divisibility <> divides def
+R3412:3412 CAG.Domains.Divisibility <> a:35 var
+R3415:3418 CAG.Rings.Ring <> rneg proj
+R3420:3420 CAG.Domains.Divisibility <> Divisibility.R var
+R3422:3422 CAG.Domains.Divisibility <> Divisibility.r var
+R3424:3424 CAG.Domains.Divisibility <> b:36 var
+R3472:3475 CAG.Rings.Ring <> rneg proj
+R3477:3477 CAG.Domains.Divisibility <> Divisibility.R var
+R3479:3479 CAG.Domains.Divisibility <> Divisibility.r var
+R3472:3475 CAG.Rings.Ring <> rneg proj
+R3477:3477 CAG.Domains.Divisibility <> Divisibility.R var
+R3479:3479 CAG.Domains.Divisibility <> Divisibility.r var
+R3572:3574 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3523:3526 CAG.Rings.Ring <> radd proj
+R3528:3528 CAG.Domains.Divisibility <> Divisibility.R var
+R3530:3530 CAG.Domains.Divisibility <> Divisibility.r var
+R3533:3536 CAG.Rings.Ring <> rmul proj
+R3538:3538 CAG.Domains.Divisibility <> Divisibility.R var
+R3540:3540 CAG.Domains.Divisibility <> Divisibility.r var
+R3545:3548 CAG.Rings.Ring <> rneg proj
+R3550:3550 CAG.Domains.Divisibility <> Divisibility.R var
+R3552:3552 CAG.Domains.Divisibility <> Divisibility.r var
+R3559:3562 CAG.Rings.Ring <> rmul proj
+R3564:3564 CAG.Domains.Divisibility <> Divisibility.R var
+R3566:3566 CAG.Domains.Divisibility <> Divisibility.r var
+R3575:3579 CAG.Rings.Ring <> rzero proj
+R3581:3581 CAG.Domains.Divisibility <> Divisibility.R var
+R3583:3583 CAG.Domains.Divisibility <> Divisibility.r var
+R3572:3574 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3523:3526 CAG.Rings.Ring <> radd proj
+R3528:3528 CAG.Domains.Divisibility <> Divisibility.R var
+R3530:3530 CAG.Domains.Divisibility <> Divisibility.r var
+R3533:3536 CAG.Rings.Ring <> rmul proj
+R3538:3538 CAG.Domains.Divisibility <> Divisibility.R var
+R3540:3540 CAG.Domains.Divisibility <> Divisibility.r var
+R3545:3548 CAG.Rings.Ring <> rneg proj
+R3550:3550 CAG.Domains.Divisibility <> Divisibility.R var
+R3552:3552 CAG.Domains.Divisibility <> Divisibility.r var
+R3559:3562 CAG.Rings.Ring <> rmul proj
+R3564:3564 CAG.Domains.Divisibility <> Divisibility.R var
+R3566:3566 CAG.Domains.Divisibility <> Divisibility.r var
+R3575:3579 CAG.Rings.Ring <> rzero proj
+R3581:3581 CAG.Domains.Divisibility <> Divisibility.R var
+R3583:3583 CAG.Domains.Divisibility <> Divisibility.r var
+R3604:3617 CAG.Rings.Ring <> rmul_distrib_l proj
+R3604:3617 CAG.Rings.Ring <> rmul_distrib_l proj
+R3604:3617 CAG.Rings.Ring <> rmul_distrib_l proj
+R3628:3637 CAG.Rings.Ring <> radd_neg_l thm
+R3628:3637 CAG.Rings.Ring <> radd_neg_l thm
+R3628:3637 CAG.Rings.Ring <> radd_neg_l thm
+R3646:3656 CAG.Rings.Ring <> rmul_zero_r thm
+R3646:3656 CAG.Rings.Ring <> rmul_zero_r thm
+R3808:3810 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3680:3683 CAG.Rings.Ring <> radd proj
+R3685:3685 CAG.Domains.Divisibility <> Divisibility.R var
+R3687:3687 CAG.Domains.Divisibility <> Divisibility.r var
+R3711:3714 CAG.Rings.Ring <> radd proj
+R3716:3716 CAG.Domains.Divisibility <> Divisibility.R var
+R3718:3718 CAG.Domains.Divisibility <> Divisibility.r var
+R3721:3724 CAG.Rings.Ring <> rmul proj
+R3726:3726 CAG.Domains.Divisibility <> Divisibility.R var
+R3728:3728 CAG.Domains.Divisibility <> Divisibility.r var
+R3733:3736 CAG.Rings.Ring <> rneg proj
+R3738:3738 CAG.Domains.Divisibility <> Divisibility.R var
+R3740:3740 CAG.Domains.Divisibility <> Divisibility.r var
+R3747:3750 CAG.Rings.Ring <> rmul proj
+R3752:3752 CAG.Domains.Divisibility <> Divisibility.R var
+R3754:3754 CAG.Domains.Divisibility <> Divisibility.r var
+R3784:3787 CAG.Rings.Ring <> rneg proj
+R3789:3789 CAG.Domains.Divisibility <> Divisibility.R var
+R3791:3791 CAG.Domains.Divisibility <> Divisibility.r var
+R3794:3797 CAG.Rings.Ring <> rmul proj
+R3799:3799 CAG.Domains.Divisibility <> Divisibility.R var
+R3801:3801 CAG.Domains.Divisibility <> Divisibility.r var
+R3811:3814 CAG.Rings.Ring <> rneg proj
+R3816:3816 CAG.Domains.Divisibility <> Divisibility.R var
+R3818:3818 CAG.Domains.Divisibility <> Divisibility.r var
+R3821:3824 CAG.Rings.Ring <> rmul proj
+R3826:3826 CAG.Domains.Divisibility <> Divisibility.R var
+R3828:3828 CAG.Domains.Divisibility <> Divisibility.r var
+R3808:3810 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3680:3683 CAG.Rings.Ring <> radd proj
+R3685:3685 CAG.Domains.Divisibility <> Divisibility.R var
+R3687:3687 CAG.Domains.Divisibility <> Divisibility.r var
+R3711:3714 CAG.Rings.Ring <> radd proj
+R3716:3716 CAG.Domains.Divisibility <> Divisibility.R var
+R3718:3718 CAG.Domains.Divisibility <> Divisibility.r var
+R3721:3724 CAG.Rings.Ring <> rmul proj
+R3726:3726 CAG.Domains.Divisibility <> Divisibility.R var
+R3728:3728 CAG.Domains.Divisibility <> Divisibility.r var
+R3733:3736 CAG.Rings.Ring <> rneg proj
+R3738:3738 CAG.Domains.Divisibility <> Divisibility.R var
+R3740:3740 CAG.Domains.Divisibility <> Divisibility.r var
+R3747:3750 CAG.Rings.Ring <> rmul proj
+R3752:3752 CAG.Domains.Divisibility <> Divisibility.R var
+R3754:3754 CAG.Domains.Divisibility <> Divisibility.r var
+R3784:3787 CAG.Rings.Ring <> rneg proj
+R3789:3789 CAG.Domains.Divisibility <> Divisibility.R var
+R3791:3791 CAG.Domains.Divisibility <> Divisibility.r var
+R3794:3797 CAG.Rings.Ring <> rmul proj
+R3799:3799 CAG.Domains.Divisibility <> Divisibility.R var
+R3801:3801 CAG.Domains.Divisibility <> Divisibility.r var
+R3811:3814 CAG.Rings.Ring <> rneg proj
+R3816:3816 CAG.Domains.Divisibility <> Divisibility.R var
+R3818:3818 CAG.Domains.Divisibility <> Divisibility.r var
+R3821:3824 CAG.Rings.Ring <> rmul proj
+R3826:3826 CAG.Domains.Divisibility <> Divisibility.R var
+R3828:3828 CAG.Domains.Divisibility <> Divisibility.r var
+R3860:3870 CAG.Rings.Ring <> radd_zero_l thm
+R3860:3870 CAG.Rings.Ring <> radd_zero_l thm
+R3890:3899 CAG.Rings.Ring <> radd_assoc proj
+R3890:3899 CAG.Rings.Ring <> radd_assoc proj
+R3890:3899 CAG.Rings.Ring <> radd_assoc proj
+R3922:3931 CAG.Rings.Ring <> radd_neg_r proj
+R3922:3931 CAG.Rings.Ring <> radd_neg_r proj
+R3922:3931 CAG.Rings.Ring <> radd_neg_r proj
+R3954:3964 CAG.Rings.Ring <> radd_zero_r proj
+R3954:3964 CAG.Rings.Ring <> radd_zero_r proj
+R3954:3964 CAG.Rings.Ring <> radd_zero_r proj
+R4003:4014 CAG.Domains.Divisibility Divisibility <> sec
+def 4073:4082 <> id_divides
+binder 4085:4085 <> R:37
+R4100:4113 CAG.Domains.Divisibility <> IntegralDomain rec
+R4115:4115 CAG.Domains.Divisibility <> R:37 var
+binder 4096:4096 <> d:38
+R4124:4130 CAG.Domains.Divisibility <> divides def
+R4132:4132 CAG.Domains.Divisibility <> R:37 var
+R4135:4138 CAG.Domains.Divisibility <> id_r proj
+R4140:4140 CAG.Domains.Divisibility <> d:38 var
+sec 4349:4353 <> Units
+var  4367:4367 Units R
+var  4378:4378 Units r
+R4382:4385 CAG.Rings.Ring <> Ring rec
+R4387:4387 CAG.Domains.Divisibility <> R:39 var
+var  4402:4406 Units Hcomm
+R4423:4423 CAG.Domains.Divisibility <> Units.R var
+binder 4417:4417 <> a:41
+binder 4419:4419 <> b:42
+R4438:4440 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4426:4429 CAG.Rings.Ring <> rmul proj
+R4431:4431 CAG.Domains.Divisibility <> Units.R var
+R4433:4433 CAG.Domains.Divisibility <> Units.r var
+R4435:4435 CAG.Domains.Divisibility <> a:41 var
+R4437:4437 CAG.Domains.Divisibility <> b:42 var
+R4441:4444 CAG.Rings.Ring <> rmul proj
+R4446:4446 CAG.Domains.Divisibility <> Units.R var
+R4448:4448 CAG.Domains.Divisibility <> Units.r var
+R4450:4450 CAG.Domains.Divisibility <> b:42 var
+R4452:4452 CAG.Domains.Divisibility <> a:41 var
+var  4467:4477 Units Hnontrivial
+R4489:4492 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R4481:4484 CAG.Rings.Ring <> rone proj
+R4486:4486 CAG.Domains.Divisibility <> Units.R var
+R4488:4488 CAG.Domains.Divisibility <> Units.r var
+R4493:4497 CAG.Rings.Ring <> rzero proj
+R4499:4499 CAG.Domains.Divisibility <> Units.R var
+R4501:4501 CAG.Domains.Divisibility <> Units.r var
+var  4516:4527 Units Hno_zero_div
+R4544:4544 CAG.Domains.Divisibility <> Units.R var
+binder 4538:4538 <> a:45
+binder 4540:4540 <> b:46
+R4575:4578 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4563:4565 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4551:4554 CAG.Rings.Ring <> rmul proj
+R4556:4556 CAG.Domains.Divisibility <> Units.R var
+R4558:4558 CAG.Domains.Divisibility <> Units.r var
+R4560:4560 CAG.Domains.Divisibility <> a:45 var
+R4562:4562 CAG.Domains.Divisibility <> b:46 var
+R4566:4570 CAG.Rings.Ring <> rzero proj
+R4572:4572 CAG.Domains.Divisibility <> Units.R var
+R4574:4574 CAG.Domains.Divisibility <> Units.r var
+R4592:4595 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R4580:4582 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4579:4579 CAG.Domains.Divisibility <> a:45 var
+R4583:4587 CAG.Rings.Ring <> rzero proj
+R4589:4589 CAG.Domains.Divisibility <> Units.R var
+R4591:4591 CAG.Domains.Divisibility <> Units.r var
+R4597:4599 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4596:4596 CAG.Domains.Divisibility <> b:46 var
+R4600:4604 CAG.Rings.Ring <> rzero proj
+R4606:4606 CAG.Domains.Divisibility <> Units.R var
+R4608:4608 CAG.Domains.Divisibility <> Units.r var
+def 4682:4688 <> is_unit
+R4695:4695 CAG.Domains.Divisibility <> Units.R var
+binder 4691:4691 <> a:48
+R4712:4718 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4724:4731 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4723:4723 CAG.Domains.Divisibility <> Units.R var
+binder 4719:4719 <> b:49
+R4755:4758 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R4744:4746 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4732:4735 CAG.Rings.Ring <> rmul proj
+R4737:4737 CAG.Domains.Divisibility <> Units.R var
+R4739:4739 CAG.Domains.Divisibility <> Units.r var
+R4741:4741 CAG.Domains.Divisibility <> a:48 var
+R4743:4743 CAG.Domains.Divisibility <> b:49 var
+R4747:4750 CAG.Rings.Ring <> rone proj
+R4752:4752 CAG.Domains.Divisibility <> Units.R var
+R4754:4754 CAG.Domains.Divisibility <> Units.r var
+R4771:4773 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4759:4762 CAG.Rings.Ring <> rmul proj
+R4764:4764 CAG.Domains.Divisibility <> Units.R var
+R4766:4766 CAG.Domains.Divisibility <> Units.r var
+R4768:4768 CAG.Domains.Divisibility <> b:49 var
+R4770:4770 CAG.Domains.Divisibility <> a:48 var
+R4774:4777 CAG.Rings.Ring <> rone proj
+R4779:4779 CAG.Domains.Divisibility <> Units.R var
+R4781:4781 CAG.Domains.Divisibility <> Units.r var
+prf 4814:4821 <> unit_one
+R4825:4831 CAG.Domains.Divisibility <> is_unit def
+R4834:4837 CAG.Rings.Ring <> rone proj
+R4839:4839 CAG.Domains.Divisibility <> Units.R var
+R4841:4841 CAG.Domains.Divisibility <> Units.r var
+R4865:4871 CAG.Domains.Divisibility <> is_unit def
+R4882:4885 CAG.Rings.Ring <> rone proj
+R4887:4887 CAG.Domains.Divisibility <> Units.R var
+R4889:4889 CAG.Domains.Divisibility <> Units.r var
+R4882:4885 CAG.Rings.Ring <> rone proj
+R4887:4887 CAG.Domains.Divisibility <> Units.R var
+R4889:4889 CAG.Domains.Divisibility <> Units.r var
+R4906:4915 CAG.Rings.Ring <> rmul_one_r proj
+R4906:4915 CAG.Rings.Ring <> rmul_one_r proj
+R4906:4915 CAG.Rings.Ring <> rmul_one_r proj
+prf 4967:4982 <> unit_divides_all
+R4997:4997 CAG.Domains.Divisibility <> Units.R var
+binder 4993:4993 <> a:50
+R5015:5018 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5006:5012 CAG.Domains.Divisibility <> is_unit def
+R5014:5014 CAG.Domains.Divisibility <> a:50 var
+binder 5026:5026 <> b:51
+R5029:5035 CAG.Domains.Divisibility <> divides def
+R5039:5039 CAG.Domains.Divisibility <> a:50 var
+R5041:5041 CAG.Domains.Divisibility <> b:51 var
+R5037:5037 CAG.Domains.Divisibility <> Units.r var
+R5100:5106 CAG.Domains.Divisibility <> divides def
+R5117:5120 CAG.Rings.Ring <> rmul proj
+R5122:5122 CAG.Domains.Divisibility <> Units.R var
+R5124:5124 CAG.Domains.Divisibility <> Units.r var
+R5117:5120 CAG.Rings.Ring <> rmul proj
+R5122:5122 CAG.Domains.Divisibility <> Units.R var
+R5124:5124 CAG.Domains.Divisibility <> Units.r var
+R5222:5225 CAG.Rings.Ring <> rmul proj
+R5227:5227 CAG.Domains.Divisibility <> Units.R var
+R5229:5229 CAG.Domains.Divisibility <> Units.r var
+R5232:5235 CAG.Rings.Ring <> rmul proj
+R5237:5237 CAG.Domains.Divisibility <> Units.R var
+R5239:5239 CAG.Domains.Divisibility <> Units.r var
+R5222:5225 CAG.Rings.Ring <> rmul proj
+R5227:5227 CAG.Domains.Divisibility <> Units.R var
+R5229:5229 CAG.Domains.Divisibility <> Units.r var
+R5232:5235 CAG.Rings.Ring <> rmul proj
+R5237:5237 CAG.Domains.Divisibility <> Units.R var
+R5239:5239 CAG.Domains.Divisibility <> Units.r var
+R5265:5274 CAG.Rings.Ring <> rmul_assoc proj
+R5276:5276 CAG.Domains.Divisibility <> Units.R var
+R5278:5278 CAG.Domains.Divisibility <> Units.r var
+R5265:5274 CAG.Rings.Ring <> rmul_assoc proj
+R5276:5276 CAG.Domains.Divisibility <> Units.R var
+R5278:5278 CAG.Domains.Divisibility <> Units.r var
+R5317:5326 CAG.Rings.Ring <> rmul_one_l proj
+R5317:5326 CAG.Rings.Ring <> rmul_one_l proj
+prf 5376:5395 <> unit_iff_divides_one
+R5410:5410 CAG.Domains.Divisibility <> Units.R var
+binder 5406:5406 <> a:52
+R5428:5432 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R5419:5425 CAG.Domains.Divisibility <> is_unit def
+R5427:5427 CAG.Domains.Divisibility <> a:52 var
+R5433:5439 CAG.Domains.Divisibility <> divides def
+R5443:5443 CAG.Domains.Divisibility <> a:52 var
+R5446:5449 CAG.Rings.Ring <> rone proj
+R5451:5451 CAG.Domains.Divisibility <> Units.R var
+R5453:5453 CAG.Domains.Divisibility <> Units.r var
+R5441:5441 CAG.Domains.Divisibility <> Units.r var
+R5508:5523 CAG.Domains.Divisibility <> unit_divides_all thm
+R5508:5523 CAG.Domains.Divisibility <> unit_divides_all thm
+R5564:5570 CAG.Domains.Divisibility <> is_unit def
+R5611:5616 Corelib.Init.Logic <> eq_sym thm
+R5611:5616 Corelib.Init.Logic <> eq_sym thm
+R5640:5644 CAG.Domains.Divisibility <> Units.Hcomm var
+R5640:5644 CAG.Domains.Divisibility <> Units.Hcomm var
+R5640:5644 CAG.Domains.Divisibility <> Units.Hcomm var
+R5659:5664 Corelib.Init.Logic <> eq_sym thm
+R5659:5664 Corelib.Init.Logic <> eq_sym thm
+prf 5724:5731 <> unit_mul
+R5748:5748 CAG.Domains.Divisibility <> Units.R var
+binder 5742:5742 <> a:53
+binder 5744:5744 <> b:54
+R5766:5769 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5757:5763 CAG.Domains.Divisibility <> is_unit def
+R5765:5765 CAG.Domains.Divisibility <> a:53 var
+R5779:5782 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5770:5776 CAG.Domains.Divisibility <> is_unit def
+R5778:5778 CAG.Domains.Divisibility <> b:54 var
+R5783:5789 CAG.Domains.Divisibility <> is_unit def
+R5792:5795 CAG.Rings.Ring <> rmul proj
+R5797:5797 CAG.Domains.Divisibility <> Units.R var
+R5799:5799 CAG.Domains.Divisibility <> Units.r var
+R5801:5801 CAG.Domains.Divisibility <> a:53 var
+R5803:5803 CAG.Domains.Divisibility <> b:54 var
+R5877:5883 CAG.Domains.Divisibility <> is_unit def
+R5898:5901 CAG.Rings.Ring <> rmul proj
+R5903:5903 CAG.Domains.Divisibility <> Units.R var
+R5905:5905 CAG.Domains.Divisibility <> Units.r var
+R5898:5901 CAG.Rings.Ring <> rmul proj
+R5903:5903 CAG.Domains.Divisibility <> Units.R var
+R5905:5905 CAG.Domains.Divisibility <> Units.r var
+R6042:6045 CAG.Rings.Ring <> rmul proj
+R6047:6047 CAG.Domains.Divisibility <> Units.R var
+R6049:6049 CAG.Domains.Divisibility <> Units.r var
+R6052:6055 CAG.Rings.Ring <> rmul proj
+R6057:6057 CAG.Domains.Divisibility <> Units.R var
+R6059:6059 CAG.Domains.Divisibility <> Units.r var
+R6062:6065 CAG.Rings.Ring <> rmul proj
+R6067:6067 CAG.Domains.Divisibility <> Units.R var
+R6069:6069 CAG.Domains.Divisibility <> Units.r var
+R6042:6045 CAG.Rings.Ring <> rmul proj
+R6047:6047 CAG.Domains.Divisibility <> Units.R var
+R6049:6049 CAG.Domains.Divisibility <> Units.r var
+R6052:6055 CAG.Rings.Ring <> rmul proj
+R6057:6057 CAG.Domains.Divisibility <> Units.R var
+R6059:6059 CAG.Domains.Divisibility <> Units.r var
+R6062:6065 CAG.Rings.Ring <> rmul proj
+R6067:6067 CAG.Domains.Divisibility <> Units.R var
+R6069:6069 CAG.Domains.Divisibility <> Units.r var
+R6104:6113 CAG.Rings.Ring <> rmul_assoc proj
+R6115:6115 CAG.Domains.Divisibility <> Units.R var
+R6117:6117 CAG.Domains.Divisibility <> Units.r var
+R6120:6123 CAG.Rings.Ring <> rmul proj
+R6125:6125 CAG.Domains.Divisibility <> Units.R var
+R6127:6127 CAG.Domains.Divisibility <> Units.r var
+R6104:6113 CAG.Rings.Ring <> rmul_assoc proj
+R6115:6115 CAG.Domains.Divisibility <> Units.R var
+R6117:6117 CAG.Domains.Divisibility <> Units.r var
+R6120:6123 CAG.Rings.Ring <> rmul proj
+R6125:6125 CAG.Domains.Divisibility <> Units.R var
+R6127:6127 CAG.Domains.Divisibility <> Units.r var
+R6166:6175 CAG.Rings.Ring <> rmul_assoc proj
+R6177:6177 CAG.Domains.Divisibility <> Units.R var
+R6179:6179 CAG.Domains.Divisibility <> Units.r var
+R6197:6206 CAG.Rings.Ring <> rmul_one_r proj
+R6166:6175 CAG.Rings.Ring <> rmul_assoc proj
+R6177:6177 CAG.Domains.Divisibility <> Units.R var
+R6179:6179 CAG.Domains.Divisibility <> Units.r var
+R6166:6175 CAG.Rings.Ring <> rmul_assoc proj
+R6177:6177 CAG.Domains.Divisibility <> Units.R var
+R6179:6179 CAG.Domains.Divisibility <> Units.r var
+R6197:6206 CAG.Rings.Ring <> rmul_one_r proj
+R6197:6206 CAG.Rings.Ring <> rmul_one_r proj
+R6343:6346 CAG.Rings.Ring <> rmul proj
+R6348:6348 CAG.Domains.Divisibility <> Units.R var
+R6350:6350 CAG.Domains.Divisibility <> Units.r var
+R6353:6356 CAG.Rings.Ring <> rmul proj
+R6358:6358 CAG.Domains.Divisibility <> Units.R var
+R6360:6360 CAG.Domains.Divisibility <> Units.r var
+R6363:6366 CAG.Rings.Ring <> rmul proj
+R6368:6368 CAG.Domains.Divisibility <> Units.R var
+R6370:6370 CAG.Domains.Divisibility <> Units.r var
+R6343:6346 CAG.Rings.Ring <> rmul proj
+R6348:6348 CAG.Domains.Divisibility <> Units.R var
+R6350:6350 CAG.Domains.Divisibility <> Units.r var
+R6353:6356 CAG.Rings.Ring <> rmul proj
+R6358:6358 CAG.Domains.Divisibility <> Units.R var
+R6360:6360 CAG.Domains.Divisibility <> Units.r var
+R6363:6366 CAG.Rings.Ring <> rmul proj
+R6368:6368 CAG.Domains.Divisibility <> Units.R var
+R6370:6370 CAG.Domains.Divisibility <> Units.r var
+R6405:6414 CAG.Rings.Ring <> rmul_assoc proj
+R6416:6416 CAG.Domains.Divisibility <> Units.R var
+R6418:6418 CAG.Domains.Divisibility <> Units.r var
+R6421:6424 CAG.Rings.Ring <> rmul proj
+R6426:6426 CAG.Domains.Divisibility <> Units.R var
+R6428:6428 CAG.Domains.Divisibility <> Units.r var
+R6405:6414 CAG.Rings.Ring <> rmul_assoc proj
+R6416:6416 CAG.Domains.Divisibility <> Units.R var
+R6418:6418 CAG.Domains.Divisibility <> Units.r var
+R6421:6424 CAG.Rings.Ring <> rmul proj
+R6426:6426 CAG.Domains.Divisibility <> Units.R var
+R6428:6428 CAG.Domains.Divisibility <> Units.r var
+R6467:6476 CAG.Rings.Ring <> rmul_assoc proj
+R6478:6478 CAG.Domains.Divisibility <> Units.R var
+R6480:6480 CAG.Domains.Divisibility <> Units.r var
+R6501:6510 CAG.Rings.Ring <> rmul_one_r proj
+R6467:6476 CAG.Rings.Ring <> rmul_assoc proj
+R6478:6478 CAG.Domains.Divisibility <> Units.R var
+R6480:6480 CAG.Domains.Divisibility <> Units.r var
+R6467:6476 CAG.Rings.Ring <> rmul_assoc proj
+R6478:6478 CAG.Domains.Divisibility <> Units.R var
+R6480:6480 CAG.Domains.Divisibility <> Units.r var
+R6501:6510 CAG.Rings.Ring <> rmul_one_r proj
+R6501:6510 CAG.Rings.Ring <> rmul_one_r proj
+prf 6547:6559 <> zero_not_unit
+R6563:6564 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R6565:6571 CAG.Domains.Divisibility <> is_unit def
+R6574:6578 CAG.Rings.Ring <> rzero proj
+R6580:6580 CAG.Domains.Divisibility <> Units.R var
+R6582:6582 CAG.Domains.Divisibility <> Units.r var
+R6628:6638 CAG.Domains.Divisibility <> Units.Hnontrivial var
+R6628:6638 CAG.Domains.Divisibility <> Units.Hnontrivial var
+R6662:6672 CAG.Rings.Ring <> rmul_zero_l thm
+R6662:6672 CAG.Rings.Ring <> rmul_zero_l thm
+prf 6751:6762 <> mul_cancel_l
+R6781:6781 CAG.Domains.Divisibility <> Units.R var
+binder 6773:6773 <> a:55
+binder 6775:6775 <> b:56
+binder 6777:6777 <> c:57
+R6804:6813 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6791:6794 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R6790:6790 CAG.Domains.Divisibility <> a:55 var
+R6795:6799 CAG.Rings.Ring <> rzero proj
+R6801:6801 CAG.Domains.Divisibility <> Units.R var
+R6803:6803 CAG.Domains.Divisibility <> Units.r var
+R6841:6850 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6826:6828 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6814:6817 CAG.Rings.Ring <> rmul proj
+R6819:6819 CAG.Domains.Divisibility <> Units.R var
+R6821:6821 CAG.Domains.Divisibility <> Units.r var
+R6823:6823 CAG.Domains.Divisibility <> a:55 var
+R6825:6825 CAG.Domains.Divisibility <> b:56 var
+R6829:6832 CAG.Rings.Ring <> rmul proj
+R6834:6834 CAG.Domains.Divisibility <> Units.R var
+R6836:6836 CAG.Domains.Divisibility <> Units.r var
+R6838:6838 CAG.Domains.Divisibility <> a:55 var
+R6840:6840 CAG.Domains.Divisibility <> c:57 var
+R6852:6854 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6851:6851 CAG.Domains.Divisibility <> b:56 var
+R6855:6855 CAG.Domains.Divisibility <> c:57 var
+R6944:6946 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6908:6911 CAG.Rings.Ring <> rmul proj
+R6913:6913 CAG.Domains.Divisibility <> Units.R var
+R6915:6915 CAG.Domains.Divisibility <> Units.r var
+R6920:6923 CAG.Rings.Ring <> radd proj
+R6925:6925 CAG.Domains.Divisibility <> Units.R var
+R6927:6927 CAG.Domains.Divisibility <> Units.r var
+R6932:6935 CAG.Rings.Ring <> rneg proj
+R6937:6937 CAG.Domains.Divisibility <> Units.R var
+R6939:6939 CAG.Domains.Divisibility <> Units.r var
+R6947:6951 CAG.Rings.Ring <> rzero proj
+R6953:6953 CAG.Domains.Divisibility <> Units.R var
+R6955:6955 CAG.Domains.Divisibility <> Units.r var
+R6944:6946 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6908:6911 CAG.Rings.Ring <> rmul proj
+R6913:6913 CAG.Domains.Divisibility <> Units.R var
+R6915:6915 CAG.Domains.Divisibility <> Units.r var
+R6920:6923 CAG.Rings.Ring <> radd proj
+R6925:6925 CAG.Domains.Divisibility <> Units.R var
+R6927:6927 CAG.Domains.Divisibility <> Units.r var
+R6932:6935 CAG.Rings.Ring <> rneg proj
+R6937:6937 CAG.Domains.Divisibility <> Units.R var
+R6939:6939 CAG.Domains.Divisibility <> Units.r var
+R6947:6951 CAG.Rings.Ring <> rzero proj
+R6953:6953 CAG.Domains.Divisibility <> Units.R var
+R6955:6955 CAG.Domains.Divisibility <> Units.r var
+R6973:6986 CAG.Rings.Ring <> rmul_distrib_l proj
+R6973:6986 CAG.Rings.Ring <> rmul_distrib_l proj
+R6973:6986 CAG.Rings.Ring <> rmul_distrib_l proj
+R7036:7038 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7013:7016 CAG.Rings.Ring <> rmul proj
+R7018:7018 CAG.Domains.Divisibility <> Units.R var
+R7020:7020 CAG.Domains.Divisibility <> Units.r var
+R7025:7028 CAG.Rings.Ring <> rneg proj
+R7030:7030 CAG.Domains.Divisibility <> Units.R var
+R7032:7032 CAG.Domains.Divisibility <> Units.r var
+R7039:7042 CAG.Rings.Ring <> rneg proj
+R7044:7044 CAG.Domains.Divisibility <> Units.R var
+R7046:7046 CAG.Domains.Divisibility <> Units.r var
+R7049:7052 CAG.Rings.Ring <> rmul proj
+R7054:7054 CAG.Domains.Divisibility <> Units.R var
+R7056:7056 CAG.Domains.Divisibility <> Units.r var
+R7036:7038 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7013:7016 CAG.Rings.Ring <> rmul proj
+R7018:7018 CAG.Domains.Divisibility <> Units.R var
+R7020:7020 CAG.Domains.Divisibility <> Units.r var
+R7025:7028 CAG.Rings.Ring <> rneg proj
+R7030:7030 CAG.Domains.Divisibility <> Units.R var
+R7032:7032 CAG.Domains.Divisibility <> Units.r var
+R7039:7042 CAG.Rings.Ring <> rneg proj
+R7044:7044 CAG.Domains.Divisibility <> Units.R var
+R7046:7046 CAG.Domains.Divisibility <> Units.r var
+R7049:7052 CAG.Rings.Ring <> rmul proj
+R7054:7054 CAG.Domains.Divisibility <> Units.R var
+R7056:7056 CAG.Domains.Divisibility <> Units.r var
+R7137:7139 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7088:7091 CAG.Rings.Ring <> radd proj
+R7093:7093 CAG.Domains.Divisibility <> Units.R var
+R7095:7095 CAG.Domains.Divisibility <> Units.r var
+R7098:7101 CAG.Rings.Ring <> rmul proj
+R7103:7103 CAG.Domains.Divisibility <> Units.R var
+R7105:7105 CAG.Domains.Divisibility <> Units.r var
+R7110:7113 CAG.Rings.Ring <> rneg proj
+R7115:7115 CAG.Domains.Divisibility <> Units.R var
+R7117:7117 CAG.Domains.Divisibility <> Units.r var
+R7124:7127 CAG.Rings.Ring <> rmul proj
+R7129:7129 CAG.Domains.Divisibility <> Units.R var
+R7131:7131 CAG.Domains.Divisibility <> Units.r var
+R7140:7144 CAG.Rings.Ring <> rzero proj
+R7146:7146 CAG.Domains.Divisibility <> Units.R var
+R7148:7148 CAG.Domains.Divisibility <> Units.r var
+R7137:7139 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7088:7091 CAG.Rings.Ring <> radd proj
+R7093:7093 CAG.Domains.Divisibility <> Units.R var
+R7095:7095 CAG.Domains.Divisibility <> Units.r var
+R7098:7101 CAG.Rings.Ring <> rmul proj
+R7103:7103 CAG.Domains.Divisibility <> Units.R var
+R7105:7105 CAG.Domains.Divisibility <> Units.r var
+R7110:7113 CAG.Rings.Ring <> rneg proj
+R7115:7115 CAG.Domains.Divisibility <> Units.R var
+R7117:7117 CAG.Domains.Divisibility <> Units.r var
+R7124:7127 CAG.Rings.Ring <> rmul proj
+R7129:7129 CAG.Domains.Divisibility <> Units.R var
+R7131:7131 CAG.Domains.Divisibility <> Units.r var
+R7140:7144 CAG.Rings.Ring <> rzero proj
+R7146:7146 CAG.Domains.Divisibility <> Units.R var
+R7148:7148 CAG.Domains.Divisibility <> Units.r var
+R7173:7186 CAG.Rings.Ring <> rmul_distrib_l proj
+R7173:7186 CAG.Rings.Ring <> rmul_distrib_l proj
+R7173:7186 CAG.Rings.Ring <> rmul_distrib_l proj
+R7197:7206 CAG.Rings.Ring <> radd_neg_l thm
+R7197:7206 CAG.Rings.Ring <> radd_neg_l thm
+R7197:7206 CAG.Rings.Ring <> radd_neg_l thm
+R7215:7225 CAG.Rings.Ring <> rmul_zero_r thm
+R7215:7225 CAG.Rings.Ring <> rmul_zero_r thm
+R7389:7391 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7253:7256 CAG.Rings.Ring <> radd proj
+R7258:7258 CAG.Domains.Divisibility <> Units.R var
+R7260:7260 CAG.Domains.Divisibility <> Units.r var
+R7288:7291 CAG.Rings.Ring <> radd proj
+R7293:7293 CAG.Domains.Divisibility <> Units.R var
+R7295:7295 CAG.Domains.Divisibility <> Units.r var
+R7298:7301 CAG.Rings.Ring <> rmul proj
+R7303:7303 CAG.Domains.Divisibility <> Units.R var
+R7305:7305 CAG.Domains.Divisibility <> Units.r var
+R7310:7313 CAG.Rings.Ring <> rneg proj
+R7315:7315 CAG.Domains.Divisibility <> Units.R var
+R7317:7317 CAG.Domains.Divisibility <> Units.r var
+R7324:7327 CAG.Rings.Ring <> rmul proj
+R7329:7329 CAG.Domains.Divisibility <> Units.R var
+R7331:7331 CAG.Domains.Divisibility <> Units.r var
+R7365:7368 CAG.Rings.Ring <> rneg proj
+R7370:7370 CAG.Domains.Divisibility <> Units.R var
+R7372:7372 CAG.Domains.Divisibility <> Units.r var
+R7375:7378 CAG.Rings.Ring <> rmul proj
+R7380:7380 CAG.Domains.Divisibility <> Units.R var
+R7382:7382 CAG.Domains.Divisibility <> Units.r var
+R7392:7395 CAG.Rings.Ring <> rneg proj
+R7397:7397 CAG.Domains.Divisibility <> Units.R var
+R7399:7399 CAG.Domains.Divisibility <> Units.r var
+R7402:7405 CAG.Rings.Ring <> rmul proj
+R7407:7407 CAG.Domains.Divisibility <> Units.R var
+R7409:7409 CAG.Domains.Divisibility <> Units.r var
+R7389:7391 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7253:7256 CAG.Rings.Ring <> radd proj
+R7258:7258 CAG.Domains.Divisibility <> Units.R var
+R7260:7260 CAG.Domains.Divisibility <> Units.r var
+R7288:7291 CAG.Rings.Ring <> radd proj
+R7293:7293 CAG.Domains.Divisibility <> Units.R var
+R7295:7295 CAG.Domains.Divisibility <> Units.r var
+R7298:7301 CAG.Rings.Ring <> rmul proj
+R7303:7303 CAG.Domains.Divisibility <> Units.R var
+R7305:7305 CAG.Domains.Divisibility <> Units.r var
+R7310:7313 CAG.Rings.Ring <> rneg proj
+R7315:7315 CAG.Domains.Divisibility <> Units.R var
+R7317:7317 CAG.Domains.Divisibility <> Units.r var
+R7324:7327 CAG.Rings.Ring <> rmul proj
+R7329:7329 CAG.Domains.Divisibility <> Units.R var
+R7331:7331 CAG.Domains.Divisibility <> Units.r var
+R7365:7368 CAG.Rings.Ring <> rneg proj
+R7370:7370 CAG.Domains.Divisibility <> Units.R var
+R7372:7372 CAG.Domains.Divisibility <> Units.r var
+R7375:7378 CAG.Rings.Ring <> rmul proj
+R7380:7380 CAG.Domains.Divisibility <> Units.R var
+R7382:7382 CAG.Domains.Divisibility <> Units.r var
+R7392:7395 CAG.Rings.Ring <> rneg proj
+R7397:7397 CAG.Domains.Divisibility <> Units.R var
+R7399:7399 CAG.Domains.Divisibility <> Units.r var
+R7402:7405 CAG.Rings.Ring <> rmul proj
+R7407:7407 CAG.Domains.Divisibility <> Units.R var
+R7409:7409 CAG.Domains.Divisibility <> Units.r var
+R7448:7458 CAG.Rings.Ring <> radd_zero_l thm
+R7448:7458 CAG.Rings.Ring <> radd_zero_l thm
+R7482:7491 CAG.Rings.Ring <> radd_assoc proj
+R7482:7491 CAG.Rings.Ring <> radd_assoc proj
+R7482:7491 CAG.Rings.Ring <> radd_assoc proj
+R7518:7527 CAG.Rings.Ring <> radd_neg_r proj
+R7518:7527 CAG.Rings.Ring <> radd_neg_r proj
+R7518:7527 CAG.Rings.Ring <> radd_neg_r proj
+R7554:7564 CAG.Rings.Ring <> radd_zero_r proj
+R7554:7564 CAG.Rings.Ring <> radd_zero_r proj
+R7554:7564 CAG.Rings.Ring <> radd_zero_r proj
+R7621:7630 CAG.Rings.Ring <> radd_neg_r proj
+R7621:7630 CAG.Rings.Ring <> radd_neg_r proj
+R7649:7660 CAG.Domains.Divisibility <> Units.Hno_zero_div var
+R7665:7668 CAG.Rings.Ring <> radd proj
+R7670:7670 CAG.Domains.Divisibility <> Units.R var
+R7672:7672 CAG.Domains.Divisibility <> Units.r var
+R7677:7680 CAG.Rings.Ring <> rneg proj
+R7682:7682 CAG.Domains.Divisibility <> Units.R var
+R7684:7684 CAG.Domains.Divisibility <> Units.r var
+R7649:7660 CAG.Domains.Divisibility <> Units.Hno_zero_div var
+R7665:7668 CAG.Rings.Ring <> radd proj
+R7670:7670 CAG.Domains.Divisibility <> Units.R var
+R7672:7672 CAG.Domains.Divisibility <> Units.r var
+R7677:7680 CAG.Rings.Ring <> rneg proj
+R7682:7682 CAG.Domains.Divisibility <> Units.R var
+R7684:7684 CAG.Domains.Divisibility <> Units.r var
+R7788:7790 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7752:7755 CAG.Rings.Ring <> radd proj
+R7757:7757 CAG.Domains.Divisibility <> Units.R var
+R7759:7759 CAG.Domains.Divisibility <> Units.r var
+R7762:7765 CAG.Rings.Ring <> radd proj
+R7767:7767 CAG.Domains.Divisibility <> Units.R var
+R7769:7769 CAG.Domains.Divisibility <> Units.r var
+R7774:7777 CAG.Rings.Ring <> rneg proj
+R7779:7779 CAG.Domains.Divisibility <> Units.R var
+R7781:7781 CAG.Domains.Divisibility <> Units.r var
+R7788:7790 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7752:7755 CAG.Rings.Ring <> radd proj
+R7757:7757 CAG.Domains.Divisibility <> Units.R var
+R7759:7759 CAG.Domains.Divisibility <> Units.r var
+R7762:7765 CAG.Rings.Ring <> radd proj
+R7767:7767 CAG.Domains.Divisibility <> Units.R var
+R7769:7769 CAG.Domains.Divisibility <> Units.r var
+R7774:7777 CAG.Rings.Ring <> rneg proj
+R7779:7779 CAG.Domains.Divisibility <> Units.R var
+R7781:7781 CAG.Domains.Divisibility <> Units.r var
+R7822:7832 CAG.Rings.Ring <> radd_zero_l thm
+R7822:7832 CAG.Rings.Ring <> radd_zero_l thm
+R7854:7863 CAG.Rings.Ring <> radd_assoc proj
+R7854:7863 CAG.Rings.Ring <> radd_assoc proj
+R7854:7863 CAG.Rings.Ring <> radd_assoc proj
+R7889:7898 CAG.Rings.Ring <> radd_neg_l thm
+R7889:7898 CAG.Rings.Ring <> radd_neg_l thm
+R7889:7898 CAG.Rings.Ring <> radd_neg_l thm
+R7924:7934 CAG.Rings.Ring <> radd_zero_r proj
+R7924:7934 CAG.Rings.Ring <> radd_zero_r proj
+R7924:7934 CAG.Rings.Ring <> radd_zero_r proj
+R7977:7981 CAG.Domains.Divisibility Units <> sec
+def 8031:8040 <> id_is_unit
+binder 8043:8043 <> R:58
+R8058:8071 CAG.Domains.Divisibility <> IntegralDomain rec
+R8073:8073 CAG.Domains.Divisibility <> R:58 var
+binder 8054:8054 <> d:59
+R8082:8088 CAG.Domains.Divisibility <> is_unit def
+R8090:8090 CAG.Domains.Divisibility <> R:58 var
+R8093:8096 CAG.Domains.Divisibility <> id_r proj
+R8098:8098 CAG.Domains.Divisibility <> d:59 var
+def 8114:8124 <> id_unit_mul
+binder 8127:8127 <> R:60
+R8142:8155 CAG.Domains.Divisibility <> IntegralDomain rec
+R8157:8157 CAG.Domains.Divisibility <> R:60 var
+binder 8138:8138 <> d:61
+R8166:8173 CAG.Domains.Divisibility <> unit_mul thm
+R8175:8175 CAG.Domains.Divisibility <> R:60 var
+R8178:8181 CAG.Domains.Divisibility <> id_r proj
+R8183:8183 CAG.Domains.Divisibility <> d:61 var
+def 8199:8214 <> id_zero_not_unit
+binder 8217:8217 <> R:62
+R8232:8245 CAG.Domains.Divisibility <> IntegralDomain rec
+R8247:8247 CAG.Domains.Divisibility <> R:62 var
+binder 8228:8228 <> d:63
+R8255:8267 CAG.Domains.Divisibility <> zero_not_unit thm
+R8279:8291 CAG.Domains.Divisibility <> id_nontrivial proj
+R8293:8293 CAG.Domains.Divisibility <> d:63 var
+R8270:8273 CAG.Domains.Divisibility <> id_r proj
+R8275:8275 CAG.Domains.Divisibility <> d:63 var
+def 8309:8321 <> id_mul_cancel
+binder 8324:8324 <> R:64
+R8339:8352 CAG.Domains.Divisibility <> IntegralDomain rec
+R8354:8354 CAG.Domains.Divisibility <> R:64 var
+binder 8335:8335 <> d:65
+R8362:8373 CAG.Domains.Divisibility <> mul_cancel_l thm
+R8385:8398 CAG.Domains.Divisibility <> id_no_zero_div proj
+R8400:8400 CAG.Domains.Divisibility <> d:65 var
+R8376:8379 CAG.Domains.Divisibility <> id_r proj
+R8381:8381 CAG.Domains.Divisibility <> d:65 var
+def 8620:8632 <> mkIDfromCRing
+binder 8635:8635 <> R:66
+R8651:8665 CAG.Rings.Ring <> CommutativeRing rec
+R8667:8667 CAG.Domains.Divisibility <> R:66 var
+binder 8646:8647 <> cr:67
+R8698:8701 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R8689:8692 CAG.Rings.Ring <> rone proj
+R8694:8694 CAG.Domains.Divisibility <> R:66 var
+R8696:8697 CAG.Domains.Divisibility <> cr:67 var
+R8702:8706 CAG.Rings.Ring <> rzero proj
+R8708:8708 CAG.Domains.Divisibility <> R:66 var
+R8710:8711 CAG.Domains.Divisibility <> cr:67 var
+binder 8675:8685 <> Hnontrivial:68
+R8742:8742 CAG.Domains.Divisibility <> R:66 var
+binder 8736:8736 <> a:69
+binder 8738:8738 <> b:70
+R8779:8790 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8766:8768 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8753:8756 CAG.Rings.Ring <> rmul proj
+R8758:8758 CAG.Domains.Divisibility <> R:66 var
+R8760:8761 CAG.Domains.Divisibility <> cr:67 var
+R8763:8763 CAG.Domains.Divisibility <> a:69 var
+R8765:8765 CAG.Domains.Divisibility <> b:70 var
+R8769:8773 CAG.Rings.Ring <> rzero proj
+R8775:8775 CAG.Domains.Divisibility <> R:66 var
+R8777:8778 CAG.Domains.Divisibility <> cr:67 var
+R8805:8808 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R8792:8794 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8791:8791 CAG.Domains.Divisibility <> a:69 var
+R8795:8799 CAG.Rings.Ring <> rzero proj
+R8801:8801 CAG.Domains.Divisibility <> R:66 var
+R8803:8804 CAG.Domains.Divisibility <> cr:67 var
+R8810:8812 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R8809:8809 CAG.Domains.Divisibility <> b:70 var
+R8813:8817 CAG.Rings.Ring <> rzero proj
+R8819:8819 CAG.Domains.Divisibility <> R:66 var
+R8821:8822 CAG.Domains.Divisibility <> cr:67 var
+binder 8719:8725 <> Hnozero:71
+R8831:8844 CAG.Domains.Divisibility <> IntegralDomain rec
+R8846:8846 CAG.Domains.Divisibility <> R:66 var
+R8853:8856 CAG.Domains.Divisibility <> mkID constr
+R8858:8858 CAG.Domains.Divisibility <> R:66 var
+R8860:8861 CAG.Domains.Divisibility <> cr:67 var
+R8864:8872 CAG.Rings.Ring <> rmul_comm proj
+R8874:8874 CAG.Domains.Divisibility <> R:66 var
+R8876:8877 CAG.Domains.Divisibility <> cr:67 var
+R8880:8890 CAG.Domains.Divisibility <> Hnontrivial:68 var
+R8892:8898 CAG.Domains.Divisibility <> Hnozero:71 var

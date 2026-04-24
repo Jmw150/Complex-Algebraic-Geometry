@@ -264,10 +264,10 @@ R3121:3121 CAG.Lie.Engel <> n:57 var
 R3118:3119 CAG.Lie.Engel <> la:55 var
 R3083:3084 CAG.Lie.Engel <> la:55 var
 R3155:3165 CAG.Lie.Ideals <> inter_ideal thm
-R3198:3217 CAG.Lie.Solvable <> derived_series_ideal prfax
+R3198:3217 CAG.Lie.Solvable <> derived_series_ideal thm
 R3173:3186 CAG.Lie.Solvable <> derived_series def
 R3155:3165 CAG.Lie.Ideals <> inter_ideal thm
-R3198:3217 CAG.Lie.Solvable <> derived_series_ideal prfax
+R3198:3217 CAG.Lie.Solvable <> derived_series_ideal thm
 R3173:3186 CAG.Lie.Solvable <> derived_series def
 ax 3320:3347 <> lie_solvable_iff_ad_solvable
 binder 3361:3361 <> F:59

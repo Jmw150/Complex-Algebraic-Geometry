@@ -704,3 +704,295 @@ Proof.
   apply (ad_ker_is_center (nonabelian_2d fld)).
   exact Hker.
 Qed.
+
+(** ** Exercise 1: F³ with the cross product *)
+
+(** Cross product on F³:
+    (u₁,u₂,u₃) × (v₁,v₂,v₃) = (u₂v₃ - u₃v₂, u₃v₁ - u₁v₃, u₁v₂ - u₂v₁).
+    Standard basis: e₁=(1,0,0), e₂=(0,1,0), e₃=(0,0,1).
+    [e₁,e₂]=e₃, [e₂,e₃]=e₁, [e₃,e₁]=e₂ (cyclic). *)
+
+Definition cross_product {F : Type} (fld : Field F)
+    (u v : F * F * F) : F * F * F :=
+  let '((u1,u2),u3) := u in
+  let '((v1,v2),v3) := v in
+  ((fld.(cr_add) (fld.(cr_mul) u2 v3) (fld.(cr_neg) (fld.(cr_mul) u3 v2)),
+    fld.(cr_add) (fld.(cr_mul) u3 v1) (fld.(cr_neg) (fld.(cr_mul) u1 v3))),
+   fld.(cr_add) (fld.(cr_mul) u1 v2) (fld.(cr_neg) (fld.(cr_mul) u2 v1))).
+
+(** Helper: one component of the cross product Jacobi identity.
+    The 12 monomials split into 6 cancelling pairs (PQR-part and STU-part). *)
+Local Lemma cross_comp_zero {F : Type} (fld : Field F)
+    (a b c d e f g h i : F) :
+    fld.(cr_add)
+      (fld.(cr_add)
+        (fld.(cr_add)
+          (fld.(cr_mul) a (fld.(cr_add) (fld.(cr_mul) b c) (fld.(cr_neg) (fld.(cr_mul) d e))))
+          (fld.(cr_neg) (fld.(cr_mul) f (fld.(cr_add) (fld.(cr_mul) g e) (fld.(cr_neg) (fld.(cr_mul) b h))))))
+        (fld.(cr_add)
+          (fld.(cr_mul) d (fld.(cr_add) (fld.(cr_mul) e a) (fld.(cr_neg) (fld.(cr_mul) c i))))
+          (fld.(cr_neg) (fld.(cr_mul) g (fld.(cr_add) (fld.(cr_mul) h i) (fld.(cr_neg) (fld.(cr_mul) e f)))))))
+      (fld.(cr_add)
+        (fld.(cr_mul) c (fld.(cr_add) (fld.(cr_mul) i d) (fld.(cr_neg) (fld.(cr_mul) a b))))
+        (fld.(cr_neg) (fld.(cr_mul) h (fld.(cr_add) (fld.(cr_mul) f b) (fld.(cr_neg) (fld.(cr_mul) i g))))))
+    = fld.(cr_zero).
+Proof.
+  set (P := fld.(cr_mul) a (fld.(cr_mul) b c)).
+  set (Q := fld.(cr_mul) a (fld.(cr_mul) d e)).
+  set (R := fld.(cr_mul) c (fld.(cr_mul) i d)).
+  set (S := fld.(cr_mul) f (fld.(cr_mul) g e)).
+  set (T := fld.(cr_mul) f (fld.(cr_mul) b h)).
+  set (U := fld.(cr_mul) g (fld.(cr_mul) h i)).
+  (* H1: a*(b*c - d*e) = P - Q *)
+  assert (H1 : fld.(cr_mul) a (fld.(cr_add) (fld.(cr_mul) b c) (fld.(cr_neg) (fld.(cr_mul) d e)))
+             = fld.(cr_add) P (fld.(cr_neg) Q)).
+  { unfold P, Q. rewrite fld.(cr_distrib), cr_neg_mul_r'. reflexivity. }
+  (* H2: neg(f*(g*e - b*h)) = neg(S) + T *)
+  assert (H2 : fld.(cr_neg) (fld.(cr_mul) f
+                  (fld.(cr_add) (fld.(cr_mul) g e) (fld.(cr_neg) (fld.(cr_mul) b h))))
+             = fld.(cr_add) (fld.(cr_neg) S) T).
+  { unfold S, T.
+    rewrite fld.(cr_distrib), cr_neg_mul_r', cr_neg_add_distr, cr_neg_neg'.
+    reflexivity. }
+  (* H3: d*(e*a - c*i) = Q - R *)
+  assert (H3 : fld.(cr_mul) d (fld.(cr_add) (fld.(cr_mul) e a) (fld.(cr_neg) (fld.(cr_mul) c i)))
+             = fld.(cr_add) Q (fld.(cr_neg) R)).
+  { unfold Q, R. rewrite fld.(cr_distrib), cr_neg_mul_r'. f_equal.
+    - rewrite (fld.(cr_mul_comm) e a), (fld.(cr_mul_assoc) d a e),
+              (fld.(cr_mul_comm) d a), <- (fld.(cr_mul_assoc) a d e). reflexivity.
+    - f_equal. rewrite (fld.(cr_mul_assoc) d c i), (fld.(cr_mul_comm) d c),
+                        <- (fld.(cr_mul_assoc) c d i), (fld.(cr_mul_comm) d i). reflexivity. }
+  (* H4: neg(g*(h*i - e*f)) = neg(U) + S *)
+  assert (H4 : fld.(cr_neg) (fld.(cr_mul) g
+                  (fld.(cr_add) (fld.(cr_mul) h i) (fld.(cr_neg) (fld.(cr_mul) e f))))
+             = fld.(cr_add) (fld.(cr_neg) U) S).
+  { unfold S, U.
+    rewrite fld.(cr_distrib), cr_neg_mul_r', cr_neg_add_distr, cr_neg_neg'.
+    f_equal.
+    rewrite (fld.(cr_mul_comm) e f), (fld.(cr_mul_assoc) g f e),
+            (fld.(cr_mul_comm) g f), <- (fld.(cr_mul_assoc) f g e). reflexivity. }
+  (* H5: c*(i*d - a*b) = R - P *)
+  assert (H5 : fld.(cr_mul) c (fld.(cr_add) (fld.(cr_mul) i d) (fld.(cr_neg) (fld.(cr_mul) a b)))
+             = fld.(cr_add) R (fld.(cr_neg) P)).
+  { unfold P, R. rewrite fld.(cr_distrib), cr_neg_mul_r'. f_equal.
+    f_equal. rewrite (fld.(cr_mul_assoc) c a b), (fld.(cr_mul_comm) c a),
+                     <- (fld.(cr_mul_assoc) a c b), (fld.(cr_mul_comm) c b). reflexivity. }
+  (* H6: neg(h*(f*b - i*g)) = neg(T) + U *)
+  assert (H6 : fld.(cr_neg) (fld.(cr_mul) h
+                  (fld.(cr_add) (fld.(cr_mul) f b) (fld.(cr_neg) (fld.(cr_mul) i g))))
+             = fld.(cr_add) (fld.(cr_neg) T) U).
+  { unfold T, U.
+    rewrite fld.(cr_distrib), cr_neg_mul_r', cr_neg_add_distr, cr_neg_neg'.
+    f_equal.
+    - f_equal. rewrite (fld.(cr_mul_assoc) h f b), (fld.(cr_mul_comm) h f),
+                        <- (fld.(cr_mul_assoc) f h b), (fld.(cr_mul_comm) h b). reflexivity.
+    - rewrite (fld.(cr_mul_assoc) h i g), (fld.(cr_mul_comm) (fld.(cr_mul) h i) g). reflexivity. }
+  rewrite H1, H2, H3, H4, H5, H6.
+  (* Goal: ((P-Q)+(-S+T)) + ((Q-R)+(-U+S)) + ((R-P)+(-T+U)) = 0 *)
+  set (B1 := fld.(cr_add) P (fld.(cr_neg) Q)).
+  set (B2 := fld.(cr_add) (fld.(cr_neg) S) T).
+  set (B3 := fld.(cr_add) Q (fld.(cr_neg) R)).
+  set (B4 := fld.(cr_add) (fld.(cr_neg) U) S).
+  set (B5 := fld.(cr_add) R (fld.(cr_neg) P)).
+  set (B6 := fld.(cr_add) (fld.(cr_neg) T) U).
+  (* PQR-part: (B1+B3)+B5 = 0 *)
+  assert (HA : fld.(cr_add) (fld.(cr_add) B1 B3) B5 = fld.(cr_zero)).
+  { unfold B1, B3, B5.
+    rewrite <- (fld.(cr_add_assoc) (fld.(cr_add) P (fld.(cr_neg) Q))
+                                    (fld.(cr_add) Q (fld.(cr_neg) R))
+                                    (fld.(cr_add) R (fld.(cr_neg) P))).
+    rewrite <- (fld.(cr_add_assoc) Q (fld.(cr_neg) R) (fld.(cr_add) R (fld.(cr_neg) P))).
+    rewrite (fld.(cr_add_assoc) (fld.(cr_neg) R) R (fld.(cr_neg) P)).
+    rewrite cr_add_neg_l', cr_add_zero_l'.
+    rewrite <- (fld.(cr_add_assoc) P (fld.(cr_neg) Q) (fld.(cr_add) Q (fld.(cr_neg) P))).
+    rewrite (fld.(cr_add_assoc) (fld.(cr_neg) Q) Q (fld.(cr_neg) P)).
+    rewrite cr_add_neg_l', cr_add_zero_l'. apply fld.(cr_add_neg). }
+  (* STU-part: (B2+B4)+B6 = 0 — same structure with T,S,U *)
+  assert (HB : fld.(cr_add) (fld.(cr_add) B2 B4) B6 = fld.(cr_zero)).
+  { unfold B2, B4, B6.
+    rewrite (fld.(cr_add_comm) (fld.(cr_neg) S) T),
+            (fld.(cr_add_comm) (fld.(cr_neg) U) S),
+            (fld.(cr_add_comm) (fld.(cr_neg) T) U).
+    rewrite <- (fld.(cr_add_assoc) (fld.(cr_add) T (fld.(cr_neg) S))
+                                    (fld.(cr_add) S (fld.(cr_neg) U))
+                                    (fld.(cr_add) U (fld.(cr_neg) T))).
+    rewrite <- (fld.(cr_add_assoc) S (fld.(cr_neg) U) (fld.(cr_add) U (fld.(cr_neg) T))).
+    rewrite (fld.(cr_add_assoc) (fld.(cr_neg) U) U (fld.(cr_neg) T)).
+    rewrite cr_add_neg_l', cr_add_zero_l'.
+    rewrite <- (fld.(cr_add_assoc) T (fld.(cr_neg) S) (fld.(cr_add) S (fld.(cr_neg) T))).
+    rewrite (fld.(cr_add_assoc) (fld.(cr_neg) S) S (fld.(cr_neg) T)).
+    rewrite cr_add_neg_l', cr_add_zero_l'. apply fld.(cr_add_neg). }
+  (* Rearrange ((B1+B2)+(B3+B4))+(B5+B6) to ((B1+B3)+B5)+((B2+B4)+B6) *)
+  rewrite <- (fld.(cr_add_assoc) (fld.(cr_add) B1 B2) (fld.(cr_add) B3 B4)
+                                  (fld.(cr_add) B5 B6)).
+  rewrite <- (fld.(cr_add_assoc) B3 B4 (fld.(cr_add) B5 B6)).
+  rewrite <- (fld.(cr_add_assoc) B1 B2
+                (fld.(cr_add) B3 (fld.(cr_add) B4 (fld.(cr_add) B5 B6)))).
+  rewrite (fld.(cr_add_assoc) B2 B3 (fld.(cr_add) B4 (fld.(cr_add) B5 B6))).
+  rewrite (fld.(cr_add_comm) B2 B3).
+  rewrite <- (fld.(cr_add_assoc) B3 B2 (fld.(cr_add) B4 (fld.(cr_add) B5 B6))).
+  rewrite (fld.(cr_add_assoc) B1 B3
+             (fld.(cr_add) B2 (fld.(cr_add) B4 (fld.(cr_add) B5 B6)))).
+  rewrite (fld.(cr_add_assoc) B2 B4 (fld.(cr_add) B5 B6)).
+  rewrite (fld.(cr_add_assoc) (fld.(cr_add) B2 B4) B5 B6).
+  rewrite (fld.(cr_add_comm) (fld.(cr_add) B2 B4) B5).
+  rewrite <- (fld.(cr_add_assoc) B5 (fld.(cr_add) B2 B4) B6).
+  rewrite (fld.(cr_add_assoc) (fld.(cr_add) B1 B3) B5
+             (fld.(cr_add) (fld.(cr_add) B2 B4) B6)).
+  (* Now: ((B1+B3)+B5) + ((B2+B4)+B6) = 0 *)
+  rewrite HA, HB. apply cr_add_zero_l'.
+Qed.
+
+(** F³ with the cross product is a Lie algebra. *)
+Definition cross_product_lie {F : Type} (fld : Field F) : LieAlgebraF fld (F * F * F).
+Proof.
+  refine {|
+    laF_vs      := ex2_vs fld;
+    laF_bracket := cross_product fld;
+  |}.
+  - (* bracket_add_l: (u+v)×w = u×w + v×w *)
+    intros [[x1 x2] x3] [[y1 y2] y3] [[z1 z2] z3].
+    unfold cross_product, ex2_vs. simpl.
+    apply (f_equal2 pair); [apply (f_equal2 pair)|].
+    + (* comp1: (x2+y2)*z3 - (x3+y3)*z2 = (x2*z3-x3*z2) + (y2*z3-y3*z2) *)
+      rewrite cr_distrib_r', cr_distrib_r', cr_neg_add_distr.
+      rewrite <- fld.(cr_add_assoc).
+      rewrite (fld.(cr_add_assoc) (fld.(cr_mul) y2 z3)
+                                   (fld.(cr_neg) (fld.(cr_mul) x3 z2))
+                                   (fld.(cr_neg) (fld.(cr_mul) y3 z2))).
+      rewrite (fld.(cr_add_comm) (fld.(cr_mul) y2 z3)
+                                  (fld.(cr_neg) (fld.(cr_mul) x3 z2))).
+      rewrite <- (fld.(cr_add_assoc) (fld.(cr_neg) (fld.(cr_mul) x3 z2))
+                                      (fld.(cr_mul) y2 z3)
+                                      (fld.(cr_neg) (fld.(cr_mul) y3 z2))).
+      rewrite (fld.(cr_add_assoc) (fld.(cr_mul) x2 z3)
+                                   (fld.(cr_neg) (fld.(cr_mul) x3 z2))
+                                   (fld.(cr_add) (fld.(cr_mul) y2 z3)
+                                                 (fld.(cr_neg) (fld.(cr_mul) y3 z2)))).
+      reflexivity.
+    + (* comp2: (x3+y3)*z1 - (x1+y1)*z3 = (x3*z1-x1*z3) + (y3*z1-y1*z3) *)
+      rewrite cr_distrib_r', cr_distrib_r', cr_neg_add_distr.
+      rewrite <- fld.(cr_add_assoc).
+      rewrite (fld.(cr_add_assoc) (fld.(cr_mul) y3 z1)
+                                   (fld.(cr_neg) (fld.(cr_mul) x1 z3))
+                                   (fld.(cr_neg) (fld.(cr_mul) y1 z3))).
+      rewrite (fld.(cr_add_comm) (fld.(cr_mul) y3 z1)
+                                  (fld.(cr_neg) (fld.(cr_mul) x1 z3))).
+      rewrite <- (fld.(cr_add_assoc) (fld.(cr_neg) (fld.(cr_mul) x1 z3))
+                                      (fld.(cr_mul) y3 z1)
+                                      (fld.(cr_neg) (fld.(cr_mul) y1 z3))).
+      rewrite (fld.(cr_add_assoc) (fld.(cr_mul) x3 z1)
+                                   (fld.(cr_neg) (fld.(cr_mul) x1 z3))
+                                   (fld.(cr_add) (fld.(cr_mul) y3 z1)
+                                                 (fld.(cr_neg) (fld.(cr_mul) y1 z3)))).
+      reflexivity.
+    + (* comp3: (x1+y1)*z2 - (x2+y2)*z1 = (x1*z2-x2*z1) + (y1*z2-y2*z1) *)
+      rewrite cr_distrib_r', cr_distrib_r', cr_neg_add_distr.
+      rewrite <- fld.(cr_add_assoc).
+      rewrite (fld.(cr_add_assoc) (fld.(cr_mul) y1 z2)
+                                   (fld.(cr_neg) (fld.(cr_mul) x2 z1))
+                                   (fld.(cr_neg) (fld.(cr_mul) y2 z1))).
+      rewrite (fld.(cr_add_comm) (fld.(cr_mul) y1 z2)
+                                  (fld.(cr_neg) (fld.(cr_mul) x2 z1))).
+      rewrite <- (fld.(cr_add_assoc) (fld.(cr_neg) (fld.(cr_mul) x2 z1))
+                                      (fld.(cr_mul) y1 z2)
+                                      (fld.(cr_neg) (fld.(cr_mul) y2 z1))).
+      rewrite (fld.(cr_add_assoc) (fld.(cr_mul) x1 z2)
+                                   (fld.(cr_neg) (fld.(cr_mul) x2 z1))
+                                   (fld.(cr_add) (fld.(cr_mul) y1 z2)
+                                                 (fld.(cr_neg) (fld.(cr_mul) y2 z1)))).
+      reflexivity.
+  - (* bracket_scale_l: (c*u)×v = c*(u×v) *)
+    intros c [[x1 x2] x3] [[y1 y2] y3].
+    unfold cross_product, ex2_vs. simpl.
+    apply (f_equal2 pair); [apply (f_equal2 pair)|].
+    + rewrite <- fld.(cr_mul_assoc), <- fld.(cr_mul_assoc),
+              <- cr_neg_mul_r', <- fld.(cr_distrib). reflexivity.
+    + rewrite <- fld.(cr_mul_assoc), <- fld.(cr_mul_assoc),
+              <- cr_neg_mul_r', <- fld.(cr_distrib). reflexivity.
+    + rewrite <- fld.(cr_mul_assoc), <- fld.(cr_mul_assoc),
+              <- cr_neg_mul_r', <- fld.(cr_distrib). reflexivity.
+  - (* bracket_add_r: u×(v+w) = u×v + u×w *)
+    intros [[x1 x2] x3] [[y1 y2] y3] [[z1 z2] z3].
+    unfold cross_product, ex2_vs. simpl.
+    apply (f_equal2 pair); [apply (f_equal2 pair)|].
+    + rewrite fld.(cr_distrib), fld.(cr_distrib), cr_neg_add_distr.
+      rewrite <- fld.(cr_add_assoc).
+      rewrite (fld.(cr_add_assoc) (fld.(cr_mul) x2 z3)
+                                   (fld.(cr_neg) (fld.(cr_mul) x3 y2))
+                                   (fld.(cr_neg) (fld.(cr_mul) x3 z2))).
+      rewrite (fld.(cr_add_comm) (fld.(cr_mul) x2 z3)
+                                  (fld.(cr_neg) (fld.(cr_mul) x3 y2))).
+      rewrite <- (fld.(cr_add_assoc) (fld.(cr_neg) (fld.(cr_mul) x3 y2))
+                                      (fld.(cr_mul) x2 z3)
+                                      (fld.(cr_neg) (fld.(cr_mul) x3 z2))).
+      rewrite (fld.(cr_add_assoc) (fld.(cr_mul) x2 y3)
+                                   (fld.(cr_neg) (fld.(cr_mul) x3 y2))
+                                   (fld.(cr_add) (fld.(cr_mul) x2 z3)
+                                                 (fld.(cr_neg) (fld.(cr_mul) x3 z2)))).
+      reflexivity.
+    + rewrite fld.(cr_distrib), fld.(cr_distrib), cr_neg_add_distr.
+      rewrite <- fld.(cr_add_assoc).
+      rewrite (fld.(cr_add_assoc) (fld.(cr_mul) x3 z1)
+                                   (fld.(cr_neg) (fld.(cr_mul) x1 y3))
+                                   (fld.(cr_neg) (fld.(cr_mul) x1 z3))).
+      rewrite (fld.(cr_add_comm) (fld.(cr_mul) x3 z1)
+                                  (fld.(cr_neg) (fld.(cr_mul) x1 y3))).
+      rewrite <- (fld.(cr_add_assoc) (fld.(cr_neg) (fld.(cr_mul) x1 y3))
+                                      (fld.(cr_mul) x3 z1)
+                                      (fld.(cr_neg) (fld.(cr_mul) x1 z3))).
+      rewrite (fld.(cr_add_assoc) (fld.(cr_mul) x3 y1)
+                                   (fld.(cr_neg) (fld.(cr_mul) x1 y3))
+                                   (fld.(cr_add) (fld.(cr_mul) x3 z1)
+                                                 (fld.(cr_neg) (fld.(cr_mul) x1 z3)))).
+      reflexivity.
+    + rewrite fld.(cr_distrib), fld.(cr_distrib), cr_neg_add_distr.
+      rewrite <- fld.(cr_add_assoc).
+      rewrite (fld.(cr_add_assoc) (fld.(cr_mul) x1 z2)
+                                   (fld.(cr_neg) (fld.(cr_mul) x2 y1))
+                                   (fld.(cr_neg) (fld.(cr_mul) x2 z1))).
+      rewrite (fld.(cr_add_comm) (fld.(cr_mul) x1 z2)
+                                  (fld.(cr_neg) (fld.(cr_mul) x2 y1))).
+      rewrite <- (fld.(cr_add_assoc) (fld.(cr_neg) (fld.(cr_mul) x2 y1))
+                                      (fld.(cr_mul) x1 z2)
+                                      (fld.(cr_neg) (fld.(cr_mul) x2 z1))).
+      rewrite (fld.(cr_add_assoc) (fld.(cr_mul) x1 y2)
+                                   (fld.(cr_neg) (fld.(cr_mul) x2 y1))
+                                   (fld.(cr_add) (fld.(cr_mul) x1 z2)
+                                                 (fld.(cr_neg) (fld.(cr_mul) x2 z1)))).
+      reflexivity.
+  - (* bracket_scale_r: u×(c*v) = c*(u×v) *)
+    intros c [[x1 x2] x3] [[y1 y2] y3].
+    unfold cross_product, ex2_vs. simpl.
+    apply (f_equal2 pair); [apply (f_equal2 pair)|].
+    + rewrite (fld.(cr_mul_comm) x2 (fld.(cr_mul) c y3)),
+              <- fld.(cr_mul_assoc), (fld.(cr_mul_comm) y3 x2),
+              (fld.(cr_mul_comm) x3 (fld.(cr_mul) c y2)),
+              <- fld.(cr_mul_assoc), (fld.(cr_mul_comm) y2 x3),
+              <- cr_neg_mul_r', <- fld.(cr_distrib). reflexivity.
+    + rewrite (fld.(cr_mul_comm) x3 (fld.(cr_mul) c y1)),
+              <- fld.(cr_mul_assoc), (fld.(cr_mul_comm) y1 x3),
+              (fld.(cr_mul_comm) x1 (fld.(cr_mul) c y3)),
+              <- fld.(cr_mul_assoc), (fld.(cr_mul_comm) y3 x1),
+              <- cr_neg_mul_r', <- fld.(cr_distrib). reflexivity.
+    + rewrite (fld.(cr_mul_comm) x1 (fld.(cr_mul) c y2)),
+              <- fld.(cr_mul_assoc), (fld.(cr_mul_comm) y2 x1),
+              (fld.(cr_mul_comm) x2 (fld.(cr_mul) c y1)),
+              <- fld.(cr_mul_assoc), (fld.(cr_mul_comm) y1 x2),
+              <- cr_neg_mul_r', <- fld.(cr_distrib). reflexivity.
+  - (* bracket_alt: u×u = 0 *)
+    intros [[x1 x2] x3].
+    unfold cross_product, ex2_vs. simpl.
+    apply (f_equal2 pair); [apply (f_equal2 pair)|].
+    + rewrite (fld.(cr_mul_comm) x2 x3). apply fld.(cr_add_neg).
+    + rewrite (fld.(cr_mul_comm) x3 x1). apply fld.(cr_add_neg).
+    + rewrite (fld.(cr_mul_comm) x1 x2). apply fld.(cr_add_neg).
+  - (* jacobi: [u,[v,w]] + [v,[w,u]] + [w,[u,v]] = 0 per component.
+       Each component is an instance of cross_comp_zero. *)
+    intros [[x1 x2] x3] [[y1 y2] y3] [[z1 z2] z3].
+    unfold cross_product, ex2_vs. simpl.
+    apply (f_equal2 pair); [apply (f_equal2 pair)|].
+    + exact (cross_comp_zero fld x2 y1 z2 y2 z1 x3 y3 z3 x1).
+    + exact (cross_comp_zero fld x3 y2 z3 y3 z2 x1 y1 z1 x2).
+    + exact (cross_comp_zero fld x1 y3 z1 y1 z3 x2 y2 z2 x3).
+Defined.

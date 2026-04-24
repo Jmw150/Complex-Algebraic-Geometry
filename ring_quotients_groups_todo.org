@@ -1,0 +1,458 @@
+#+TITLE: TODO — Ring Homomorphisms, Quotients, Ideals, and Free Constructions in Rocq
+#+AUTHOR: OpenAI
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize the theory from the supplied ring-theory excerpts in Rocq, with a practical
+  development order for Claude.
+
+  Main topics:
+  - ring homomorphisms and quotient rings
+  - standard examples of ideals and quotient computations
+  - isomorphism theorems for rings
+  - sums/products/powers of ideals
+  - characteristic and reduction mod n / mod p
+  - nilpotent elements and nilradicals
+  - direct products of groups and semidirect products
+  - free groups, presentations, and related classification exercises
+
+* Suggested file layout
+** DONE Core ring files
+   - Rings/Homomorphisms.v
+   - Rings/Ideals.v
+   - Rings/Quotients.v
+   - Rings/IsomorphismTheorems.v
+   - Rings/Characteristic.v
+   - Rings/Nilpotents.v
+   - Rings/Examples.v
+
+** TODO Group-construction files referenced by the excerpts
+   - Groups/DirectProduct.v
+   - Groups/SemidirectProduct.v
+   - Groups/FreeGroup.v
+   - Groups/Presentations.v
+
+** TODO Classification / exercise files
+   - Groups/Order56.v
+   - Groups/Order75.v
+   - Groups/Order147.v
+   - Groups/Order28.v
+   - Groups/Order20.v
+   - Groups/Order4p.v
+   - Groups/Order60Classification.v
+   - Rings/BooleanRings.v
+   - Rings/MatrixIdealExercises.v
+
+* Part I — Ring homomorphisms
+** DONE Define ring homomorphism
+   Include:
+   - additive preservation
+   - multiplicative preservation
+   - identity-preserving convention, if your library uses it
+   - kernel and image
+
+** DONE Prove basic properties
+   - kernel of a ring homomorphism is an ideal
+   - image is a subring
+   - surjective homomorphisms induce quotient isomorphisms
+
+** DONE Example: evaluation homomorphism for polynomial rings
+   Formalize:
+   - eval_0 : R[x] -> R
+   - kernel = polynomials with zero constant term
+
+** DONE Example: reduction modulo n
+   - Z -> Z/nZ
+   - quotient by nZ is isomorphic to Z/nZ
+
+** DONE Example: coefficient reduction
+   - Z[x] -> (Z/pZ)[x]
+   - reduction of coefficients is a ring homomorphism
+
+** TODO Example: augmentation map for group rings
+   - RG -> R
+   - kernel = augmentation ideal
+
+* Part II — Ideals and quotient rings
+** DONE Define ideals
+   Support:
+   - two-sided ideals
+   - left ideals
+   - right ideals
+   - subring intersections
+
+** DONE Define quotient ring R/I
+   - quotient additive group
+   - multiplication on cosets
+   - proof of well-definedness
+
+** DONE First isomorphism theorem for rings
+   - R/ker(phi) ≅ im(phi)
+
+** DONE Standard example: Z[x]/I where I = polynomials with no degree 0 or 1 terms
+   Show:
+   - cosets are determined by constant and linear terms
+   - representatives may be chosen as a + bx
+   - x^2 = 0 in the quotient
+   - quotient has zero divisors though Z[x] does not
+
+** DONE Standard example: evaluation kernels on function rings
+   For R = all functions X -> A:
+   - evaluation at c is a surjective ring homomorphism
+   - quotient by kernel ≅ A
+
+** DONE Standard example: continuous functions [0,1] -> R
+   - evaluation at c is surjective
+   - kernel = continuous functions vanishing at c
+
+** DONE Standard example: matrix reduction
+   - M_n(R) -> M_n(R/J)
+   - kernel = M_n(J)
+
+* Part III — Ring isomorphism theorems
+** DONE Second isomorphism theorem for rings
+   For subring A and ideal B:
+   - A + B is a subring
+   - A ∩ B is an ideal of A
+   - (A + B)/B ≅ A/(A ∩ B)
+
+** DONE Third isomorphism theorem for rings
+   For ideals I ⊆ J:
+   - J/I is an ideal of R/I
+   - (R/I)/(J/I) ≅ R/J
+
+** DONE Fourth / lattice isomorphism theorem for rings
+   For ideal I:
+   - subrings containing I correspond to subrings of R/I
+   - ideals containing I correspond to ideals of R/I
+
+** TODO Example: lattice over Z with I = 12Z
+   Work out explicitly:
+   - ideals above 12Z
+   - corresponding ideals in Z/12Z
+
+* Part IV — Sums, products, and powers of ideals
+** DONE Define sum of ideals
+   - I + J = {a + b | a in I, b in J}
+
+** DONE Define product of ideals
+   - IJ = finite sums of products ab with a in I, b in J
+
+** DONE Define powers I^n
+   - inductive or explicit finite-sum-of-n-fold-products definition
+
+** DONE Prove basic laws
+   - I + J is the smallest ideal containing I and J
+   - IJ is an ideal
+   - IJ ⊆ I ∩ J
+   - distributivity: I(J + K) = IJ + IK and (I + J)K = IK + JK
+
+** DONE Prove comaximal lemma in commutative rings
+   - if I + J = R then IJ = I ∩ J
+
+** DONE Work examples
+   - 6Z + 10Z = 2Z
+   - (6Z)(10Z) = 60Z
+   - for I = polynomials with even constant term in Z[x], show x^2 + 4 ∈ I^2
+
+** TODO Powers of the ideal (x) in Z[x]
+   Formalize:
+   - (x)^n consists of polynomials with first nonzero term degree at least n
+
+* Part V — Characteristic
+** DONE Define characteristic of a ring
+   - least positive n with n·1 = 0, or 0 if none exists
+
+** DONE Canonical map Z -> R
+   Prove:
+   - this is a ring homomorphism
+   - kernel = nZ where n is the characteristic
+
+** DONE Compute characteristic in key examples
+   - Q
+   - Z[x]
+   - Z/nZ[x]
+
+** DONE Prove integral domain characteristic theorem
+   - characteristic is 0 or prime
+
+** DONE Prime-characteristic binomial theorem
+   For commutative R of characteristic p:
+   - (a + b)^p = a^p + b^p
+
+** TODO Boolean rings
+   - every nonzero Boolean ring has characteristic 2
+
+* Part VI — Nilpotents and nilradical
+** DONE Define nilpotent element
+   - x is nilpotent if x^n = 0 for some n > 0
+
+** DONE In a commutative ring, prove nilpotents form an ideal
+   - define nilradical Nil(R)
+
+** DONE Quotient by nilradical has no nonzero nilpotents
+   - Nil(R/Nil(R)) = 0
+
+** DONE Prove homomorphisms preserve nilpotence
+   - if x nilpotent in R, then phi(x) nilpotent in S
+
+** DONE Polynomial ring tests
+   For commutative R:
+   - p(x) ∈ R[x] is a unit iff constant term is a unit and all higher coefficients are nilpotent
+   - p(x) is nilpotent iff all coefficients are nilpotent
+
+** TODO Noncommutative caution example
+   - in M_2(Z), nilpotent elements need not form an ideal
+
+** TODO Nilpotent ideals
+   - define nilpotent ideal N with N^n = 0 for some n
+   - example pZ/p^n Z
+
+* Part VII — Matrix rings and one-sided ideals
+** DONE Define left/right/two-sided ideals
+   Distinguish them clearly in the API.
+
+** DONE Example in M_n(R): column ideals
+   - L_j = matrices supported in j-th column
+   - prove left ideal, not right ideal
+
+** DONE Example in M_n(R): row ideals
+   - R_j = matrices supported in j-th row
+   - prove right ideal, not left ideal
+
+** DONE Prove every two-sided ideal of M_n(R) is M_n(J)
+   for some two-sided ideal J of R.
+
+** TODO Supporting lemma
+   - entries of matrices in a two-sided ideal form an ideal in R
+
+* Part VIII — Standard example library from the excerpt
+** DONE Example: R = Z[x], I = polynomials of degree >= 2
+   Record:
+   - quotient representatives a + bx
+   - explicit addition and multiplication formulas
+   - x^2 = 0 in quotient
+
+** DONE Example: function rings
+   - evaluation
+   - quotient by vanishing ideal
+
+** DONE Example: polynomial evaluation with parity
+   - Z[x] -> Z/2Z by p(x) |-> p(0) mod 2
+   - kernel = polynomials with even constant term
+
+** DONE Example: matrix quotient
+   - M_3(Z)/M_3(2Z) ≅ M_3(Z/2Z)
+
+** DONE Example: augmentation ideal
+   - define in group ring and prove quotient is base ring
+
+* Part IX — Direct products of groups
+** DONE Define direct product of finitely many groups
+   - componentwise multiplication
+   - identity, inverses, associativity
+
+** DONE Prove coordinate embeddings
+   - each factor embeds as a subgroup
+   - projection maps are surjective homomorphisms
+   - kernels are products of the remaining factors
+
+** DONE Prove different factors commute
+   - x from factor i commutes with y from factor j for i ≠ j
+
+** DONE Derived example lemmas
+   - center of direct product is product of centers
+   - order of an element in finite direct product is lcm of component orders
+   - Sylow subgroups of direct products are products of Sylow subgroups
+
+** TODO Infinite direct products
+   - arbitrary product
+   - restricted direct product / direct sum
+   - examples with torsion subgroup phenomena
+
+* Part X — Semidirect products of groups
+** DONE Define semidirect product H ⋊_φ K
+   - multiplication law
+   - subgroup embeddings
+   - H normal
+   - K complement
+
+** DONE Recognition theorem
+   If H ◁ G, H ∩ K = 1, G = HK, then G ≅ H ⋊ K.
+
+** DONE Centralizer/normalizer lemmas
+   - C_K(H) = ker φ
+   - N_H(K) / relevant normalizer lemmas from the excerpt
+
+** DONE Small-order classification workflows
+   Reuse semidirect products to classify:
+   - groups of order pq
+   - groups of order 30
+   - groups of order 12
+   - groups of order p^3 (odd p)
+
+** TODO Larger exercise classifications
+   - groups of order 56
+   - groups of order 75
+   - groups of order 147
+   - groups of order 28
+   - groups of order 20
+   - groups of order 4p
+   - groups of order 60
+
+* Part XI — Free groups
+** DONE Define reduced words on a set S
+   - formal letters
+   - formal inverses
+   - empty word
+   - reduced-word condition
+
+** DONE Define multiplication by concatenation + reduction
+   - prove well-definedness
+   - prove associativity
+   - identity and inverse
+
+** DONE Construct free group F(S)
+
+** DONE Prove universal property
+   Any set map S -> G extends uniquely to a homomorphism F(S) -> G.
+
+** DONE Uniqueness up to canonical isomorphism
+
+** DONE Define rank
+   - finite-rank API first
+
+** TODO Schreier theorem
+   - every subgroup of a free group is free
+   Mark as BLOCKED unless you want a substantial standalone development.
+
+* Part XII — Presentations
+** DONE Define presentation (S, R)
+   - free group F(S)
+   - normal closure of relations R
+   - quotient presented group
+
+** DONE Define finitely generated and finitely presented groups
+
+** DONE Presentation universal property
+   - maps out correspond to assignments of generators satisfying relators
+
+** DONE Standard presentations from excerpt
+   - Z
+   - Z × Z
+   - Z_n × Z_m
+   - D_{2n}
+   - Q_8
+   - S_n Coxeter-style presentation (stretch but valuable)
+
+** TODO Finite groups are finitely presented
+   - use multiplication-table presentation
+
+* Part XIII — Concrete automorphism computations
+** TODO Automorphisms of D_8 from its presentation
+** TODO Automorphisms of Q_8 from its presentation
+** TODO Outer automorphism of S_6 via explicit generators
+
+* Part XIV — Exercise / open-task queue from the excerpt
+** TODO Rings 1–37 bundle
+   Formalize as separate lemmas/examples:
+   - nonisomorphism of 2Z and 3Z
+   - nonisomorphism of Z[x] and Q[x]
+   - classify homomorphic images of Z
+   - ring maps Z -> Z/30Z
+   - ring maps Z × Z -> Z
+   - projection/trace/determinant checks on M_2(Z)
+   - upper triangular matrix quotient map
+   - ideals in Z × Z
+   - ideals among function-set examples
+   - ideals in Z[x]
+   - integral functional on C([0,1], R) is additive but not multiplicative
+   - quadratic integer / matrix realizations
+   - copies of C in M_2(R), H in M_4(R)
+   - characteristic-function isomorphism P(X) ≅ functions to Z/2Z
+   - image of centers under surjective homomorphisms
+   - behavior of identity under homomorphisms
+   - ideal intersection / union lemmas
+   - ideal pullback and pushforward under homomorphisms
+   - binomial theorem in commutative rings
+   - Boolean rings have characteristic 2
+   - nilradical exercises
+   - matrix-ring ideal classification
+   - annihilator exercises
+   - polynomial unit criterion
+   - nilpotent-ideal examples
+
+** TODO Group exercises from direct/semi-direct sections
+   - classify order 56
+   - classify order 75
+   - classify order 147
+   - classify order 28
+   - classify order 20
+   - classify order 4p
+   - classify order 60
+   - quaternion/dihedral modular examples
+   - holomorph computations
+   - wreath-product exercises
+   - every group of order n is abelian criterion
+   - unique subgroup of order p in odd p-groups implies cyclic
+
+* Part XV — Recommended theorem names / checklist
+** DONE `ring_hom_kernel_ideal`
+** DONE `ring_hom_image_subring`
+** DONE `quotient_ring_mul_well_defined`
+** DONE `ring_first_iso`
+** DONE `ring_second_iso`
+** DONE `ring_third_iso`
+** DONE `ring_fourth_iso`
+** DONE `ideal_sum_smallest`
+** DONE `ideal_product_subset_intersection`
+** DONE `ideal_product_distrib_left`
+** DONE `ideal_product_distrib_right`
+** DONE `comaximal_ideal_product_eq_intersection`
+** DONE `ring_characteristic_from_Z_kernel`
+** DONE `integral_domain_char_zero_or_prime`
+** DONE `freshmans_dream_char_p`
+** DONE `nilradical_is_ideal`
+** DONE `nilradical_quotient_reduced`
+** DONE `matrix_ideal_classification`
+** DONE `direct_product_group`
+** DONE `semidirect_product_recognition`
+** DONE `free_group_universal_property`
+** DONE `group_presentation_universal_property`
+** DONE `free_abelian_group_universal_property`
+
+* Part XVI — Immediate milestones
+** DONE Milestone 1
+   Finish:
+   - ring homomorphisms
+   - ideals
+   - quotient rings
+   - first/second/third/fourth isomorphism theorems
+
+** DONE Milestone 2
+   Finish:
+   - characteristic
+   - nilpotents/nilradical
+   - core example library
+
+** DONE Milestone 3
+   Finish:
+   - direct products
+   - semidirect products
+   - groups of orders pq, 12, 30, p^3
+
+** DONE Milestone 4
+   Finish:
+   - free group construction
+   - presentations
+   - free abelian group
+
+** TODO Milestone 5
+   Finish:
+   - large exercise bundle
+   - order 56 / 75 / 147 / 60 classifications
+   - matrix ideal and Boolean ring exercises
+
+* End
+  This file is meant as a working org-mode roadmap for Claude to formalize the excerpted theory in Rocq.

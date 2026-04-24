@@ -1,0 +1,119 @@
+DIGEST fc4a4cae113041ab718f05ad1297a418
+FCAG.Kahler.Signature
+R613:616 Stdlib.Lists.List <> <> lib
+R618:622 Stdlib.Arith.Arith <> <> lib
+R624:626 Stdlib.micromega.Lia <> <> lib
+R628:633 Stdlib.ZArith.ZArith <> <> lib
+R660:666 CAG.Complex <> <> lib
+R693:694 CAG.AG <> <> lib
+R721:730 CAG.LieAlgebra <> <> lib
+R757:772 CAG.ManifoldTopology <> <> lib
+R799:824 CAG.Kahler.Lefschetz.Operators <> <> lib
+R851:880 CAG.Kahler.Lefschetz.HardLefschetz <> <> lib
+R907:932 CAG.Kahler.Lefschetz.Primitive <> <> lib
+R959:990 CAG.Kahler.HodgeRiemann.BilinearForm <> <> lib
+R1017:1045 CAG.Kahler.HodgeRiemann.EasyCases <> <> lib
+def 1527:1543 <> intersection_form
+R1550:1563 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1546:1546 <> M:1
+R1571:1574 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1568:1570 Corelib.Init.Datatypes <> nat ind
+R1578:1581 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1575:1577 Corelib.Init.Datatypes <> nat ind
+R1582:1589 CAG.Complex <> CComplex rec
+binder 1600:1600 <> i:2
+binder 1602:1602 <> j:3
+R1607:1612 CAG.Kahler.HodgeRiemann.BilinearForm <> Q_form defax
+R1614:1614 CAG.Kahler.Signature <> M:1 var
+R1623:1629 CAG.LieAlgebra <> vs_zero proj
+R1632:1637 CAG.Kahler.Lefschetz.Operators <> HdR_vs defax
+R1639:1639 CAG.Kahler.Signature <> M:1 var
+R1650:1652 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R1642:1647 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R1649:1649 CAG.Kahler.Signature <> M:1 var
+R1663:1669 CAG.LieAlgebra <> vs_zero proj
+R1672:1677 CAG.Kahler.Lefschetz.Operators <> HdR_vs defax
+R1679:1679 CAG.Kahler.Signature <> M:1 var
+R1690:1692 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R1682:1687 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R1689:1689 CAG.Kahler.Signature <> M:1 var
+ax 2256:2264 <> signature
+R2282:2285 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2268:2281 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+R2286:2286 Corelib.Numbers.BinNums <> Z ind
+prf 2298:2319 <> signature_well_defined
+R2335:2348 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2331:2331 <> M:6
+R2417:2420 Corelib.Init.Logic <> True ind
+R2444:2444 Corelib.Init.Logic <> I constr
+R2444:2444 Corelib.Init.Logic <> I constr
+prf 3220:3232 <> index_formula
+R3248:3261 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3244:3244 <> M:7
+R3345:3352 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3341:3344 Corelib.Init.Logic <> True ind
+R3364:3422 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3353:3361 CAG.Kahler.Signature <> signature defax
+R3363:3363 CAG.Kahler.Signature <> M:7 var
+prf 3637:3657 <> index_formula_surface
+R3673:3686 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3669:3669 <> M:8
+R3713:3720 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3694:3710 CAG.Kahler.HodgeRiemann.EasyCases <> is_kahler_surface def
+R3712:3712 CAG.Kahler.Signature <> M:8 var
+R3732:3734 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3721:3729 CAG.Kahler.Signature <> signature defax
+R3731:3731 CAG.Kahler.Signature <> M:8 var
+R3820:3822 Stdlib.ZArith.BinInt <> ::Z_scope:x_'+'_x not
+R3769:3790 Stdlib.ZArith.BinInt <> ::Z_scope:x_'-'_x not
+R3737:3739 Stdlib.ZArith.BinInt <> ::Z_scope:x_'*'_x not
+R3740:3747 Stdlib.ZArith.BinInt Z of_nat def
+R3750:3761 CAG.Kahler.Lefschetz.Operators <> hodge_number defax
+R3763:3763 CAG.Kahler.Signature <> M:8 var
+R3791:3798 Stdlib.ZArith.BinInt Z of_nat def
+R3801:3812 CAG.Kahler.Lefschetz.Operators <> hodge_number defax
+R3814:3814 CAG.Kahler.Signature <> M:8 var
+prf 4217:4249 <> surface_intersection_one_positive
+R4265:4278 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 4261:4261 <> M:9
+R4305:4395 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4286:4302 CAG.Kahler.HodgeRiemann.EasyCases <> is_kahler_surface def
+R4304:4304 CAG.Kahler.Signature <> M:9 var
+R4396:4399 Corelib.Init.Logic <> True ind
+R4423:4423 Corelib.Init.Logic <> I constr
+R4423:4423 Corelib.Init.Logic <> I constr
+prf 4456:4488 <> index_theorem_for_kahler_surfaces
+R4504:4517 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 4500:4500 <> M:10
+R4544:4551 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4525:4541 CAG.Kahler.HodgeRiemann.EasyCases <> is_kahler_surface def
+R4543:4543 CAG.Kahler.Signature <> M:10 var
+R4563:4565 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4552:4560 CAG.Kahler.Signature <> signature defax
+R4562:4562 CAG.Kahler.Signature <> M:10 var
+R4651:4653 Stdlib.ZArith.BinInt <> ::Z_scope:x_'+'_x not
+R4600:4621 Stdlib.ZArith.BinInt <> ::Z_scope:x_'-'_x not
+R4568:4570 Stdlib.ZArith.BinInt <> ::Z_scope:x_'*'_x not
+R4571:4578 Stdlib.ZArith.BinInt Z of_nat def
+R4581:4592 CAG.Kahler.Lefschetz.Operators <> hodge_number defax
+R4594:4594 CAG.Kahler.Signature <> M:10 var
+R4622:4629 Stdlib.ZArith.BinInt Z of_nat def
+R4632:4643 CAG.Kahler.Lefschetz.Operators <> hodge_number defax
+R4645:4645 CAG.Kahler.Signature <> M:10 var
+R4675:4695 CAG.Kahler.Signature <> index_formula_surface prfax
+R4675:4695 CAG.Kahler.Signature <> index_formula_surface prfax
+prf 5028:5040 <> signature_CP2
+R5254:5256 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5044:5052 CAG.Kahler.Signature <> signature defax
+R5057:5067 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R5057:5067 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R5057:5067 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R5123:5132 CAG.Kahler.Lefschetz.Operators <> km_compact proj
+R5123:5132 CAG.Kahler.Lefschetz.Operators <> km_compact proj
+R5176:5181 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R5176:5181 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R5229:5237 CAG.Kahler.Lefschetz.Operators <> km_dim_eq proj
+R5229:5237 CAG.Kahler.Lefschetz.Operators <> km_dim_eq proj
+R5072:5083 CAG.AG <> CPn_manifold def
+R5138:5138 Corelib.Init.Logic <> I constr
+R5244:5250 Corelib.Init.Logic <> eq_refl constr

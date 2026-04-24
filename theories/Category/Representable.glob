@@ -1,0 +1,509 @@
+DIGEST 29c9e52a0964be2f1cb016b76dbbca71
+FCAG.Category.Representable
+R151:167 CAG.Category.Core <> <> lib
+R185:204 CAG.Category.Functor <> <> lib
+R234:263 Stdlib.Logic.FunctionalExtensionality <> <> lib
+R293:314 Stdlib.Logic.ProofIrrelevance <> <> lib
+def 438:444 <> TypeCat
+R448:455 CAG.Category.Core <> Category rec
+R465:466 CAG.Category.Core <> Ob proj
+R465:466 CAG.Category.Core <> Ob proj
+R465:466 CAG.Category.Core <> Ob proj
+R481:483 CAG.Category.Core <> Hom proj
+R481:483 CAG.Category.Core <> Hom proj
+R510:511 CAG.Category.Core <> id proj
+R510:511 CAG.Category.Core <> id proj
+R534:537 CAG.Category.Core <> comp proj
+R534:537 CAG.Category.Core <> comp proj
+R572:581 CAG.Category.Core <> comp_assoc proj
+R572:581 CAG.Category.Core <> comp_assoc proj
+R618:624 CAG.Category.Core <> id_left proj
+R618:624 CAG.Category.Core <> id_left proj
+R656:663 CAG.Category.Core <> id_right proj
+R656:663 CAG.Category.Core <> id_right proj
+binder 493:493 <> A:1
+binder 495:495 <> B:2
+R501:504 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R500:500 CAG.Category.Representable <> A:1 var
+R505:505 CAG.Category.Representable <> B:2 var
+binder 522:522 <> A:3
+binder 524:524 <> x:4
+R529:529 CAG.Category.Representable <> x:4 var
+binder 546:546 <> A:5
+binder 548:548 <> B:6
+binder 550:550 <> C:7
+binder 552:552 <> f:8
+binder 554:554 <> g:9
+binder 556:556 <> x:10
+R561:561 CAG.Category.Representable <> f:8 var
+R564:564 CAG.Category.Representable <> g:9 var
+R566:566 CAG.Category.Representable <> x:10 var
+binder 590:590 <> A:11
+binder 592:592 <> B:12
+binder 594:594 <> C:13
+binder 596:596 <> D:14
+binder 598:598 <> f:15
+binder 600:600 <> g:16
+binder 602:602 <> h:17
+R607:613 Corelib.Init.Logic <> eq_refl constr
+binder 636:636 <> A:18
+binder 638:638 <> B:19
+binder 640:640 <> f:20
+R645:651 Corelib.Init.Logic <> eq_refl constr
+binder 674:674 <> A:21
+binder 676:676 <> B:22
+binder 678:678 <> f:23
+R683:689 Corelib.Init.Logic <> eq_refl constr
+def 771:784 <> HomFunctor_cov
+R791:798 CAG.Category.Core <> Category rec
+binder 787:787 <> C:24
+R809:810 CAG.Category.Core <> Ob proj
+R806:806 CAG.Category.Representable <> C:24 var
+binder 802:802 <> A:25
+R816:822 CAG.Category.Functor <> Functor rec
+R824:824 CAG.Category.Representable <> C:24 var
+R826:832 CAG.Category.Representable <> TypeCat def
+R851:863 CAG.Category.Functor <> Build_Functor constr
+R867:873 CAG.Category.Representable <> TypeCat def
+binder 880:880 <> B:26
+R888:890 CAG.Category.Core <> Hom proj
+R895:895 CAG.Category.Representable <> B:26 var
+binder 903:903 <> B:27
+binder 905:905 <> D:28
+binder 907:907 <> f:29
+binder 909:909 <> h:30
+R915:919 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R914:914 CAG.Category.Representable <> f:29 var
+R920:920 CAG.Category.Representable <> h:30 var
+R851:863 CAG.Category.Functor <> Build_Functor constr
+R867:873 CAG.Category.Representable <> TypeCat def
+binder 880:880 <> B:31
+R888:890 CAG.Category.Core <> Hom proj
+R895:895 CAG.Category.Representable <> B:31 var
+binder 903:903 <> B:32
+binder 905:905 <> D:33
+binder 907:907 <> f:34
+binder 909:909 <> h:35
+R915:919 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R914:914 CAG.Category.Representable <> f:34 var
+R920:920 CAG.Category.Representable <> h:35 var
+R966:972 CAG.Category.Core <> id_left proj
+R966:972 CAG.Category.Core <> id_left proj
+R1027:1032 Corelib.Init.Logic <> eq_sym thm
+R1027:1032 Corelib.Init.Logic <> eq_sym thm
+R1044:1053 CAG.Category.Core <> comp_assoc proj
+R1044:1053 CAG.Category.Core <> comp_assoc proj
+R1089:1102 CAG.Category.Representable <> HomFunctor_cov def
+not 1076:1076 <> ::cat_scope:'H['_x_']'
+def 1216:1232 <> HomFunctor_contra
+R1239:1246 CAG.Category.Core <> Category rec
+binder 1235:1235 <> C:36
+R1257:1258 CAG.Category.Core <> Ob proj
+R1254:1254 CAG.Category.Representable <> C:36 var
+binder 1250:1250 <> B:37
+R1264:1270 CAG.Category.Functor <> Functor rec
+R1274:1276 CAG.Category.Core <> ::cat_scope:x_'^op' not
+R1273:1273 CAG.Category.Representable <> C:36 var
+R1279:1285 CAG.Category.Representable <> TypeCat def
+R1304:1316 CAG.Category.Functor <> Build_Functor constr
+R1320:1322 CAG.Category.Core <> ::cat_scope:x_'^op' not
+R1325:1331 CAG.Category.Representable <> TypeCat def
+binder 1338:1338 <> A:38
+R1346:1348 CAG.Category.Core <> Hom proj
+R1351:1351 CAG.Category.Representable <> A:38 var
+binder 1361:1362 <> A':39
+binder 1364:1364 <> A:40
+binder 1366:1366 <> f:41
+binder 1368:1368 <> h:42
+R1374:1378 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1373:1373 CAG.Category.Representable <> h:42 var
+R1379:1379 CAG.Category.Representable <> f:41 var
+R1304:1316 CAG.Category.Functor <> Build_Functor constr
+R1320:1322 CAG.Category.Core <> ::cat_scope:x_'^op' not
+R1325:1331 CAG.Category.Representable <> TypeCat def
+binder 1338:1338 <> A:43
+R1346:1348 CAG.Category.Core <> Hom proj
+R1351:1351 CAG.Category.Representable <> A:43 var
+binder 1361:1362 <> A':44
+binder 1364:1364 <> A:45
+binder 1366:1366 <> f:46
+binder 1368:1368 <> h:47
+R1374:1378 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1373:1373 CAG.Category.Representable <> h:47 var
+R1379:1379 CAG.Category.Representable <> f:46 var
+R1425:1432 CAG.Category.Core <> id_right proj
+R1425:1432 CAG.Category.Core <> id_right proj
+R1493:1502 CAG.Category.Core <> comp_assoc proj
+R1493:1502 CAG.Category.Core <> comp_assoc proj
+R1539:1555 CAG.Category.Representable <> HomFunctor_contra def
+not 1525:1525 <> ::cat_scope:'H^['_x_']'
+def 1721:1731 <> HomNatTrans
+R1738:1745 CAG.Category.Core <> Category rec
+binder 1734:1734 <> C:48
+R1759:1760 CAG.Category.Core <> Ob proj
+R1756:1756 CAG.Category.Representable <> C:48 var
+binder 1749:1749 <> A:49
+binder 1751:1752 <> A':50
+R1770:1772 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1775:1776 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1778:1780 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1769:1769 CAG.Category.Representable <> C:48 var
+R1773:1774 CAG.Category.Representable <> A':50 var
+R1777:1777 CAG.Category.Representable <> A:49 var
+binder 1765:1765 <> h:51
+R1789:1796 CAG.Category.Functor <> NatTrans rec
+R1803:1804 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R1807:1807 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R1805:1806 CAG.Category.Representable <> A':50 var
+R1798:1799 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R1801:1801 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R1800:1800 CAG.Category.Representable <> A:49 var
+binder 1863:1863 <> B:52
+R1873:1875 CAG.Category.Core <> Hom proj
+R1880:1880 CAG.Category.Representable <> B:52 var
+binder 1866:1866 <> f:53
+R1887:1891 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1886:1886 CAG.Category.Representable <> f:53 var
+R1825:1838 CAG.Category.Functor <> Build_NatTrans constr
+binder 1863:1863 <> B:54
+R1873:1875 CAG.Category.Core <> Hom proj
+R1880:1880 CAG.Category.Representable <> B:54 var
+binder 1866:1866 <> f:55
+R1887:1891 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R1886:1886 CAG.Category.Representable <> f:55 var
+R1825:1838 CAG.Category.Functor <> Build_NatTrans constr
+R1951:1960 CAG.Category.Core <> comp_assoc proj
+R1951:1960 CAG.Category.Core <> comp_assoc proj
+R1951:1960 CAG.Category.Core <> comp_assoc proj
+def 2033:2039 <> ProdCat
+R2048:2055 CAG.Category.Core <> Category rec
+binder 2042:2042 <> C:56
+binder 2044:2044 <> E:57
+R2060:2067 CAG.Category.Core <> Category rec
+R2077:2078 CAG.Category.Core <> Ob proj
+R2077:2078 CAG.Category.Core <> Ob proj
+R2077:2078 CAG.Category.Core <> Ob proj
+R2104:2106 CAG.Category.Core <> Hom proj
+R2104:2106 CAG.Category.Core <> Hom proj
+R2189:2190 CAG.Category.Core <> id proj
+R2189:2190 CAG.Category.Core <> id proj
+R2245:2248 CAG.Category.Core <> comp proj
+R2245:2248 CAG.Category.Core <> comp proj
+R2315:2324 CAG.Category.Core <> comp_assoc proj
+R2315:2324 CAG.Category.Core <> comp_assoc proj
+R2451:2457 CAG.Category.Core <> id_left proj
+R2451:2457 CAG.Category.Core <> id_left proj
+R2541:2548 CAG.Category.Core <> id_right proj
+R2541:2548 CAG.Category.Core <> id_right proj
+R2091:2093 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2088:2089 CAG.Category.Core <> Ob proj
+R2085:2085 CAG.Category.Representable <> C:56 var
+R2097:2098 CAG.Category.Core <> Ob proj
+R2094:2094 CAG.Category.Representable <> E:57 var
+binder 2116:2117 <> AB:58
+binder 2119:2120 <> PQ:59
+R2151:2153 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2129:2131 CAG.Category.Core <> Hom proj
+R2126:2126 CAG.Category.Representable <> C:56 var
+R2135:2137 Corelib.Init.Datatypes <> fst def
+R2139:2140 CAG.Category.Representable <> AB:58 var
+R2144:2146 Corelib.Init.Datatypes <> fst def
+R2148:2149 CAG.Category.Representable <> PQ:59 var
+R2157:2159 CAG.Category.Core <> Hom proj
+R2154:2154 CAG.Category.Representable <> E:57 var
+R2163:2165 Corelib.Init.Datatypes <> snd def
+R2167:2168 CAG.Category.Representable <> AB:58 var
+R2172:2174 Corelib.Init.Datatypes <> snd def
+R2176:2177 CAG.Category.Representable <> PQ:59 var
+binder 2201:2202 <> AB:60
+R2207:2207 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2223:2224 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2240:2240 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2211:2212 CAG.Category.Core <> id proj
+R2208:2208 CAG.Category.Representable <> C:56 var
+R2216:2218 Corelib.Init.Datatypes <> fst def
+R2220:2221 CAG.Category.Representable <> AB:60 var
+R2228:2229 CAG.Category.Core <> id proj
+R2225:2225 CAG.Category.Representable <> E:57 var
+R2233:2235 Corelib.Init.Datatypes <> snd def
+R2237:2238 CAG.Category.Representable <> AB:60 var
+binder 2257:2258 <> AB:61
+binder 2260:2261 <> PQ:62
+binder 2263:2264 <> RS:63
+R2267:2267 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2270:2271 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2274:2274 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 2272:2273 <> f2:64
+binder 2268:2269 <> f1:65
+binder 2267:2274 <> pat:66
+R2277:2277 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2280:2281 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2284:2284 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 2282:2283 <> g2:67
+binder 2278:2279 <> g1:68
+binder 2277:2284 <> pat:69
+R2289:2289 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2299:2300 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2310:2310 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2292:2296 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R2290:2291 CAG.Category.Representable <> f1:65 var
+R2297:2298 CAG.Category.Representable <> g1:68 var
+R2303:2307 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R2301:2302 CAG.Category.Representable <> f2:64 var
+R2308:2309 CAG.Category.Representable <> g2:67 var
+binder 2333:2334 <> AB:70
+binder 2336:2337 <> PQ:71
+binder 2339:2340 <> RS:72
+binder 2342:2343 <> ST:73
+R2346:2346 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2349:2350 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2353:2353 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 2351:2352 <> f2:74
+binder 2347:2348 <> f1:75
+binder 2346:2353 <> pat:76
+R2356:2356 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2359:2360 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2363:2363 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 2361:2362 <> g2:77
+binder 2357:2358 <> g1:78
+binder 2356:2363 <> pat:79
+R2366:2366 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2369:2370 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2373:2373 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 2371:2372 <> h2:80
+binder 2367:2368 <> h1:81
+binder 2366:2373 <> pat:82
+R2382:2389 Corelib.Init.Logic <> f_equal2 thm
+R2426:2435 CAG.Category.Core <> comp_assoc proj
+R2423:2423 CAG.Category.Representable <> E:57 var
+R2444:2445 CAG.Category.Representable <> h2:80 var
+R2441:2442 CAG.Category.Representable <> g2:77 var
+R2438:2439 CAG.Category.Representable <> f2:74 var
+R2400:2409 CAG.Category.Core <> comp_assoc proj
+R2397:2397 CAG.Category.Representable <> C:56 var
+R2418:2419 CAG.Category.Representable <> h1:81 var
+R2415:2416 CAG.Category.Representable <> g1:78 var
+R2412:2413 CAG.Category.Representable <> f1:75 var
+R2391:2394 Corelib.Init.Datatypes <> pair constr
+binder 2467:2468 <> AB:83
+binder 2470:2471 <> PQ:84
+R2474:2474 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2477:2478 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2481:2481 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 2479:2480 <> f2:85
+binder 2475:2476 <> f1:86
+binder 2474:2481 <> pat:87
+R2490:2497 Corelib.Init.Logic <> f_equal2 thm
+R2525:2531 CAG.Category.Core <> id_left proj
+R2522:2522 CAG.Category.Representable <> E:57 var
+R2534:2535 CAG.Category.Representable <> f2:85 var
+R2508:2514 CAG.Category.Core <> id_left proj
+R2505:2505 CAG.Category.Representable <> C:56 var
+R2517:2518 CAG.Category.Representable <> f1:86 var
+R2499:2502 Corelib.Init.Datatypes <> pair constr
+binder 2557:2558 <> AB:88
+binder 2560:2561 <> PQ:89
+R2564:2564 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2567:2568 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2571:2571 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 2569:2570 <> f2:90
+binder 2565:2566 <> f1:91
+binder 2564:2571 <> pat:92
+R2580:2587 Corelib.Init.Logic <> f_equal2 thm
+R2616:2623 CAG.Category.Core <> id_right proj
+R2613:2613 CAG.Category.Representable <> E:57 var
+R2626:2627 CAG.Category.Representable <> f2:90 var
+R2598:2605 CAG.Category.Core <> id_right proj
+R2595:2595 CAG.Category.Representable <> C:56 var
+R2608:2609 CAG.Category.Representable <> f1:91 var
+R2589:2592 Corelib.Init.Datatypes <> pair constr
+R2661:2667 CAG.Category.Representable <> ProdCat def
+not 2645:2645 <> ::cat_scope:x_'×Cat'_x
+def 2770:2781 <> HomBifunctor
+R2788:2795 CAG.Category.Core <> Category rec
+binder 2784:2784 <> C:93
+R2800:2806 CAG.Category.Functor <> Functor rec
+R2813:2819 CAG.Category.Representable <> ::cat_scope:x_'×Cat'_x not
+R2810:2812 CAG.Category.Core <> ::cat_scope:x_'^op' not
+R2809:2809 CAG.Category.Representable <> C:93 var
+R2820:2820 CAG.Category.Representable <> C:93 var
+R2823:2829 CAG.Category.Representable <> TypeCat def
+R2848:2860 CAG.Category.Functor <> Build_Functor constr
+R2867:2873 CAG.Category.Representable <> ::cat_scope:x_'×Cat'_x not
+R2864:2866 CAG.Category.Core <> ::cat_scope:x_'^op' not
+R2877:2883 CAG.Category.Representable <> TypeCat def
+binder 2894:2895 <> AB:94
+R2903:2905 CAG.Category.Core <> Hom proj
+R2909:2911 Corelib.Init.Datatypes <> fst def
+R2913:2914 CAG.Category.Representable <> AB:94 var
+R2918:2920 Corelib.Init.Datatypes <> snd def
+R2922:2923 CAG.Category.Representable <> AB:94 var
+binder 2936:2937 <> AB:95
+binder 2939:2940 <> CD:96
+binder 2942:2943 <> fg:97
+binder 2945:2945 <> h:98
+R2962:2966 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R2956:2960 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R2950:2952 Corelib.Init.Datatypes <> snd def
+R2954:2955 CAG.Category.Representable <> fg:97 var
+R2961:2961 CAG.Category.Representable <> h:98 var
+R2967:2969 Corelib.Init.Datatypes <> fst def
+R2971:2972 CAG.Category.Representable <> fg:97 var
+R2848:2860 CAG.Category.Functor <> Build_Functor constr
+R2867:2873 CAG.Category.Representable <> ::cat_scope:x_'×Cat'_x not
+R2864:2866 CAG.Category.Core <> ::cat_scope:x_'^op' not
+R2877:2883 CAG.Category.Representable <> TypeCat def
+binder 2894:2895 <> AB:99
+R2903:2905 CAG.Category.Core <> Hom proj
+R2909:2911 Corelib.Init.Datatypes <> fst def
+R2913:2914 CAG.Category.Representable <> AB:99 var
+R2918:2920 Corelib.Init.Datatypes <> snd def
+R2922:2923 CAG.Category.Representable <> AB:99 var
+binder 2936:2937 <> AB:100
+binder 2939:2940 <> CD:101
+binder 2942:2943 <> fg:102
+binder 2945:2945 <> h:103
+R2962:2966 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R2956:2960 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R2950:2952 Corelib.Init.Datatypes <> snd def
+R2954:2955 CAG.Category.Representable <> fg:102 var
+R2961:2961 CAG.Category.Representable <> h:103 var
+R2967:2969 Corelib.Init.Datatypes <> fst def
+R2971:2972 CAG.Category.Representable <> fg:102 var
+R3033:3039 CAG.Category.Core <> id_left proj
+R3033:3039 CAG.Category.Core <> id_left proj
+R3033:3039 CAG.Category.Core <> id_left proj
+R3054:3061 CAG.Category.Core <> id_right proj
+R3054:3061 CAG.Category.Core <> id_right proj
+R3054:3061 CAG.Category.Core <> id_right proj
+R3182:3191 CAG.Category.Core <> comp_assoc proj
+R3182:3191 CAG.Category.Core <> comp_assoc proj
+R3182:3191 CAG.Category.Core <> comp_assoc proj
+R3182:3191 CAG.Category.Core <> comp_assoc proj
+R3182:3191 CAG.Category.Core <> comp_assoc proj
+R3182:3191 CAG.Category.Core <> comp_assoc proj
+R3182:3191 CAG.Category.Core <> comp_assoc proj
+R3182:3191 CAG.Category.Core <> comp_assoc proj
+R3182:3191 CAG.Category.Core <> comp_assoc proj
+R3182:3191 CAG.Category.Core <> comp_assoc proj
+R3182:3191 CAG.Category.Core <> comp_assoc proj
+R3182:3191 CAG.Category.Core <> comp_assoc proj
+rec 3340:3352 <> Representable
+proj 3407:3413 <> rep_obj
+proj 3431:3436 <> rep_to
+proj 3470:3477 <> rep_from
+proj 3509:3519 <> rep_to_from
+proj 3611:3621 <> rep_from_to
+R3359:3366 CAG.Category.Core <> Category rec
+binder 3355:3355 <> C:104
+R3374:3380 CAG.Category.Functor <> Functor rec
+R3382:3382 CAG.Category.Representable <> C:104 var
+R3384:3390 CAG.Category.Representable <> TypeCat def
+binder 3370:3370 <> F:105
+R3424:3425 CAG.Category.Core <> Ob proj
+R3421:3421 CAG.Category.Representable <> C:104 var
+R3445:3452 CAG.Category.Functor <> NatTrans rec
+R3465:3465 CAG.Category.Representable <> F:105 var
+R3454:3455 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R3463:3463 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R3456:3462 CAG.Category.Representable <> rep_obj:107 meth
+R3484:3491 CAG.Category.Functor <> NatTrans rec
+R3495:3496 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R3504:3504 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R3497:3503 CAG.Category.Representable <> rep_obj:107 meth
+R3493:3493 CAG.Category.Representable <> F:105 var
+binder 3530:3530 <> A:110
+R3574:3576 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3537:3545 CAG.Category.Functor <> component proj
+R3573:3573 CAG.Category.Representable <> A:110 var
+R3548:3554 CAG.Category.Functor <> NatComp def
+R3565:3570 CAG.Category.Representable <> rep_to:108 meth
+R3556:3563 CAG.Category.Representable <> rep_from:109 meth
+R3577:3585 CAG.Category.Functor <> component proj
+R3606:3606 CAG.Category.Representable <> A:110 var
+R3588:3592 CAG.Category.Functor <> NatId def
+R3594:3595 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R3603:3603 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R3596:3602 CAG.Category.Representable <> rep_obj:107 meth
+binder 3632:3632 <> A:112
+R3676:3678 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3639:3647 CAG.Category.Functor <> component proj
+R3675:3675 CAG.Category.Representable <> A:112 var
+R3650:3656 CAG.Category.Functor <> NatComp def
+R3665:3672 CAG.Category.Representable <> rep_from:109 meth
+R3658:3663 CAG.Category.Representable <> rep_to:108 meth
+R3679:3687 CAG.Category.Functor <> component proj
+R3699:3699 CAG.Category.Representable <> A:112 var
+R3690:3694 CAG.Category.Functor <> NatId def
+R3696:3696 CAG.Category.Representable <> F:105 var
+rec 3770:3785 <> IsRepresentation
+proj 3870:3875 <> ir_nat
+proj 3904:3915 <> ir_component
+proj 3982:3987 <> ir_inv
+proj 4016:4025 <> ir_to_from
+proj 4111:4120 <> ir_from_to
+R3792:3799 CAG.Category.Core <> Category rec
+binder 3788:3788 <> C:114
+R3807:3813 CAG.Category.Functor <> Functor rec
+R3815:3815 CAG.Category.Representable <> C:114 var
+R3817:3823 CAG.Category.Representable <> TypeCat def
+binder 3803:3803 <> F:115
+R3838:3839 CAG.Category.Core <> Ob proj
+R3835:3835 CAG.Category.Representable <> C:114 var
+binder 3831:3831 <> A:116
+R3849:3852 CAG.Category.Functor <> ::cat_scope:x_'##'_x not
+R3848:3848 CAG.Category.Representable <> F:115 var
+R3853:3853 CAG.Category.Representable <> A:116 var
+binder 3844:3844 <> a:117
+R3885:3892 CAG.Category.Functor <> NatTrans rec
+R3899:3899 CAG.Category.Representable <> F:115 var
+R3894:3895 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R3897:3897 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R3896:3896 CAG.Category.Representable <> A:116 var
+binder 3926:3926 <> B:120
+R3934:3936 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3938:3939 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3941:3943 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R3933:3933 CAG.Category.Representable <> C:114 var
+R3937:3937 CAG.Category.Representable <> A:116 var
+R3940:3940 CAG.Category.Representable <> B:120 var
+binder 3929:3929 <> f:121
+R3967:3969 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3947:3955 CAG.Category.Functor <> component proj
+R3966:3966 CAG.Category.Representable <> f:121 var
+R3964:3964 CAG.Category.Representable <> B:120 var
+R3957:3962 CAG.Category.Representable <> ir_nat:119 meth
+R3971:3974 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3976:3977 CAG.Category.Functor <> ::cat_scope:x_'#>'_x not
+R3970:3970 CAG.Category.Representable <> F:115 var
+R3975:3975 CAG.Category.Representable <> f:121 var
+R3977:3977 CAG.Category.Representable <> a:117 var
+R3997:4004 CAG.Category.Functor <> NatTrans rec
+R4008:4009 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4011:4011 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4010:4010 CAG.Category.Representable <> A:116 var
+R4006:4006 CAG.Category.Representable <> F:115 var
+binder 4038:4038 <> B:124
+R4080:4082 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4045:4053 CAG.Category.Functor <> component proj
+R4079:4079 CAG.Category.Representable <> B:124 var
+R4056:4062 CAG.Category.Functor <> NatComp def
+R4071:4076 CAG.Category.Representable <> ir_nat:119 meth
+R4064:4069 CAG.Category.Representable <> ir_inv:123 meth
+R4083:4091 CAG.Category.Functor <> component proj
+R4106:4106 CAG.Category.Representable <> B:124 var
+R4094:4098 CAG.Category.Functor <> NatId def
+R4100:4101 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4103:4103 CAG.Category.Representable <> ::cat_scope:'H['_x_']' not
+R4102:4102 CAG.Category.Representable <> A:116 var
+binder 4133:4133 <> B:126
+R4175:4177 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4140:4148 CAG.Category.Functor <> component proj
+R4174:4174 CAG.Category.Representable <> B:126 var
+R4151:4157 CAG.Category.Functor <> NatComp def
+R4166:4171 CAG.Category.Representable <> ir_inv:123 meth
+R4159:4164 CAG.Category.Representable <> ir_nat:119 meth
+R4178:4186 CAG.Category.Functor <> component proj
+R4198:4198 CAG.Category.Representable <> B:126 var
+R4189:4193 CAG.Category.Functor <> NatId def
+R4195:4195 CAG.Category.Representable <> F:115 var

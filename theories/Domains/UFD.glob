@@ -1,0 +1,360 @@
+DIGEST 17c65853c1622a11857eb30421e599bf
+FCAG.Domains.UFD
+R247:256 CAG.Rings.Ring <> <> lib
+R258:277 CAG.Domains.Divisibility <> <> lib
+R279:296 CAG.Domains.Associates <> <> lib
+R322:345 CAG.Domains.IrreduciblePrime <> <> lib
+R375:379 Stdlib.Arith.Arith <> <> lib
+R381:383 Stdlib.micromega.Lia <> <> lib
+R385:388 Stdlib.Lists.List <> <> lib
+R390:400 Stdlib.Sorting.Permutation <> <> lib
+R410:422 Stdlib.Lists.List ListNotations <> mod
+sec 606:611 <> UFDDef
+var  625:625 UFDDef R
+var  636:636 UFDDef d
+R640:653 CAG.Domains.Divisibility <> IntegralDomain rec
+R655:655 CAG.Domains.UFD <> R:1 var
+var 666:666 UFDDef r
+R673:676 CAG.Rings.Ring <> Ring rec
+R678:678 CAG.Domains.UFD <> UFDDef.R var
+R742:745 CAG.Domains.Divisibility <> id_r proj
+R747:747 CAG.Domains.UFD <> UFDDef.d var
+var 756:759 UFDDef comm
+R776:776 CAG.Domains.UFD <> UFDDef.R var
+binder 770:770 <> a:3
+binder 772:772 <> b:4
+R791:793 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R779:782 CAG.Rings.Ring <> rmul proj
+R784:784 CAG.Domains.UFD <> UFDDef.R var
+R786:786 CAG.Domains.UFD <> UFDDef.r var
+R788:788 CAG.Domains.UFD <> a:3 var
+R790:790 CAG.Domains.UFD <> b:4 var
+R794:797 CAG.Rings.Ring <> rmul proj
+R799:799 CAG.Domains.UFD <> UFDDef.R var
+R801:801 CAG.Domains.UFD <> UFDDef.r var
+R803:803 CAG.Domains.UFD <> b:4 var
+R805:805 CAG.Domains.UFD <> a:3 var
+R832:838 CAG.Domains.Divisibility <> id_comm proj
+R840:840 CAG.Domains.UFD <> UFDDef.d var
+var 849:850 UFDDef nt
+R864:867 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R856:859 CAG.Rings.Ring <> rone proj
+R861:861 CAG.Domains.UFD <> UFDDef.R var
+R863:863 CAG.Domains.UFD <> UFDDef.r var
+R868:872 CAG.Rings.Ring <> rzero proj
+R874:874 CAG.Domains.UFD <> UFDDef.R var
+R876:876 CAG.Domains.UFD <> UFDDef.r var
+R925:937 CAG.Domains.Divisibility <> id_nontrivial proj
+R939:939 CAG.Domains.UFD <> UFDDef.d var
+var 948:950 UFDDef nzd
+R968:968 CAG.Domains.UFD <> UFDDef.R var
+binder 962:962 <> a:5
+binder 964:964 <> b:6
+R995:1013 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R983:985 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R971:974 CAG.Rings.Ring <> rmul proj
+R976:976 CAG.Domains.UFD <> UFDDef.R var
+R978:978 CAG.Domains.UFD <> UFDDef.r var
+R980:980 CAG.Domains.UFD <> a:5 var
+R982:982 CAG.Domains.UFD <> b:6 var
+R986:990 CAG.Rings.Ring <> rzero proj
+R992:992 CAG.Domains.UFD <> UFDDef.R var
+R994:994 CAG.Domains.UFD <> UFDDef.r var
+R1027:1030 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R1015:1017 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1014:1014 CAG.Domains.UFD <> a:5 var
+R1018:1022 CAG.Rings.Ring <> rzero proj
+R1024:1024 CAG.Domains.UFD <> UFDDef.R var
+R1026:1026 CAG.Domains.UFD <> UFDDef.r var
+R1032:1034 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1031:1031 CAG.Domains.UFD <> b:6 var
+R1035:1039 CAG.Rings.Ring <> rzero proj
+R1041:1041 CAG.Domains.UFD <> UFDDef.R var
+R1043:1043 CAG.Domains.UFD <> UFDDef.r var
+R1081:1094 CAG.Domains.Divisibility <> id_no_zero_div proj
+R1096:1096 CAG.Domains.UFD <> UFDDef.d var
+def 1255:1266 <> list_product
+R1274:1277 Corelib.Init.Datatypes <> list ind
+R1279:1279 CAG.Domains.UFD <> UFDDef.R var
+binder 1269:1270 <> ps:7
+R1284:1284 CAG.Domains.UFD <> UFDDef.R var
+R1299:1300 CAG.Domains.UFD <> ps:7 var
+R1313:1314 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R1324:1327 CAG.Rings.Ring <> rone proj
+R1329:1329 CAG.Domains.UFD <> UFDDef.R var
+R1331:1331 CAG.Domains.UFD <> UFDDef.r var
+R1340:1343 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1352:1355 CAG.Rings.Ring <> rmul proj
+R1357:1357 CAG.Domains.UFD <> UFDDef.R var
+R1359:1359 CAG.Domains.UFD <> UFDDef.r var
+R1364:1375 CAG.Domains.UFD <> list_product:8 def
+rec 1402:1414 <> Factorization
+proj 1447:1455 <> fact_unit
+proj 1466:1474 <> fact_irrs
+proj 1490:1506 <> fact_unit_is_unit
+proj 1535:1547 <> fact_irrs_irr
+proj 1603:1609 <> fact_eq
+R1421:1421 CAG.Domains.UFD <> UFDDef.R var
+binder 1417:1417 <> a:10
+R1459:1459 CAG.Domains.UFD <> UFDDef.R var
+R1478:1481 Corelib.Init.Datatypes <> list ind
+R1483:1483 CAG.Domains.UFD <> UFDDef.R var
+R1510:1516 CAG.Domains.Divisibility <> is_unit def
+R1520:1528 CAG.Domains.UFD <> fact_unit:12 meth
+R1518:1518 CAG.Domains.UFD <> UFDDef.r var
+binder 1558:1558 <> p:15
+R1575:1578 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1561:1562 Stdlib.Lists.List <> In def
+R1566:1574 CAG.Domains.UFD <> fact_irrs:13 meth
+R1564:1564 CAG.Domains.UFD <> p:15 var
+R1579:1592 CAG.Domains.IrreduciblePrime <> is_irreducible def
+R1596:1596 CAG.Domains.UFD <> p:15 var
+R1594:1594 CAG.Domains.UFD <> UFDDef.d var
+R1615:1617 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1614:1614 CAG.Domains.UFD <> a:10 var
+R1618:1621 CAG.Rings.Ring <> rmul proj
+R1623:1623 CAG.Domains.UFD <> UFDDef.R var
+R1625:1625 CAG.Domains.UFD <> UFDDef.r var
+R1627:1635 CAG.Domains.UFD <> fact_unit:12 meth
+R1638:1649 CAG.Domains.UFD <> list_product def
+R1651:1659 CAG.Domains.UFD <> fact_irrs:13 meth
+def 2126:2142 <> has_factorization
+R2149:2149 CAG.Domains.UFD <> UFDDef.R var
+binder 2145:2145 <> a:18
+R2180:2187 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2167:2170 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R2166:2166 CAG.Domains.UFD <> a:18 var
+R2171:2175 CAG.Rings.Ring <> rzero proj
+R2177:2177 CAG.Domains.UFD <> UFDDef.R var
+R2179:2179 CAG.Domains.UFD <> UFDDef.r var
+R2201:2208 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2188:2189 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R2190:2196 CAG.Domains.Divisibility <> is_unit def
+R2200:2200 CAG.Domains.UFD <> a:18 var
+R2198:2198 CAG.Domains.UFD <> UFDDef.r var
+R2209:2215 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2235:2236 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2220:2232 CAG.Domains.UFD <> Factorization rec
+R2234:2234 CAG.Domains.UFD <> a:18 var
+binder 2216:2216 <> F:19
+R2237:2240 Corelib.Init.Logic <> True ind
+def 2481:2494 <> ufd_uniqueness
+R2521:2521 CAG.Domains.UFD <> UFDDef.R var
+binder 2517:2517 <> a:20
+R2543:2555 CAG.Domains.UFD <> Factorization rec
+R2557:2557 CAG.Domains.UFD <> a:20 var
+binder 2535:2536 <> F1:21
+binder 2538:2539 <> F2:22
+R2566:2572 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2589:2647 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2581:2584 Corelib.Init.Datatypes <> list ind
+R2586:2588 Corelib.Init.Datatypes <> nat ind
+binder 2573:2577 <> sigma:23
+R2699:2710 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2648:2658 Stdlib.Sorting.Permutation <> Permutation ind
+R2667:2669 Corelib.Lists.ListDef <> seq def
+R2674:2679 Corelib.Init.Datatypes <> length def
+R2682:2690 CAG.Domains.UFD <> fact_irrs proj
+R2692:2692 CAG.Domains.UFD <> a:20 var
+R2694:2695 CAG.Domains.UFD <> F1:21 var
+R2660:2664 CAG.Domains.UFD <> sigma:23 var
+R2749:2760 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2723:2725 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2711:2716 Corelib.Init.Datatypes <> length def
+R2718:2722 CAG.Domains.UFD <> sigma:23 var
+R2726:2731 Corelib.Init.Datatypes <> length def
+R2734:2742 CAG.Domains.UFD <> fact_irrs proj
+R2744:2744 CAG.Domains.UFD <> a:20 var
+R2746:2747 CAG.Domains.UFD <> F2:22 var
+R2774:2776 Corelib.Init.Datatypes <> nat ind
+binder 2768:2768 <> i:24
+binder 2770:2770 <> j:25
+R2815:2828 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2806:2808 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2789:2797 Stdlib.Lists.List <> nth_error def
+R2805:2805 CAG.Domains.UFD <> i:24 var
+R2799:2803 CAG.Domains.UFD <> sigma:23 var
+R2809:2812 Corelib.Init.Datatypes <> Some constr
+R2814:2814 CAG.Domains.UFD <> j:25 var
+R2829:2840 CAG.Domains.Associates <> is_associate def
+R2906:2908 Corelib.Lists.ListDef <> nth def
+R2930:2934 CAG.Rings.Ring <> rzero proj
+R2936:2936 CAG.Domains.UFD <> UFDDef.R var
+R2938:2938 CAG.Domains.UFD <> UFDDef.r var
+R2913:2921 CAG.Domains.UFD <> fact_irrs proj
+R2923:2923 CAG.Domains.UFD <> a:20 var
+R2925:2926 CAG.Domains.UFD <> F2:22 var
+R2910:2910 CAG.Domains.UFD <> j:25 var
+R2857:2859 Corelib.Lists.ListDef <> nth def
+R2881:2885 CAG.Rings.Ring <> rzero proj
+R2887:2887 CAG.Domains.UFD <> UFDDef.R var
+R2889:2889 CAG.Domains.UFD <> UFDDef.r var
+R2864:2872 CAG.Domains.UFD <> fact_irrs proj
+R2874:2874 CAG.Domains.UFD <> a:20 var
+R2876:2877 CAG.Domains.UFD <> F1:21 var
+R2861:2861 CAG.Domains.UFD <> i:24 var
+R2842:2842 CAG.Domains.UFD <> UFDDef.d var
+rec 2953:2957 <> IsUFD
+proj 2981:2997 <> ufd_factorization
+proj 3040:3049 <> ufd_unique
+R3012:3012 CAG.Domains.UFD <> UFDDef.R var
+binder 3008:3008 <> a:27
+R3015:3031 CAG.Domains.UFD <> has_factorization def
+R3033:3033 CAG.Domains.UFD <> a:27 var
+R3060:3073 CAG.Domains.UFD <> ufd_uniqueness def
+var 3380:3400 UFDDef ufd_irreducible_prime
+R3416:3420 CAG.Domains.UFD <> IsUFD rec
+binder 3412:3412 <> H:30
+R3428:3428 CAG.Domains.UFD <> UFDDef.R var
+binder 3424:3424 <> p:31
+R3456:3459 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3438:3451 CAG.Domains.IrreduciblePrime <> is_irreducible def
+R3455:3455 CAG.Domains.UFD <> p:31 var
+R3453:3453 CAG.Domains.UFD <> UFDDef.d var
+R3460:3467 CAG.Domains.IrreduciblePrime <> is_prime def
+R3471:3471 CAG.Domains.UFD <> p:31 var
+R3469:3469 CAG.Domains.UFD <> UFDDef.d var
+prf 3546:3562 <> list_product_zero
+R3578:3581 Corelib.Init.Datatypes <> list ind
+R3583:3583 CAG.Domains.UFD <> UFDDef.R var
+binder 3573:3574 <> ps:34
+R3619:3628 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3607:3609 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3592:3603 CAG.Domains.UFD <> list_product def
+R3605:3606 CAG.Domains.UFD <> ps:34 var
+R3610:3614 CAG.Rings.Ring <> rzero proj
+R3616:3616 CAG.Domains.UFD <> UFDDef.R var
+R3618:3618 CAG.Domains.UFD <> UFDDef.r var
+R3629:3635 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3637:3638 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 3636:3636 <> p:35
+R3646:3649 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R3639:3640 Stdlib.Lists.List <> In def
+R3644:3645 CAG.Domains.UFD <> ps:34 var
+R3642:3642 CAG.Domains.UFD <> p:35 var
+R3651:3653 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3650:3650 CAG.Domains.UFD <> p:35 var
+R3654:3658 CAG.Rings.Ring <> rzero proj
+R3660:3660 CAG.Domains.UFD <> UFDDef.R var
+R3662:3662 CAG.Domains.UFD <> UFDDef.r var
+R3758:3759 CAG.Domains.UFD <> UFDDef.nt var
+R3758:3759 CAG.Domains.UFD <> UFDDef.nt var
+R3803:3805 CAG.Domains.UFD <> UFDDef.nzd var
+R3810:3821 CAG.Domains.UFD <> list_product def
+R3803:3805 CAG.Domains.UFD <> UFDDef.nzd var
+R3810:3821 CAG.Domains.UFD <> list_product def
+prf 4089:4108 <> list_product_nonzero
+R4124:4127 Corelib.Init.Datatypes <> list ind
+R4129:4129 CAG.Domains.UFD <> UFDDef.R var
+binder 4119:4120 <> ps:36
+R4138:4138 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4178:4188 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 4146:4146 <> p:37
+R4156:4159 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4149:4150 Stdlib.Lists.List <> In def
+R4154:4155 CAG.Domains.UFD <> ps:36 var
+R4152:4152 CAG.Domains.UFD <> p:37 var
+R4160:4173 CAG.Domains.IrreduciblePrime <> is_irreducible def
+R4177:4177 CAG.Domains.UFD <> p:37 var
+R4175:4175 CAG.Domains.UFD <> UFDDef.d var
+R4204:4207 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R4189:4200 CAG.Domains.UFD <> list_product def
+R4202:4203 CAG.Domains.UFD <> ps:36 var
+R4208:4212 CAG.Rings.Ring <> rzero proj
+R4214:4214 CAG.Domains.UFD <> UFDDef.R var
+R4216:4216 CAG.Domains.UFD <> UFDDef.r var
+R4268:4284 CAG.Domains.UFD <> list_product_zero thm
+R4268:4284 CAG.Domains.UFD <> list_product_zero thm
+prf 4421:4436 <> list_product_app
+R4455:4458 Corelib.Init.Datatypes <> list ind
+R4460:4460 CAG.Domains.UFD <> UFDDef.R var
+binder 4447:4448 <> ps:38
+binder 4450:4451 <> qs:39
+R4492:4494 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4469:4480 CAG.Domains.UFD <> list_product def
+R4485:4488 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R4483:4484 CAG.Domains.UFD <> ps:38 var
+R4489:4490 CAG.Domains.UFD <> qs:39 var
+R4495:4498 CAG.Rings.Ring <> rmul proj
+R4500:4500 CAG.Domains.UFD <> UFDDef.R var
+R4502:4502 CAG.Domains.UFD <> UFDDef.r var
+R4505:4516 CAG.Domains.UFD <> list_product def
+R4518:4519 CAG.Domains.UFD <> ps:38 var
+R4523:4534 CAG.Domains.UFD <> list_product def
+R4536:4537 CAG.Domains.UFD <> qs:39 var
+R4628:4637 CAG.Rings.Ring <> rmul_one_l proj
+R4628:4637 CAG.Rings.Ring <> rmul_one_l proj
+R4671:4680 CAG.Rings.Ring <> rmul_assoc proj
+R4671:4680 CAG.Rings.Ring <> rmul_assoc proj
+prf 4810:4835 <> prime_divides_list_product
+R4851:4855 CAG.Domains.UFD <> IsUFD rec
+binder 4847:4847 <> H:40
+R4863:4863 CAG.Domains.UFD <> UFDDef.R var
+binder 4859:4859 <> p:41
+R4872:4875 Corelib.Init.Datatypes <> list ind
+R4877:4877 CAG.Domains.UFD <> UFDDef.R var
+binder 4867:4868 <> ps:42
+R4899:4908 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4887:4894 CAG.Domains.IrreduciblePrime <> is_prime def
+R4898:4898 CAG.Domains.UFD <> p:41 var
+R4896:4896 CAG.Domains.UFD <> UFDDef.d var
+R4938:4947 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4909:4915 CAG.Domains.Divisibility <> divides def
+R4919:4919 CAG.Domains.UFD <> p:41 var
+R4922:4933 CAG.Domains.UFD <> list_product def
+R4935:4936 CAG.Domains.UFD <> ps:42 var
+R4917:4917 CAG.Domains.UFD <> UFDDef.r var
+R4948:4954 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4956:4957 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 4955:4955 <> q:43
+R4965:4968 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R4958:4959 Stdlib.Lists.List <> In def
+R4963:4964 CAG.Domains.UFD <> ps:42 var
+R4961:4961 CAG.Domains.UFD <> q:43 var
+R4969:4975 CAG.Domains.Divisibility <> divides def
+R4979:4979 CAG.Domains.UFD <> p:41 var
+R4981:4981 CAG.Domains.UFD <> q:43 var
+R4977:4977 CAG.Domains.UFD <> UFDDef.r var
+R5130:5134 Corelib.Init.Logic <> proj2 thm
+R5137:5156 CAG.Domains.Divisibility <> unit_iff_divides_one thm
+R5160:5163 CAG.Domains.UFD <> UFDDef.comm var
+R5158:5158 CAG.Domains.UFD <> UFDDef.r var
+R5130:5134 Corelib.Init.Logic <> proj2 thm
+R5137:5156 CAG.Domains.Divisibility <> unit_iff_divides_one thm
+R5160:5163 CAG.Domains.UFD <> UFDDef.comm var
+R5158:5158 CAG.Domains.UFD <> UFDDef.r var
+R5233:5244 CAG.Domains.UFD <> list_product def
+R5233:5244 CAG.Domains.UFD <> list_product def
+prf 5588:5613 <> ufd_divisibility_exponents
+R5629:5633 CAG.Domains.UFD <> IsUFD rec
+binder 5625:5625 <> H:44
+R5643:5643 CAG.Domains.UFD <> UFDDef.R var
+binder 5637:5637 <> a:45
+binder 5639:5639 <> b:46
+R5667:5670 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5654:5657 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R5653:5653 CAG.Domains.UFD <> a:45 var
+R5658:5662 CAG.Rings.Ring <> rzero proj
+R5664:5664 CAG.Domains.UFD <> UFDDef.R var
+R5666:5666 CAG.Domains.UFD <> UFDDef.r var
+R5685:5694 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5672:5675 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R5671:5671 CAG.Domains.UFD <> b:46 var
+R5676:5680 CAG.Rings.Ring <> rzero proj
+R5682:5682 CAG.Domains.UFD <> UFDDef.R var
+R5684:5684 CAG.Domains.UFD <> UFDDef.r var
+R5708:5837 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5695:5701 CAG.Domains.Divisibility <> divides def
+R5705:5705 CAG.Domains.UFD <> a:45 var
+R5707:5707 CAG.Domains.UFD <> b:46 var
+R5703:5703 CAG.Domains.UFD <> UFDDef.r var
+R5838:5841 Corelib.Init.Logic <> True ind
+R5867:5867 Corelib.Init.Logic <> I constr
+R5867:5867 Corelib.Init.Logic <> I constr
+R5880:5885 CAG.Domains.UFD UFDDef <> sec
+R5899:5910 CAG.Domains.UFD <> list_product def
+R5899:5910 CAG.Domains.UFD <> list_product def
+R5932:5936 CAG.Domains.UFD <> IsUFD rec
+R5932:5936 CAG.Domains.UFD <> IsUFD rec
+R5955:5967 CAG.Domains.UFD <> Factorization rec
+R5955:5967 CAG.Domains.UFD <> Factorization rec

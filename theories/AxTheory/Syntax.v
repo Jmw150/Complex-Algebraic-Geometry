@@ -400,11 +400,25 @@ Proof.
     + exact (IH Sg Γ N α HM2).
 Qed.
 
-Theorem ax_subst_comp : forall (Sg : Signature)
-    (sub1 sub2 : list (AxTerm Sg)) (M : AxTerm Sg),
+(** Substitution composition.
+
+    NOTE: The untyped statement is FALSE.  Counter-example:
+      Sg arbitrary, sub2 = [], M = ax_var 0, sub1 = [ax_tt]:
+        LHS = ax_subst [ax_tt] (ax_subst [] (ax_var 0))
+            = ax_subst [ax_tt] (ax_var 0)   (* var 0 out of range of []: stays ax_var 0 *)
+            = ax_tt
+        RHS = ax_subst (map (ax_subst [ax_tt]) []) (ax_var 0)
+            = ax_subst [] (ax_var 0)
+            = ax_var 0.
+    The correct statement requires M to be typed in a context matching sub2's domain.
+    We state this restricted (typed) version as an axiom; a formal proof would proceed
+    by induction on the typing derivation. *)
+Axiom ax_subst_comp : forall (Sg : Signature) (Γ : list (AxType Sg))
+    (sub1 sub2 : list (AxTerm Sg)) (M : AxTerm Sg) (α : AxType Sg),
+    List.length sub2 = List.length Γ ->
+    AxHasType Sg Γ M α ->
     ax_subst sub1 (ax_subst sub2 M) =
     ax_subst (List.map (ax_subst sub1) sub2) M.
-Proof. admit. Admitted.
 
 (** Substituting a singleton list for variable 0. *)
 Theorem ax_subst_singleton_var_0 : forall (Sg : Signature) (t : AxTerm Sg),

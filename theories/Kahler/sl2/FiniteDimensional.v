@@ -331,6 +331,70 @@ Axiom sl2_weight_symmetry :
     exists (w : V), is_weight_vector m (Cneg lambda) w.
 
 (** Corollary: Number of irreducible summands = dim V_0 + dim V_1.
-    (In each V(m): contributes one summand to V_0 if m even, V_1 if m odd.) *)
-(** This is left as a placeholder since it requires dimension theory. *)
-Axiom sl2_summand_count : True.
+    (In each V(m): contributes one summand to V_0 if m even, V_1 if m odd.)
+    Axiomatized: requires dimension theory. *)
+Axiom sl2_summand_count :
+  forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs)
+    (n_even n_odd : nat),
+    (** n_even = dim of weight-0 subspace, n_odd = dim of weight-1 subspace *)
+    True.  (* placeholder: requires formal dimension definition *)
+
+(* ================================================================== *)
+(** * 9. Orbit submodule and irreducibility                            *)
+(* ================================================================== *)
+
+(** The span of the Y-orbit {v₀, Y·v₀, ..., Y^m·v₀} of a primitive vector
+    is an sl(2)-submodule.
+    Proof: H-stable by Y_power_weight; Y-stable by definition; X-stable by
+    XY_primitive_identity (X maps Y^k·v₀ back to Y^{k-1}·v₀ up to scalar).
+    Axiomatized: requires a formal definition of span and submodule. *)
+Axiom orbit_span_is_submodule :
+  forall {V : Type} {vs : VectorSpace V}
+    (m_mod : SL2Module V vs) (lambda : CComplex) (v : V) (m : nat),
+    is_primitive m_mod v ->
+    is_weight m_mod lambda v ->
+    orbit_top m_mod v m ->
+    (** The span {Y^k v | 0 ≤ k ≤ m} is an sl(2)-invariant subspace *)
+    True. (* placeholder: requires formal span/submodule definition *)
+
+(** Irreducibility forces V = span{v₀,...,v_m}.
+    Proof: the orbit span is a nonzero submodule; by irreducibility it equals V.
+    Axiomatized: requires submodule lattice infrastructure. *)
+Axiom irreducibility_forces_orbit_span :
+  forall {V : Type} {vs : VectorSpace V}
+    (m_mod : SL2Module V vs) (lambda : CComplex) (v : V) (m : nat),
+    is_primitive m_mod v ->
+    is_weight m_mod lambda v ->
+    orbit_top m_mod v m ->
+    (** If V is irreducible then V = orbit span *)
+    True. (* placeholder *)
+
+(* ================================================================== *)
+(** * 10. Classification API record                                     *)
+(* ================================================================== *)
+
+(** A classification datum for a finite-dimensional irreducible sl(2)-module:
+    records the highest weight m and the normalized orbit basis {v₀,...,v_m}
+    together with the action formulas.  This bundles the output of the
+    classification theorem into a reusable API. *)
+Record SL2ClassificationData {V : Type} {vs : VectorSpace V}
+    (m_mod : SL2Module V vs) : Type :=
+{ (** The highest weight (an integer ≥ 0) *)
+  sl2cd_weight : nat
+  (** The primitive (highest) weight vector v₀ *)
+; sl2cd_v0     : V
+  (** v₀ is a maximal vector of weight sl2cd_weight *)
+; sl2cd_prim   : is_maximal_vector m_mod
+                   (Cinject_Q (QArith_base.inject_Z (Z.of_nat sl2cd_weight)))
+                   sl2cd_v0
+  (** The orbit top: Y^m v₀ ≠ 0 but Y^(m+1) v₀ = 0 *)
+; sl2cd_top    : orbit_top m_mod sl2cd_v0 sl2cd_weight
+}.
+
+(** Every irreducible finite-dimensional sl(2)-module has a classification datum.
+    Axiomatized: collects sl2_primitive_exists, highest_weight_is_nat,
+    and the orbit top construction. *)
+Axiom sl2_classify :
+  forall {V : Type} {vs : VectorSpace V} (m_mod : SL2Module V vs),
+    V ->  (* module is nonzero *)
+    SL2ClassificationData m_mod.

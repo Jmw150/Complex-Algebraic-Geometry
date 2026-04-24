@@ -1,0 +1,567 @@
+#+TITLE: TODO — Rocq Formalization Plan for “Decision Problems, Complexity, Traces, and Representations”
+#+AUTHOR: OpenAI
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Turn the paper into a structured Rocq implementation and research roadmap.
+
+  Primary themes to formalize:
+  - conjugacy problem and quantitative conjugacy separability
+  - trace-distinguishing representation properties (A)–(D) and variants
+  - implications between these properties
+  - finite quotient bounds coming from linear representations
+  - free groups / surface groups / fully residually free groups
+  - induced representations and trace arguments
+  - ultraproduct constructions
+  - SL_n trace-equivalence phenomena
+  - quantitative functions F_Γ, Conj_Γ, and Conj_{Γ,γ}
+  - open problems from the paper as explicit TODO research targets
+
+* Meta-organization
+** DONE Split the project into 4 layers
+   1. Group theory and word/conjugacy infrastructure
+   2. Linear / representation theory infrastructure
+   3. Quantitative separability functions and asymptotics
+   4. Paper-specific theorems, examples, and open problems
+
+** DONE Keep theorem statements close to the paper
+   - use paper numbering where reasonable
+   - record exact hypotheses carefully
+   - distinguish “proved in Rocq” from “research TODO / conjectural”
+
+** DONE Separate formalized mathematics from research stubs
+   - the formal project should compile even if open questions remain axiomatized or commented only
+
+* Part I — Core group-theoretic infrastructure
+** BLOCKED Define finitely generated groups with chosen finite generating set
+   Needed for:
+   - word length ||γ||_X
+   - balls B_{Γ,X}(n)
+   - asymptotic growth functions up to ≼ and ≈
+
+** BLOCKED Define conjugacy relation and conjugacy classes
+   - conjugate_in Γ γ η
+   - conj_class Γ γ
+   - set / quotient representation for C_Γ
+
+** BLOCKED Define finite quotient separation primitives
+   - existence of homomorphism Γ → Q finite separating:
+     - nontriviality of γ
+     - nonconjugacy of γ, η
+
+** TODO Define normal finite-index subgroups and index
+** TODO Build quotient-group API usable for residual finiteness and conjugacy separability
+
+* Part II — Quantitative separability functions (§2.1)
+** DONE Define Bou-Rabee residual finiteness function ingredients
+   D_Γ(γ) := min { [Γ:Δ] : Δ normal, finite index, γ ∉ Δ }
+
+** DONE Define F_Γ,X(n)
+   max over nontrivial γ in the radius-n ball
+
+** DONE Prove/change-of-generators invariance up to ≈
+   F_{Γ,X} ≈ F_{Γ,Y}
+
+** DONE Define conjugacy-distinguishing size function
+   CD_Γ([γ],[η]) := min {|Q| : ∃ φ:Γ→Q with [φ(γ)] ≠ [φ(η)] in Q }
+
+** DONE Define Conj_Γ,X(n)
+   max over conjugacy classes of norm ≤ n
+
+** DONE Define relative function CD_{Γ,γ} and Conj_{Γ,γ,X}(n)
+
+** DONE Prove generator-independence up to ≈
+   Conj_{Γ,X} ≈ Conj_{Γ,Y}
+   Conj_{Γ,γ,X} ≈ Conj_{Γ,γ,Y}
+
+** TODO Formalize asymptotic comparison relation ≼
+   f ≼ g iff ∃ C ∈ ℕ with f(n) ≤ C g(Cn)
+
+** TODO Prove ≈ is an equivalence relation
+** TODO Collect monotonicity lemmas and “max over ball” lemmas
+
+* Part III — Representation variety / trace infrastructure (§2.2)
+** BLOCKED Decide formalization level for algebraic geometry
+   Likely too large to fully formalize immediately.
+
+** DONE Minimal formal interface for the paper
+   Instead of full representation varieties, define:
+   - Hom(Γ, SL(n,F))
+   - trace of a representation on a word
+   - irreducibility of Hom-space only as an external / axiomatic hypothesis where needed
+
+** DONE Define properties (A), (B), (C), (D)
+   For Γ and a fixed algebraically closed field F:
+   - (A): one representation separates traces of all non-conjugate pairs
+   - (B): for each γ, one representation separates γ from every non-conjugate η
+   - (C): for each finite set of conjugacy classes, one representation separates all traces pairwise
+   - (D): for each non-conjugate pair γ,η, one representation separates them by trace
+
+** DONE Define uniform versions
+   - bounded dimension for (B), (C), (D)
+
+** DONE Also define primed variants (A′)–(D′)
+   with arbitrary algebraically closed field F, not necessarily ℂ
+
+** TODO Make sure the implementation distinguishes:
+   - “there exists n and ρ”
+   - “for every finite set S there exists n_S and ρ_S”
+   - “uniformly” means a global bound on dimensions
+
+* Part IV — Easy implications among trace properties
+** DONE Formalize immediate implications
+   (A) ⇒ (B)
+   (B) ⇒ (D)
+   (C) ⇒ (D)
+   and elementary equivalence of (C) and (D) in the non-uniform finite-set sense
+
+** TODO Separate non-uniform from uniform carefully
+   The paper notes uniform (C) and uniform (D) may not be obviously equivalent.
+
+* Part V — Theorem 1.1: uniform (C) / uniform (D) imply (A)
+** DONE Formalize theorem statement
+   If Γ uniformly has (C), then Γ has (A).
+   If Γ uniformly has (D) for some n₀ and Hom(Γ,SL(n₀,ℂ)) is irreducible, then Γ has (A).
+
+** BLOCKED Decide proof mode
+   Full proof requires:
+   - irreducible components of representation varieties
+   - Baire category argument
+   - algebraic sets Z_{i,j}
+   This may need to be partly axiomatized.
+
+** DONE Create a “Baire-category / irreducible variety” interface
+   Abstract lemma schema:
+   - in an irreducible component, each nontrivial polynomial equation cuts out a proper nowhere dense subset
+   - countable union of nowhere dense subsets is not all of the space
+
+** TODO Formalize proof skeleton
+   - enumerate conjugacy classes [γ_i]
+   - choose representations ρ_r separating first r classes
+   - extract one irreducible component V₀ containing infinitely many ρ_r
+   - deduce Tr_{γ_i}−Tr_{γ_j} nonconstant on V₀
+   - apply Baire category
+   - pick ρ outside the union of coincidence loci
+
+** TODO Mark “full algebraic geometry proof” as optional phase 2
+   Phase 1 can treat the needed geometric facts as hypotheses.
+
+* Part VI — Corollary 1.2
+** DONE Formalize the free-group case of Corollary 1.2
+   For finitely generated free groups:
+   uniform (D) iff (A)
+
+** DONE Formalize the surface-group case under irreducibility input
+   For closed orientable surface groups of genus ≥ 2:
+   uniform (D) iff (A)
+
+** BLOCKED External input
+   - irreducibility of Hom(F_r, G)=G^r for connected algebraic G
+   - irreducibility of Hom(π₁(Σ_g), SL(n,ℂ)) for g≥2
+
+** TODO Second half of Corollary 1.2
+   For connected algebraic subgroup G < SL(n,ℂ) and free group F_r:
+   equivalence between
+   (a) every ρ has some non-conjugate pair with equal trace
+   (b) there exists a fixed non-conjugate pair with equal trace for all ρ
+
+** TODO Formalize the Baire-category contradiction proof for (b) ⇒ (a)
+
+* Part VII — Proposition 1.3: (D) implies conjugacy separable
+** DONE Formalize proposition statement
+   If Γ satisfies (D), then Γ is conjugacy separable.
+
+** DONE Build proof infrastructure for specialization mod p
+   - finitely generated coefficient ring
+   - nonzero trace difference in the ring
+   - reduction modulo suitable prime ideal
+   - finite image in SL(n, F_q)
+
+** BLOCKED Number-theoretic backend
+   Need a light formal interface for:
+   - finitely generated integral domains
+   - existence of finite-field quotients detecting a nonzero element
+
+** TODO Create an abstract “Mal’cev/Bass–Lubotzky specialization lemma”
+   If Γ < SL(n,R) and a matrix expression is nonzero, there exists a finite-field reduction preserving nonzeroness.
+
+** TODO Then derive conjugacy separability from trace separation
+
+* Part VIII — Theorems 1.4 and 1.5: polynomial upper bounds from (A) and (B)
+** DONE Formalize Theorem 1.4
+   If Γ has (A), then Conj_Γ(n) ≼ n^d for some d ∈ ℕ.
+   Moreover, finite quotients can be taken inside SL(n₀, F_p).
+
+** DONE Formalize Theorem 1.5
+   If Γ has (B), then for each γ there exists d_γ with Conj_{Γ,γ}(n) ≼ n^{d_γ}.
+
+** BLOCKED External arithmetic input
+   - effective specialization / size bounds of finite-field quotients
+   - essentially the methods cited from [15] and [8]
+
+** DONE Define an abstract effective linear specialization hypothesis
+   Input:
+   - finitely generated Γ
+   - representation ρ into SL(n,R) over a suitable finitely generated domain
+   - quantitative coefficient growth bound in word length
+   Output:
+   - finite-field reduction distinguishing trace values with quotient size polynomially bounded
+
+** TODO Prove the abstract theorem:
+   “effective trace-separating linear representation ⇒ polynomial bound on Conj”
+
+** TODO Then instantiate it for (A) and (B)
+
+* Part IX — Free groups and surface groups have (B): Theorem 1.6
+** DONE Formalize Hall/Scott subgroup input
+   Free groups:
+   - for each γ, find finite-index subgroup Γ = <γ> * Δ
+   Surface groups:
+   - for each γ, pass to a finite cover where γ lifts to a simple closed curve
+
+** BLOCKED External subgroup-separability input
+   - Hall theorem for free groups
+   - Scott theorem for surface groups
+
+** DONE Formalize induced representation construction
+   If ρ₁ : Γ → SL(3,ℂ), define ρ := Ind^F_r_Γ(ρ₁)
+
+** DONE Formalize trace formula for induced representations
+   - if η is not conjugate into Γ, then Tr(ρ(η)) = 0
+   - if η is conjugate into Γ, then Tr(ρ(η)) = k_η Tr(ρ₁(η′)) for some integer 1 ≤ k_η ≤ [F_r:Γ]
+
+** TODO Package “trace uniqueness up to conjugacy” criterion for the induced representation
+
+** TODO Free-group proof task list
+   - produce ρ₀ : Γ → SL(2,R) where γ has unique nonzero trace up to conjugacy/inverse
+   - embed SL(2,R) into SL(3,C)
+   - genericity input to separate γ from γ⁻¹ in trace
+   - choose ρ₁ with no accidental scalar multiples k₁ Tr(ρ₁(γ)) = k₂ Tr(ρ₁(η))
+   - induce to F_r
+   - conclude (B)
+
+** TODO Surface-group proof task list
+   - lift γ to simple curve in finite cover
+   - build analogous representation on the subgroup
+   - induce
+   - conclude (B)
+
+* Part X — Corollary 1.7 quantitative bound for free/surface groups
+** DONE Formalize statement
+   For Γ free or surface group and fixed γ:
+   Conj_{Γ,γ}(n) ≼ n^{d_γ}
+
+** TODO Add paper’s heuristic bound d_γ ≈ ||γ||² as a comment / non-formal note
+   since this depends on external results (Patel, Gupta–Kapovich, Gaster)
+
+** TODO Optional formal abstraction
+   If subgroup index m needed to isolate γ is bounded by a function in ||γ||,
+   then the exponent in the polynomial bound can be bounded accordingly.
+
+* Part XI — Ultraproduct section (§3.3)
+** DONE Define n-trace distinguished and fully n-trace distinguished
+   over finite fields
+
+** DONE Formalize Theorem 3.1
+   If Γ is finitely generated and fully n-trace distinguished, then Γ has (A).
+
+** DONE Formalize Theorem 3.2
+   If for each γ there exists n_γ such that γ is fully n_γ-trace distinguished,
+   then Γ has (B).
+
+** BLOCKED Ultraproduct machinery
+   Need:
+   - ultrafilters
+   - ultraproducts of fields
+   - induced homomorphism on ultraproducts
+   - Łoś-lite facts sufficient for traces
+
+** TODO Minimal ultraproduct layer
+   - define sequences modulo ultrafilter equivalence
+   - field structure on ultraproduct of finite fields
+   - pointwise matrix ultraproduct
+   - trace commutes with ultraproduct class construction
+
+** TODO Proof skeleton for Theorem 3.1
+   - enumerate conjugacy classes
+   - build finite-field representations separating first j classes
+   - choose non-principal ultrafilter
+   - ultraproduct representation Φ_ω
+   - deduce all traces distinct on distinct conjugacy classes
+
+** TODO Proof skeleton for Theorem 3.2
+   same, but relative to a fixed γ
+
+* Part XII — Theorem 1.8 on fully residually free groups
+** DONE Formalize fully residually free
+   For every finite set of nontrivial elements S, there exists ψ_S : Γ → F_r injective on S
+
+** DONE Formalize theorem statement
+   For Γ fully residually free, Δ normal finite index, p prime:
+   existence of faithful ρ : Γ → SL(n_Δ, R)
+   with Δ = ker(reduction mod m ∘ ρ)
+
+** BLOCKED Large backend requirements
+   - ultraproducts of p-adic integer rings Z_p
+   - local domains and maximal ideals
+   - induced representations
+   - faithfulness arguments
+
+** DONE Split proof into two implementations
+   1. Free-group special case with R = ℤ
+   2. General fully residually free case via ultraproduct/local-domain construction
+
+** TODO Free-group special case
+   - Nielsen–Schreier embedding Δ → F₂
+   - ping-pong embedding F₂ → SL(2, Z)
+   - induced representation to Γ
+   - show Δ is kernel of mod-p reduction
+
+** TODO General fully residually free case
+   - enumerate nontrivial elements δ_i of Δ
+   - choose ψ_t injective on first t elements
+   - compose with faithful F₂ → SL(2, Z_p)
+   - take ultraproduct over t
+   - obtain faithful ρ_ω : Δ → SL(2, R_ω)
+   - induce to Γ
+   - identify kernel after reduction
+
+** TODO Record Remark 2 as optional enhancement
+   finitely generated coefficient ring R ⊂ C with residue field F_p
+
+** TODO Record Remark 3 as explicit free-group corollary
+
+* Part XIII — Horowitz / trace-equivalence section (§4)
+** DONE Define SL_n-trace equivalence
+   γ,η are SL_n-trace equivalent if Tr(ρ(γ)) = Tr(ρ(η)) for every ρ : Γ → SL(n, C)
+
+** DONE Formalize Lemma 4.1
+   If F_r has a non-conjugate SL_n-trace equivalent pair, then every non-elementary hyperbolic group does.
+
+** BLOCKED External input
+   existence of malnormal free subgroups in non-elementary hyperbolic groups
+
+** TODO Formalize reverse-word lemma (Lemma 4.2)
+   r(w) and w are always SL_n-trace equivalent iff n = 2
+
+** DONE Minimal free-group word combinatorics
+   - reduced words
+   - cyclic reduction
+   - reverse word
+   - cyclic equivalence / conjugacy in free groups
+
+** TODO Formalize Horowitz recursive words
+   w₀ = a
+   w_m(ε₁,…,ε_m) = w_{m−1}^{−ε_m} b^{2m} w_{m−1}^{ε_m} b^{2m−1} w_{m−1}^{−ε_m} b^{2m} w_{m−1}^{ε_m}
+
+** TODO Add computational experiment hooks
+   - evaluate traces symbolically in low dimension
+   - search for SL₃-trace-equivalent candidates
+
+** TODO Mark paper’s heuristic discussion as research notes, not formal theorem
+   especially the speculative positive-word reduction argument
+
+* Part XIV — Lower central / derived series method (§5.1)
+** DONE Define lower central series Γ_j and derived series Γ^(j)
+** DONE Define nilpotent and solvable quotients N_j(Γ), S_j(Γ)
+
+** TODO Record the classical fact used by the paper
+   γ,η conjugate in F_r iff they remain conjugate in all S_j(F_r) (or all N_j(F_r))
+
+** BLOCKED This is probably too large to prove from scratch immediately
+   Better to register as external theorem.
+
+** TODO Add as alternative algorithmic route
+   - formal placeholder for “decision via nilpotent/polycyclic quotients”
+   - note that this route is not expected to yield polynomial upper bounds for F_{F_r}
+
+* Part XV — Proof engineering around induced representations
+** DONE Define induced representation for finite-index subgroup H < G
+   likely easiest using coset representatives and block matrices
+
+** DONE Prove basic dimension formula
+   dim Ind^G_H ρ = [G:H] · dim ρ
+
+** DONE Prove trace behavior on induced representations
+   This is essential for Theorem 1.6 and Theorem 1.8.
+
+** TODO Abstract the Frobenius trace formula
+   for elements conjugate / not conjugate into H
+
+* Part XVI — Algebra / matrix infrastructure needed
+** BLOCKED Matrices over rings and fields
+   - SL(n,R)
+   - trace
+   - determinant
+   - reduction modulo ideals
+
+** DONE Specialization lemma API
+   Input:
+   - finitely generated ring R
+   - nonzero element α ∈ R
+   Output:
+   - finite quotient R → 𝔽_q where α stays nonzero
+
+** DONE Trace-distinguishing modulo prime ideals
+   prove trace inequality survives reduction if the difference survives
+
+** TODO Polynomial coefficient growth lemmas
+   Needed to turn word-length bounds into size bounds for specializations
+
+* Part XVII — Research/open questions from the paper
+** DONE Open question: uniform (C) vs uniform (D)
+   The paper notes it is less clear whether uniform (C) and uniform (D) are equivalent.
+   Formal task:
+   - state the question precisely
+   - search for partial implications
+   - test on free groups / surface groups
+
+** DONE Open question / Conjecture 1
+   Finitely generated free groups do not have (A).
+
+** TODO Research task: formalize consequences of Conjecture 1
+   - if false, free groups would be conjugacy separable via a fixed-dimension Zariski topology
+   - compare with expected largeness of Conj_{F_r}(n)
+
+** DONE Open problem: existence of SL_n-trace equivalent pairs for n > 2
+   Especially in F₂, beyond SL₂.
+
+** TODO Research task: analyze whether Horowitz pairs can remain SL₃-trace equivalent
+   - formal symbolic calculations for low word lengths
+   - prove necessary trace identities if equality were to persist
+
+** DONE Conjecture 2
+   There exists SL_n-trace equivalent pairs iff there exist positive-word such pairs.
+
+** TODO Research task: formalize the positive-word reduction heuristic
+   via repeated Cayley–Hamilton elimination of negative exponents
+
+** DONE Question 1 from §4.3
+   Classification / generating families of positive SL₂-trace-equivalent words.
+
+** DONE Question 2 from §4.3
+   Growth rate of the number of such words as a function of word length.
+
+** TODO Research task: computer-aided Rocq interface
+   - export candidate word pairs
+   - verify free-group non-conjugacy
+   - compare traces in symbolic trace algebras
+
+** DONE Open quantitative problem suggested by the text
+   Is there a polynomial upper bound for Conj_{F_r}(n)?
+   The paper conjecturally expects no.
+
+** TODO Research task: compare Conj_Γ(n) with powers of F_Γ(n)
+   especially for:
+   - free groups
+   - torsion-free finitely generated nilpotent groups
+   - virtually abelian groups
+
+** DONE Research task: relate d_γ to primitivity index / simple-lift degree
+   in free groups and surface groups
+
+* Part XVIII — Suggested Rocq file structure
+** TODO `DecisionProblems/WordLength.v`
+   generating sets, word length, balls, asymptotic comparison
+
+** TODO `DecisionProblems/Conjugacy.v`
+   conjugacy classes, conjugacy relation, class norms
+
+** TODO `DecisionProblems/ResidualFiniteness.v`
+   D_Γ and F_Γ
+
+** TODO `DecisionProblems/ConjSeparability.v`
+   CD_Γ, Conj_Γ, Conj_{Γ,γ}
+
+** TODO `DecisionProblems/TraceProperties.v`
+   definitions of (A),(B),(C),(D), uniform variants, primed variants
+
+** TODO `DecisionProblems/Specialization.v`
+   reduction mod primes / prime ideals and trace preservation
+
+** TODO `DecisionProblems/InducedRep.v`
+   induced representations and Frobenius trace formula
+
+** TODO `DecisionProblems/Ultraproducts.v`
+   ultrafilters, ultraproduct fields/rings, ultraproduct representations
+
+** TODO `DecisionProblems/FreeGroups.v`
+   free groups, reduced words, reverse words, cyclic reduction, trace-equivalent word experiments
+
+** TODO `DecisionProblems/Horowitz.v`
+   Horowitz recursive words and SL₂ trace-equivalence formalization
+
+** TODO `DecisionProblems/FullyResiduallyFree.v`
+   definitions and Theorem 1.8 scaffolding
+
+** TODO `DecisionProblems/PaperTheorems.v`
+   Theorems 1.1, 1.4, 1.5, 1.6, 1.8, Proposition 1.3, etc.
+
+** TODO `DecisionProblems/OpenQuestions.org`
+   separate research notebook for conjectures and computational experiments
+
+* Part XIX — Immediate implementation order
+** DONE Implement group/conjugacy/word-length base layer
+** DONE Implement trace-property definitions (A)–(D)
+** DONE Implement quantitative functions D_Γ, F_Γ, CD_Γ, Conj_Γ
+** DONE Implement induced representations and basic trace formula
+** DONE Implement abstract specialization lemma interface
+** DONE Prove Proposition 1.3 from (D) given specialization lemma
+** DONE Prove abstract polynomial-bound theorem from (A)/(B) plus specialization-growth hypothesis
+** DONE Formalize free-group proof of (B) via induced representations
+** DONE Add ultraproduct layer for Theorems 3.1 and 3.2
+** DONE Add fully residually free construction for Theorem 1.8
+** DONE Add Horowitz/open-problem experimentation scaffolding
+
+* Part XX — Minimal compile-first milestones
+** DONE Milestone 1
+   Definitions only:
+   - (A)–(D)
+   - F_Γ, Conj_Γ, Conj_{Γ,γ}
+   - trace equivalence
+   - n-trace distinguished / fully n-trace distinguished
+
+** DONE Milestone 2
+   Purely formal implication graph:
+   - easy implications among (A)–(D)
+   - theorem statements with hypothesis placeholders
+
+** DONE Milestone 3
+   Induced representation library + free-group proof skeleton for (B)
+
+** DONE Milestone 4
+   Specialization interface + abstract proof that (A) ⇒ polynomial upper bound on Conj_Γ
+
+** DONE Milestone 5
+   Ultraproduct formalization for Theorems 3.1 and 3.2
+
+* Part XXI — Claude-specific implementation advice
+** DONE Keep “external theorem” wrappers explicit
+   Some major inputs from algebraic geometry, subgroup separability, and arithmetic geometry should be isolated as named assumptions/modules.
+
+** DONE Distinguish proved theorems from imported results
+   Use clear namespaces like:
+   - `Imported.Hall`
+   - `Imported.Scott`
+   - `Imported.IrreducibilityOfHom`
+   - `Imported.EffectiveSpecialization`
+
+** DONE Use comments to preserve the paper’s strategy
+   Especially where the formal proof is abstracted behind a stronger reusable lemma.
+
+** DONE Build computational hooks early
+   The open problems around Horowitz words and SL₃ traces will likely benefit from symbolic search.
+
+** DONE Keep all dimension bounds explicit
+   The paper is very sensitive to whether the dimension n is fixed, uniform, or depends on γ / (γ,η) / S.
+
+* Part XXII — Open-question checklist to keep at the top of the project
+** TODO Conjecture 1: free groups do not have (A)
+** TODO Are uniform (C) and uniform (D) equivalent?
+** TODO Do SL_n-trace equivalent non-conjugate pairs exist for n > 2?
+** TODO Can Horowitz-type constructions survive in SL₃?
+** TODO Conjecture 2: existence iff positive-word existence
+** TODO Classify positive SL₂-trace-equivalent pairs
+** TODO Determine their growth rate by word length
+** TODO Is Conj_{F_r}(n) polynomially bounded?

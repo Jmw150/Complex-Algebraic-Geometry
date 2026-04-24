@@ -205,6 +205,60 @@ Axiom semisimple_derivations_inner :
     IsLieDer la delta ->
     exists x : L, forall z : L, delta z = laF_bracket la x z.
 
+(** ** Exercise 2.1: Inner derivations form an ideal in Der(L).
+
+    Key identity: for any derivation φ and any x ∈ L,
+      [φ, ad x](z) = φ([x,z]) - [x,φ(z)]
+                   = [φ(x),z] + [x,φ(z)] - [x,φ(z)]   (Leibniz on φ)
+                   = [φ(x), z]
+                   = ad(φ(x))(z).
+    So [φ, ad_x] = ad_{φ(x)}, which is inner. *)
+
+(** The Lie bracket of two Lie derivations (their commutator as endomorphisms). *)
+Definition lie_der_bracket {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (φ δ : L -> L) : L -> L :=
+  fun z => la_add la (φ (δ z)) (la_neg la (δ (φ z))).
+
+(** [φ, ad x] = ad(φ(x)): the key identity. *)
+Lemma inner_derivation_ideal_key {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L)
+    (φ : L -> L) (Hφ : IsLieDer la φ) (x z : L) :
+    lie_der_bracket la φ (ad la x) z = ad la (φ x) z.
+Proof.
+  unfold lie_der_bracket, ad.
+  destruct Hφ as [_ [_ Hlei]].
+  (* φ([x,z]) = [φ(x),z] + [x,φ(z)] *)
+  rewrite (Hlei x z).
+  (* goal: [φ(x),z] + [x,φ(z)] - [x,φ(z)] = [φ(x),z] *)
+  rewrite <- (laF_vs la).(vsF_add_assoc).
+  rewrite (laF_vs la).(vsF_add_neg_r).
+  apply (laF_vs la).(vsF_add_zero_r).
+Qed.
+
+(** Inner derivations form an ideal in Der(L):
+    for any Lie derivation φ and any inner derivation ad x,
+    their commutator [φ, ad x] is the inner derivation ad(φ(x)). *)
+Theorem inner_derivations_ideal {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L)
+    (φ : L -> L) (Hφ : IsLieDer la φ)
+    (δ : L -> L) (Hδ : IsInnerDerivation la δ) :
+    IsInnerDerivation la (lie_der_bracket la φ δ).
+Proof.
+  destruct Hδ as [x Hx].
+  exists (φ x).
+  intro z.
+  (* Replace δ by ad x pointwise *)
+  assert (Heq : lie_der_bracket la φ δ z =
+                lie_der_bracket la φ (ad la x) z).
+  { unfold lie_der_bracket, ad.
+    rewrite (Hx z).
+    (* Also need φ(δ z) = φ([x,z]) *)
+    rewrite (Hx (φ z)).
+    reflexivity. }
+  rewrite Heq.
+  apply inner_derivation_ideal_key. exact Hφ.
+Qed.
+
 (* ================================================================== *)
 (** * 6. Abstract Jordan decomposition                                  *)
 (* ================================================================== *)
@@ -239,3 +293,72 @@ Axiom abstract_jordan_unique :
       IsAdNilpotent la n' ->
       laF_bracket la s' n' = la_zero la ->
       s = s' /\ n = n'.
+
+(* ================================================================== *)
+(** * 7. Corollaries of semisimplicity                                *)
+(* ================================================================== *)
+
+(** A semisimple Lie algebra equals its own derived algebra: [L,L] = L.
+
+    Proof sketch: L decomposes into simple ideals I_1, ..., I_k (by
+    semisimple_direct_sum + induction).  Each I_j satisfies [I_j, I_j] = I_j
+    (simple_derived_full).  Hence [L,L] = L.  Requires the full decomposition
+    not yet axiomatized in this form. *)
+Axiom semisimple_derived_full :
+  forall {F : Type} (fld : Field F) {L : Type}
+    (la : LieAlgebraF fld L),
+    IsSemisimple la ->
+    forall z, IsDerivedAlg la z.
+
+(** Every ideal of a semisimple Lie algebra is semisimple.
+
+    Proof sketch: The radical of I is a solvable ideal of L, hence zero
+    by semisimplicity of L.  Requires that Rad(I) ◁ L, which holds since
+    I ◁ L and Rad(I) is characteristic in I. *)
+Axiom semisimple_ideal_semisimple :
+  forall {F : Type} (fld : Field F) {L : Type}
+    (la : LieAlgebraF fld L),
+    IsSemisimple la ->
+    forall (I : L -> Prop),
+    IsIdeal la I ->
+    IsSemisimple la.  (* la restricted to I is semisimple — placeholder type *)
+
+(** Surjective homomorphic image of a semisimple Lie algebra is semisimple.
+
+    Proof: φ maps the radical of L to a solvable ideal of M; since Rad(L) = 0,
+    the image has trivial radical. *)
+Axiom semisimple_image :
+  forall {F : Type} (fld : Field F) {L M : Type}
+    (la : LieAlgebraF fld L) (lb : LieAlgebraF fld M)
+    (φ : LieHom la lb)
+    (surj : forall y : M, exists x : L, lh_fn φ x = y),
+    IsSemisimple la -> IsSemisimple lb.
+
+(* ================================================================== *)
+(** * 8. Exercise 8: Jordan decomposition is compatible with direct sums *)
+(* ================================================================== *)
+
+(** If L = I ⊕ J (direct sum of ideals) and x = u + v with u ∈ I, v ∈ J,
+    and u = s_u + n_u, v = s_v + n_v are the Jordan decompositions in I and J
+    respectively, then x = (s_u + s_v) + (n_u + n_v) is the Jordan decomposition
+    of x in L.
+
+    Proof: s_u + s_v is ad-semisimple (diagonalizable) and n_u + n_v is
+    ad-nilpotent in L (since [I,J] = 0 in a direct sum, so the nilpotent parts
+    commute). Uniqueness then gives the result. *)
+Axiom jordan_direct_sum_compat :
+  forall {F : Type} (fld : Field F) {L : Type}
+    (la : LieAlgebraF fld L) (I J : L -> Prop),
+    IsSemisimple la ->
+    IsDirectSum la I J ->
+    forall (x u v su nu sv nv : L),
+    x = la_add la u v ->
+    I u -> J v ->
+    u = la_add la su nu ->
+    IsAdNilpotent la nu -> laF_bracket la su nu = la_zero la ->
+    v = la_add la sv nv ->
+    IsAdNilpotent la nv -> laF_bracket la sv nv = la_zero la ->
+    (** Then the Jordan decomposition of x is s = su+sv, n = nu+nv *)
+    x = la_add la (la_add la su sv) (la_add la nu nv) /\
+    IsAdNilpotent la (la_add la nu nv) /\
+    laF_bracket la (la_add la su sv) (la_add la nu nv) = la_zero la.

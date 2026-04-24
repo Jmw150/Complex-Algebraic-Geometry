@@ -1,0 +1,658 @@
+DIGEST 0ea117a2b56823af4e835023e62fca1d
+FCAG.Topology
+R172:198 Stdlib.Logic.IndefiniteDescription <> <> lib
+def 213:215 <> set
+binder 218:218 <> X:1
+R232:235 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R231:231 CAG.Topology <> X:1 var
+def 362:373 <> intersection
+binder 376:376 <> X:2
+R393:395 CAG.Topology <> set def
+R397:397 CAG.Topology <> X:2 var
+binder 387:387 <> U:3
+binder 389:389 <> V:4
+R402:404 CAG.Topology <> set def
+R406:406 CAG.Topology <> X:2 var
+binder 417:417 <> x:5
+R425:428 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R422:422 CAG.Topology <> U:3 var
+R424:424 CAG.Topology <> x:5 var
+R429:429 CAG.Topology <> V:4 var
+R431:431 CAG.Topology <> x:5 var
+def 446:450 <> union
+binder 453:453 <> X:6
+R470:472 CAG.Topology <> set def
+R474:474 CAG.Topology <> X:6 var
+binder 464:464 <> U:7
+binder 466:466 <> V:8
+R479:481 CAG.Topology <> set def
+R483:483 CAG.Topology <> X:6 var
+binder 494:494 <> x:9
+R502:505 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R499:499 CAG.Topology <> U:7 var
+R501:501 CAG.Topology <> x:9 var
+R506:506 CAG.Topology <> V:8 var
+R508:508 CAG.Topology <> x:9 var
+def 523:527 <> empty
+binder 530:530 <> A:10
+R543:546 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R542:542 CAG.Topology <> A:10 var
+R566:570 Corelib.Init.Logic <> False ind
+def 585:588 <> full
+binder 591:591 <> A:11
+R604:607 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R603:603 CAG.Topology <> A:11 var
+R627:630 Corelib.Init.Logic <> True ind
+def 645:646 <> In
+binder 649:649 <> A:12
+R665:668 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R664:664 CAG.Topology <> A:12 var
+binder 660:660 <> X:13
+R680:680 CAG.Topology <> A:12 var
+binder 676:676 <> x:14
+R686:686 CAG.Topology <> X:13 var
+R688:688 CAG.Topology <> x:14 var
+def 703:708 <> subset
+binder 711:711 <> X:15
+R721:723 CAG.Topology <> set def
+R725:725 CAG.Topology <> X:15 var
+binder 715:715 <> A:16
+binder 717:717 <> B:17
+binder 747:747 <> x:18
+R753:756 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R750:750 CAG.Topology <> A:16 var
+R752:752 CAG.Topology <> x:18 var
+R757:757 CAG.Topology <> B:17 var
+R759:759 CAG.Topology <> x:18 var
+R786:797 CAG.Topology <> intersection def
+not 772:772 <> :::x_'∩'_x
+R842:846 CAG.Topology <> union def
+not 828:828 <> :::x_'∪'_x
+R891:892 CAG.Topology <> In def
+not 877:877 <> :::x_'∈'_x
+R937:942 CAG.Topology <> subset def
+not 923:923 <> :::x_'⊆'_x
+rec 1009:1016 <> Topology
+proj 1036:1042 <> is_open
+proj 1064:1072 <> open_full
+proj 1103:1112 <> open_empty
+proj 1201:1210 <> open_inter
+proj 1308:1317 <> open_union
+binder 1019:1019 <> X:19
+R1051:1054 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1046:1048 CAG.Topology <> set def
+R1050:1050 CAG.Topology <> X:19 var
+R1076:1082 CAG.Topology <> is_open:21 meth
+R1094:1097 Corelib.Init.Logic <> True ind
+R1116:1122 CAG.Topology <> is_open:21 meth
+R1134:1138 Corelib.Init.Logic <> False ind
+binder 1225:1225 <> U:24
+binder 1227:1227 <> V:25
+R1245:1254 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1236:1242 CAG.Topology <> is_open:21 meth
+R1244:1244 CAG.Topology <> U:24 var
+R1264:1273 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1255:1261 CAG.Topology <> is_open:21 meth
+R1263:1263 CAG.Topology <> V:25 var
+R1274:1280 CAG.Topology <> is_open:21 meth
+binder 1287:1287 <> x:26
+R1295:1298 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1292:1292 CAG.Topology <> U:24 var
+R1294:1294 CAG.Topology <> x:26 var
+R1299:1299 CAG.Topology <> V:25 var
+R1301:1301 CAG.Topology <> x:26 var
+binder 1333:1333 <> I:28
+R1349:1352 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1348:1348 CAG.Topology <> I:28 var
+R1353:1355 CAG.Topology <> set def
+R1357:1357 CAG.Topology <> X:19 var
+binder 1344:1344 <> F:29
+R1367:1367 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1391:1401 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 1375:1375 <> i:30
+R1378:1384 CAG.Topology <> is_open:21 meth
+R1387:1387 CAG.Topology <> F:29 var
+R1389:1389 CAG.Topology <> i:30 var
+R1402:1408 CAG.Topology <> is_open:21 meth
+binder 1415:1415 <> x:31
+R1420:1426 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1428:1429 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1427:1427 <> i:32
+R1430:1430 CAG.Topology <> F:29 var
+R1434:1434 CAG.Topology <> x:31 var
+R1432:1432 CAG.Topology <> i:32 var
+R1451:1457 CAG.Topology <> is_open proj
+R1451:1457 CAG.Topology <> is_open proj
+def 1480:1485 <> covers
+binder 1488:1488 <> X:34
+R1496:1503 CAG.Topology <> Topology rec
+R1505:1505 CAG.Topology <> X:34 var
+binder 1492:1492 <> T:35
+R1513:1515 CAG.Topology <> set def
+R1517:1517 CAG.Topology <> X:34 var
+binder 1509:1509 <> U:36
+binder 1521:1521 <> I:37
+R1538:1541 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1537:1537 CAG.Topology <> I:37 var
+R1542:1544 CAG.Topology <> set def
+R1546:1546 CAG.Topology <> X:34 var
+binder 1532:1533 <> Ui:38
+R1565:1565 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1592:1597 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1631:1631 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 1573:1573 <> i:39
+R1576:1582 CAG.Topology <> is_open proj
+R1587:1588 CAG.Topology <> Ui:38 var
+R1590:1590 CAG.Topology <> i:39 var
+R1584:1584 CAG.Topology <> T:35 var
+binder 1605:1605 <> x:40
+R1611:1614 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1608:1608 CAG.Topology <> U:36 var
+R1610:1610 CAG.Topology <> x:40 var
+R1615:1621 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1623:1624 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1622:1622 <> i:41
+R1625:1626 CAG.Topology <> Ui:38 var
+R1630:1630 CAG.Topology <> x:40 var
+R1628:1628 CAG.Topology <> i:41 var
+def 1646:1654 <> Hausdorff
+binder 1657:1657 <> X:42
+R1665:1672 CAG.Topology <> Topology rec
+R1674:1674 CAG.Topology <> X:42 var
+binder 1661:1661 <> T:43
+R1702:1702 CAG.Topology <> X:42 var
+binder 1696:1696 <> x:44
+binder 1698:1698 <> y:45
+R1715:1722 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1710:1713 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R1709:1709 CAG.Topology <> x:44 var
+R1714:1714 CAG.Topology <> y:45 var
+R1723:1729 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1741:1748 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1736:1738 CAG.Topology <> set def
+R1740:1740 CAG.Topology <> X:42 var
+binder 1730:1730 <> U:46
+R1736:1738 CAG.Topology <> set def
+R1740:1740 CAG.Topology <> X:42 var
+binder 1732:1732 <> V:47
+R1760:1769 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1749:1755 CAG.Topology <> is_open proj
+R1759:1759 CAG.Topology <> U:46 var
+R1757:1757 CAG.Topology <> T:43 var
+R1781:1790 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1770:1776 CAG.Topology <> is_open proj
+R1780:1780 CAG.Topology <> V:47 var
+R1778:1778 CAG.Topology <> T:43 var
+R1794:1803 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1791:1791 CAG.Topology <> U:46 var
+R1793:1793 CAG.Topology <> x:44 var
+R1807:1817 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1847:1847 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1804:1804 CAG.Topology <> V:47 var
+R1806:1806 CAG.Topology <> y:45 var
+binder 1825:1825 <> z:48
+R1831:1834 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1828:1828 CAG.Topology <> U:46 var
+R1830:1830 CAG.Topology <> z:48 var
+R1838:1841 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1835:1835 CAG.Topology <> V:47 var
+R1837:1837 CAG.Topology <> z:48 var
+R1842:1846 Corelib.Init.Logic <> False ind
+def 1862:1869 <> is_basis
+binder 1872:1872 <> X:49
+R1882:1889 CAG.Topology <> Topology rec
+R1891:1891 CAG.Topology <> X:49 var
+binder 1878:1878 <> T:50
+binder 1897:1897 <> I:51
+R1915:1918 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1914:1914 CAG.Topology <> I:51 var
+R1919:1921 CAG.Topology <> set def
+R1923:1923 CAG.Topology <> X:49 var
+binder 1910:1910 <> B:52
+R1942:1942 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R1968:1980 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2094:2094 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 1950:1950 <> i:53
+R1953:1959 CAG.Topology <> is_open proj
+R1964:1964 CAG.Topology <> B:52 var
+R1966:1966 CAG.Topology <> i:53 var
+R1961:1961 CAG.Topology <> T:50 var
+binder 1988:1988 <> U:54
+R2013:2027 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2002:2008 CAG.Topology <> is_open proj
+R2012:2012 CAG.Topology <> U:54 var
+R2010:2010 CAG.Topology <> T:50 var
+binder 2035:2035 <> x:55
+R2041:2060 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2038:2038 CAG.Topology <> U:54 var
+R2040:2040 CAG.Topology <> x:55 var
+R2061:2067 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2069:2070 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2068:2068 <> i:56
+R2076:2079 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2071:2071 CAG.Topology <> B:52 var
+R2075:2075 CAG.Topology <> x:55 var
+R2073:2073 CAG.Topology <> i:56 var
+R2080:2085 CAG.Topology <> subset def
+R2093:2093 CAG.Topology <> U:54 var
+R2088:2088 CAG.Topology <> B:52 var
+R2090:2090 CAG.Topology <> i:56 var
+def 2109:2117 <> countable
+binder 2120:2120 <> I:57
+R2142:2148 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2161:2166 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2154:2157 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2153:2153 CAG.Topology <> I:57 var
+R2158:2160 Corelib.Init.Datatypes <> nat ind
+binder 2149:2149 <> f:58
+binder 2174:2174 <> i:59
+binder 2176:2176 <> j:60
+R2188:2191 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2182:2184 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2179:2179 CAG.Topology <> f:58 var
+R2181:2181 CAG.Topology <> i:59 var
+R2185:2185 CAG.Topology <> f:58 var
+R2187:2187 CAG.Topology <> j:60 var
+R2193:2195 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2192:2192 CAG.Topology <> i:59 var
+R2196:2196 CAG.Topology <> j:60 var
+def 2211:2225 <> SecondCountable
+binder 2228:2228 <> X:61
+R2236:2243 CAG.Topology <> Topology rec
+R2245:2245 CAG.Topology <> X:61 var
+binder 2232:2232 <> T:62
+R2260:2266 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2284:2290 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2267:2267 <> I:63
+R2275:2278 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2274:2274 CAG.Topology <> I:63 var
+R2279:2281 CAG.Topology <> set def
+R2283:2283 CAG.Topology <> X:61 var
+binder 2270:2270 <> B:64
+R2302:2309 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2291:2299 CAG.Topology <> countable def
+R2301:2301 CAG.Topology <> I:63 var
+R2310:2317 CAG.Topology <> is_basis def
+R2323:2323 CAG.Topology <> B:64 var
+R2321:2321 CAG.Topology <> I:63 var
+R2319:2319 CAG.Topology <> T:62 var
+def 2338:2345 <> Subspace
+binder 2348:2348 <> X:65
+R2363:2365 CAG.Topology <> set def
+R2367:2367 CAG.Topology <> X:65 var
+binder 2359:2359 <> U:66
+R2375:2376 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R2378:2380 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R2382:2384 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R2388:2389 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R2381:2381 CAG.Topology <> X:65 var
+binder 2377:2377 <> x:67
+R2385:2385 CAG.Topology <> U:66 var
+R2387:2387 CAG.Topology <> x:67 var
+def 2404:2411 <> preimage
+binder 2414:2414 <> X:68
+binder 2416:2416 <> Y:69
+R2427:2430 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2426:2426 CAG.Topology <> X:68 var
+R2431:2431 CAG.Topology <> Y:69 var
+binder 2422:2422 <> f:70
+R2441:2443 CAG.Topology <> set def
+R2445:2445 CAG.Topology <> Y:69 var
+binder 2437:2437 <> V:71
+R2450:2452 CAG.Topology <> set def
+R2454:2454 CAG.Topology <> X:68 var
+binder 2465:2465 <> x:72
+R2470:2470 CAG.Topology <> V:71 var
+R2473:2473 CAG.Topology <> f:70 var
+R2475:2475 CAG.Topology <> x:72 var
+def 2491:2500 <> continuous
+binder 2505:2505 <> X:73
+binder 2507:2507 <> Y:74
+R2518:2525 CAG.Topology <> Topology rec
+R2527:2527 CAG.Topology <> X:73 var
+binder 2513:2514 <> TX:75
+R2538:2545 CAG.Topology <> Topology rec
+R2547:2547 CAG.Topology <> Y:74 var
+binder 2533:2534 <> TY:76
+R2558:2561 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2557:2557 CAG.Topology <> X:73 var
+R2562:2562 CAG.Topology <> Y:74 var
+binder 2553:2553 <> f:77
+R2591:2593 CAG.Topology <> set def
+R2595:2595 CAG.Topology <> Y:74 var
+binder 2587:2587 <> V:78
+R2615:2622 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2603:2609 CAG.Topology <> is_open proj
+R2614:2614 CAG.Topology <> V:78 var
+R2611:2612 CAG.Topology <> TY:76 var
+R2623:2629 CAG.Topology <> is_open proj
+R2635:2642 CAG.Topology <> preimage def
+R2646:2646 CAG.Topology <> V:78 var
+R2644:2644 CAG.Topology <> f:77 var
+R2631:2632 CAG.Topology <> TX:75 var
+prf 2657:2669 <> continuous_id
+binder 2683:2683 <> X:79
+R2691:2698 CAG.Topology <> Topology rec
+R2700:2700 CAG.Topology <> X:79 var
+binder 2687:2687 <> T:80
+R2708:2717 CAG.Topology <> continuous def
+binder 2728:2728 <> x:81
+R2733:2733 CAG.Topology <> x:81 var
+R2721:2721 CAG.Topology <> T:80 var
+R2719:2719 CAG.Topology <> T:80 var
+prf 2828:2842 <> continuous_comp
+binder 2856:2856 <> X:82
+binder 2858:2858 <> Y:83
+binder 2860:2860 <> Z:84
+R2873:2880 CAG.Topology <> Topology rec
+R2882:2882 CAG.Topology <> X:82 var
+binder 2868:2869 <> TX:85
+R2895:2902 CAG.Topology <> Topology rec
+R2904:2904 CAG.Topology <> Y:83 var
+binder 2890:2891 <> TY:86
+R2917:2924 CAG.Topology <> Topology rec
+R2926:2926 CAG.Topology <> Z:84 var
+binder 2912:2913 <> TZ:87
+R2939:2942 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2938:2938 CAG.Topology <> X:82 var
+R2943:2943 CAG.Topology <> Y:83 var
+binder 2934:2934 <> f:88
+R2956:2959 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2955:2955 CAG.Topology <> Y:83 var
+R2960:2960 CAG.Topology <> Z:84 var
+binder 2951:2951 <> g:89
+R2988:2997 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2970:2979 CAG.Topology <> continuous def
+R2987:2987 CAG.Topology <> f:88 var
+R2984:2985 CAG.Topology <> TY:86 var
+R2981:2982 CAG.Topology <> TX:85 var
+R3016:3025 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2998:3007 CAG.Topology <> continuous def
+R3015:3015 CAG.Topology <> g:89 var
+R3012:3013 CAG.Topology <> TZ:87 var
+R3009:3010 CAG.Topology <> TY:86 var
+R3026:3035 CAG.Topology <> continuous def
+binder 3048:3048 <> x:90
+R3053:3053 CAG.Topology <> g:89 var
+R3056:3056 CAG.Topology <> f:88 var
+R3058:3058 CAG.Topology <> x:90 var
+R3040:3041 CAG.Topology <> TZ:87 var
+R3037:3038 CAG.Topology <> TX:85 var
+binder 3127:3127 <> y:91
+R3137:3137 CAG.Topology <> y:91 var
+binder 3127:3127 <> y:92
+R3137:3137 CAG.Topology <> y:92 var
+def 3170:3186 <> subspace_topology
+binder 3191:3191 <> X:93
+R3202:3209 CAG.Topology <> Topology rec
+R3211:3211 CAG.Topology <> X:93 var
+binder 3197:3198 <> TX:94
+R3221:3223 CAG.Topology <> set def
+R3225:3225 CAG.Topology <> X:93 var
+binder 3217:3217 <> U:95
+R3232:3239 CAG.Topology <> Topology rec
+R3241:3242 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R3244:3246 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R3248:3250 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R3254:3255 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R3247:3247 CAG.Topology <> X:93 var
+binder 3243:3243 <> x:96
+R3251:3251 CAG.Topology <> U:95 var
+R3253:3253 CAG.Topology <> x:96 var
+R3281:3287 CAG.Topology <> is_open proj
+R3281:3287 CAG.Topology <> is_open proj
+R3281:3287 CAG.Topology <> is_open proj
+R3396:3404 CAG.Topology <> open_full proj
+R3396:3404 CAG.Topology <> open_full proj
+R3417:3426 CAG.Topology <> open_empty proj
+R3417:3426 CAG.Topology <> open_empty proj
+R3438:3447 CAG.Topology <> open_inter proj
+R3438:3447 CAG.Topology <> open_inter proj
+R3459:3468 CAG.Topology <> open_union proj
+R3459:3468 CAG.Topology <> open_union proj
+binder 3296:3296 <> V:97
+R3307:3313 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3323:3324 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3318:3320 CAG.Topology <> set def
+binder 3314:3314 <> W:98
+R3337:3340 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R3325:3331 CAG.Topology <> is_open proj
+R3336:3336 CAG.Topology <> W:98 var
+R3352:3352 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R3354:3356 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R3358:3360 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R3364:3364 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+binder 3353:3353 <> x:99
+R3363:3363 CAG.Topology <> x:99 var
+binder 3348:3348 <> p:100
+R3370:3374 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R3367:3367 CAG.Topology <> V:97 var
+R3369:3369 CAG.Topology <> p:100 var
+R3375:3375 CAG.Topology <> W:98 var
+R3378:3386 Corelib.Init.Specif <> proj1_sig def
+R3388:3388 CAG.Topology <> p:100 var
+R3281:3287 CAG.Topology <> is_open proj
+R3281:3287 CAG.Topology <> is_open proj
+R3281:3287 CAG.Topology <> is_open proj
+R3396:3404 CAG.Topology <> open_full proj
+R3396:3404 CAG.Topology <> open_full proj
+R3417:3426 CAG.Topology <> open_empty proj
+R3417:3426 CAG.Topology <> open_empty proj
+R3438:3447 CAG.Topology <> open_inter proj
+R3438:3447 CAG.Topology <> open_inter proj
+R3459:3468 CAG.Topology <> open_union proj
+R3459:3468 CAG.Topology <> open_union proj
+binder 3296:3296 <> V:101
+R3307:3313 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3323:3324 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3318:3320 CAG.Topology <> set def
+binder 3314:3314 <> W:102
+R3337:3340 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R3325:3331 CAG.Topology <> is_open proj
+R3336:3336 CAG.Topology <> W:102 var
+R3352:3352 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R3354:3356 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R3358:3360 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R3364:3364 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+binder 3353:3353 <> x:103
+R3363:3363 CAG.Topology <> x:103 var
+binder 3348:3348 <> p:104
+R3370:3374 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R3367:3367 CAG.Topology <> V:101 var
+R3369:3369 CAG.Topology <> p:104 var
+R3375:3375 CAG.Topology <> W:102 var
+R3378:3386 Corelib.Init.Specif <> proj1_sig def
+R3388:3388 CAG.Topology <> p:104 var
+R3526:3529 Corelib.Init.Logic <> True ind
+R3526:3529 Corelib.Init.Logic <> True ind
+R3553:3561 CAG.Topology <> open_full proj
+R3553:3561 CAG.Topology <> open_full proj
+R3605:3605 Corelib.Init.Logic <> I constr
+R3605:3605 Corelib.Init.Logic <> I constr
+R3605:3605 Corelib.Init.Logic <> I constr
+R3653:3657 Corelib.Init.Logic <> False ind
+R3653:3657 Corelib.Init.Logic <> False ind
+R3681:3690 CAG.Topology <> open_empty proj
+R3681:3690 CAG.Topology <> open_empty proj
+binder 3824:3824 <> x:105
+R3833:3836 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R3832:3832 CAG.Topology <> x:105 var
+R3840:3840 CAG.Topology <> x:105 var
+binder 3824:3824 <> x:106
+R3833:3836 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R3832:3832 CAG.Topology <> x:106 var
+R3840:3840 CAG.Topology <> x:106 var
+R3864:3873 CAG.Topology <> open_inter proj
+R3864:3873 CAG.Topology <> open_inter proj
+R3969:3973 Corelib.Init.Logic <> proj1 thm
+R3969:3973 Corelib.Init.Logic <> proj1 thm
+R4006:4010 Corelib.Init.Logic <> proj1 thm
+R4006:4010 Corelib.Init.Logic <> proj1 thm
+R4078:4082 Corelib.Init.Logic <> proj2 thm
+R4078:4082 Corelib.Init.Logic <> proj2 thm
+R4116:4120 Corelib.Init.Logic <> proj2 thm
+R4116:4120 Corelib.Init.Logic <> proj2 thm
+binder 4244:4244 <> i:107
+R4255:4263 Corelib.Init.Specif <> proj1_sig def
+R4266:4300 Stdlib.Logic.IndefiniteDescription <> constructive_indefinite_description prfax
+R4404:4404 CAG.Topology <> i:107 var
+binder 4315:4315 <> W:108
+R4332:4335 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R4320:4326 CAG.Topology <> is_open proj
+R4331:4331 CAG.Topology <> W:108 var
+R4347:4347 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4349:4351 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4353:4355 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4359:4359 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+binder 4348:4348 <> x:109
+R4358:4358 CAG.Topology <> x:109 var
+binder 4343:4343 <> p:110
+R4367:4371 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R4364:4364 CAG.Topology <> i:107 var
+R4366:4366 CAG.Topology <> p:110 var
+R4372:4372 CAG.Topology <> W:108 var
+R4375:4383 Corelib.Init.Specif <> proj1_sig def
+R4385:4385 CAG.Topology <> p:110 var
+binder 4244:4244 <> i:111
+R4255:4263 Corelib.Init.Specif <> proj1_sig def
+R4266:4300 Stdlib.Logic.IndefiniteDescription <> constructive_indefinite_description prfax
+R4404:4404 CAG.Topology <> i:111 var
+binder 4315:4315 <> W:112
+R4332:4335 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R4320:4326 CAG.Topology <> is_open proj
+R4331:4331 CAG.Topology <> W:112 var
+R4347:4347 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4349:4351 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4353:4355 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4359:4359 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+binder 4348:4348 <> x:113
+R4358:4358 CAG.Topology <> x:113 var
+binder 4343:4343 <> p:114
+R4367:4371 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R4364:4364 CAG.Topology <> i:111 var
+R4366:4366 CAG.Topology <> p:114 var
+R4372:4372 CAG.Topology <> W:112 var
+R4375:4383 Corelib.Init.Specif <> proj1_sig def
+R4385:4385 CAG.Topology <> p:114 var
+binder 4430:4430 <> i:115
+R4441:4449 Corelib.Init.Specif <> proj2_sig def
+R4452:4486 Stdlib.Logic.IndefiniteDescription <> constructive_indefinite_description prfax
+R4590:4590 CAG.Topology <> i:115 var
+binder 4501:4501 <> W:116
+R4518:4521 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R4506:4512 CAG.Topology <> is_open proj
+R4517:4517 CAG.Topology <> W:116 var
+R4533:4533 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4535:4537 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4539:4541 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4545:4545 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+binder 4534:4534 <> x:117
+R4544:4544 CAG.Topology <> x:117 var
+binder 4529:4529 <> p:118
+R4553:4557 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R4550:4550 CAG.Topology <> i:115 var
+R4552:4552 CAG.Topology <> p:118 var
+R4558:4558 CAG.Topology <> W:116 var
+R4561:4569 Corelib.Init.Specif <> proj1_sig def
+R4571:4571 CAG.Topology <> p:118 var
+binder 4430:4430 <> i:119
+R4441:4449 Corelib.Init.Specif <> proj2_sig def
+R4452:4486 Stdlib.Logic.IndefiniteDescription <> constructive_indefinite_description prfax
+R4590:4590 CAG.Topology <> i:119 var
+binder 4501:4501 <> W:120
+R4518:4521 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R4506:4512 CAG.Topology <> is_open proj
+R4517:4517 CAG.Topology <> W:120 var
+R4533:4533 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4535:4537 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4539:4541 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4545:4545 Corelib.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+binder 4534:4534 <> x:121
+R4544:4544 CAG.Topology <> x:121 var
+binder 4529:4529 <> p:122
+R4553:4557 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R4550:4550 CAG.Topology <> i:119 var
+R4552:4552 CAG.Topology <> p:122 var
+R4558:4558 CAG.Topology <> W:120 var
+R4561:4569 Corelib.Init.Specif <> proj1_sig def
+R4571:4571 CAG.Topology <> p:122 var
+binder 4612:4612 <> x:123
+R4617:4623 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4629:4630 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 4624:4624 <> i:124
+R4634:4634 CAG.Topology <> i:124 var
+R4636:4636 CAG.Topology <> x:123 var
+binder 4612:4612 <> x:125
+R4617:4623 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4629:4630 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 4624:4624 <> i:126
+R4634:4634 CAG.Topology <> i:126 var
+R4636:4636 CAG.Topology <> x:125 var
+R4660:4669 CAG.Topology <> open_union proj
+R4660:4669 CAG.Topology <> open_union proj
+R4694:4698 Corelib.Init.Logic <> proj1 thm
+R4694:4698 Corelib.Init.Logic <> proj1 thm
+R4781:4785 Corelib.Init.Logic <> proj1 thm
+R4788:4792 Corelib.Init.Logic <> proj2 thm
+R4781:4785 Corelib.Init.Logic <> proj1 thm
+R4788:4792 Corelib.Init.Logic <> proj2 thm
+R4860:4864 Corelib.Init.Logic <> proj2 thm
+R4867:4871 Corelib.Init.Logic <> proj2 thm
+R4860:4864 Corelib.Init.Logic <> proj2 thm
+R4867:4871 Corelib.Init.Logic <> proj2 thm
+rec 4983:4995 <> Homeomorphism
+proj 5053:5053 <> f
+proj 5120:5120 <> g
+proj 5135:5140 <> f_cont
+proj 5166:5171 <> g_cont
+proj 5198:5205 <> left_inv
+proj 5234:5242 <> right_inv
+binder 5000:5000 <> X:127
+binder 5002:5002 <> Y:128
+R5013:5020 CAG.Topology <> Topology rec
+R5022:5022 CAG.Topology <> X:127 var
+binder 5008:5009 <> TX:129
+R5033:5040 CAG.Topology <> Topology rec
+R5042:5042 CAG.Topology <> Y:128 var
+binder 5028:5029 <> TY:130
+R5058:5061 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5057:5057 CAG.Topology <> X:127 var
+R5062:5062 CAG.Topology <> Y:128 var
+R5125:5128 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5124:5124 CAG.Topology <> Y:128 var
+R5129:5129 CAG.Topology <> X:127 var
+R5144:5153 CAG.Topology <> continuous def
+R5161:5161 CAG.Topology <> f:132 meth
+R5158:5159 CAG.Topology <> TY:130 var
+R5155:5156 CAG.Topology <> TX:129 var
+R5175:5184 CAG.Topology <> continuous def
+R5192:5192 CAG.Topology <> g:133 meth
+R5189:5190 CAG.Topology <> TX:129 var
+R5186:5187 CAG.Topology <> TY:130 var
+binder 5216:5216 <> x:136
+R5226:5228 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5219:5219 CAG.Topology <> g:133 meth
+R5222:5222 CAG.Topology <> f:132 meth
+R5224:5224 CAG.Topology <> x:136 var
+R5229:5229 CAG.Topology <> x:136 var
+binder 5253:5253 <> y:138
+R5263:5265 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5256:5256 CAG.Topology <> f:132 meth
+R5259:5259 CAG.Topology <> g:133 meth
+R5261:5261 CAG.Topology <> y:138 var
+R5266:5266 CAG.Topology <> y:138 var
+def 5285:5299 <> is_homeomorphic
+binder 5302:5302 <> X:140
+binder 5304:5304 <> Y:141
+R5315:5322 CAG.Topology <> Topology rec
+R5324:5324 CAG.Topology <> X:140 var
+binder 5310:5311 <> TX:142
+R5333:5340 CAG.Topology <> Topology rec
+R5342:5342 CAG.Topology <> Y:141 var
+binder 5328:5329 <> TY:143
+R5357:5363 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5387:5388 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5368:5380 CAG.Topology <> Homeomorphism rec
+R5385:5386 CAG.Topology <> TY:143 var
+R5382:5383 CAG.Topology <> TX:142 var
+R5389:5392 Corelib.Init.Logic <> True ind

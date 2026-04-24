@@ -1,378 +1,632 @@
-DIGEST 0e0117308dc5d628aaa783d13f17e599
+DIGEST d1e4b2dcc47b980b90b6b7731cc6e963
 FCAG.Lie.Nilpotent
 R109:124 CAG.Galois.Field <> <> lib
 R142:157 CAG.Lie.BasicDef <> <> lib
 R175:188 CAG.Lie.Ideals <> <> lib
 R206:221 CAG.Lie.Solvable <> <> lib
-def 302:314 <> lower_central
-binder 317:317 <> F:1
-R334:338 CAG.Galois.Field <> Field rec
-R340:340 CAG.Lie.Nilpotent <> F:1 var
-binder 328:330 <> fld:2
-binder 344:344 <> L:3
-R364:374 CAG.Lie.BasicDef <> LieAlgebraF rec
-R380:380 CAG.Lie.Nilpotent <> L:3 var
-R376:378 CAG.Lie.Nilpotent <> fld:2 var
-binder 359:360 <> la:4
-R388:390 Corelib.Init.Datatypes <> nat ind
-binder 384:384 <> n:5
-R398:398 CAG.Lie.Nilpotent <> L:3 var
-binder 394:394 <> x:6
-R419:419 CAG.Lie.Nilpotent <> n:5 var
-R437:440 Corelib.Init.Logic <> True ind
-R446:446 Corelib.Init.Datatypes <> S constr
-R453:464 CAG.Lie.Solvable <> bracket_span def
-R506:506 CAG.Lie.Nilpotent <> x:6 var
-R486:498 CAG.Lie.Nilpotent <> lower_central:7 def
-R500:501 CAG.Lie.Nilpotent <> la:4 var
-R479:482 Corelib.Init.Logic <> True ind
-R466:467 CAG.Lie.Nilpotent <> la:4 var
-prf 556:574 <> lower_central_ideal
-binder 577:577 <> F:9
-R594:598 CAG.Galois.Field <> Field rec
-R600:600 CAG.Lie.Nilpotent <> F:9 var
-binder 588:590 <> fld:10
-binder 604:604 <> L:11
-R624:634 CAG.Lie.BasicDef <> LieAlgebraF rec
-R640:640 CAG.Lie.Nilpotent <> L:11 var
-R636:638 CAG.Lie.Nilpotent <> fld:10 var
-binder 619:620 <> la:12
-R648:650 Corelib.Init.Datatypes <> nat ind
-binder 644:644 <> n:13
-R659:665 CAG.Lie.Ideals <> IsIdeal rec
-R671:683 CAG.Lie.Nilpotent <> lower_central def
-R688:688 CAG.Lie.Nilpotent <> n:13 var
-R685:686 CAG.Lie.Nilpotent <> la:12 var
-R667:668 CAG.Lie.Nilpotent <> la:12 var
-prf 784:807 <> derived_in_lower_central
-binder 810:810 <> F:14
-R827:831 CAG.Galois.Field <> Field rec
-R833:833 CAG.Lie.Nilpotent <> F:14 var
-binder 821:823 <> fld:15
-binder 837:837 <> L:16
-R857:867 CAG.Lie.BasicDef <> LieAlgebraF rec
-R873:873 CAG.Lie.Nilpotent <> L:16 var
-R869:871 CAG.Lie.Nilpotent <> fld:15 var
-binder 852:853 <> la:17
-R881:883 Corelib.Init.Datatypes <> nat ind
-binder 877:877 <> n:18
-R891:891 CAG.Lie.Nilpotent <> L:16 var
-binder 887:887 <> x:19
-R921:924 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R900:913 CAG.Lie.Solvable <> derived_series def
-R920:920 CAG.Lie.Nilpotent <> x:19 var
-R918:918 CAG.Lie.Nilpotent <> n:18 var
-R915:916 CAG.Lie.Nilpotent <> la:17 var
-R925:937 CAG.Lie.Nilpotent <> lower_central def
-R944:944 CAG.Lie.Nilpotent <> x:19 var
-R942:942 CAG.Lie.Nilpotent <> n:18 var
-R939:940 CAG.Lie.Nilpotent <> la:17 var
-binder 1093:1093 <> a:20
-binder 1095:1095 <> b:21
-binder 1097:1098 <> Ha:22
-binder 1100:1101 <> Hb:23
-R1109:1109 CAG.Lie.Nilpotent <> a:20 var
-R1111:1111 CAG.Lie.Nilpotent <> b:21 var
-R1113:1113 Corelib.Init.Logic <> I constr
-R1120:1120 CAG.Lie.Nilpotent <> b:21 var
-R1122:1123 CAG.Lie.Nilpotent <> Hb:23 var
-binder 1093:1093 <> a:24
-binder 1095:1095 <> b:25
-binder 1097:1098 <> Ha:26
-binder 1100:1101 <> Hb:27
-R1109:1109 CAG.Lie.Nilpotent <> a:24 var
-R1111:1111 CAG.Lie.Nilpotent <> b:25 var
-R1113:1113 Corelib.Init.Logic <> I constr
-R1120:1120 CAG.Lie.Nilpotent <> b:25 var
-R1122:1123 CAG.Lie.Nilpotent <> Hb:27 var
-prf 1162:1187 <> lower_central_1_eq_derived
-binder 1190:1190 <> F:28
-R1207:1211 CAG.Galois.Field <> Field rec
-R1213:1213 CAG.Lie.Nilpotent <> F:28 var
-binder 1201:1203 <> fld:29
-binder 1217:1217 <> L:30
-R1237:1247 CAG.Lie.BasicDef <> LieAlgebraF rec
-R1253:1253 CAG.Lie.Nilpotent <> L:30 var
-R1249:1251 CAG.Lie.Nilpotent <> fld:29 var
-binder 1232:1233 <> la:31
-R1261:1261 CAG.Lie.Nilpotent <> L:30 var
-binder 1257:1257 <> x:32
-R1290:1294 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
-R1270:1282 CAG.Lie.Nilpotent <> lower_central def
-R1289:1289 CAG.Lie.Nilpotent <> x:32 var
-R1284:1285 CAG.Lie.Nilpotent <> la:31 var
-R1295:1308 CAG.Lie.Solvable <> derived_series def
-R1315:1315 CAG.Lie.Nilpotent <> x:32 var
-R1310:1311 CAG.Lie.Nilpotent <> la:31 var
-def 1456:1466 <> IsNilpotent
-binder 1469:1469 <> F:33
-R1486:1490 CAG.Galois.Field <> Field rec
-R1492:1492 CAG.Lie.Nilpotent <> F:33 var
-binder 1480:1482 <> fld:34
-binder 1496:1496 <> L:35
-R1516:1526 CAG.Lie.BasicDef <> LieAlgebraF rec
-R1532:1532 CAG.Lie.Nilpotent <> L:35 var
-R1528:1530 CAG.Lie.Nilpotent <> fld:34 var
-binder 1511:1512 <> la:36
-R1547:1553 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R1555:1556 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 1554:1554 <> n:37
-binder 1564:1564 <> x:38
-R1587:1590 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R1567:1579 CAG.Lie.Nilpotent <> lower_central def
-R1586:1586 CAG.Lie.Nilpotent <> x:38 var
-R1584:1584 CAG.Lie.Nilpotent <> n:37 var
-R1581:1582 CAG.Lie.Nilpotent <> la:36 var
-R1592:1594 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R1591:1591 CAG.Lie.Nilpotent <> x:38 var
-R1595:1601 CAG.Lie.BasicDef <> la_zero abbrev
-R1603:1604 CAG.Lie.Nilpotent <> la:36 var
-prf 1661:1680 <> abelian_is_nilpotent
-binder 1683:1683 <> F:39
-R1700:1704 CAG.Galois.Field <> Field rec
-R1706:1706 CAG.Lie.Nilpotent <> F:39 var
-binder 1694:1696 <> fld:40
-binder 1710:1710 <> L:41
-R1730:1740 CAG.Lie.BasicDef <> LieAlgebraF rec
-R1746:1746 CAG.Lie.Nilpotent <> L:41 var
-R1742:1744 CAG.Lie.Nilpotent <> fld:40 var
-binder 1725:1726 <> la:42
-R1755:1755 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R1799:1807 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-binder 1763:1763 <> x:43
-binder 1765:1765 <> y:44
-R1786:1788 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R1768:1778 CAG.Lie.BasicDef <> laF_bracket proj
-R1785:1785 CAG.Lie.Nilpotent <> y:44 var
-R1783:1783 CAG.Lie.Nilpotent <> x:43 var
-R1780:1781 CAG.Lie.Nilpotent <> la:42 var
-R1789:1795 CAG.Lie.BasicDef <> la_zero abbrev
-R1797:1798 CAG.Lie.Nilpotent <> la:42 var
-R1808:1818 CAG.Lie.Nilpotent <> IsNilpotent def
-R1820:1821 CAG.Lie.Nilpotent <> la:42 var
-R1891:1908 CAG.Lie.BasicDef <> zero_is_subalgebra thm
-R1891:1908 CAG.Lie.BasicDef <> zero_is_subalgebra thm
-prf 1991:2011 <> nilpotent_is_solvable
-binder 2014:2014 <> F:45
-R2031:2035 CAG.Galois.Field <> Field rec
-R2037:2037 CAG.Lie.Nilpotent <> F:45 var
-binder 2025:2027 <> fld:46
-binder 2041:2041 <> L:47
-R2061:2071 CAG.Lie.BasicDef <> LieAlgebraF rec
-R2077:2077 CAG.Lie.Nilpotent <> L:47 var
-R2073:2075 CAG.Lie.Nilpotent <> fld:46 var
-binder 2056:2057 <> la:48
-R2100:2103 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R2086:2096 CAG.Lie.Nilpotent <> IsNilpotent def
-R2098:2099 CAG.Lie.Nilpotent <> la:48 var
-R2104:2113 CAG.Lie.Solvable <> IsSolvable def
-R2115:2116 CAG.Lie.Nilpotent <> la:48 var
-R2186:2209 CAG.Lie.Nilpotent <> derived_in_lower_central thm
-R2186:2209 CAG.Lie.Nilpotent <> derived_in_lower_central thm
-prf 2323:2342 <> nilpotent_subalgebra
-binder 2345:2345 <> F:49
-R2362:2366 CAG.Galois.Field <> Field rec
-R2368:2368 CAG.Lie.Nilpotent <> F:49 var
-binder 2356:2358 <> fld:50
-binder 2372:2372 <> L:51
-R2392:2402 CAG.Lie.BasicDef <> LieAlgebraF rec
-R2408:2408 CAG.Lie.Nilpotent <> L:51 var
-R2404:2406 CAG.Lie.Nilpotent <> fld:50 var
-binder 2387:2388 <> la:52
-R2431:2438 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R2417:2427 CAG.Lie.Nilpotent <> IsNilpotent def
-R2429:2430 CAG.Lie.Nilpotent <> la:52 var
-R2452:2455 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R2451:2451 CAG.Lie.Nilpotent <> L:51 var
-binder 2447:2447 <> S:53
-R2480:2487 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R2463:2474 CAG.Lie.BasicDef <> IsSubalgebra rec
-R2479:2479 CAG.Lie.Nilpotent <> S:53 var
-R2476:2477 CAG.Lie.Nilpotent <> la:52 var
-R2488:2495 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R2518:2520 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R2501:2511 CAG.Lie.BasicDef <> LieAlgebraF rec
-R2517:2517 CAG.Lie.Nilpotent <> L:51 var
-R2513:2515 CAG.Lie.Nilpotent <> fld:50 var
-binder 2496:2497 <> lb:54
-R2521:2531 CAG.Lie.Nilpotent <> IsNilpotent def
-R2533:2534 CAG.Lie.Nilpotent <> lb:54 var
-prf 2648:2662 <> nilpotent_image
-binder 2665:2665 <> F:55
-R2682:2686 CAG.Galois.Field <> Field rec
-R2688:2688 CAG.Lie.Nilpotent <> F:55 var
-binder 2676:2678 <> fld:56
-binder 2692:2692 <> L:57
-binder 2694:2694 <> M:58
-R2714:2724 CAG.Lie.BasicDef <> LieAlgebraF rec
-R2730:2730 CAG.Lie.Nilpotent <> L:57 var
-R2726:2728 CAG.Lie.Nilpotent <> fld:56 var
-binder 2709:2710 <> la:59
-R2739:2749 CAG.Lie.BasicDef <> LieAlgebraF rec
-R2755:2755 CAG.Lie.Nilpotent <> M:58 var
-R2751:2753 CAG.Lie.Nilpotent <> fld:56 var
-binder 2734:2735 <> lb:60
-R2768:2773 CAG.Lie.BasicDef <> LieHom rec
-R2778:2779 CAG.Lie.Nilpotent <> lb:60 var
-R2775:2776 CAG.Lie.Nilpotent <> la:59 var
-binder 2763:2764 <> φ:61
-R2802:2805 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R2788:2798 CAG.Lie.Nilpotent <> IsNilpotent def
-R2800:2801 CAG.Lie.Nilpotent <> la:59 var
-R2806:2816 CAG.Lie.Nilpotent <> IsNilpotent def
-R2818:2819 CAG.Lie.Nilpotent <> lb:60 var
-prf 2897:2926 <> nilpotent_from_quotient_center
-binder 2929:2929 <> F:62
-R2946:2950 CAG.Galois.Field <> Field rec
-R2952:2952 CAG.Lie.Nilpotent <> F:62 var
-binder 2940:2942 <> fld:63
-binder 2956:2956 <> L:64
-R2976:2986 CAG.Lie.BasicDef <> LieAlgebraF rec
-R2992:2992 CAG.Lie.Nilpotent <> L:64 var
-R2988:2990 CAG.Lie.Nilpotent <> fld:63 var
-binder 2971:2972 <> la:65
-R3001:3001 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R3049:3057 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R3002:3009 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R3032:3034 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R3015:3025 CAG.Lie.BasicDef <> LieAlgebraF rec
-R3031:3031 CAG.Lie.Nilpotent <> L:64 var
-R3027:3029 CAG.Lie.Nilpotent <> fld:63 var
-binder 3010:3011 <> lq:66
-R3035:3045 CAG.Lie.Nilpotent <> IsNilpotent def
-R3047:3048 CAG.Lie.Nilpotent <> lq:66 var
-R3058:3068 CAG.Lie.Nilpotent <> IsNilpotent def
-R3070:3071 CAG.Lie.Nilpotent <> la:65 var
-prf 3153:3179 <> nilpotent_center_nontrivial
-binder 3182:3182 <> F:67
-R3199:3203 CAG.Galois.Field <> Field rec
-R3205:3205 CAG.Lie.Nilpotent <> F:67 var
-binder 3193:3195 <> fld:68
-binder 3209:3209 <> L:69
-R3229:3239 CAG.Lie.BasicDef <> LieAlgebraF rec
-R3245:3245 CAG.Lie.Nilpotent <> L:69 var
-R3241:3243 CAG.Lie.Nilpotent <> fld:68 var
-binder 3224:3225 <> la:70
-R3268:3275 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R3254:3264 CAG.Lie.Nilpotent <> IsNilpotent def
-R3266:3267 CAG.Lie.Nilpotent <> la:70 var
-R3276:3276 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R3306:3314 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R3277:3283 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R3289:3290 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R3288:3288 CAG.Lie.Nilpotent <> L:69 var
-binder 3284:3284 <> x:71
-R3292:3295 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
-R3291:3291 CAG.Lie.Nilpotent <> x:71 var
-R3296:3302 CAG.Lie.BasicDef <> la_zero abbrev
-R3304:3305 CAG.Lie.Nilpotent <> la:70 var
-R3315:3321 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R3323:3324 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 3322:3322 <> z:72
-R3338:3341 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
-R3325:3332 CAG.Lie.Ideals <> IsCenter def
-R3337:3337 CAG.Lie.Nilpotent <> z:72 var
-R3334:3335 CAG.Lie.Nilpotent <> la:70 var
-R3343:3346 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
-R3342:3342 CAG.Lie.Nilpotent <> z:72 var
-R3347:3353 CAG.Lie.BasicDef <> la_zero abbrev
-R3355:3356 CAG.Lie.Nilpotent <> la:70 var
-def 3571:3583 <> IsAdNilpotent
-binder 3586:3586 <> F:73
-R3603:3607 CAG.Galois.Field <> Field rec
-R3609:3609 CAG.Lie.Nilpotent <> F:73 var
-binder 3597:3599 <> fld:74
-binder 3613:3613 <> L:75
-R3633:3643 CAG.Lie.BasicDef <> LieAlgebraF rec
-R3649:3649 CAG.Lie.Nilpotent <> L:75 var
-R3645:3647 CAG.Lie.Nilpotent <> fld:74 var
-binder 3628:3629 <> la:76
-R3657:3657 CAG.Lie.Nilpotent <> L:75 var
-binder 3653:3653 <> x:77
-R3672:3678 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R3686:3687 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R3683:3685 Corelib.Init.Datatypes <> nat ind
-binder 3679:3679 <> n:78
-binder 3695:3695 <> y:79
-R3733:3735 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R3702:3709 Corelib.Init.Nat <> iter def
-R3732:3732 CAG.Lie.Nilpotent <> y:79 var
-R3714:3724 CAG.Lie.BasicDef <> laF_bracket proj
-R3729:3729 CAG.Lie.Nilpotent <> x:77 var
-R3726:3727 CAG.Lie.Nilpotent <> la:76 var
-R3711:3711 CAG.Lie.Nilpotent <> n:78 var
-R3736:3742 CAG.Lie.BasicDef <> la_zero abbrev
-R3744:3745 CAG.Lie.Nilpotent <> la:76 var
-prf 3821:3846 <> nilpotent_all_ad_nilpotent
-binder 3849:3849 <> F:80
-R3866:3870 CAG.Galois.Field <> Field rec
-R3872:3872 CAG.Lie.Nilpotent <> F:80 var
-binder 3860:3862 <> fld:81
-binder 3876:3876 <> L:82
-R3896:3906 CAG.Lie.BasicDef <> LieAlgebraF rec
-R3912:3912 CAG.Lie.Nilpotent <> L:82 var
-R3908:3910 CAG.Lie.Nilpotent <> fld:81 var
-binder 3891:3892 <> la:83
-R3935:3938 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R3921:3931 CAG.Lie.Nilpotent <> IsNilpotent def
-R3933:3934 CAG.Lie.Nilpotent <> la:83 var
-binder 3946:3946 <> x:84
-R3949:3961 CAG.Lie.Nilpotent <> IsAdNilpotent def
-R3966:3966 CAG.Lie.Nilpotent <> x:84 var
-R3963:3964 CAG.Lie.Nilpotent <> la:83 var
-binder 4116:4116 <> m:85
-binder 4118:4118 <> z:86
-R4121:4133 CAG.Lie.Nilpotent <> lower_central def
-R4141:4148 Corelib.Init.Nat <> iter def
-R4171:4171 CAG.Lie.Nilpotent <> z:86 var
-R4153:4163 CAG.Lie.BasicDef <> laF_bracket proj
-R4150:4150 CAG.Lie.Nilpotent <> m:85 var
-R4138:4138 CAG.Lie.Nilpotent <> m:85 var
-binder 4116:4116 <> m:87
-binder 4118:4118 <> z:88
-R4121:4133 CAG.Lie.Nilpotent <> lower_central def
-R4141:4148 Corelib.Init.Nat <> iter def
-R4171:4171 CAG.Lie.Nilpotent <> z:88 var
-R4153:4163 CAG.Lie.BasicDef <> laF_bracket proj
-R4150:4150 CAG.Lie.Nilpotent <> m:87 var
-R4138:4138 CAG.Lie.Nilpotent <> m:87 var
-R4303:4310 Corelib.Init.Nat <> iter def
-R4315:4325 CAG.Lie.BasicDef <> laF_bracket proj
-R4336:4336 Corelib.Init.Logic <> I constr
-R4303:4310 Corelib.Init.Nat <> iter def
-R4315:4325 CAG.Lie.BasicDef <> laF_bracket proj
-R4336:4336 Corelib.Init.Logic <> I constr
-ax 4441:4475 <> strictly_upper_triangular_nilpotent
-binder 4489:4489 <> F:89
-R4506:4510 CAG.Galois.Field <> Field rec
-R4512:4512 CAG.Lie.Nilpotent <> F:89 var
-binder 4500:4502 <> fld:90
-R4520:4522 Corelib.Init.Datatypes <> nat ind
-binder 4516:4516 <> n:91
-R4535:4545 CAG.Lie.BasicDef <> LieAlgebraF rec
-R4552:4555 Corelib.Init.Datatypes <> list ind
-R4558:4561 Corelib.Init.Datatypes <> list ind
-R4563:4563 CAG.Lie.Nilpotent <> F:89 var
-R4547:4549 CAG.Lie.Nilpotent <> fld:90 var
-binder 4530:4531 <> la:92
-R4573:4583 CAG.Lie.Nilpotent <> IsNilpotent def
-R4585:4586 CAG.Lie.Nilpotent <> la:92 var
-ax 4681:4710 <> upper_triangular_not_nilpotent
-binder 4724:4724 <> F:95
-R4741:4745 CAG.Galois.Field <> Field rec
-R4747:4747 CAG.Lie.Nilpotent <> F:95 var
-binder 4735:4737 <> fld:96
-R4755:4757 Corelib.Init.Datatypes <> nat ind
-binder 4751:4751 <> n:97
-R4770:4780 CAG.Lie.BasicDef <> LieAlgebraF rec
-R4787:4790 Corelib.Init.Datatypes <> list ind
-R4793:4796 Corelib.Init.Datatypes <> list ind
-R4798:4798 CAG.Lie.Nilpotent <> F:95 var
-R4782:4784 CAG.Lie.Nilpotent <> fld:96 var
-binder 4765:4766 <> la:98
-R4820:4823 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R4810:4813 Corelib.Init.Peano <> ::nat_scope:x_'>='_x not
-R4809:4809 CAG.Lie.Nilpotent <> n:97 var
-R4824:4825 Corelib.Init.Logic <> ::type_scope:'~'_x not
-R4826:4836 CAG.Lie.Nilpotent <> IsNilpotent def
-R4838:4839 CAG.Lie.Nilpotent <> la:98 var
+R251:254 Stdlib.Lists.List <> <> lib
+def 335:347 <> lower_central
+binder 350:350 <> F:1
+R367:371 CAG.Galois.Field <> Field rec
+R373:373 CAG.Lie.Nilpotent <> F:1 var
+binder 361:363 <> fld:2
+binder 377:377 <> L:3
+R397:407 CAG.Lie.BasicDef <> LieAlgebraF rec
+R413:413 CAG.Lie.Nilpotent <> L:3 var
+R409:411 CAG.Lie.Nilpotent <> fld:2 var
+binder 392:393 <> la:4
+R421:423 Corelib.Init.Datatypes <> nat ind
+binder 417:417 <> n:5
+R431:431 CAG.Lie.Nilpotent <> L:3 var
+binder 427:427 <> x:6
+R452:452 CAG.Lie.Nilpotent <> n:5 var
+R470:473 Corelib.Init.Logic <> True ind
+R479:479 Corelib.Init.Datatypes <> S constr
+R486:497 CAG.Lie.Solvable <> bracket_span def
+R539:539 CAG.Lie.Nilpotent <> x:6 var
+R519:531 CAG.Lie.Nilpotent <> lower_central:7 def
+R533:534 CAG.Lie.Nilpotent <> la:4 var
+R512:515 Corelib.Init.Logic <> True ind
+R499:500 CAG.Lie.Nilpotent <> la:4 var
+prf 589:607 <> lower_central_ideal
+binder 610:610 <> F:9
+R627:631 CAG.Galois.Field <> Field rec
+R633:633 CAG.Lie.Nilpotent <> F:9 var
+binder 621:623 <> fld:10
+binder 637:637 <> L:11
+R657:667 CAG.Lie.BasicDef <> LieAlgebraF rec
+R673:673 CAG.Lie.Nilpotent <> L:11 var
+R669:671 CAG.Lie.Nilpotent <> fld:10 var
+binder 652:653 <> la:12
+R681:683 Corelib.Init.Datatypes <> nat ind
+binder 677:677 <> n:13
+R692:698 CAG.Lie.Ideals <> IsIdeal rec
+R704:716 CAG.Lie.Nilpotent <> lower_central def
+R721:721 CAG.Lie.Nilpotent <> n:13 var
+R718:719 CAG.Lie.Nilpotent <> la:12 var
+R700:701 CAG.Lie.Nilpotent <> la:12 var
+R771:780 CAG.Lie.Ideals <> full_ideal thm
+R771:780 CAG.Lie.Ideals <> full_ideal thm
+R804:821 CAG.Lie.Solvable <> bracket_span_ideal thm
+R804:821 CAG.Lie.Solvable <> bracket_span_ideal thm
+R837:846 CAG.Lie.Ideals <> full_ideal thm
+R837:846 CAG.Lie.Ideals <> full_ideal thm
+prf 950:973 <> derived_in_lower_central
+binder 976:976 <> F:14
+R993:997 CAG.Galois.Field <> Field rec
+R999:999 CAG.Lie.Nilpotent <> F:14 var
+binder 987:989 <> fld:15
+binder 1003:1003 <> L:16
+R1023:1033 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1039:1039 CAG.Lie.Nilpotent <> L:16 var
+R1035:1037 CAG.Lie.Nilpotent <> fld:15 var
+binder 1018:1019 <> la:17
+R1047:1049 Corelib.Init.Datatypes <> nat ind
+binder 1043:1043 <> n:18
+R1057:1057 CAG.Lie.Nilpotent <> L:16 var
+binder 1053:1053 <> x:19
+R1087:1090 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1066:1079 CAG.Lie.Solvable <> derived_series def
+R1086:1086 CAG.Lie.Nilpotent <> x:19 var
+R1084:1084 CAG.Lie.Nilpotent <> n:18 var
+R1081:1082 CAG.Lie.Nilpotent <> la:17 var
+R1091:1103 CAG.Lie.Nilpotent <> lower_central def
+R1110:1110 CAG.Lie.Nilpotent <> x:19 var
+R1108:1108 CAG.Lie.Nilpotent <> n:18 var
+R1105:1106 CAG.Lie.Nilpotent <> la:17 var
+binder 1259:1259 <> a:20
+binder 1261:1261 <> b:21
+binder 1263:1264 <> Ha:22
+binder 1266:1267 <> Hb:23
+R1275:1275 CAG.Lie.Nilpotent <> a:20 var
+R1277:1277 CAG.Lie.Nilpotent <> b:21 var
+R1279:1279 Corelib.Init.Logic <> I constr
+R1286:1286 CAG.Lie.Nilpotent <> b:21 var
+R1288:1289 CAG.Lie.Nilpotent <> Hb:23 var
+binder 1259:1259 <> a:24
+binder 1261:1261 <> b:25
+binder 1263:1264 <> Ha:26
+binder 1266:1267 <> Hb:27
+R1275:1275 CAG.Lie.Nilpotent <> a:24 var
+R1277:1277 CAG.Lie.Nilpotent <> b:25 var
+R1279:1279 Corelib.Init.Logic <> I constr
+R1286:1286 CAG.Lie.Nilpotent <> b:25 var
+R1288:1289 CAG.Lie.Nilpotent <> Hb:27 var
+prf 1366:1387 <> lower_central_antitone
+binder 1390:1390 <> F:28
+R1407:1411 CAG.Galois.Field <> Field rec
+R1413:1413 CAG.Lie.Nilpotent <> F:28 var
+binder 1401:1403 <> fld:29
+binder 1417:1417 <> L:30
+R1437:1447 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1453:1453 CAG.Lie.Nilpotent <> L:30 var
+R1449:1451 CAG.Lie.Nilpotent <> fld:29 var
+binder 1432:1433 <> la:31
+R1461:1463 Corelib.Init.Datatypes <> nat ind
+binder 1457:1457 <> n:32
+R1471:1471 CAG.Lie.Nilpotent <> L:30 var
+binder 1467:1467 <> x:33
+R1504:1507 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1480:1492 CAG.Lie.Nilpotent <> lower_central def
+R1503:1503 CAG.Lie.Nilpotent <> x:33 var
+R1498:1498 Corelib.Init.Datatypes <> S constr
+R1500:1500 CAG.Lie.Nilpotent <> n:32 var
+R1494:1495 CAG.Lie.Nilpotent <> la:31 var
+R1508:1520 CAG.Lie.Nilpotent <> lower_central def
+R1527:1527 CAG.Lie.Nilpotent <> x:33 var
+R1525:1525 CAG.Lie.Nilpotent <> n:32 var
+R1522:1523 CAG.Lie.Nilpotent <> la:31 var
+R1575:1587 CAG.Lie.Nilpotent <> lower_central def
+R1596:1614 CAG.Lie.Nilpotent <> lower_central_ideal thm
+R1575:1587 CAG.Lie.Nilpotent <> lower_central def
+R1596:1614 CAG.Lie.Nilpotent <> lower_central_ideal thm
+R1652:1666 CAG.Lie.Ideals <> ideal_bracket_l proj
+R1669:1687 CAG.Lie.Nilpotent <> lower_central_ideal thm
+R1652:1666 CAG.Lie.Ideals <> ideal_bracket_l proj
+R1669:1687 CAG.Lie.Nilpotent <> lower_central_ideal thm
+prf 1758:1778 <> lower_central_bracket
+binder 1781:1781 <> F:34
+R1798:1802 CAG.Galois.Field <> Field rec
+R1804:1804 CAG.Lie.Nilpotent <> F:34 var
+binder 1792:1794 <> fld:35
+binder 1808:1808 <> L:36
+R1828:1838 CAG.Lie.BasicDef <> LieAlgebraF rec
+R1844:1844 CAG.Lie.Nilpotent <> L:36 var
+R1840:1842 CAG.Lie.Nilpotent <> fld:35 var
+binder 1823:1824 <> la:37
+R1852:1854 Corelib.Init.Datatypes <> nat ind
+binder 1848:1848 <> k:38
+R1864:1864 CAG.Lie.Nilpotent <> L:36 var
+binder 1858:1858 <> x:39
+binder 1860:1860 <> z:40
+R1893:1896 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1873:1885 CAG.Lie.Nilpotent <> lower_central def
+R1892:1892 CAG.Lie.Nilpotent <> z:40 var
+R1890:1890 CAG.Lie.Nilpotent <> k:38 var
+R1887:1888 CAG.Lie.Nilpotent <> la:37 var
+R1897:1909 CAG.Lie.Nilpotent <> lower_central def
+R1921:1931 CAG.Lie.BasicDef <> laF_bracket proj
+R1938:1938 CAG.Lie.Nilpotent <> z:40 var
+R1936:1936 CAG.Lie.Nilpotent <> x:39 var
+R1933:1934 CAG.Lie.Nilpotent <> la:37 var
+R1915:1915 Corelib.Init.Datatypes <> S constr
+R1917:1917 CAG.Lie.Nilpotent <> k:38 var
+R1911:1912 CAG.Lie.Nilpotent <> la:37 var
+R2002:2002 Corelib.Init.Logic <> I constr
+R2002:2002 Corelib.Init.Logic <> I constr
+prf 2042:2067 <> lower_central_1_eq_derived
+binder 2070:2070 <> F:41
+R2087:2091 CAG.Galois.Field <> Field rec
+R2093:2093 CAG.Lie.Nilpotent <> F:41 var
+binder 2081:2083 <> fld:42
+binder 2097:2097 <> L:43
+R2117:2127 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2133:2133 CAG.Lie.Nilpotent <> L:43 var
+R2129:2131 CAG.Lie.Nilpotent <> fld:42 var
+binder 2112:2113 <> la:44
+R2141:2141 CAG.Lie.Nilpotent <> L:43 var
+binder 2137:2137 <> x:45
+R2170:2174 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R2150:2162 CAG.Lie.Nilpotent <> lower_central def
+R2169:2169 CAG.Lie.Nilpotent <> x:45 var
+R2164:2165 CAG.Lie.Nilpotent <> la:44 var
+R2175:2188 CAG.Lie.Solvable <> derived_series def
+R2195:2195 CAG.Lie.Nilpotent <> x:45 var
+R2190:2191 CAG.Lie.Nilpotent <> la:44 var
+def 2336:2346 <> IsNilpotent
+binder 2349:2349 <> F:46
+R2366:2370 CAG.Galois.Field <> Field rec
+R2372:2372 CAG.Lie.Nilpotent <> F:46 var
+binder 2360:2362 <> fld:47
+binder 2376:2376 <> L:48
+R2396:2406 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2412:2412 CAG.Lie.Nilpotent <> L:48 var
+R2408:2410 CAG.Lie.Nilpotent <> fld:47 var
+binder 2391:2392 <> la:49
+R2427:2433 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2435:2436 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2434:2434 <> n:50
+binder 2444:2444 <> x:51
+R2467:2470 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2447:2459 CAG.Lie.Nilpotent <> lower_central def
+R2466:2466 CAG.Lie.Nilpotent <> x:51 var
+R2464:2464 CAG.Lie.Nilpotent <> n:50 var
+R2461:2462 CAG.Lie.Nilpotent <> la:49 var
+R2472:2474 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2471:2471 CAG.Lie.Nilpotent <> x:51 var
+R2475:2481 CAG.Lie.BasicDef <> la_zero abbrev
+R2483:2484 CAG.Lie.Nilpotent <> la:49 var
+prf 2541:2560 <> abelian_is_nilpotent
+binder 2563:2563 <> F:52
+R2580:2584 CAG.Galois.Field <> Field rec
+R2586:2586 CAG.Lie.Nilpotent <> F:52 var
+binder 2574:2576 <> fld:53
+binder 2590:2590 <> L:54
+R2610:2620 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2626:2626 CAG.Lie.Nilpotent <> L:54 var
+R2622:2624 CAG.Lie.Nilpotent <> fld:53 var
+binder 2605:2606 <> la:55
+R2635:2635 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2679:2687 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 2643:2643 <> x:56
+binder 2645:2645 <> y:57
+R2666:2668 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2648:2658 CAG.Lie.BasicDef <> laF_bracket proj
+R2665:2665 CAG.Lie.Nilpotent <> y:57 var
+R2663:2663 CAG.Lie.Nilpotent <> x:56 var
+R2660:2661 CAG.Lie.Nilpotent <> la:55 var
+R2669:2675 CAG.Lie.BasicDef <> la_zero abbrev
+R2677:2678 CAG.Lie.Nilpotent <> la:55 var
+R2688:2698 CAG.Lie.Nilpotent <> IsNilpotent def
+R2700:2701 CAG.Lie.Nilpotent <> la:55 var
+R2771:2780 CAG.Lie.Ideals <> zero_ideal thm
+R2771:2780 CAG.Lie.Ideals <> zero_ideal thm
+prf 2863:2883 <> nilpotent_is_solvable
+binder 2886:2886 <> F:58
+R2903:2907 CAG.Galois.Field <> Field rec
+R2909:2909 CAG.Lie.Nilpotent <> F:58 var
+binder 2897:2899 <> fld:59
+binder 2913:2913 <> L:60
+R2933:2943 CAG.Lie.BasicDef <> LieAlgebraF rec
+R2949:2949 CAG.Lie.Nilpotent <> L:60 var
+R2945:2947 CAG.Lie.Nilpotent <> fld:59 var
+binder 2928:2929 <> la:61
+R2972:2975 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2958:2968 CAG.Lie.Nilpotent <> IsNilpotent def
+R2970:2971 CAG.Lie.Nilpotent <> la:61 var
+R2976:2985 CAG.Lie.Solvable <> IsSolvable def
+R2987:2988 CAG.Lie.Nilpotent <> la:61 var
+R3058:3081 CAG.Lie.Nilpotent <> derived_in_lower_central thm
+R3058:3081 CAG.Lie.Nilpotent <> derived_in_lower_central thm
+prf 3195:3214 <> nilpotent_subalgebra
+binder 3217:3217 <> F:62
+R3234:3238 CAG.Galois.Field <> Field rec
+R3240:3240 CAG.Lie.Nilpotent <> F:62 var
+binder 3228:3230 <> fld:63
+binder 3244:3244 <> L:64
+R3264:3274 CAG.Lie.BasicDef <> LieAlgebraF rec
+R3280:3280 CAG.Lie.Nilpotent <> L:64 var
+R3276:3278 CAG.Lie.Nilpotent <> fld:63 var
+binder 3259:3260 <> la:65
+R3303:3310 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3289:3299 CAG.Lie.Nilpotent <> IsNilpotent def
+R3301:3302 CAG.Lie.Nilpotent <> la:65 var
+R3324:3327 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3323:3323 CAG.Lie.Nilpotent <> L:64 var
+binder 3319:3319 <> S:66
+R3352:3359 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3335:3346 CAG.Lie.BasicDef <> IsSubalgebra rec
+R3351:3351 CAG.Lie.Nilpotent <> S:66 var
+R3348:3349 CAG.Lie.Nilpotent <> la:65 var
+R3360:3367 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3390:3392 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3373:3383 CAG.Lie.BasicDef <> LieAlgebraF rec
+R3389:3389 CAG.Lie.Nilpotent <> L:64 var
+R3385:3387 CAG.Lie.Nilpotent <> fld:63 var
+binder 3368:3369 <> lb:67
+R3393:3403 CAG.Lie.Nilpotent <> IsNilpotent def
+R3405:3406 CAG.Lie.Nilpotent <> lb:67 var
+prf 3554:3580 <> hom_preserves_lower_central
+binder 3583:3583 <> F:68
+R3600:3604 CAG.Galois.Field <> Field rec
+R3606:3606 CAG.Lie.Nilpotent <> F:68 var
+binder 3594:3596 <> fld:69
+binder 3610:3610 <> L:70
+binder 3612:3612 <> M:71
+R3632:3642 CAG.Lie.BasicDef <> LieAlgebraF rec
+R3648:3648 CAG.Lie.Nilpotent <> L:70 var
+R3644:3646 CAG.Lie.Nilpotent <> fld:69 var
+binder 3627:3628 <> la:72
+R3657:3667 CAG.Lie.BasicDef <> LieAlgebraF rec
+R3673:3673 CAG.Lie.Nilpotent <> M:71 var
+R3669:3671 CAG.Lie.Nilpotent <> fld:69 var
+binder 3652:3653 <> lb:73
+R3686:3691 CAG.Lie.BasicDef <> LieHom rec
+R3696:3697 CAG.Lie.Nilpotent <> lb:73 var
+R3693:3694 CAG.Lie.Nilpotent <> la:72 var
+binder 3681:3682 <> φ:74
+R3705:3707 Corelib.Init.Datatypes <> nat ind
+binder 3701:3701 <> k:75
+R3715:3715 CAG.Lie.Nilpotent <> L:70 var
+binder 3711:3711 <> x:76
+R3744:3747 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3724:3736 CAG.Lie.Nilpotent <> lower_central def
+R3743:3743 CAG.Lie.Nilpotent <> x:76 var
+R3741:3741 CAG.Lie.Nilpotent <> k:75 var
+R3738:3739 CAG.Lie.Nilpotent <> la:72 var
+R3748:3760 CAG.Lie.Nilpotent <> lower_central def
+R3768:3772 CAG.Lie.BasicDef <> lh_fn proj
+R3777:3777 CAG.Lie.Nilpotent <> x:76 var
+R3774:3775 CAG.Lie.Nilpotent <> φ:74 var
+R3765:3765 CAG.Lie.Nilpotent <> k:75 var
+R3762:3763 CAG.Lie.Nilpotent <> lb:73 var
+binder 3926:3926 <> z:77
+R3934:3938 CAG.Lie.BasicDef <> lh_fn proj
+R3943:3943 CAG.Lie.Nilpotent <> z:77 var
+binder 3926:3926 <> z:78
+R3934:3938 CAG.Lie.BasicDef <> lh_fn proj
+R3943:3943 CAG.Lie.Nilpotent <> z:78 var
+R3965:3971 CAG.Lie.Ideals <> IsIdeal rec
+R3965:3971 CAG.Lie.Ideals <> IsIdeal rec
+R4025:4031 CAG.Lie.BasicDef <> lh_zero thm
+R4025:4031 CAG.Lie.BasicDef <> lh_zero thm
+R4025:4031 CAG.Lie.BasicDef <> lh_zero thm
+R4044:4053 CAG.Lie.Ideals <> ideal_zero proj
+R4044:4053 CAG.Lie.Ideals <> ideal_zero proj
+R4095:4100 CAG.Lie.BasicDef <> lh_add proj
+R4095:4100 CAG.Lie.BasicDef <> lh_add proj
+R4095:4100 CAG.Lie.BasicDef <> lh_add proj
+R4114:4122 CAG.Lie.Ideals <> ideal_add proj
+R4114:4122 CAG.Lie.Ideals <> ideal_add proj
+R4167:4172 CAG.Lie.BasicDef <> lh_neg thm
+R4167:4172 CAG.Lie.BasicDef <> lh_neg thm
+R4167:4172 CAG.Lie.BasicDef <> lh_neg thm
+R4185:4193 CAG.Lie.Ideals <> ideal_neg proj
+R4185:4193 CAG.Lie.Ideals <> ideal_neg proj
+R4244:4251 CAG.Lie.BasicDef <> lh_scale proj
+R4244:4251 CAG.Lie.BasicDef <> lh_scale proj
+R4244:4251 CAG.Lie.BasicDef <> lh_scale proj
+R4265:4275 CAG.Lie.Ideals <> ideal_scale proj
+R4265:4275 CAG.Lie.Ideals <> ideal_scale proj
+R4326:4335 CAG.Lie.BasicDef <> lh_bracket proj
+R4326:4335 CAG.Lie.BasicDef <> lh_bracket proj
+R4326:4335 CAG.Lie.BasicDef <> lh_bracket proj
+R4349:4363 CAG.Lie.Ideals <> ideal_bracket_l proj
+R4349:4363 CAG.Lie.Ideals <> ideal_bracket_l proj
+binder 4414:4414 <> a:79
+binder 4416:4416 <> b:80
+R4435:4438 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4431:4434 Corelib.Init.Logic <> True ind
+R4459:4462 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4439:4451 CAG.Lie.Nilpotent <> lower_central def
+R4458:4458 CAG.Lie.Nilpotent <> b:80 var
+R4466:4476 CAG.Lie.BasicDef <> laF_bracket proj
+R4483:4483 CAG.Lie.Nilpotent <> b:80 var
+R4481:4481 CAG.Lie.Nilpotent <> a:79 var
+binder 4414:4414 <> a:81
+binder 4416:4416 <> b:82
+R4435:4438 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4431:4434 Corelib.Init.Logic <> True ind
+R4459:4462 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4439:4451 CAG.Lie.Nilpotent <> lower_central def
+R4458:4458 CAG.Lie.Nilpotent <> b:82 var
+R4466:4476 CAG.Lie.BasicDef <> laF_bracket proj
+R4483:4483 CAG.Lie.Nilpotent <> b:82 var
+R4481:4481 CAG.Lie.Nilpotent <> a:81 var
+R4539:4548 CAG.Lie.BasicDef <> lh_bracket proj
+R4539:4548 CAG.Lie.BasicDef <> lh_bracket proj
+R4539:4548 CAG.Lie.BasicDef <> lh_bracket proj
+R4582:4582 Corelib.Init.Logic <> I constr
+R4582:4582 Corelib.Init.Logic <> I constr
+ax 4728:4747 <> nilpotent_image_lift
+binder 4761:4761 <> F:83
+R4778:4782 CAG.Galois.Field <> Field rec
+R4784:4784 CAG.Lie.Nilpotent <> F:83 var
+binder 4772:4774 <> fld:84
+binder 4788:4788 <> L:85
+binder 4790:4790 <> M:86
+R4810:4820 CAG.Lie.BasicDef <> LieAlgebraF rec
+R4826:4826 CAG.Lie.Nilpotent <> L:85 var
+R4822:4824 CAG.Lie.Nilpotent <> fld:84 var
+binder 4805:4806 <> la:87
+R4835:4845 CAG.Lie.BasicDef <> LieAlgebraF rec
+R4851:4851 CAG.Lie.Nilpotent <> M:86 var
+R4847:4849 CAG.Lie.Nilpotent <> fld:84 var
+binder 4830:4831 <> lb:88
+R4864:4869 CAG.Lie.BasicDef <> LieHom rec
+R4874:4875 CAG.Lie.Nilpotent <> lb:88 var
+R4871:4872 CAG.Lie.Nilpotent <> la:87 var
+binder 4859:4860 <> φ:89
+R4901:4901 CAG.Lie.Nilpotent <> M:86 var
+binder 4897:4897 <> y:90
+R4904:4910 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4916:4917 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4915:4915 CAG.Lie.Nilpotent <> L:85 var
+binder 4911:4911 <> x:91
+R4928:4930 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4918:4922 CAG.Lie.BasicDef <> lh_fn proj
+R4927:4927 CAG.Lie.Nilpotent <> x:91 var
+R4924:4925 CAG.Lie.Nilpotent <> φ:89 var
+R4931:4931 CAG.Lie.Nilpotent <> y:90 var
+binder 4883:4886 <> surj:92
+R4943:4945 Corelib.Init.Datatypes <> nat ind
+binder 4939:4939 <> n:93
+R4953:4953 CAG.Lie.Nilpotent <> M:86 var
+binder 4949:4949 <> y:94
+R4981:4988 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4961:4973 CAG.Lie.Nilpotent <> lower_central def
+R4980:4980 CAG.Lie.Nilpotent <> y:94 var
+R4978:4978 CAG.Lie.Nilpotent <> n:93 var
+R4975:4976 CAG.Lie.Nilpotent <> lb:88 var
+R4989:4995 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5001:5002 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5000:5000 CAG.Lie.Nilpotent <> L:85 var
+binder 4996:4996 <> x:95
+R5017:5020 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R5013:5015 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5003:5007 CAG.Lie.BasicDef <> lh_fn proj
+R5012:5012 CAG.Lie.Nilpotent <> x:95 var
+R5009:5010 CAG.Lie.Nilpotent <> φ:89 var
+R5016:5016 CAG.Lie.Nilpotent <> y:94 var
+R5021:5033 CAG.Lie.Nilpotent <> lower_central def
+R5040:5040 CAG.Lie.Nilpotent <> x:95 var
+R5038:5038 CAG.Lie.Nilpotent <> n:93 var
+R5035:5036 CAG.Lie.Nilpotent <> la:87 var
+prf 5231:5245 <> nilpotent_image
+binder 5248:5248 <> F:98
+R5265:5269 CAG.Galois.Field <> Field rec
+R5271:5271 CAG.Lie.Nilpotent <> F:98 var
+binder 5259:5261 <> fld:99
+binder 5275:5275 <> L:100
+binder 5277:5277 <> M:101
+R5297:5307 CAG.Lie.BasicDef <> LieAlgebraF rec
+R5313:5313 CAG.Lie.Nilpotent <> L:100 var
+R5309:5311 CAG.Lie.Nilpotent <> fld:99 var
+binder 5292:5293 <> la:102
+R5322:5332 CAG.Lie.BasicDef <> LieAlgebraF rec
+R5338:5338 CAG.Lie.Nilpotent <> M:101 var
+R5334:5336 CAG.Lie.Nilpotent <> fld:99 var
+binder 5317:5318 <> lb:103
+R5351:5356 CAG.Lie.BasicDef <> LieHom rec
+R5361:5362 CAG.Lie.Nilpotent <> lb:103 var
+R5358:5359 CAG.Lie.Nilpotent <> la:102 var
+binder 5346:5347 <> φ:104
+R5388:5388 CAG.Lie.Nilpotent <> M:101 var
+binder 5384:5384 <> y:105
+R5391:5397 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5403:5404 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5402:5402 CAG.Lie.Nilpotent <> L:100 var
+binder 5398:5398 <> x:106
+R5415:5417 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5405:5409 CAG.Lie.BasicDef <> lh_fn proj
+R5414:5414 CAG.Lie.Nilpotent <> x:106 var
+R5411:5412 CAG.Lie.Nilpotent <> φ:104 var
+R5418:5418 CAG.Lie.Nilpotent <> y:105 var
+binder 5370:5373 <> surj:107
+R5441:5444 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5427:5437 CAG.Lie.Nilpotent <> IsNilpotent def
+R5439:5440 CAG.Lie.Nilpotent <> la:102 var
+R5445:5455 CAG.Lie.Nilpotent <> IsNilpotent def
+R5457:5458 CAG.Lie.Nilpotent <> lb:103 var
+R5524:5543 CAG.Lie.Nilpotent <> nilpotent_image_lift prfax
+R5524:5543 CAG.Lie.Nilpotent <> nilpotent_image_lift prfax
+R5633:5639 CAG.Lie.BasicDef <> lh_zero thm
+R5633:5639 CAG.Lie.BasicDef <> lh_zero thm
+ax 5792:5821 <> nilpotent_from_quotient_center
+binder 5835:5835 <> F:108
+R5852:5856 CAG.Galois.Field <> Field rec
+R5858:5858 CAG.Lie.Nilpotent <> F:108 var
+binder 5846:5848 <> fld:109
+binder 5862:5862 <> L:110
+R5882:5892 CAG.Lie.BasicDef <> LieAlgebraF rec
+R5898:5898 CAG.Lie.Nilpotent <> L:110 var
+R5894:5896 CAG.Lie.Nilpotent <> fld:109 var
+binder 5877:5878 <> la:111
+R5911:5916 CAG.Lie.BasicDef <> LieHom rec
+R5921:5922 CAG.Lie.Nilpotent <> la:111 var
+R5918:5919 CAG.Lie.Nilpotent <> la:111 var
+binder 5906:5907 <> φ:112
+binder 5975:5975 <> x:113
+R5991:5994 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5978:5985 CAG.Lie.Ideals <> IsCenter def
+R5990:5990 CAG.Lie.Nilpotent <> x:113 var
+R5987:5988 CAG.Lie.Nilpotent <> la:111 var
+R6005:6007 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5995:5999 CAG.Lie.BasicDef <> lh_fn proj
+R6004:6004 CAG.Lie.Nilpotent <> x:113 var
+R6001:6002 CAG.Lie.Nilpotent <> φ:112 var
+R6008:6014 CAG.Lie.BasicDef <> la_zero abbrev
+R6016:6017 CAG.Lie.Nilpotent <> la:111 var
+binder 5962:5964 <> hφ:114
+R6029:6031 Corelib.Init.Datatypes <> nat ind
+binder 6025:6025 <> n:115
+binder 6051:6051 <> y:116
+R6085:6088 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6054:6066 CAG.Lie.Nilpotent <> lower_central def
+R6074:6078 CAG.Lie.BasicDef <> lh_fn proj
+R6083:6083 CAG.Lie.Nilpotent <> y:116 var
+R6080:6081 CAG.Lie.Nilpotent <> φ:112 var
+R6071:6071 CAG.Lie.Nilpotent <> n:115 var
+R6068:6069 CAG.Lie.Nilpotent <> la:111 var
+R6099:6101 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6089:6093 CAG.Lie.BasicDef <> lh_fn proj
+R6098:6098 CAG.Lie.Nilpotent <> y:116 var
+R6095:6096 CAG.Lie.Nilpotent <> φ:112 var
+R6102:6108 CAG.Lie.BasicDef <> la_zero abbrev
+R6110:6111 CAG.Lie.Nilpotent <> la:111 var
+binder 6039:6040 <> hn:117
+R6119:6129 CAG.Lie.Nilpotent <> IsNilpotent def
+R6131:6132 CAG.Lie.Nilpotent <> la:111 var
+ax 6442:6468 <> nilpotent_center_nontrivial
+binder 6482:6482 <> F:120
+R6499:6503 CAG.Galois.Field <> Field rec
+R6505:6505 CAG.Lie.Nilpotent <> F:120 var
+binder 6493:6495 <> fld:121
+binder 6509:6509 <> L:122
+R6529:6539 CAG.Lie.BasicDef <> LieAlgebraF rec
+R6545:6545 CAG.Lie.Nilpotent <> L:122 var
+R6541:6543 CAG.Lie.Nilpotent <> fld:121 var
+binder 6524:6525 <> la:123
+R6567:6574 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6553:6563 CAG.Lie.Nilpotent <> IsNilpotent def
+R6565:6566 CAG.Lie.Nilpotent <> la:123 var
+R6575:6575 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6605:6613 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6576:6582 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6588:6589 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6587:6587 CAG.Lie.Nilpotent <> L:122 var
+binder 6583:6583 <> x:124
+R6591:6594 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R6590:6590 CAG.Lie.Nilpotent <> x:124 var
+R6595:6601 CAG.Lie.BasicDef <> la_zero abbrev
+R6603:6604 CAG.Lie.Nilpotent <> la:123 var
+R6614:6620 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6622:6623 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 6621:6621 <> z:125
+R6637:6640 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R6624:6631 CAG.Lie.Ideals <> IsCenter def
+R6636:6636 CAG.Lie.Nilpotent <> z:125 var
+R6633:6634 CAG.Lie.Nilpotent <> la:123 var
+R6642:6645 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R6641:6641 CAG.Lie.Nilpotent <> z:125 var
+R6646:6652 CAG.Lie.BasicDef <> la_zero abbrev
+R6654:6655 CAG.Lie.Nilpotent <> la:123 var
+def 6853:6865 <> IsAdNilpotent
+binder 6868:6868 <> F:128
+R6885:6889 CAG.Galois.Field <> Field rec
+R6891:6891 CAG.Lie.Nilpotent <> F:128 var
+binder 6879:6881 <> fld:129
+binder 6895:6895 <> L:130
+R6915:6925 CAG.Lie.BasicDef <> LieAlgebraF rec
+R6931:6931 CAG.Lie.Nilpotent <> L:130 var
+R6927:6929 CAG.Lie.Nilpotent <> fld:129 var
+binder 6910:6911 <> la:131
+R6939:6939 CAG.Lie.Nilpotent <> L:130 var
+binder 6935:6935 <> x:132
+R6954:6960 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6968:6969 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6965:6967 Corelib.Init.Datatypes <> nat ind
+binder 6961:6961 <> n:133
+binder 6977:6977 <> y:134
+R7015:7017 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6984:6991 Corelib.Init.Nat <> iter def
+R7014:7014 CAG.Lie.Nilpotent <> y:134 var
+R6996:7006 CAG.Lie.BasicDef <> laF_bracket proj
+R7011:7011 CAG.Lie.Nilpotent <> x:132 var
+R7008:7009 CAG.Lie.Nilpotent <> la:131 var
+R6993:6993 CAG.Lie.Nilpotent <> n:133 var
+R7018:7024 CAG.Lie.BasicDef <> la_zero abbrev
+R7026:7027 CAG.Lie.Nilpotent <> la:131 var
+prf 7103:7128 <> nilpotent_all_ad_nilpotent
+binder 7131:7131 <> F:135
+R7148:7152 CAG.Galois.Field <> Field rec
+R7154:7154 CAG.Lie.Nilpotent <> F:135 var
+binder 7142:7144 <> fld:136
+binder 7158:7158 <> L:137
+R7178:7188 CAG.Lie.BasicDef <> LieAlgebraF rec
+R7194:7194 CAG.Lie.Nilpotent <> L:137 var
+R7190:7192 CAG.Lie.Nilpotent <> fld:136 var
+binder 7173:7174 <> la:138
+R7217:7220 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7203:7213 CAG.Lie.Nilpotent <> IsNilpotent def
+R7215:7216 CAG.Lie.Nilpotent <> la:138 var
+binder 7228:7228 <> x:139
+R7231:7243 CAG.Lie.Nilpotent <> IsAdNilpotent def
+R7248:7248 CAG.Lie.Nilpotent <> x:139 var
+R7245:7246 CAG.Lie.Nilpotent <> la:138 var
+binder 7398:7398 <> m:140
+binder 7400:7400 <> z:141
+R7403:7415 CAG.Lie.Nilpotent <> lower_central def
+R7423:7430 Corelib.Init.Nat <> iter def
+R7453:7453 CAG.Lie.Nilpotent <> z:141 var
+R7435:7445 CAG.Lie.BasicDef <> laF_bracket proj
+R7432:7432 CAG.Lie.Nilpotent <> m:140 var
+R7420:7420 CAG.Lie.Nilpotent <> m:140 var
+binder 7398:7398 <> m:142
+binder 7400:7400 <> z:143
+R7403:7415 CAG.Lie.Nilpotent <> lower_central def
+R7423:7430 Corelib.Init.Nat <> iter def
+R7453:7453 CAG.Lie.Nilpotent <> z:143 var
+R7435:7445 CAG.Lie.BasicDef <> laF_bracket proj
+R7432:7432 CAG.Lie.Nilpotent <> m:142 var
+R7420:7420 CAG.Lie.Nilpotent <> m:142 var
+R7585:7592 Corelib.Init.Nat <> iter def
+R7597:7607 CAG.Lie.BasicDef <> laF_bracket proj
+R7618:7618 Corelib.Init.Logic <> I constr
+R7585:7592 Corelib.Init.Nat <> iter def
+R7597:7607 CAG.Lie.BasicDef <> laF_bracket proj
+R7618:7618 Corelib.Init.Logic <> I constr
+ax 7723:7757 <> strictly_upper_triangular_nilpotent
+binder 7771:7771 <> F:144
+R7788:7792 CAG.Galois.Field <> Field rec
+R7794:7794 CAG.Lie.Nilpotent <> F:144 var
+binder 7782:7784 <> fld:145
+R7802:7804 Corelib.Init.Datatypes <> nat ind
+binder 7798:7798 <> n:146
+R7817:7827 CAG.Lie.BasicDef <> LieAlgebraF rec
+R7834:7837 Corelib.Init.Datatypes <> list ind
+R7840:7843 Corelib.Init.Datatypes <> list ind
+R7845:7845 CAG.Lie.Nilpotent <> F:144 var
+R7829:7831 CAG.Lie.Nilpotent <> fld:145 var
+binder 7812:7813 <> la:147
+R7855:7865 CAG.Lie.Nilpotent <> IsNilpotent def
+R7867:7868 CAG.Lie.Nilpotent <> la:147 var
+ax 7963:7992 <> upper_triangular_not_nilpotent
+binder 8006:8006 <> F:150
+R8023:8027 CAG.Galois.Field <> Field rec
+R8029:8029 CAG.Lie.Nilpotent <> F:150 var
+binder 8017:8019 <> fld:151
+R8037:8039 Corelib.Init.Datatypes <> nat ind
+binder 8033:8033 <> n:152
+R8052:8062 CAG.Lie.BasicDef <> LieAlgebraF rec
+R8069:8072 Corelib.Init.Datatypes <> list ind
+R8075:8078 Corelib.Init.Datatypes <> list ind
+R8080:8080 CAG.Lie.Nilpotent <> F:150 var
+R8064:8066 CAG.Lie.Nilpotent <> fld:151 var
+binder 8047:8048 <> la:153
+R8102:8105 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8092:8095 Corelib.Init.Peano <> ::nat_scope:x_'>='_x not
+R8091:8091 CAG.Lie.Nilpotent <> n:152 var
+R8106:8107 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R8108:8118 CAG.Lie.Nilpotent <> IsNilpotent def
+R8120:8121 CAG.Lie.Nilpotent <> la:153 var

@@ -1,0 +1,662 @@
+DIGEST 8c419c99f0bc3951a2c3a310171a0083
+FCAG.ATT.Model
+R406:422 CAG.ATT.Signature <> <> lib
+R440:453 CAG.ATT.Syntax <> <> lib
+R471:484 CAG.ATT.Theory <> <> lib
+R502:518 CAG.Category.Core <> <> lib
+R536:556 CAG.Category.Products <> <> lib
+R586:595 Stdlib.Lists.List <> <> lib
+R625:636 Stdlib.Arith.Wf_nat <> <> lib
+R666:690 Stdlib.Wellfounded.Inverse_Image <> <> lib
+R720:732 Stdlib.micromega.Lia <> <> lib
+R742:754 Stdlib.Lists.List ListNotations <> mod
+def 992:998 <> fp_prod
+R1005:1012 CAG.Category.Core <> Category rec
+binder 1001:1001 <> C:1
+R1021:1037 CAG.Category.Products <> HasFiniteProducts rec
+R1039:1039 CAG.ATT.Model <> C:1 var
+binder 1016:1017 <> hp:2
+R1054:1057 Corelib.Init.Datatypes <> list ind
+R1062:1063 CAG.Category.Core <> Ob proj
+R1059:1059 CAG.ATT.Model <> C:1 var
+binder 1047:1050 <> objs:3
+R1072:1073 CAG.Category.Core <> Ob proj
+R1069:1069 CAG.ATT.Model <> C:1 var
+R1087:1090 CAG.ATT.Model <> objs:3 var
+R1101:1102 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R1112:1117 Corelib.Init.Specif <> projT1 def
+R1121:1131 CAG.Category.Products <> fp_terminal proj
+R1133:1133 CAG.ATT.Model <> C:1 var
+R1135:1136 CAG.ATT.Model <> hp:2 var
+R1143:1143 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1145:1145 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1161:1164 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1172:1179 CAG.Category.Products <> prod_obj proj
+R1181:1181 CAG.ATT.Model <> C:1 var
+R1185:1193 CAG.Category.Products <> fp_binary proj
+R1195:1195 CAG.ATT.Model <> C:1 var
+R1197:1198 CAG.ATT.Model <> hp:2 var
+R1204:1210 CAG.ATT.Model <> fp_prod:4 def
+R1212:1213 CAG.ATT.Model <> hp:2 var
+rec 1258:1262 <> Model
+proj 1368:1373 <> mod_ty
+proj 1568:1574 <> mod_fun
+proj 1784:1789 <> mod_ax
+R1270:1275 CAG.ATT.Theory <> Theory rec
+binder 1265:1266 <> Th:6
+R1283:1290 CAG.Category.Core <> Category rec
+binder 1279:1279 <> C:7
+R1299:1315 CAG.Category.Products <> HasFiniteProducts rec
+R1317:1317 CAG.ATT.Model <> C:7 var
+binder 1294:1295 <> hp:8
+R1398:1401 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1392:1396 CAG.ATT.Signature <> sg_ty proj
+R1383:1388 CAG.ATT.Theory <> th_sig proj
+R1379:1380 CAG.ATT.Model <> Th:6 var
+R1405:1406 CAG.Category.Core <> Ob proj
+R1402:1402 CAG.ATT.Model <> C:7 var
+R1604:1609 CAG.ATT.Signature <> sg_fun proj
+R1595:1600 CAG.ATT.Theory <> th_sig proj
+R1591:1592 CAG.ATT.Model <> Th:6 var
+binder 1587:1587 <> f:11
+R1630:1633 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1687:1706 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1738:1741 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R1629:1629 CAG.ATT.Model <> C:7 var
+R1634:1640 CAG.ATT.Model <> fp_prod def
+R1646:1653 Stdlib.Lists.List <> map abbrev
+R1676:1681 CAG.ATT.Signature <> sg_dom proj
+R1667:1672 CAG.ATT.Theory <> th_sig proj
+R1663:1664 CAG.ATT.Model <> Th:6 var
+R1684:1684 CAG.ATT.Model <> f:11 var
+R1655:1660 CAG.ATT.Model <> mod_ty:10 meth
+R1642:1643 CAG.ATT.Model <> hp:8 var
+R1707:1712 CAG.ATT.Model <> mod_ty:10 meth
+R1728:1733 CAG.ATT.Signature <> sg_cod proj
+R1719:1724 CAG.ATT.Theory <> th_sig proj
+R1715:1716 CAG.ATT.Model <> Th:6 var
+R1736:1736 CAG.ATT.Model <> f:11 var
+R1807:1817 CAG.ATT.Syntax <> TheoryAxiom rec
+R1823:1828 CAG.ATT.Theory <> th_sig proj
+R1819:1820 CAG.ATT.Model <> Th:6 var
+binder 1803:1803 <> a:13
+R1868:2099 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1848:1854 Stdlib.Lists.List <> In def
+R1862:1866 CAG.ATT.Theory <> th_ax proj
+R1858:1859 CAG.ATT.Model <> Th:6 var
+R1856:1856 CAG.ATT.Model <> a:13 var
+R2100:2103 Corelib.Init.Logic <> True ind
+R2163:2168 CAG.ATT.Model <> mod_ty proj
+R2163:2168 CAG.ATT.Model <> mod_ty proj
+R2192:2198 CAG.ATT.Model <> mod_fun proj
+R2192:2198 CAG.ATT.Model <> mod_fun proj
+def 2569:2581 <> att_term_size
+R2589:2597 CAG.ATT.Signature <> Signature rec
+binder 2584:2585 <> Sg:15
+R2605:2608 CAG.ATT.Syntax <> Term ind
+R2610:2611 CAG.ATT.Model <> Sg:15 var
+binder 2601:2601 <> t:16
+R2616:2618 Corelib.Init.Datatypes <> nat ind
+R2631:2631 CAG.ATT.Model <> t:16 var
+R2642:2646 CAG.ATT.Syntax <> t_var constr
+R2664:2668 CAG.ATT.Syntax <> t_app constr
+R2681:2683 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R2684:2698 Stdlib.Lists.List <> fold_right def
+binder 2705:2706 <> t':19
+binder 2708:2710 <> acc:20
+R2731:2733 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R2715:2727 CAG.ATT.Model <> att_term_size:17 def
+R2729:2730 CAG.ATT.Model <> t':19 var
+R2734:2736 CAG.ATT.Model <> acc:20 var
+def 2765:2775 <> att_term_lt
+R2783:2791 CAG.ATT.Signature <> Signature rec
+binder 2778:2779 <> Sg:21
+R2801:2804 CAG.ATT.Syntax <> Term ind
+R2806:2807 CAG.ATT.Model <> Sg:21 var
+binder 2795:2795 <> s:22
+binder 2797:2797 <> t:23
+R2837:2839 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R2822:2834 CAG.ATT.Model <> att_term_size def
+R2836:2836 CAG.ATT.Model <> s:22 var
+R2840:2852 CAG.ATT.Model <> att_term_size def
+R2854:2854 CAG.ATT.Model <> t:23 var
+prf 2864:2877 <> att_term_lt_wf
+R2885:2893 CAG.ATT.Signature <> Signature rec
+binder 2880:2881 <> Sg:24
+R2898:2909 Corelib.Init.Wf <> well_founded def
+R2913:2923 CAG.ATT.Model <> att_term_lt def
+R2925:2926 CAG.ATT.Model <> Sg:24 var
+R2957:2973 Stdlib.Wellfounded.Inverse_Image <> Acc_inverse_image thm
+R2992:3004 CAG.ATT.Model <> att_term_size def
+R2989:2990 Corelib.Init.Peano <> lt def
+R2985:2987 Corelib.Init.Datatypes <> nat ind
+R2976:2979 CAG.ATT.Syntax <> Term ind
+R2957:2973 Stdlib.Wellfounded.Inverse_Image <> Acc_inverse_image thm
+R2992:3004 CAG.ATT.Model <> att_term_size def
+R2989:2990 Corelib.Init.Peano <> lt def
+R2985:2987 Corelib.Init.Datatypes <> nat ind
+R2976:2979 CAG.ATT.Syntax <> Term ind
+R3016:3020 Stdlib.Arith.Wf_nat <> lt_wf thm
+R3016:3020 Stdlib.Arith.Wf_nat <> lt_wf thm
+prf 3035:3052 <> att_args_size_fold
+R3060:3068 CAG.ATT.Signature <> Signature rec
+binder 3055:3056 <> Sg:25
+R3079:3082 Corelib.Init.Datatypes <> list ind
+R3085:3088 CAG.ATT.Syntax <> Term ind
+R3090:3091 CAG.ATT.Model <> Sg:25 var
+binder 3072:3075 <> args:26
+R3106:3109 CAG.ATT.Syntax <> Term ind
+R3111:3112 CAG.ATT.Model <> Sg:25 var
+binder 3100:3102 <> arg:27
+R3120:3122 Corelib.Init.Datatypes <> nat ind
+binder 3116:3116 <> i:28
+R3155:3157 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3134:3147 Stdlib.Lists.List <> nth_error def
+R3154:3154 CAG.ATT.Model <> i:28 var
+R3149:3152 CAG.ATT.Model <> args:26 var
+R3158:3161 Corelib.Init.Datatypes <> Some constr
+R3163:3165 CAG.ATT.Model <> arg:27 var
+binder 3130:3130 <> H:29
+R3191:3198 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R3174:3186 CAG.ATT.Model <> att_term_size def
+R3188:3190 CAG.ATT.Model <> arg:27 var
+R3199:3213 Stdlib.Lists.List <> fold_right def
+R3256:3259 CAG.ATT.Model <> args:26 var
+binder 3220:3221 <> t':30
+binder 3223:3225 <> acc:31
+R3246:3248 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R3230:3242 CAG.ATT.Model <> att_term_size def
+R3244:3245 CAG.ATT.Model <> t':30 var
+R3249:3251 CAG.ATT.Model <> acc:31 var
+prf 3499:3514 <> att_args_size_lt
+R3522:3530 CAG.ATT.Signature <> Signature rec
+binder 3517:3518 <> Sg:32
+R3542:3547 CAG.ATT.Signature <> sg_fun proj
+R3538:3539 CAG.ATT.Model <> Sg:32 var
+binder 3534:3534 <> f:33
+R3559:3562 Corelib.Init.Datatypes <> list ind
+R3565:3568 CAG.ATT.Syntax <> Term ind
+R3570:3571 CAG.ATT.Model <> Sg:32 var
+binder 3552:3555 <> args:34
+R3586:3589 CAG.ATT.Syntax <> Term ind
+R3591:3592 CAG.ATT.Model <> Sg:32 var
+binder 3580:3582 <> arg:35
+R3600:3602 Corelib.Init.Datatypes <> nat ind
+binder 3596:3596 <> i:36
+R3635:3637 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3614:3627 Stdlib.Lists.List <> nth_error def
+R3634:3634 CAG.ATT.Model <> i:36 var
+R3629:3632 CAG.ATT.Model <> args:34 var
+R3638:3641 Corelib.Init.Datatypes <> Some constr
+R3643:3645 CAG.ATT.Model <> arg:35 var
+binder 3610:3610 <> H:37
+R3654:3664 CAG.ATT.Model <> att_term_lt def
+R3671:3675 CAG.ATT.Syntax <> t_app constr
+R3679:3682 CAG.ATT.Model <> args:34 var
+R3677:3677 CAG.ATT.Model <> f:33 var
+R3666:3668 CAG.ATT.Model <> arg:35 var
+R3702:3712 CAG.ATT.Model <> att_term_lt def
+R3736:3753 CAG.ATT.Model <> att_args_size_fold thm
+R3736:3753 CAG.ATT.Model <> att_args_size_fold thm
+prf 3863:3876 <> ht_var_nth_err
+R3884:3892 CAG.ATT.Signature <> Signature rec
+binder 3879:3880 <> Sg:38
+R3901:3904 Corelib.Init.Datatypes <> list ind
+R3910:3914 CAG.ATT.Signature <> sg_ty proj
+R3906:3907 CAG.ATT.Model <> Sg:38 var
+binder 3896:3897 <> Γ:39
+R3923:3925 Corelib.Init.Datatypes <> nat ind
+binder 3919:3919 <> n:40
+R3938:3942 CAG.ATT.Signature <> sg_ty proj
+R3934:3935 CAG.ATT.Model <> Sg:38 var
+binder 3929:3930 <> τ:41
+R3956:3962 CAG.ATT.Syntax <> HasType ind
+R3964:3965 CAG.ATT.Model <> Sg:38 var
+R3967:3968 CAG.ATT.Model <> Γ:39 var
+R3971:3975 CAG.ATT.Syntax <> t_var constr
+R3977:3977 CAG.ATT.Model <> n:40 var
+R3980:3981 CAG.ATT.Model <> τ:41 var
+binder 3951:3952 <> Ht:42
+R4005:4007 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3986:3999 Stdlib.Lists.List <> nth_error def
+R4004:4004 CAG.ATT.Model <> n:40 var
+R4001:4002 CAG.ATT.Model <> Γ:39 var
+R4008:4011 Corelib.Init.Datatypes <> Some constr
+R4013:4014 CAG.ATT.Model <> τ:41 var
+prf 4062:4074 <> ht_app_cod_eq
+R4082:4090 CAG.ATT.Signature <> Signature rec
+binder 4077:4078 <> Sg:43
+R4099:4102 Corelib.Init.Datatypes <> list ind
+R4108:4112 CAG.ATT.Signature <> sg_ty proj
+R4104:4105 CAG.ATT.Model <> Sg:43 var
+binder 4094:4095 <> Γ:44
+R4125:4130 CAG.ATT.Signature <> sg_fun proj
+R4121:4122 CAG.ATT.Model <> Sg:43 var
+binder 4117:4117 <> f:45
+R4146:4149 Corelib.Init.Datatypes <> list ind
+R4152:4155 CAG.ATT.Syntax <> Term ind
+R4157:4158 CAG.ATT.Model <> Sg:43 var
+binder 4139:4142 <> args:46
+R4172:4176 CAG.ATT.Signature <> sg_ty proj
+R4168:4169 CAG.ATT.Model <> Sg:43 var
+binder 4163:4164 <> τ:47
+R4190:4196 CAG.ATT.Syntax <> HasType ind
+R4198:4199 CAG.ATT.Model <> Sg:43 var
+R4201:4202 CAG.ATT.Model <> Γ:44 var
+R4205:4209 CAG.ATT.Syntax <> t_app constr
+R4213:4216 CAG.ATT.Model <> args:46 var
+R4211:4211 CAG.ATT.Model <> f:45 var
+R4219:4220 CAG.ATT.Model <> τ:47 var
+binder 4185:4186 <> Ht:48
+R4227:4229 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4225:4226 CAG.ATT.Model <> τ:47 var
+R4234:4239 CAG.ATT.Signature <> sg_cod proj
+R4230:4231 CAG.ATT.Model <> Sg:43 var
+R4242:4242 CAG.ATT.Model <> f:45 var
+prf 4291:4304 <> ht_app_args_f2
+R4312:4320 CAG.ATT.Signature <> Signature rec
+binder 4307:4308 <> Sg:49
+R4329:4332 Corelib.Init.Datatypes <> list ind
+R4338:4342 CAG.ATT.Signature <> sg_ty proj
+R4334:4335 CAG.ATT.Model <> Sg:49 var
+binder 4324:4325 <> Γ:50
+R4355:4360 CAG.ATT.Signature <> sg_fun proj
+R4351:4352 CAG.ATT.Model <> Sg:49 var
+binder 4347:4347 <> f:51
+R4376:4379 Corelib.Init.Datatypes <> list ind
+R4382:4385 CAG.ATT.Syntax <> Term ind
+R4387:4388 CAG.ATT.Model <> Sg:49 var
+binder 4369:4372 <> args:52
+R4402:4406 CAG.ATT.Signature <> sg_ty proj
+R4398:4399 CAG.ATT.Model <> Sg:49 var
+binder 4393:4394 <> τ:53
+R4420:4426 CAG.ATT.Syntax <> HasType ind
+R4428:4429 CAG.ATT.Model <> Sg:49 var
+R4431:4432 CAG.ATT.Model <> Γ:50 var
+R4435:4439 CAG.ATT.Syntax <> t_app constr
+R4443:4446 CAG.ATT.Model <> args:52 var
+R4441:4441 CAG.ATT.Model <> f:51 var
+R4449:4450 CAG.ATT.Model <> τ:53 var
+binder 4415:4416 <> Ht:54
+R4459:4465 Stdlib.Lists.List <> Forall2 ind
+R4493:4498 CAG.ATT.Signature <> sg_dom proj
+R4489:4490 CAG.ATT.Model <> Sg:49 var
+R4501:4501 CAG.ATT.Model <> f:51 var
+R4483:4486 CAG.ATT.Model <> args:52 var
+R4468:4474 CAG.ATT.Syntax <> HasType ind
+R4476:4477 CAG.ATT.Model <> Sg:49 var
+R4479:4480 CAG.ATT.Model <> Γ:50 var
+prf 4627:4645 <> forall2_nth_hastype
+R4653:4661 CAG.ATT.Signature <> Signature rec
+binder 4648:4649 <> Sg:55
+R4670:4673 Corelib.Init.Datatypes <> list ind
+R4679:4683 CAG.ATT.Signature <> sg_ty proj
+R4675:4676 CAG.ATT.Model <> Sg:55 var
+binder 4665:4666 <> Γ:56
+R4699:4702 Corelib.Init.Datatypes <> list ind
+R4705:4708 CAG.ATT.Syntax <> Term ind
+R4710:4711 CAG.ATT.Model <> Sg:55 var
+binder 4692:4695 <> args:57
+R4722:4725 Corelib.Init.Datatypes <> list ind
+R4731:4735 CAG.ATT.Signature <> sg_ty proj
+R4727:4728 CAG.ATT.Model <> Sg:55 var
+binder 4716:4718 <> dom:58
+R4748:4754 Stdlib.Lists.List <> Forall2 ind
+R4777:4779 CAG.ATT.Model <> dom:58 var
+R4772:4775 CAG.ATT.Model <> args:57 var
+R4757:4763 CAG.ATT.Syntax <> HasType ind
+R4765:4766 CAG.ATT.Model <> Sg:55 var
+R4768:4769 CAG.ATT.Model <> Γ:56 var
+binder 4744:4744 <> F:59
+R4791:4793 Corelib.Init.Datatypes <> nat ind
+binder 4787:4787 <> i:60
+R4803:4806 CAG.ATT.Syntax <> Term ind
+R4808:4809 CAG.ATT.Model <> Sg:55 var
+binder 4797:4799 <> arg:61
+R4822:4826 CAG.ATT.Signature <> sg_ty proj
+R4818:4819 CAG.ATT.Model <> Sg:55 var
+binder 4813:4814 <> τ:62
+R4863:4865 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4842:4855 Stdlib.Lists.List <> nth_error def
+R4862:4862 CAG.ATT.Model <> i:60 var
+R4857:4860 CAG.ATT.Model <> args:57 var
+R4866:4869 Corelib.Init.Datatypes <> Some constr
+R4871:4873 CAG.ATT.Model <> arg:61 var
+binder 4835:4838 <> Harg:63
+R4907:4909 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4887:4900 Stdlib.Lists.List <> nth_error def
+R4906:4906 CAG.ATT.Model <> i:60 var
+R4902:4904 CAG.ATT.Model <> dom:58 var
+R4910:4913 Corelib.Init.Datatypes <> Some constr
+R4915:4916 CAG.ATT.Model <> τ:62 var
+binder 4881:4883 <> Hτ:64
+R4925:4931 CAG.ATT.Syntax <> HasType ind
+R4933:4934 CAG.ATT.Model <> Sg:55 var
+R4936:4937 CAG.ATT.Model <> Γ:56 var
+R4939:4941 CAG.ATT.Model <> arg:61 var
+R4943:4944 CAG.ATT.Model <> τ:62 var
+rec 5321:5329 <> TypedTerm
+proj 5391:5397 <> tt_term
+proj 5421:5427 <> tt_sort
+proj 5454:5461 <> tt_typed
+R5337:5342 CAG.ATT.Theory <> Theory rec
+binder 5332:5333 <> Th:65
+R5351:5354 Corelib.Init.Datatypes <> list ind
+R5369:5373 CAG.ATT.Signature <> sg_ty proj
+R5360:5365 CAG.ATT.Theory <> th_sig proj
+R5356:5357 CAG.ATT.Model <> Th:65 var
+binder 5346:5347 <> Γ:66
+R5401:5404 CAG.ATT.Syntax <> Term ind
+R5410:5415 CAG.ATT.Theory <> th_sig proj
+R5406:5407 CAG.ATT.Model <> Th:65 var
+R5444:5448 CAG.ATT.Signature <> sg_ty proj
+R5435:5440 CAG.ATT.Theory <> th_sig proj
+R5431:5432 CAG.ATT.Model <> Th:65 var
+R5465:5471 CAG.ATT.Syntax <> HasType ind
+R5477:5482 CAG.ATT.Theory <> th_sig proj
+R5473:5474 CAG.ATT.Model <> Th:65 var
+R5485:5486 CAG.ATT.Model <> Γ:66 var
+R5488:5494 CAG.ATT.Model <> tt_term:68 meth
+R5496:5502 CAG.ATT.Model <> tt_sort:69 meth
+prf 5655:5666 <> context_proj
+R5682:5689 CAG.Category.Core <> Category rec
+binder 5678:5678 <> C:71
+R5698:5714 CAG.Category.Products <> HasFiniteProducts rec
+R5716:5716 CAG.ATT.Model <> C:71 var
+binder 5693:5694 <> hp:72
+R5731:5734 Corelib.Init.Datatypes <> list ind
+R5739:5740 CAG.Category.Core <> Ob proj
+R5736:5736 CAG.ATT.Model <> C:71 var
+binder 5724:5727 <> objs:73
+R5749:5751 Corelib.Init.Datatypes <> nat ind
+binder 5745:5745 <> i:74
+R5762:5763 CAG.Category.Core <> Ob proj
+R5759:5759 CAG.ATT.Model <> C:71 var
+binder 5755:5755 <> A:75
+R5802:5809 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5793:5795 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5772:5785 Stdlib.Lists.List <> nth_error def
+R5792:5792 CAG.ATT.Model <> i:74 var
+R5787:5790 CAG.ATT.Model <> objs:73 var
+R5796:5799 Corelib.Init.Datatypes <> Some constr
+R5801:5801 CAG.ATT.Model <> A:75 var
+R5811:5814 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R5830:5831 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R5833:5836 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R5810:5810 CAG.ATT.Model <> C:71 var
+R5815:5821 CAG.ATT.Model <> fp_prod def
+R5826:5829 CAG.ATT.Model <> objs:73 var
+R5823:5824 CAG.ATT.Model <> hp:72 var
+R5832:5832 CAG.ATT.Model <> A:75 var
+R6074:6075 CAG.Category.Core <> id proj
+R6074:6075 CAG.Category.Core <> id proj
+R6112:6119 CAG.Category.Products <> bp_proj1 proj
+R6122:6128 CAG.Category.Products <> prod_bp proj
+R6151:6157 CAG.ATT.Model <> fp_prod def
+R6165:6168 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6132:6140 CAG.Category.Products <> fp_binary proj
+R6112:6119 CAG.Category.Products <> bp_proj1 proj
+R6122:6128 CAG.Category.Products <> prod_bp proj
+R6151:6157 CAG.ATT.Model <> fp_prod def
+R6165:6168 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6132:6140 CAG.Category.Products <> fp_binary proj
+R6290:6294 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R6295:6302 CAG.Category.Products <> bp_proj2 proj
+R6305:6311 CAG.Category.Products <> prod_bp proj
+R6334:6340 CAG.ATT.Model <> fp_prod def
+R6348:6351 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6315:6323 CAG.Category.Products <> fp_binary proj
+R6290:6294 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R6295:6302 CAG.Category.Products <> bp_proj2 proj
+R6305:6311 CAG.Category.Products <> prod_bp proj
+R6334:6340 CAG.ATT.Model <> fp_prod def
+R6348:6351 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6315:6323 CAG.Category.Products <> fp_binary proj
+prf 6487:6494 <> fp_tuple
+R6510:6517 CAG.Category.Core <> Category rec
+binder 6506:6506 <> C:76
+R6526:6542 CAG.Category.Products <> HasFiniteProducts rec
+R6544:6544 CAG.ATT.Model <> C:76 var
+binder 6521:6522 <> hp:77
+R6559:6560 CAG.Category.Core <> Ob proj
+R6556:6556 CAG.ATT.Model <> C:76 var
+binder 6552:6552 <> X:78
+R6572:6575 Corelib.Init.Datatypes <> list ind
+R6580:6581 CAG.Category.Core <> Ob proj
+R6577:6577 CAG.ATT.Model <> C:76 var
+binder 6565:6568 <> objs:79
+binder 6602:6602 <> i:80
+binder 6604:6604 <> A:81
+R6637:6640 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6628:6630 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6607:6620 Stdlib.Lists.List <> nth_error def
+R6627:6627 CAG.ATT.Model <> i:80 var
+R6622:6625 CAG.ATT.Model <> objs:79 var
+R6631:6634 Corelib.Init.Datatypes <> Some constr
+R6636:6636 CAG.ATT.Model <> A:81 var
+R6642:6644 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R6646:6647 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R6649:6651 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R6641:6641 CAG.ATT.Model <> C:76 var
+R6645:6645 CAG.ATT.Model <> X:78 var
+R6648:6648 CAG.ATT.Model <> A:81 var
+binder 6590:6591 <> fs:82
+R6660:6662 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R6664:6665 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R6681:6683 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R6659:6659 CAG.ATT.Model <> C:76 var
+R6663:6663 CAG.ATT.Model <> X:78 var
+R6666:6672 CAG.ATT.Model <> fp_prod def
+R6677:6680 CAG.ATT.Model <> objs:79 var
+R6674:6675 CAG.ATT.Model <> hp:77 var
+R6780:6787 CAG.Category.Core <> term_arr proj
+R6819:6824 Corelib.Init.Specif <> projT2 def
+R6828:6838 CAG.Category.Products <> fp_terminal proj
+R6790:6795 Corelib.Init.Specif <> projT1 def
+R6799:6809 CAG.Category.Products <> fp_terminal proj
+R6780:6787 CAG.Category.Core <> term_arr proj
+R6819:6824 Corelib.Init.Specif <> projT2 def
+R6828:6838 CAG.Category.Products <> fp_terminal proj
+R6790:6795 Corelib.Init.Specif <> projT1 def
+R6799:6809 CAG.Category.Products <> fp_terminal proj
+R6906:6912 Corelib.Init.Logic <> eq_refl constr
+R6906:6912 Corelib.Init.Logic <> eq_refl constr
+R6942:6948 CAG.Category.Products <> bp_pair proj
+binder 7059:7059 <> i:83
+binder 7061:7062 <> A':84
+binder 7064:7064 <> H:85
+R7073:7073 Corelib.Init.Datatypes <> S constr
+R7075:7075 CAG.ATT.Model <> i:83 var
+R7078:7079 CAG.ATT.Model <> A':84 var
+R7081:7081 CAG.ATT.Model <> H:85 var
+R7026:7032 Corelib.Init.Logic <> eq_refl constr
+R6951:6957 CAG.Category.Products <> prod_bp proj
+R6980:6986 CAG.ATT.Model <> fp_prod def
+R6993:6996 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6961:6969 CAG.Category.Products <> fp_binary proj
+R6942:6948 CAG.Category.Products <> bp_pair proj
+binder 7059:7059 <> i:86
+binder 7061:7062 <> A':87
+binder 7064:7064 <> H:88
+R7073:7073 Corelib.Init.Datatypes <> S constr
+R7075:7075 CAG.ATT.Model <> i:86 var
+R7078:7079 CAG.ATT.Model <> A':87 var
+R7081:7081 CAG.ATT.Model <> H:88 var
+R7026:7032 Corelib.Init.Logic <> eq_refl constr
+R6951:6957 CAG.Category.Products <> prod_bp proj
+R6980:6986 CAG.ATT.Model <> fp_prod def
+R6993:6996 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6961:6969 CAG.Category.Products <> fp_binary proj
+prf 7138:7148 <> interp_term
+R7165:7170 CAG.ATT.Theory <> Theory rec
+binder 7160:7161 <> Th:89
+R7178:7185 CAG.Category.Core <> Category rec
+binder 7174:7174 <> C:90
+R7194:7210 CAG.Category.Products <> HasFiniteProducts rec
+R7212:7212 CAG.ATT.Model <> C:90 var
+binder 7189:7190 <> hp:91
+R7224:7228 CAG.ATT.Model <> Model rec
+R7230:7231 CAG.ATT.Model <> Th:89 var
+R7233:7233 CAG.ATT.Model <> C:90 var
+R7235:7236 CAG.ATT.Model <> hp:91 var
+binder 7220:7220 <> M:92
+R7249:7252 Corelib.Init.Datatypes <> list ind
+R7267:7271 CAG.ATT.Signature <> sg_ty proj
+R7258:7263 CAG.ATT.Theory <> th_sig proj
+R7254:7255 CAG.ATT.Model <> Th:89 var
+binder 7244:7245 <> Γ:93
+R7284:7287 CAG.ATT.Syntax <> Term ind
+R7293:7298 CAG.ATT.Theory <> th_sig proj
+R7289:7290 CAG.ATT.Model <> Th:89 var
+binder 7280:7280 <> t:94
+R7325:7329 CAG.ATT.Signature <> sg_ty proj
+R7316:7321 CAG.ATT.Theory <> th_sig proj
+R7312:7313 CAG.ATT.Model <> Th:89 var
+binder 7307:7308 <> τ:95
+R7343:7349 CAG.ATT.Syntax <> HasType ind
+R7355:7360 CAG.ATT.Theory <> th_sig proj
+R7351:7352 CAG.ATT.Model <> Th:89 var
+R7363:7364 CAG.ATT.Model <> Γ:93 var
+R7366:7366 CAG.ATT.Model <> t:94 var
+R7368:7369 CAG.ATT.Model <> τ:95 var
+binder 7338:7339 <> Ht:96
+R7378:7381 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R7417:7418 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R7432:7435 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R7377:7377 CAG.ATT.Model <> C:90 var
+R7382:7388 CAG.ATT.Model <> fp_prod def
+R7394:7401 Stdlib.Lists.List <> map abbrev
+R7414:7415 CAG.ATT.Model <> Γ:93 var
+R7406:7411 CAG.ATT.Model <> mod_ty proj
+R7403:7403 CAG.ATT.Model <> M:92 var
+R7390:7391 CAG.ATT.Model <> hp:91 var
+R7422:7427 CAG.ATT.Model <> mod_ty proj
+R7419:7419 CAG.ATT.Model <> M:92 var
+R7430:7431 CAG.ATT.Model <> τ:95 var
+R7505:7507 Corelib.Init.Wf <> Fix def
+binder 7558:7558 <> t:97
+binder 7570:7571 <> Γ:98
+binder 7573:7574 <> τ:99
+R7628:7655 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7601:7607 CAG.ATT.Syntax <> HasType ind
+R7613:7618 CAG.ATT.Theory <> th_sig proj
+R7621:7622 CAG.ATT.Model <> Γ:98 var
+R7624:7624 CAG.ATT.Model <> t:97 var
+R7626:7627 CAG.ATT.Model <> τ:99 var
+R7657:7660 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R7696:7697 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R7709:7712 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R7661:7667 CAG.ATT.Model <> fp_prod def
+R7673:7680 Stdlib.Lists.List <> map abbrev
+R7693:7694 CAG.ATT.Model <> Γ:98 var
+R7683:7688 CAG.ATT.Model <> mod_ty proj
+R7698:7703 CAG.ATT.Model <> mod_ty proj
+R7707:7708 CAG.ATT.Model <> τ:99 var
+R7511:7524 CAG.ATT.Model <> att_term_lt_wf thm
+R7530:7535 CAG.ATT.Theory <> th_sig proj
+R7505:7507 Corelib.Init.Wf <> Fix def
+binder 7558:7558 <> t:100
+binder 7570:7571 <> Γ:101
+binder 7573:7574 <> τ:102
+R7628:7655 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7601:7607 CAG.ATT.Syntax <> HasType ind
+R7613:7618 CAG.ATT.Theory <> th_sig proj
+R7621:7622 CAG.ATT.Model <> Γ:101 var
+R7624:7624 CAG.ATT.Model <> t:100 var
+R7626:7627 CAG.ATT.Model <> τ:102 var
+R7657:7660 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R7696:7697 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R7709:7712 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R7661:7667 CAG.ATT.Model <> fp_prod def
+R7673:7680 Stdlib.Lists.List <> map abbrev
+R7693:7694 CAG.ATT.Model <> Γ:101 var
+R7683:7688 CAG.ATT.Model <> mod_ty proj
+R7698:7703 CAG.ATT.Model <> mod_ty proj
+R7707:7708 CAG.ATT.Model <> τ:102 var
+R7511:7524 CAG.ATT.Model <> att_term_lt_wf thm
+R7530:7535 CAG.ATT.Theory <> th_sig proj
+R7854:7865 CAG.ATT.Model <> context_proj thm
+R7873:7878 CAG.ATT.Model <> mod_ty proj
+R7854:7865 CAG.ATT.Model <> context_proj thm
+R7873:7878 CAG.ATT.Model <> mod_ty proj
+R7900:7917 Stdlib.Lists.List <> nth_error_map thm
+R7900:7917 Stdlib.Lists.List <> nth_error_map thm
+R7900:7917 Stdlib.Lists.List <> nth_error_map thm
+R7933:7946 CAG.ATT.Model <> ht_var_nth_err thm
+R7933:7946 CAG.ATT.Model <> ht_var_nth_err thm
+R7933:7946 CAG.ATT.Model <> ht_var_nth_err thm
+R8055:8067 CAG.ATT.Model <> ht_app_cod_eq thm
+R8055:8067 CAG.ATT.Model <> ht_app_cod_eq thm
+R8055:8067 CAG.ATT.Model <> ht_app_cod_eq thm
+R8097:8101 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R8086:8092 CAG.ATT.Model <> mod_fun proj
+R8102:8109 CAG.ATT.Model <> fp_tuple thm
+R8115:8122 Stdlib.Lists.List <> map abbrev
+R8149:8154 CAG.ATT.Signature <> sg_dom proj
+R8140:8145 CAG.ATT.Theory <> th_sig proj
+R8125:8130 CAG.ATT.Model <> mod_ty proj
+R8097:8101 CAG.Category.Core <> ::cat_scope:x_'∘'_x not
+R8086:8092 CAG.ATT.Model <> mod_fun proj
+R8102:8109 CAG.ATT.Model <> fp_tuple thm
+R8115:8122 Stdlib.Lists.List <> map abbrev
+R8149:8154 CAG.ATT.Signature <> sg_dom proj
+R8140:8145 CAG.ATT.Theory <> th_sig proj
+R8125:8130 CAG.ATT.Model <> mod_ty proj
+R8195:8212 Stdlib.Lists.List <> nth_error_map thm
+R8195:8212 Stdlib.Lists.List <> nth_error_map thm
+R8195:8212 Stdlib.Lists.List <> nth_error_map thm
+R8234:8247 Stdlib.Lists.List <> nth_error def
+R8263:8268 CAG.ATT.Signature <> sg_dom proj
+R8254:8259 CAG.ATT.Theory <> th_sig proj
+R8234:8247 Stdlib.Lists.List <> nth_error def
+R8263:8268 CAG.ATT.Signature <> sg_dom proj
+R8254:8259 CAG.ATT.Theory <> th_sig proj
+R8350:8363 Stdlib.Lists.List <> nth_error def
+R8350:8363 Stdlib.Lists.List <> nth_error def
+R8417:8432 CAG.ATT.Model <> att_args_size_lt thm
+R8478:8496 CAG.ATT.Model <> forall2_nth_hastype thm
+R8499:8512 CAG.ATT.Model <> ht_app_args_f2 thm
+R8417:8432 CAG.ATT.Model <> att_args_size_lt thm
+R8478:8496 CAG.ATT.Model <> forall2_nth_hastype thm
+R8499:8512 CAG.ATT.Model <> ht_app_args_f2 thm
+R8576:8594 CAG.ATT.Syntax <> Forall2_nth_error_l thm
+R8603:8616 CAG.ATT.Model <> ht_app_args_f2 thm
+R8576:8594 CAG.ATT.Syntax <> Forall2_nth_error_l thm
+R8603:8616 CAG.ATT.Model <> ht_app_args_f2 thm
+rec 8934:8941 <> ModelHom
+proj 9039:9048 <> mhom_on_ty
+proj 9145:9152 <> mhom_nat
+R8949:8954 CAG.ATT.Theory <> Theory rec
+binder 8944:8945 <> Th:103
+R8962:8969 CAG.Category.Core <> Category rec
+binder 8958:8958 <> C:104
+R8978:8994 CAG.Category.Products <> HasFiniteProducts rec
+R8996:8996 CAG.ATT.Model <> C:104 var
+binder 8973:8974 <> hp:105
+R9010:9014 CAG.ATT.Model <> Model rec
+R9016:9017 CAG.ATT.Model <> Th:103 var
+R9019:9019 CAG.ATT.Model <> C:104 var
+R9021:9022 CAG.ATT.Model <> hp:105 var
+binder 9004:9004 <> M:106
+binder 9006:9006 <> N:107
+R9078:9082 CAG.ATT.Signature <> sg_ty proj
+R9069:9074 CAG.ATT.Theory <> th_sig proj
+R9065:9066 CAG.ATT.Model <> Th:103 var
+binder 9060:9061 <> α:109
+R9105:9108 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9122:9123 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9137:9140 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9104:9104 CAG.ATT.Model <> C:104 var
+R9112:9117 CAG.ATT.Model <> mod_ty proj
+R9109:9109 CAG.ATT.Model <> M:106 var
+R9120:9121 CAG.ATT.Model <> α:109 var
+R9127:9132 CAG.ATT.Model <> mod_ty proj
+R9124:9124 CAG.ATT.Model <> N:107 var
+R9135:9136 CAG.ATT.Model <> α:109 var
+R9183:9188 CAG.ATT.Signature <> sg_fun proj
+R9174:9179 CAG.ATT.Theory <> th_sig proj
+R9170:9171 CAG.ATT.Model <> Th:103 var
+binder 9166:9166 <> f:111
+R9277:9280 Corelib.Init.Logic <> True ind
+R9316:9325 CAG.ATT.Model <> mhom_on_ty proj
+R9316:9325 CAG.ATT.Model <> mhom_on_ty proj

@@ -1,0 +1,1327 @@
+DIGEST 24bc2877bfc2f478dff165a965b98d4b
+FCAG.ATT.ClassifyingCategory
+R696:712 CAG.ATT.Signature <> <> lib
+R730:743 CAG.ATT.Syntax <> <> lib
+R761:774 CAG.ATT.Theory <> <> lib
+R792:808 CAG.Category.Core <> <> lib
+R826:846 CAG.Category.Products <> <> lib
+R876:885 Stdlib.Lists.List <> <> lib
+R915:936 Stdlib.Logic.ProofIrrelevance <> <> lib
+R966:976 Stdlib.Arith.Arith <> <> lib
+R1006:1018 Stdlib.micromega.Lia <> <> lib
+R1028:1040 Stdlib.Lists.List ListNotations <> mod
+rec 1229:1233 <> ClMor
+proj 1292:1302 <> clmor_terms
+proj 1325:1335 <> clmor_typed
+R1241:1249 CAG.ATT.Signature <> Signature rec
+binder 1236:1237 <> Sg:1
+R1261:1264 Corelib.Init.Datatypes <> list ind
+R1270:1274 CAG.ATT.Signature <> sg_ty proj
+R1266:1267 CAG.ATT.ClassifyingCategory <> Sg:1 var
+binder 1253:1254 <> α:2
+binder 1256:1257 <> β:3
+R1307:1310 Corelib.Init.Datatypes <> list ind
+R1313:1316 CAG.ATT.Syntax <> Term ind
+R1318:1319 CAG.ATT.ClassifyingCategory <> Sg:1 var
+R1340:1346 Stdlib.Lists.List <> Forall2 ind
+R1376:1377 CAG.ATT.ClassifyingCategory <> β:3 var
+R1364:1374 CAG.ATT.ClassifyingCategory <> clmor_terms:5 meth
+R1349:1355 CAG.ATT.Syntax <> HasType ind
+R1357:1358 CAG.ATT.ClassifyingCategory <> Sg:1 var
+R1360:1361 CAG.ATT.ClassifyingCategory <> α:2 var
+R1394:1404 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R1394:1404 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R1428:1438 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R1428:1438 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+prf 1538:1546 <> clmor_ext
+R1554:1562 CAG.ATT.Signature <> Signature rec
+binder 1549:1550 <> Sg:7
+R1574:1577 Corelib.Init.Datatypes <> list ind
+R1583:1587 CAG.ATT.Signature <> sg_ty proj
+R1579:1580 CAG.ATT.ClassifyingCategory <> Sg:7 var
+binder 1566:1567 <> α:8
+binder 1569:1570 <> β:9
+R1598:1602 CAG.ATT.ClassifyingCategory <> ClMor rec
+R1604:1605 CAG.ATT.ClassifyingCategory <> Sg:7 var
+R1607:1608 CAG.ATT.ClassifyingCategory <> α:8 var
+R1610:1611 CAG.ATT.ClassifyingCategory <> β:9 var
+binder 1592:1592 <> f:10
+binder 1594:1594 <> g:11
+R1653:1656 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1635:1637 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1623:1633 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R1620:1620 CAG.ATT.ClassifyingCategory <> f:10 var
+R1641:1651 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R1638:1638 CAG.ATT.ClassifyingCategory <> g:11 var
+R1658:1660 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1657:1657 CAG.ATT.ClassifyingCategory <> f:10 var
+R1661:1661 CAG.ATT.ClassifyingCategory <> g:11 var
+R1764:1780 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+R1764:1780 Stdlib.Logic.ProofIrrelevance <> proof_irrelevance prfax
+prf 1999:2007 <> var_typed
+R2015:2023 CAG.ATT.Signature <> Signature rec
+binder 2010:2011 <> Sg:12
+R2032:2035 Corelib.Init.Datatypes <> list ind
+R2041:2045 CAG.ATT.Signature <> sg_ty proj
+R2037:2038 CAG.ATT.ClassifyingCategory <> Sg:12 var
+binder 2027:2028 <> α:13
+R2054:2056 Corelib.Init.Datatypes <> nat ind
+binder 2050:2050 <> i:14
+R2069:2073 CAG.ATT.Signature <> sg_ty proj
+R2065:2066 CAG.ATT.ClassifyingCategory <> Sg:12 var
+binder 2060:2061 <> τ:15
+R2112:2119 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2102:2104 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2083:2096 Stdlib.Lists.List <> nth_error def
+R2101:2101 CAG.ATT.ClassifyingCategory <> i:14 var
+R2098:2099 CAG.ATT.ClassifyingCategory <> α:13 var
+R2105:2108 Corelib.Init.Datatypes <> Some constr
+R2110:2111 CAG.ATT.ClassifyingCategory <> τ:15 var
+R2120:2126 CAG.ATT.Syntax <> HasType ind
+R2128:2129 CAG.ATT.ClassifyingCategory <> Sg:12 var
+R2131:2132 CAG.ATT.ClassifyingCategory <> α:13 var
+R2135:2139 CAG.ATT.Syntax <> t_var constr
+R2141:2141 CAG.ATT.ClassifyingCategory <> i:14 var
+R2144:2145 CAG.ATT.ClassifyingCategory <> τ:15 var
+R2173:2178 CAG.ATT.Syntax <> ht_var constr
+R2173:2178 CAG.ATT.Syntax <> ht_var constr
+prf 2364:2380 <> id_vars_typed_aux
+R2388:2396 CAG.ATT.Signature <> Signature rec
+binder 2383:2384 <> Sg:16
+R2405:2408 Corelib.Init.Datatypes <> list ind
+R2414:2418 CAG.ATT.Signature <> sg_ty proj
+R2410:2411 CAG.ATT.ClassifyingCategory <> Sg:16 var
+binder 2400:2401 <> Γ:17
+R2427:2429 Corelib.Init.Datatypes <> nat ind
+binder 2423:2423 <> k:18
+R2438:2441 Corelib.Init.Datatypes <> list ind
+R2447:2451 CAG.ATT.Signature <> sg_ty proj
+R2443:2444 CAG.ATT.ClassifyingCategory <> Sg:16 var
+binder 2433:2434 <> α:19
+R2461:2461 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2543:2551 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 2469:2469 <> i:20
+binder 2471:2472 <> τ:21
+R2504:2507 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2494:2496 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2475:2488 Stdlib.Lists.List <> nth_error def
+R2493:2493 CAG.ATT.ClassifyingCategory <> i:20 var
+R2490:2491 CAG.ATT.ClassifyingCategory <> α:19 var
+R2497:2500 Corelib.Init.Datatypes <> Some constr
+R2502:2503 CAG.ATT.ClassifyingCategory <> τ:21 var
+R2533:2535 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2508:2521 Stdlib.Lists.List <> nth_error def
+R2528:2530 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R2527:2527 CAG.ATT.ClassifyingCategory <> k:18 var
+R2531:2531 CAG.ATT.ClassifyingCategory <> i:20 var
+R2523:2524 CAG.ATT.ClassifyingCategory <> Γ:17 var
+R2536:2539 Corelib.Init.Datatypes <> Some constr
+R2541:2542 CAG.ATT.ClassifyingCategory <> τ:21 var
+R2552:2558 Stdlib.Lists.List <> Forall2 ind
+R2618:2619 CAG.ATT.ClassifyingCategory <> α:19 var
+R2577:2584 Stdlib.Lists.List <> map abbrev
+R2593:2600 Stdlib.Lists.List <> seq abbrev
+R2605:2610 Corelib.Init.Datatypes <> length def
+R2612:2613 CAG.ATT.ClassifyingCategory <> α:19 var
+R2602:2602 CAG.ATT.ClassifyingCategory <> k:18 var
+R2586:2590 CAG.ATT.Syntax <> t_var constr
+R2561:2567 CAG.ATT.Syntax <> HasType ind
+R2569:2570 CAG.ATT.ClassifyingCategory <> Sg:16 var
+R2572:2573 CAG.ATT.ClassifyingCategory <> Γ:17 var
+R2749:2754 CAG.ATT.Syntax <> ht_var constr
+R2749:2754 CAG.ATT.Syntax <> ht_var constr
+R2785:2791 Corelib.Init.Logic <> eq_refl constr
+R2785:2791 Corelib.Init.Logic <> eq_refl constr
+R2824:2834 Stdlib.Arith.PeanoNat Nat add_0_r thm
+R2824:2834 Stdlib.Arith.PeanoNat Nat add_0_r thm
+R2824:2834 Stdlib.Arith.PeanoNat Nat add_0_r thm
+R2883:2883 Corelib.Init.Datatypes <> S constr
+R2883:2883 Corelib.Init.Datatypes <> S constr
+R2929:2931 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R2926:2926 Corelib.Init.Datatypes <> S constr
+R2942:2944 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R2945:2945 Corelib.Init.Datatypes <> S constr
+R2929:2931 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R2926:2926 Corelib.Init.Datatypes <> S constr
+R2942:2944 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R2945:2945 Corelib.Init.Datatypes <> S constr
+R2977:2977 Corelib.Init.Datatypes <> S constr
+R2977:2977 Corelib.Init.Datatypes <> S constr
+prf 3105:3117 <> id_vars_typed
+R3125:3133 CAG.ATT.Signature <> Signature rec
+binder 3120:3121 <> Sg:22
+R3142:3145 Corelib.Init.Datatypes <> list ind
+R3151:3155 CAG.ATT.Signature <> sg_ty proj
+R3147:3148 CAG.ATT.ClassifyingCategory <> Sg:22 var
+binder 3137:3138 <> α:23
+R3165:3171 Stdlib.Lists.List <> Forall2 ind
+R3213:3214 CAG.ATT.ClassifyingCategory <> α:23 var
+R3190:3195 CAG.ATT.Syntax <> id_sub def
+R3197:3198 CAG.ATT.ClassifyingCategory <> Sg:22 var
+R3201:3206 Corelib.Init.Datatypes <> length def
+R3208:3209 CAG.ATT.ClassifyingCategory <> α:23 var
+R3174:3180 CAG.ATT.Syntax <> HasType ind
+R3182:3183 CAG.ATT.ClassifyingCategory <> Sg:22 var
+R3185:3186 CAG.ATT.ClassifyingCategory <> α:23 var
+R3233:3238 CAG.ATT.Syntax <> id_sub def
+R3249:3265 CAG.ATT.ClassifyingCategory <> id_vars_typed_aux thm
+R3249:3265 CAG.ATT.ClassifyingCategory <> id_vars_typed_aux thm
+prf 3386:3399 <> id_vars_typed'
+R3407:3415 CAG.ATT.Signature <> Signature rec
+binder 3402:3403 <> Sg:24
+R3424:3427 Corelib.Init.Datatypes <> list ind
+R3433:3437 CAG.ATT.Signature <> sg_ty proj
+R3429:3430 CAG.ATT.ClassifyingCategory <> Sg:24 var
+binder 3419:3420 <> α:25
+R3447:3453 Stdlib.Lists.List <> Forall2 ind
+R3495:3496 CAG.ATT.ClassifyingCategory <> α:25 var
+R3472:3477 CAG.ATT.Syntax <> id_sub def
+R3479:3480 CAG.ATT.ClassifyingCategory <> Sg:24 var
+R3483:3488 Corelib.Init.Datatypes <> length def
+R3490:3491 CAG.ATT.ClassifyingCategory <> α:25 var
+R3456:3462 CAG.ATT.Syntax <> HasType ind
+R3464:3465 CAG.ATT.ClassifyingCategory <> Sg:24 var
+R3467:3468 CAG.ATT.ClassifyingCategory <> α:25 var
+R3515:3527 CAG.ATT.ClassifyingCategory <> id_vars_typed thm
+R3515:3527 CAG.ATT.ClassifyingCategory <> id_vars_typed thm
+prf 3619:3633 <> nth_error_shift
+R3641:3649 CAG.ATT.Signature <> Signature rec
+binder 3636:3637 <> Sg:26
+R3658:3661 Corelib.Init.Datatypes <> list ind
+R3667:3671 CAG.ATT.Signature <> sg_ty proj
+R3663:3664 CAG.ATT.ClassifyingCategory <> Sg:26 var
+binder 3653:3654 <> α:27
+R3680:3682 Corelib.Init.Datatypes <> nat ind
+binder 3676:3676 <> k:28
+R3691:3697 Stdlib.Lists.List <> Forall2 ind
+R3786:3795 Stdlib.Lists.List <> skipn abbrev
+R3799:3800 CAG.ATT.ClassifyingCategory <> α:27 var
+R3797:3797 CAG.ATT.ClassifyingCategory <> k:28 var
+R3728:3735 Stdlib.Lists.List <> map abbrev
+R3744:3751 Stdlib.Lists.List <> seq abbrev
+R3765:3767 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R3756:3761 Corelib.Init.Datatypes <> length def
+R3763:3764 CAG.ATT.ClassifyingCategory <> α:27 var
+R3768:3768 CAG.ATT.ClassifyingCategory <> k:28 var
+R3753:3753 CAG.ATT.ClassifyingCategory <> k:28 var
+R3737:3741 CAG.ATT.Syntax <> t_var constr
+R3700:3706 CAG.ATT.Syntax <> HasType ind
+R3708:3709 CAG.ATT.ClassifyingCategory <> Sg:26 var
+R3711:3712 CAG.ATT.ClassifyingCategory <> α:27 var
+R3824:3840 Stdlib.Lists.List <> length_skipn thm
+R3824:3840 Stdlib.Lists.List <> length_skipn thm
+R3824:3840 Stdlib.Lists.List <> length_skipn thm
+R3865:3881 CAG.ATT.ClassifyingCategory <> id_vars_typed_aux thm
+R3865:3881 CAG.ATT.ClassifyingCategory <> id_vars_typed_aux thm
+R3928:3947 Stdlib.Lists.List <> nth_error_skipn thm
+R3928:3947 Stdlib.Lists.List <> nth_error_skipn thm
+R3928:3947 Stdlib.Lists.List <> nth_error_skipn thm
+prf 3973:3988 <> id_vars_typed_ok
+R3996:4004 CAG.ATT.Signature <> Signature rec
+binder 3991:3992 <> Sg:29
+R4013:4016 Corelib.Init.Datatypes <> list ind
+R4022:4026 CAG.ATT.Signature <> sg_ty proj
+R4018:4019 CAG.ATT.ClassifyingCategory <> Sg:29 var
+binder 4008:4009 <> α:30
+R4036:4042 Stdlib.Lists.List <> Forall2 ind
+R4084:4085 CAG.ATT.ClassifyingCategory <> α:30 var
+R4061:4066 CAG.ATT.Syntax <> id_sub def
+R4068:4069 CAG.ATT.ClassifyingCategory <> Sg:29 var
+R4072:4077 Corelib.Init.Datatypes <> length def
+R4079:4080 CAG.ATT.ClassifyingCategory <> α:30 var
+R4045:4051 CAG.ATT.Syntax <> HasType ind
+R4053:4054 CAG.ATT.ClassifyingCategory <> Sg:29 var
+R4056:4057 CAG.ATT.ClassifyingCategory <> α:30 var
+R4104:4109 CAG.ATT.Syntax <> id_sub def
+R4196:4210 CAG.ATT.ClassifyingCategory <> nth_error_shift thm
+R4196:4210 CAG.ATT.ClassifyingCategory <> nth_error_shift thm
+R4232:4242 Stdlib.Arith.PeanoNat Nat sub_0_r thm
+R4245:4256 Stdlib.Lists.List <> skipn_O abbrev
+R4232:4242 Stdlib.Arith.PeanoNat Nat sub_0_r thm
+R4232:4242 Stdlib.Arith.PeanoNat Nat sub_0_r thm
+R4245:4256 Stdlib.Lists.List <> skipn_O abbrev
+R4245:4256 Stdlib.Lists.List <> skipn_O abbrev
+def 4322:4326 <> cl_id
+R4334:4342 CAG.ATT.Signature <> Signature rec
+binder 4329:4330 <> Sg:31
+R4351:4354 Corelib.Init.Datatypes <> list ind
+R4360:4364 CAG.ATT.Signature <> sg_ty proj
+R4356:4357 CAG.ATT.ClassifyingCategory <> Sg:31 var
+binder 4346:4347 <> α:32
+R4370:4374 CAG.ATT.ClassifyingCategory <> ClMor rec
+R4376:4377 CAG.ATT.ClassifyingCategory <> Sg:31 var
+R4379:4380 CAG.ATT.ClassifyingCategory <> α:32 var
+R4382:4383 CAG.ATT.ClassifyingCategory <> α:32 var
+R4393:4403 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R4393:4403 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R4393:4403 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R4436:4446 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R4436:4446 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R4408:4413 CAG.ATT.Syntax <> id_sub def
+R4415:4416 CAG.ATT.ClassifyingCategory <> Sg:31 var
+R4419:4424 Corelib.Init.Datatypes <> length def
+R4426:4427 CAG.ATT.ClassifyingCategory <> α:32 var
+R4451:4466 CAG.ATT.ClassifyingCategory <> id_vars_typed_ok thm
+R4468:4469 CAG.ATT.ClassifyingCategory <> Sg:31 var
+R4471:4472 CAG.ATT.ClassifyingCategory <> α:32 var
+prf 4705:4717 <> cl_comp_typed
+R4725:4733 CAG.ATT.Signature <> Signature rec
+binder 4720:4721 <> Sg:33
+R4748:4751 Corelib.Init.Datatypes <> list ind
+R4757:4761 CAG.ATT.Signature <> sg_ty proj
+R4753:4754 CAG.ATT.ClassifyingCategory <> Sg:33 var
+binder 4737:4738 <> α:34
+binder 4740:4741 <> β:35
+binder 4743:4744 <> γ:36
+R4774:4778 CAG.ATT.ClassifyingCategory <> ClMor rec
+R4780:4781 CAG.ATT.ClassifyingCategory <> Sg:33 var
+R4783:4784 CAG.ATT.ClassifyingCategory <> α:34 var
+R4786:4787 CAG.ATT.ClassifyingCategory <> β:35 var
+binder 4770:4770 <> f:37
+R4795:4799 CAG.ATT.ClassifyingCategory <> ClMor rec
+R4801:4802 CAG.ATT.ClassifyingCategory <> Sg:33 var
+R4804:4805 CAG.ATT.ClassifyingCategory <> β:35 var
+R4807:4808 CAG.ATT.ClassifyingCategory <> γ:36 var
+binder 4791:4791 <> g:38
+R4817:4823 Stdlib.Lists.List <> Forall2 ind
+R4913:4914 CAG.ATT.ClassifyingCategory <> γ:36 var
+R4854:4863 CAG.ATT.Syntax <> subst_list def
+R4865:4866 CAG.ATT.ClassifyingCategory <> Sg:33 var
+R4871:4881 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R4868:4868 CAG.ATT.ClassifyingCategory <> f:37 var
+R4887:4897 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R4884:4884 CAG.ATT.ClassifyingCategory <> g:38 var
+R4826:4832 CAG.ATT.Syntax <> HasType ind
+R4834:4835 CAG.ATT.ClassifyingCategory <> Sg:33 var
+R4837:4838 CAG.ATT.ClassifyingCategory <> α:34 var
+R4932:4956 CAG.ATT.Syntax <> subst_preserves_type_list thm
+R4932:4956 CAG.ATT.Syntax <> subst_preserves_type_list thm
+R4980:4990 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R4980:4990 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R5007:5017 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R5007:5017 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+def 5038:5044 <> cl_comp
+R5052:5060 CAG.ATT.Signature <> Signature rec
+binder 5047:5048 <> Sg:39
+R5075:5078 Corelib.Init.Datatypes <> list ind
+R5084:5088 CAG.ATT.Signature <> sg_ty proj
+R5080:5081 CAG.ATT.ClassifyingCategory <> Sg:39 var
+binder 5064:5065 <> α:40
+binder 5067:5068 <> β:41
+binder 5070:5071 <> γ:42
+R5101:5105 CAG.ATT.ClassifyingCategory <> ClMor rec
+R5107:5108 CAG.ATT.ClassifyingCategory <> Sg:39 var
+R5110:5111 CAG.ATT.ClassifyingCategory <> β:41 var
+R5113:5114 CAG.ATT.ClassifyingCategory <> γ:42 var
+binder 5097:5097 <> g:43
+R5122:5126 CAG.ATT.ClassifyingCategory <> ClMor rec
+R5128:5129 CAG.ATT.ClassifyingCategory <> Sg:39 var
+R5131:5132 CAG.ATT.ClassifyingCategory <> α:40 var
+R5134:5135 CAG.ATT.ClassifyingCategory <> β:41 var
+binder 5118:5118 <> f:44
+R5140:5144 CAG.ATT.ClassifyingCategory <> ClMor rec
+R5146:5147 CAG.ATT.ClassifyingCategory <> Sg:39 var
+R5149:5150 CAG.ATT.ClassifyingCategory <> α:40 var
+R5152:5153 CAG.ATT.ClassifyingCategory <> γ:42 var
+R5163:5173 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R5163:5173 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R5163:5173 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R5230:5240 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R5230:5240 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R5178:5187 CAG.ATT.Syntax <> subst_list def
+R5189:5190 CAG.ATT.ClassifyingCategory <> Sg:39 var
+R5195:5205 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R5192:5192 CAG.ATT.ClassifyingCategory <> f:44 var
+R5211:5221 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R5208:5208 CAG.ATT.ClassifyingCategory <> g:43 var
+R5245:5257 CAG.ATT.ClassifyingCategory <> cl_comp_typed thm
+R5259:5260 CAG.ATT.ClassifyingCategory <> Sg:39 var
+R5262:5263 CAG.ATT.ClassifyingCategory <> α:40 var
+R5265:5266 CAG.ATT.ClassifyingCategory <> β:41 var
+R5268:5269 CAG.ATT.ClassifyingCategory <> γ:42 var
+R5271:5271 CAG.ATT.ClassifyingCategory <> f:44 var
+R5273:5273 CAG.ATT.ClassifyingCategory <> g:43 var
+prf 5523:5532 <> cl_id_left
+R5540:5548 CAG.ATT.Signature <> Signature rec
+binder 5535:5536 <> Sg:45
+R5560:5563 Corelib.Init.Datatypes <> list ind
+R5569:5573 CAG.ATT.Signature <> sg_ty proj
+R5565:5566 CAG.ATT.ClassifyingCategory <> Sg:45 var
+binder 5552:5553 <> α:46
+binder 5555:5556 <> β:47
+R5582:5586 CAG.ATT.ClassifyingCategory <> ClMor rec
+R5588:5589 CAG.ATT.ClassifyingCategory <> Sg:45 var
+R5591:5592 CAG.ATT.ClassifyingCategory <> α:46 var
+R5594:5595 CAG.ATT.ClassifyingCategory <> β:47 var
+binder 5578:5578 <> f:48
+R5639:5641 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5604:5610 CAG.ATT.ClassifyingCategory <> cl_comp def
+R5612:5613 CAG.ATT.ClassifyingCategory <> Sg:45 var
+R5615:5616 CAG.ATT.ClassifyingCategory <> α:46 var
+R5618:5619 CAG.ATT.ClassifyingCategory <> β:47 var
+R5621:5622 CAG.ATT.ClassifyingCategory <> β:47 var
+R5625:5629 CAG.ATT.ClassifyingCategory <> cl_id def
+R5631:5632 CAG.ATT.ClassifyingCategory <> Sg:45 var
+R5634:5635 CAG.ATT.ClassifyingCategory <> β:47 var
+R5638:5638 CAG.ATT.ClassifyingCategory <> f:48 var
+R5642:5642 CAG.ATT.ClassifyingCategory <> f:48 var
+R5660:5668 CAG.ATT.ClassifyingCategory <> clmor_ext thm
+R5660:5668 CAG.ATT.ClassifyingCategory <> clmor_ext thm
+R5717:5719 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5695:5700 Corelib.Init.Datatypes <> length def
+R5705:5715 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R5720:5725 Corelib.Init.Datatypes <> length def
+R5717:5719 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5695:5700 Corelib.Init.Datatypes <> length def
+R5705:5715 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R5720:5725 Corelib.Init.Datatypes <> length def
+R5743:5756 Stdlib.Lists.List <> Forall2_length thm
+R5761:5771 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R5743:5756 Stdlib.Lists.List <> Forall2_length thm
+R5761:5771 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R5806:5819 CAG.ATT.Syntax <> subst_var_list thm
+R5827:5837 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R5806:5819 CAG.ATT.Syntax <> subst_var_list thm
+R5827:5837 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+prf 5967:5977 <> cl_id_right
+R5985:5993 CAG.ATT.Signature <> Signature rec
+binder 5980:5981 <> Sg:49
+R6005:6008 Corelib.Init.Datatypes <> list ind
+R6014:6018 CAG.ATT.Signature <> sg_ty proj
+R6010:6011 CAG.ATT.ClassifyingCategory <> Sg:49 var
+binder 5997:5998 <> α:50
+binder 6000:6001 <> β:51
+R6027:6031 CAG.ATT.ClassifyingCategory <> ClMor rec
+R6033:6034 CAG.ATT.ClassifyingCategory <> Sg:49 var
+R6036:6037 CAG.ATT.ClassifyingCategory <> α:50 var
+R6039:6040 CAG.ATT.ClassifyingCategory <> β:51 var
+binder 6023:6023 <> f:52
+R6084:6086 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6049:6055 CAG.ATT.ClassifyingCategory <> cl_comp def
+R6057:6058 CAG.ATT.ClassifyingCategory <> Sg:49 var
+R6060:6061 CAG.ATT.ClassifyingCategory <> α:50 var
+R6063:6064 CAG.ATT.ClassifyingCategory <> α:50 var
+R6066:6067 CAG.ATT.ClassifyingCategory <> β:51 var
+R6069:6069 CAG.ATT.ClassifyingCategory <> f:52 var
+R6072:6076 CAG.ATT.ClassifyingCategory <> cl_id def
+R6078:6079 CAG.ATT.ClassifyingCategory <> Sg:49 var
+R6081:6082 CAG.ATT.ClassifyingCategory <> α:50 var
+R6087:6087 CAG.ATT.ClassifyingCategory <> f:52 var
+R6105:6113 CAG.ATT.ClassifyingCategory <> clmor_ext thm
+R6105:6113 CAG.ATT.ClassifyingCategory <> clmor_ext thm
+R6125:6131 CAG.ATT.ClassifyingCategory <> cl_comp def
+R6134:6138 CAG.ATT.ClassifyingCategory <> cl_id def
+R6156:6168 CAG.ATT.Syntax <> subst_id_list thm
+R6156:6168 CAG.ATT.Syntax <> subst_id_list thm
+prf 6338:6350 <> cl_comp_assoc
+R6358:6366 CAG.ATT.Signature <> Signature rec
+binder 6353:6354 <> Sg:53
+R6384:6387 Corelib.Init.Datatypes <> list ind
+R6393:6397 CAG.ATT.Signature <> sg_ty proj
+R6389:6390 CAG.ATT.ClassifyingCategory <> Sg:53 var
+binder 6370:6371 <> α:54
+binder 6373:6374 <> β:55
+binder 6376:6377 <> γ:56
+binder 6379:6380 <> δ:57
+R6410:6414 CAG.ATT.ClassifyingCategory <> ClMor rec
+R6416:6417 CAG.ATT.ClassifyingCategory <> Sg:53 var
+R6419:6420 CAG.ATT.ClassifyingCategory <> α:54 var
+R6422:6423 CAG.ATT.ClassifyingCategory <> β:55 var
+binder 6406:6406 <> f:58
+R6431:6435 CAG.ATT.ClassifyingCategory <> ClMor rec
+R6437:6438 CAG.ATT.ClassifyingCategory <> Sg:53 var
+R6440:6441 CAG.ATT.ClassifyingCategory <> β:55 var
+R6443:6444 CAG.ATT.ClassifyingCategory <> γ:56 var
+binder 6427:6427 <> g:59
+R6452:6456 CAG.ATT.ClassifyingCategory <> ClMor rec
+R6458:6459 CAG.ATT.ClassifyingCategory <> Sg:53 var
+R6461:6462 CAG.ATT.ClassifyingCategory <> γ:56 var
+R6464:6465 CAG.ATT.ClassifyingCategory <> δ:57 var
+binder 6448:6448 <> h:60
+R6521:6527 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6474:6480 CAG.ATT.ClassifyingCategory <> cl_comp def
+R6482:6483 CAG.ATT.ClassifyingCategory <> Sg:53 var
+R6485:6486 CAG.ATT.ClassifyingCategory <> α:54 var
+R6488:6489 CAG.ATT.ClassifyingCategory <> γ:56 var
+R6491:6492 CAG.ATT.ClassifyingCategory <> δ:57 var
+R6494:6494 CAG.ATT.ClassifyingCategory <> h:60 var
+R6497:6503 CAG.ATT.ClassifyingCategory <> cl_comp def
+R6505:6506 CAG.ATT.ClassifyingCategory <> Sg:53 var
+R6508:6509 CAG.ATT.ClassifyingCategory <> α:54 var
+R6511:6512 CAG.ATT.ClassifyingCategory <> β:55 var
+R6514:6515 CAG.ATT.ClassifyingCategory <> γ:56 var
+R6517:6517 CAG.ATT.ClassifyingCategory <> g:59 var
+R6519:6519 CAG.ATT.ClassifyingCategory <> f:58 var
+R6528:6534 CAG.ATT.ClassifyingCategory <> cl_comp def
+R6536:6537 CAG.ATT.ClassifyingCategory <> Sg:53 var
+R6539:6540 CAG.ATT.ClassifyingCategory <> α:54 var
+R6542:6543 CAG.ATT.ClassifyingCategory <> β:55 var
+R6545:6546 CAG.ATT.ClassifyingCategory <> δ:57 var
+R6549:6555 CAG.ATT.ClassifyingCategory <> cl_comp def
+R6557:6558 CAG.ATT.ClassifyingCategory <> Sg:53 var
+R6560:6561 CAG.ATT.ClassifyingCategory <> β:55 var
+R6563:6564 CAG.ATT.ClassifyingCategory <> γ:56 var
+R6566:6567 CAG.ATT.ClassifyingCategory <> δ:57 var
+R6569:6569 CAG.ATT.ClassifyingCategory <> h:60 var
+R6571:6571 CAG.ATT.ClassifyingCategory <> g:59 var
+R6574:6574 CAG.ATT.ClassifyingCategory <> f:58 var
+R6592:6600 CAG.ATT.ClassifyingCategory <> clmor_ext thm
+R6592:6600 CAG.ATT.ClassifyingCategory <> clmor_ext thm
+R6632:6649 CAG.ATT.Syntax <> subst_comp_list_wt thm
+R6660:6670 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R6676:6686 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R6632:6649 CAG.ATT.Syntax <> subst_comp_list_wt thm
+R6660:6670 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R6676:6686 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R6704:6717 Stdlib.Lists.List <> Forall2_length thm
+R6722:6732 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R6704:6717 Stdlib.Lists.List <> Forall2_length thm
+R6722:6732 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R6704:6717 Stdlib.Lists.List <> Forall2_length thm
+R6722:6732 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R6744:6754 Stdlib.Arith.PeanoNat Nat le_refl thm
+R6744:6754 Stdlib.Arith.PeanoNat Nat le_refl thm
+R6773:6783 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R6773:6783 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+def 7033:7046 <> ClassifyingCat
+R7054:7062 CAG.ATT.Signature <> Signature rec
+binder 7049:7050 <> Sg:61
+R7067:7074 CAG.Category.Core <> Category rec
+R7084:7085 CAG.Category.Core <> Ob proj
+R7084:7085 CAG.Category.Core <> Ob proj
+R7084:7085 CAG.Category.Core <> Ob proj
+R7111:7113 CAG.Category.Core <> Hom proj
+R7111:7113 CAG.Category.Core <> Hom proj
+R7131:7132 CAG.Category.Core <> id proj
+R7131:7132 CAG.Category.Core <> id proj
+R7151:7154 CAG.Category.Core <> comp proj
+R7151:7154 CAG.Category.Core <> comp proj
+R7206:7215 CAG.Category.Core <> comp_assoc proj
+R7206:7215 CAG.Category.Core <> comp_assoc proj
+R7287:7293 CAG.Category.Core <> id_left proj
+R7287:7293 CAG.Category.Core <> id_left proj
+R7340:7347 CAG.Category.Core <> id_right proj
+R7340:7347 CAG.Category.Core <> id_right proj
+R7092:7095 Corelib.Init.Datatypes <> list ind
+R7101:7105 CAG.ATT.Signature <> sg_ty proj
+R7097:7098 CAG.ATT.ClassifyingCategory <> Sg:61 var
+R7119:7123 CAG.ATT.ClassifyingCategory <> ClMor rec
+R7125:7126 CAG.ATT.ClassifyingCategory <> Sg:61 var
+R7139:7143 CAG.ATT.ClassifyingCategory <> cl_id def
+R7145:7146 CAG.ATT.ClassifyingCategory <> Sg:61 var
+binder 7163:7164 <> α:62
+binder 7166:7167 <> β:63
+binder 7169:7170 <> γ:64
+binder 7172:7172 <> g:65
+binder 7174:7174 <> f:66
+R7179:7185 CAG.ATT.ClassifyingCategory <> cl_comp def
+R7187:7188 CAG.ATT.ClassifyingCategory <> Sg:61 var
+R7190:7191 CAG.ATT.ClassifyingCategory <> α:62 var
+R7193:7194 CAG.ATT.ClassifyingCategory <> β:63 var
+R7196:7197 CAG.ATT.ClassifyingCategory <> γ:64 var
+R7199:7199 CAG.ATT.ClassifyingCategory <> g:65 var
+R7201:7201 CAG.ATT.ClassifyingCategory <> f:66 var
+binder 7224:7225 <> α:67
+binder 7227:7228 <> β:68
+binder 7230:7231 <> γ:69
+binder 7233:7234 <> δ:70
+binder 7236:7236 <> h:71
+binder 7238:7238 <> g:72
+binder 7240:7240 <> f:73
+R7249:7261 CAG.ATT.ClassifyingCategory <> cl_comp_assoc thm
+R7263:7264 CAG.ATT.ClassifyingCategory <> Sg:61 var
+R7266:7267 CAG.ATT.ClassifyingCategory <> α:67 var
+R7269:7270 CAG.ATT.ClassifyingCategory <> β:68 var
+R7272:7273 CAG.ATT.ClassifyingCategory <> γ:69 var
+R7275:7276 CAG.ATT.ClassifyingCategory <> δ:70 var
+R7278:7278 CAG.ATT.ClassifyingCategory <> f:73 var
+R7280:7280 CAG.ATT.ClassifyingCategory <> g:72 var
+R7282:7282 CAG.ATT.ClassifyingCategory <> h:71 var
+binder 7303:7304 <> α:74
+binder 7306:7307 <> β:75
+binder 7309:7309 <> f:76
+R7314:7323 CAG.ATT.ClassifyingCategory <> cl_id_left thm
+R7326:7327 CAG.ATT.ClassifyingCategory <> Sg:61 var
+R7329:7330 CAG.ATT.ClassifyingCategory <> α:74 var
+R7332:7333 CAG.ATT.ClassifyingCategory <> β:75 var
+R7335:7335 CAG.ATT.ClassifyingCategory <> f:76 var
+binder 7356:7357 <> α:77
+binder 7359:7360 <> β:78
+binder 7362:7362 <> f:79
+R7367:7377 CAG.ATT.ClassifyingCategory <> cl_id_right thm
+R7379:7380 CAG.ATT.ClassifyingCategory <> Sg:61 var
+R7382:7383 CAG.ATT.ClassifyingCategory <> α:77 var
+R7385:7386 CAG.ATT.ClassifyingCategory <> β:78 var
+R7388:7388 CAG.ATT.ClassifyingCategory <> f:79 var
+R7419:7432 CAG.ATT.ClassifyingCategory <> ClassifyingCat def
+not 7405:7405 <> ::cat_scope:'Cl'_x
+prf 7761:7778 <> cl_terminal_unique
+R7786:7794 CAG.ATT.Signature <> Signature rec
+binder 7781:7782 <> Sg:80
+R7803:7806 Corelib.Init.Datatypes <> list ind
+R7812:7816 CAG.ATT.Signature <> sg_ty proj
+R7808:7809 CAG.ATT.ClassifyingCategory <> Sg:80 var
+binder 7798:7799 <> α:81
+R7829:7833 CAG.ATT.ClassifyingCategory <> ClMor rec
+R7835:7836 CAG.ATT.ClassifyingCategory <> Sg:80 var
+R7838:7839 CAG.ATT.ClassifyingCategory <> α:81 var
+R7841:7842 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+binder 7825:7825 <> f:82
+R7852:7857 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7905:7907 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R7851:7851 CAG.ATT.ClassifyingCategory <> f:82 var
+R7858:7868 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R7858:7868 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R7858:7868 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R7877:7887 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R7877:7887 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R7873:7874 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R7892:7902 Stdlib.Lists.List <> Forall2_nil constr
+R7925:7933 CAG.ATT.ClassifyingCategory <> clmor_ext thm
+R7925:7933 CAG.ATT.ClassifyingCategory <> clmor_ext thm
+R7984:7997 Stdlib.Lists.List <> Forall2_length thm
+R7984:7997 Stdlib.Lists.List <> Forall2_length thm
+def 8094:8102 <> cl_to_nil
+R8110:8118 CAG.ATT.Signature <> Signature rec
+binder 8105:8106 <> Sg:83
+R8127:8130 Corelib.Init.Datatypes <> list ind
+R8136:8140 CAG.ATT.Signature <> sg_ty proj
+R8132:8133 CAG.ATT.ClassifyingCategory <> Sg:83 var
+binder 8122:8123 <> α:84
+R8151:8155 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R8158:8159 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R8162:8165 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R8146:8148 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R8149:8150 CAG.ATT.ClassifyingCategory <> Sg:83 var
+R8156:8157 CAG.ATT.ClassifyingCategory <> α:84 var
+R8160:8161 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R8175:8185 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R8175:8185 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R8175:8185 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R8194:8204 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R8194:8204 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R8190:8191 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R8209:8219 Stdlib.Lists.List <> Forall2_nil constr
+def 8239:8249 <> cl_terminal
+R8257:8265 CAG.ATT.Signature <> Signature rec
+binder 8252:8253 <> Sg:85
+R8271:8280 CAG.Category.Core <> IsTerminal rec
+R8283:8285 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R8286:8287 CAG.ATT.ClassifyingCategory <> Sg:85 var
+R8290:8291 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R8344:8352 CAG.ATT.ClassifyingCategory <> cl_to_nil def
+R8309:8324 CAG.Category.Core <> Build_IsTerminal constr
+R8344:8352 CAG.ATT.ClassifyingCategory <> cl_to_nil def
+R8309:8324 CAG.Category.Core <> Build_IsTerminal constr
+R8381:8398 CAG.ATT.ClassifyingCategory <> cl_terminal_unique thm
+R8381:8398 CAG.ATT.ClassifyingCategory <> cl_terminal_unique thm
+prf 8557:8570 <> cl_proj1_typed
+R8578:8586 CAG.ATT.Signature <> Signature rec
+binder 8573:8574 <> Sg:86
+R8598:8601 Corelib.Init.Datatypes <> list ind
+R8607:8611 CAG.ATT.Signature <> sg_ty proj
+R8603:8604 CAG.ATT.ClassifyingCategory <> Sg:86 var
+binder 8590:8591 <> α:87
+binder 8593:8594 <> β:88
+R8621:8627 Stdlib.Lists.List <> Forall2 ind
+R8701:8702 CAG.ATT.ClassifyingCategory <> α:87 var
+R8666:8671 CAG.ATT.Syntax <> id_sub def
+R8673:8674 CAG.ATT.ClassifyingCategory <> Sg:86 var
+R8677:8682 Corelib.Init.Datatypes <> length def
+R8684:8685 CAG.ATT.ClassifyingCategory <> α:87 var
+R8630:8636 CAG.ATT.Syntax <> HasType ind
+R8638:8639 CAG.ATT.ClassifyingCategory <> Sg:86 var
+R8644:8647 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R8642:8643 CAG.ATT.ClassifyingCategory <> α:87 var
+R8648:8649 CAG.ATT.ClassifyingCategory <> β:88 var
+R8721:8726 CAG.ATT.Syntax <> id_sub def
+R8737:8753 CAG.ATT.ClassifyingCategory <> id_vars_typed_aux thm
+R8737:8753 CAG.ATT.ClassifyingCategory <> id_vars_typed_aux thm
+R8806:8824 Stdlib.Lists.List <> nth_error_app1 thm
+R8806:8824 Stdlib.Lists.List <> nth_error_app1 thm
+R8806:8824 Stdlib.Lists.List <> nth_error_app1 thm
+R8806:8824 Stdlib.Lists.List <> nth_error_app1 thm
+R8855:8873 Stdlib.Lists.List <> nth_error_Some thm
+R8855:8873 Stdlib.Lists.List <> nth_error_Some thm
+R8855:8873 Stdlib.Lists.List <> nth_error_Some thm
+prf 8913:8926 <> cl_proj2_typed
+R8934:8942 CAG.ATT.Signature <> Signature rec
+binder 8929:8930 <> Sg:89
+R8954:8957 Corelib.Init.Datatypes <> list ind
+R8963:8967 CAG.ATT.Signature <> sg_ty proj
+R8959:8960 CAG.ATT.ClassifyingCategory <> Sg:89 var
+binder 8946:8947 <> α:90
+binder 8949:8950 <> β:91
+R8977:8983 Stdlib.Lists.List <> Forall2 ind
+R9085:9086 CAG.ATT.ClassifyingCategory <> β:91 var
+R9022:9029 Stdlib.Lists.List <> map abbrev
+R9038:9045 Stdlib.Lists.List <> seq abbrev
+R9060:9065 Corelib.Init.Datatypes <> length def
+R9067:9068 CAG.ATT.ClassifyingCategory <> β:91 var
+R9048:9053 Corelib.Init.Datatypes <> length def
+R9055:9056 CAG.ATT.ClassifyingCategory <> α:90 var
+R9031:9035 CAG.ATT.Syntax <> t_var constr
+R8986:8992 CAG.ATT.Syntax <> HasType ind
+R8994:8995 CAG.ATT.ClassifyingCategory <> Sg:89 var
+R9000:9003 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R8998:8999 CAG.ATT.ClassifyingCategory <> α:90 var
+R9004:9005 CAG.ATT.ClassifyingCategory <> β:91 var
+R9133:9138 Corelib.Init.Datatypes <> length def
+R9104:9120 CAG.ATT.ClassifyingCategory <> id_vars_typed_aux thm
+R9133:9138 Corelib.Init.Datatypes <> length def
+R9104:9120 CAG.ATT.ClassifyingCategory <> id_vars_typed_aux thm
+R9172:9190 Stdlib.Lists.List <> nth_error_app2 thm
+R9172:9190 Stdlib.Lists.List <> nth_error_app2 thm
+R9172:9190 Stdlib.Lists.List <> nth_error_app2 thm
+R9224:9226 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R9220:9222 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R9211:9216 Corelib.Init.Datatypes <> length def
+R9227:9232 Corelib.Init.Datatypes <> length def
+R9224:9226 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R9220:9222 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R9211:9216 Corelib.Init.Datatypes <> length def
+R9227:9232 Corelib.Init.Datatypes <> length def
+def 9281:9288 <> cl_proj1
+R9296:9304 CAG.ATT.Signature <> Signature rec
+binder 9291:9292 <> Sg:92
+R9316:9319 Corelib.Init.Datatypes <> list ind
+R9325:9329 CAG.ATT.Signature <> sg_ty proj
+R9321:9322 CAG.ATT.ClassifyingCategory <> Sg:92 var
+binder 9308:9309 <> α:93
+binder 9311:9312 <> β:94
+R9340:9344 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9353:9354 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9357:9360 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9335:9337 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R9338:9339 CAG.ATT.ClassifyingCategory <> Sg:92 var
+R9347:9350 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R9345:9346 CAG.ATT.ClassifyingCategory <> α:93 var
+R9351:9352 CAG.ATT.ClassifyingCategory <> β:94 var
+R9355:9356 CAG.ATT.ClassifyingCategory <> α:93 var
+R9370:9380 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R9370:9380 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R9370:9380 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R9413:9423 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R9413:9423 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R9385:9390 CAG.ATT.Syntax <> id_sub def
+R9392:9393 CAG.ATT.ClassifyingCategory <> Sg:92 var
+R9396:9401 Corelib.Init.Datatypes <> length def
+R9403:9404 CAG.ATT.ClassifyingCategory <> α:93 var
+R9428:9441 CAG.ATT.ClassifyingCategory <> cl_proj1_typed thm
+R9443:9444 CAG.ATT.ClassifyingCategory <> Sg:92 var
+R9446:9447 CAG.ATT.ClassifyingCategory <> α:93 var
+R9449:9450 CAG.ATT.ClassifyingCategory <> β:94 var
+def 9469:9476 <> cl_proj2
+R9484:9492 CAG.ATT.Signature <> Signature rec
+binder 9479:9480 <> Sg:95
+R9504:9507 Corelib.Init.Datatypes <> list ind
+R9513:9517 CAG.ATT.Signature <> sg_ty proj
+R9509:9510 CAG.ATT.ClassifyingCategory <> Sg:95 var
+binder 9496:9497 <> α:96
+binder 9499:9500 <> β:97
+R9528:9532 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9541:9542 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9545:9548 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9523:9525 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R9526:9527 CAG.ATT.ClassifyingCategory <> Sg:95 var
+R9535:9538 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R9533:9534 CAG.ATT.ClassifyingCategory <> α:96 var
+R9539:9540 CAG.ATT.ClassifyingCategory <> β:97 var
+R9543:9544 CAG.ATT.ClassifyingCategory <> β:97 var
+R9558:9568 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R9558:9568 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R9558:9568 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R9629:9639 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R9629:9639 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R9573:9580 Stdlib.Lists.List <> map abbrev
+R9589:9596 Stdlib.Lists.List <> seq abbrev
+R9611:9616 Corelib.Init.Datatypes <> length def
+R9618:9619 CAG.ATT.ClassifyingCategory <> β:97 var
+R9599:9604 Corelib.Init.Datatypes <> length def
+R9606:9607 CAG.ATT.ClassifyingCategory <> α:96 var
+R9582:9586 CAG.ATT.Syntax <> t_var constr
+R9644:9657 CAG.ATT.ClassifyingCategory <> cl_proj2_typed thm
+R9659:9660 CAG.ATT.ClassifyingCategory <> Sg:95 var
+R9662:9663 CAG.ATT.ClassifyingCategory <> α:96 var
+R9665:9666 CAG.ATT.ClassifyingCategory <> β:97 var
+prf 9806:9818 <> cl_pair_typed
+R9826:9834 CAG.ATT.Signature <> Signature rec
+binder 9821:9822 <> Sg:98
+R9849:9852 Corelib.Init.Datatypes <> list ind
+R9858:9862 CAG.ATT.Signature <> sg_ty proj
+R9854:9855 CAG.ATT.ClassifyingCategory <> Sg:98 var
+binder 9838:9839 <> γ:99
+binder 9841:9842 <> α:100
+binder 9844:9845 <> β:101
+R9880:9884 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9887:9888 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9891:9894 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9875:9877 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R9878:9879 CAG.ATT.ClassifyingCategory <> Sg:98 var
+R9885:9886 CAG.ATT.ClassifyingCategory <> γ:99 var
+R9889:9890 CAG.ATT.ClassifyingCategory <> α:100 var
+binder 9871:9871 <> f:102
+R9907:9911 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9914:9915 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9918:9921 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R9902:9904 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R9905:9906 CAG.ATT.ClassifyingCategory <> Sg:98 var
+R9912:9913 CAG.ATT.ClassifyingCategory <> γ:99 var
+R9916:9917 CAG.ATT.ClassifyingCategory <> β:101 var
+binder 9898:9898 <> g:103
+R9930:9936 Stdlib.Lists.List <> Forall2 ind
+R9994:9997 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R9992:9993 CAG.ATT.ClassifyingCategory <> α:100 var
+R9998:9999 CAG.ATT.ClassifyingCategory <> β:101 var
+R9970:9973 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R9958:9968 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R9955:9955 CAG.ATT.ClassifyingCategory <> f:102 var
+R9977:9987 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R9974:9974 CAG.ATT.ClassifyingCategory <> g:103 var
+R9939:9945 CAG.ATT.Syntax <> HasType ind
+R9947:9948 CAG.ATT.ClassifyingCategory <> Sg:98 var
+R9950:9951 CAG.ATT.ClassifyingCategory <> γ:99 var
+R10018:10028 Stdlib.Lists.List <> Forall2_app thm
+R10018:10028 Stdlib.Lists.List <> Forall2_app thm
+R10044:10054 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R10044:10054 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R10071:10081 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R10071:10081 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+def 10102:10108 <> cl_pair
+R10116:10124 CAG.ATT.Signature <> Signature rec
+binder 10111:10112 <> Sg:104
+R10139:10142 Corelib.Init.Datatypes <> list ind
+R10148:10152 CAG.ATT.Signature <> sg_ty proj
+R10144:10145 CAG.ATT.ClassifyingCategory <> Sg:104 var
+binder 10128:10129 <> γ:105
+binder 10131:10132 <> α:106
+binder 10134:10135 <> β:107
+R10170:10174 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10177:10178 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10181:10184 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10165:10167 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R10168:10169 CAG.ATT.ClassifyingCategory <> Sg:104 var
+R10175:10176 CAG.ATT.ClassifyingCategory <> γ:105 var
+R10179:10180 CAG.ATT.ClassifyingCategory <> α:106 var
+binder 10161:10161 <> f:108
+R10197:10201 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10204:10205 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10208:10211 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10192:10194 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R10195:10196 CAG.ATT.ClassifyingCategory <> Sg:104 var
+R10202:10203 CAG.ATT.ClassifyingCategory <> γ:105 var
+R10206:10207 CAG.ATT.ClassifyingCategory <> β:107 var
+binder 10188:10188 <> g:109
+R10221:10225 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10228:10229 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10238:10241 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10216:10218 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R10219:10220 CAG.ATT.ClassifyingCategory <> Sg:104 var
+R10226:10227 CAG.ATT.ClassifyingCategory <> γ:105 var
+R10232:10235 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R10230:10231 CAG.ATT.ClassifyingCategory <> α:106 var
+R10236:10237 CAG.ATT.ClassifyingCategory <> β:107 var
+R10251:10261 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R10251:10261 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R10251:10261 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R10307:10317 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R10307:10317 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R10281:10284 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R10269:10279 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R10266:10266 CAG.ATT.ClassifyingCategory <> f:108 var
+R10288:10298 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R10285:10285 CAG.ATT.ClassifyingCategory <> g:109 var
+R10322:10334 CAG.ATT.ClassifyingCategory <> cl_pair_typed thm
+R10336:10337 CAG.ATT.ClassifyingCategory <> Sg:104 var
+R10339:10340 CAG.ATT.ClassifyingCategory <> γ:105 var
+R10342:10343 CAG.ATT.ClassifyingCategory <> α:106 var
+R10345:10346 CAG.ATT.ClassifyingCategory <> β:107 var
+R10348:10348 CAG.ATT.ClassifyingCategory <> f:108 var
+R10350:10350 CAG.ATT.ClassifyingCategory <> g:109 var
+prf 10425:10435 <> cl_bp_beta1
+R10443:10451 CAG.ATT.Signature <> Signature rec
+binder 10438:10439 <> Sg:110
+R10466:10469 Corelib.Init.Datatypes <> list ind
+R10475:10479 CAG.ATT.Signature <> sg_ty proj
+R10471:10472 CAG.ATT.ClassifyingCategory <> Sg:110 var
+binder 10455:10456 <> γ:111
+binder 10458:10459 <> α:112
+binder 10461:10462 <> β:113
+R10497:10501 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10504:10505 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10508:10511 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10492:10494 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R10495:10496 CAG.ATT.ClassifyingCategory <> Sg:110 var
+R10502:10503 CAG.ATT.ClassifyingCategory <> γ:111 var
+R10506:10507 CAG.ATT.ClassifyingCategory <> α:112 var
+binder 10488:10488 <> f:114
+R10524:10528 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10531:10532 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10535:10538 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10519:10521 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R10522:10523 CAG.ATT.ClassifyingCategory <> Sg:110 var
+R10529:10530 CAG.ATT.ClassifyingCategory <> γ:111 var
+R10533:10534 CAG.ATT.ClassifyingCategory <> β:113 var
+binder 10515:10515 <> g:115
+R10620:10622 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10547:10553 CAG.ATT.ClassifyingCategory <> cl_comp def
+R10555:10556 CAG.ATT.ClassifyingCategory <> Sg:110 var
+R10558:10559 CAG.ATT.ClassifyingCategory <> γ:111 var
+R10564:10567 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R10562:10563 CAG.ATT.ClassifyingCategory <> α:112 var
+R10568:10569 CAG.ATT.ClassifyingCategory <> β:113 var
+R10572:10573 CAG.ATT.ClassifyingCategory <> α:112 var
+R10576:10583 CAG.ATT.ClassifyingCategory <> cl_proj1 def
+R10585:10586 CAG.ATT.ClassifyingCategory <> Sg:110 var
+R10588:10589 CAG.ATT.ClassifyingCategory <> α:112 var
+R10591:10592 CAG.ATT.ClassifyingCategory <> β:113 var
+R10596:10602 CAG.ATT.ClassifyingCategory <> cl_pair def
+R10604:10605 CAG.ATT.ClassifyingCategory <> Sg:110 var
+R10607:10608 CAG.ATT.ClassifyingCategory <> γ:111 var
+R10610:10611 CAG.ATT.ClassifyingCategory <> α:112 var
+R10613:10614 CAG.ATT.ClassifyingCategory <> β:113 var
+R10616:10616 CAG.ATT.ClassifyingCategory <> f:114 var
+R10618:10618 CAG.ATT.ClassifyingCategory <> g:115 var
+R10623:10623 CAG.ATT.ClassifyingCategory <> f:114 var
+R10641:10649 CAG.ATT.ClassifyingCategory <> clmor_ext thm
+R10641:10649 CAG.ATT.ClassifyingCategory <> clmor_ext thm
+R10698:10700 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10676:10681 Corelib.Init.Datatypes <> length def
+R10686:10696 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R10701:10706 Corelib.Init.Datatypes <> length def
+R10698:10700 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10676:10681 Corelib.Init.Datatypes <> length def
+R10686:10696 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R10701:10706 Corelib.Init.Datatypes <> length def
+R10724:10737 Stdlib.Lists.List <> Forall2_length thm
+R10742:10752 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R10724:10737 Stdlib.Lists.List <> Forall2_length thm
+R10742:10752 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R10787:10796 CAG.ATT.Syntax <> subst_take thm
+R10804:10814 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R10820:10830 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R10787:10796 CAG.ATT.Syntax <> subst_take thm
+R10804:10814 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R10820:10830 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+prf 10847:10857 <> cl_bp_beta2
+R10865:10873 CAG.ATT.Signature <> Signature rec
+binder 10860:10861 <> Sg:116
+R10888:10891 Corelib.Init.Datatypes <> list ind
+R10897:10901 CAG.ATT.Signature <> sg_ty proj
+R10893:10894 CAG.ATT.ClassifyingCategory <> Sg:116 var
+binder 10877:10878 <> γ:117
+binder 10880:10881 <> α:118
+binder 10883:10884 <> β:119
+R10919:10923 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10926:10927 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10930:10933 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10914:10916 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R10917:10918 CAG.ATT.ClassifyingCategory <> Sg:116 var
+R10924:10925 CAG.ATT.ClassifyingCategory <> γ:117 var
+R10928:10929 CAG.ATT.ClassifyingCategory <> α:118 var
+binder 10910:10910 <> f:120
+R10946:10950 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10953:10954 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10957:10960 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R10941:10943 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R10944:10945 CAG.ATT.ClassifyingCategory <> Sg:116 var
+R10951:10952 CAG.ATT.ClassifyingCategory <> γ:117 var
+R10955:10956 CAG.ATT.ClassifyingCategory <> β:119 var
+binder 10937:10937 <> g:121
+R11042:11044 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10969:10975 CAG.ATT.ClassifyingCategory <> cl_comp def
+R10977:10978 CAG.ATT.ClassifyingCategory <> Sg:116 var
+R10980:10981 CAG.ATT.ClassifyingCategory <> γ:117 var
+R10986:10989 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R10984:10985 CAG.ATT.ClassifyingCategory <> α:118 var
+R10990:10991 CAG.ATT.ClassifyingCategory <> β:119 var
+R10994:10995 CAG.ATT.ClassifyingCategory <> β:119 var
+R10998:11005 CAG.ATT.ClassifyingCategory <> cl_proj2 def
+R11007:11008 CAG.ATT.ClassifyingCategory <> Sg:116 var
+R11010:11011 CAG.ATT.ClassifyingCategory <> α:118 var
+R11013:11014 CAG.ATT.ClassifyingCategory <> β:119 var
+R11018:11024 CAG.ATT.ClassifyingCategory <> cl_pair def
+R11026:11027 CAG.ATT.ClassifyingCategory <> Sg:116 var
+R11029:11030 CAG.ATT.ClassifyingCategory <> γ:117 var
+R11032:11033 CAG.ATT.ClassifyingCategory <> α:118 var
+R11035:11036 CAG.ATT.ClassifyingCategory <> β:119 var
+R11038:11038 CAG.ATT.ClassifyingCategory <> f:120 var
+R11040:11040 CAG.ATT.ClassifyingCategory <> g:121 var
+R11045:11045 CAG.ATT.ClassifyingCategory <> g:121 var
+R11063:11071 CAG.ATT.ClassifyingCategory <> clmor_ext thm
+R11063:11071 CAG.ATT.ClassifyingCategory <> clmor_ext thm
+R11121:11123 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11099:11104 Corelib.Init.Datatypes <> length def
+R11109:11119 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R11124:11129 Corelib.Init.Datatypes <> length def
+R11121:11123 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11099:11104 Corelib.Init.Datatypes <> length def
+R11109:11119 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R11124:11129 Corelib.Init.Datatypes <> length def
+R11147:11160 Stdlib.Lists.List <> Forall2_length thm
+R11165:11175 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R11147:11160 Stdlib.Lists.List <> Forall2_length thm
+R11165:11175 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R11222:11224 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11200:11205 Corelib.Init.Datatypes <> length def
+R11210:11220 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R11225:11230 Corelib.Init.Datatypes <> length def
+R11222:11224 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11200:11205 Corelib.Init.Datatypes <> length def
+R11210:11220 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R11225:11230 Corelib.Init.Datatypes <> length def
+R11248:11261 Stdlib.Lists.List <> Forall2_length thm
+R11266:11276 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R11248:11261 Stdlib.Lists.List <> Forall2_length thm
+R11266:11276 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R11322:11337 CAG.ATT.Syntax <> subst_take_right thm
+R11345:11355 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R11361:11371 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R11322:11337 CAG.ATT.Syntax <> subst_take_right thm
+R11345:11355 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R11361:11371 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+prf 11388:11397 <> cl_bp_uniq
+R11405:11413 CAG.ATT.Signature <> Signature rec
+binder 11400:11401 <> Sg:122
+R11428:11431 Corelib.Init.Datatypes <> list ind
+R11437:11441 CAG.ATT.Signature <> sg_ty proj
+R11433:11434 CAG.ATT.ClassifyingCategory <> Sg:122 var
+binder 11417:11418 <> γ:123
+binder 11420:11421 <> α:124
+binder 11423:11424 <> β:125
+R11459:11463 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R11466:11467 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R11476:11479 CAG.Category.Core <> ::cat_scope:x_'⟦'_x_','_x_'⟧' not
+R11454:11456 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R11457:11458 CAG.ATT.ClassifyingCategory <> Sg:122 var
+R11464:11465 CAG.ATT.ClassifyingCategory <> γ:123 var
+R11470:11473 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R11468:11469 CAG.ATT.ClassifyingCategory <> α:124 var
+R11474:11475 CAG.ATT.ClassifyingCategory <> β:125 var
+binder 11450:11450 <> h:126
+R11489:11491 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11488:11488 CAG.ATT.ClassifyingCategory <> h:126 var
+R11492:11498 CAG.ATT.ClassifyingCategory <> cl_pair def
+R11500:11501 CAG.ATT.ClassifyingCategory <> Sg:122 var
+R11503:11504 CAG.ATT.ClassifyingCategory <> γ:123 var
+R11506:11507 CAG.ATT.ClassifyingCategory <> α:124 var
+R11509:11510 CAG.ATT.ClassifyingCategory <> β:125 var
+R11523:11529 CAG.ATT.ClassifyingCategory <> cl_comp def
+R11531:11532 CAG.ATT.ClassifyingCategory <> Sg:122 var
+R11534:11535 CAG.ATT.ClassifyingCategory <> γ:123 var
+R11540:11543 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R11538:11539 CAG.ATT.ClassifyingCategory <> α:124 var
+R11544:11545 CAG.ATT.ClassifyingCategory <> β:125 var
+R11548:11549 CAG.ATT.ClassifyingCategory <> α:124 var
+R11552:11559 CAG.ATT.ClassifyingCategory <> cl_proj1 def
+R11561:11562 CAG.ATT.ClassifyingCategory <> Sg:122 var
+R11564:11565 CAG.ATT.ClassifyingCategory <> α:124 var
+R11567:11568 CAG.ATT.ClassifyingCategory <> β:125 var
+R11571:11571 CAG.ATT.ClassifyingCategory <> h:126 var
+R11585:11591 CAG.ATT.ClassifyingCategory <> cl_comp def
+R11593:11594 CAG.ATT.ClassifyingCategory <> Sg:122 var
+R11596:11597 CAG.ATT.ClassifyingCategory <> γ:123 var
+R11602:11605 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R11600:11601 CAG.ATT.ClassifyingCategory <> α:124 var
+R11606:11607 CAG.ATT.ClassifyingCategory <> β:125 var
+R11610:11611 CAG.ATT.ClassifyingCategory <> β:125 var
+R11614:11621 CAG.ATT.ClassifyingCategory <> cl_proj2 def
+R11623:11624 CAG.ATT.ClassifyingCategory <> Sg:122 var
+R11626:11627 CAG.ATT.ClassifyingCategory <> α:124 var
+R11629:11630 CAG.ATT.ClassifyingCategory <> β:125 var
+R11633:11633 CAG.ATT.ClassifyingCategory <> h:126 var
+R11652:11660 CAG.ATT.ClassifyingCategory <> clmor_ext thm
+R11652:11660 CAG.ATT.ClassifyingCategory <> clmor_ext thm
+R11682:11687 Corelib.Init.Datatypes <> length def
+R11682:11687 Corelib.Init.Datatypes <> length def
+R11704:11709 Corelib.Init.Datatypes <> length def
+R11704:11709 Corelib.Init.Datatypes <> length def
+R11732:11742 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R11732:11742 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R11775:11777 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11764:11769 Corelib.Init.Datatypes <> length def
+R11779:11781 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R11775:11777 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11764:11769 Corelib.Init.Datatypes <> length def
+R11779:11781 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R11822:11835 Stdlib.Lists.List <> Forall2_length thm
+R11840:11850 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R11855:11869 Stdlib.Lists.List <> length_app thm
+R11822:11835 Stdlib.Lists.List <> Forall2_length thm
+R11840:11850 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R11822:11835 Stdlib.Lists.List <> Forall2_length thm
+R11840:11850 CAG.ATT.ClassifyingCategory <> clmor_typed proj
+R11855:11869 Stdlib.Lists.List <> length_app thm
+R11855:11869 Stdlib.Lists.List <> length_app thm
+R12016:12033 Stdlib.Lists.List <> nth_error_ext thm
+R12016:12033 Stdlib.Lists.List <> nth_error_ext thm
+R12152:12154 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12111:12116 Corelib.Init.Datatypes <> length def
+R12119:12128 CAG.ATT.Syntax <> subst_list def
+R12139:12144 CAG.ATT.Syntax <> id_sub def
+R12152:12154 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12111:12116 Corelib.Init.Datatypes <> length def
+R12119:12128 CAG.ATT.Syntax <> subst_list def
+R12139:12144 CAG.ATT.Syntax <> id_sub def
+R12170:12179 CAG.ATT.Syntax <> subst_list def
+R12182:12187 CAG.ATT.Syntax <> id_sub def
+R12202:12216 Stdlib.Lists.List <> length_map thm
+R12219:12233 Stdlib.Lists.List <> length_map thm
+R12236:12250 Stdlib.Lists.List <> length_seq thm
+R12202:12216 Stdlib.Lists.List <> length_map thm
+R12202:12216 Stdlib.Lists.List <> length_map thm
+R12219:12233 Stdlib.Lists.List <> length_map thm
+R12219:12233 Stdlib.Lists.List <> length_map thm
+R12236:12250 Stdlib.Lists.List <> length_seq thm
+R12236:12250 Stdlib.Lists.List <> length_seq thm
+R12278:12295 Stdlib.Lists.List <> nth_error_app thm
+R12278:12295 Stdlib.Lists.List <> nth_error_app thm
+R12278:12295 Stdlib.Lists.List <> nth_error_app thm
+R12321:12324 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'<?'_x not
+R12321:12324 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'<?'_x not
+R12401:12410 CAG.ATT.Syntax <> subst_list def
+R12421:12438 Stdlib.Lists.List <> nth_error_map thm
+R12441:12456 CAG.ATT.Syntax <> nth_error_id_sub thm
+R12421:12438 Stdlib.Lists.List <> nth_error_map thm
+R12421:12438 Stdlib.Lists.List <> nth_error_map thm
+R12441:12456 CAG.ATT.Syntax <> nth_error_id_sub thm
+R12441:12456 CAG.ATT.Syntax <> nth_error_id_sub thm
+R12484:12493 Stdlib.Arith.PeanoNat Nat ltb_lt thm
+R12484:12493 Stdlib.Arith.PeanoNat Nat ltb_lt thm
+R12516:12529 Stdlib.Lists.List <> nth_error def
+R12516:12529 Stdlib.Lists.List <> nth_error def
+R12579:12597 Stdlib.Lists.List <> nth_error_None thm
+R12579:12597 Stdlib.Lists.List <> nth_error_None thm
+R12703:12712 Stdlib.Arith.PeanoNat Nat ltb_ge thm
+R12703:12712 Stdlib.Arith.PeanoNat Nat ltb_ge thm
+R12732:12741 CAG.ATT.Syntax <> subst_list def
+R12752:12769 Stdlib.Lists.List <> nth_error_map thm
+R12752:12769 Stdlib.Lists.List <> nth_error_map thm
+R12752:12769 Stdlib.Lists.List <> nth_error_map thm
+R12784:12801 Stdlib.Lists.List <> nth_error_map thm
+R12804:12816 Stdlib.Lists.List <> nth_error_seq thm
+R12784:12801 Stdlib.Lists.List <> nth_error_map thm
+R12784:12801 Stdlib.Lists.List <> nth_error_map thm
+R12804:12816 Stdlib.Lists.List <> nth_error_seq thm
+R12804:12816 Stdlib.Lists.List <> nth_error_seq thm
+R12833:12833 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'<?'_x not
+R12839:12843 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'<?'_x not
+R12835:12837 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R12833:12833 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'<?'_x not
+R12839:12843 Stdlib.Arith.PeanoNat <> ::nat_scope:x_'<?'_x not
+R12835:12837 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R12867:12876 Stdlib.Arith.PeanoNat Nat ltb_lt thm
+R12867:12876 Stdlib.Arith.PeanoNat Nat ltb_lt thm
+R12908:12911 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R12917:12917 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R12913:12915 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R12908:12911 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R12917:12917 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R12913:12915 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R12951:12964 Stdlib.Lists.List <> nth_error def
+R12951:12964 Stdlib.Lists.List <> nth_error def
+R13018:13036 Stdlib.Lists.List <> nth_error_None thm
+R13018:13036 Stdlib.Lists.List <> nth_error_None thm
+R13063:13072 Stdlib.Arith.PeanoNat Nat ltb_ge thm
+R13063:13072 Stdlib.Arith.PeanoNat Nat ltb_ge thm
+R13100:13118 Stdlib.Lists.List <> nth_error_None thm
+R13100:13118 Stdlib.Lists.List <> nth_error_None thm
+def 13143:13159 <> cl_binary_product
+R13167:13175 CAG.ATT.Signature <> Signature rec
+binder 13162:13163 <> Sg:127
+R13187:13190 Corelib.Init.Datatypes <> list ind
+R13196:13200 CAG.ATT.Signature <> sg_ty proj
+R13192:13193 CAG.ATT.ClassifyingCategory <> Sg:127 var
+binder 13179:13180 <> α:128
+binder 13182:13183 <> β:129
+R13211:13225 CAG.Category.Products <> IsBinaryProduct rec
+R13228:13230 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R13231:13232 CAG.ATT.ClassifyingCategory <> Sg:127 var
+R13235:13236 CAG.ATT.ClassifyingCategory <> α:128 var
+R13238:13239 CAG.ATT.ClassifyingCategory <> β:129 var
+R13244:13247 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R13242:13243 CAG.ATT.ClassifyingCategory <> α:128 var
+R13248:13249 CAG.ATT.ClassifyingCategory <> β:129 var
+R13312:13319 CAG.ATT.ClassifyingCategory <> cl_proj1 def
+R13348:13355 CAG.ATT.ClassifyingCategory <> cl_proj2 def
+binder 13388:13389 <> γ:130
+binder 13391:13391 <> f:131
+binder 13393:13393 <> g:132
+R13398:13404 CAG.ATT.ClassifyingCategory <> cl_pair def
+R13409:13410 CAG.ATT.ClassifyingCategory <> γ:130 var
+R13418:13418 CAG.ATT.ClassifyingCategory <> f:131 var
+R13420:13420 CAG.ATT.ClassifyingCategory <> g:132 var
+R13268:13288 CAG.Category.Products <> Build_IsBinaryProduct constr
+R13312:13319 CAG.ATT.ClassifyingCategory <> cl_proj1 def
+R13348:13355 CAG.ATT.ClassifyingCategory <> cl_proj2 def
+binder 13388:13389 <> γ:133
+binder 13391:13391 <> f:134
+binder 13393:13393 <> g:135
+R13398:13404 CAG.ATT.ClassifyingCategory <> cl_pair def
+R13409:13410 CAG.ATT.ClassifyingCategory <> γ:133 var
+R13418:13418 CAG.ATT.ClassifyingCategory <> f:134 var
+R13420:13420 CAG.ATT.ClassifyingCategory <> g:135 var
+R13268:13288 CAG.Category.Products <> Build_IsBinaryProduct constr
+R13450:13460 CAG.ATT.ClassifyingCategory <> cl_bp_beta1 thm
+R13450:13460 CAG.ATT.ClassifyingCategory <> cl_bp_beta1 thm
+R13506:13516 CAG.ATT.ClassifyingCategory <> cl_bp_beta2 thm
+R13506:13516 CAG.ATT.ClassifyingCategory <> cl_bp_beta2 thm
+R13562:13571 CAG.ATT.ClassifyingCategory <> cl_bp_uniq thm
+R13562:13571 CAG.ATT.ClassifyingCategory <> cl_bp_uniq thm
+def 13649:13670 <> cl_has_binary_products
+R13678:13686 CAG.ATT.Signature <> Signature rec
+binder 13673:13674 <> Sg:136
+R13691:13707 CAG.Category.Products <> HasBinaryProducts rec
+R13710:13712 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R13713:13714 CAG.ATT.ClassifyingCategory <> Sg:136 var
+R13787:13790 Corelib.Init.Datatypes <> list ind
+R13796:13800 CAG.ATT.Signature <> sg_ty proj
+binder 13779:13780 <> α:137
+binder 13782:13783 <> β:138
+R13808:13811 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R13806:13807 CAG.ATT.ClassifyingCategory <> α:137 var
+R13812:13813 CAG.ATT.ClassifyingCategory <> β:138 var
+R13733:13755 CAG.Category.Products <> Build_HasBinaryProducts constr
+R13787:13790 Corelib.Init.Datatypes <> list ind
+R13796:13800 CAG.ATT.Signature <> sg_ty proj
+binder 13779:13780 <> α:139
+binder 13782:13783 <> β:140
+R13808:13811 Corelib.Init.Datatypes <> ::list_scope:x_'++'_x not
+R13806:13807 CAG.ATT.ClassifyingCategory <> α:139 var
+R13812:13813 CAG.ATT.ClassifyingCategory <> β:140 var
+R13733:13755 CAG.Category.Products <> Build_HasBinaryProducts constr
+R13826:13842 CAG.ATT.ClassifyingCategory <> cl_binary_product def
+R13826:13842 CAG.ATT.ClassifyingCategory <> cl_binary_product def
+def 13870:13887 <> cl_finite_products
+R13895:13903 CAG.ATT.Signature <> Signature rec
+binder 13890:13891 <> Sg:141
+R13908:13924 CAG.Category.Products <> HasFiniteProducts rec
+R13927:13929 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R13930:13931 CAG.ATT.ClassifyingCategory <> Sg:141 var
+R13958:13968 CAG.Category.Products <> fp_terminal proj
+R13958:13968 CAG.Category.Products <> fp_terminal proj
+R13958:13968 CAG.Category.Products <> fp_terminal proj
+R14038:14046 CAG.Category.Products <> fp_binary proj
+R14038:14046 CAG.Category.Products <> fp_binary proj
+R13973:13978 Corelib.Init.Specif <> existT constr
+R14017:14027 CAG.ATT.ClassifyingCategory <> cl_terminal def
+R14013:14014 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+binder 13985:13985 <> T:142
+R13991:14000 CAG.Category.Core <> IsTerminal rec
+R14003:14005 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R14010:14010 CAG.ATT.ClassifyingCategory <> T:142 var
+R14053:14074 CAG.ATT.ClassifyingCategory <> cl_has_binary_products def
+R13958:13968 CAG.Category.Products <> fp_terminal proj
+R13958:13968 CAG.Category.Products <> fp_terminal proj
+R13958:13968 CAG.Category.Products <> fp_terminal proj
+R14038:14046 CAG.Category.Products <> fp_binary proj
+R14038:14046 CAG.Category.Products <> fp_binary proj
+R13973:13978 Corelib.Init.Specif <> existT constr
+R14017:14027 CAG.ATT.ClassifyingCategory <> cl_terminal def
+R14013:14014 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+binder 13985:13985 <> T:143
+R13991:14000 CAG.Category.Core <> IsTerminal rec
+R14003:14005 CAG.ATT.ClassifyingCategory <> ::cat_scope:'Cl'_x not
+R14010:14010 CAG.ATT.ClassifyingCategory <> T:143 var
+R14053:14074 CAG.ATT.ClassifyingCategory <> cl_has_binary_products def
+def 14255:14262 <> ClMor_eq
+R14270:14275 CAG.ATT.Theory <> Theory rec
+binder 14265:14266 <> Th:144
+R14287:14290 Corelib.Init.Datatypes <> list ind
+R14305:14309 CAG.ATT.Signature <> sg_ty proj
+R14296:14301 CAG.ATT.Theory <> th_sig proj
+R14292:14293 CAG.ATT.ClassifyingCategory <> Th:144 var
+binder 14279:14280 <> α:145
+binder 14282:14283 <> β:146
+R14324:14328 CAG.ATT.ClassifyingCategory <> ClMor rec
+R14334:14339 CAG.ATT.Theory <> th_sig proj
+R14330:14331 CAG.ATT.ClassifyingCategory <> Th:144 var
+R14342:14343 CAG.ATT.ClassifyingCategory <> α:145 var
+R14345:14346 CAG.ATT.ClassifyingCategory <> β:146 var
+binder 14318:14318 <> f:147
+binder 14320:14320 <> g:148
+R14361:14367 Stdlib.Lists.List <> Forall2 ind
+R14601:14611 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R14598:14598 CAG.ATT.ClassifyingCategory <> g:148 var
+R14585:14595 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R14582:14582 CAG.ATT.ClassifyingCategory <> f:147 var
+binder 14374:14375 <> t1:149
+binder 14377:14378 <> t2:150
+binder 14390:14391 <> τ:151
+R14527:14536 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14400:14406 Stdlib.Lists.List <> In def
+R14422:14433 Stdlib.Lists.List <> combine def
+R14524:14525 CAG.ATT.ClassifyingCategory <> β:146 var
+R14436:14447 Stdlib.Lists.List <> combine def
+R14468:14478 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R14465:14465 CAG.ATT.ClassifyingCategory <> g:148 var
+R14452:14462 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R14449:14449 CAG.ATT.ClassifyingCategory <> f:147 var
+R14408:14408 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R14411:14412 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R14415:14416 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R14419:14419 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R14409:14410 CAG.ATT.ClassifyingCategory <> t1:149 var
+R14413:14414 CAG.ATT.ClassifyingCategory <> t2:150 var
+R14417:14418 CAG.ATT.ClassifyingCategory <> τ:151 var
+R14537:14540 CAG.ATT.Syntax <> ThEq ind
+R14546:14551 CAG.ATT.Theory <> th_sig proj
+R14542:14543 CAG.ATT.ClassifyingCategory <> Th:144 var
+R14558:14562 CAG.ATT.Theory <> th_ax proj
+R14554:14555 CAG.ATT.ClassifyingCategory <> Th:144 var
+R14565:14566 CAG.ATT.ClassifyingCategory <> α:145 var
+R14568:14569 CAG.ATT.ClassifyingCategory <> t1:149 var
+R14571:14572 CAG.ATT.ClassifyingCategory <> t2:150 var
+R14574:14575 CAG.ATT.ClassifyingCategory <> τ:151 var
+def 14677:14686 <> ClMor_theq
+R14694:14699 CAG.ATT.Theory <> Theory rec
+binder 14689:14690 <> Th:152
+R14711:14714 Corelib.Init.Datatypes <> list ind
+R14729:14733 CAG.ATT.Signature <> sg_ty proj
+R14720:14725 CAG.ATT.Theory <> th_sig proj
+R14716:14717 CAG.ATT.ClassifyingCategory <> Th:152 var
+binder 14703:14704 <> α:153
+binder 14706:14707 <> β:154
+R14748:14752 CAG.ATT.ClassifyingCategory <> ClMor rec
+R14758:14763 CAG.ATT.Theory <> th_sig proj
+R14754:14755 CAG.ATT.ClassifyingCategory <> Th:152 var
+R14766:14767 CAG.ATT.ClassifyingCategory <> α:153 var
+R14769:14770 CAG.ATT.ClassifyingCategory <> β:154 var
+binder 14742:14742 <> f:155
+binder 14744:14744 <> g:156
+binder 14792:14792 <> i:157
+binder 14794:14795 <> t1:158
+binder 14797:14798 <> t2:159
+binder 14800:14801 <> τ:160
+R14850:14857 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14840:14842 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R14808:14821 Stdlib.Lists.List <> nth_error def
+R14839:14839 CAG.ATT.ClassifyingCategory <> i:157 var
+R14826:14836 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R14823:14823 CAG.ATT.ClassifyingCategory <> f:155 var
+R14843:14846 Corelib.Init.Datatypes <> Some constr
+R14848:14849 CAG.ATT.ClassifyingCategory <> t1:158 var
+R14900:14907 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14890:14892 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R14858:14871 Stdlib.Lists.List <> nth_error def
+R14889:14889 CAG.ATT.ClassifyingCategory <> i:157 var
+R14876:14886 CAG.ATT.ClassifyingCategory <> clmor_terms proj
+R14873:14873 CAG.ATT.ClassifyingCategory <> g:156 var
+R14893:14896 Corelib.Init.Datatypes <> Some constr
+R14898:14899 CAG.ATT.ClassifyingCategory <> t2:159 var
+R14937:14944 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14927:14929 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R14908:14921 Stdlib.Lists.List <> nth_error def
+R14926:14926 CAG.ATT.ClassifyingCategory <> i:157 var
+R14923:14924 CAG.ATT.ClassifyingCategory <> β:154 var
+R14930:14933 Corelib.Init.Datatypes <> Some constr
+R14935:14936 CAG.ATT.ClassifyingCategory <> τ:160 var
+R14945:14948 CAG.ATT.Syntax <> ThEq ind
+R14954:14959 CAG.ATT.Theory <> th_sig proj
+R14950:14951 CAG.ATT.ClassifyingCategory <> Th:152 var
+R14966:14970 CAG.ATT.Theory <> th_ax proj
+R14962:14963 CAG.ATT.ClassifyingCategory <> Th:152 var
+R14973:14974 CAG.ATT.ClassifyingCategory <> α:153 var
+R14976:14977 CAG.ATT.ClassifyingCategory <> t1:158 var
+R14979:14980 CAG.ATT.ClassifyingCategory <> t2:159 var
+R14982:14983 CAG.ATT.ClassifyingCategory <> τ:160 var

@@ -1,0 +1,431 @@
+#+TITLE: TODO — Rocq Formalization Roadmap (UFDs, PIDs, Gaussian Integers, Sums of Squares)
+#+AUTHOR: OpenAI
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize the supplied theory around:
+  - irreducibles and primes in integral domains
+  - Unique Factorization Domains
+  - greatest common divisors and least common multiples in UFDs
+  - Principal Ideal Domains imply UFDs
+  - Dedekind-Hasse norms on PIDs
+  - Gaussian integers Z[i]
+  - Fermat's theorem on sums of two squares
+  - quotient rings of Gaussian integers
+  - selected exercises and extensions
+
+* Suggested file layout
+** NEXT Domains/Divisibility.v
+** NEXT Domains/Associates.v
+** NEXT Domains/IrreduciblePrime.v
+** NEXT Domains/UFD.v
+** NEXT Domains/GCD_LCM.v
+** NEXT Domains/PID_UFD.v
+** NEXT Domains/DedekindHasseNorm.v
+** NEXT NumberTheory/GaussianIntegers.v
+** NEXT NumberTheory/SumsOfSquares.v
+** TODO NumberTheory/QuadraticIntegerExercises.v
+** TODO Domains/KStageEuclidean.v
+** TODO Domains/BezoutPID.v
+
+* Part I — Divisibility, associates, primes, irreducibles
+** NEXT Define divisibility in an integral domain
+   - a ∣ b iff ∃c, b = ac
+   - unit
+   - associate elements
+   - associate iff differ by multiplication by a unit
+
+** NEXT Define irreducible
+   For nonzero nonunit p:
+   - p irreducible iff p = ab implies a unit or b unit
+
+** NEXT Define prime element
+   For nonzero nonunit p:
+   - p prime iff p ∣ ab implies p ∣ a or p ∣ b
+
+** NEXT Prove prime implies irreducible in any integral domain
+
+** NEXT Prove irreducible implies prime in a UFD
+   This is needed for using “prime” and “irreducible” interchangeably in UFDs.
+
+** NEXT Normalize “up to associates”
+   Add lemmas:
+   - associated irreducibles divide each other
+   - if irreducible p divides irreducible q, then p and q are associates
+   - divisibility is invariant under associates
+
+* Part II — Unique Factorization Domains
+** NEXT Define finite factorization
+   Represent a factorization of nonzero a as:
+   - unit u
+   - finite multiset/list of irreducibles
+   - a = u * product factors
+
+** NEXT Define UFD
+   Requirements:
+   - every nonzero nonunit has a finite factorization into irreducibles
+   - factorization unique up to permutation and associates
+
+** NEXT Prime-exponent form
+   Given a finite set of pairwise nonassociate primes p_1,...,p_n:
+   - define exponent vector
+   - define u * Π p_i^{e_i}
+
+** NEXT Divisibility criterion in a UFD
+   If
+   - a = u Π p_i^{e_i}
+   - b = v Π p_i^{f_i}
+   then
+   - a ∣ b iff e_i ≤ f_i for all i, after a common prime support is chosen.
+
+** NEXT Prime occurrence lemmas
+   If q divides a product Π p_i^{e_i}, with q irreducible/prime, then q is associate to some p_i with e_i > 0.
+
+* Part III — GCDs in a UFD
+** NEXT Define greatest common divisor in an integral domain
+   d is gcd(a,b) iff:
+   - d ∣ a
+   - d ∣ b
+   - for every c, c ∣ a and c ∣ b implies c ∣ d
+
+** NEXT Prove gcd is unique up to associates
+
+** NEXT Prove UFD gcd formula
+   Given:
+   - a = u Π p_i^{e_i}
+   - b = v Π p_i^{f_i}
+   with common support p_i,
+   define:
+   - d = Π p_i^{min(e_i,f_i)}
+   Prove:
+   - d is a gcd of a and b
+
+** NEXT Handle edge cases
+   - gcd(a,0)
+   - gcd(0,b)
+   - gcd of units
+   - gcd formula when all exponents are zero gives 1
+
+** NEXT Example
+   Formalize:
+   - gcd(2210,1131) = 13
+   once arithmetic support exists.
+
+* Part IV — LCMs in a UFD
+** NEXT Define least common multiple
+   l is lcm(a,b) iff:
+   - a ∣ l
+   - b ∣ l
+   - for every c, a ∣ c and b ∣ c implies l ∣ c
+
+** NEXT Prove lcm is unique up to associates
+
+** NEXT Prove UFD lcm formula
+   Given common support:
+   - l = Π p_i^{max(e_i,f_i)}
+   Prove l is an lcm.
+
+** TODO Prove gcd*lcm relation
+   Up to associates:
+   - gcd(a,b) * lcm(a,b) associated to a*b
+
+* Part V — PIDs imply UFDs
+** NEXT Define PID
+   Integral domain where every ideal is principal.
+
+** NEXT Ascending chain lemma for PIDs
+   Prove every ascending chain of ideals stabilizes:
+   - I_1 ⊆ I_2 ⊆ ...
+   - union I is an ideal
+   - I = (a)
+   - a ∈ I_n for some n
+   - hence I = I_n and chain stabilizes
+
+** NEXT Existence of irreducible factorization in a PID
+   For nonzero nonunit r:
+   - if r irreducible, done
+   - otherwise split r = r_1 r_2 with both nonunits
+   - strict ideal inclusion (r) ⊂ (r_1)
+   - infinite splitting would yield forbidden ascending chain
+   - conclude termination
+
+** NEXT Uniqueness of factorization in a PID
+   Use:
+   - irreducible implies prime in PID
+   - or prove via principal prime ideals
+   Then induct on number of irreducible factors.
+
+** NEXT Theorem
+   - every PID is a UFD
+
+** NEXT Corollary
+   - every Euclidean domain is a UFD
+
+** NEXT Fundamental theorem of arithmetic
+   Instantiate:
+   - Z is Euclidean
+   - hence Z is a UFD
+
+* Part VI — Dedekind-Hasse norms
+** NEXT Define Dedekind-Hasse norm
+   A norm N : R -> Nat satisfying the relevant Dedekind-Hasse condition:
+   for a,b nonzero, if a ∉ (b), then ∃ nonzero r ∈ (a,b) with N(r) < N(b).
+
+** NEXT Multiplicative Dedekind-Hasse norm from PID
+   For PID/UFD:
+   - N(0)=0
+   - N(unit)=1
+   - N(a)=2^n where n is number of irreducible factors of a
+   Prove:
+   - well defined by uniqueness of factorization
+   - positive
+   - multiplicative
+   - Dedekind-Hasse property
+
+** NEXT Equivalence target
+   Combine with previous result:
+   - integral domain with Dedekind-Hasse norm is PID
+   - PID has multiplicative Dedekind-Hasse norm
+
+* Part VII — Gaussian integers Z[i]
+** NEXT Define Gaussian integers
+   As pairs (a,b) : Z × Z representing a + bi.
+   Operations:
+   - addition componentwise
+   - multiplication (a,b)(c,d) = (ac - bd, ad + bc)
+   - conjugation (a,b)^* = (a,-b)
+   - norm N(a+bi)=a^2+b^2
+
+** NEXT Ring structure
+   Prove:
+   - commutative ring with 1
+   - integral domain
+   - conjugation is ring automorphism
+   - N(αβ)=N(α)N(β)
+
+** NEXT Units in Z[i]
+   Prove:
+   - α unit iff N(α)=1
+   - units are ±1, ±i
+
+** NEXT Euclidean domain structure
+   Formalize if not already:
+   - Z[i] is Euclidean with norm a^2+b^2
+   - hence PID
+   - hence UFD
+
+** NEXT Irreducibility by prime norm
+   General quadratic-integer lemma:
+   - if |N(α)| is a rational prime, then α is irreducible
+
+** NEXT Prime elements of Z[i]
+   Show irreducibles are:
+   - 1+i up to associates
+   - rational primes q ≡ 3 mod 4
+   - factors a±bi of rational primes p = a^2+b^2 with p ≡ 1 mod 4
+
+* Part VIII — Fermat theorem on sums of two squares
+** NEXT Squares modulo 4
+   Prove:
+   - every integer square is 0 or 1 mod 4
+   - if odd prime p = a^2+b^2, then p ≡ 1 mod 4
+
+** NEXT Lemma: p divides n^2+1 iff p=2 or p≡1 mod 4
+   For odd prime p:
+   - p ∣ n^2+1 iff -1 has square root mod p
+   - iff (Z/pZ)^× has element of order 4
+   - iff 4 ∣ p-1
+   Needed lemmas:
+   - unique element of order 2 in (Z/pZ)^× is -1
+   - if 4 ∣ |G| for finite abelian G with unique element of order 2, then G has element of order 4
+   Alternative later route:
+   - use cyclicity of (Z/pZ)^× once available
+
+** NEXT If p≡1 mod 4, p reducible in Z[i]
+   Choose n with p ∣ n^2+1.
+   Since p ∣ (n+i)(n-i), if p were prime in Z[i], p would divide n+i or n-i.
+   Derive contradiction because then p divides 2i.
+
+** NEXT Fermat theorem
+   Prove:
+   - rational prime p is a sum of two integer squares iff p=2 or p≡1 mod 4
+   - uniqueness up to signs and swapping
+
+** NEXT Factorization of primes in Z[i]
+   - 2 = -i(1+i)^2
+   - q≡3 mod4 remains irreducible
+   - p≡1 mod4 splits as (a+bi)(a-bi)
+
+* Part IX — General sums of two squares
+** NEXT Characterize n that are sums of two squares
+   For positive integer n with prime factorization:
+   - n = 2^k Π p_i^{a_i} Π q_j^{b_j}
+   where p_i≡1 mod4 and q_j≡3 mod4.
+   Prove:
+   - n = A^2+B^2 iff every b_j is even.
+
+** NEXT Count representations
+   If every b_j is even, prove number of ordered signed representations is:
+   - 4 Π (a_i+1)
+
+** NEXT Worked examples
+   Formalize or at least script:
+   - 493 = 17*29 = 18^2+13^2 = 22^2+3^2, with sign/order variants
+   - 58000957 = 7^6 * 17 * 29
+
+** TODO Exercise
+   Determine all representations of:
+   - 2130797 = 17^2 * 73 * 101
+   as a sum of two squares.
+
+* Part X — Quotients of Gaussian integers
+** NEXT Quotient by (1+i)
+   Prove:
+   - Z[i]/(1+i) is a field of order 2
+
+** NEXT Quotient by rational q≡3 mod4
+   Prove:
+   - Z[i]/(q) is a field with q^2 elements
+
+** NEXT Quotient by split p≡1 mod4
+   If p = ππbar:
+   - ideals (π) and (πbar) are comaximal
+   - Z[i]/(p) ≅ Z[i]/(π) × Z[i]/(πbar)
+   - each quotient is a field of order p
+
+** NEXT Powers of Gaussian prime ideals
+   For irreducible π:
+   - (π^{n+1}) ideal in (π^n)
+   - multiplication by π^n gives additive-group iso
+     Z[i]/(π) ≅ (π^n)/(π^{n+1})
+   - |Z[i]/(π^n)| = |Z[i]/(π)|^n
+
+** NEXT Norm gives quotient size
+   For nonzero α ∈ Z[i]:
+   - |Z[i]/(α)| = N(α)
+   Use:
+   - prime factorization in Z[i]
+   - CRT
+   - power quotient sizes
+
+* Part XI — Quadratic integer ring exercises
+** TODO Non-UFD examples Z[sqrt(-n)]
+   For squarefree n > 3:
+   - prove 2, sqrt(-n), 1+sqrt(-n) are irreducible
+   - prove not UFD
+   - exhibit explicit nonprincipal ideal
+
+** TODO Ring Z[sqrt(-5)]
+   Define ideals:
+   - I_2 = (2, 1+sqrt(-5))
+   - I_3 = (3, 2+sqrt(-5))
+   - I'_3 = (3, 2-sqrt(-5))
+   Prove:
+   - 2,3,1±sqrt(-5) irreducible and nonassociate
+   - 6 has two distinct factorizations
+   - I_2, I_3, I'_3 are prime ideals
+   - ideal factorization of (6) agrees after refining to prime ideals
+
+** TODO Norm as Dedekind-Hasse norm in quadratic PIDs
+   If quadratic integer ring O is a PID, prove |field norm| is a Dedekind-Hasse norm.
+
+* Part XII — k-stage Euclidean domains
+** TODO Define k-stage Euclidean domain
+   For norm N and integer k≥1:
+   - after k divisions, the remainder is zero or has norm < N(b)
+
+** TODO 2-stage Euclidean implies gcd algorithm
+   - iterating divisions gives gcd
+   - gcd is linear combination of a and b
+   - every finitely generated ideal is principal
+
+** TODO k-stage version
+   Generalize the 2-stage proof to arbitrary k.
+
+** TODO UFD criterion
+   If k-stage Euclidean and every nonzero nonunit factors into irreducibles, prove UFD.
+
+* Part XIII — Bezout domains and PID characterization
+** TODO Define Bezout domain
+   - every finitely generated ideal is principal
+   Equivalent gcd language:
+   - every finite set has a gcd generating the same ideal.
+
+** TODO PID iff UFD + Bezout
+   Prove:
+   - PID -> UFD + Bezout
+   - UFD + Bezout -> PID
+   For the converse:
+   - take nonzero ideal I
+   - choose a ∈ I with minimal number of irreducible factors
+   - if b ∈ I and b ∉ (a), then (a,b)=(d) contradicts minimality
+   - conclude I=(a)
+
+* Part XIV — Rational numbers as group/ring example
+** TODO Multiplicative group Q^× automorphisms
+   - define automorphism swapping primes 2 and 3 in prime-power decompositions
+   - prove it is a group automorphism
+   - prove infinitely many automorphisms of Q^×
+
+** TODO Ring automorphisms of Q
+   - prove identity is the only ring automorphism of Q
+   - prove the group automorphisms above do not extend to ring automorphisms
+
+* Part XV — Immediate milestones
+** NEXT Milestone 1
+   Complete UFD infrastructure:
+   - factorization type
+   - uniqueness up to associates
+   - gcd/lcm formulas
+
+** NEXT Milestone 2
+   Prove:
+   - PID ascending-chain stabilization
+   - PID -> UFD
+   - Euclidean -> PID -> UFD
+
+** NEXT Milestone 3
+   Complete Gaussian integers:
+   - ring structure
+   - norm
+   - Euclidean property
+   - units and irreducibles
+
+** NEXT Milestone 4
+   Complete sums of two squares:
+   - Fermat prime theorem
+   - integer characterization
+   - representation count
+
+** TODO Milestone 5
+   Add advanced exercises:
+   - quotients of Z[i]
+   - quadratic non-UFD examples
+   - k-stage Euclidean domains
+   - PID iff UFD + Bezout
+
+* Load-bearing theorem names
+** NEXT associated_iff_unit_mul
+** NEXT prime_element_irreducible
+** NEXT ufd_irreducible_prime
+** NEXT ufd_divisibility_exponents
+** NEXT ufd_gcd_exists
+** NEXT ufd_gcd_exponent_formula
+** NEXT ufd_lcm_exists
+** NEXT ufd_lcm_exponent_formula
+** NEXT pid_ascending_chain_stabilizes
+** NEXT pid_factorization_exists
+** NEXT pid_factorization_unique
+** NEXT pid_is_ufd
+** NEXT euclidean_is_ufd
+** NEXT pid_has_dedekind_hasse_norm
+** NEXT gaussian_norm_multiplicative
+** NEXT gaussian_units
+** NEXT gaussian_euclidean
+** NEXT integer_prime_sum_two_squares_iff
+** NEXT gaussian_prime_classification
+** NEXT sum_two_squares_integer_criterion
+** NEXT sum_two_squares_representation_count
+** NEXT gaussian_quotient_cardinality_norm
+** NEXT pid_iff_ufd_and_bezout

@@ -1,0 +1,69 @@
+DIGEST 035b65abdbefee88d55a35fd50164e07
+FCAG.CanonicalBundle.Adjunction
+R709:712 Stdlib.Lists.List <> <> lib
+R714:718 Stdlib.Arith.Arith <> <> lib
+R720:725 Stdlib.ZArith.ZArith <> <> lib
+R752:758 CAG.Complex <> <> lib
+R785:786 CAG.AG <> <> lib
+R813:828 CAG.ManifoldTopology <> <> lib
+R855:876 CAG.Divisor.LineBundleCech <> <> lib
+R903:923 CAG.Divisor.DivisorBundle <> <> lib
+R950:974 CAG.Hypersurface.NormalBundle <> <> lib
+R1001:1031 CAG.CanonicalBundle.ProjectiveSpace <> <> lib
+prf 1554:1576 <> conormal_exact_sequence
+R1592:1606 CAG.AG <> ComplexManifold rec
+binder 1588:1588 <> M:1
+R1618:1635 CAG.Hypersurface.NormalBundle <> SmoothHypersurface rec
+R1637:1637 CAG.CanonicalBundle.Adjunction <> M:1 var
+binder 1614:1614 <> V:2
+R1645:1648 Corelib.Init.Logic <> True ind
+R1719:1719 Corelib.Init.Logic <> I constr
+R1719:1719 Corelib.Init.Logic <> I constr
+prf 2187:2204 <> det_exact_sequence
+R2220:2234 CAG.AG <> ComplexManifold rec
+binder 2216:2216 <> M:3
+R2246:2263 CAG.Hypersurface.NormalBundle <> SmoothHypersurface rec
+R2265:2265 CAG.CanonicalBundle.Adjunction <> M:3 var
+binder 2242:2242 <> V:4
+R2273:2279 CAG.Divisor.LineBundleCech <> hlb_iso defax
+R2344:2353 CAG.Divisor.LineBundleCech <> hlb_tensor defax
+R2376:2391 CAG.CanonicalBundle.ProjectiveSpace <> canonical_bundle defax
+R2393:2393 CAG.CanonicalBundle.Adjunction <> M:3 var
+R2356:2370 CAG.Hypersurface.NormalBundle <> conormal_bundle def
+R2372:2372 CAG.CanonicalBundle.Adjunction <> V:4 var
+R2288:2303 CAG.CanonicalBundle.ProjectiveSpace <> canonical_bundle defax
+R2305:2305 CAG.CanonicalBundle.Adjunction <> M:3 var
+prf 2941:2961 <> adjunction_formula_II
+R2977:2991 CAG.AG <> ComplexManifold rec
+binder 2973:2973 <> M:5
+R3003:3020 CAG.Hypersurface.NormalBundle <> SmoothHypersurface rec
+R3022:3022 CAG.CanonicalBundle.Adjunction <> M:5 var
+binder 2999:2999 <> V:6
+R3030:3036 CAG.Divisor.LineBundleCech <> hlb_iso defax
+R3120:3129 CAG.Divisor.LineBundleCech <> hlb_tensor defax
+R3153:3161 CAG.Hypersurface.NormalBundle <> sh_bundle def
+R3163:3163 CAG.CanonicalBundle.Adjunction <> V:6 var
+R3132:3147 CAG.CanonicalBundle.ProjectiveSpace <> canonical_bundle defax
+R3149:3149 CAG.CanonicalBundle.Adjunction <> M:5 var
+R3045:3060 CAG.CanonicalBundle.ProjectiveSpace <> canonical_bundle defax
+R3062:3062 CAG.CanonicalBundle.Adjunction <> M:5 var
+prf 3641:3672 <> canonical_bundle_hypersurface_Pn
+R3690:3692 Corelib.Init.Datatypes <> nat ind
+binder 3684:3684 <> n:7
+binder 3686:3686 <> d:8
+R3704:3721 CAG.Hypersurface.NormalBundle <> SmoothHypersurface rec
+R3724:3735 CAG.AG <> CPn_manifold def
+R3737:3737 CAG.CanonicalBundle.Adjunction <> n:7 var
+binder 3700:3700 <> V:9
+R3823:3826 Corelib.Init.Logic <> True ind
+R3850:3850 Corelib.Init.Logic <> I constr
+R3850:3850 Corelib.Init.Logic <> I constr
+prf 4146:4173 <> canonical_bundle_plane_curve
+R4189:4191 Corelib.Init.Datatypes <> nat ind
+binder 4185:4185 <> d:10
+R4203:4220 CAG.Hypersurface.NormalBundle <> SmoothHypersurface rec
+R4223:4234 CAG.AG <> CPn_manifold def
+binder 4199:4199 <> C:11
+R4245:4248 Corelib.Init.Logic <> True ind
+R4296:4296 Corelib.Init.Logic <> I constr
+R4296:4296 Corelib.Init.Logic <> I constr

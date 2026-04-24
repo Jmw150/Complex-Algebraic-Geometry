@@ -1,0 +1,124 @@
+DIGEST a0f4a88faa2369abad98ce8c318e447c
+FCAG.Kahler.Geometry.HyperplaneSections
+R504:507 Stdlib.Lists.List <> <> lib
+R509:513 Stdlib.Arith.Arith <> <> lib
+R515:517 Stdlib.micromega.Lia <> <> lib
+R544:550 CAG.Complex <> <> lib
+R577:578 CAG.AG <> <> lib
+R605:614 CAG.LieAlgebra <> <> lib
+R641:656 CAG.ManifoldTopology <> <> lib
+R683:708 CAG.Kahler.Lefschetz.Operators <> <> lib
+R735:764 CAG.Kahler.Lefschetz.HardLefschetz <> <> lib
+R791:822 CAG.Kahler.HodgeRiemann.BilinearForm <> <> lib
+ax 1098:1116 <> ProjectiveEmbedding
+R1134:1137 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1120:1133 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+R1141:1144 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1138:1140 Corelib.Init.Datatypes <> nat ind
+ax 1162:1173 <> proj_emb_map
+R1189:1202 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1185:1185 <> M:3
+R1210:1212 Corelib.Init.Datatypes <> nat ind
+binder 1206:1206 <> N:4
+R1243:1250 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1220:1238 CAG.Kahler.Geometry.HyperplaneSections <> ProjectiveEmbedding defax
+R1240:1240 CAG.Kahler.Geometry.HyperplaneSections <> M:3 var
+R1242:1242 CAG.Kahler.Geometry.HyperplaneSections <> N:4 var
+R1277:1280 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1251:1260 CAG.AG <> cm_carrier proj
+R1263:1273 CAG.Kahler.Lefschetz.Operators <> km_manifold proj
+R1275:1275 CAG.Kahler.Geometry.HyperplaneSections <> M:3 var
+R1281:1282 CAG.Complex <> Cn def
+R1286:1286 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R1285:1285 CAG.Kahler.Geometry.HyperplaneSections <> N:4 var
+prf 1407:1426 <> kahler_class_from_FS
+R1442:1455 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1438:1438 <> M:7
+R1463:1465 Corelib.Init.Datatypes <> nat ind
+binder 1459:1459 <> N:8
+R1480:1498 CAG.Kahler.Geometry.HyperplaneSections <> ProjectiveEmbedding defax
+R1500:1500 CAG.Kahler.Geometry.HyperplaneSections <> M:7 var
+R1502:1502 CAG.Kahler.Geometry.HyperplaneSections <> N:8 var
+binder 1473:1476 <> iota:9
+R1510:1513 Corelib.Init.Logic <> True ind
+R1591:1591 Corelib.Init.Logic <> I constr
+R1591:1591 Corelib.Init.Logic <> I constr
+ax 1859:1868 <> Hyperplane
+R1875:1878 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1872:1874 Corelib.Init.Datatypes <> nat ind
+ax 1965:1982 <> hyperplane_section
+R1998:2011 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1994:1994 <> M:12
+R2019:2021 Corelib.Init.Datatypes <> nat ind
+binder 2015:2015 <> N:13
+R2036:2054 CAG.Kahler.Geometry.HyperplaneSections <> ProjectiveEmbedding defax
+R2056:2056 CAG.Kahler.Geometry.HyperplaneSections <> M:12 var
+R2058:2058 CAG.Kahler.Geometry.HyperplaneSections <> N:13 var
+binder 2029:2032 <> iota:14
+R2066:2075 CAG.Kahler.Geometry.HyperplaneSections <> Hyperplane defax
+R2077:2077 CAG.Kahler.Geometry.HyperplaneSections <> N:13 var
+binder 2062:2062 <> H:15
+R2085:2098 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+ax 2166:2181 <> hyperplane_class
+R2197:2210 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2193:2193 <> M:18
+R2218:2220 Corelib.Init.Datatypes <> nat ind
+binder 2214:2214 <> N:19
+R2235:2253 CAG.Kahler.Geometry.HyperplaneSections <> ProjectiveEmbedding defax
+R2255:2255 CAG.Kahler.Geometry.HyperplaneSections <> M:18 var
+R2257:2257 CAG.Kahler.Geometry.HyperplaneSections <> N:19 var
+binder 2228:2231 <> iota:20
+R2265:2267 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R2269:2269 CAG.Kahler.Geometry.HyperplaneSections <> M:18 var
+prf 2350:2375 <> kahler_eq_hyperplane_class
+R2391:2404 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2387:2387 <> M:23
+R2412:2414 Corelib.Init.Datatypes <> nat ind
+binder 2408:2408 <> N:24
+R2429:2447 CAG.Kahler.Geometry.HyperplaneSections <> ProjectiveEmbedding defax
+R2449:2449 CAG.Kahler.Geometry.HyperplaneSections <> M:23 var
+R2451:2451 CAG.Kahler.Geometry.HyperplaneSections <> N:24 var
+binder 2422:2425 <> iota:25
+R2473:2475 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2459:2470 CAG.Kahler.HodgeRiemann.BilinearForm <> kahler_class defax
+R2472:2472 CAG.Kahler.Geometry.HyperplaneSections <> M:23 var
+R2476:2491 CAG.Kahler.Geometry.HyperplaneSections <> hyperplane_class defax
+R2493:2493 CAG.Kahler.Geometry.HyperplaneSections <> M:23 var
+R2495:2495 CAG.Kahler.Geometry.HyperplaneSections <> N:24 var
+R2497:2500 CAG.Kahler.Geometry.HyperplaneSections <> iota:25 var
+prf 2894:2919 <> homological_hard_lefschetz
+R2935:2948 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2931:2931 <> M:26
+R2956:2958 Corelib.Init.Datatypes <> nat ind
+binder 2952:2952 <> N:27
+R2973:2991 CAG.Kahler.Geometry.HyperplaneSections <> ProjectiveEmbedding defax
+R2993:2993 CAG.Kahler.Geometry.HyperplaneSections <> M:26 var
+R2995:2995 CAG.Kahler.Geometry.HyperplaneSections <> N:27 var
+binder 2966:2969 <> iota:28
+R3003:3005 Corelib.Init.Datatypes <> nat ind
+binder 2999:2999 <> k:29
+R3026:3099 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3014:3017 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R3013:3013 CAG.Kahler.Geometry.HyperplaneSections <> k:29 var
+R3018:3023 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R3025:3025 CAG.Kahler.Geometry.HyperplaneSections <> M:26 var
+R3100:3103 Corelib.Init.Logic <> True ind
+R3127:3127 Corelib.Init.Logic <> I constr
+R3127:3127 Corelib.Init.Logic <> I constr
+prf 3479:3502 <> primitive_homology_class
+R3518:3531 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3514:3514 <> M:30
+R3539:3541 Corelib.Init.Datatypes <> nat ind
+binder 3535:3535 <> N:31
+R3556:3574 CAG.Kahler.Geometry.HyperplaneSections <> ProjectiveEmbedding defax
+R3576:3576 CAG.Kahler.Geometry.HyperplaneSections <> M:30 var
+R3578:3578 CAG.Kahler.Geometry.HyperplaneSections <> N:31 var
+binder 3549:3552 <> iota:32
+R3586:3588 Corelib.Init.Datatypes <> nat ind
+binder 3582:3582 <> k:33
+R3596:3605 CAG.Kahler.Geometry.HyperplaneSections <> Hyperplane defax
+R3607:3607 CAG.Kahler.Geometry.HyperplaneSections <> N:31 var
+binder 3592:3592 <> V:34
+R3615:3618 Corelib.Init.Logic <> True ind
+R3692:3692 Corelib.Init.Logic <> I constr
+R3692:3692 Corelib.Init.Logic <> I constr

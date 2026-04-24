@@ -1,0 +1,179 @@
+DIGEST 93cc9d270b81e25c7ef600c2a9d0bef3
+FCAG.Kahler.Lefschetz.HardLefschetz
+R678:681 Stdlib.Lists.List <> <> lib
+R683:687 Stdlib.Arith.Arith <> <> lib
+R689:691 Stdlib.micromega.Lia <> <> lib
+R718:724 CAG.Complex <> <> lib
+R751:760 CAG.LieAlgebra <> <> lib
+R787:802 CAG.ManifoldTopology <> <> lib
+R829:844 CAG.Kahler.sl2.Basic <> <> lib
+R871:898 CAG.Kahler.sl2.FiniteDimensional <> <> lib
+R925:950 CAG.Kahler.Lefschetz.Operators <> <> lib
+prf 1357:1370 <> HdR_finite_dim
+R1386:1399 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1382:1382 <> M:1
+R1407:1409 Corelib.Init.Datatypes <> nat ind
+binder 1403:1403 <> k:2
+R1417:1424 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1432:1434 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1429:1431 Corelib.Init.Datatypes <> nat ind
+binder 1425:1425 <> d:3
+R1435:1438 Corelib.Init.Logic <> True ind
+R1476:1476 Corelib.Init.Logic <> I constr
+R1476:1476 Corelib.Init.Logic <> I constr
+ax 1899:1905 <> L_power
+R1921:1934 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 1917:1917 <> M:4
+R1947:1949 Corelib.Init.Datatypes <> nat ind
+binder 1938:1938 <> k:5
+binder 1940:1943 <> base:6
+R1967:1970 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1957:1959 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R1961:1961 CAG.Kahler.Lefschetz.HardLefschetz <> M:4 var
+R1963:1966 CAG.Kahler.Lefschetz.HardLefschetz <> base:6 var
+R1971:1973 CAG.Kahler.Lefschetz.Operators <> HdR defax
+R1975:1975 CAG.Kahler.Lefschetz.HardLefschetz <> M:4 var
+R1982:1984 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R1978:1981 CAG.Kahler.Lefschetz.HardLefschetz <> base:6 var
+R1986:1986 Corelib.Init.Peano <> ::nat_scope:x_'*'_x not
+R1987:1987 CAG.Kahler.Lefschetz.HardLefschetz <> k:5 var
+prf 2203:2216 <> hard_lefschetz
+R2232:2245 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2228:2228 <> M:9
+R2253:2255 Corelib.Init.Datatypes <> nat ind
+binder 2249:2249 <> k:10
+R2282:2365 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2265:2268 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R2264:2264 CAG.Kahler.Lefschetz.HardLefschetz <> k:10 var
+R2269:2274 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R2276:2276 CAG.Kahler.Lefschetz.HardLefschetz <> M:9 var
+R2366:2369 Corelib.Init.Logic <> True ind
+R2393:2393 Corelib.Init.Logic <> I constr
+R2393:2393 Corelib.Init.Logic <> I constr
+prf 2444:2467 <> hard_lefschetz_injective
+R2483:2496 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2479:2479 <> M:11
+R2504:2506 Corelib.Init.Datatypes <> nat ind
+binder 2500:2500 <> k:12
+R2533:2540 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2516:2519 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R2515:2515 CAG.Kahler.Lefschetz.HardLefschetz <> k:12 var
+R2520:2525 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R2527:2527 CAG.Kahler.Lefschetz.HardLefschetz <> M:11 var
+R2541:2544 Corelib.Init.Logic <> True ind
+R2576:2576 Corelib.Init.Logic <> I constr
+R2576:2576 Corelib.Init.Logic <> I constr
+prf 2868:2893 <> hodge_number_lefschetz_sym
+R2909:2922 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 2905:2905 <> M:13
+R2932:2934 Corelib.Init.Datatypes <> nat ind
+binder 2926:2926 <> p:14
+binder 2928:2928 <> q:15
+R2961:2964 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2944:2947 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R2943:2943 CAG.Kahler.Lefschetz.HardLefschetz <> p:14 var
+R2948:2953 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R2955:2955 CAG.Kahler.Lefschetz.HardLefschetz <> M:13 var
+R2984:2991 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2967:2970 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R2966:2966 CAG.Kahler.Lefschetz.HardLefschetz <> q:15 var
+R2971:2976 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R2978:2978 CAG.Kahler.Lefschetz.HardLefschetz <> M:13 var
+R3010:3012 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2992:3003 CAG.Kahler.Lefschetz.Operators <> hodge_number defax
+R3005:3005 CAG.Kahler.Lefschetz.HardLefschetz <> M:13 var
+R3007:3007 CAG.Kahler.Lefschetz.HardLefschetz <> p:14 var
+R3009:3009 CAG.Kahler.Lefschetz.HardLefschetz <> q:15 var
+R3013:3024 CAG.Kahler.Lefschetz.Operators <> hodge_number defax
+R3026:3026 CAG.Kahler.Lefschetz.HardLefschetz <> M:13 var
+R3037:3039 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R3029:3034 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R3036:3036 CAG.Kahler.Lefschetz.HardLefschetz <> M:13 var
+R3040:3040 CAG.Kahler.Lefschetz.HardLefschetz <> p:14 var
+R3052:3054 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R3044:3049 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R3051:3051 CAG.Kahler.Lefschetz.HardLefschetz <> M:13 var
+R3055:3055 CAG.Kahler.Lefschetz.HardLefschetz <> q:15 var
+R3097:3115 CAG.Kahler.Lefschetz.Operators <> hodge_lefschetz_sym prfax
+R3097:3115 CAG.Kahler.Lefschetz.Operators <> hodge_lefschetz_sym prfax
+prf 3180:3200 <> hodge_number_full_sym
+R3216:3229 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3212:3212 <> M:16
+R3239:3241 Corelib.Init.Datatypes <> nat ind
+binder 3233:3233 <> p:17
+binder 3235:3235 <> q:18
+R3288:3296 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R3413:3413 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R3267:3269 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3249:3260 CAG.Kahler.Lefschetz.Operators <> hodge_number defax
+R3262:3262 CAG.Kahler.Lefschetz.HardLefschetz <> M:16 var
+R3264:3264 CAG.Kahler.Lefschetz.HardLefschetz <> p:17 var
+R3266:3266 CAG.Kahler.Lefschetz.HardLefschetz <> q:18 var
+R3270:3281 CAG.Kahler.Lefschetz.Operators <> hodge_number defax
+R3283:3283 CAG.Kahler.Lefschetz.HardLefschetz <> M:16 var
+R3285:3285 CAG.Kahler.Lefschetz.HardLefschetz <> q:18 var
+R3287:3287 CAG.Kahler.Lefschetz.HardLefschetz <> p:17 var
+R3316:3319 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3299:3302 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R3298:3298 CAG.Kahler.Lefschetz.HardLefschetz <> p:17 var
+R3303:3308 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R3310:3310 CAG.Kahler.Lefschetz.HardLefschetz <> M:16 var
+R3339:3347 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3322:3325 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R3321:3321 CAG.Kahler.Lefschetz.HardLefschetz <> q:18 var
+R3326:3331 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R3333:3333 CAG.Kahler.Lefschetz.HardLefschetz <> M:16 var
+R3366:3368 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3348:3359 CAG.Kahler.Lefschetz.Operators <> hodge_number defax
+R3361:3361 CAG.Kahler.Lefschetz.HardLefschetz <> M:16 var
+R3363:3363 CAG.Kahler.Lefschetz.HardLefschetz <> p:17 var
+R3365:3365 CAG.Kahler.Lefschetz.HardLefschetz <> q:18 var
+R3369:3380 CAG.Kahler.Lefschetz.Operators <> hodge_number defax
+R3382:3382 CAG.Kahler.Lefschetz.HardLefschetz <> M:16 var
+R3393:3395 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R3385:3390 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R3392:3392 CAG.Kahler.Lefschetz.HardLefschetz <> M:16 var
+R3396:3396 CAG.Kahler.Lefschetz.HardLefschetz <> p:17 var
+R3408:3410 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R3400:3405 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R3407:3407 CAG.Kahler.Lefschetz.HardLefschetz <> M:16 var
+R3411:3411 CAG.Kahler.Lefschetz.HardLefschetz <> q:18 var
+R3457:3475 CAG.Kahler.Lefschetz.Operators <> hodge_conjugate_sym prfax
+R3457:3475 CAG.Kahler.Lefschetz.Operators <> hodge_conjugate_sym prfax
+R3496:3521 CAG.Kahler.Lefschetz.HardLefschetz <> hodge_number_lefschetz_sym thm
+R3496:3521 CAG.Kahler.Lefschetz.HardLefschetz <> hodge_number_lefschetz_sym thm
+prf 3901:3914 <> betti_odd_even
+R3930:3943 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 3926:3926 <> M:19
+R3951:3953 Corelib.Init.Datatypes <> nat ind
+binder 3947:3947 <> k:20
+R3970:3977 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3961:3967 Stdlib.Arith.PeanoNat Nat Odd def
+R3969:3969 CAG.Kahler.Lefschetz.HardLefschetz <> k:20 var
+R3978:3985 Stdlib.Arith.PeanoNat Nat Even def
+R3988:3999 CAG.Kahler.Lefschetz.Operators <> betti_number def
+R4001:4001 CAG.Kahler.Lefschetz.HardLefschetz <> M:19 var
+R4003:4003 CAG.Kahler.Lefschetz.HardLefschetz <> k:20 var
+prf 4117:4135 <> betti_lefschetz_sym
+R4151:4164 CAG.Kahler.Lefschetz.Operators <> KahlerManifold rec
+binder 4147:4147 <> M:21
+R4172:4174 Corelib.Init.Datatypes <> nat ind
+binder 4168:4168 <> k:22
+R4201:4208 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4184:4187 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R4183:4183 CAG.Kahler.Lefschetz.HardLefschetz <> k:22 var
+R4188:4193 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R4195:4195 CAG.Kahler.Lefschetz.HardLefschetz <> M:21 var
+R4238:4240 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4209:4220 CAG.Kahler.Lefschetz.Operators <> betti_number def
+R4222:4222 CAG.Kahler.Lefschetz.HardLefschetz <> M:21 var
+R4233:4235 Corelib.Init.Peano <> ::nat_scope:x_'-'_x not
+R4225:4230 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R4232:4232 CAG.Kahler.Lefschetz.HardLefschetz <> M:21 var
+R4236:4236 CAG.Kahler.Lefschetz.HardLefschetz <> k:22 var
+R4241:4252 CAG.Kahler.Lefschetz.Operators <> betti_number def
+R4254:4254 CAG.Kahler.Lefschetz.HardLefschetz <> M:21 var
+R4265:4267 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R4257:4262 CAG.Kahler.Lefschetz.Operators <> km_dim proj
+R4264:4264 CAG.Kahler.Lefschetz.HardLefschetz <> M:21 var
+R4268:4268 CAG.Kahler.Lefschetz.HardLefschetz <> k:22 var

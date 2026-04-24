@@ -48,6 +48,19 @@ Arguments deriv_add     {F fld A alg δ}.
 Arguments deriv_scale   {F fld A alg δ}.
 Arguments deriv_leibniz {F fld A alg δ}.
 
+(** F-algebra scalar compatibility: x·(a·v) = a·(x·v).
+    This is part of F-bilinearity of multiplication; not in the record
+    but axiomatically valid for any F-algebra. *)
+Axiom fa_mul_scale_r : forall {F : Type} {fld : Field F} {A : Type}
+    (alg : FAlgebra fld A) (a : F) (x v : A),
+    fa_mul alg x (alg.(fa_vs).(vsF_scale) a v) =
+    alg.(fa_vs).(vsF_scale) a (fa_mul alg x v).
+
+Axiom fa_mul_scale_l : forall {F : Type} {fld : Field F} {A : Type}
+    (alg : FAlgebra fld A) (a : F) (u y : A),
+    fa_mul alg (alg.(fa_vs).(vsF_scale) a u) y =
+    alg.(fa_vs).(vsF_scale) a (fa_mul alg u y).
+
 (** Der(A) = set of all derivations of A. *)
 Definition IsDer {F : Type} {fld : Field F} {A : Type}
     (alg : FAlgebra fld A) (δ : A -> A) : Prop :=
@@ -60,7 +73,58 @@ Lemma der_is_subspace {F : Type} {fld : Field F} {A : Type}
       IsDerivation alg (fun x => alg.(fa_vs).(vsF_add) (δ₁ x) (δ₂ x))) /\
     (forall a δ, IsDerivation alg δ ->
       IsDerivation alg (fun x => alg.(fa_vs).(vsF_scale) a (δ x))).
-Proof. Admitted.
+Proof.
+  set (vs := alg.(fa_vs)) in *.
+  assert (add4 : forall a b c d : A,
+      vsF_add vs (vsF_add vs a b) (vsF_add vs c d) =
+      vsF_add vs (vsF_add vs a c) (vsF_add vs b d)).
+  { intros a b c d.
+    rewrite <- vs.(vsF_add_assoc).
+    rewrite (vs.(vsF_add_assoc) b c d).
+    rewrite (vs.(vsF_add_comm) b c).
+    rewrite <- (vs.(vsF_add_assoc) c b d).
+    apply vs.(vsF_add_assoc). }
+  split.
+  - (** Sum of two derivations is a derivation. *)
+    intros δ₁ δ₂ Hd1 Hd2. constructor.
+    + (** deriv_add: (δ₁+δ₂)(x+y) = (δ₁+δ₂)x + (δ₁+δ₂)y *)
+      intros x y. cbv beta.
+      rewrite (Hd1.(deriv_add) x y), (Hd2.(deriv_add) x y).
+      apply add4.
+    + (** deriv_scale: (δ₁+δ₂)(a·x) = a·(δ₁+δ₂)x *)
+      intros a x. cbv beta.
+      rewrite (Hd1.(deriv_scale) a x), (Hd2.(deriv_scale) a x).
+      symmetry. exact (vs.(vsF_scale_add_v) a (δ₁ x) (δ₂ x)).
+    + (** deriv_leibniz: (δ₁+δ₂)(xy) = x·(δ₁+δ₂)y + (δ₁+δ₂)x·y *)
+      intros x y. cbv beta.
+      rewrite (Hd1.(deriv_leibniz) x y), (Hd2.(deriv_leibniz) x y).
+      assert (Hdl : fa_mul alg x (vsF_add vs (δ₁ y) (δ₂ y)) =
+                    vsF_add vs (fa_mul alg x (δ₁ y)) (fa_mul alg x (δ₂ y))).
+      { exact (alg.(fa_mul_add_l) x _ _). }
+      assert (Hdr : fa_mul alg (vsF_add vs (δ₁ x) (δ₂ x)) y =
+                    vsF_add vs (fa_mul alg (δ₁ x) y) (fa_mul alg (δ₂ x) y)).
+      { exact (alg.(fa_mul_add_r) _ _ y). }
+      rewrite Hdl, Hdr. apply add4.
+  - (** Scalar multiple of a derivation is a derivation. *)
+    intros a δ Hd. constructor.
+    + (** deriv_add: (a·δ)(x+y) = a·(δx+δy) = a·δx + a·δy *)
+      intros x y. cbv beta.
+      rewrite (Hd.(deriv_add) x y).
+      exact (vs.(vsF_scale_add_v) a (δ x) (δ y)).
+    + (** deriv_scale: (a·δ)(b·x) = a·(b·δx) = b·(a·δx) *)
+      intros b x. cbv beta.
+      rewrite (Hd.(deriv_scale) b x).
+      rewrite vs.(vsF_scale_mul), vs.(vsF_scale_mul).
+      rewrite fld.(cr_mul_comm). reflexivity.
+    + (** deriv_leibniz: (a·δ)(xy) = x(a·δy) + (a·δx)y *)
+      intros x y. cbv beta.
+      rewrite (Hd.(deriv_leibniz) x y).
+      rewrite vs.(vsF_scale_add_v).
+      unfold vs.
+      rewrite (fa_mul_scale_r alg a x (δ y)).
+      rewrite (fa_mul_scale_l alg a (δ x) y).
+      reflexivity.
+Qed.
 
 (** Commutator of derivations is a derivation. *)
 Lemma der_commutator_is_der {F : Type} {fld : Field F} {A : Type}
@@ -72,8 +136,7 @@ Lemma der_commutator_is_der {F : Type} {fld : Field F} {A : Type}
         (alg.(fa_vs).(vsF_neg) (δ₂ (δ₁ x)))).
 Proof.
   intros Hd1 Hd2.
-  set (vs := alg.(fa_vs)).
-  set (mul := fa_mul alg).
+  set (vs := alg.(fa_vs)) in *.
 
   (** Helper: uniqueness of additive inverse. *)
   assert (inv_uniq : forall u v : A,
@@ -104,26 +167,26 @@ Proof.
     rewrite <- vs.(vsF_scale_add_v), vs.(vsF_add_neg_r).
     apply vsF_scale_zero_v. }
 
-  (** Helper: mul x 0 = 0. *)
-  assert (mul_zero_r : forall (x : A), mul x (vsF_zero vs) = vsF_zero vs).
+  (** Helper: fa_mul alg x 0 = 0. *)
+  assert (mul_zero_r : forall (x : A), fa_mul alg x (vsF_zero vs) = vsF_zero vs).
   { intro x. apply vsF_add_cancel_double.
     rewrite <- alg.(fa_mul_add_l), vs.(vsF_add_zero_r). reflexivity. }
 
-  (** Helper: mul 0 y = 0. *)
-  assert (mul_zero_l : forall (y : A), mul (vsF_zero vs) y = vsF_zero vs).
+  (** Helper: fa_mul alg 0 y = 0. *)
+  assert (mul_zero_l : forall (y : A), fa_mul alg (vsF_zero vs) y = vsF_zero vs).
   { intro y. apply vsF_add_cancel_double.
     rewrite <- alg.(fa_mul_add_r), vs.(vsF_add_zero_r). reflexivity. }
 
-  (** Helper: mul x (neg v) = neg (mul x v). *)
+  (** Helper: fa_mul alg x (neg v) = neg (fa_mul alg x v). *)
   assert (mul_neg_r : forall (x v : A),
-      mul x (vsF_neg vs v) = vsF_neg vs (mul x v)).
+      fa_mul alg x (vsF_neg vs v) = vsF_neg vs (fa_mul alg x v)).
   { intros x v. apply inv_uniq.
     rewrite <- alg.(fa_mul_add_l), vs.(vsF_add_neg_r).
     apply mul_zero_r. }
 
-  (** Helper: mul (neg u) y = neg (mul u y). *)
+  (** Helper: fa_mul alg (neg u) y = neg (fa_mul alg u y). *)
   assert (mul_neg_l : forall (u y : A),
-      mul (vsF_neg vs u) y = vsF_neg vs (mul u y)).
+      fa_mul alg (vsF_neg vs u) y = vsF_neg vs (fa_mul alg u y)).
   { intros u y. apply inv_uniq.
     rewrite <- alg.(fa_mul_add_r), vs.(vsF_add_neg_r).
     apply mul_zero_l. }
@@ -142,78 +205,83 @@ Proof.
   constructor.
 
   (** ── deriv_add ──────────────────────────────────────────────── *)
-  - intros x y. simpl.
+  - intros x y. cbv beta.
     rewrite (Hd2.(deriv_add) x y).
     rewrite (Hd1.(deriv_add) (δ₂ x) (δ₂ y)).
     rewrite (Hd1.(deriv_add) x y).
     rewrite (Hd2.(deriv_add) (δ₁ x) (δ₁ y)).
-    rewrite (neg_add (δ₂ (δ₁ x)) (δ₂ (δ₁ y))).
-    apply add4.
+    set (A_ := δ₁ (δ₂ x)). set (B_ := δ₁ (δ₂ y)).
+    set (C_ := δ₂ (δ₁ x)). set (D_ := δ₂ (δ₁ y)).
+    assert (Hstep : vsF_add vs (vsF_add vs A_ B_) (vsF_neg vs (vsF_add vs C_ D_))
+                  = vsF_add vs (vsF_add vs A_ (vsF_neg vs C_))
+                               (vsF_add vs B_ (vsF_neg vs D_))).
+    { rewrite (neg_add C_ D_). apply add4. }
+    exact Hstep.
 
   (** ── deriv_scale ────────────────────────────────────────────── *)
-  - intros a x. simpl.
+  - intros a x. cbv beta.
     rewrite (Hd2.(deriv_scale) a x).
     rewrite (Hd1.(deriv_scale) a (δ₂ x)).
     rewrite (Hd1.(deriv_scale) a x).
     rewrite (Hd2.(deriv_scale) a (δ₁ x)).
-    rewrite (neg_scale a (δ₂ (δ₁ x))).
-    symmetry. apply vs.(vsF_scale_add_v).
+    set (P_ := δ₁ (δ₂ x)). set (Q_ := δ₂ (δ₁ x)).
+    assert (Hstep : vsF_add vs (vsF_scale vs a P_) (vsF_neg vs (vsF_scale vs a Q_))
+                  = vsF_scale vs a (vsF_add vs P_ (vsF_neg vs Q_))).
+    { rewrite (neg_scale a Q_). symmetry. apply vs.(vsF_scale_add_v). }
+    exact Hstep.
 
   (** ── deriv_leibniz ──────────────────────────────────────────── *)
-  - intros x y. simpl.
+  - intros x y. cbv beta.
     (** Expand δ₁(δ₂(x·y)) *)
-    assert (H1 : δ₁ (δ₂ (mul x y)) =
-                 vsF_add vs (vsF_add vs (mul x (δ₁ (δ₂ y))) (mul (δ₁ x) (δ₂ y)))
-                            (vsF_add vs (mul (δ₂ x) (δ₁ y)) (mul (δ₁ (δ₂ x)) y))).
+    assert (H1 : δ₁ (δ₂ (fa_mul alg x y)) =
+       vsF_add vs (vsF_add vs (fa_mul alg x (δ₁ (δ₂ y))) (fa_mul alg (δ₁ x) (δ₂ y)))
+                  (vsF_add vs (fa_mul alg (δ₂ x) (δ₁ y)) (fa_mul alg (δ₁ (δ₂ x)) y))).
     { rewrite (Hd2.(deriv_leibniz) x y).
-      rewrite (Hd1.(deriv_add) (mul x (δ₂ y)) (mul (δ₂ x) y)).
+      rewrite (Hd1.(deriv_add) (fa_mul alg x (δ₂ y)) (fa_mul alg (δ₂ x) y)).
       rewrite (Hd1.(deriv_leibniz) x (δ₂ y)).
       rewrite (Hd1.(deriv_leibniz) (δ₂ x) y). reflexivity. }
     (** Expand δ₂(δ₁(x·y)) *)
-    assert (H2 : δ₂ (δ₁ (mul x y)) =
-                 vsF_add vs (vsF_add vs (mul x (δ₂ (δ₁ y))) (mul (δ₂ x) (δ₁ y)))
-                            (vsF_add vs (mul (δ₁ x) (δ₂ y)) (mul (δ₂ (δ₁ x)) y))).
+    assert (H2 : δ₂ (δ₁ (fa_mul alg x y)) =
+       vsF_add vs (vsF_add vs (fa_mul alg x (δ₂ (δ₁ y))) (fa_mul alg (δ₂ x) (δ₁ y)))
+                  (vsF_add vs (fa_mul alg (δ₁ x) (δ₂ y)) (fa_mul alg (δ₂ (δ₁ x)) y))).
     { rewrite (Hd1.(deriv_leibniz) x y).
-      rewrite (Hd2.(deriv_add) (mul x (δ₁ y)) (mul (δ₁ x) y)).
+      rewrite (Hd2.(deriv_add) (fa_mul alg x (δ₁ y)) (fa_mul alg (δ₁ x) y)).
       rewrite (Hd2.(deriv_leibniz) x (δ₁ y)).
       rewrite (Hd2.(deriv_leibniz) (δ₁ x) y). reflexivity. }
     rewrite H1, H2.
     (** Expand neg and RHS *)
-    rewrite (neg_add (vsF_add vs (mul x (δ₂ (δ₁ y))) (mul (δ₂ x) (δ₁ y))) _).
-    rewrite (neg_add (mul x (δ₂ (δ₁ y))) (mul (δ₂ x) (δ₁ y))).
-    rewrite (neg_add (mul (δ₁ x) (δ₂ y)) (mul (δ₂ (δ₁ x)) y)).
-    rewrite alg.(fa_mul_add_l), alg.(fa_mul_add_r).
+    rewrite (neg_add (vsF_add vs (fa_mul alg x (δ₂ (δ₁ y))) (fa_mul alg (δ₂ x) (δ₁ y))) _).
+    rewrite (neg_add (fa_mul alg x (δ₂ (δ₁ y))) (fa_mul alg (δ₂ x) (δ₁ y))).
+    rewrite (neg_add (fa_mul alg (δ₁ x) (δ₂ y)) (fa_mul alg (δ₂ (δ₁ x)) y)).
+    assert (Hdist_l : fa_mul alg x (vsF_add vs (δ₁ (δ₂ y)) (vsF_neg vs (δ₂ (δ₁ y)))) =
+                      vsF_add vs (fa_mul alg x (δ₁ (δ₂ y)))
+                                 (fa_mul alg x (vsF_neg vs (δ₂ (δ₁ y))))).
+    { exact (alg.(fa_mul_add_l) x _ _). }
+    assert (Hdist_r : fa_mul alg (vsF_add vs (δ₁ (δ₂ x)) (vsF_neg vs (δ₂ (δ₁ x)))) y =
+                      vsF_add vs (fa_mul alg (δ₁ (δ₂ x)) y)
+                                 (fa_mul alg (vsF_neg vs (δ₂ (δ₁ x))) y)).
+    { exact (alg.(fa_mul_add_r) _ _ y). }
+    rewrite Hdist_l, Hdist_r.
     rewrite mul_neg_r, mul_neg_l.
-    (** LHS: ((xP + Q) + (S + Ay)) + ((neg(xD) + neg S) + (neg Q + neg(Cy)))
-        RHS: (xP + neg(xD)) + (Ay + neg(Cy))
-        where Q = mul(δ₁x)(δ₂y), S = mul(δ₂x)(δ₁y) cancel.
-        Set: a = mul x (δ₁(δ₂y)), b = mul(δ₁x)(δ₂y), c = mul(δ₂x)(δ₁y), d = mul(δ₁(δ₂x)) y,
-             e = neg(mul x (δ₂(δ₁y))), f = neg c, g = neg b, h = neg(mul(δ₂(δ₁x)) y). *)
-    set (a_ := mul x (δ₁ (δ₂ y))).
-    set (b_ := mul (δ₁ x) (δ₂ y)).
-    set (c_ := mul (δ₂ x) (δ₁ y)).
-    set (d_ := mul (δ₁ (δ₂ x)) y).
-    set (e_ := vsF_neg vs (mul x (δ₂ (δ₁ y)))).
-    set (h_ := vsF_neg vs (mul (δ₂ (δ₁ x)) y)).
-    (** Goal: ((a_+b_)+(c_+d_)) + ((e_ + neg c_) + (neg b_ + h_))
-              = (a_ + e_) + (d_ + h_) *)
-    (** Step 1: apply add4 on outer *)
+    (** LHS: ((xP+Q)+(S+Ay))+((neg(xD)+neg S)+(neg Q+neg(Cy)))
+        RHS: (xP+neg(xD))+(Ay+neg(Cy))  [Q=mul(δ₁x)(δ₂y), S=mul(δ₂x)(δ₁y) cancel] *)
+    set (a_ := fa_mul alg x (δ₁ (δ₂ y))).
+    set (b_ := fa_mul alg (δ₁ x) (δ₂ y)).
+    set (c_ := fa_mul alg (δ₂ x) (δ₁ y)).
+    set (d_ := fa_mul alg (δ₁ (δ₂ x)) y).
+    set (e_ := vsF_neg vs (fa_mul alg x (δ₂ (δ₁ y)))).
+    set (h_ := vsF_neg vs (fa_mul alg (δ₂ (δ₁ x)) y)).
     rewrite (add4 (vsF_add vs a_ b_) (vsF_add vs c_ d_)
                   (vsF_add vs e_ (vsF_neg vs c_))
                   (vsF_add vs (vsF_neg vs b_) h_)).
-    (** Step 2: apply add4 on left inner: (a_+b_)+(e_+neg c_) = (a_+e_)+(b_+neg c_) *)
     rewrite (add4 a_ b_ e_ (vsF_neg vs c_)).
-    (** Step 3: apply add4 on right inner: (c_+d_)+(neg b_+h_) = (c_+neg b_)+(d_+h_) *)
     rewrite (add4 c_ d_ (vsF_neg vs b_) h_).
-    (** Goal: ((a_+e_)+(b_+neg c_)) + ((c_+neg b_)+(d_+h_)) = (a_+e_)+(d_+h_) *)
-    (** Step 4: reverse outer assoc: u+v+w → u+(v+w) where u=(a_+e_) *)
-    rewrite <- (vs.(vsF_add_assoc) (vsF_add vs a_ e_) _ _).
-    (** Goal: (a_+e_) + ((b_+neg c_) + ((c_+neg b_)+(d_+h_))) = (a_+e_)+(d_+h_) *)
-    (** Step 5: inner assoc: (b_+neg c_)+((c_+neg b_)+(d_+h_)) = ((b_+neg c_)+(c_+neg b_))+(d_+h_) *)
+    (** Goal: ((AE+BC')+(C'B+DH)) = AE+DH  where BC'+C'B cancel.
+        assoc: a+(b+c)=(a+b)+c, so <- is (a+b)+c → a+(b+c) *)
+    rewrite <- (vs.(vsF_add_assoc) (vsF_add vs a_ e_) (vsF_add vs b_ (vsF_neg vs c_)) _).
+    apply f_equal.
     rewrite (vs.(vsF_add_assoc) (vsF_add vs b_ (vsF_neg vs c_))
                                 (vsF_add vs c_ (vsF_neg vs b_)) _).
-    (** Goal: (a_+e_) + (((b_+neg c_)+(c_+neg b_)) + (d_+h_)) = (a_+e_)+(d_+h_) *)
-    (** Step 6: show (b_+neg c_)+(c_+neg b_) = 0 *)
     assert (Hcancel : vsF_add vs (vsF_add vs b_ (vsF_neg vs c_))
                                  (vsF_add vs c_ (vsF_neg vs b_))
                     = vsF_zero vs).
@@ -223,9 +291,7 @@ Proof.
       rewrite vs.(vsF_add_neg_r).
       rewrite vsF_add_zero_l.
       apply vs.(vsF_add_neg_r). }
-    rewrite Hcancel.
-    rewrite vsF_add_zero_l.
-    apply vs.(vsF_add_assoc).
+    rewrite Hcancel. apply vsF_add_zero_l.
 Qed.
 
 (** Product of derivations need not be a derivation. *)

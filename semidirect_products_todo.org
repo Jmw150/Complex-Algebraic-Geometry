@@ -1,0 +1,414 @@
+#+TITLE: TODO — Semidirect Products and Group Classifications (Rocq Formalization Plan)
+#+AUTHOR: OpenAI
+#+STARTUP: overview
+#+TODO: TODO NEXT BLOCKED DONE
+
+* Goal
+  Formalize the semidirect product theory from the supplied chapter excerpt in Rocq, including:
+  - external semidirect products
+  - recognition theorem / internal semidirect products
+  - complements
+  - explicit semidirect-product constructions
+  - classification workflows for groups of selected small orders
+  - wreath products
+  - holomorphs
+  - open construction/classification tasks
+
+* Suggested file split
+** DONE Core files
+   - Groups/SemidirectProduct.v
+   - Groups/InternalSemidirect.v
+   - Groups/Holomorph.v
+   - Groups/WreathProduct.v
+   - Groups/OrderPQ.v
+   - Groups/Order12.v
+   - Groups/OrderP3.v
+   - Groups/SmallOrderClassifications.v
+   - Groups/SemidirectExercises.v
+
+* Dependencies
+** DONE Reuse existing infrastructure
+   Need:
+   - group, subgroup, normal subgroup
+   - quotient group
+   - direct products
+   - automorphism groups
+   - cyclic groups and abelian groups
+   - Sylow theory and counting lemmas
+   - isomorphism theorems
+   - normalizer / centralizer
+   - matrix groups for some examples if desired
+
+* Part I — External semidirect products
+** DONE Define semidirect product H ⋊_φ K
+   Inputs:
+   - groups H, K
+   - homomorphism φ : K -> Aut(H)
+
+   Carrier:
+   - H × K
+
+   Multiplication:
+   - (h1, k1) * (h2, k2) = (h1 * φ(k1)(h2), k1 * k2)
+
+** DONE Prove group laws for H ⋊_φ K
+   - associativity
+   - identity = (1_H, 1_K)
+   - inverse formula
+     (h, k)^(-1) = (φ(k^{-1})(h^{-1}), k^{-1})
+     or equivalent library-friendly form
+
+** DONE Define canonical embeddings
+   - H -> H ⋊_φ K via h |-> (h,1)
+   - K -> H ⋊_φ K via k |-> (1,k)
+
+** DONE Prove basic structure
+   - image(H) is normal
+   - image(K) is subgroup
+   - image(H) ∩ image(K) = 1
+   - every element factors uniquely as hk
+
+** TODO Name suggestions
+   - `semidirect_product_group`
+   - `embed_left_normal`
+   - `embed_right_subgroup`
+   - `semidirect_unique_factorization`
+
+* Part II — Recognition theorem / internal semidirect products
+** DONE Formalize Theorem 12
+   If G has subgroups H,K such that:
+   - H ◁ G
+   - H ∩ K = 1
+   then define φ : K -> Aut(H) by conjugation and prove:
+   - HK ≅ H ⋊_φ K
+
+** DONE Prove the “in particular” clause
+   If additionally G = HK, then G ≅ H ⋊_φ K.
+
+** DONE Define complement
+   For H ≤ G, a subgroup K is a complement if:
+   - G = HK
+   - H ∩ K = 1
+
+** DONE Prove complement criterion
+   If H ◁ G and K is a complement, then G is an internal semidirect product.
+
+** TODO Name suggestions
+   - `conjugation_hom_to_Aut`
+   - `internal_semidirect_iso_external`
+   - `is_complement`
+
+* Part III — Foundational semidirect examples
+** DONE Example: nonabelian groups of order p^3
+   Formalize the two constructions for odd prime p.
+
+*** NEXT Example A
+    H = Z_p × Z_p
+    K = Z_p
+    nontrivial action K -> Aut(H)
+    resulting group:
+    - nonabelian
+    - order p^3
+    - exponent p
+
+*** NEXT Example B
+    H = Z_{p^2}
+    K = Z_p
+    action by x · y = y^(1+p)
+    presentation:
+    - x^p = 1
+    - y^(p^2) = 1
+    - x y x^{-1} = y^(1+p)
+
+    prove:
+    - nonabelian
+    - order p^3
+    - contains an element of order p^2
+
+** DONE Prove these two groups are nonisomorphic
+   Suggested invariant:
+   - first has exponent p
+   - second has an element of order p^2
+
+** TODO Optional connection
+   Compare first construction with Heisenberg group over F_p.
+
+* Part IV — Small-order classification workflows from the text
+** DONE Order pq classification
+   For primes p < q:
+   - every group of order pq is a semidirect product Z_q ⋊ Z_p
+   - if p ∤ (q-1), only cyclic group Z_{pq}
+   - if p | (q-1), exactly one nonabelian isomorphism type in addition to cyclic
+
+** DONE Formalize automorphism computation used
+   - Aut(Z_q) ≅ Z_{q-1}
+   - homs from Z_p to Aut(Z_q)
+   - uniqueness of subgroup of order p in cyclic group
+
+** DONE Order 30 classification
+   Derive via H of order 15 and K of order 2:
+   - Z_30
+   - Z_5 × D_6
+   - Z_3 × D_10
+   - D_30
+
+   prove pairwise nonisomorphic using center sizes or equivalent invariants.
+
+** DONE Order 12 classification
+   Distinguish the two Sylow-normal cases and recover:
+   - Z_12
+   - Z_2 × Z_2 × Z_3
+   - A_4
+   - Z_3 × D_8?  (careful: from text it is S_3 × Z_2, not D_8-based)
+   - the nontrivial Z_4 ⋊ Z_3 example from the text
+
+** TODO Check exact five isomorphism types carefully in formal statements
+   The text’s case analysis should be followed exactly.
+
+** DONE Order p^3 classification sketch
+   For odd prime p:
+   - abelian types:
+     Z_{p^3}, Z_{p^2} × Z_p, Z_p × Z_p × Z_p
+   - nonabelian types:
+     the two semidirect constructions above
+
+   prove there are exactly five isomorphism types for odd p.
+
+* Part V — Higher-order explicit classification tasks from exercises
+** TODO Order 56
+   Build all listed semidirect products and classify the stated isomorphism types.
+
+** TODO Order 75
+   Construct the unique nonabelian type and classify all groups of order 75.
+
+** TODO Order 147
+   Follow the text’s six-type classification.
+
+** TODO Orders 28, 20, and 4p
+   Implement the classifications requested in exercises.
+
+** TODO Order 60
+   Formalize the chapter’s semidirect analysis:
+   - if Sylow-5 not normal then G ≅ A_5
+   - if Sylow-5 normal and Sylow-3 not normal then G ≅ A_4 × Z_5
+   - if both Sylow-5 and Sylow-3 normal, get semidirect products Z_15 ⋊ T with T ≅ Z_4 or V_4
+   - recover the 13 isomorphism types claimed in the text
+
+** BLOCKED Note
+   These are substantial projects and depend on a robust library of finite-group facts.
+
+* Part VI — Structural lemmas from the exercises
+** DONE Exercise 1
+   Prove C_K(H) = ker φ.
+
+** DONE Exercise 2
+   Prove C_H(K) = N_H(K) in the semidirect setting from the text.
+
+** DONE Exercise 6
+   If K is cyclic and φ1(K), φ2(K) are conjugate in Aut(H), prove:
+   - H ⋊_{φ1} K ≅ H ⋊_{φ2} K
+   This is a key isomorphism criterion for small-order classifications.
+
+** DONE Exercise 18
+   For any group H, construct a group G containing H ◁ G such that every automorphism of H
+   is induced by conjugation by some element of G.
+   This is the holomorph construction.
+
+* Part VII — Holomorph
+** DONE Define Hol(H)
+   Hol(H) := H ⋊ Aut(H)
+   with action the identity homomorphism Aut(H) -> Aut(H)
+
+** DONE Prove its universal realization property
+   Every automorphism of H is induced by conjugation by some element of Hol(H).
+
+** DONE Exercise 19
+   Formalize the action of Hol(H) on left cosets of Aut(H), and prove:
+   - under the associated permutation representation, H appears as the regular representation
+   - image(Hol(H)) is the normalizer in S_n of the regular image of H
+   - thus N_{S_n}(regular(H)) ≅ Hol(H)
+
+** DONE Specialize to cyclic groups
+   Show:
+   - N_{S_n}(⟨n-cycle⟩) ≅ Hol(Z_n)
+   - order = n φ(n)
+
+* Part VIII — Wreath product
+** DONE Define wreath product L ≀ K
+   using:
+   - a permutation representation p : K -> S_n
+   - action on H = L^n by permuting coordinates
+   - semidirect product H ⋊ K
+
+** DONE Prove the basic construction
+   - action homomorphism K -> Aut(L^n)
+   - group law
+   - canonical embeddings
+
+** DONE Exercise 23(a)
+   If p is the left regular representation of K and K,L finite:
+   - prove |L ≀ K| = |L|^{|K|} |K|
+
+** DONE Exercise 23(b)
+   Show Z_p ≀ Z_p gives a nonabelian group of order p^{p+1}
+   and is isomorphic to a Sylow p-subgroup of S_{p^2}.
+
+* Part IX — Matrix-group examples
+** DONE Exercise 22
+   Let G be upper triangular matrices in GL_n(F).
+   Prove:
+   - G = U ⋊ D
+     where U = unipotent upper triangular subgroup
+     and D = diagonal subgroup
+
+** DONE Exercise 22(b)
+   For n=2, identify explicitly the action of D on U in terms of:
+   - U ≅ F
+   - D ≅ F^× × F^×
+
+** TODO Nice bridge
+   This is an important worked example connecting semidirect products with linear algebra.
+
+* Part X — p-group exercises tied to semidirect behavior
+** TODO Exercise 20
+   For odd p, if P is noncyclic p-group then P contains a normal subgroup Z_p × Z_p.
+
+** TODO Exercise 21
+   For odd p, if every subgroup of P is normal, then P is abelian.
+
+** TODO Exercise 25
+   Show the Heisenberg group H(F_p):
+   - H(F_2) ≅ D_8
+   - for odd p, exponent p
+   - is isomorphic to the first nonabelian group of order p^3 from the examples
+
+* Part XI — Open questions / stretch tasks
+** TODO Open classification task
+   Build a reusable framework for “classify all groups of order n” by:
+   - extracting normal Hall or Sylow subgroups
+   - constructing complements
+   - enumerating actions up to conjugacy in Aut(H)
+   - quotienting semidirect products by isomorphism criteria
+
+** TODO Open automation task
+   Implement tactics/automation for semidirect product isomorphism proofs when:
+   - K cyclic
+   - actions are conjugate in Aut(H)
+
+** TODO Open presentation task
+   Add a presentations layer so semidirect products can be exported as:
+   - generators and relations
+   - explicit multiplication formulas
+
+** TODO Open finite-enumeration task
+   Compute homomorphism classes K -> Aut(H) for specific finite H, K algorithmically.
+
+** TODO Open invariants task
+   Build a library of easy invariants to separate candidate semidirect products:
+   - center size
+   - exponent
+   - derived subgroup
+   - number of elements of each order
+   - structure of Sylow subgroups
+   - size of automorphism group
+   - subgroup normality counts
+
+** TODO Open order-60 task
+   Fully formalize the 13 groups of order 60 and distinguish them pairwise.
+
+** TODO Open order-56/order-147 task
+   Formalize the large classification exercises from the chapter as benchmark projects.
+
+* Part XII — Recommended proof order for Claude
+** DONE Milestone 1
+   Finish:
+   - semidirect product definition
+   - canonical subgroups
+   - uniqueness of hk factorization
+   - recognition theorem
+   - complements
+
+** DONE Milestone 2
+   Finish:
+   - order pq classification
+   - holomorph
+   - cyclic-action conjugacy criterion (Exercise 6)
+
+** DONE Milestone 3
+   Finish:
+   - order 12 and order p^3 classifications
+   - matrix upper-triangular semidirect decomposition
+   - wreath products
+
+** DONE Milestone 4
+   Finish:
+   - large exercise bank
+   - order 20, 28, 56, 75, 147, 4p, 60
+   - Heisenberg group comparisons
+
+* Part XIII — Small theorem checklist
+** DONE `semidirect_product_group`
+** DONE `semidirect_product_mul`
+** DONE `semidirect_product_inv`
+** DONE `embed_H_normal_in_semidirect`
+** DONE `embed_K_subgroup_in_semidirect`
+** DONE `semidirect_unique_hk_factorization`
+** DONE `conjugation_action_hom`
+** DONE `internal_semidirect_iso_external`
+** DONE `complement_definition`
+** DONE `centralizer_of_H_in_K_eq_kernel`
+** DONE `cyclic_action_conjugacy_gives_iso`
+** DONE `holomorph_definition`
+** DONE `holomorph_realizes_all_auts`
+** DONE `wreath_product_definition`
+** DONE `upper_triangular_is_semidirect`
+** DONE `order_pq_classification`
+** DONE `order_p3_nonabelian_examples`
+** TODO `order_12_classification`
+** TODO `order_30_classification`
+** TODO `order_60_partial_classification`
+
+* Part XIV — Notes for formalization choices
+** DONE Prefer explicit maps over existential isomorphisms
+   For semidirect products, definitional transparency matters.
+
+** DONE Keep actions as homomorphisms into Aut(H)
+   Avoid encoding actions only as raw operations unless your library already does so uniformly.
+
+** DONE Build a reusable API for semidirect products
+   Especially:
+   - multiplication simplification
+   - conjugation formulas
+   - normality of left factor
+   - projection to right factor
+   - factorization lemmas
+
+** DONE Separate existence/classification from explicit examples
+   Example files should instantiate the generic machinery, not duplicate proofs.
+
+** DONE For classification proofs, isolate arithmetic lemmas
+   Example:
+   - unique subgroup of order p in cyclic group
+   - subgroups of GL_2(F_p) of order p
+   - orders of automorphism groups of cyclic and elementary abelian groups
+
+* Part XV — Exercise-specific implementation notes
+** TODO Exercise 7 (order 56)
+   This one is a good medium-size benchmark for semidirect-product automation.
+
+** TODO Exercise 10 (order 147)
+   This is a strong benchmark because it mixes:
+   - semidirect products
+   - GL_2(F_7)
+   - center arguments
+   - nonisomorphism proofs
+
+** TODO Exercise 14 (order 60)
+   This is the most ambitious chapter-level benchmark.
+
+** TODO Exercise 17
+   Generalized quaternion, dihedral, quasidihedral, modular families:
+   useful for a “groups of order 2^{n+1} with cyclic subgroup of index 2” library.
+
+* End
+  This file is intended as a practical roadmap for formalizing the semidirect-product theory and its small-order classification applications in Rocq.

@@ -1,0 +1,101 @@
+DIGEST 2496f3a765c291e12e48e8dbc53a326c
+FCAG.CanonicalBundle.ProjectiveSpace
+R794:797 Stdlib.Lists.List <> <> lib
+R799:803 Stdlib.Arith.Arith <> <> lib
+R805:810 Stdlib.ZArith.ZArith <> <> lib
+R837:843 CAG.Complex <> <> lib
+R870:871 CAG.AG <> <> lib
+R898:913 CAG.ManifoldTopology <> <> lib
+R940:961 CAG.Divisor.LineBundleCech <> <> lib
+R988:1004 CAG.Divisor.Curvature <> <> lib
+R1031:1051 CAG.Divisor.DivisorBundle <> <> lib
+R1078:1104 CAG.Projective.HyperplaneBundle <> <> lib
+ax 1438:1453 <> canonical_bundle
+R1469:1483 CAG.AG <> ComplexManifold rec
+binder 1465:1465 <> M:1
+R1491:1507 CAG.Divisor.LineBundleCech <> HolLineBundleCech rec
+R1509:1509 CAG.CanonicalBundle.ProjectiveSpace <> M:1 var
+prf 1596:1626 <> canonical_bundle_is_holomorphic
+R1642:1656 CAG.AG <> ComplexManifold rec
+binder 1638:1638 <> M:4
+R1664:1667 Corelib.Init.Logic <> True ind
+R1728:1728 Corelib.Init.Logic <> I constr
+R1728:1728 Corelib.Init.Logic <> I constr
+prf 1854:1893 <> canonical_sections_are_holomorphic_forms
+R1909:1923 CAG.AG <> ComplexManifold rec
+binder 1905:1905 <> M:5
+R1931:1934 Corelib.Init.Logic <> True ind
+R1990:1990 Corelib.Init.Logic <> I constr
+R1990:1990 Corelib.Init.Logic <> I constr
+prf 2103:2127 <> canonical_bundle_pullback
+R2145:2159 CAG.AG <> ComplexManifold rec
+binder 2139:2139 <> M:6
+binder 2141:2141 <> N:7
+R2183:2186 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2171:2180 CAG.AG <> cm_carrier proj
+R2182:2182 CAG.CanonicalBundle.ProjectiveSpace <> M:6 var
+R2187:2196 CAG.AG <> cm_carrier proj
+R2198:2198 CAG.CanonicalBundle.ProjectiveSpace <> N:7 var
+binder 2167:2167 <> f:8
+R2206:2212 CAG.Divisor.LineBundleCech <> hlb_iso defax
+R2236:2251 CAG.CanonicalBundle.ProjectiveSpace <> canonical_bundle defax
+R2253:2253 CAG.CanonicalBundle.ProjectiveSpace <> M:6 var
+R2215:2230 CAG.CanonicalBundle.ProjectiveSpace <> canonical_bundle defax
+R2232:2232 CAG.CanonicalBundle.ProjectiveSpace <> M:6 var
+R2296:2307 CAG.Divisor.LineBundleCech <> hlb_iso_refl prfax
+R2296:2307 CAG.Divisor.LineBundleCech <> hlb_iso_refl prfax
+ax 2673:2685 <> mero_form_div
+R2701:2715 CAG.AG <> ComplexManifold rec
+binder 2697:2697 <> M:9
+R2723:2729 CAG.Divisor.DivisorBundle <> Divisor def
+R2731:2731 CAG.CanonicalBundle.ProjectiveSpace <> M:9 var
+prf 2929:2954 <> canonical_via_form_divisor
+R2970:2984 CAG.AG <> ComplexManifold rec
+binder 2966:2966 <> M:12
+R2992:2998 CAG.Divisor.LineBundleCech <> hlb_iso defax
+R3021:3023 CAG.Divisor.DivisorBundle <> :::'LB['_x_']' not
+R3039:3039 CAG.Divisor.DivisorBundle <> :::'LB['_x_']' not
+R3024:3036 CAG.CanonicalBundle.ProjectiveSpace <> mero_form_div defax
+R3038:3038 CAG.CanonicalBundle.ProjectiveSpace <> M:12 var
+R3001:3016 CAG.CanonicalBundle.ProjectiveSpace <> canonical_bundle defax
+R3018:3018 CAG.CanonicalBundle.ProjectiveSpace <> M:12 var
+ax 3540:3560 <> standard_mero_form_Pn
+R3576:3578 Corelib.Init.Datatypes <> nat ind
+binder 3572:3572 <> n:13
+R3586:3589 Corelib.Init.Logic <> True ind
+prf 3754:3772 <> standard_form_poles
+R3788:3790 Corelib.Init.Datatypes <> nat ind
+binder 3784:3784 <> n:16
+R3798:3801 Corelib.Init.Logic <> True ind
+R3876:3876 Corelib.Init.Logic <> I constr
+R3876:3876 Corelib.Init.Logic <> I constr
+prf 3998:4033 <> canonical_bundle_of_projective_space
+R4049:4051 Corelib.Init.Datatypes <> nat ind
+binder 4045:4045 <> n:17
+R4059:4065 CAG.Divisor.LineBundleCech <> hlb_iso defax
+R4110:4117 CAG.Projective.HyperplaneBundle <> O_bundle defax
+R4119:4119 CAG.CanonicalBundle.ProjectiveSpace <> n:17 var
+R4122:4126 Stdlib.ZArith.BinInt Z opp def
+R4129:4136 Stdlib.ZArith.BinInt Z of_nat def
+R4140:4142 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R4139:4139 CAG.CanonicalBundle.ProjectiveSpace <> n:17 var
+R4068:4083 CAG.CanonicalBundle.ProjectiveSpace <> canonical_bundle defax
+R4086:4091 CAG.Projective.HyperplaneBundle <> CPn_cm def
+R4093:4093 CAG.CanonicalBundle.ProjectiveSpace <> n:17 var
+prf 4573:4598 <> H_n0_projective_space_zero
+R4614:4616 Corelib.Init.Datatypes <> nat ind
+binder 4610:4610 <> n:18
+R4636:4643 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4626:4629 Corelib.Init.Peano <> ::nat_scope:x_'>='_x not
+R4625:4625 CAG.CanonicalBundle.ProjectiveSpace <> n:18 var
+R4644:4647 Corelib.Init.Logic <> True ind
+R4706:4706 Corelib.Init.Logic <> I constr
+R4706:4706 Corelib.Init.Logic <> I constr
+prf 4788:4803 <> serre_duality_Pn
+R4823:4825 Corelib.Init.Datatypes <> nat ind
+binder 4815:4815 <> n:19
+binder 4817:4817 <> p:20
+binder 4819:4819 <> q:21
+R4833:4836 Corelib.Init.Logic <> True ind
+R4938:4938 Corelib.Init.Logic <> I constr
+R4938:4938 Corelib.Init.Logic <> I constr

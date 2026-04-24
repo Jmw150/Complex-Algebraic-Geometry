@@ -1,0 +1,1913 @@
+DIGEST 6317a2393e259a412760470dfb39171b
+FCAG.ComplexAnalysis2
+R592:597 Stdlib.QArith.QArith <> <> lib
+R599:604 Stdlib.ZArith.ZArith <> <> lib
+R606:609 Stdlib.Lists.List <> <> lib
+R639:674 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> <> lib
+R704:743 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> <> lib
+R773:806 Stdlib.Reals.Cauchy.ConstructiveCauchyAbs <> <> lib
+R816:828 Stdlib.Lists.List ListNotations <> mod
+R856:866 CAG.Reals_extra <> <> lib
+R893:899 CAG.Complex <> <> lib
+R926:940 CAG.ComplexAnalysis <> <> lib
+ax 1484:1489 <> cutoff
+R1501:1504 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1493:1500 CAG.Complex <> CComplex rec
+R1510:1513 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1505:1509 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+R1519:1523 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1541:1541 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1514:1518 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+R1532:1535 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1524:1531 CAG.Complex <> CComplex rec
+R1536:1540 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+prf 1553:1564 <> cutoff_inner
+binder 1577:1578 <> z0:3
+binder 1580:1581 <> r1:4
+binder 1583:1584 <> r2:5
+binder 1586:1586 <> z:6
+R1610:1617 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1593:1601 CAG.ComplexAnalysis <> open_disc def
+R1603:1604 CAG.ComplexAnalysis2 <> z0:3 var
+R1606:1607 CAG.ComplexAnalysis2 <> r1:4 var
+R1609:1609 CAG.ComplexAnalysis2 <> z:6 var
+R1635:1637 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1618:1623 CAG.ComplexAnalysis2 <> cutoff defax
+R1625:1626 CAG.ComplexAnalysis2 <> z0:3 var
+R1628:1629 CAG.ComplexAnalysis2 <> r1:4 var
+R1631:1632 CAG.ComplexAnalysis2 <> r2:5 var
+R1634:1634 CAG.ComplexAnalysis2 <> z:6 var
+R1638:1645 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+prf 1683:1694 <> cutoff_outer
+binder 1707:1708 <> z0:7
+binder 1710:1711 <> r1:8
+binder 1713:1714 <> r2:9
+binder 1716:1716 <> z:10
+R1742:1749 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1723:1724 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R1725:1733 CAG.ComplexAnalysis <> open_disc def
+R1735:1736 CAG.ComplexAnalysis2 <> z0:7 var
+R1738:1739 CAG.ComplexAnalysis2 <> r2:9 var
+R1741:1741 CAG.ComplexAnalysis2 <> z:10 var
+R1767:1769 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1750:1755 CAG.ComplexAnalysis2 <> cutoff defax
+R1757:1758 CAG.ComplexAnalysis2 <> z0:7 var
+R1760:1761 CAG.ComplexAnalysis2 <> r1:8 var
+R1763:1764 CAG.ComplexAnalysis2 <> r2:9 var
+R1766:1766 CAG.ComplexAnalysis2 <> z:10 var
+R1770:1777 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+prf 1815:1826 <> cutoff_range
+binder 1839:1840 <> z0:11
+binder 1842:1843 <> r1:12
+binder 1845:1846 <> r2:13
+binder 1848:1848 <> z:14
+R1899:1906 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R1855:1865 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CRealLtProp def
+R1868:1875 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+R1881:1886 CAG.ComplexAnalysis2 <> cutoff defax
+R1888:1889 CAG.ComplexAnalysis2 <> z0:11 var
+R1891:1892 CAG.ComplexAnalysis2 <> r1:12 var
+R1894:1895 CAG.ComplexAnalysis2 <> r2:13 var
+R1897:1897 CAG.ComplexAnalysis2 <> z:14 var
+R1924:1926 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1907:1912 CAG.ComplexAnalysis2 <> cutoff defax
+R1914:1915 CAG.ComplexAnalysis2 <> z0:11 var
+R1917:1918 CAG.ComplexAnalysis2 <> r1:12 var
+R1920:1921 CAG.ComplexAnalysis2 <> r2:13 var
+R1923:1923 CAG.ComplexAnalysis2 <> z:14 var
+R1927:1934 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+def 2044:2051 <> cutoff_C
+R2059:2066 CAG.Complex <> CComplex rec
+binder 2054:2055 <> z0:15
+R2078:2082 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 2070:2071 <> r1:16
+binder 2073:2074 <> r2:17
+R2090:2097 CAG.Complex <> CComplex rec
+binder 2086:2086 <> w:18
+R2102:2109 CAG.Complex <> CComplex rec
+R2116:2118 CAG.Complex <> mkC constr
+R2121:2126 CAG.ComplexAnalysis2 <> cutoff defax
+R2128:2129 CAG.ComplexAnalysis2 <> z0:15 var
+R2131:2132 CAG.ComplexAnalysis2 <> r1:16 var
+R2134:2135 CAG.ComplexAnalysis2 <> r2:17 var
+R2137:2137 CAG.ComplexAnalysis2 <> w:18 var
+def 2204:2213 <> cutoff_mul
+R2221:2228 CAG.Complex <> CComplex rec
+binder 2216:2217 <> z0:19
+R2240:2244 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 2232:2233 <> r1:20
+binder 2235:2236 <> r2:21
+R2264:2267 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2256:2263 CAG.Complex <> CComplex rec
+R2268:2275 CAG.Complex <> CComplex rec
+binder 2252:2252 <> g:22
+R2283:2290 CAG.Complex <> CComplex rec
+binder 2279:2279 <> w:23
+R2295:2302 CAG.Complex <> CComplex rec
+R2309:2312 CAG.Complex <> Cmul def
+R2315:2322 CAG.ComplexAnalysis2 <> cutoff_C def
+R2324:2325 CAG.ComplexAnalysis2 <> z0:19 var
+R2327:2328 CAG.ComplexAnalysis2 <> r1:20 var
+R2330:2331 CAG.ComplexAnalysis2 <> r2:21 var
+R2333:2333 CAG.ComplexAnalysis2 <> w:23 var
+R2337:2337 CAG.ComplexAnalysis2 <> g:22 var
+R2339:2339 CAG.ComplexAnalysis2 <> w:23 var
+def 2566:2579 <> dbar_decomp_g1
+R2587:2594 CAG.Complex <> CComplex rec
+binder 2582:2583 <> z0:24
+R2604:2608 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 2598:2600 <> eps:25
+R2628:2631 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2620:2627 CAG.Complex <> CComplex rec
+R2632:2639 CAG.Complex <> CComplex rec
+binder 2616:2616 <> g:26
+R2652:2655 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2644:2651 CAG.Complex <> CComplex rec
+R2656:2663 CAG.Complex <> CComplex rec
+R2670:2679 CAG.ComplexAnalysis2 <> cutoff_mul def
+R2681:2682 CAG.ComplexAnalysis2 <> z0:24 var
+R2684:2686 CAG.ComplexAnalysis2 <> eps:25 var
+R2699:2701 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R2689:2696 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+R2702:2704 CAG.ComplexAnalysis2 <> eps:25 var
+R2707:2707 CAG.ComplexAnalysis2 <> g:26 var
+def 2722:2735 <> dbar_decomp_g2
+R2743:2750 CAG.Complex <> CComplex rec
+binder 2738:2739 <> z0:27
+R2760:2764 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 2754:2756 <> eps:28
+R2784:2787 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2776:2783 CAG.Complex <> CComplex rec
+R2788:2795 CAG.Complex <> CComplex rec
+binder 2772:2772 <> g:29
+R2808:2811 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2800:2807 CAG.Complex <> CComplex rec
+R2812:2819 CAG.Complex <> CComplex rec
+binder 2830:2830 <> w:30
+R2835:2838 CAG.Complex <> Csub def
+R2841:2841 CAG.ComplexAnalysis2 <> g:29 var
+R2843:2843 CAG.ComplexAnalysis2 <> w:30 var
+R2847:2860 CAG.ComplexAnalysis2 <> dbar_decomp_g1 def
+R2862:2863 CAG.ComplexAnalysis2 <> z0:27 var
+R2865:2867 CAG.ComplexAnalysis2 <> eps:28 var
+R2869:2869 CAG.ComplexAnalysis2 <> g:29 var
+R2871:2871 CAG.ComplexAnalysis2 <> w:30 var
+prf 2936:2950 <> dbar_decomp_sum
+binder 2963:2964 <> z0:31
+binder 2966:2968 <> eps:32
+binder 2970:2970 <> g:33
+binder 2972:2972 <> w:34
+R3039:3041 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2979:2982 CAG.Complex <> Cadd def
+R2985:2998 CAG.ComplexAnalysis2 <> dbar_decomp_g1 def
+R3000:3001 CAG.ComplexAnalysis2 <> z0:31 var
+R3003:3005 CAG.ComplexAnalysis2 <> eps:32 var
+R3007:3007 CAG.ComplexAnalysis2 <> g:33 var
+R3009:3009 CAG.ComplexAnalysis2 <> w:34 var
+R3013:3026 CAG.ComplexAnalysis2 <> dbar_decomp_g2 def
+R3028:3029 CAG.ComplexAnalysis2 <> z0:31 var
+R3031:3033 CAG.ComplexAnalysis2 <> eps:32 var
+R3035:3035 CAG.ComplexAnalysis2 <> g:33 var
+R3037:3037 CAG.ComplexAnalysis2 <> w:34 var
+R3042:3042 CAG.ComplexAnalysis2 <> g:33 var
+R3044:3044 CAG.ComplexAnalysis2 <> w:34 var
+prf 3110:3129 <> dbar_decomp_g2_inner
+binder 3142:3143 <> z0:35
+binder 3145:3147 <> eps:36
+binder 3149:3149 <> g:37
+binder 3151:3151 <> w:38
+R3172:3179 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3158:3167 CAG.Reals_extra <> CRpositive def
+R3169:3171 CAG.ComplexAnalysis2 <> eps:36 var
+R3198:3205 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3180:3188 CAG.ComplexAnalysis <> open_disc def
+R3190:3191 CAG.ComplexAnalysis2 <> z0:35 var
+R3193:3195 CAG.ComplexAnalysis2 <> eps:36 var
+R3197:3197 CAG.ComplexAnalysis2 <> w:38 var
+R3231:3233 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3206:3219 CAG.ComplexAnalysis2 <> dbar_decomp_g2 def
+R3221:3222 CAG.ComplexAnalysis2 <> z0:35 var
+R3224:3226 CAG.ComplexAnalysis2 <> eps:36 var
+R3228:3228 CAG.ComplexAnalysis2 <> g:37 var
+R3230:3230 CAG.ComplexAnalysis2 <> w:38 var
+R3234:3235 CAG.Complex <> C0 def
+prf 3376:3398 <> dbar_poincare_localized
+R3424:3427 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3416:3423 CAG.Complex <> CComplex rec
+R3428:3435 CAG.Complex <> CComplex rec
+binder 3412:3412 <> g:39
+R3444:3451 CAG.Complex <> CComplex rec
+binder 3439:3440 <> z0:40
+R3463:3467 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 3455:3455 <> r:41
+binder 3457:3459 <> eps:42
+R3489:3496 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3475:3484 CAG.Reals_extra <> CRpositive def
+R3486:3488 CAG.ComplexAnalysis2 <> eps:42 var
+R3556:3597 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3497:3507 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CRealLtProp def
+R3526:3529 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R3546:3546 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R3520:3522 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R3510:3517 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+R3523:3525 CAG.ComplexAnalysis2 <> eps:42 var
+R3540:3542 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R3530:3537 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+R3543:3545 CAG.ComplexAnalysis2 <> eps:42 var
+R3551:3553 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R3550:3550 CAG.ComplexAnalysis2 <> r:41 var
+R3554:3554 CAG.ComplexAnalysis2 <> r:41 var
+R3598:3598 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3633:3681 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 3606:3606 <> w:43
+R3625:3628 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3609:3617 CAG.ComplexAnalysis <> open_disc def
+R3619:3620 CAG.ComplexAnalysis2 <> z0:40 var
+R3622:3622 CAG.ComplexAnalysis2 <> r:41 var
+R3624:3624 CAG.ComplexAnalysis2 <> w:43 var
+R3629:3632 Corelib.Init.Logic <> True ind
+R3682:3688 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3713:3720 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3701:3704 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3693:3700 CAG.Complex <> CComplex rec
+R3705:3712 CAG.Complex <> CComplex rec
+binder 3689:3689 <> f:44
+binder 3728:3728 <> w:45
+R3749:3752 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3731:3739 CAG.ComplexAnalysis <> open_disc def
+R3741:3742 CAG.ComplexAnalysis2 <> z0:40 var
+R3744:3746 CAG.ComplexAnalysis2 <> eps:42 var
+R3748:3748 CAG.ComplexAnalysis2 <> w:45 var
+R3753:3759 CAG.ComplexAnalysis <> dbar_at def
+R3761:3761 CAG.ComplexAnalysis2 <> f:44 var
+R3763:3763 CAG.ComplexAnalysis2 <> w:45 var
+R3766:3766 CAG.ComplexAnalysis2 <> g:39 var
+R3768:3768 CAG.ComplexAnalysis2 <> w:45 var
+def 4178:4185 <> Polydisc
+R4192:4194 Corelib.Init.Datatypes <> nat ind
+binder 4188:4188 <> n:46
+R4203:4204 CAG.Complex <> Cn def
+R4206:4206 CAG.ComplexAnalysis2 <> n:46 var
+binder 4198:4199 <> z0:47
+R4214:4215 CAG.Complex <> Rn def
+R4217:4217 CAG.ComplexAnalysis2 <> n:46 var
+binder 4210:4210 <> r:48
+R4226:4229 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4222:4223 CAG.Complex <> Cn def
+R4225:4225 CAG.ComplexAnalysis2 <> n:46 var
+binder 4244:4244 <> z:49
+R4260:4264 Stdlib.Vectors.Fin <> t ind
+R4266:4266 CAG.ComplexAnalysis2 <> n:46 var
+binder 4256:4256 <> i:50
+R4269:4277 CAG.ComplexAnalysis <> open_disc def
+R4280:4281 CAG.ComplexAnalysis2 <> z0:47 var
+R4283:4283 CAG.ComplexAnalysis2 <> i:50 var
+R4287:4287 CAG.ComplexAnalysis2 <> r:48 var
+R4289:4289 CAG.ComplexAnalysis2 <> i:50 var
+R4293:4293 CAG.ComplexAnalysis2 <> z:49 var
+R4295:4295 CAG.ComplexAnalysis2 <> i:50 var
+def 4359:4371 <> unit_polydisc
+R4378:4380 Corelib.Init.Datatypes <> nat ind
+binder 4374:4374 <> n:51
+R4389:4392 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4385:4386 CAG.Complex <> Cn def
+R4388:4388 CAG.ComplexAnalysis2 <> n:51 var
+R4403:4410 CAG.ComplexAnalysis2 <> Polydisc def
+R4436:4443 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+R4422:4423 CAG.Complex <> C0 def
+def 4592:4605 <> holomorphic_Cn
+R4612:4614 Corelib.Init.Datatypes <> nat ind
+binder 4608:4608 <> n:52
+R4626:4629 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4622:4623 CAG.Complex <> Cn def
+R4625:4625 CAG.ComplexAnalysis2 <> n:52 var
+binder 4618:4618 <> U:53
+R4649:4652 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4645:4646 CAG.Complex <> Cn def
+R4648:4648 CAG.ComplexAnalysis2 <> n:52 var
+R4653:4660 CAG.Complex <> CComplex rec
+binder 4641:4641 <> f:54
+R4686:4687 CAG.Complex <> Cn def
+R4689:4689 CAG.ComplexAnalysis2 <> n:52 var
+binder 4682:4682 <> v:55
+R4692:4710 CAG.Complex <> holomorphic_each_at def
+R4716:4716 CAG.ComplexAnalysis2 <> v:55 var
+R4714:4714 CAG.ComplexAnalysis2 <> f:54 var
+R4712:4712 CAG.ComplexAnalysis2 <> U:53 var
+prf 4913:4918 <> osgood
+R4936:4938 Corelib.Init.Datatypes <> nat ind
+binder 4932:4932 <> n:56
+R4950:4953 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4946:4947 CAG.Complex <> Cn def
+R4949:4949 CAG.ComplexAnalysis2 <> n:56 var
+binder 4942:4942 <> U:57
+R4969:4972 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4965:4966 CAG.Complex <> Cn def
+R4968:4968 CAG.ComplexAnalysis2 <> n:56 var
+R4973:4980 CAG.Complex <> CComplex rec
+binder 4961:4961 <> f:58
+R4988:4988 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5092:5100 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5000:5001 CAG.Complex <> Cn def
+R5003:5003 CAG.ComplexAnalysis2 <> n:56 var
+binder 4996:4996 <> v:59
+R5009:5018 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5006:5006 CAG.ComplexAnalysis2 <> U:57 var
+R5008:5008 CAG.ComplexAnalysis2 <> v:59 var
+R5030:5034 Stdlib.Vectors.Fin <> t ind
+R5036:5036 CAG.ComplexAnalysis2 <> n:56 var
+binder 5026:5026 <> i:60
+R5047:5063 CAG.Complex <> holomorphic_at_CR def
+R5066:5078 CAG.Complex <> freeze_except def
+R5084:5084 CAG.ComplexAnalysis2 <> i:60 var
+R5082:5082 CAG.ComplexAnalysis2 <> v:59 var
+R5080:5080 CAG.ComplexAnalysis2 <> f:58 var
+R5088:5088 CAG.ComplexAnalysis2 <> v:59 var
+R5090:5090 CAG.ComplexAnalysis2 <> i:60 var
+R5101:5114 CAG.ComplexAnalysis2 <> holomorphic_Cn def
+R5118:5118 CAG.ComplexAnalysis2 <> f:58 var
+R5116:5116 CAG.ComplexAnalysis2 <> U:57 var
+def 5425:5435 <> dbar_j_zero
+R5442:5444 Corelib.Init.Datatypes <> nat ind
+binder 5438:5438 <> n:61
+R5456:5459 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5452:5453 CAG.Complex <> Cn def
+R5455:5455 CAG.ComplexAnalysis2 <> n:61 var
+R5460:5467 CAG.Complex <> CComplex rec
+binder 5448:5448 <> f:62
+R5475:5476 CAG.Complex <> Cn def
+R5478:5478 CAG.ComplexAnalysis2 <> n:61 var
+binder 5471:5471 <> v:63
+R5490:5494 Stdlib.Vectors.Fin <> t ind
+R5496:5496 CAG.ComplexAnalysis2 <> n:61 var
+binder 5486:5486 <> j:64
+R5511:5517 CAG.ComplexAnalysis <> dbar_at def
+R5520:5532 CAG.Complex <> freeze_except def
+R5538:5538 CAG.ComplexAnalysis2 <> j:64 var
+R5536:5536 CAG.ComplexAnalysis2 <> v:63 var
+R5534:5534 CAG.ComplexAnalysis2 <> f:62 var
+R5542:5542 CAG.ComplexAnalysis2 <> v:63 var
+R5544:5544 CAG.ComplexAnalysis2 <> j:64 var
+R5547:5548 CAG.Complex <> C0 def
+prf 5610:5637 <> holomorphic_Cn_iff_dbar_zero
+R5655:5657 Corelib.Init.Datatypes <> nat ind
+binder 5651:5651 <> n:65
+R5669:5672 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5665:5666 CAG.Complex <> Cn def
+R5668:5668 CAG.ComplexAnalysis2 <> n:65 var
+binder 5661:5661 <> U:66
+R5688:5691 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5684:5685 CAG.Complex <> Cn def
+R5687:5687 CAG.ComplexAnalysis2 <> n:65 var
+R5692:5699 CAG.Complex <> CComplex rec
+binder 5680:5680 <> f:67
+R5725:5733 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R5707:5720 CAG.ComplexAnalysis2 <> holomorphic_Cn def
+R5724:5724 CAG.ComplexAnalysis2 <> f:67 var
+R5722:5722 CAG.ComplexAnalysis2 <> U:66 var
+R5745:5746 CAG.Complex <> Cn def
+R5748:5748 CAG.ComplexAnalysis2 <> n:65 var
+binder 5741:5741 <> v:68
+R5754:5763 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5751:5751 CAG.ComplexAnalysis2 <> U:66 var
+R5753:5753 CAG.ComplexAnalysis2 <> v:68 var
+R5775:5779 Stdlib.Vectors.Fin <> t ind
+R5781:5781 CAG.ComplexAnalysis2 <> n:65 var
+binder 5771:5771 <> j:69
+R5784:5794 CAG.ComplexAnalysis2 <> dbar_j_zero def
+R5800:5800 CAG.ComplexAnalysis2 <> j:69 var
+R5798:5798 CAG.ComplexAnalysis2 <> v:68 var
+R5796:5796 CAG.ComplexAnalysis2 <> f:67 var
+ind 6292:6299 <> PSeries2
+constr 6315:6321 <> PS2Cons
+R6332:6335 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6325:6331 CAG.ComplexAnalysis <> PSeries coind
+R6344:6347 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6336:6343 CAG.ComplexAnalysis2 <> PSeries2:70 ind
+R6348:6355 CAG.ComplexAnalysis2 <> PSeries2:70 ind
+def 6447:6453 <> ps2_row
+R6460:6467 CAG.ComplexAnalysis2 <> PSeries2 coind
+binder 6456:6456 <> s:72
+R6475:6477 Corelib.Init.Datatypes <> nat ind
+binder 6471:6471 <> m:73
+R6482:6488 CAG.ComplexAnalysis <> PSeries coind
+R6504:6504 CAG.ComplexAnalysis2 <> s:72 var
+R6501:6501 CAG.ComplexAnalysis2 <> m:73 var
+R6515:6515 Corelib.Init.Datatypes <> O constr
+R6521:6527 CAG.ComplexAnalysis2 <> PS2Cons constr
+R6549:6549 Corelib.Init.Datatypes <> S constr
+R6555:6561 CAG.ComplexAnalysis2 <> PS2Cons constr
+R6575:6581 CAG.ComplexAnalysis2 <> ps2_row:74 def
+def 6638:6646 <> ps2_coeff
+R6653:6660 CAG.ComplexAnalysis2 <> PSeries2 coind
+binder 6649:6649 <> s:77
+R6670:6672 Corelib.Init.Datatypes <> nat ind
+binder 6664:6664 <> m:78
+binder 6666:6666 <> n:79
+R6677:6684 CAG.Complex <> CComplex rec
+R6691:6698 CAG.ComplexAnalysis <> ps_coeff def
+R6701:6707 CAG.ComplexAnalysis2 <> ps2_row def
+R6709:6709 CAG.ComplexAnalysis2 <> s:77 var
+R6711:6711 CAG.ComplexAnalysis2 <> m:78 var
+R6714:6714 CAG.ComplexAnalysis2 <> n:79 var
+def 6826:6840 <> ps2_partial_sum
+R6847:6854 CAG.ComplexAnalysis2 <> PSeries2 coind
+binder 6843:6843 <> s:80
+R6874:6881 CAG.Complex <> CComplex rec
+binder 6858:6859 <> z1:81
+binder 6861:6863 <> z10:82
+binder 6865:6866 <> z2:83
+binder 6868:6870 <> z20:84
+R6895:6897 Corelib.Init.Datatypes <> nat ind
+binder 6889:6889 <> M:85
+binder 6891:6891 <> N:86
+R6902:6909 CAG.Complex <> CComplex rec
+R6922:6922 CAG.ComplexAnalysis2 <> M:85 var
+R6933:6933 Corelib.Init.Datatypes <> O constr
+R6944:6957 CAG.ComplexAnalysis <> ps_partial_sum def
+R6960:6966 CAG.ComplexAnalysis2 <> ps2_row def
+R6968:6968 CAG.ComplexAnalysis2 <> s:80 var
+R6973:6974 CAG.ComplexAnalysis2 <> z2:83 var
+R6976:6978 CAG.ComplexAnalysis2 <> z20:84 var
+R6980:6980 CAG.ComplexAnalysis2 <> N:86 var
+R6986:6986 Corelib.Init.Datatypes <> S constr
+R7000:7003 CAG.Complex <> Cadd def
+R7014:7028 CAG.ComplexAnalysis2 <> ps2_partial_sum:87 def
+R7049:7049 CAG.ComplexAnalysis2 <> N:86 var
+R7042:7044 CAG.ComplexAnalysis2 <> z20:84 var
+R7039:7040 CAG.ComplexAnalysis2 <> z2:83 var
+R7035:7037 CAG.ComplexAnalysis2 <> z10:82 var
+R7032:7033 CAG.ComplexAnalysis2 <> z1:81 var
+R7030:7030 CAG.ComplexAnalysis2 <> s:80 var
+R7061:7064 CAG.Complex <> Cmul def
+R7067:7070 CAG.Complex <> Cpow def
+R7073:7076 CAG.Complex <> Csub def
+R7078:7079 CAG.ComplexAnalysis2 <> z1:81 var
+R7081:7083 CAG.ComplexAnalysis2 <> z10:82 var
+R7087:7087 Corelib.Init.Datatypes <> S constr
+R7109:7122 CAG.ComplexAnalysis <> ps_partial_sum def
+R7125:7131 CAG.ComplexAnalysis2 <> ps2_row def
+R7133:7133 CAG.ComplexAnalysis2 <> s:80 var
+R7136:7136 Corelib.Init.Datatypes <> S constr
+R7143:7144 CAG.ComplexAnalysis2 <> z2:83 var
+R7146:7148 CAG.ComplexAnalysis2 <> z20:84 var
+R7150:7150 CAG.ComplexAnalysis2 <> N:86 var
+def 7225:7237 <> ps2_converges
+R7244:7251 CAG.ComplexAnalysis2 <> PSeries2 coind
+binder 7240:7240 <> s:89
+R7273:7280 CAG.Complex <> CComplex rec
+binder 7255:7256 <> z1:90
+binder 7258:7260 <> z10:91
+binder 7262:7263 <> z2:92
+binder 7265:7267 <> z20:93
+binder 7269:7269 <> L:94
+R7308:7312 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 7302:7304 <> eps:95
+R7333:7340 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7319:7328 CAG.Reals_extra <> CRpositive def
+R7330:7332 CAG.ComplexAnalysis2 <> eps:95 var
+R7341:7347 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7357:7364 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7354:7356 Corelib.Init.Datatypes <> nat ind
+binder 7348:7348 <> M:96
+R7354:7356 Corelib.Init.Datatypes <> nat ind
+binder 7350:7350 <> N:97
+R7378:7380 Corelib.Init.Datatypes <> nat ind
+binder 7372:7372 <> m:98
+binder 7374:7374 <> n:99
+R7395:7398 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7385:7388 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R7384:7384 CAG.ComplexAnalysis2 <> M:96 var
+R7389:7389 CAG.ComplexAnalysis2 <> m:98 var
+R7411:7422 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7401:7404 Corelib.Init.Peano <> ::nat_scope:x_'<='_x not
+R7400:7400 CAG.ComplexAnalysis2 <> N:97 var
+R7405:7405 CAG.ComplexAnalysis2 <> n:99 var
+R7423:7433 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CRealLtProp def
+R7436:7441 CAG.Complex <> Cdist2 def
+R7444:7458 CAG.ComplexAnalysis2 <> ps2_partial_sum def
+R7460:7460 CAG.ComplexAnalysis2 <> s:89 var
+R7462:7463 CAG.ComplexAnalysis2 <> z1:90 var
+R7465:7467 CAG.ComplexAnalysis2 <> z10:91 var
+R7469:7470 CAG.ComplexAnalysis2 <> z2:92 var
+R7472:7474 CAG.ComplexAnalysis2 <> z20:93 var
+R7476:7476 CAG.ComplexAnalysis2 <> m:98 var
+R7478:7478 CAG.ComplexAnalysis2 <> n:99 var
+R7481:7481 CAG.ComplexAnalysis2 <> L:94 var
+R7484:7486 CAG.ComplexAnalysis2 <> eps:95 var
+def 7553:7563 <> analytic_C2
+R7578:7581 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7570:7577 CAG.Complex <> CComplex rec
+R7590:7593 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7582:7589 CAG.Complex <> CComplex rec
+R7594:7601 CAG.Complex <> CComplex rec
+binder 7566:7566 <> f:100
+R7619:7626 CAG.Complex <> CComplex rec
+binder 7609:7611 <> z10:101
+binder 7613:7615 <> z20:102
+R7641:7648 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7677:7683 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7653:7660 CAG.ComplexAnalysis2 <> PSeries2 coind
+binder 7649:7649 <> s:103
+R7672:7676 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 7664:7665 <> r1:104
+R7672:7676 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 7667:7668 <> r2:105
+R7697:7700 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R7684:7693 CAG.Reals_extra <> CRpositive def
+R7695:7696 CAG.ComplexAnalysis2 <> r1:104 var
+R7714:7721 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R7701:7710 CAG.Reals_extra <> CRpositive def
+R7712:7713 CAG.ComplexAnalysis2 <> r2:105 var
+R7737:7744 CAG.Complex <> CComplex rec
+binder 7729:7730 <> z1:106
+binder 7732:7733 <> z2:107
+R7772:7781 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7753:7761 CAG.ComplexAnalysis <> open_disc def
+R7763:7765 CAG.ComplexAnalysis2 <> z10:101 var
+R7767:7768 CAG.ComplexAnalysis2 <> r1:104 var
+R7770:7771 CAG.ComplexAnalysis2 <> z1:106 var
+R7801:7810 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7782:7790 CAG.ComplexAnalysis <> open_disc def
+R7792:7794 CAG.ComplexAnalysis2 <> z20:102 var
+R7796:7797 CAG.ComplexAnalysis2 <> r2:105 var
+R7799:7800 CAG.ComplexAnalysis2 <> z2:107 var
+R7811:7823 CAG.ComplexAnalysis2 <> ps2_converges def
+R7825:7825 CAG.ComplexAnalysis2 <> s:103 var
+R7827:7828 CAG.ComplexAnalysis2 <> z1:106 var
+R7830:7832 CAG.ComplexAnalysis2 <> z10:101 var
+R7834:7835 CAG.ComplexAnalysis2 <> z2:107 var
+R7837:7839 CAG.ComplexAnalysis2 <> z20:102 var
+R7842:7842 CAG.ComplexAnalysis2 <> f:100 var
+R7847:7848 CAG.ComplexAnalysis2 <> z2:107 var
+R7844:7845 CAG.ComplexAnalysis2 <> z1:106 var
+def 7948:7953 <> MIndex
+R7960:7962 Corelib.Init.Datatypes <> nat ind
+binder 7956:7956 <> n:108
+R7978:7981 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7975:7977 Corelib.Init.Datatypes <> nat ind
+R7982:7984 Corelib.Init.Datatypes <> nat ind
+def 8035:8046 <> total_degree
+R8053:8055 Corelib.Init.Datatypes <> nat ind
+binder 8049:8049 <> n:109
+R8067:8072 CAG.ComplexAnalysis2 <> MIndex def
+R8074:8074 CAG.ComplexAnalysis2 <> n:109 var
+binder 8059:8063 <> alpha:110
+R8079:8081 Corelib.Init.Datatypes <> nat ind
+R8094:8094 CAG.ComplexAnalysis2 <> n:109 var
+R8105:8105 Corelib.Init.Datatypes <> O constr
+R8110:8110 Corelib.Init.Datatypes <> O constr
+R8116:8116 Corelib.Init.Datatypes <> S constr
+R8132:8134 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R8124:8128 CAG.ComplexAnalysis2 <> alpha:110 var
+R8135:8146 CAG.ComplexAnalysis2 <> total_degree:111 def
+R8151:8155 CAG.ComplexAnalysis2 <> alpha:110 var
+def 8275:8284 <> cpow_multi
+R8295:8298 Corelib.Init.Datatypes <> list ind
+R8300:8307 CAG.Complex <> CComplex rec
+binder 8287:8291 <> diffs:113
+R8319:8322 Corelib.Init.Datatypes <> list ind
+R8324:8326 Corelib.Init.Datatypes <> nat ind
+binder 8311:8315 <> alpha:114
+R8331:8338 CAG.Complex <> CComplex rec
+R8358:8362 CAG.ComplexAnalysis2 <> alpha:114 var
+R8351:8355 CAG.ComplexAnalysis2 <> diffs:113 var
+R8373:8374 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R8377:8378 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R8393:8394 CAG.Complex <> C1 def
+R8401:8404 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R8410:8413 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R8420:8423 CAG.Complex <> Cmul def
+R8426:8429 CAG.Complex <> Cpow def
+R8437:8446 CAG.ComplexAnalysis2 <> cpow_multi:115 def
+R8479:8480 CAG.Complex <> C1 def
+def 8587:8594 <> fin_list
+R8601:8603 Corelib.Init.Datatypes <> nat ind
+binder 8597:8597 <> n:118
+R8608:8611 Corelib.Init.Datatypes <> list ind
+R8614:8618 Stdlib.Vectors.Fin <> t ind
+R8620:8620 CAG.ComplexAnalysis2 <> n:118 var
+R8634:8634 CAG.ComplexAnalysis2 <> n:118 var
+R8645:8645 Corelib.Init.Datatypes <> O constr
+R8653:8654 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R8660:8660 Corelib.Init.Datatypes <> S constr
+R8674:8677 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R8668:8673 Stdlib.Vectors.Fin <> F1 constr
+R8678:8685 Stdlib.Lists.List <> map abbrev
+R8695:8702 CAG.ComplexAnalysis2 <> fin_list:119 def
+R8687:8692 Stdlib.Vectors.Fin <> FS constr
+def 8727:8734 <> cn_diffs
+R8741:8743 Corelib.Init.Datatypes <> nat ind
+binder 8737:8737 <> n:121
+R8754:8755 CAG.Complex <> Cn def
+R8757:8757 CAG.ComplexAnalysis2 <> n:121 var
+binder 8747:8747 <> z:122
+binder 8749:8750 <> z0:123
+R8762:8765 Corelib.Init.Datatypes <> list ind
+R8767:8774 CAG.Complex <> CComplex rec
+R8781:8788 Stdlib.Lists.List <> map abbrev
+R8820:8827 CAG.ComplexAnalysis2 <> fin_list def
+R8829:8829 CAG.ComplexAnalysis2 <> n:121 var
+binder 8795:8795 <> i:124
+R8800:8803 CAG.Complex <> Csub def
+R8806:8806 CAG.ComplexAnalysis2 <> z:122 var
+R8808:8808 CAG.ComplexAnalysis2 <> i:124 var
+R8812:8813 CAG.ComplexAnalysis2 <> z0:123 var
+R8815:8815 CAG.ComplexAnalysis2 <> i:124 var
+prf 8914:8940 <> holomorphic_C2_iff_analytic
+R8966:8969 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8958:8965 CAG.Complex <> CComplex rec
+R8978:8981 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R8970:8977 CAG.Complex <> CComplex rec
+binder 8954:8954 <> U:125
+R9010:9013 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9002:9009 CAG.Complex <> CComplex rec
+R9022:9025 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9014:9021 CAG.Complex <> CComplex rec
+R9026:9033 CAG.Complex <> CComplex rec
+binder 8998:8998 <> f:126
+R9041:9041 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R9159:9169 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R9220:9220 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+binder 9049:9050 <> z1:127
+binder 9052:9053 <> z2:128
+R9063:9072 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9056:9056 CAG.ComplexAnalysis2 <> U:125 var
+R9061:9062 CAG.ComplexAnalysis2 <> z2:128 var
+R9058:9059 CAG.ComplexAnalysis2 <> z1:127 var
+R9111:9120 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R9073:9089 CAG.Complex <> holomorphic_at_CR def
+binder 9096:9096 <> w:129
+R9101:9101 CAG.ComplexAnalysis2 <> f:126 var
+R9106:9106 CAG.ComplexAnalysis2 <> w:129 var
+R9103:9104 CAG.ComplexAnalysis2 <> z1:127 var
+R9109:9110 CAG.ComplexAnalysis2 <> z2:128 var
+R9121:9137 CAG.Complex <> holomorphic_at_CR def
+binder 9144:9144 <> w:130
+R9149:9149 CAG.ComplexAnalysis2 <> f:126 var
+R9153:9154 CAG.ComplexAnalysis2 <> z2:128 var
+R9151:9151 CAG.ComplexAnalysis2 <> w:130 var
+R9157:9158 CAG.ComplexAnalysis2 <> z1:127 var
+binder 9177:9179 <> z10:131
+binder 9181:9183 <> z20:132
+R9195:9198 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9186:9186 CAG.ComplexAnalysis2 <> U:125 var
+R9192:9194 CAG.ComplexAnalysis2 <> z20:132 var
+R9188:9190 CAG.ComplexAnalysis2 <> z10:131 var
+R9199:9209 CAG.ComplexAnalysis2 <> analytic_C2 def
+R9211:9211 CAG.ComplexAnalysis2 <> f:126 var
+R9213:9215 CAG.ComplexAnalysis2 <> z10:131 var
+R9217:9219 CAG.ComplexAnalysis2 <> z20:132 var
+def 9522:9530 <> is_domain
+R9537:9539 Corelib.Init.Datatypes <> nat ind
+binder 9533:9533 <> n:133
+R9551:9554 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9547:9548 CAG.Complex <> Cn def
+R9550:9550 CAG.ComplexAnalysis2 <> n:133 var
+binder 9543:9543 <> U:134
+R9633:9633 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R9779:9849 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R10070:10070 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R9645:9646 CAG.Complex <> Cn def
+R9648:9648 CAG.ComplexAnalysis2 <> n:133 var
+binder 9641:9641 <> v:135
+R9654:9661 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9651:9651 CAG.ComplexAnalysis2 <> U:134 var
+R9653:9653 CAG.ComplexAnalysis2 <> v:135 var
+R9662:9668 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9678:9679 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9673:9677 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 9669:9669 <> r:136
+R9692:9701 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R9680:9689 CAG.Reals_extra <> CRpositive def
+R9691:9691 CAG.ComplexAnalysis2 <> r:136 var
+R9727:9736 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R9702:9709 CAG.ComplexAnalysis2 <> Polydisc def
+R9726:9726 CAG.ComplexAnalysis2 <> v:135 var
+R9723:9723 CAG.ComplexAnalysis2 <> r:136 var
+R9711:9711 CAG.ComplexAnalysis2 <> v:135 var
+binder 9744:9744 <> z:137
+R9772:9775 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9747:9754 CAG.ComplexAnalysis2 <> Polydisc def
+R9771:9771 CAG.ComplexAnalysis2 <> z:137 var
+R9768:9768 CAG.ComplexAnalysis2 <> r:136 var
+R9756:9756 CAG.ComplexAnalysis2 <> v:135 var
+R9776:9776 CAG.ComplexAnalysis2 <> U:134 var
+R9778:9778 CAG.ComplexAnalysis2 <> z:137 var
+R9863:9864 CAG.Complex <> Cn def
+R9866:9866 CAG.ComplexAnalysis2 <> n:133 var
+binder 9857:9857 <> v:138
+binder 9859:9859 <> w:139
+R9872:9875 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9869:9869 CAG.ComplexAnalysis2 <> U:134 var
+R9871:9871 CAG.ComplexAnalysis2 <> v:138 var
+R9879:9886 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9876:9876 CAG.ComplexAnalysis2 <> U:134 var
+R9878:9878 CAG.ComplexAnalysis2 <> w:139 var
+R9887:9893 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9915:9922 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9907:9910 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9902:9906 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+R9911:9912 CAG.Complex <> Cn def
+R9914:9914 CAG.ComplexAnalysis2 <> n:133 var
+binder 9894:9898 <> gamma:140
+R9945:9948 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R9941:9943 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9923:9927 CAG.ComplexAnalysis2 <> gamma:140 var
+R9930:9937 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+R9944:9944 CAG.ComplexAnalysis2 <> v:138 var
+R9971:9980 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R9967:9969 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R9949:9953 CAG.ComplexAnalysis2 <> gamma:140 var
+R9956:9963 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+R9970:9970 CAG.ComplexAnalysis2 <> w:139 var
+binder 9988:9988 <> t:141
+R10017:10020 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9991:10001 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CRealLtProp def
+R10004:10011 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+R10016:10016 CAG.ComplexAnalysis2 <> t:141 var
+R10047:10058 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10021:10031 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CRealLtProp def
+R10033:10033 CAG.ComplexAnalysis2 <> t:141 var
+R10036:10043 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> inject_Q def
+R10059:10059 CAG.ComplexAnalysis2 <> U:134 var
+R10062:10066 CAG.ComplexAnalysis2 <> gamma:140 var
+R10068:10068 CAG.ComplexAnalysis2 <> t:141 var
+prf 10248:10263 <> identity_theorem
+R10281:10283 Corelib.Init.Datatypes <> nat ind
+binder 10277:10277 <> n:142
+R10297:10300 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10293:10294 CAG.Complex <> Cn def
+R10296:10296 CAG.ComplexAnalysis2 <> n:142 var
+binder 10287:10287 <> U:143
+binder 10289:10289 <> V:144
+R10318:10321 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10314:10315 CAG.Complex <> Cn def
+R10317:10317 CAG.ComplexAnalysis2 <> n:142 var
+R10322:10329 CAG.Complex <> CComplex rec
+binder 10308:10308 <> f:145
+binder 10310:10310 <> g:146
+R10348:10355 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10337:10345 CAG.ComplexAnalysis2 <> is_domain def
+R10347:10347 CAG.ComplexAnalysis2 <> U:143 var
+R10374:10381 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10356:10369 CAG.ComplexAnalysis2 <> holomorphic_Cn def
+R10373:10373 CAG.ComplexAnalysis2 <> f:145 var
+R10371:10371 CAG.ComplexAnalysis2 <> U:143 var
+R10400:10451 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10382:10395 CAG.ComplexAnalysis2 <> holomorphic_Cn def
+R10399:10399 CAG.ComplexAnalysis2 <> g:146 var
+R10397:10397 CAG.ComplexAnalysis2 <> U:143 var
+R10452:10452 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10466:10474 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10453:10459 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R10461:10462 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 10460:10460 <> v:147
+R10463:10463 CAG.ComplexAnalysis2 <> V:144 var
+R10465:10465 CAG.ComplexAnalysis2 <> v:147 var
+R10475:10475 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10496:10504 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 10483:10483 <> v:148
+R10489:10492 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10486:10486 CAG.ComplexAnalysis2 <> V:144 var
+R10488:10488 CAG.ComplexAnalysis2 <> v:148 var
+R10493:10493 CAG.ComplexAnalysis2 <> U:143 var
+R10495:10495 CAG.ComplexAnalysis2 <> v:148 var
+R10505:10505 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10541:10549 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 10513:10513 <> v:149
+R10519:10522 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10516:10516 CAG.ComplexAnalysis2 <> V:144 var
+R10518:10518 CAG.ComplexAnalysis2 <> v:149 var
+R10523:10528 CAG.Complex <> Cequal def
+R10531:10531 CAG.ComplexAnalysis2 <> f:145 var
+R10533:10533 CAG.ComplexAnalysis2 <> v:149 var
+R10537:10537 CAG.ComplexAnalysis2 <> g:146 var
+R10539:10539 CAG.ComplexAnalysis2 <> v:149 var
+binder 10557:10557 <> v:150
+R10563:10566 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10560:10560 CAG.ComplexAnalysis2 <> U:143 var
+R10562:10562 CAG.ComplexAnalysis2 <> v:150 var
+R10567:10572 CAG.Complex <> Cequal def
+R10575:10575 CAG.ComplexAnalysis2 <> f:145 var
+R10577:10577 CAG.ComplexAnalysis2 <> v:150 var
+R10581:10581 CAG.ComplexAnalysis2 <> g:146 var
+R10583:10583 CAG.ComplexAnalysis2 <> v:150 var
+def 10727:10735 <> Cnorm2_fn
+R10742:10744 Corelib.Init.Datatypes <> nat ind
+binder 10738:10738 <> n:151
+R10756:10759 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10752:10753 CAG.Complex <> Cn def
+R10755:10755 CAG.ComplexAnalysis2 <> n:151 var
+R10760:10767 CAG.Complex <> CComplex rec
+binder 10748:10748 <> f:152
+R10776:10779 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10772:10773 CAG.Complex <> Cn def
+R10775:10775 CAG.ComplexAnalysis2 <> n:151 var
+R10780:10784 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 10795:10795 <> v:153
+R10800:10805 CAG.Complex <> Cnorm2 def
+R10808:10808 CAG.ComplexAnalysis2 <> f:152 var
+R10810:10810 CAG.ComplexAnalysis2 <> v:153 var
+prf 10823:10839 <> maximum_principle
+R10857:10859 Corelib.Init.Datatypes <> nat ind
+binder 10853:10853 <> n:154
+R10871:10874 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10867:10868 CAG.Complex <> Cn def
+R10870:10870 CAG.ComplexAnalysis2 <> n:154 var
+binder 10863:10863 <> U:155
+R10890:10893 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10886:10887 CAG.Complex <> Cn def
+R10889:10889 CAG.ComplexAnalysis2 <> n:154 var
+R10894:10901 CAG.Complex <> CComplex rec
+binder 10882:10882 <> f:156
+R10920:10927 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10909:10917 CAG.ComplexAnalysis2 <> is_domain def
+R10919:10919 CAG.ComplexAnalysis2 <> U:155 var
+R10946:11013 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10928:10941 CAG.ComplexAnalysis2 <> holomorphic_Cn def
+R10945:10945 CAG.ComplexAnalysis2 <> f:156 var
+R10943:10943 CAG.ComplexAnalysis2 <> U:155 var
+R11014:11014 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11165:11202 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11015:11021 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R11031:11032 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R11027:11028 CAG.Complex <> Cn def
+R11030:11030 CAG.ComplexAnalysis2 <> n:154 var
+binder 11022:11023 <> v0:157
+R11037:11046 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R11033:11033 CAG.ComplexAnalysis2 <> U:155 var
+R11035:11036 CAG.ComplexAnalysis2 <> v0:157 var
+R11058:11059 CAG.Complex <> Cn def
+R11061:11061 CAG.ComplexAnalysis2 <> n:154 var
+binder 11054:11054 <> v:158
+R11067:11078 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11064:11064 CAG.ComplexAnalysis2 <> U:155 var
+R11066:11066 CAG.ComplexAnalysis2 <> v:158 var
+R11123:11134 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R11079:11089 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CRealLtProp def
+R11092:11100 CAG.ComplexAnalysis2 <> Cnorm2_fn def
+R11104:11104 CAG.ComplexAnalysis2 <> v:158 var
+R11102:11102 CAG.ComplexAnalysis2 <> f:156 var
+R11108:11116 CAG.ComplexAnalysis2 <> Cnorm2_fn def
+R11120:11121 CAG.ComplexAnalysis2 <> v0:157 var
+R11118:11118 CAG.ComplexAnalysis2 <> f:156 var
+R11148:11150 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11135:11143 CAG.ComplexAnalysis2 <> Cnorm2_fn def
+R11147:11147 CAG.ComplexAnalysis2 <> v:158 var
+R11145:11145 CAG.ComplexAnalysis2 <> f:156 var
+R11151:11159 CAG.ComplexAnalysis2 <> Cnorm2_fn def
+R11163:11164 CAG.ComplexAnalysis2 <> v0:157 var
+R11161:11161 CAG.ComplexAnalysis2 <> f:156 var
+R11203:11209 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R11222:11223 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R11214:11221 CAG.Complex <> CComplex rec
+binder 11210:11210 <> c:159
+R11235:11236 CAG.Complex <> Cn def
+R11238:11238 CAG.ComplexAnalysis2 <> n:154 var
+binder 11231:11231 <> v:160
+R11244:11247 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11241:11241 CAG.ComplexAnalysis2 <> U:155 var
+R11243:11243 CAG.ComplexAnalysis2 <> v:160 var
+R11248:11253 CAG.Complex <> Cequal def
+R11256:11256 CAG.ComplexAnalysis2 <> f:156 var
+R11258:11258 CAG.ComplexAnalysis2 <> v:160 var
+R11261:11261 CAG.ComplexAnalysis2 <> c:159 var
+def 11793:11806 <> hartogs_figure
+R11823:11827 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 11809:11810 <> R1:161
+binder 11812:11813 <> r1:162
+binder 11815:11816 <> R2:163
+binder 11818:11819 <> r2:164
+R11840:11843 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11832:11839 CAG.Complex <> CComplex rec
+R11852:11855 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11844:11851 CAG.Complex <> CComplex rec
+binder 11870:11871 <> z1:165
+binder 11873:11874 <> z2:166
+R11901:11904 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R11883:11891 CAG.ComplexAnalysis <> open_disc def
+R11893:11894 CAG.Complex <> C0 def
+R11896:11897 CAG.ComplexAnalysis2 <> R1:161 var
+R11899:11900 CAG.ComplexAnalysis2 <> z1:165 var
+R11923:11930 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R11905:11913 CAG.ComplexAnalysis <> open_disc def
+R11915:11916 CAG.Complex <> C0 def
+R11918:11919 CAG.ComplexAnalysis2 <> R2:163 var
+R11921:11922 CAG.ComplexAnalysis2 <> z2:166 var
+R11931:11933 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R11974:11974 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R11952:11955 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R11934:11942 CAG.ComplexAnalysis <> open_disc def
+R11944:11945 CAG.Complex <> C0 def
+R11947:11948 CAG.ComplexAnalysis2 <> r1:162 var
+R11950:11951 CAG.ComplexAnalysis2 <> z1:165 var
+R11956:11964 CAG.ComplexAnalysis <> open_disc def
+R11966:11967 CAG.Complex <> C0 def
+R11969:11970 CAG.ComplexAnalysis2 <> r2:164 var
+R11972:11973 CAG.ComplexAnalysis2 <> z2:166 var
+def 11989:12001 <> full_polydisc
+R12012:12016 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 12004:12005 <> R1:167
+binder 12007:12008 <> R2:168
+R12029:12032 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12021:12028 CAG.Complex <> CComplex rec
+R12041:12044 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12033:12040 CAG.Complex <> CComplex rec
+binder 12059:12060 <> z1:169
+binder 12062:12063 <> z2:170
+R12086:12089 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R12068:12076 CAG.ComplexAnalysis <> open_disc def
+R12078:12079 CAG.Complex <> C0 def
+R12081:12082 CAG.ComplexAnalysis2 <> R1:167 var
+R12084:12085 CAG.ComplexAnalysis2 <> z1:169 var
+R12090:12098 CAG.ComplexAnalysis <> open_disc def
+R12100:12101 CAG.Complex <> C0 def
+R12103:12104 CAG.ComplexAnalysis2 <> R2:168 var
+R12106:12107 CAG.ComplexAnalysis2 <> z2:170 var
+prf 12525:12531 <> hartogs
+R12559:12563 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 12545:12546 <> R1:171
+binder 12548:12549 <> r1:172
+binder 12551:12552 <> R2:173
+binder 12554:12555 <> r2:174
+R12579:12582 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12571:12578 CAG.Complex <> CComplex rec
+R12591:12594 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12583:12590 CAG.Complex <> CComplex rec
+R12595:12602 CAG.Complex <> CComplex rec
+binder 12567:12567 <> f:175
+R12623:12626 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12610:12619 CAG.Reals_extra <> CRpositive def
+R12621:12622 CAG.ComplexAnalysis2 <> r1:172 var
+R12640:12647 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12627:12636 CAG.Reals_extra <> CRpositive def
+R12638:12639 CAG.ComplexAnalysis2 <> r2:174 var
+R12679:12686 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12648:12658 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CRealLtProp def
+R12663:12665 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R12661:12662 CAG.ComplexAnalysis2 <> r1:172 var
+R12666:12667 CAG.ComplexAnalysis2 <> r1:172 var
+R12673:12675 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R12671:12672 CAG.ComplexAnalysis2 <> R1:171 var
+R12676:12677 CAG.ComplexAnalysis2 <> R1:171 var
+R12718:12725 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12687:12697 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CRealLtProp def
+R12702:12704 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R12700:12701 CAG.ComplexAnalysis2 <> r2:174 var
+R12705:12706 CAG.ComplexAnalysis2 <> r2:174 var
+R12712:12714 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R12710:12711 CAG.ComplexAnalysis2 <> R2:173 var
+R12715:12716 CAG.ComplexAnalysis2 <> R2:173 var
+R12726:12726 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12869:12877 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 12734:12735 <> z1:176
+binder 12737:12738 <> z2:177
+R12773:12782 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12741:12754 CAG.ComplexAnalysis2 <> hartogs_figure def
+R12756:12757 CAG.ComplexAnalysis2 <> R1:171 var
+R12759:12760 CAG.ComplexAnalysis2 <> r1:172 var
+R12762:12763 CAG.ComplexAnalysis2 <> R2:173 var
+R12765:12766 CAG.ComplexAnalysis2 <> r2:174 var
+R12768:12769 CAG.ComplexAnalysis2 <> z1:176 var
+R12771:12772 CAG.ComplexAnalysis2 <> z2:177 var
+R12821:12830 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R12783:12799 CAG.Complex <> holomorphic_at_CR def
+binder 12806:12806 <> w:178
+R12811:12811 CAG.ComplexAnalysis2 <> f:175 var
+R12816:12816 CAG.ComplexAnalysis2 <> w:178 var
+R12813:12814 CAG.ComplexAnalysis2 <> z1:176 var
+R12819:12820 CAG.ComplexAnalysis2 <> z2:177 var
+R12831:12847 CAG.Complex <> holomorphic_at_CR def
+binder 12854:12854 <> w:179
+R12859:12859 CAG.ComplexAnalysis2 <> f:175 var
+R12863:12864 CAG.ComplexAnalysis2 <> z2:177 var
+R12861:12861 CAG.ComplexAnalysis2 <> w:179 var
+R12867:12868 CAG.ComplexAnalysis2 <> z1:176 var
+R12878:12884 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R12921:12928 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R12897:12900 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12889:12896 CAG.Complex <> CComplex rec
+R12909:12912 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12901:12908 CAG.Complex <> CComplex rec
+R12913:12920 CAG.Complex <> CComplex rec
+binder 12885:12885 <> F:180
+R12929:12929 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R13069:13080 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R13165:13165 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 12937:12938 <> z1:181
+binder 12940:12941 <> z2:182
+R12969:12980 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12944:12956 CAG.ComplexAnalysis2 <> full_polydisc def
+R12958:12959 CAG.ComplexAnalysis2 <> R1:171 var
+R12961:12962 CAG.ComplexAnalysis2 <> R2:173 var
+R12964:12965 CAG.ComplexAnalysis2 <> z1:181 var
+R12967:12968 CAG.ComplexAnalysis2 <> z2:182 var
+R13019:13030 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R12981:12997 CAG.Complex <> holomorphic_at_CR def
+binder 13004:13004 <> w:183
+R13009:13009 CAG.ComplexAnalysis2 <> F:180 var
+R13014:13014 CAG.ComplexAnalysis2 <> w:183 var
+R13011:13012 CAG.ComplexAnalysis2 <> z1:181 var
+R13017:13018 CAG.ComplexAnalysis2 <> z2:182 var
+R13031:13047 CAG.Complex <> holomorphic_at_CR def
+binder 13054:13054 <> w:184
+R13059:13059 CAG.ComplexAnalysis2 <> F:180 var
+R13063:13064 CAG.ComplexAnalysis2 <> z2:182 var
+R13061:13061 CAG.ComplexAnalysis2 <> w:184 var
+R13067:13068 CAG.ComplexAnalysis2 <> z1:181 var
+binder 13088:13089 <> z1:185
+binder 13091:13092 <> z2:186
+R13127:13138 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13095:13108 CAG.ComplexAnalysis2 <> hartogs_figure def
+R13110:13111 CAG.ComplexAnalysis2 <> R1:171 var
+R13113:13114 CAG.ComplexAnalysis2 <> r1:172 var
+R13116:13117 CAG.ComplexAnalysis2 <> R2:173 var
+R13119:13120 CAG.ComplexAnalysis2 <> r2:174 var
+R13122:13123 CAG.ComplexAnalysis2 <> z1:185 var
+R13125:13126 CAG.ComplexAnalysis2 <> z2:186 var
+R13139:13144 CAG.Complex <> Cequal def
+R13147:13147 CAG.ComplexAnalysis2 <> F:180 var
+R13152:13153 CAG.ComplexAnalysis2 <> z2:186 var
+R13149:13150 CAG.ComplexAnalysis2 <> z1:185 var
+R13157:13157 CAG.ComplexAnalysis2 <> f:175 var
+R13162:13163 CAG.ComplexAnalysis2 <> z2:186 var
+R13159:13160 CAG.ComplexAnalysis2 <> z1:185 var
+prf 13313:13341 <> hartogs_removable_singularity
+R13363:13367 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 13355:13356 <> R1:187
+binder 13358:13359 <> R2:188
+R13383:13386 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13375:13382 CAG.Complex <> CComplex rec
+R13395:13398 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13387:13394 CAG.Complex <> CComplex rec
+R13399:13406 CAG.Complex <> CComplex rec
+binder 13371:13371 <> f:189
+R13427:13430 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13414:13423 CAG.Reals_extra <> CRpositive def
+R13425:13426 CAG.ComplexAnalysis2 <> R1:187 var
+R13444:13451 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13431:13440 CAG.Reals_extra <> CRpositive def
+R13442:13443 CAG.ComplexAnalysis2 <> R2:188 var
+R13452:13452 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13679:13687 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 13460:13461 <> z1:190
+binder 13463:13464 <> z2:191
+R13473:13473 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13514:13524 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13492:13495 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R13474:13482 CAG.ComplexAnalysis <> open_disc def
+R13484:13485 CAG.Complex <> C0 def
+R13487:13488 CAG.ComplexAnalysis2 <> R1:187 var
+R13490:13491 CAG.ComplexAnalysis2 <> z1:190 var
+R13496:13504 CAG.ComplexAnalysis <> open_disc def
+R13506:13507 CAG.Complex <> C0 def
+R13509:13510 CAG.ComplexAnalysis2 <> R2:188 var
+R13512:13513 CAG.ComplexAnalysis2 <> z2:191 var
+R13561:13592 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13537:13540 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R13525:13530 CAG.Complex <> Cequal def
+R13532:13533 CAG.ComplexAnalysis2 <> z1:190 var
+R13535:13536 CAG.Complex <> C0 def
+R13553:13556 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R13541:13546 CAG.Complex <> Cequal def
+R13548:13549 CAG.ComplexAnalysis2 <> z2:191 var
+R13551:13552 CAG.Complex <> C0 def
+R13557:13560 Corelib.Init.Logic <> True ind
+R13631:13640 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R13593:13609 CAG.Complex <> holomorphic_at_CR def
+binder 13616:13616 <> w:192
+R13621:13621 CAG.ComplexAnalysis2 <> f:189 var
+R13626:13626 CAG.ComplexAnalysis2 <> w:192 var
+R13623:13624 CAG.ComplexAnalysis2 <> z1:190 var
+R13629:13630 CAG.ComplexAnalysis2 <> z2:191 var
+R13641:13657 CAG.Complex <> holomorphic_at_CR def
+binder 13664:13664 <> w:193
+R13669:13669 CAG.ComplexAnalysis2 <> f:189 var
+R13673:13674 CAG.ComplexAnalysis2 <> z2:191 var
+R13671:13671 CAG.ComplexAnalysis2 <> w:193 var
+R13677:13678 CAG.ComplexAnalysis2 <> z1:190 var
+R13688:13694 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R13731:13738 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R13707:13710 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13699:13706 CAG.Complex <> CComplex rec
+R13719:13722 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13711:13718 CAG.Complex <> CComplex rec
+R13723:13730 CAG.Complex <> CComplex rec
+binder 13695:13695 <> F:194
+binder 13746:13747 <> z1:195
+binder 13749:13750 <> z2:196
+R13778:13789 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13753:13765 CAG.ComplexAnalysis2 <> full_polydisc def
+R13767:13768 CAG.ComplexAnalysis2 <> R1:187 var
+R13770:13771 CAG.ComplexAnalysis2 <> R2:188 var
+R13773:13774 CAG.ComplexAnalysis2 <> z1:195 var
+R13776:13777 CAG.ComplexAnalysis2 <> z2:196 var
+R13828:13839 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R13790:13806 CAG.Complex <> holomorphic_at_CR def
+binder 13813:13813 <> w:197
+R13818:13818 CAG.ComplexAnalysis2 <> F:194 var
+R13823:13823 CAG.ComplexAnalysis2 <> w:197 var
+R13820:13821 CAG.ComplexAnalysis2 <> z1:195 var
+R13826:13827 CAG.ComplexAnalysis2 <> z2:196 var
+R13840:13856 CAG.Complex <> holomorphic_at_CR def
+binder 13863:13863 <> w:198
+R13868:13868 CAG.ComplexAnalysis2 <> F:194 var
+R13872:13873 CAG.ComplexAnalysis2 <> z2:196 var
+R13870:13870 CAG.ComplexAnalysis2 <> w:198 var
+R13876:13877 CAG.ComplexAnalysis2 <> z1:195 var
+def 14355:14360 <> horner
+R14372:14375 Corelib.Init.Datatypes <> list ind
+R14377:14384 CAG.Complex <> CComplex rec
+binder 14363:14368 <> coeffs:199
+R14396:14403 CAG.Complex <> CComplex rec
+binder 14388:14388 <> w:200
+binder 14390:14392 <> acc:201
+R14408:14415 CAG.Complex <> CComplex rec
+R14428:14433 CAG.ComplexAnalysis2 <> coeffs:199 var
+R14444:14445 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R14457:14459 CAG.ComplexAnalysis2 <> acc:201 var
+R14466:14469 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R14478:14483 CAG.ComplexAnalysis2 <> horner:202 def
+R14493:14496 CAG.Complex <> Cadd def
+R14499:14502 CAG.Complex <> Cmul def
+R14504:14506 CAG.ComplexAnalysis2 <> acc:201 var
+R14508:14508 CAG.ComplexAnalysis2 <> w:200 var
+R14490:14490 CAG.ComplexAnalysis2 <> w:200 var
+def 14533:14547 <> monic_poly_eval
+R14559:14562 Corelib.Init.Datatypes <> list ind
+R14564:14571 CAG.Complex <> CComplex rec
+binder 14550:14555 <> coeffs:204
+R14579:14586 CAG.Complex <> CComplex rec
+binder 14575:14575 <> w:205
+R14591:14598 CAG.Complex <> CComplex rec
+R14605:14610 CAG.ComplexAnalysis2 <> horner def
+R14612:14617 CAG.ComplexAnalysis2 <> coeffs:204 var
+R14619:14619 CAG.ComplexAnalysis2 <> w:205 var
+R14621:14622 CAG.Complex <> C1 def
+rec 14829:14833 <> WPoly
+proj 14867:14875 <> wp_coeffs
+proj 14978:14991 <> wp_holomorphic
+proj 15091:15101 <> wp_vanishes
+R14840:14842 Corelib.Init.Datatypes <> nat ind
+binder 14836:14836 <> n:206
+R14884:14887 Corelib.Init.Datatypes <> list ind
+R14894:14897 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14890:14891 CAG.Complex <> Cn def
+R14893:14893 CAG.ComplexAnalysis2 <> n:206 var
+R14898:14905 CAG.Complex <> CComplex rec
+R15010:15013 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15006:15007 CAG.Complex <> Cn def
+R15009:15009 CAG.ComplexAnalysis2 <> n:206 var
+R15014:15021 CAG.Complex <> CComplex rec
+binder 15002:15002 <> c:209
+R15044:15053 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15030:15031 Stdlib.Lists.List <> In def
+R15035:15043 CAG.ComplexAnalysis2 <> wp_coeffs:208 meth
+R15033:15033 CAG.ComplexAnalysis2 <> c:209 var
+R15054:15067 CAG.ComplexAnalysis2 <> holomorphic_Cn def
+R15085:15085 CAG.ComplexAnalysis2 <> c:209 var
+R15079:15082 Corelib.Init.Logic <> True ind
+R15123:15126 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15119:15120 CAG.Complex <> Cn def
+R15122:15122 CAG.ComplexAnalysis2 <> n:206 var
+R15127:15134 CAG.Complex <> CComplex rec
+binder 15115:15115 <> c:211
+R15157:15166 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15143:15144 Stdlib.Lists.List <> In def
+R15148:15156 CAG.ComplexAnalysis2 <> wp_coeffs:208 meth
+R15146:15146 CAG.ComplexAnalysis2 <> c:211 var
+R15182:15184 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15167:15167 CAG.ComplexAnalysis2 <> c:211 var
+R15179:15180 CAG.Complex <> C0 def
+R15185:15186 CAG.Complex <> C0 def
+R15253:15261 CAG.ComplexAnalysis2 <> wp_coeffs proj
+R15253:15261 CAG.ComplexAnalysis2 <> wp_coeffs proj
+R15280:15293 CAG.ComplexAnalysis2 <> wp_holomorphic proj
+R15280:15293 CAG.ComplexAnalysis2 <> wp_holomorphic proj
+R15312:15322 CAG.ComplexAnalysis2 <> wp_vanishes proj
+R15312:15322 CAG.ComplexAnalysis2 <> wp_vanishes proj
+def 15343:15348 <> wp_deg
+R15355:15357 Corelib.Init.Datatypes <> nat ind
+binder 15351:15351 <> n:213
+R15365:15369 CAG.ComplexAnalysis2 <> WPoly rec
+R15371:15371 CAG.ComplexAnalysis2 <> n:213 var
+binder 15361:15361 <> p:214
+R15376:15378 Corelib.Init.Datatypes <> nat ind
+R15385:15395 Stdlib.Lists.List <> length abbrev
+R15398:15406 CAG.ComplexAnalysis2 <> wp_coeffs proj
+R15408:15408 CAG.ComplexAnalysis2 <> p:214 var
+def 15478:15484 <> wp_eval
+binder 15487:15487 <> n:215
+R15495:15499 CAG.ComplexAnalysis2 <> WPoly rec
+R15501:15501 CAG.ComplexAnalysis2 <> n:215 var
+binder 15491:15491 <> p:216
+R15509:15510 CAG.Complex <> Cn def
+R15512:15512 CAG.ComplexAnalysis2 <> n:215 var
+binder 15505:15505 <> z:217
+R15520:15527 CAG.Complex <> CComplex rec
+binder 15516:15516 <> w:218
+R15532:15539 CAG.Complex <> CComplex rec
+R15546:15560 CAG.ComplexAnalysis2 <> monic_poly_eval def
+R15563:15570 Stdlib.Lists.List <> map abbrev
+R15588:15596 CAG.ComplexAnalysis2 <> wp_coeffs proj
+R15598:15598 CAG.ComplexAnalysis2 <> p:216 var
+binder 15577:15577 <> c:219
+R15582:15582 CAG.ComplexAnalysis2 <> c:219 var
+R15584:15584 CAG.ComplexAnalysis2 <> z:217 var
+R15602:15602 CAG.ComplexAnalysis2 <> w:218 var
+def 15810:15819 <> order_in_w
+R15834:15837 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15826:15833 CAG.Complex <> CComplex rec
+R15838:15845 CAG.Complex <> CComplex rec
+binder 15822:15822 <> f:220
+R15853:15856 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15850:15852 Corelib.Init.Datatypes <> nat ind
+binder 15871:15871 <> d:221
+R16033:16040 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R16028:16030 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15940:15947 CAG.ComplexAnalysis <> ps_coeff def
+R15950:15955 CAG.ComplexAnalysis <> PSCons constr
+R15957:15958 CAG.Complex <> C0 def
+R15961:15966 CAG.ComplexAnalysis <> PSCons constr
+R15968:15969 CAG.Complex <> C0 def
+R15972:15977 CAG.ComplexAnalysis <> PSCons constr
+R15979:15980 CAG.Complex <> C0 def
+R15983:15988 CAG.ComplexAnalysis <> PSCons constr
+R15990:15991 CAG.Complex <> C0 def
+R15994:15999 CAG.ComplexAnalysis <> PSCons constr
+R16001:16002 CAG.Complex <> C0 def
+R16005:16016 CAG.ComplexAnalysis <> const_series def
+R16018:16019 CAG.Complex <> C0 def
+R16027:16027 CAG.ComplexAnalysis2 <> d:221 var
+R16031:16032 CAG.Complex <> C0 def
+R16041:16044 Corelib.Init.Logic <> True ind
+prf 16662:16684 <> weierstrass_preparation
+R16702:16704 Corelib.Init.Datatypes <> nat ind
+binder 16698:16698 <> n:222
+R16720:16723 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R16712:16713 CAG.Complex <> Cn def
+R16716:16716 Corelib.Init.Datatypes <> S constr
+R16718:16718 CAG.ComplexAnalysis2 <> n:222 var
+R16724:16731 CAG.Complex <> CComplex rec
+binder 16708:16708 <> f:223
+R16739:16741 Corelib.Init.Datatypes <> nat ind
+binder 16735:16735 <> d:224
+R16781:16788 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R16749:16762 CAG.ComplexAnalysis2 <> holomorphic_Cn def
+R16780:16780 CAG.ComplexAnalysis2 <> f:223 var
+R16774:16777 Corelib.Init.Logic <> True ind
+R16809:16889 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R16804:16806 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R16789:16789 CAG.ComplexAnalysis2 <> f:223 var
+R16801:16802 CAG.Complex <> C0 def
+R16807:16808 CAG.Complex <> C0 def
+R16890:16890 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R16967:16975 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 16898:16898 <> k:225
+R16912:16921 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R16903:16905 Corelib.Init.Peano <> ::nat_scope:x_'<'_x not
+R16902:16902 CAG.ComplexAnalysis2 <> k:225 var
+R16906:16906 CAG.ComplexAnalysis2 <> d:224 var
+R16962:16964 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R16922:16929 CAG.ComplexAnalysis <> ps_coeff def
+R16932:16937 CAG.ComplexAnalysis <> PSCons constr
+R16939:16940 CAG.Complex <> C0 def
+R16943:16954 CAG.ComplexAnalysis <> const_series def
+R16956:16957 CAG.Complex <> C0 def
+R16961:16961 CAG.ComplexAnalysis2 <> k:225 var
+R16965:16966 CAG.Complex <> C0 def
+R16976:16983 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R17022:17030 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R16988:16992 CAG.ComplexAnalysis2 <> WPoly rec
+R16994:16994 CAG.ComplexAnalysis2 <> n:222 var
+binder 16984:16984 <> g:226
+R17010:17013 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R17002:17003 CAG.Complex <> Cn def
+R17006:17006 Corelib.Init.Datatypes <> S constr
+R17008:17008 CAG.ComplexAnalysis2 <> n:222 var
+R17014:17021 CAG.Complex <> CComplex rec
+binder 16998:16998 <> h:227
+R17043:17052 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R17039:17041 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R17031:17036 CAG.ComplexAnalysis2 <> wp_deg def
+R17038:17038 CAG.ComplexAnalysis2 <> g:226 var
+R17042:17042 CAG.ComplexAnalysis2 <> d:224 var
+R17085:17094 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R17053:17066 CAG.ComplexAnalysis2 <> holomorphic_Cn def
+R17084:17084 CAG.ComplexAnalysis2 <> h:227 var
+R17078:17081 Corelib.Init.Logic <> True ind
+R17132:17178 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R17095:17104 CAG.Reals_extra <> CRpositive def
+R17107:17112 CAG.Complex <> Cnorm2 def
+R17115:17115 CAG.ComplexAnalysis2 <> h:227 var
+R17127:17128 CAG.Complex <> C0 def
+R17190:17191 CAG.Complex <> Cn def
+R17194:17194 Corelib.Init.Datatypes <> S constr
+R17196:17196 CAG.ComplexAnalysis2 <> n:222 var
+binder 17186:17186 <> z:228
+R17208:17213 CAG.Complex <> Cequal def
+R17216:17216 CAG.ComplexAnalysis2 <> f:223 var
+R17218:17218 CAG.ComplexAnalysis2 <> z:228 var
+R17237:17240 CAG.Complex <> Cmul def
+R17243:17249 CAG.ComplexAnalysis2 <> wp_eval def
+R17278:17278 CAG.ComplexAnalysis2 <> z:228 var
+R17280:17285 Stdlib.Vectors.Fin <> F1 constr
+binder 17258:17258 <> i:229
+R17263:17263 CAG.ComplexAnalysis2 <> z:228 var
+R17266:17271 Stdlib.Vectors.Fin <> FS constr
+R17273:17273 CAG.ComplexAnalysis2 <> i:229 var
+R17251:17251 CAG.ComplexAnalysis2 <> g:226 var
+R17311:17311 CAG.ComplexAnalysis2 <> h:227 var
+R17313:17313 CAG.ComplexAnalysis2 <> z:228 var
+prf 17514:17533 <> weierstrass_division
+R17551:17553 Corelib.Init.Datatypes <> nat ind
+binder 17547:17547 <> n:230
+R17569:17572 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R17561:17562 CAG.Complex <> Cn def
+R17565:17565 Corelib.Init.Datatypes <> S constr
+R17567:17567 CAG.ComplexAnalysis2 <> n:230 var
+R17573:17580 CAG.Complex <> CComplex rec
+binder 17557:17557 <> f:231
+R17588:17592 CAG.ComplexAnalysis2 <> WPoly rec
+R17594:17594 CAG.ComplexAnalysis2 <> n:230 var
+binder 17584:17584 <> g:232
+R17634:17641 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R17602:17615 CAG.ComplexAnalysis2 <> holomorphic_Cn def
+R17633:17633 CAG.ComplexAnalysis2 <> f:231 var
+R17627:17630 Corelib.Init.Logic <> True ind
+R17642:17649 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R17711:17719 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R17662:17665 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R17654:17655 CAG.Complex <> Cn def
+R17658:17658 Corelib.Init.Datatypes <> S constr
+R17660:17660 CAG.ComplexAnalysis2 <> n:230 var
+R17666:17673 CAG.Complex <> CComplex rec
+binder 17650:17650 <> h:233
+R17688:17691 Corelib.Init.Datatypes <> list ind
+R17698:17701 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R17694:17695 CAG.Complex <> Cn def
+R17697:17697 CAG.ComplexAnalysis2 <> n:230 var
+R17702:17709 CAG.Complex <> CComplex rec
+binder 17677:17684 <> r_coeffs:234
+R17751:17760 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R17740:17742 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R17720:17730 Stdlib.Lists.List <> length abbrev
+R17732:17739 CAG.ComplexAnalysis2 <> r_coeffs:234 var
+R17743:17748 CAG.ComplexAnalysis2 <> wp_deg def
+R17750:17750 CAG.ComplexAnalysis2 <> g:232 var
+R17793:17802 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R17761:17774 CAG.ComplexAnalysis2 <> holomorphic_Cn def
+R17792:17792 CAG.ComplexAnalysis2 <> h:233 var
+R17786:17789 Corelib.Init.Logic <> True ind
+R17803:17803 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R17863:17873 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 17811:17811 <> c:235
+R17827:17830 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R17814:17815 Stdlib.Lists.List <> In def
+R17819:17826 CAG.ComplexAnalysis2 <> r_coeffs:234 var
+R17817:17817 CAG.ComplexAnalysis2 <> c:235 var
+R17831:17844 CAG.ComplexAnalysis2 <> holomorphic_Cn def
+R17862:17862 CAG.ComplexAnalysis2 <> c:235 var
+R17856:17859 Corelib.Init.Logic <> True ind
+R17885:17886 CAG.Complex <> Cn def
+R17889:17889 Corelib.Init.Datatypes <> S constr
+R17891:17891 CAG.ComplexAnalysis2 <> n:230 var
+binder 17881:17881 <> z:236
+binder 17917:17917 <> i:237
+R17922:17922 CAG.ComplexAnalysis2 <> z:236 var
+R17925:17930 Stdlib.Vectors.Fin <> FS constr
+R17932:17932 CAG.ComplexAnalysis2 <> i:237 var
+binder 17907:17908 <> zn:238
+R17986:17986 CAG.ComplexAnalysis2 <> z:236 var
+R17988:17993 Stdlib.Vectors.Fin <> F1 constr
+binder 17980:17980 <> w:239
+R18035:18040 CAG.Complex <> Cequal def
+R18043:18043 CAG.ComplexAnalysis2 <> f:231 var
+R18045:18045 CAG.ComplexAnalysis2 <> z:236 var
+R18059:18062 CAG.Complex <> Cadd def
+R18077:18080 CAG.Complex <> Cmul def
+R18083:18089 CAG.ComplexAnalysis2 <> wp_eval def
+R18096:18096 CAG.ComplexAnalysis2 <> w:239 var
+R18093:18094 CAG.ComplexAnalysis2 <> zn:238 var
+R18091:18091 CAG.ComplexAnalysis2 <> g:232 var
+R18100:18100 CAG.ComplexAnalysis2 <> h:233 var
+R18102:18102 CAG.ComplexAnalysis2 <> z:236 var
+R18119:18133 CAG.ComplexAnalysis2 <> monic_poly_eval def
+R18136:18143 Stdlib.Lists.List <> map abbrev
+R18161:18168 CAG.ComplexAnalysis2 <> r_coeffs:234 var
+binder 18150:18150 <> c:240
+R18155:18155 CAG.ComplexAnalysis2 <> c:240 var
+R18157:18158 CAG.ComplexAnalysis2 <> zn:238 var
+R18171:18171 CAG.ComplexAnalysis2 <> w:239 var
+def 18518:18534 <> has_repeated_root
+binder 18537:18537 <> n:241
+R18545:18549 CAG.ComplexAnalysis2 <> WPoly rec
+R18551:18551 CAG.ComplexAnalysis2 <> n:241 var
+binder 18541:18541 <> g:242
+R18559:18560 CAG.Complex <> Cn def
+R18562:18562 CAG.ComplexAnalysis2 <> n:241 var
+binder 18555:18555 <> z:243
+R18577:18583 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R18596:18601 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R18588:18595 CAG.Complex <> CComplex rec
+binder 18584:18584 <> w:244
+R18627:18634 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R18602:18607 CAG.Complex <> Cequal def
+R18610:18616 CAG.ComplexAnalysis2 <> wp_eval def
+R18622:18622 CAG.ComplexAnalysis2 <> w:244 var
+R18620:18620 CAG.ComplexAnalysis2 <> z:243 var
+R18618:18618 CAG.ComplexAnalysis2 <> g:242 var
+R18625:18626 CAG.Complex <> C0 def
+R18635:18641 CAG.ComplexAnalysis <> dbar_at def
+binder 18648:18649 <> w':245
+R18654:18660 CAG.ComplexAnalysis2 <> wp_eval def
+R18666:18667 CAG.ComplexAnalysis2 <> w':245 var
+R18664:18664 CAG.ComplexAnalysis2 <> z:243 var
+R18662:18662 CAG.ComplexAnalysis2 <> g:242 var
+R18670:18670 CAG.ComplexAnalysis2 <> w:244 var
+R18672:18673 CAG.Complex <> C0 def
+def 18862:18883 <> weierstrass_zero_locus
+binder 18886:18886 <> n:246
+R18894:18898 CAG.ComplexAnalysis2 <> WPoly rec
+R18900:18900 CAG.ComplexAnalysis2 <> n:246 var
+binder 18890:18890 <> g:247
+R18908:18909 CAG.Complex <> Cn def
+R18911:18911 CAG.ComplexAnalysis2 <> n:246 var
+binder 18904:18904 <> z:248
+R18926:18932 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R18945:18946 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R18937:18944 CAG.Complex <> CComplex rec
+binder 18933:18933 <> w:249
+R18947:18952 CAG.Complex <> Cequal def
+R18955:18961 CAG.ComplexAnalysis2 <> wp_eval def
+R18967:18967 CAG.ComplexAnalysis2 <> w:249 var
+R18965:18965 CAG.ComplexAnalysis2 <> z:248 var
+R18963:18963 CAG.ComplexAnalysis2 <> g:247 var
+R18970:18971 CAG.Complex <> C0 def
+rec 19357:19360 <> Germ
+proj 19393:19403 <> germ_radius
+proj 19421:19435 <> germ_radius_pos
+proj 19466:19472 <> germ_fn
+proj 19505:19512 <> germ_hol
+R19367:19369 Corelib.Init.Datatypes <> nat ind
+binder 19363:19363 <> n:250
+R19411:19415 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+R19439:19448 CAG.Reals_extra <> CRpositive def
+R19450:19460 CAG.ComplexAnalysis2 <> germ_radius:252 meth
+R19488:19491 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R19484:19485 CAG.Complex <> Cn def
+R19487:19487 CAG.ComplexAnalysis2 <> n:250 var
+R19492:19499 CAG.Complex <> CComplex rec
+R19523:19536 CAG.ComplexAnalysis2 <> holomorphic_Cn def
+R19598:19604 CAG.ComplexAnalysis2 <> germ_fn:254 meth
+R19545:19552 CAG.ComplexAnalysis2 <> Polydisc def
+R19578:19588 CAG.ComplexAnalysis2 <> germ_radius:252 meth
+R19564:19565 CAG.Complex <> C0 def
+R19622:19632 CAG.ComplexAnalysis2 <> germ_radius proj
+R19622:19632 CAG.ComplexAnalysis2 <> germ_radius proj
+R19651:19665 CAG.ComplexAnalysis2 <> germ_radius_pos proj
+R19651:19665 CAG.ComplexAnalysis2 <> germ_radius_pos proj
+R19684:19690 CAG.ComplexAnalysis2 <> germ_fn proj
+R19684:19690 CAG.ComplexAnalysis2 <> germ_fn proj
+R19709:19716 CAG.ComplexAnalysis2 <> germ_hol proj
+R19709:19716 CAG.ComplexAnalysis2 <> germ_hol proj
+def 19877:19886 <> germ_equiv
+R19893:19895 Corelib.Init.Datatypes <> nat ind
+binder 19889:19889 <> n:256
+R19905:19908 CAG.ComplexAnalysis2 <> Germ rec
+R19910:19910 CAG.ComplexAnalysis2 <> n:256 var
+binder 19899:19899 <> f:257
+binder 19901:19901 <> g:258
+R19925:19931 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R19941:19942 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R19936:19940 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 19932:19932 <> r:259
+R19955:19962 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R19943:19952 CAG.Reals_extra <> CRpositive def
+R19954:19954 CAG.ComplexAnalysis2 <> r:259 var
+R20014:20021 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R19963:19973 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CRealLtProp def
+R19977:19979 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R19976:19976 CAG.ComplexAnalysis2 <> r:259 var
+R19980:19980 CAG.ComplexAnalysis2 <> r:259 var
+R19997:19999 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R19984:19994 CAG.ComplexAnalysis2 <> germ_radius proj
+R19996:19996 CAG.ComplexAnalysis2 <> f:257 var
+R20000:20010 CAG.ComplexAnalysis2 <> germ_radius proj
+R20012:20012 CAG.ComplexAnalysis2 <> f:257 var
+R20073:20080 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R20022:20032 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CRealLtProp def
+R20036:20038 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R20035:20035 CAG.ComplexAnalysis2 <> r:259 var
+R20039:20039 CAG.ComplexAnalysis2 <> r:259 var
+R20056:20058 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R20043:20053 CAG.ComplexAnalysis2 <> germ_radius proj
+R20055:20055 CAG.ComplexAnalysis2 <> g:258 var
+R20059:20069 CAG.ComplexAnalysis2 <> germ_radius proj
+R20071:20071 CAG.ComplexAnalysis2 <> g:258 var
+R20092:20093 CAG.Complex <> Cn def
+R20095:20095 CAG.ComplexAnalysis2 <> n:256 var
+binder 20088:20088 <> z:260
+R20141:20150 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R20104:20111 CAG.ComplexAnalysis2 <> Polydisc def
+R20140:20140 CAG.ComplexAnalysis2 <> z:260 var
+R20137:20137 CAG.ComplexAnalysis2 <> r:259 var
+R20123:20124 CAG.Complex <> C0 def
+R20151:20156 CAG.Complex <> Cequal def
+R20159:20165 CAG.ComplexAnalysis2 <> germ_fn proj
+R20169:20169 CAG.ComplexAnalysis2 <> z:260 var
+R20167:20167 CAG.ComplexAnalysis2 <> f:257 var
+R20173:20179 CAG.ComplexAnalysis2 <> germ_fn proj
+R20183:20183 CAG.ComplexAnalysis2 <> z:260 var
+R20181:20181 CAG.ComplexAnalysis2 <> g:258 var
+prf 20240:20254 <> germ_equiv_refl
+binder 20266:20266 <> n:261
+R20274:20277 CAG.ComplexAnalysis2 <> Germ rec
+R20279:20279 CAG.ComplexAnalysis2 <> n:261 var
+binder 20270:20270 <> f:262
+R20283:20292 CAG.ComplexAnalysis2 <> germ_equiv def
+R20296:20296 CAG.ComplexAnalysis2 <> f:262 var
+R20294:20294 CAG.ComplexAnalysis2 <> f:262 var
+prf 20323:20336 <> germ_equiv_sym
+binder 20348:20348 <> n:263
+R20358:20361 CAG.ComplexAnalysis2 <> Germ rec
+R20363:20363 CAG.ComplexAnalysis2 <> n:263 var
+binder 20352:20352 <> f:264
+binder 20354:20354 <> g:265
+R20383:20386 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R20369:20378 CAG.ComplexAnalysis2 <> germ_equiv def
+R20382:20382 CAG.ComplexAnalysis2 <> g:265 var
+R20380:20380 CAG.ComplexAnalysis2 <> f:264 var
+R20387:20396 CAG.ComplexAnalysis2 <> germ_equiv def
+R20400:20400 CAG.ComplexAnalysis2 <> f:264 var
+R20398:20398 CAG.ComplexAnalysis2 <> g:265 var
+prf 20427:20442 <> germ_equiv_trans
+binder 20454:20454 <> n:266
+R20466:20469 CAG.ComplexAnalysis2 <> Germ rec
+R20471:20471 CAG.ComplexAnalysis2 <> n:266 var
+binder 20458:20458 <> f:267
+binder 20460:20460 <> g:268
+binder 20462:20462 <> h:269
+R20491:20494 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R20477:20486 CAG.ComplexAnalysis2 <> germ_equiv def
+R20490:20490 CAG.ComplexAnalysis2 <> g:268 var
+R20488:20488 CAG.ComplexAnalysis2 <> f:267 var
+R20509:20512 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R20495:20504 CAG.ComplexAnalysis2 <> germ_equiv def
+R20508:20508 CAG.ComplexAnalysis2 <> h:269 var
+R20506:20506 CAG.ComplexAnalysis2 <> g:268 var
+R20513:20522 CAG.ComplexAnalysis2 <> germ_equiv def
+R20526:20526 CAG.ComplexAnalysis2 <> h:269 var
+R20524:20524 CAG.ComplexAnalysis2 <> f:267 var
+ax 20717:20725 <> CReal_min
+R20734:20737 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R20729:20733 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+R20743:20746 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R20738:20742 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+R20747:20751 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+prf 20762:20775 <> CReal_min_le_l
+binder 20786:20786 <> r:272
+binder 20788:20788 <> s:273
+R20791:20801 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CRealLtProp def
+R20817:20819 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R20804:20812 CAG.ComplexAnalysis2 <> CReal_min defax
+R20814:20814 CAG.ComplexAnalysis2 <> r:272 var
+R20816:20816 CAG.ComplexAnalysis2 <> s:273 var
+R20820:20828 CAG.ComplexAnalysis2 <> CReal_min defax
+R20830:20830 CAG.ComplexAnalysis2 <> r:272 var
+R20832:20832 CAG.ComplexAnalysis2 <> s:273 var
+R20837:20839 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R20836:20836 CAG.ComplexAnalysis2 <> r:272 var
+R20840:20840 CAG.ComplexAnalysis2 <> r:272 var
+prf 20876:20889 <> CReal_min_le_r
+binder 20900:20900 <> r:274
+binder 20902:20902 <> s:275
+R20905:20915 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CRealLtProp def
+R20931:20933 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R20918:20926 CAG.ComplexAnalysis2 <> CReal_min defax
+R20928:20928 CAG.ComplexAnalysis2 <> r:274 var
+R20930:20930 CAG.ComplexAnalysis2 <> s:275 var
+R20934:20942 CAG.ComplexAnalysis2 <> CReal_min defax
+R20944:20944 CAG.ComplexAnalysis2 <> r:274 var
+R20946:20946 CAG.ComplexAnalysis2 <> s:275 var
+R20951:20953 Stdlib.Reals.Cauchy.ConstructiveCauchyRealsMult <> ::CReal_scope:x_'*'_x not
+R20950:20950 CAG.ComplexAnalysis2 <> s:275 var
+R20954:20954 CAG.ComplexAnalysis2 <> s:275 var
+prf 20990:21002 <> CReal_min_pos
+binder 21014:21014 <> r:276
+binder 21016:21016 <> s:277
+R21031:21034 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R21019:21028 CAG.Reals_extra <> CRpositive def
+R21030:21030 CAG.ComplexAnalysis2 <> r:276 var
+R21047:21050 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R21035:21044 CAG.Reals_extra <> CRpositive def
+R21046:21046 CAG.ComplexAnalysis2 <> s:277 var
+R21051:21060 CAG.Reals_extra <> CRpositive def
+R21063:21071 CAG.ComplexAnalysis2 <> CReal_min defax
+R21073:21073 CAG.ComplexAnalysis2 <> r:276 var
+R21075:21075 CAG.ComplexAnalysis2 <> s:277 var
+def 21246:21253 <> germ_add
+R21260:21262 Corelib.Init.Datatypes <> nat ind
+binder 21256:21256 <> n:278
+R21272:21275 CAG.ComplexAnalysis2 <> Germ rec
+R21277:21277 CAG.ComplexAnalysis2 <> n:278 var
+binder 21266:21266 <> f:279
+binder 21268:21268 <> g:280
+R21282:21285 CAG.ComplexAnalysis2 <> Germ rec
+R21287:21287 CAG.ComplexAnalysis2 <> n:278 var
+R21307:21312 CAG.ComplexAnalysis2 <> mkGerm constr
+R21317:21327 CAG.ComplexAnalysis2 <> germ_radius proj
+R21333:21347 CAG.ComplexAnalysis2 <> germ_radius_pos proj
+binder 21361:21361 <> z:281
+R21366:21369 CAG.Complex <> Cadd def
+R21372:21378 CAG.ComplexAnalysis2 <> germ_fn proj
+R21382:21382 CAG.ComplexAnalysis2 <> z:281 var
+R21386:21392 CAG.ComplexAnalysis2 <> germ_fn proj
+R21396:21396 CAG.ComplexAnalysis2 <> z:281 var
+R21307:21312 CAG.ComplexAnalysis2 <> mkGerm constr
+R21317:21327 CAG.ComplexAnalysis2 <> germ_radius proj
+R21333:21347 CAG.ComplexAnalysis2 <> germ_radius_pos proj
+binder 21361:21361 <> z:282
+R21366:21369 CAG.Complex <> Cadd def
+R21372:21378 CAG.ComplexAnalysis2 <> germ_fn proj
+R21382:21382 CAG.ComplexAnalysis2 <> z:282 var
+R21386:21392 CAG.ComplexAnalysis2 <> germ_fn proj
+R21396:21396 CAG.ComplexAnalysis2 <> z:282 var
+def 21468:21475 <> germ_mul
+R21482:21484 Corelib.Init.Datatypes <> nat ind
+binder 21478:21478 <> n:283
+R21494:21497 CAG.ComplexAnalysis2 <> Germ rec
+R21499:21499 CAG.ComplexAnalysis2 <> n:283 var
+binder 21488:21488 <> f:284
+binder 21490:21490 <> g:285
+R21504:21507 CAG.ComplexAnalysis2 <> Germ rec
+R21509:21509 CAG.ComplexAnalysis2 <> n:283 var
+R21529:21534 CAG.ComplexAnalysis2 <> mkGerm constr
+R21539:21549 CAG.ComplexAnalysis2 <> germ_radius proj
+R21555:21569 CAG.ComplexAnalysis2 <> germ_radius_pos proj
+binder 21583:21583 <> z:286
+R21588:21591 CAG.Complex <> Cmul def
+R21594:21600 CAG.ComplexAnalysis2 <> germ_fn proj
+R21604:21604 CAG.ComplexAnalysis2 <> z:286 var
+R21608:21614 CAG.ComplexAnalysis2 <> germ_fn proj
+R21618:21618 CAG.ComplexAnalysis2 <> z:286 var
+R21529:21534 CAG.ComplexAnalysis2 <> mkGerm constr
+R21539:21549 CAG.ComplexAnalysis2 <> germ_radius proj
+R21555:21569 CAG.ComplexAnalysis2 <> germ_radius_pos proj
+binder 21583:21583 <> z:287
+R21588:21591 CAG.Complex <> Cmul def
+R21594:21600 CAG.ComplexAnalysis2 <> germ_fn proj
+R21604:21604 CAG.ComplexAnalysis2 <> z:287 var
+R21608:21614 CAG.ComplexAnalysis2 <> germ_fn proj
+R21618:21618 CAG.ComplexAnalysis2 <> z:287 var
+def 21680:21688 <> germ_zero
+R21695:21697 Corelib.Init.Datatypes <> nat ind
+binder 21691:21691 <> n:288
+R21702:21705 CAG.ComplexAnalysis2 <> Germ rec
+R21707:21707 CAG.ComplexAnalysis2 <> n:288 var
+def 21768:21775 <> germ_one
+R21782:21784 Corelib.Init.Datatypes <> nat ind
+binder 21778:21778 <> n:289
+R21789:21792 CAG.ComplexAnalysis2 <> Germ rec
+R21794:21794 CAG.ComplexAnalysis2 <> n:289 var
+prf 22010:22027 <> On_integral_domain
+R22045:22047 Corelib.Init.Datatypes <> nat ind
+binder 22041:22041 <> n:290
+R22057:22060 CAG.ComplexAnalysis2 <> Germ rec
+R22062:22062 CAG.ComplexAnalysis2 <> n:290 var
+binder 22051:22051 <> f:291
+binder 22053:22053 <> g:292
+R22109:22116 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R22070:22079 CAG.ComplexAnalysis2 <> germ_equiv def
+R22097:22105 CAG.ComplexAnalysis2 <> germ_zero prfax
+R22107:22107 CAG.ComplexAnalysis2 <> n:290 var
+R22082:22089 CAG.ComplexAnalysis2 <> germ_mul prfax
+R22093:22093 CAG.ComplexAnalysis2 <> g:292 var
+R22091:22091 CAG.ComplexAnalysis2 <> f:291 var
+R22143:22146 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R22117:22126 CAG.ComplexAnalysis2 <> germ_equiv def
+R22131:22139 CAG.ComplexAnalysis2 <> germ_zero prfax
+R22141:22141 CAG.ComplexAnalysis2 <> n:290 var
+R22128:22128 CAG.ComplexAnalysis2 <> f:291 var
+R22147:22156 CAG.ComplexAnalysis2 <> germ_equiv def
+R22161:22169 CAG.ComplexAnalysis2 <> germ_zero prfax
+R22171:22171 CAG.ComplexAnalysis2 <> n:290 var
+R22158:22158 CAG.ComplexAnalysis2 <> g:292 var
+def 22345:22356 <> germ_is_unit
+R22363:22365 Corelib.Init.Datatypes <> nat ind
+binder 22359:22359 <> n:293
+R22373:22376 CAG.ComplexAnalysis2 <> Germ rec
+R22378:22378 CAG.ComplexAnalysis2 <> n:293 var
+binder 22369:22369 <> f:294
+R22393:22402 CAG.Reals_extra <> CRpositive def
+R22405:22410 CAG.Complex <> Cnorm2 def
+R22413:22419 CAG.ComplexAnalysis2 <> germ_fn proj
+R22433:22434 CAG.Complex <> C0 def
+R22421:22421 CAG.ComplexAnalysis2 <> f:294 var
+def 22452:22469 <> germ_maximal_ideal
+R22476:22478 Corelib.Init.Datatypes <> nat ind
+binder 22472:22472 <> n:295
+R22486:22489 CAG.ComplexAnalysis2 <> Germ rec
+R22491:22491 CAG.ComplexAnalysis2 <> n:295 var
+binder 22482:22482 <> f:296
+R22506:22511 CAG.Complex <> Cequal def
+R22514:22520 CAG.ComplexAnalysis2 <> germ_fn proj
+R22534:22535 CAG.Complex <> C0 def
+R22522:22522 CAG.ComplexAnalysis2 <> f:296 var
+R22539:22540 CAG.Complex <> C0 def
+prf 22552:22564 <> On_local_ring
+R22582:22584 Corelib.Init.Datatypes <> nat ind
+binder 22578:22578 <> n:297
+R22592:22595 CAG.ComplexAnalysis2 <> Germ rec
+R22597:22597 CAG.ComplexAnalysis2 <> n:297 var
+binder 22588:22588 <> f:298
+R22619:22622 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R22605:22616 CAG.ComplexAnalysis2 <> germ_is_unit def
+R22618:22618 CAG.ComplexAnalysis2 <> f:298 var
+R22623:22640 CAG.ComplexAnalysis2 <> germ_maximal_ideal def
+R22642:22642 CAG.ComplexAnalysis2 <> f:298 var
+def 22794:22809 <> germ_irreducible
+R22816:22818 Corelib.Init.Datatypes <> nat ind
+binder 22812:22812 <> n:299
+R22826:22829 CAG.ComplexAnalysis2 <> Germ rec
+R22831:22831 CAG.ComplexAnalysis2 <> n:299 var
+binder 22822:22822 <> f:300
+R22862:22867 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R22846:22847 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R22848:22859 CAG.ComplexAnalysis2 <> germ_is_unit def
+R22861:22861 CAG.ComplexAnalysis2 <> f:300 var
+R22881:22884 CAG.ComplexAnalysis2 <> Germ rec
+R22886:22886 CAG.ComplexAnalysis2 <> n:299 var
+binder 22875:22875 <> g:301
+binder 22877:22877 <> h:302
+R22920:22927 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R22893:22902 CAG.ComplexAnalysis2 <> germ_equiv def
+R22919:22919 CAG.ComplexAnalysis2 <> f:300 var
+R22905:22912 CAG.ComplexAnalysis2 <> germ_mul prfax
+R22916:22916 CAG.ComplexAnalysis2 <> h:302 var
+R22914:22914 CAG.ComplexAnalysis2 <> g:301 var
+R22942:22945 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R22928:22939 CAG.ComplexAnalysis2 <> germ_is_unit def
+R22941:22941 CAG.ComplexAnalysis2 <> g:301 var
+R22946:22957 CAG.ComplexAnalysis2 <> germ_is_unit def
+R22959:22959 CAG.ComplexAnalysis2 <> h:302 var
+prf 23111:23116 <> On_UFD
+R23134:23136 Corelib.Init.Datatypes <> nat ind
+binder 23130:23130 <> n:303
+R23144:23147 CAG.ComplexAnalysis2 <> Germ rec
+R23149:23149 CAG.ComplexAnalysis2 <> n:303 var
+binder 23140:23140 <> f:304
+R23185:23192 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R23157:23158 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R23159:23168 CAG.ComplexAnalysis2 <> germ_equiv def
+R23173:23181 CAG.ComplexAnalysis2 <> germ_zero prfax
+R23183:23183 CAG.ComplexAnalysis2 <> n:303 var
+R23170:23170 CAG.ComplexAnalysis2 <> f:304 var
+R23209:23216 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R23193:23194 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R23195:23206 CAG.ComplexAnalysis2 <> germ_is_unit def
+R23208:23208 CAG.ComplexAnalysis2 <> f:304 var
+R23217:23224 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R23253:23261 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R23240:23243 Corelib.Init.Datatypes <> list ind
+R23246:23249 CAG.ComplexAnalysis2 <> Germ rec
+R23251:23251 CAG.ComplexAnalysis2 <> n:303 var
+binder 23225:23236 <> irreducibles:305
+R23262:23262 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R23312:23379 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 23270:23270 <> g:306
+R23290:23293 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R23273:23274 Stdlib.Lists.List <> In def
+R23278:23289 CAG.ComplexAnalysis2 <> irreducibles:305 var
+R23276:23276 CAG.ComplexAnalysis2 <> g:306 var
+R23294:23309 CAG.ComplexAnalysis2 <> germ_irreducible def
+R23311:23311 CAG.ComplexAnalysis2 <> g:306 var
+R23380:23383 Corelib.Init.Logic <> True ind
+def 23614:23625 <> germ_coprime
+R23632:23634 Corelib.Init.Datatypes <> nat ind
+binder 23628:23628 <> n:307
+R23644:23647 CAG.ComplexAnalysis2 <> Germ rec
+R23649:23649 CAG.ComplexAnalysis2 <> n:307 var
+binder 23638:23638 <> f:308
+binder 23640:23640 <> g:309
+R23675:23678 CAG.ComplexAnalysis2 <> Germ rec
+R23680:23680 CAG.ComplexAnalysis2 <> n:307 var
+binder 23671:23671 <> h:310
+R23705:23712 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R23687:23702 CAG.ComplexAnalysis2 <> germ_irreducible def
+R23704:23704 CAG.ComplexAnalysis2 <> h:310 var
+R23713:23715 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R23815:23815 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R23716:23722 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R23737:23746 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R23731:23734 CAG.ComplexAnalysis2 <> Germ rec
+R23736:23736 CAG.ComplexAnalysis2 <> n:307 var
+binder 23723:23724 <> f':311
+R23731:23734 CAG.ComplexAnalysis2 <> Germ rec
+R23736:23736 CAG.ComplexAnalysis2 <> n:307 var
+binder 23726:23727 <> g':312
+R23775:23786 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R23747:23756 CAG.ComplexAnalysis2 <> germ_equiv def
+R23774:23774 CAG.ComplexAnalysis2 <> f:308 var
+R23759:23766 CAG.ComplexAnalysis2 <> germ_mul prfax
+R23770:23771 CAG.ComplexAnalysis2 <> f':311 var
+R23768:23768 CAG.ComplexAnalysis2 <> h:310 var
+R23787:23796 CAG.ComplexAnalysis2 <> germ_equiv def
+R23814:23814 CAG.ComplexAnalysis2 <> g:309 var
+R23799:23806 CAG.ComplexAnalysis2 <> germ_mul prfax
+R23810:23811 CAG.ComplexAnalysis2 <> g':312 var
+R23808:23808 CAG.ComplexAnalysis2 <> h:310 var
+prf 24172:24187 <> coprimality_open
+R24205:24207 Corelib.Init.Datatypes <> nat ind
+binder 24201:24201 <> n:313
+R24217:24220 CAG.ComplexAnalysis2 <> Germ rec
+R24222:24222 CAG.ComplexAnalysis2 <> n:313 var
+binder 24211:24211 <> f:314
+binder 24213:24213 <> g:315
+R24246:24253 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R24230:24241 CAG.ComplexAnalysis2 <> germ_coprime def
+R24245:24245 CAG.ComplexAnalysis2 <> g:315 var
+R24243:24243 CAG.ComplexAnalysis2 <> f:314 var
+R24254:24260 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R24270:24271 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R24265:24269 Stdlib.Reals.Cauchy.ConstructiveCauchyReals <> CReal rec
+binder 24261:24261 <> r:316
+R24284:24293 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R24272:24281 CAG.Reals_extra <> CRpositive def
+R24283:24283 CAG.ComplexAnalysis2 <> r:316 var
+R24305:24306 CAG.Complex <> Cn def
+R24308:24308 CAG.ComplexAnalysis2 <> n:313 var
+binder 24301:24301 <> z:317
+R24356:24367 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R24319:24326 CAG.ComplexAnalysis2 <> Polydisc def
+R24355:24355 CAG.ComplexAnalysis2 <> z:317 var
+R24352:24352 CAG.ComplexAnalysis2 <> r:316 var
+R24338:24339 CAG.Complex <> C0 def
+R24368:24368 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R24414:24440 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R24369:24375 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R24387:24388 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R24380:24384 Stdlib.Vectors.Fin <> t ind
+R24386:24386 CAG.ComplexAnalysis2 <> n:313 var
+binder 24376:24376 <> i:318
+R24389:24398 CAG.Reals_extra <> CRpositive def
+R24401:24406 CAG.Complex <> Cnorm2 def
+R24409:24409 CAG.ComplexAnalysis2 <> z:317 var
+R24411:24411 CAG.ComplexAnalysis2 <> i:318 var
+R24441:24444 Corelib.Init.Logic <> True ind
+def 25147:25168 <> vanishes_on_zero_locus
+R25175:25177 Corelib.Init.Datatypes <> nat ind
+binder 25171:25171 <> n:319
+R25187:25190 CAG.ComplexAnalysis2 <> Germ rec
+R25192:25192 CAG.ComplexAnalysis2 <> n:319 var
+binder 25181:25181 <> f:320
+binder 25183:25183 <> h:321
+R25218:25219 CAG.Complex <> Cn def
+R25221:25221 CAG.ComplexAnalysis2 <> n:319 var
+binder 25214:25214 <> z:322
+R25251:25258 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R25228:25233 CAG.Complex <> Cequal def
+R25236:25242 CAG.ComplexAnalysis2 <> germ_fn proj
+R25246:25246 CAG.ComplexAnalysis2 <> z:322 var
+R25244:25244 CAG.ComplexAnalysis2 <> f:320 var
+R25249:25250 CAG.Complex <> C0 def
+R25259:25264 CAG.Complex <> Cequal def
+R25267:25273 CAG.ComplexAnalysis2 <> germ_fn proj
+R25277:25277 CAG.ComplexAnalysis2 <> z:322 var
+R25275:25275 CAG.ComplexAnalysis2 <> h:321 var
+R25280:25281 CAG.Complex <> C0 def
+def 25296:25307 <> germ_divides
+R25314:25316 Corelib.Init.Datatypes <> nat ind
+binder 25310:25310 <> n:323
+R25326:25329 CAG.ComplexAnalysis2 <> Germ rec
+R25331:25331 CAG.ComplexAnalysis2 <> n:323 var
+binder 25320:25320 <> f:324
+binder 25322:25322 <> h:325
+R25346:25352 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R25363:25368 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R25357:25360 CAG.ComplexAnalysis2 <> Germ rec
+R25362:25362 CAG.ComplexAnalysis2 <> n:323 var
+binder 25353:25353 <> q:326
+R25369:25378 CAG.ComplexAnalysis2 <> germ_equiv def
+R25395:25395 CAG.ComplexAnalysis2 <> h:325 var
+R25381:25388 CAG.ComplexAnalysis2 <> germ_mul prfax
+R25392:25392 CAG.ComplexAnalysis2 <> q:326 var
+R25390:25390 CAG.ComplexAnalysis2 <> f:324 var
+prf 25407:25426 <> weak_nullstellensatz
+R25444:25446 Corelib.Init.Datatypes <> nat ind
+binder 25440:25440 <> n:327
+R25456:25459 CAG.ComplexAnalysis2 <> Germ rec
+R25461:25461 CAG.ComplexAnalysis2 <> n:327 var
+binder 25450:25450 <> f:328
+binder 25452:25452 <> h:329
+R25487:25494 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R25469:25484 CAG.ComplexAnalysis2 <> germ_irreducible def
+R25486:25486 CAG.ComplexAnalysis2 <> f:328 var
+R25521:25528 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R25495:25516 CAG.ComplexAnalysis2 <> vanishes_on_zero_locus def
+R25520:25520 CAG.ComplexAnalysis2 <> h:329 var
+R25518:25518 CAG.ComplexAnalysis2 <> f:328 var
+R25529:25540 CAG.ComplexAnalysis2 <> germ_divides def
+R25544:25544 CAG.ComplexAnalysis2 <> h:329 var
+R25542:25542 CAG.ComplexAnalysis2 <> f:328 var

@@ -1,4 +1,4 @@
-DIGEST d74f5cddaac18d8688379513452caab3
+DIGEST dad4fac89ee3323984b769e5ea2fc9a3
 FCAG.Lie.Semisimple
 R677:692 CAG.Galois.Field <> <> lib
 R710:725 CAG.Lie.BasicDef <> <> lib
@@ -433,135 +433,449 @@ R9213:9223 CAG.Lie.BasicDef <> laF_bracket proj
 R9230:9230 CAG.Lie.Semisimple <> z:83 var
 R9228:9228 CAG.Lie.Semisimple <> x:82 var
 R9225:9226 CAG.Lie.Semisimple <> la:80 var
-def 9537:9549 <> IsAdNilpotent
-binder 9552:9552 <> F:86
-R9569:9573 CAG.Galois.Field <> Field rec
-R9575:9575 CAG.Lie.Semisimple <> F:86 var
-binder 9563:9565 <> fld:87
-binder 9579:9579 <> L:88
-R9599:9609 CAG.Lie.BasicDef <> LieAlgebraF rec
-R9615:9615 CAG.Lie.Semisimple <> L:88 var
-R9611:9613 CAG.Lie.Semisimple <> fld:87 var
-binder 9594:9595 <> la:89
-R9623:9623 CAG.Lie.Semisimple <> L:88 var
-binder 9619:9619 <> x:90
-R9638:9644 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R9652:9653 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R9649:9651 Corelib.Init.Datatypes <> nat ind
-binder 9645:9645 <> N:91
-R9665:9665 CAG.Lie.Semisimple <> L:88 var
-binder 9661:9661 <> z:92
-R9714:9716 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R9672:9679 Corelib.Init.Nat <> iter def
-R9713:9713 CAG.Lie.Semisimple <> z:92 var
-binder 9688:9688 <> w:93
-R9693:9703 CAG.Lie.BasicDef <> laF_bracket proj
-R9710:9710 CAG.Lie.Semisimple <> w:93 var
-R9708:9708 CAG.Lie.Semisimple <> x:90 var
-R9705:9706 CAG.Lie.Semisimple <> la:89 var
-R9681:9681 CAG.Lie.Semisimple <> N:91 var
-R9717:9723 CAG.Lie.BasicDef <> la_zero abbrev
-R9725:9726 CAG.Lie.Semisimple <> la:89 var
-ax 9861:9875 <> abstract_jordan
-binder 9889:9889 <> F:94
-R9906:9910 CAG.Galois.Field <> Field rec
-R9912:9912 CAG.Lie.Semisimple <> F:94 var
-binder 9900:9902 <> fld:95
-binder 9916:9916 <> L:96
-R9936:9946 CAG.Lie.BasicDef <> LieAlgebraF rec
-R9952:9952 CAG.Lie.Semisimple <> L:96 var
-R9948:9950 CAG.Lie.Semisimple <> fld:95 var
-binder 9931:9932 <> la:97
-R9975:9982 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R9960:9971 CAG.Lie.Radical <> IsSemisimple def
-R9973:9974 CAG.Lie.Semisimple <> la:97 var
-R9994:9994 CAG.Lie.Semisimple <> L:96 var
-binder 9990:9990 <> x:98
-R10001:10007 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R10015:10022 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R10014:10014 CAG.Lie.Semisimple <> L:96 var
-binder 10008:10008 <> s:99
-R10014:10014 CAG.Lie.Semisimple <> L:96 var
-binder 10010:10010 <> n:100
-R10040:10049 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
-R10024:10026 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R10023:10023 CAG.Lie.Semisimple <> x:98 var
-R10027:10032 CAG.Lie.BasicDef <> la_add abbrev
-R10034:10035 CAG.Lie.Semisimple <> la:97 var
-R10039:10039 CAG.Lie.Semisimple <> n:100 var
-R10037:10037 CAG.Lie.Semisimple <> s:99 var
-R10068:10077 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
-R10050:10062 CAG.Lie.Semisimple <> IsAdNilpotent def
-R10067:10067 CAG.Lie.Semisimple <> n:100 var
-R10064:10065 CAG.Lie.Semisimple <> la:97 var
+def 9686:9700 <> lie_der_bracket
+binder 9703:9703 <> F:86
+R9720:9724 CAG.Galois.Field <> Field rec
+R9726:9726 CAG.Lie.Semisimple <> F:86 var
+binder 9714:9716 <> fld:87
+binder 9730:9730 <> L:88
+R9750:9760 CAG.Lie.BasicDef <> LieAlgebraF rec
+R9766:9766 CAG.Lie.Semisimple <> L:88 var
+R9762:9764 CAG.Lie.Semisimple <> fld:87 var
+binder 9745:9746 <> la:89
+R9779:9782 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9778:9778 CAG.Lie.Semisimple <> L:88 var
+R9783:9783 CAG.Lie.Semisimple <> L:88 var
+binder 9770:9771 <> φ:90
+binder 9773:9774 <> δ:91
+R9789:9792 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R9788:9788 CAG.Lie.Semisimple <> L:88 var
+R9793:9793 CAG.Lie.Semisimple <> L:88 var
+binder 9804:9804 <> z:92
+R9809:9814 CAG.Lie.BasicDef <> la_add abbrev
+R9816:9817 CAG.Lie.Semisimple <> la:89 var
+R9832:9837 CAG.Lie.BasicDef <> la_neg abbrev
+R9839:9840 CAG.Lie.Semisimple <> la:89 var
+R9843:9844 CAG.Lie.Semisimple <> δ:91 var
+R9847:9848 CAG.Lie.Semisimple <> φ:90 var
+R9850:9850 CAG.Lie.Semisimple <> z:92 var
+R9820:9821 CAG.Lie.Semisimple <> φ:90 var
+R9824:9825 CAG.Lie.Semisimple <> δ:91 var
+R9827:9827 CAG.Lie.Semisimple <> z:92 var
+prf 9912:9937 <> inner_derivation_ideal_key
+binder 9940:9940 <> F:93
+R9957:9961 CAG.Galois.Field <> Field rec
+R9963:9963 CAG.Lie.Semisimple <> F:93 var
+binder 9951:9953 <> fld:94
+binder 9967:9967 <> L:95
+R9987:9997 CAG.Lie.BasicDef <> LieAlgebraF rec
+R10003:10003 CAG.Lie.Semisimple <> L:95 var
+R9999:10001 CAG.Lie.Semisimple <> fld:94 var
+binder 9982:9983 <> la:96
+R10017:10020 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10016:10016 CAG.Lie.Semisimple <> L:95 var
+R10021:10021 CAG.Lie.Semisimple <> L:95 var
+binder 10011:10012 <> φ:97
+R10031:10038 CAG.Lie.Semisimple <> IsLieDer def
+R10043:10044 CAG.Lie.Semisimple <> φ:97 var
+R10040:10041 CAG.Lie.Semisimple <> la:96 var
+binder 10025:10027 <> Hφ:98
+R10054:10054 CAG.Lie.Semisimple <> L:95 var
+binder 10048:10048 <> x:99
+binder 10050:10050 <> z:100
 R10096:10098 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R10078:10088 CAG.Lie.BasicDef <> laF_bracket proj
-R10095:10095 CAG.Lie.Semisimple <> n:100 var
-R10093:10093 CAG.Lie.Semisimple <> s:99 var
-R10090:10091 CAG.Lie.Semisimple <> la:97 var
-R10099:10105 CAG.Lie.BasicDef <> la_zero abbrev
-R10107:10108 CAG.Lie.Semisimple <> la:97 var
-ax 10118:10139 <> abstract_jordan_unique
-binder 10153:10153 <> F:103
-R10170:10174 CAG.Galois.Field <> Field rec
-R10176:10176 CAG.Lie.Semisimple <> F:103 var
-binder 10164:10166 <> fld:104
-binder 10180:10180 <> L:105
-R10200:10210 CAG.Lie.BasicDef <> LieAlgebraF rec
-R10216:10216 CAG.Lie.Semisimple <> L:105 var
-R10212:10214 CAG.Lie.Semisimple <> fld:104 var
-binder 10195:10196 <> la:106
-R10239:10246 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R10224:10235 CAG.Lie.Radical <> IsSemisimple def
-R10237:10238 CAG.Lie.Semisimple <> la:106 var
-R10268:10268 CAG.Lie.Semisimple <> L:105 var
-binder 10254:10254 <> x:107
-binder 10256:10256 <> s:108
-binder 10258:10258 <> n:109
-binder 10260:10261 <> s':110
-binder 10263:10264 <> n':111
-R10294:10303 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R10278:10280 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R10277:10277 CAG.Lie.Semisimple <> x:107 var
-R10281:10286 CAG.Lie.BasicDef <> la_add abbrev
-R10288:10289 CAG.Lie.Semisimple <> la:106 var
-R10293:10293 CAG.Lie.Semisimple <> n:109 var
-R10291:10291 CAG.Lie.Semisimple <> s:108 var
-R10322:10331 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R10304:10316 CAG.Lie.Semisimple <> IsAdNilpotent def
-R10321:10321 CAG.Lie.Semisimple <> n:109 var
-R10318:10319 CAG.Lie.Semisimple <> la:106 var
-R10363:10372 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R10350:10352 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R10332:10342 CAG.Lie.BasicDef <> laF_bracket proj
-R10349:10349 CAG.Lie.Semisimple <> n:109 var
-R10347:10347 CAG.Lie.Semisimple <> s:108 var
-R10344:10345 CAG.Lie.Semisimple <> la:106 var
-R10353:10359 CAG.Lie.BasicDef <> la_zero abbrev
-R10361:10362 CAG.Lie.Semisimple <> la:106 var
-R10392:10401 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R10374:10376 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R10373:10373 CAG.Lie.Semisimple <> x:107 var
-R10377:10382 CAG.Lie.BasicDef <> la_add abbrev
-R10384:10385 CAG.Lie.Semisimple <> la:106 var
-R10390:10391 CAG.Lie.Semisimple <> n':111 var
-R10387:10388 CAG.Lie.Semisimple <> s':110 var
-R10421:10430 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R10402:10414 CAG.Lie.Semisimple <> IsAdNilpotent def
-R10419:10420 CAG.Lie.Semisimple <> n':111 var
-R10416:10417 CAG.Lie.Semisimple <> la:106 var
-R10464:10473 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R10451:10453 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R10431:10441 CAG.Lie.BasicDef <> laF_bracket proj
-R10449:10450 CAG.Lie.Semisimple <> n':111 var
-R10446:10447 CAG.Lie.Semisimple <> s':110 var
-R10443:10444 CAG.Lie.Semisimple <> la:106 var
-R10454:10460 CAG.Lie.BasicDef <> la_zero abbrev
-R10462:10463 CAG.Lie.Semisimple <> la:106 var
-R10480:10483 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
-R10475:10477 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R10474:10474 CAG.Lie.Semisimple <> s:108 var
-R10478:10479 CAG.Lie.Semisimple <> s':110 var
-R10485:10487 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R10484:10484 CAG.Lie.Semisimple <> n:109 var
-R10488:10489 CAG.Lie.Semisimple <> n':111 var
+R10063:10077 CAG.Lie.Semisimple <> lie_der_bracket def
+R10095:10095 CAG.Lie.Semisimple <> z:100 var
+R10086:10087 CAG.Lie.Derivations <> ad def
+R10092:10092 CAG.Lie.Semisimple <> x:99 var
+R10089:10090 CAG.Lie.Semisimple <> la:96 var
+R10082:10083 CAG.Lie.Semisimple <> φ:97 var
+R10079:10080 CAG.Lie.Semisimple <> la:96 var
+R10099:10100 CAG.Lie.Derivations <> ad def
+R10112:10112 CAG.Lie.Semisimple <> z:100 var
+R10106:10107 CAG.Lie.Semisimple <> φ:97 var
+R10109:10109 CAG.Lie.Semisimple <> x:99 var
+R10102:10103 CAG.Lie.Semisimple <> la:96 var
+R10131:10145 CAG.Lie.Semisimple <> lie_der_bracket def
+R10148:10149 CAG.Lie.Derivations <> ad def
+R10334:10346 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R10322:10327 CAG.Lie.BasicDef <> laF_vs proj
+R10334:10346 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R10322:10327 CAG.Lie.BasicDef <> laF_vs proj
+R10334:10346 CAG.Lie.BasicDef <> vsF_add_assoc proj
+R10322:10327 CAG.Lie.BasicDef <> laF_vs proj
+R10373:10385 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R10361:10366 CAG.Lie.BasicDef <> laF_vs proj
+R10373:10385 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R10361:10366 CAG.Lie.BasicDef <> laF_vs proj
+R10373:10385 CAG.Lie.BasicDef <> vsF_add_neg_r proj
+R10361:10366 CAG.Lie.BasicDef <> laF_vs proj
+R10410:10423 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R10398:10403 CAG.Lie.BasicDef <> laF_vs proj
+R10410:10423 CAG.Lie.BasicDef <> vsF_add_zero_r proj
+R10398:10403 CAG.Lie.BasicDef <> laF_vs proj
+prf 10619:10641 <> inner_derivations_ideal
+binder 10644:10644 <> F:101
+R10661:10665 CAG.Galois.Field <> Field rec
+R10667:10667 CAG.Lie.Semisimple <> F:101 var
+binder 10655:10657 <> fld:102
+binder 10671:10671 <> L:103
+R10691:10701 CAG.Lie.BasicDef <> LieAlgebraF rec
+R10707:10707 CAG.Lie.Semisimple <> L:103 var
+R10703:10705 CAG.Lie.Semisimple <> fld:102 var
+binder 10686:10687 <> la:104
+R10721:10724 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10720:10720 CAG.Lie.Semisimple <> L:103 var
+R10725:10725 CAG.Lie.Semisimple <> L:103 var
+binder 10715:10716 <> φ:105
+R10735:10742 CAG.Lie.Semisimple <> IsLieDer def
+R10747:10748 CAG.Lie.Semisimple <> φ:105 var
+R10744:10745 CAG.Lie.Semisimple <> la:104 var
+binder 10729:10731 <> Hφ:106
+R10762:10765 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R10761:10761 CAG.Lie.Semisimple <> L:103 var
+R10766:10766 CAG.Lie.Semisimple <> L:103 var
+binder 10756:10757 <> δ:107
+R10776:10792 CAG.Lie.Derivations <> IsInnerDerivation def
+R10797:10798 CAG.Lie.Semisimple <> δ:107 var
+R10794:10795 CAG.Lie.Semisimple <> la:104 var
+binder 10770:10772 <> Hδ:108
+R10807:10823 CAG.Lie.Derivations <> IsInnerDerivation def
+R10829:10843 CAG.Lie.Semisimple <> lie_der_bracket def
+R10851:10852 CAG.Lie.Semisimple <> δ:107 var
+R10848:10849 CAG.Lie.Semisimple <> φ:105 var
+R10845:10846 CAG.Lie.Semisimple <> la:104 var
+R10825:10826 CAG.Lie.Semisimple <> la:104 var
+R10996:11014 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10970:10984 CAG.Lie.Semisimple <> lie_der_bracket def
+R11015:11029 CAG.Lie.Semisimple <> lie_der_bracket def
+R11038:11039 CAG.Lie.Derivations <> ad def
+R10996:11014 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R10970:10984 CAG.Lie.Semisimple <> lie_der_bracket def
+R11015:11029 CAG.Lie.Semisimple <> lie_der_bracket def
+R11038:11039 CAG.Lie.Derivations <> ad def
+R11062:11076 CAG.Lie.Semisimple <> lie_der_bracket def
+R11079:11080 CAG.Lie.Derivations <> ad def
+R11211:11236 CAG.Lie.Semisimple <> inner_derivation_ideal_key thm
+R11211:11236 CAG.Lie.Semisimple <> inner_derivation_ideal_key thm
+def 11559:11571 <> IsAdNilpotent
+binder 11574:11574 <> F:109
+R11591:11595 CAG.Galois.Field <> Field rec
+R11597:11597 CAG.Lie.Semisimple <> F:109 var
+binder 11585:11587 <> fld:110
+binder 11601:11601 <> L:111
+R11621:11631 CAG.Lie.BasicDef <> LieAlgebraF rec
+R11637:11637 CAG.Lie.Semisimple <> L:111 var
+R11633:11635 CAG.Lie.Semisimple <> fld:110 var
+binder 11616:11617 <> la:112
+R11645:11645 CAG.Lie.Semisimple <> L:111 var
+binder 11641:11641 <> x:113
+R11660:11666 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R11674:11675 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R11671:11673 Corelib.Init.Datatypes <> nat ind
+binder 11667:11667 <> N:114
+R11687:11687 CAG.Lie.Semisimple <> L:111 var
+binder 11683:11683 <> z:115
+R11736:11738 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R11694:11701 Corelib.Init.Nat <> iter def
+R11735:11735 CAG.Lie.Semisimple <> z:115 var
+binder 11710:11710 <> w:116
+R11715:11725 CAG.Lie.BasicDef <> laF_bracket proj
+R11732:11732 CAG.Lie.Semisimple <> w:116 var
+R11730:11730 CAG.Lie.Semisimple <> x:113 var
+R11727:11728 CAG.Lie.Semisimple <> la:112 var
+R11703:11703 CAG.Lie.Semisimple <> N:114 var
+R11739:11745 CAG.Lie.BasicDef <> la_zero abbrev
+R11747:11748 CAG.Lie.Semisimple <> la:112 var
+ax 11883:11897 <> abstract_jordan
+binder 11911:11911 <> F:117
+R11928:11932 CAG.Galois.Field <> Field rec
+R11934:11934 CAG.Lie.Semisimple <> F:117 var
+binder 11922:11924 <> fld:118
+binder 11938:11938 <> L:119
+R11958:11968 CAG.Lie.BasicDef <> LieAlgebraF rec
+R11974:11974 CAG.Lie.Semisimple <> L:119 var
+R11970:11972 CAG.Lie.Semisimple <> fld:118 var
+binder 11953:11954 <> la:120
+R11997:12004 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R11982:11993 CAG.Lie.Radical <> IsSemisimple def
+R11995:11996 CAG.Lie.Semisimple <> la:120 var
+R12016:12016 CAG.Lie.Semisimple <> L:119 var
+binder 12012:12012 <> x:121
+R12023:12029 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R12037:12044 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R12036:12036 CAG.Lie.Semisimple <> L:119 var
+binder 12030:12030 <> s:122
+R12036:12036 CAG.Lie.Semisimple <> L:119 var
+binder 12032:12032 <> n:123
+R12062:12071 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R12046:12048 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12045:12045 CAG.Lie.Semisimple <> x:121 var
+R12049:12054 CAG.Lie.BasicDef <> la_add abbrev
+R12056:12057 CAG.Lie.Semisimple <> la:120 var
+R12061:12061 CAG.Lie.Semisimple <> n:123 var
+R12059:12059 CAG.Lie.Semisimple <> s:122 var
+R12090:12099 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R12072:12084 CAG.Lie.Semisimple <> IsAdNilpotent def
+R12089:12089 CAG.Lie.Semisimple <> n:123 var
+R12086:12087 CAG.Lie.Semisimple <> la:120 var
+R12118:12120 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12100:12110 CAG.Lie.BasicDef <> laF_bracket proj
+R12117:12117 CAG.Lie.Semisimple <> n:123 var
+R12115:12115 CAG.Lie.Semisimple <> s:122 var
+R12112:12113 CAG.Lie.Semisimple <> la:120 var
+R12121:12127 CAG.Lie.BasicDef <> la_zero abbrev
+R12129:12130 CAG.Lie.Semisimple <> la:120 var
+ax 12140:12161 <> abstract_jordan_unique
+binder 12175:12175 <> F:126
+R12192:12196 CAG.Galois.Field <> Field rec
+R12198:12198 CAG.Lie.Semisimple <> F:126 var
+binder 12186:12188 <> fld:127
+binder 12202:12202 <> L:128
+R12222:12232 CAG.Lie.BasicDef <> LieAlgebraF rec
+R12238:12238 CAG.Lie.Semisimple <> L:128 var
+R12234:12236 CAG.Lie.Semisimple <> fld:127 var
+binder 12217:12218 <> la:129
+R12261:12268 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12246:12257 CAG.Lie.Radical <> IsSemisimple def
+R12259:12260 CAG.Lie.Semisimple <> la:129 var
+R12290:12290 CAG.Lie.Semisimple <> L:128 var
+binder 12276:12276 <> x:130
+binder 12278:12278 <> s:131
+binder 12280:12280 <> n:132
+binder 12282:12283 <> s':133
+binder 12285:12286 <> n':134
+R12316:12325 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12300:12302 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12299:12299 CAG.Lie.Semisimple <> x:130 var
+R12303:12308 CAG.Lie.BasicDef <> la_add abbrev
+R12310:12311 CAG.Lie.Semisimple <> la:129 var
+R12315:12315 CAG.Lie.Semisimple <> n:132 var
+R12313:12313 CAG.Lie.Semisimple <> s:131 var
+R12344:12353 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12326:12338 CAG.Lie.Semisimple <> IsAdNilpotent def
+R12343:12343 CAG.Lie.Semisimple <> n:132 var
+R12340:12341 CAG.Lie.Semisimple <> la:129 var
+R12385:12394 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12372:12374 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12354:12364 CAG.Lie.BasicDef <> laF_bracket proj
+R12371:12371 CAG.Lie.Semisimple <> n:132 var
+R12369:12369 CAG.Lie.Semisimple <> s:131 var
+R12366:12367 CAG.Lie.Semisimple <> la:129 var
+R12375:12381 CAG.Lie.BasicDef <> la_zero abbrev
+R12383:12384 CAG.Lie.Semisimple <> la:129 var
+R12414:12423 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12396:12398 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12395:12395 CAG.Lie.Semisimple <> x:130 var
+R12399:12404 CAG.Lie.BasicDef <> la_add abbrev
+R12406:12407 CAG.Lie.Semisimple <> la:129 var
+R12412:12413 CAG.Lie.Semisimple <> n':134 var
+R12409:12410 CAG.Lie.Semisimple <> s':133 var
+R12443:12452 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12424:12436 CAG.Lie.Semisimple <> IsAdNilpotent def
+R12441:12442 CAG.Lie.Semisimple <> n':134 var
+R12438:12439 CAG.Lie.Semisimple <> la:129 var
+R12486:12495 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12473:12475 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12453:12463 CAG.Lie.BasicDef <> laF_bracket proj
+R12471:12472 CAG.Lie.Semisimple <> n':134 var
+R12468:12469 CAG.Lie.Semisimple <> s':133 var
+R12465:12466 CAG.Lie.Semisimple <> la:129 var
+R12476:12482 CAG.Lie.BasicDef <> la_zero abbrev
+R12484:12485 CAG.Lie.Semisimple <> la:129 var
+R12502:12505 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R12497:12499 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12496:12496 CAG.Lie.Semisimple <> s:131 var
+R12500:12501 CAG.Lie.Semisimple <> s':133 var
+R12507:12509 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R12506:12506 CAG.Lie.Semisimple <> n:132 var
+R12510:12511 CAG.Lie.Semisimple <> n':134 var
+ax 13078:13100 <> semisimple_derived_full
+binder 13114:13114 <> F:137
+R13131:13135 CAG.Galois.Field <> Field rec
+R13137:13137 CAG.Lie.Semisimple <> F:137 var
+binder 13125:13127 <> fld:138
+binder 13141:13141 <> L:139
+R13161:13171 CAG.Lie.BasicDef <> LieAlgebraF rec
+R13177:13177 CAG.Lie.Semisimple <> L:139 var
+R13173:13175 CAG.Lie.Semisimple <> fld:138 var
+binder 13156:13157 <> la:140
+R13200:13207 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13185:13196 CAG.Lie.Radical <> IsSemisimple def
+R13198:13199 CAG.Lie.Semisimple <> la:140 var
+binder 13215:13215 <> z:141
+R13218:13229 CAG.Lie.Ideals <> IsDerivedAlg def
+R13234:13234 CAG.Lie.Semisimple <> z:141 var
+R13231:13232 CAG.Lie.Semisimple <> la:140 var
+ax 13501:13527 <> semisimple_ideal_semisimple
+binder 13541:13541 <> F:144
+R13558:13562 CAG.Galois.Field <> Field rec
+R13564:13564 CAG.Lie.Semisimple <> F:144 var
+binder 13552:13554 <> fld:145
+binder 13568:13568 <> L:146
+R13588:13598 CAG.Lie.BasicDef <> LieAlgebraF rec
+R13604:13604 CAG.Lie.Semisimple <> L:146 var
+R13600:13602 CAG.Lie.Semisimple <> fld:145 var
+binder 13583:13584 <> la:147
+R13627:13634 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13612:13623 CAG.Lie.Radical <> IsSemisimple def
+R13625:13626 CAG.Lie.Semisimple <> la:147 var
+R13648:13651 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13647:13647 CAG.Lie.Semisimple <> L:146 var
+binder 13643:13643 <> I:148
+R13675:13682 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13663:13669 CAG.Lie.Ideals <> IsIdeal rec
+R13674:13674 CAG.Lie.Semisimple <> I:148 var
+R13671:13672 CAG.Lie.Semisimple <> la:147 var
+R13683:13694 CAG.Lie.Radical <> IsSemisimple def
+R13696:13697 CAG.Lie.Semisimple <> la:147 var
+ax 13963:13978 <> semisimple_image
+binder 13992:13992 <> F:151
+R14009:14013 CAG.Galois.Field <> Field rec
+R14015:14015 CAG.Lie.Semisimple <> F:151 var
+binder 14003:14005 <> fld:152
+binder 14019:14019 <> L:153
+binder 14021:14021 <> M:154
+R14041:14051 CAG.Lie.BasicDef <> LieAlgebraF rec
+R14057:14057 CAG.Lie.Semisimple <> L:153 var
+R14053:14055 CAG.Lie.Semisimple <> fld:152 var
+binder 14036:14037 <> la:155
+R14066:14076 CAG.Lie.BasicDef <> LieAlgebraF rec
+R14082:14082 CAG.Lie.Semisimple <> M:154 var
+R14078:14080 CAG.Lie.Semisimple <> fld:152 var
+binder 14061:14062 <> lb:156
+R14095:14100 CAG.Lie.BasicDef <> LieHom rec
+R14105:14106 CAG.Lie.Semisimple <> lb:156 var
+R14102:14103 CAG.Lie.Semisimple <> la:155 var
+binder 14090:14091 <> φ:157
+R14132:14132 CAG.Lie.Semisimple <> M:154 var
+binder 14128:14128 <> y:158
+R14135:14141 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R14147:14148 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R14146:14146 CAG.Lie.Semisimple <> L:153 var
+binder 14142:14142 <> x:159
+R14159:14161 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R14149:14153 CAG.Lie.BasicDef <> lh_fn proj
+R14158:14158 CAG.Lie.Semisimple <> x:159 var
+R14155:14156 CAG.Lie.Semisimple <> φ:157 var
+R14162:14162 CAG.Lie.Semisimple <> y:158 var
+binder 14114:14117 <> surj:160
+R14185:14188 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R14170:14181 CAG.Lie.Radical <> IsSemisimple def
+R14183:14184 CAG.Lie.Semisimple <> la:155 var
+R14189:14200 CAG.Lie.Radical <> IsSemisimple def
+R14202:14203 CAG.Lie.Semisimple <> lb:156 var
+ax 14892:14915 <> jordan_direct_sum_compat
+binder 14929:14929 <> F:163
+R14946:14950 CAG.Galois.Field <> Field rec
+R14952:14952 CAG.Lie.Semisimple <> F:163 var
+binder 14940:14942 <> fld:164
+binder 14956:14956 <> L:165
+R14976:14986 CAG.Lie.BasicDef <> LieAlgebraF rec
+R14992:14992 CAG.Lie.Semisimple <> L:165 var
+R14988:14990 CAG.Lie.Semisimple <> fld:164 var
+binder 14971:14972 <> la:166
+R15003:15006 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15002:15002 CAG.Lie.Semisimple <> L:165 var
+binder 14996:14996 <> I:167
+binder 14998:14998 <> J:168
+R15033:15040 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15018:15029 CAG.Lie.Radical <> IsSemisimple def
+R15031:15032 CAG.Lie.Semisimple <> la:166 var
+R15059:15066 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15041:15051 CAG.Lie.Semisimple <> IsDirectSum rec
+R15058:15058 CAG.Lie.Semisimple <> J:168 var
+R15056:15056 CAG.Lie.Semisimple <> I:167 var
+R15053:15054 CAG.Lie.Semisimple <> la:166 var
+R15095:15095 CAG.Lie.Semisimple <> L:165 var
+binder 15075:15075 <> x:169
+binder 15077:15077 <> u:170
+binder 15079:15079 <> v:171
+binder 15081:15082 <> su:172
+binder 15084:15085 <> nu:173
+binder 15087:15088 <> sv:174
+binder 15090:15091 <> nv:175
+R15120:15127 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15104:15106 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15103:15103 CAG.Lie.Semisimple <> x:169 var
+R15107:15112 CAG.Lie.BasicDef <> la_add abbrev
+R15114:15115 CAG.Lie.Semisimple <> la:166 var
+R15119:15119 CAG.Lie.Semisimple <> v:171 var
+R15117:15117 CAG.Lie.Semisimple <> u:170 var
+R15131:15134 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15128:15128 CAG.Lie.Semisimple <> I:167 var
+R15130:15130 CAG.Lie.Semisimple <> u:170 var
+R15138:15145 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15135:15135 CAG.Lie.Semisimple <> J:168 var
+R15137:15137 CAG.Lie.Semisimple <> v:171 var
+R15165:15172 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15147:15149 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15146:15146 CAG.Lie.Semisimple <> u:170 var
+R15150:15155 CAG.Lie.BasicDef <> la_add abbrev
+R15157:15158 CAG.Lie.Semisimple <> la:166 var
+R15163:15164 CAG.Lie.Semisimple <> nu:173 var
+R15160:15161 CAG.Lie.Semisimple <> su:172 var
+R15192:15195 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15173:15185 CAG.Lie.Semisimple <> IsAdNilpotent def
+R15190:15191 CAG.Lie.Semisimple <> nu:173 var
+R15187:15188 CAG.Lie.Semisimple <> la:166 var
+R15229:15236 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15216:15218 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15196:15206 CAG.Lie.BasicDef <> laF_bracket proj
+R15214:15215 CAG.Lie.Semisimple <> nu:173 var
+R15211:15212 CAG.Lie.Semisimple <> su:172 var
+R15208:15209 CAG.Lie.Semisimple <> la:166 var
+R15219:15225 CAG.Lie.BasicDef <> la_zero abbrev
+R15227:15228 CAG.Lie.Semisimple <> la:166 var
+R15256:15263 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15238:15240 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15237:15237 CAG.Lie.Semisimple <> v:171 var
+R15241:15246 CAG.Lie.BasicDef <> la_add abbrev
+R15248:15249 CAG.Lie.Semisimple <> la:166 var
+R15254:15255 CAG.Lie.Semisimple <> nv:175 var
+R15251:15252 CAG.Lie.Semisimple <> sv:174 var
+R15283:15286 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15264:15276 CAG.Lie.Semisimple <> IsAdNilpotent def
+R15281:15282 CAG.Lie.Semisimple <> nv:175 var
+R15278:15279 CAG.Lie.Semisimple <> la:166 var
+R15320:15397 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R15307:15309 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15287:15297 CAG.Lie.BasicDef <> laF_bracket proj
+R15305:15306 CAG.Lie.Semisimple <> nv:175 var
+R15302:15303 CAG.Lie.Semisimple <> sv:174 var
+R15299:15300 CAG.Lie.Semisimple <> la:166 var
+R15310:15316 CAG.Lie.BasicDef <> la_zero abbrev
+R15318:15319 CAG.Lie.Semisimple <> la:166 var
+R15447:15454 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R15399:15401 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15398:15398 CAG.Lie.Semisimple <> x:169 var
+R15402:15407 CAG.Lie.BasicDef <> la_add abbrev
+R15409:15410 CAG.Lie.Semisimple <> la:166 var
+R15431:15436 CAG.Lie.BasicDef <> la_add abbrev
+R15438:15439 CAG.Lie.Semisimple <> la:166 var
+R15444:15445 CAG.Lie.Semisimple <> nv:175 var
+R15441:15442 CAG.Lie.Semisimple <> nu:173 var
+R15413:15418 CAG.Lie.BasicDef <> la_add abbrev
+R15420:15421 CAG.Lie.Semisimple <> la:166 var
+R15426:15427 CAG.Lie.Semisimple <> sv:174 var
+R15423:15424 CAG.Lie.Semisimple <> su:172 var
+R15489:15496 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R15455:15467 CAG.Lie.Semisimple <> IsAdNilpotent def
+R15473:15478 CAG.Lie.BasicDef <> la_add abbrev
+R15480:15481 CAG.Lie.Semisimple <> la:166 var
+R15486:15487 CAG.Lie.Semisimple <> nv:175 var
+R15483:15484 CAG.Lie.Semisimple <> nu:173 var
+R15469:15470 CAG.Lie.Semisimple <> la:166 var
+R15547:15549 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R15497:15507 CAG.Lie.BasicDef <> laF_bracket proj
+R15531:15536 CAG.Lie.BasicDef <> la_add abbrev
+R15538:15539 CAG.Lie.Semisimple <> la:166 var
+R15544:15545 CAG.Lie.Semisimple <> nv:175 var
+R15541:15542 CAG.Lie.Semisimple <> nu:173 var
+R15513:15518 CAG.Lie.BasicDef <> la_add abbrev
+R15520:15521 CAG.Lie.Semisimple <> la:166 var
+R15526:15527 CAG.Lie.Semisimple <> sv:174 var
+R15523:15524 CAG.Lie.Semisimple <> su:172 var
+R15509:15510 CAG.Lie.Semisimple <> la:166 var
+R15550:15556 CAG.Lie.BasicDef <> la_zero abbrev
+R15558:15559 CAG.Lie.Semisimple <> la:166 var
