@@ -1,7 +1,0 @@
-DIGEST a51567aaf768853b0f1b44ed61016431
-FCAG.Extract
-R27:36 Stdlib.extraction.Extraction <> <> lib
-R66:79 Stdlib.extraction.ExtrOcamlBasic <> <> lib
-R110:115 Stdlib.ZArith.ZArith <> <> lib
-R145:150 Stdlib.QArith.QArith <> <> lib
-R178:179 CAG.AG <> <> lib

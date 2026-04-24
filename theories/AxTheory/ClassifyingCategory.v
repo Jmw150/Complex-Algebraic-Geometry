@@ -93,9 +93,9 @@ Lemma axcl_comp_assoc (Sg : Signature) (α β γ δ : AxType Sg)
     axcl_comp Sg α β δ (axcl_comp Sg β γ δ h g) f.
 Proof.
   apply axcl_ext. unfold axcl_comp. simpl.
-  (* h is typed in context [γ]; sub2 = [g.term] has length 1 = length [γ]. *)
-  rewrite (ax_subst_comp Sg [γ] _ _ _ _ eq_refl h.(axcl_typed)).
-  reflexivity.
+  symmetry.
+  exact (ax_subst_comp Sg [γ] [f.(axcl_term)] [g.(axcl_term)]
+           h.(axcl_term) δ eq_refl h.(axcl_typed)).
 Qed.
 
 (** ** The classifying category *)
