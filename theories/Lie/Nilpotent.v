@@ -6,6 +6,7 @@ Require Import CAG.Lie.BasicDef.
 Require Import CAG.Lie.Ideals.
 Require Import CAG.Lie.Solvable.
 From Stdlib Require Import List.
+From Stdlib Require Import Logic.Classical.
 
 (** ** Lower central series *)
 
@@ -100,6 +101,33 @@ Proof.
   apply derived_in_lower_central. exact Hd.
 Qed.
 
+(** Simple Lie algebras are not nilpotent (they aren't even solvable). *)
+Lemma simple_not_nilpotent {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) :
+    IsSimple la -> ~ IsNilpotent la.
+Proof.
+  intros Hsimp Hnilp.
+  exact (simple_not_solvable la Hsimp (nilpotent_is_solvable la Hnilp)).
+Qed.
+
+(** Nilpotent Lie algebras are not simple (since they're solvable). *)
+Lemma nilpotent_not_simple {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) :
+    IsNilpotent la -> ~ IsSimple la.
+Proof.
+  intros Hnilp Hsimp.
+  exact (simple_not_nilpotent la Hsimp Hnilp).
+Qed.
+
+(** Solvable Lie algebras are not simple. *)
+Lemma solvable_not_simple {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) :
+    IsSolvable la -> ~ IsSimple la.
+Proof.
+  intros Hsolv Hsimp.
+  exact (simple_not_solvable la Hsimp Hsolv).
+Qed.
+
 (** ** Closure properties of nilpotency *)
 
 (** Subalgebra of nilpotent is nilpotent. *)
@@ -137,8 +165,9 @@ Proof.
     exact (Hx U HU HU_brackets).
 Qed.
 
-(** Axiom: backward lift for surjective maps on lower central series. *)
-Axiom nilpotent_image_lift :
+(** Backward lift for surjective maps on lower central series.
+    Proof: induction on n, same image-set construction as solvable_image_lift. *)
+Lemma nilpotent_image_lift :
   forall {F : Type} {fld : Field F} {L M : Type}
     (la : LieAlgebraF fld L) (lb : LieAlgebraF fld M)
     (φ : LieHom la lb)
@@ -146,6 +175,42 @@ Axiom nilpotent_image_lift :
     (n : nat) (y : M),
     lower_central lb n y ->
     exists x : L, lh_fn φ x = y /\ lower_central la n x.
+Proof.
+  intros F fld L M la lb φ surj n. induction n as [| n IHn]; intros y Hy.
+  - destruct (surj y) as [x Hx]. exists x. split; [exact Hx | simpl; exact Logic.I].
+  - simpl in Hy.
+    set (U := fun w : M => exists x, lower_central la (S n) x /\ lh_fn φ x = w).
+    assert (HU : IsIdeal lb U).
+    { unfold U. constructor.
+      - exists (la_zero la). split.
+        + apply (lower_central_ideal la (S n)).(ideal_zero).
+        + apply lh_zero.
+      - intros y1 y2 [x1 [Hx1 Hphi1]] [x2 [Hx2 Hphi2]].
+        exists (la_add la x1 x2). split.
+        + apply (lower_central_ideal la (S n)).(ideal_add); assumption.
+        + rewrite φ.(lh_add). f_equal; assumption.
+      - intros w [x [Hx Hphi]]. exists (la_neg la x). split.
+        + apply (lower_central_ideal la (S n)).(ideal_neg); assumption.
+        + rewrite lh_neg. f_equal. exact Hphi.
+      - intros c w [x [Hx Hphi]]. exists (la_scale la c x). split.
+        + apply (lower_central_ideal la (S n)).(ideal_scale); assumption.
+        + rewrite φ.(lh_scale). f_equal. exact Hphi.
+      - intros z w [x [Hx Hphi]].
+        destruct (surj z) as [z' Hz'].
+        exists (laF_bracket la z' x). split.
+        + apply (lower_central_ideal la (S n)).(ideal_bracket_l). exact Hx.
+        + rewrite φ.(lh_bracket). rewrite Hz', Hphi. reflexivity. }
+    assert (HUbrackets : forall a b, True -> lower_central lb n b ->
+                          U (laF_bracket lb a b)).
+    { intros a b _ Hb.
+      destruct (surj a) as [a' Hphia].
+      destruct (IHn b Hb) as [b' [Hphib Hb'D]].
+      exists (laF_bracket la a' b'). split.
+      - simpl. intros V HV HBr. apply HBr; trivial.
+      - rewrite φ.(lh_bracket). rewrite Hphia, Hphib. reflexivity. }
+    destruct (Hy U HU HUbrackets) as [x [Hxd Hxphi]].
+    exists x. split; assumption.
+Qed.
 
 (** Surjective homomorphic image of nilpotent is nilpotent.
 
@@ -179,16 +244,42 @@ Axiom nilpotent_from_quotient_center :
 
 (** If L is nilpotent and nonzero, then Z(L) ≠ 0.
 
-    Proof sketch: Let n be the nilpotency class (L_n = 0, n ≥ 1).
-    Any z ∈ L_{n-1} satisfies [x, z] ∈ L_n = 0 for all x, so z ∈ Z(L).
-    Finding z ≠ 0 in L_{n-1} requires classical reasoning (choosing minimal n).
-    Axiomatized. *)
-Axiom nilpotent_center_nontrivial :
-  forall {F : Type} {fld : Field F} {L : Type}
+    Proof: induction on the nilpotency bound. If L_n = 0 and L ≠ 0, find
+    smallest k with L_k = 0 (using classical reasoning). Then z ∈ L_{k-1}
+    \ {0} is central since [y, z] ∈ L_k = 0. *)
+Lemma nilpotent_center_nontrivial_aux : forall {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (n : nat),
+    (forall x, lower_central la n x -> x = la_zero la) ->
+    (exists x : L, x <> la_zero la) ->
+    exists z, IsCenter la z /\ z <> la_zero la.
+Proof.
+  intros F fld L la n. revert F fld L la.
+  induction n as [| n IHn]; intros F fld L la Hn [x0 Hx0].
+  - (* L_0 = 0 contradicts x0 ≠ 0 since L_0 = full. *)
+    exfalso. apply Hx0. apply Hn. simpl. exact I.
+  - (* L_{n+1} = 0. Consider L_n: either L_n = 0 too or ∃ z ∈ L_n \ {0}. *)
+    destruct (classic (forall x, lower_central la n x -> x = la_zero la)) as [Hzn | Hnzn].
+    + (* L_n = 0 too, recurse on the smaller index *)
+      exact (IHn F fld L la Hzn (ex_intro _ x0 Hx0)).
+    + (* ∃ z ∈ L_n with z ≠ 0 *)
+      apply not_all_ex_not in Hnzn. destruct Hnzn as [z Hz].
+      apply imply_to_and in Hz. destruct Hz as [HzL HznZ].
+      exists z. split.
+      * unfold IsCenter. intros y.
+        apply Hn.
+        apply lower_central_bracket. exact HzL.
+      * exact HznZ.
+Qed.
+
+Theorem nilpotent_center_nontrivial : forall {F : Type} {fld : Field F} {L : Type}
     (la : LieAlgebraF fld L),
     IsNilpotent la ->
     (exists x : L, x <> la_zero la) ->
     exists z, IsCenter la z /\ z <> la_zero la.
+Proof.
+  intros F fld L la [n Hn] Hex.
+  exact (nilpotent_center_nontrivial_aux la n Hn Hex).
+Qed.
 
 (** ** ad-nilpotent elements *)
 
@@ -198,6 +289,23 @@ Definition IsAdNilpotent {F : Type} {fld : Field F} {L : Type}
     (la : LieAlgebraF fld L) (x : L) : Prop :=
   exists n : nat, forall y,
     Nat.iter n (laF_bracket la x) y = la_zero la.
+
+(** la_zero is ad-nilpotent in any Lie algebra: ad la_zero = 0_End trivially. *)
+Lemma zero_is_ad_nilpotent {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) :
+    IsAdNilpotent la (la_zero la).
+Proof.
+  exists 1. intro y. simpl. apply laF_bracket_zero_l.
+Qed.
+
+(** In an abelian Lie algebra, every element is ad-nilpotent (with k=1). *)
+Lemma abelian_all_ad_nilpotent {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L)
+    (Habel : forall x y, laF_bracket la x y = la_zero la) :
+    forall x, IsAdNilpotent la x.
+Proof.
+  intro x. exists 1. intro y. simpl. apply Habel.
+Qed.
 
 (** In a nilpotent Lie algebra, every element is ad-nilpotent. *)
 Lemma nilpotent_all_ad_nilpotent {F : Type} {fld : Field F} {L : Type}
@@ -216,14 +324,12 @@ Proof.
   apply H.
 Qed.
 
-(** ** Strictly upper triangular matrices are nilpotent (axiom). *)
-Axiom strictly_upper_triangular_nilpotent :
-  forall {F : Type} {fld : Field F} (n : nat)
-    (la : LieAlgebraF fld (list (list F))),
-    IsNilpotent la.
-
-(** Upper triangular matrices are solvable but not nilpotent for n ≥ 2 (axiom). *)
-Axiom upper_triangular_not_nilpotent :
-  forall {F : Type} {fld : Field F} (n : nat)
-    (la : LieAlgebraF fld (list (list F))),
-    (n >= 2)%nat -> ~ IsNilpotent la.
+(* strictly_upper_triangular_nilpotent and upper_triangular_not_nilpotent
+   removed: both were unsound as stated. Each universally quantified over
+   "any Lie algebra on list (list F)", trivializing the carrier without
+   identifying which Lie algebra is meant. The two axioms were even mutually
+   contradictory (the first claims all such Lie algebras are nilpotent; the
+   second claims none of them are when n ≥ 2). The intent was n(n,F) is
+   nilpotent and t(n,F) is not nilpotent for n ≥ 2 (both real theorems
+   requiring matrix manipulation infrastructure). Neither axiom was used
+   downstream. *)

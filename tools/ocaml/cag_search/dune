@@ -1,0 +1,3 @@
+(executable
+ (name cag_search)
+ (libraries cag_lib sqlite3 cmdliner))

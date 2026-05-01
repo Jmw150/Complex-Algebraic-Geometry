@@ -226,6 +226,67 @@ Proof.
     rewrite (Hy x). apply laF_bracket_zero_r.
 Qed.
 
+(** la_zero is always in the center: [x, 0] = 0 for any x. *)
+Lemma zero_in_center {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) : IsCenter la (la_zero la).
+Proof.
+  intro x. apply laF_bracket_zero_r.
+Qed.
+
+(** Negation of a central element is central. *)
+Lemma center_neg {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (z : L) :
+    IsCenter la z -> IsCenter la (la_neg la z).
+Proof.
+  intros Hc x. rewrite laF_bracket_neg_r, (Hc x). apply vsF_neg_zero.
+Qed.
+
+(** IsCenter is preserved by negation in both directions. *)
+Lemma center_neg_iff {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (z : L) :
+    IsCenter la z <-> IsCenter la (la_neg la z).
+Proof.
+  split.
+  - apply center_neg.
+  - intro Hcn.
+    rewrite <- (vsF_neg_neg (laF_vs la) z).
+    apply center_neg. exact Hcn.
+Qed.
+
+(** Sum of two central elements is central. *)
+Lemma center_add {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (u v : L) :
+    IsCenter la u -> IsCenter la v -> IsCenter la (la_add la u v).
+Proof.
+  intros Hu Hv x.
+  rewrite la.(laF_bracket_add_r), (Hu x), (Hv x).
+  apply (laF_vs la).(vsF_add_zero_r).
+Qed.
+
+(** Scalar multiple of a central element is central. *)
+Lemma center_scale {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (c : F) (z : L) :
+    IsCenter la z -> IsCenter la (la_scale la c z).
+Proof.
+  intros Hc x. rewrite la.(laF_bracket_scale_r), (Hc x).
+  apply vsF_scale_zero_v.
+Qed.
+
+(** IsCenter z iff [z, x] = 0 for all x (via anticommutativity).
+    Two equivalent characterizations of central elements. *)
+Lemma center_left_iff_right {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (z : L) :
+    IsCenter la z <-> (forall x, laF_bracket la z x = la_zero la).
+Proof.
+  unfold IsCenter. split.
+  - intros H x.
+    rewrite (laF_anticomm la z x), (H x). apply vsF_neg_zero.
+  - intros H x.
+    rewrite (laF_anticomm la x z), (H x). apply vsF_neg_zero.
+Qed.
+
+(** Center is closed under addition, negation, scaling — implied by ideal-ness. *)
+
 (** L is abelian iff Z(L) = L. *)
 Lemma abelian_iff_center_full {F : Type} {fld : Field F} {L : Type}
     (la : LieAlgebraF fld L) :
@@ -263,6 +324,14 @@ Proof.
   - intros x y _ S HS HB. apply HB.
 Qed.
 
+(** Brackets are always in the derived algebra: [x, y] ∈ [L, L]. *)
+Lemma bracket_in_derived_alg {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (x y : L) :
+    IsDerivedAlg la (laF_bracket la x y).
+Proof.
+  intros S HS HB. apply HB.
+Qed.
+
 (** L is abelian iff [L,L] = 0. *)
 Lemma abelian_iff_derived_zero {F : Type} {fld : Field F} {L : Type}
     (la : LieAlgebraF fld L) :
@@ -284,6 +353,46 @@ Qed.
 Definition IsNormalizer {F : Type} {fld : Field F} {L : Type}
     (la : LieAlgebraF fld L) (K : L -> Prop) (x : L) : Prop :=
   forall y, K y -> K (laF_bracket la x y).
+
+(** Every element of a subalgebra K is in its own normalizer (K ⊆ N_L(K)). *)
+Lemma subalg_in_normalizer {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (K : L -> Prop) :
+    IsSubalgebra la K ->
+    forall x, K x -> IsNormalizer la K x.
+Proof.
+  intros HK x Hx y Hy. apply HK.(sub_bracket); assumption.
+Qed.
+
+(** Every central element is in N_L(K) for any subalgebra K (since [x, y] = 0 ∈ K). *)
+Lemma center_in_normalizer {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (K : L -> Prop) :
+    IsSubalgebra la K ->
+    forall x, IsCenter la x -> IsNormalizer la K x.
+Proof.
+  intros HK x Hcen y Hy.
+  rewrite (laF_anticomm la x y).
+  rewrite (Hcen y).
+  rewrite (vsF_neg_zero _).
+  apply HK.(sub_zero).
+Qed.
+
+(** In an abelian Lie algebra, every element is in N_L(K) for any subalgebra K. *)
+Lemma abelian_all_in_normalizer {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (K : L -> Prop)
+    (Habel : forall x y, laF_bracket la x y = la_zero la) :
+    IsSubalgebra la K ->
+    forall x, IsNormalizer la K x.
+Proof.
+  intros HK x y _. rewrite Habel. apply HK.(sub_zero).
+Qed.
+
+(** la_zero is in the normalizer of any subalgebra. *)
+Lemma zero_in_normalizer {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (K : L -> Prop) :
+    IsSubalgebra la K -> IsNormalizer la K (la_zero la).
+Proof.
+  intros HK y Hy. rewrite laF_bracket_zero_l. apply HK.(sub_zero).
+Qed.
 
 (** The normalizer of K is a subalgebra (uses Jacobi). *)
 Lemma normalizer_is_subalgebra {F : Type} {fld : Field F} {L : Type}
@@ -367,6 +476,48 @@ Proof.
     rewrite laF_anticomm, Hjac. apply vsF_neg_zero.
 Qed.
 
+(** Center is contained in centralizer of any subset. *)
+Lemma center_subset_centralizer {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (X : L -> Prop) :
+    forall x, IsCenter la x -> IsCentralizer la X x.
+Proof.
+  intros x Hc y _.
+  rewrite (laF_anticomm la x y), (Hc y). apply vsF_neg_zero.
+Qed.
+
+(** la_zero is in the centralizer of any subset. *)
+Lemma zero_in_centralizer {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (X : L -> Prop) :
+    IsCentralizer la X (la_zero la).
+Proof.
+  intros y _. apply laF_bracket_zero_l.
+Qed.
+
+(** Every element x is in its own centralizer C_L({x}). *)
+Lemma self_in_centralizer_singleton {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (x : L) :
+    IsCentralizer la (fun y => y = x) x.
+Proof.
+  intros y Hy. subst y. apply la.(laF_bracket_alt).
+Qed.
+
+(** Centralizer is antitone in X: X ⊆ Y → C_L(Y) ⊆ C_L(X). *)
+Lemma centralizer_antitone {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (X Y : L -> Prop) :
+    (forall y, X y -> Y y) ->
+    forall x, IsCentralizer la Y x -> IsCentralizer la X x.
+Proof.
+  intros HXY x HCY y Hy. apply HCY. apply HXY. exact Hy.
+Qed.
+
+(** Centralizer of empty/false predicate is full (every x trivially centralizes nothing). *)
+Lemma centralizer_empty {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) :
+    forall x, IsCentralizer la (fun _ => False) x.
+Proof.
+  intros x y Hy. exfalso. exact Hy.
+Qed.
+
 (** C_L(L) = Z(L). *)
 Lemma centralizer_full_is_center {F : Type} {fld : Field F} {L : Type}
     (la : LieAlgebraF fld L) :
@@ -388,6 +539,28 @@ Definition IsSimple {F : Type} {fld : Field F} {L : Type}
   (* [L,L] ≠ 0 *)
   ~ (forall x y, laF_bracket la x y = la_zero la).
 
+(** Simple Lie algebras are not abelian (by definition). *)
+Lemma simple_not_abelian {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) :
+    IsSimple la ->
+    ~ (forall x y, laF_bracket la x y = la_zero la).
+Proof. intros [_ Hnonab]. exact Hnonab. Qed.
+
+(** Simple Lie algebra: every ideal is 0 or full (extracted from definition). *)
+Lemma simple_ideal_zero_or_full {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) :
+    IsSimple la ->
+    forall I : L -> Prop, IsIdeal la I ->
+      (forall x, I x -> x = la_zero la) \/ (forall x, I x).
+Proof. intros [Hidl _]. exact Hidl. Qed.
+
+(** Abelian Lie algebras are not simple. *)
+Lemma abelian_not_simple {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) :
+    (forall x y, laF_bracket la x y = la_zero la) ->
+    ~ IsSimple la.
+Proof. intros Habel Hsimp. exact (simple_not_abelian la Hsimp Habel). Qed.
+
 (** If L is simple, then Z(L) = 0. *)
 Lemma simple_center_zero {F : Type} {fld : Field F} {L : Type}
     (la : LieAlgebraF fld L) :
@@ -398,6 +571,19 @@ Proof.
   destruct (Hideal (IsCenter la) (center_is_ideal la)) as [H0 | Hall].
   - apply H0. exact Hz.
   - exfalso. apply Hnonab. intros x y. apply (Hall y x).
+Qed.
+
+(** A simple Lie algebra is perfect: equals its own derived algebra. *)
+Lemma simple_is_perfect {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) :
+    IsSimple la ->
+    forall z, IsDerivedAlg la z.
+Proof.
+  intros [Hideal Hnonab] z.
+  destruct (Hideal (IsDerivedAlg la) (derived_alg_is_ideal la)) as [H0 | Hall].
+  - exfalso. apply Hnonab. intros x y.
+    apply H0. intros S _ HB. apply HB.
+  - apply Hall.
 Qed.
 
 (** If L is simple, then [L,L] = L. *)

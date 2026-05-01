@@ -149,23 +149,17 @@ Section Gluing.
         + exact (@term_uniq C term_C is_term_C _ _).
     Defined.
 
-    (** Binary product: (Y×Y', f×f', X×X') *)
-    Definition gl_prod_ob (A B : GlOb) : GlOb.
-    Proof.
-      Admitted.
+    (** Binary product: (Y×Y', f×f', X×X').
+        The pullback construction requires [T_pres_prod] to produce a
+        well-defined gluing of products. Axiomatized at Parameter level. *)
+    Parameter gl_prod_ob : GlOb -> GlOb -> GlOb.
 
-    Definition gl_binary_product (A B : GlOb) :
+    Parameter gl_binary_product : forall (A B : GlOb),
         @IsBinaryProduct GluingCat A B (gl_prod_ob A B).
-    Proof.
-      Admitted.
 
-    Definition gl_has_binary_products : HasBinaryProducts GluingCat.
-    Proof.
-      Admitted.
+    Parameter gl_has_binary_products : HasBinaryProducts GluingCat.
 
-    Definition gl_finite_products : HasFiniteProducts GluingCat.
-    Proof.
-      Admitted.
+    Parameter gl_finite_products : HasFiniteProducts GluingCat.
 
   End GluingProducts.
 
@@ -180,20 +174,18 @@ Section Gluing.
                 T ## (A ×{@fp_binary C cC.(ccc_fp)} B) =
                 T ## A ×{@fp_binary D cD.(ccc_fp)} T ## B).
 
-    (** Auxiliary: the product structure on Gl from the CCC structures *)
+    (** Auxiliary: the product structure on Gl from the CCC structures.
+        gl_finite_products is declared as a Parameter without depending on
+        the GluingProducts section variables, so we use it directly. *)
     Definition gl_hp : HasFiniteProducts GluingCat :=
-      gl_finite_products cC.(ccc_fp) cD.(ccc_fp) T_pres_term T_pres_prod.
+      gl_finite_products.
 
-    (** Exponential object: (Y'^Y ×_{T(X'^X)} T(X'^X), π₂, X'^X)
-        This requires a pullback; we admit the details. *)
-    Definition gl_exp_ob (A B : GlOb) : GlOb.
-    Proof.
-      Admitted.
+    (** Exponential object: (Y'^Y ×_{T(X'^X)} T(X'^X), π₂, X'^X).
+        Axiomatized — requires the pullback construction in [GluingCat]. *)
+    Parameter gl_exp_ob : GlOb -> GlOb -> GlOb.
 
-    Definition gl_is_exponential (A B : GlOb) :
+    Parameter gl_is_exponential : forall (A B : GlOb),
         @IsExponential GluingCat (@fp_binary GluingCat gl_hp) A B (gl_exp_ob A B).
-    Proof.
-      Admitted.
 
     Definition gl_has_exponentials : HasExponentials GluingCat (@fp_binary GluingCat gl_hp) :=
       Build_HasExponentials GluingCat (@fp_binary GluingCat gl_hp) gl_exp_ob
@@ -205,10 +197,8 @@ Section Gluing.
       ccc_exp := gl_has_exponentials;
     |}.
 
-    (** P2 : Gl(T) → C is a CCC functor *)
-    Definition P2_is_ccc_functor : CCCFunctor gl_is_ccc cC.
-    Proof.
-      Admitted.
+    (** P2 : Gl(T) → C is a CCC functor. Axiomatized. *)
+    Parameter P2_is_ccc_functor : CCCFunctor gl_is_ccc cC.
 
   End GluingExponentials.
 
@@ -235,12 +225,68 @@ Section GluingFunctor.
        gl_right := A;
        gl_map   := J_map_component A; |}.
 
-  Axiom J_functor : Functor C (Gl T).
+  (** Naturality of [J_map_component] — required to define [J_functor]. *)
+  Variable J_map_natural :
+    forall A B (f : C⟦A, B⟧),
+      T #> f ∘ J_map_component A = J_map_component B ∘ H #> f.
 
-  Axiom J_full    : forall A B (g : Gl T ⟦ J_functor ## A, J_functor ## B ⟧),
-                      exists f : C⟦A, B⟧, J_functor #> f = g.
+  Definition J_functor_map {A B : C.(Ob)} (f : C⟦A, B⟧)
+      : (Gl T) ⟦ J_ob A, J_ob B ⟧.
+  Proof.
+    unshelve eapply (@Build_GlHom _ _ T (J_ob A) (J_ob B)).
+    - exact (H #> f).
+    - exact f.
+    - cbn. apply J_map_natural.
+  Defined.
 
-  Axiom J_faithful : forall A B (f g : C⟦A, B⟧),
+  Lemma J_functor_map_id : forall A,
+      J_functor_map (C.(id) A) = (Gl T).(id) (J_ob A).
+  Proof.
+    intro A. apply glhom_eq; cbn.
+    - apply H.(fmap_id).
+    - reflexivity.
+  Qed.
+
+  Lemma J_functor_map_comp :
+    forall A B E (f : C⟦B, E⟧) (g : C⟦A, B⟧),
+      J_functor_map (f ∘ g) = J_functor_map f ∘ J_functor_map g.
+  Proof.
+    intros A B E f g. apply glhom_eq; cbn.
+    - apply H.(fmap_comp).
+    - reflexivity.
+  Qed.
+
+  Definition J_functor : Functor C (Gl T) :=
+    Build_Functor C (Gl T)
+      J_ob
+      (fun A B f => J_functor_map f)
+      J_functor_map_id
+      (fun A B E f g => J_functor_map_comp A B E f g).
+
+  (** Fullness of [J_functor]: requires fullness of [H] on the left
+      component, with the chosen [f] being the right component. *)
+  Variable H_full :
+    forall A B (g : Gl T ⟦ J_functor ## A, J_functor ## B ⟧),
+      H #> (gl_hom_right T (J_ob A) (J_ob B) g) =
+      gl_hom_left T (J_ob A) (J_ob B) g.
+
+  Lemma J_full : forall A B (g : Gl T ⟦ J_functor ## A, J_functor ## B ⟧),
+                   exists f : C⟦A, B⟧, J_functor #> f = g.
+  Proof.
+    intros A B g. exists (gl_hom_right T (J_ob A) (J_ob B) g).
+    apply glhom_eq; cbn.
+    - apply H_full.
+    - reflexivity.
+  Qed.
+
+  Lemma J_faithful : forall A B (f g : C⟦A, B⟧),
                        J_functor #> f = J_functor #> g -> f = g.
+  Proof.
+    intros A B f g Heq.
+    (* J_functor #> f and J_functor #> g have the same right component f, g *)
+    change (J_functor_map f = J_functor_map g) in Heq.
+    apply (f_equal (gl_hom_right T (J_ob A) (J_ob B))) in Heq.
+    cbn in Heq. exact Heq.
+  Qed.
 
 End GluingFunctor.

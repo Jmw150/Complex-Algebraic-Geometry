@@ -84,7 +84,7 @@ Proof. intros; exists 0%nat; intros; exact I. Qed.
 (* ================================================================== *)
 
 (** t_{L^k} is injective for k >> 0. *)
-Theorem kodaira_map_injective : forall (M : KahlerManifold)
+Conjecture kodaira_map_injective : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)),
     positive_line_bundle M L ->
     exists k0 : nat,
@@ -93,7 +93,6 @@ Theorem kodaira_map_injective : forall (M : KahlerManifold)
     forall x y : Cn (km_dim M),
     kodaira_map M L k x = kodaira_map M L k y ->
     x = y.
-Proof. admit. Admitted.
 
 (** dt_{L^k} is injective everywhere for k >> 0. *)
 Theorem kodaira_map_immersion : forall (M : KahlerManifold)

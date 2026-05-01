@@ -41,12 +41,11 @@ Parameter poincare_pairing : forall (M : KahlerManifold) (k : nat),
     HdR M k -> HdR M (2 * km_dim M - k) -> CComplex.
 
 (** Nondegeneracy: if ⟨α, β⟩ = 0 for all β, then α = 0. *)
-Theorem poincare_nondegenerate : forall (M : KahlerManifold) (k : nat)
+Conjecture poincare_nondegenerate : forall (M : KahlerManifold) (k : nat)
     (α : HdR M k),
     (forall β : HdR M (2 * km_dim M - k),
         poincare_pairing M k α β = C0) ->
     α = vs_zero (HdR_vs M k).
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 2. Divisor classes and curve classes                             *)

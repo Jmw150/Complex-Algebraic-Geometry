@@ -14,6 +14,7 @@ From Stdlib Require Import Logic.FunctionalExtensionality.
 From Stdlib Require Import Logic.ProofIrrelevance.
 From Stdlib Require Import Logic.Classical.
 From Stdlib Require Import Logic.PropExtensionality.
+From Stdlib Require Import Setoid Ring.
 
 Open Scope order_scope.
 
@@ -131,6 +132,154 @@ Proof.
     rewrite Hab in Hstep.
     rewrite mul_zero in Hstep.
     exact (eq_sym Hstep).
+Qed.
+
+(** ** Derived commutative ring lemmas *)
+
+Lemma cr_mul_zero_r {R : Type} (rg : CommRing R) :
+  forall a, cr_mul rg a (cr_zero rg) = cr_zero rg.
+Proof.
+  intro a. set (t := cr_mul rg a (cr_zero rg)).
+  assert (Hd : t = cr_add rg t t).
+  { unfold t.
+    assert (Hdist := cr_distrib rg a (cr_zero rg) (cr_zero rg)).
+    rewrite cr_add_zero in Hdist. exact Hdist. }
+  assert (Hstep_a : cr_add rg (cr_add rg t t) (cr_neg rg t) = cr_zero rg).
+  { rewrite <- Hd. apply cr_add_neg. }
+  assert (Hstep_b : cr_add rg (cr_add rg t t) (cr_neg rg t) = t).
+  { rewrite <- cr_add_assoc, cr_add_neg. apply cr_add_zero. }
+  exact (eq_trans (eq_sym Hstep_b) Hstep_a).
+Qed.
+
+Lemma cr_mul_zero_l {R : Type} (rg : CommRing R) :
+  forall a, cr_mul rg (cr_zero rg) a = cr_zero rg.
+Proof. intro a. rewrite cr_mul_comm. apply cr_mul_zero_r. Qed.
+
+Lemma cr_one_mul {R : Type} (rg : CommRing R) :
+  forall a, cr_mul rg (cr_one rg) a = a.
+Proof. intro a. rewrite cr_mul_comm. apply cr_mul_one. Qed.
+
+Lemma cr_add_zero_l {R : Type} (rg : CommRing R) :
+  forall a, cr_add rg (cr_zero rg) a = a.
+Proof. intro a. rewrite cr_add_comm. apply cr_add_zero. Qed.
+
+Lemma cr_add_neg_l {R : Type} (rg : CommRing R) :
+  forall a, cr_add rg (cr_neg rg a) a = cr_zero rg.
+Proof. intro a. rewrite cr_add_comm. apply cr_add_neg. Qed.
+
+(** Additive inverse is unique: if a+b=0 then b=-a. *)
+Lemma cr_add_inv_uniq {R : Type} (rg : CommRing R) :
+  forall a b, cr_add rg a b = cr_zero rg -> b = cr_neg rg a.
+Proof.
+  intros a b Hab.
+  assert (H : cr_add rg (cr_neg rg a) (cr_add rg a b) = cr_neg rg a).
+  { rewrite Hab. apply cr_add_zero. }
+  rewrite cr_add_assoc, cr_add_neg_l, cr_add_zero_l in H. exact H.
+Qed.
+
+(** -(-a) = a *)
+Lemma cr_neg_neg {R : Type} (rg : CommRing R) :
+  forall a, cr_neg rg (cr_neg rg a) = a.
+Proof.
+  intro a.
+  apply eq_sym.
+  apply cr_add_inv_uniq.
+  apply cr_add_neg_l.
+Qed.
+
+(** (-a) * b = -(a * b) *)
+Lemma cr_neg_mul_l {R : Type} (rg : CommRing R) :
+  forall a b, cr_mul rg (cr_neg rg a) b = cr_neg rg (cr_mul rg a b).
+Proof.
+  intros a b.
+  apply cr_add_inv_uniq.
+  rewrite (cr_mul_comm rg a b), (cr_mul_comm rg (cr_neg rg a) b).
+  rewrite <- cr_distrib.
+  rewrite cr_add_neg.
+  apply cr_mul_zero_r.
+Qed.
+
+Lemma cr_neg_mul_r {R : Type} (rg : CommRing R) :
+  forall a b, cr_mul rg a (cr_neg rg b) = cr_neg rg (cr_mul rg a b).
+Proof. intros a b. rewrite cr_mul_comm, cr_neg_mul_l, cr_mul_comm. reflexivity. Qed.
+
+(** (-a) * (-b) = a * b *)
+Lemma cr_neg_mul_neg {R : Type} (rg : CommRing R) :
+  forall a b, cr_mul rg (cr_neg rg a) (cr_neg rg b) = cr_mul rg a b.
+Proof. intros a b. rewrite cr_neg_mul_l, cr_neg_mul_r, cr_neg_neg. reflexivity. Qed.
+
+(** -(a + b) = -a + -b *)
+Lemma cr_neg_add {R : Type} (rg : CommRing R) :
+  forall a b, cr_neg rg (cr_add rg a b) = cr_add rg (cr_neg rg a) (cr_neg rg b).
+Proof.
+  intros a b.
+  symmetry. apply cr_add_inv_uniq.
+  (* Goal: cr_add (cr_add a b) (cr_add (cr_neg a) (cr_neg b)) = cr_zero *)
+  rewrite (cr_add_assoc rg (cr_add rg a b) (cr_neg rg a) (cr_neg rg b)).
+  (* Goal: cr_add (cr_add (cr_add a b) (cr_neg a)) (cr_neg b) = cr_zero *)
+  rewrite <- (cr_add_assoc rg a b (cr_neg rg a)).
+  (* Goal: cr_add (cr_add a (cr_add b (cr_neg a))) (cr_neg b) = cr_zero *)
+  rewrite (cr_add_comm rg b (cr_neg rg a)).
+  (* Goal: cr_add (cr_add a (cr_add (cr_neg a) b)) (cr_neg b) = cr_zero *)
+  rewrite (cr_add_assoc rg a (cr_neg rg a) b).
+  (* Goal: cr_add (cr_add (cr_add a (cr_neg a)) b) (cr_neg b) = cr_zero *)
+  rewrite (cr_add_neg rg a).
+  (* Goal: cr_add (cr_add cr_zero b) (cr_neg b) = cr_zero *)
+  rewrite (cr_add_zero_l rg b).
+  apply (cr_add_neg rg b).
+Qed.
+
+(** Derived right-distributivity from left-distributivity + comm. *)
+Lemma cr_distrib_r {R : Type} (rg : CommRing R) :
+  forall a b c, cr_mul rg (cr_add rg a b) c =
+                cr_add rg (cr_mul rg a c) (cr_mul rg b c).
+Proof.
+  intros a b c.
+  rewrite (cr_mul_comm rg (cr_add rg a b) c).
+  rewrite cr_distrib.
+  rewrite (cr_mul_comm rg c a), (cr_mul_comm rg c b).
+  reflexivity.
+Qed.
+
+(** Cancellation in rings: a + c = b + c → a = b. *)
+Lemma cr_add_cancel_r {R : Type} (rg : CommRing R) :
+  forall a b c, cr_add rg a c = cr_add rg b c -> a = b.
+Proof.
+  intros a b c Hac.
+  assert (Heq : cr_add rg (cr_add rg a c) (cr_neg rg c)
+              = cr_add rg (cr_add rg b c) (cr_neg rg c)).
+  { rewrite Hac. reflexivity. }
+  rewrite <- (cr_add_assoc rg a c (cr_neg rg c)) in Heq.
+  rewrite <- (cr_add_assoc rg b c (cr_neg rg c)) in Heq.
+  rewrite (cr_add_neg rg c) in Heq.
+  rewrite (cr_add_zero rg a) in Heq.
+  rewrite (cr_add_zero rg b) in Heq.
+  exact Heq.
+Qed.
+
+Lemma cr_add_cancel_l {R : Type} (rg : CommRing R) :
+  forall a b c, cr_add rg c a = cr_add rg c b -> a = b.
+Proof.
+  intros a b c Hac.
+  rewrite (cr_add_comm rg c a), (cr_add_comm rg c b) in Hac.
+  apply (cr_add_cancel_r rg a b c). exact Hac.
+Qed.
+
+(** Generic ring_theory instance for any CommRing. Useful for [ring] tactic. *)
+Lemma cr_ring_theory {R : Type} (rg : CommRing R) :
+  ring_theory (cr_zero rg) (cr_one rg)
+    (cr_add rg) (cr_mul rg) (cr_sub rg) (cr_neg rg) eq.
+Proof.
+  constructor.
+  - intro x. apply (cr_add_zero_l rg).
+  - intros x y. apply (cr_add_comm rg).
+  - intros x y z. apply (cr_add_assoc rg).
+  - intro x. apply (cr_one_mul rg).
+  - intros x y. apply (cr_mul_comm rg).
+  - intros x y z. apply (cr_mul_assoc rg).
+  - intros x y z. apply (cr_distrib_r rg).
+  - intros x y. reflexivity.
+  - intro x. apply (cr_add_neg rg).
 Qed.
 
 (** ** Ring homomorphism *)

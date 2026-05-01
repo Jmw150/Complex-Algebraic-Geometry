@@ -32,10 +32,9 @@ Local Open Scope CReal_scope.
 Parameter integrate : forall (M : KahlerManifold),
     HdR M (2 * km_dim M) -> CComplex.
 
-Theorem integrate_linear : forall (M : KahlerManifold) (u v : HdR M (2 * km_dim M)) (c : CComplex),
+Conjecture integrate_linear : forall (M : KahlerManifold) (u v : HdR M (2 * km_dim M)) (c : CComplex),
     integrate M (vs_add (HdR_vs M _) u v) =
     Cadd (integrate M u) (integrate M v).
-Proof. admit. Admitted.
 
 (** Cup product in cohomology. *)
 Parameter cup : forall (M : KahlerManifold) (j k : nat),
@@ -68,17 +67,15 @@ Parameter Q_form : forall (M : KahlerManifold) (k : nat),
 (* ================================================================== *)
 
 (** Q is bilinear — axiomatized since Q_form is a parameter. *)
-Theorem Q_bilinear_left : forall (M : KahlerManifold) (k : nat)
+Conjecture Q_bilinear_left : forall (M : KahlerManifold) (k : nat)
     (u v eta : HdR M (km_dim M - k)),
     Q_form M k (vs_add (HdR_vs M _) u v) eta =
     Cadd (Q_form M k u eta) (Q_form M k v eta).
-Proof. admit. Admitted.
 
-Theorem Q_bilinear_right : forall (M : KahlerManifold) (k : nat)
+Conjecture Q_bilinear_right : forall (M : KahlerManifold) (k : nat)
     (xi u v : HdR M (km_dim M - k)),
     Q_form M k xi (vs_add (HdR_vs M _) u v) =
     Cadd (Q_form M k xi u) (Q_form M k xi v).
-Proof. admit. Admitted.
 
 (** Q is well defined on cohomology (follows from ∂-exactness). *)
 Theorem Q_well_defined : forall (M : KahlerManifold) (k : nat),
@@ -110,12 +107,11 @@ Proof. intros; exact I. Qed.
 
 (** Q is nondegenerate on H^{n-k}(M) for each k.
     This follows from Hard Lefschetz + Poincaré duality. *)
-Theorem Q_nondegenerate : forall (M : KahlerManifold) (k : nat),
+Conjecture Q_nondegenerate : forall (M : KahlerManifold) (k : nat),
     (k <= km_dim M)%nat ->
     forall v : HdR M (km_dim M - k),
     (forall w : HdR M (km_dim M - k), Q_form M k v w = C0) ->
     v = vs_zero (HdR_vs M (km_dim M - k)).
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 6. Real structure                                                *)
@@ -129,8 +125,7 @@ Parameter Q_form_real : forall (M : KahlerManifold) (k : nat),
     HdR_real M (km_dim M - k) -> HdR_real M (km_dim M - k) -> CComplex.
 
 (** Skew-symmetry for odd degree, symmetry for even degree. *)
-Theorem Q_symmetry : forall (M : KahlerManifold) (k : nat) (xi eta : HdR M (km_dim M - k)),
+Conjecture Q_symmetry : forall (M : KahlerManifold) (k : nat) (xi eta : HdR M (km_dim M - k)),
     Q_form M k xi eta =
     Cmul (Cpow (Cneg C1) ((km_dim M - k) * (km_dim M - k - 1) / 2)%nat)
          (Q_form M k eta xi).
-Proof. admit. Admitted.

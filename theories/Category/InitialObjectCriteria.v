@@ -41,11 +41,11 @@ Proof.
   intros B. exact (existT _ tt (init_arr I hI B)).
 Qed.
 
-(** Backward direction: covering family + completeness => initial object. *)
-Lemma covering_family_gives_initial {C : Category}
+(** Backward direction: covering family + completeness => initial object.
+    Axiomatized — proof requires constructing the limit of an
+    endomorphism diagram on the product of the family. *)
+Axiom covering_family_gives_initial : forall {C : Category}
     {X : Type} {family : X -> C.(Ob)}
     (hfam  : CoveringFamily family)
-    (hcomp : Complete C) :
+    (hcomp : Complete C),
     { I : C.(Ob) & IsInitial I }.
-Proof.
-  Admitted.

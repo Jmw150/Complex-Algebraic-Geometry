@@ -78,11 +78,10 @@ Definition tangent_cone {n k : nat}
 (* ================================================================== *)
 
 (** At a smooth point (multiplicity 1), the tangent cone = tangent space. *)
-Theorem tangent_cone_smooth_is_tangent_space : forall {n k : nat}
+Conjecture tangent_cone_smooth_is_tangent_space : forall {n k : nat}
     (F : Fin.t k -> Polynomial n) (p : Cn n),
     is_smooth_point n k F p ->
     forall v, tangent_cone F p v <-> affine_tangent_space n k F p v.
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 5. Geometric characterizations                                   *)
@@ -98,12 +97,7 @@ Parameter arc_tangent_direction : forall (V : ProjectiveVariety)
     AnalyticArc V p -> Cn (pv_ambient_dim V + 1).
 
 (** Characterization 1: C_p(V) = union of tangent directions to arcs. *)
-Theorem tangent_cone_is_arc_tangents : forall {n k : nat}
-    (F : Fin.t k -> Polynomial n) (p : Cn n) (v : Cn n),
-    tangent_cone F p v <->
-    (** v is the tangent direction of some analytic arc through p in V *)
-    True.
-Proof. admit. Admitted.
+(* tangent_cone_is_arc_tangents axiom removed: was unsound. Not used. *)
 
 (** Characterization 2: C_p(V) = limit of secant directions. *)
 Theorem tangent_cone_is_secant_limit : forall {n k : nat}

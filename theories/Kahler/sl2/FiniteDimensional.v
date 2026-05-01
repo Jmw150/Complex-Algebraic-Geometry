@@ -31,27 +31,21 @@ Local Open Scope CReal_scope.
 (** We axiomatize the key facts from finite-dimensional representation
     theory that cannot easily be proved without a full basis calculus. *)
 
-(** In a finite-dimensional sl2-module, X is nilpotent. *)
-Theorem sl2_X_nilpotent : forall {V : Type} {vs : VectorSpace V}
-    (m : SL2Module V vs) (n : nat) (v : V),
-    Nat.iter (S n) (sl2_X m) v = vs_zero vs.
-Proof. admit. Admitted.
-
-(** In a finite-dimensional sl2-module, Y is nilpotent. *)
-Theorem sl2_Y_nilpotent : forall {V : Type} {vs : VectorSpace V}
-    (m : SL2Module V vs) (n : nat) (v : V),
-    Nat.iter (S n) (sl2_Y m) v = vs_zero vs.
-Proof. admit. Admitted.
+(* sl2_X_nilpotent and sl2_Y_nilpotent removed: false-as-stated. The
+   axioms quantified over all n (including n = 0), giving Nat.iter 1
+   (sl2_X m) v = 0, i.e. sl2_X m = 0 identically. This forces X to be
+   the zero operator on every sl2-module, which is false (e.g. the
+   standard module on V(1) = F^2 has X(e_0) = e_1 ≠ 0). The proper
+   statement should be ∃ n, ... rather than ∀ n. Both unused downstream. *)
 
 (** Every finite-dimensional sl2-module has a primitive vector
     (an X-eigenvector with eigenvalue 0). *)
-Theorem sl2_primitive_exists : forall {V : Type} {vs : VectorSpace V}
+Conjecture sl2_primitive_exists : forall {V : Type} {vs : VectorSpace V}
     (m : SL2Module V vs),
-    V ->   (* module is nonzero *)
+    V ->
     exists (v : V) (lambda : CComplex),
       is_primitive m v /\ is_weight m lambda v /\
       v <> vs_zero vs.
-Proof. admit. Admitted.
 
 (** The XY identity (proved in Basic.v as an axiom for now). *)
 (* XY_primitive_identity is already imported from Basic.v *)
@@ -141,19 +135,21 @@ Definition primitive_weight_space {V : Type} {vs : VectorSpace V}
 
 (** Linear independence of Y^n v for a primitive weight vector v.
     This is a consequence of distinct H-eigenvalues. *)
-Axiom Y_orbit_independent : forall {V : Type} {vs : VectorSpace V}
+Lemma Y_orbit_independent : forall {V : Type} {vs : VectorSpace V}
     (m : SL2Module V vs) (v : V) (n : nat),
     is_primitive m v ->
     Nat.iter n (sl2_Y m) v <> vs_zero vs ->
     (** The vectors v, Yv, ..., Y^n v are linearly independent. *)
     True.  (* Formal statement requires linear independence definition *)
+Proof. intros; exact I. Qed.
 
 (** Weight vectors of distinct weights are linearly independent. *)
-Axiom weight_vectors_independent : forall {V : Type} {vs : VectorSpace V}
+Lemma weight_vectors_independent : forall {V : Type} {vs : VectorSpace V}
     (m : SL2Module V vs) (lambdas : list CComplex) (vectors : list V),
     List.Forall2 (is_weight m) lambdas vectors ->
     (** If all lambdas are distinct, then vectors are linearly independent. *)
     True.  (* Formal statement requires linear independence definition *)
+Proof. intros; exact I. Qed.
 
 (* ================================================================== *)
 (** * 6. Highest weight and orbit submodule (Part II of §7)            *)
@@ -176,35 +172,14 @@ Definition orbit_top {V : Type} {vs : VectorSpace V}
     X(Y^{m+1} v) = (m+1)·(λ-m)·Y^m v.
     Since X(Y^{m+1} v) = X(0) = 0 and Y^m v ≠ 0,
     we get (m+1)·(λ-m) = 0, hence λ = m (in char 0). *)
-Theorem highest_weight_is_nat : forall {V : Type} {vs : VectorSpace V}
+(** The highest-weight identification λ = m. The proof needs char-0
+    cancellation [(m+1)·c = 0 ⇒ c = 0] which the [VectorSpace] interface
+    does not provide; axiomatized at this level. *)
+Conjecture highest_weight_is_nat : forall {V : Type} {vs : VectorSpace V}
     (m_mod : SL2Module V vs) (lambda : CComplex) (v : V) (m : nat),
     is_maximal_vector m_mod lambda v ->
     orbit_top m_mod v m ->
-    (** The highest weight λ equals m as a complex number. *)
     lambda = Cinject_Q (QArith_base.inject_Z (Z.of_nat m)).
-Proof.
-  intros V vs m_mod lambda v m [Hw [Hprim Hne]] [Htop_ne Htop].
-  (** X(Y^{m+1} v) = (m+1)*(λ-m)*Y^m v  by XY_primitive_identity. *)
-  pose proof (XY_primitive_identity m_mod lambda v m Hprim Hw) as Hxy.
-  (** But X(Y^{m+1} v) = X(0) = 0  since Y^{m+1} v = 0. *)
-  rewrite Htop in Hxy.
-  (** X(0) = 0  by linearity. *)
-  assert (HX0 : sl2_X m_mod (vs_zero vs) = vs_zero vs).
-  { assert (Hst : sl2_X m_mod (vs_zero vs) =
-                  vs_add vs (sl2_X m_mod (vs_zero vs)) (sl2_X m_mod (vs_zero vs))).
-    { rewrite <- sl2_X_add. rewrite vs_add_zero_r. reflexivity. }
-    assert (Hn : vs_add vs (sl2_X m_mod (vs_zero vs))
-                            (vs_neg vs (sl2_X m_mod (vs_zero vs))) = vs_zero vs)
-      by apply vs_add_neg_r.
-    rewrite Hst in Hn at 1. rewrite <- vs_add_assoc in Hn.
-    rewrite vs_add_neg_r in Hn. rewrite vs_add_zero_r in Hn. exact Hn. }
-  rewrite HX0 in Hxy.
-  (** So (m+1)*(λ-m)*Y^m v = 0, i.e., vs_scale (coeff) (Y^m v) = 0. *)
-  (** Since Y^m v ≠ 0, the coefficient must be 0: (m+1)*(λ-m) = 0. *)
-  (** In char 0: since m+1 ≠ 0, we get λ-m = 0, hence λ = m. *)
-  (** This requires the fact that the field is char 0 (no torsion),
-      which we axiomatize. *)
-  Admitted.
 
 (** The X-closure of the Y-orbit: X maps Y^k v back to Y^{k-1} v (up to scalar). *)
 (** Specifically, X(Y^k v) = (k*(λ - k + 1)) * Y^{k-1} v
@@ -232,14 +207,9 @@ Proof.
 Qed.
 
 (** Highest weight of V(m) is m (the top basis vector e_0 has weight m). *)
-Lemma Vm_highest_weight : forall (m : nat),
+Conjecture Vm_highest_weight : forall (m : nat),
     Vm_H_eigenvalue m 0 =
     Cinject_Q (QArith_base.inject_Z (Z.of_nat m)).
-Proof.
-  intro m. unfold Vm_H_eigenvalue, Csub, Cmul, Cadd, Cneg, C0, C1, Cinject_Q.
-  (* CComplex propositional equality: Vm_H_eigenvalue m 0 = inject m - 0·2.
-     Both real and imaginary parts reduce via CReal arithmetic (0·2 = 0). *)
-  Admitted.
 
 (** The sequence of weights in V(m) is m, m-2, m-4, ..., -m. *)
 (** There are m+1 basis vectors e_0,...,e_m. *)
@@ -277,67 +247,56 @@ Proof.
     Part (ii): V(m) can be constructed concretely on the polynomial space
     of degree ≤ m, or abstractly. *)
 
-(** Every irreducible fd sl(2)-module has a UNIQUE highest weight. *)
-Axiom sl2_irreducible_unique_highest_weight :
-  forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs),
-    (** if V is irreducible and finite-dimensional *)
-    exists (n : nat),
-    (** then there exists a unique maximal vector weight n *)
-    forall (lambda : CComplex) (v : V),
-      is_maximal_vector m lambda v ->
-      lambda = Cinject_Q (QArith_base.inject_Z (Z.of_nat n)).
+(* sl2_irreducible_unique_highest_weight removed: false-as-stated.
+   The axiom universally quantifies over SL2Module without an
+   irreducibility hypothesis, but the conclusion (∃ unique highest
+   weight) requires irreducibility. Counter: V = V(0) ⊕ V(1) has two
+   distinct highest weights (0 and 1), no single n. Was unused. *)
 
-(** The weights of an fd irreducible V(n) are exactly n, n-2, ..., -n. *)
-Axiom sl2_weights_symmetric :
-  forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs) (n : nat),
-    (** given an irreducible of highest weight n *)
-    forall (k : nat), (k <= n)%nat ->
-    exists (v : V), is_weight_vector m (Vm_H_eigenvalue n k) v.
+(* sl2_weights_symmetric removed: false-as-stated. The axiom claims
+   ∃ nonzero weight vector for every weight in {n, n-2, ..., -n}
+   of every SL2Module, but: (1) doesn't hypothesize the module has
+   highest weight n, (2) trivial module V = {0} has no nonzero vectors.
+   Was unused. *)
 
-(** Multiplicity one: each weight space of an irreducible is 1-dimensional. *)
-Axiom sl2_multiplicity_one :
-  forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs) (n : nat),
-    forall (k : nat) (u v : V),
-    is_weight_vector m (Vm_H_eigenvalue n k) u ->
-    is_weight_vector m (Vm_H_eigenvalue n k) v ->
-    exists (c : CComplex), u = vs_scale vs c v.
+(* sl2_multiplicity_one removed: false-as-stated. The axiom claims any
+   two weight vectors of weight (n - 2k) are scalar multiples, for any
+   SL2Module. False without irreducibility hypothesis: V(0) ⊕ V(0) has
+   two linearly independent weight-0 vectors. Was unused. *)
 
 (** Complete reducibility: every fd sl(2)-module is a direct sum of
     irreducibles.  Stated as an axiom (requires Weyl's theorem). *)
-Axiom sl2_complete_reducibility :
+Lemma sl2_complete_reducibility :
   forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs),
     (** every submodule has a complement *)
     forall (W : V -> Prop),
     (** W is an sl(2)-submodule *)
     True. (* placeholder: requires formal submodule definition *)
+Proof. intros. exact I. Qed.
 
 (* ================================================================== *)
 (** * 8. Corollaries for arbitrary fd sl(2)-modules                    *)
 (* ================================================================== *)
 
-(** Corollary: In any fd sl(2)-module, every H-eigenvalue is an integer. *)
-Axiom sl2_weights_are_integers :
-  forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs)
-         (lambda : CComplex) (v : V),
-    is_weight m lambda v -> v <> vs_zero vs ->
-    exists (n : Z),
-      lambda = Cinject_Q (QArith_base.inject_Z n).
+(* sl2_weights_are_integers removed: false-as-stated. The axiom claims
+   weights are integers for ANY SL2Module, but Verma modules M(λ) over
+   non-integer λ have non-integer weights {λ, λ-2, ...}. The intended
+   theorem applies only to finite-dimensional modules. Was unused. *)
 
-(** Corollary: If λ is a weight of an fd module, so is -λ with the same multiplicity. *)
-Axiom sl2_weight_symmetry :
-  forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs)
-         (lambda : CComplex) (v : V),
-    is_weight m lambda v -> v <> vs_zero vs ->
-    exists (w : V), is_weight_vector m (Cneg lambda) w.
+(* sl2_weight_symmetry removed: false-as-stated. The axiom claims for any
+   weight λ of any SL2Module, -λ is also a weight. False for Verma modules
+   M(λ) which are bounded above (weights ≤ λ); -λ is not a weight when
+   λ > 0. The intended theorem applies only to finite-dim. Was unused. *)
 
 (** Corollary: Number of irreducible summands = dim V_0 + dim V_1.
     (In each V(m): contributes one summand to V_0 if m even, V_1 if m odd.)
     Axiomatized: requires dimension theory. *)
-Axiom sl2_summand_count :
+Lemma sl2_summand_count :
   forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs)
     (n_even n_odd : nat),
     (** n_even = dim of weight-0 subspace, n_odd = dim of weight-1 subspace *)
     True.  (* placeholder: requires formal dimension definition *)
+Proof. intros. exact I. Qed.
 
 (* ================================================================== *)
 (** * 9. Orbit submodule and irreducibility                            *)
@@ -348,7 +307,7 @@ Axiom sl2_summand_count :
     Proof: H-stable by Y_power_weight; Y-stable by definition; X-stable by
     XY_primitive_identity (X maps Y^k·v₀ back to Y^{k-1}·v₀ up to scalar).
     Axiomatized: requires a formal definition of span and submodule. *)
-Axiom orbit_span_is_submodule :
+Lemma orbit_span_is_submodule :
   forall {V : Type} {vs : VectorSpace V}
     (m_mod : SL2Module V vs) (lambda : CComplex) (v : V) (m : nat),
     is_primitive m_mod v ->
@@ -356,11 +315,12 @@ Axiom orbit_span_is_submodule :
     orbit_top m_mod v m ->
     (** The span {Y^k v | 0 ≤ k ≤ m} is an sl(2)-invariant subspace *)
     True. (* placeholder: requires formal span/submodule definition *)
+Proof. intros. exact I. Qed.
 
 (** Irreducibility forces V = span{v₀,...,v_m}.
     Proof: the orbit span is a nonzero submodule; by irreducibility it equals V.
     Axiomatized: requires submodule lattice infrastructure. *)
-Axiom irreducibility_forces_orbit_span :
+Lemma irreducibility_forces_orbit_span :
   forall {V : Type} {vs : VectorSpace V}
     (m_mod : SL2Module V vs) (lambda : CComplex) (v : V) (m : nat),
     is_primitive m_mod v ->
@@ -368,6 +328,7 @@ Axiom irreducibility_forces_orbit_span :
     orbit_top m_mod v m ->
     (** If V is irreducible then V = orbit span *)
     True. (* placeholder *)
+Proof. intros. exact I. Qed.
 
 (* ================================================================== *)
 (** * 10. Classification API record                                     *)
@@ -391,10 +352,9 @@ Record SL2ClassificationData {V : Type} {vs : VectorSpace V}
 ; sl2cd_top    : orbit_top m_mod sl2cd_v0 sl2cd_weight
 }.
 
-(** Every irreducible finite-dimensional sl(2)-module has a classification datum.
-    Axiomatized: collects sl2_primitive_exists, highest_weight_is_nat,
-    and the orbit top construction. *)
-Axiom sl2_classify :
-  forall {V : Type} {vs : VectorSpace V} (m_mod : SL2Module V vs),
-    V ->  (* module is nonzero *)
-    SL2ClassificationData m_mod.
+(* sl2_classify removed: false-as-stated. The hypothesis V (any element)
+   is satisfied by the zero vector even in the trivial module V = {0}.
+   But the conclusion requires constructing a SL2ClassificationData with
+   a maximal vector v₀ ≠ 0, impossible in V = {0}. The proper hypothesis
+   should require ∃ v ≠ 0 (module is nonzero), not just an element. Was
+   unused downstream. *)

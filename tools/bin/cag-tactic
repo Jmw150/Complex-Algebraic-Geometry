@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+HERE="$(cd "$(dirname "$0")" && pwd)"
+TOOLS_ROOT="$(dirname "$HERE")"
+exec env PYTHONPATH="$TOOLS_ROOT" python3 -m cag_tactic.cli "$@"

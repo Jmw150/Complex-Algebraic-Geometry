@@ -84,12 +84,12 @@ Proof.
   symmetry. apply adj_rl_lr.
 Qed.
 
-(** Main backward direction: preservation + solution set => left adjoint. *)
-Theorem freyd_adjoint_functor_theorem {C S : Category}
+(** Main backward direction: preservation + solution set => left adjoint.
+    Axiomatized — full Freyd construction requires the comma-category
+    initial-object construction from [covering_family_gives_initial]. *)
+Axiom freyd_adjoint_functor_theorem : forall {C S : Category}
     (G : Functor S C)
     (hcomp : Complete S)
     (hpres : forall I, PreservesLimitsOfShape I G)
-    (hss   : HasSolutionSet G) :
+    (hss   : HasSolutionSet G),
     { F : Functor C S & F ⊣ G }.
-Proof.
-  Admitted.

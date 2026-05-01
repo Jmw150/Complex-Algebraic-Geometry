@@ -6,7 +6,9 @@
 
 From CAG Require Import Rings.Ring Domains.Divisibility Domains.Associates
                         Domains.IrreduciblePrime Domains.UFD Domains.PID_UFD.
-From Stdlib Require Import Arith Lia Classical.
+From Stdlib Require Import Arith Lia List Permutation Classical
+                           IndefiniteDescription ClassicalDescription.
+Import ListNotations.
 
 (* ================================================================== *)
 (** ** Dedekind-Hasse norm *)
@@ -41,29 +43,297 @@ Section DedekindHasse.
   Definition is_multiplicative_norm (N : R -> nat) : Prop :=
     forall a b : R, N (rmul R r a b) = N a * N b.
 
-  (** A PID has a Dedekind-Hasse norm *)
-  Axiom pid_has_dedekind_hasse_norm :
-    is_pid d ->
-    exists N : R -> nat, IsDedekindHasseNorm N.
+  (** A PID has a Dedekind-Hasse norm — proven below as
+      [pid_has_dedekind_hasse_norm] using the factorization-length norm
+      [ufd_norm] (shifted by 1 on nonzero inputs) on the UFD obtained
+      from [pid_is_ufd]. *)
 
   (** A domain with a Dedekind-Hasse norm is a PID *)
-  Axiom dedekind_hasse_norm_is_pid :
+  Lemma dedekind_hasse_norm_is_pid :
     forall N : R -> nat,
       IsDedekindHasseNorm N ->
       is_pid d.
+  Proof.
+    intros N HN I HI.
+    destruct (classic (exists x, I x /\ x <> rzero R r)) as [Hex | Hno].
+    - (* I has a nonzero element. Take element of minimum norm. *)
+      set (P := fun n => exists x, I x /\ x <> rzero R r /\ N x = n).
+      assert (HPex : exists n, P n).
+      { destruct Hex as [x [Hx Hxne]]. exists (N x), x. tauto. }
+      assert (HPdec : forall n, P n \/ ~ P n).
+      { intro n. apply classic. }
+      destruct (dec_inh_nat_subset_has_unique_least_element P HPdec HPex)
+        as [n0 [[HPn0 Hmin] _]].
+      destruct HPn0 as [b [HbI [Hbne Hbn]]].
+      destruct HI as [[HIsg HIleft] HIright_pair].
+      destruct HIsg as [HI0 [HIadd HIneg]].
+      destruct HIright_pair as [_ HIright].
+      exists b.
+      intro x. split.
+      + (* x ∈ I → x ∈ (b) *)
+        intro HxI.
+        (* Apply DH property: either b | x, or ∃ nonzero ρ ∈ xR + bR with N(ρ) < N(b). *)
+        destruct (dhn_div_or_smaller N HN x b Hbne) as [Hdiv | [rho [Hrhone [[u [v Hrho]] Hrho_lt]]]].
+        * (* b divides x: x = b * c. Then x = c * b ∈ (b). *)
+          unfold principal_ideal.
+          destruct Hdiv as [c Hc].
+          exists c. rewrite Hc. apply id_comm.
+        * (* nonzero ρ in (x,b) with N(ρ) < N(b): contradicts minimality of b. *)
+          exfalso.
+          (* ρ = u*x + v*b ∈ I. *)
+          assert (HrhoI : I rho).
+          { rewrite Hrho. apply HIadd.
+            - apply HIleft. exact HxI.
+            - apply HIleft. exact HbI. }
+          assert (HPrho : P (N rho)).
+          { exists rho. split; [exact HrhoI | split; [exact Hrhone | reflexivity]]. }
+          specialize (Hmin (N rho) HPrho).
+          rewrite Hbn in Hrho_lt. lia.
+      + (* x ∈ (b) → x ∈ I. *)
+        intros [c Hc]. rewrite Hc.
+        apply HIleft. exact HbI.
+    - (* I = {0}. *)
+      exists (rzero R r).
+      intro x. split.
+      + intro HxI.
+        destruct (classic (x = rzero R r)) as [Hx0 | Hxne].
+        * unfold principal_ideal. exists (rzero R r).
+          rewrite Hx0. symmetry. apply rmul_zero_l.
+        * exfalso. apply Hno. exists x. tauto.
+      + intros [c Hc]. rewrite Hc. rewrite rmul_zero_r.
+        destruct HI as [[HIsg _] _].
+        destruct HIsg as [HI0 _]. exact HI0.
+  Qed.
 
-  (** In a UFD, define a multiplicative Dedekind-Hasse norm by prime factorization:
-      N(0) = 0, N(unit) = 1, N(a) = 2^(number of irreducible factors of a) *)
-  (** Placeholder norm; the axioms below characterize its properties *)
-  Definition ufd_norm (H : IsUFD d) (a : R) : nat := 0.
+  (** REMOVED 2026-04-30: the previous block declared
+        Definition ufd_norm (H : IsUFD d) (a : R) : nat := 0.
+        Axiom ufd_norm_multiplicative, ufd_norm_dedekind_hasse.
+      `ufd_norm_dedekind_hasse` is provably INCONSISTENT with the proven
+      `dedekind_hasse_norm_is_pid` Lemma above — together they imply that
+      every UFD is a PID, which is false (counter-example: Z[x] is UFD
+      but (2,x) is not principal, so Z[x] is not a PID).
 
-  (** The norm defined via factorization length is multiplicative and Dedekind-Hasse *)
-  (** Full proof requires the axiom of choice and detailed UFD machinery *)
-  Axiom ufd_norm_multiplicative : forall (H : IsUFD d),
-      is_multiplicative_norm (ufd_norm H).
+      The placeholder definition `ufd_norm := 0` plus the two axioms
+      were dead scaffolding (no downstream use).  The Dedekind-Hasse
+      axiom for UFDs is permanently dropped; below we restore
+      `ufd_norm` (factorization length) with its multiplicative
+      property, but make NO claim that this norm is Dedekind-Hasse. *)
 
-  Axiom ufd_norm_dedekind_hasse : forall (H : IsUFD d),
-      IsDedekindHasseNorm (ufd_norm H).
+  (* ================================================================== *)
+  (** ** UFD norm via factorization length                              *)
+  (* ================================================================== *)
+
+  (** A trivial factorization [a = a * 1] for any unit [a]. *)
+  Lemma unit_has_factorization (a : R) :
+      is_unit r a -> Factorization d a.
+  Proof.
+    intro Hu.
+    refine (mkFact d a a [] Hu _ _).
+    - intros p Hp. simpl in Hp. contradiction.
+    - simpl. symmetry. apply rmul_one_r.
+  Defined.
+
+  (** Pick *some* factorization for any nonzero element [a].  Uses
+      classical excluded middle to split on [is_unit r a] and
+      [constructive_indefinite_description] to extract a witness from
+      the existential delivered by [ufd_factorization]. *)
+  Definition some_factorization (H : IsUFD d) (a : R) (Hne : a <> rzero R r) :
+      Factorization d a.
+  Proof.
+    destruct (excluded_middle_informative (is_unit r a)) as [Hu | Hnu].
+    - exact (unit_has_factorization a Hu).
+    - pose proof (ufd_factorization d H a Hne Hnu) as Hex.
+      apply constructive_indefinite_description in Hex.
+      destruct Hex as [F _]. exact F.
+  Defined.
+
+  (** The UFD norm: the length of (any choice of) the irreducible factor
+      list of [a].  For [a = 0] we return 0.  This is well-defined as a
+      function of [a], but its *value* on a given [a] depends on the
+      [IsUFD] proof [H] only through the choice the classical witness
+      makes — by uniqueness of factorization (in the [length] sense) the
+      *value* is independent of the choice. *)
+  Definition ufd_norm (H : IsUFD d) (a : R) : nat :=
+    match excluded_middle_informative (a = rzero R r) with
+    | left _ => 0
+    | right Hne => length (fact_irrs d a (some_factorization H a Hne))
+    end.
+
+  (** Key uniqueness consequence: any two factorizations of the same
+      element have the same number of irreducible factors. *)
+  Lemma factorization_length_unique (H : IsUFD d) :
+      forall (a : R) (F1 F2 : Factorization d a),
+        length (fact_irrs d a F1) = length (fact_irrs d a F2).
+  Proof.
+    intros a F1 F2.
+    destruct (ufd_unique d H a F1 F2) as [sigma [Hperm [Hlen _]]].
+    apply Permutation_length in Hperm.
+    rewrite length_seq in Hperm.
+    rewrite Hperm in Hlen. exact Hlen.
+  Qed.
+
+  (** Norm of a unit is 0. *)
+  Lemma ufd_norm_unit (H : IsUFD d) (a : R) :
+      a <> rzero R r -> is_unit r a -> ufd_norm H a = 0.
+  Proof.
+    intros Hne Hu.
+    unfold ufd_norm.
+    destruct (excluded_middle_informative (a = rzero R r)) as [Heq | Hne'];
+      [contradiction | ].
+    set (F1 := some_factorization H a Hne').
+    pose (F2 := unit_has_factorization a Hu).
+    rewrite (factorization_length_unique H a F1 F2).
+    simpl. reflexivity.
+  Qed.
+
+  (** Norm via any chosen factorization — independence lemma. *)
+  Lemma ufd_norm_via_factorization (H : IsUFD d) (a : R) (Hne : a <> rzero R r)
+                                   (F : Factorization d a) :
+      ufd_norm H a = length (fact_irrs d a F).
+  Proof.
+    unfold ufd_norm.
+    destruct (excluded_middle_informative (a = rzero R r)) as [Heq | Hne'];
+      [contradiction |].
+    apply (factorization_length_unique H a).
+  Qed.
+
+  (** Multiplicativity (additive in the norm). *)
+  Lemma ufd_norm_multiplicative :
+      forall (H : IsUFD d) (a b : R),
+        a <> rzero R r ->
+        b <> rzero R r ->
+        ufd_norm H (rmul R r a b) = ufd_norm H a + ufd_norm H b.
+  Proof.
+    intros H a b Ha Hb.
+    (* a*b is nonzero. *)
+    assert (Hab : rmul R r a b <> rzero R r).
+    { intro Hab0.
+      destruct (id_no_zero_div d a b Hab0) as [Ha0 | Hb0]; contradiction. }
+    (* Pick canonical factorizations of a and b. *)
+    set (Fa := some_factorization H a Ha).
+    set (Fb := some_factorization H b Hb).
+    (* Concatenate into a factorization of a*b. *)
+    pose (Fab := factorization_product d a b Fa Fb).
+    (* Express its irreducible list as the append of Fa's and Fb's. *)
+    assert (Hirrs_app :
+              fact_irrs d (rmul R r a b) Fab =
+              fact_irrs d a Fa ++ fact_irrs d b Fb).
+    { unfold Fab, factorization_product.
+      destruct Fa as [ua asps Hua Hasps Ha_eq].
+      destruct Fb as [ub bsps Hub Hbsps Hb_eq].
+      simpl. reflexivity. }
+    (* Norm of a*b equals length of Fab's irreducible list. *)
+    rewrite (ufd_norm_via_factorization H (rmul R r a b) Hab Fab).
+    rewrite (ufd_norm_via_factorization H a Ha Fa).
+    rewrite (ufd_norm_via_factorization H b Hb Fb).
+    rewrite Hirrs_app.
+    rewrite length_app. reflexivity.
+  Qed.
+
+  (* ================================================================== *)
+  (** ** Every PID has a Dedekind-Hasse norm                            *)
+  (*                                                                    *)
+  (** Construction: take [N(x) := if x = 0 then 0 else S (ufd_norm H x)]
+      where [H : IsUFD d] is the UFD structure derived from the PID
+      hypothesis via [pid_is_ufd].  The shift by [S] guarantees that
+      units (whose [ufd_norm] is 0) still have positive [N], so [N]
+      detects nonzero-ness as required by [dhn_pos].
+
+      The substantive Dedekind–Hasse property uses Bezout: in a PID,
+      the ideal [(a, b)] is generated by some [g] with [g | a], [g | b],
+      and [g = s·a + t·b].  Then either [b ∼ g] (so [b | a]) or [g] is
+      a strict divisor of [b] (which forces [N(g) < N(b)] by
+      multiplicativity of [ufd_norm] and the fact that the second
+      factor is a nonzero non-unit, hence has [ufd_norm ≥ 1]).         *)
+  (* ================================================================== *)
+
+  Theorem pid_has_dedekind_hasse_norm :
+      is_pid d ->
+      exists N : R -> nat, IsDedekindHasseNorm N.
+  Proof.
+    intro Hpid.
+    pose (H := pid_is_ufd d Hpid).
+    pose (N := fun x : R =>
+                 match excluded_middle_informative (x = rzero R r) with
+                 | left _  => 0
+                 | right _ => S (ufd_norm H x)
+                 end).
+    exists N.
+    constructor.
+    - (* dhn_zero : N 0 = 0 *)
+      unfold N.
+      destruct (excluded_middle_informative (rzero R r = rzero R r))
+        as [_ | Hne]; [reflexivity | exfalso; apply Hne; reflexivity].
+    - (* dhn_pos : forall a, a ≠ 0 -> 0 < N a *)
+      intros a Ha. unfold N.
+      destruct (excluded_middle_informative (a = rzero R r)) as [Ha0 | _];
+        [contradiction | lia].
+    - (* dhn_div_or_smaller : the substantive Dedekind–Hasse property *)
+      intros a b Hb_ne.
+      (* Bezout in a PID: pick g generating (a, b). *)
+      destruct (pid_bezout d Hpid a b) as [g [Hga [Hgb [s [t Hg_eq]]]]].
+      (* g | b and b ≠ 0 force g ≠ 0. *)
+      assert (Hg_ne : g <> rzero R r).
+      { intro Hg0. apply Hb_ne.
+        destruct Hgb as [c Hc].
+        rewrite Hc, Hg0. apply rmul_zero_l. }
+      (* From g | b extract the cofactor k with b = g * k. *)
+      destruct Hgb as [k Hk].
+      (* k ≠ 0 because b = g * k and b ≠ 0. *)
+      assert (Hk_ne : k <> rzero R r).
+      { intro Hk0. apply Hb_ne. rewrite Hk, Hk0. apply rmul_zero_r. }
+      (* Case-split on whether the cofactor k is a unit. *)
+      destruct (classic (is_unit r k)) as [Hku | Hknu].
+      + (* k is a unit ⇒ g and b are associates, and since g | a we get b | a. *)
+        left.
+        destruct Hga as [c Hc].
+        destruct Hku as [kinv [Hkr Hkl]].
+        (* a = g * c and b = g * k.  Then a = b * (kinv * c). *)
+        exists (rmul R r kinv c).
+        (* Goal: a = rmul R r b (rmul R r kinv c) *)
+        rewrite Hc.
+        (* Goal: rmul R r g c = rmul R r b (rmul R r kinv c) *)
+        rewrite Hk.
+        (* Goal: rmul R r g c = rmul R r (rmul R r g k) (rmul R r kinv c) *)
+        change (id_r d) with r.
+        rewrite (rmul_assoc R r (rmul R r g k) kinv c).
+        rewrite <- (rmul_assoc R r g k kinv).
+        rewrite Hkr, rmul_one_r. reflexivity.
+      + (* k is not a unit ⇒ g is a strict divisor of b; use g as witness. *)
+        right.
+        exists g.
+        split; [exact Hg_ne |].
+        split.
+        * (* g ∈ aR + bR via Bezout. *)
+          exists s, t. exact Hg_eq.
+        * (* N(g) < N(b). *)
+          unfold N.
+          destruct (excluded_middle_informative (g = rzero R r))
+            as [Hg0 | _]; [contradiction | ].
+          destruct (excluded_middle_informative (b = rzero R r))
+            as [Hb0 | _]; [contradiction | ].
+          (* Goal: S (ufd_norm H g) < S (ufd_norm H b) *)
+          rewrite Hk.
+          change (id_r d) with r.
+          rewrite (ufd_norm_multiplicative H g k Hg_ne Hk_ne).
+          (* Goal: S (ufd_norm H g) < S (ufd_norm H g + ufd_norm H k) *)
+          (* Suffices to show ufd_norm H k > 0. *)
+          assert (Hk_pos : ufd_norm H k > 0).
+          { (* k is a nonzero non-unit, so any factorization of k has a
+               nonempty list of irreducibles (else k = unit * 1 = unit). *)
+            unfold ufd_norm.
+            destruct (excluded_middle_informative (k = rzero R r))
+              as [Hk0 | Hk_ne']; [contradiction | ].
+            set (F := some_factorization H k Hk_ne').
+            destruct (fact_irrs d k F) as [| x rest] eqn:Eirrs.
+            - exfalso. apply Hknu.
+              pose proof (fact_eq d k F) as Heq.
+              rewrite Eirrs in Heq. simpl in Heq.
+              rewrite rmul_one_r in Heq.
+              rewrite Heq. apply (fact_unit_is_unit d k F).
+            - simpl. lia. }
+          lia.
+  Qed.
 
 End DedekindHasse.
 

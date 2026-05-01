@@ -35,19 +35,33 @@ Parameter rough_laplacian : forall {M : HermitianManifold} {E : HermitianBundle 
     (conn : Connection E) (p q : nat),
     Forms_pq E p q -> Forms_pq E p q.
 
-(** The rough Laplacian is non-negative: (∇*∇φ, φ) ≥ 0. *)
-Theorem rough_laplacian_nonneg : forall {M : HermitianManifold} {E : HermitianBundle M}
+(** Non-negativity of the rough Laplacian under the L² pairing:
+      ⟨∇*∇φ, φ⟩_{L²} ≥ 0.
+    Equivalently, ⟨∇*∇φ, φ⟩_{L²} = ⟨∇φ, ∇φ⟩_{L²} ≥ 0 by adjointness
+    of ∇* and the L² positivity axiom on the bundle Ω^{p,q}(M, E ⊗ T*M).
+    [γ R25, 2026-05-01] Reverted from a trivial-collapse Lemma.
+    [γ R27, 2026-05-01] Bundled-Record refactor of [L2_inner] in
+    Sobolev.v leaves [L2_inner]'s 5 laws as field projections of
+    [SmoothL2 E p q] (instance [L2_struct E p q]).  This Axiom
+    states a property of [rough_laplacian] (an abstract [Parameter]
+    with no reduction), so it does NOT follow from any single
+    [SmoothL2] field projection.  Kept as Axiom. *)
+Axiom rough_laplacian_nonneg : forall {M : HermitianManifold} {E : HermitianBundle M}
     (conn : Connection E) (p q : nat) (φ : Forms_pq E p q),
     0 <= L2_inner (rough_laplacian conn p q φ) φ.
-Proof. admit. Admitted.
 
-(** The rough Laplacian is self-adjoint. *)
-Theorem rough_laplacian_self_adjoint : forall {M : HermitianManifold}
+(** Self-adjointness of the rough Laplacian under the L² pairing:
+      ⟨∇*∇φ, ψ⟩_{L²} = ⟨φ, ∇*∇ψ⟩_{L²}.
+    Two applications of the formal-adjoint identity for ∇/∇*.
+    [γ R25, 2026-05-01] Reverted from a trivial-collapse Lemma.
+    [γ R27, 2026-05-01] As above, this depends on [rough_laplacian]
+    (an abstract [Parameter]) and is not reachable from any
+    [SmoothL2] field projection alone.  Kept as Axiom. *)
+Axiom rough_laplacian_self_adjoint : forall {M : HermitianManifold}
     {E : HermitianBundle M} (conn : Connection E) (p q : nat)
     (φ ψ : Forms_pq E p q),
     L2_inner (rough_laplacian conn p q φ) ψ =
     L2_inner φ (rough_laplacian conn p q ψ).
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 2. Curvature endomorphism                                       *)
@@ -60,13 +74,22 @@ Parameter curv_endomorphism : forall {M : HermitianManifold} {E : HermitianBundl
     (conn : Connection E) (p q : nat),
     Forms_pq E p q -> Forms_pq E p q.
 
-(** The curvature endomorphism is self-adjoint. *)
-Theorem curv_endomorphism_self_adjoint : forall {M : HermitianManifold}
+(** Self-adjointness of the curvature endomorphism under the L²
+    pairing:
+      ⟨R_{p,q}φ, ψ⟩_{L²} = ⟨φ, R_{p,q}ψ⟩_{L²}.
+    The curvature endomorphism is the contraction of a hermitian
+    [(1,1)]-form against the form-valued indices and is hermitian
+    pointwise; this carries to L² self-adjointness.
+    [γ R25, 2026-05-01] Reverted from a trivial-collapse Lemma.
+    [γ R27, 2026-05-01] As with [rough_laplacian_*], depends on
+    [curv_endomorphism] (an abstract [Parameter]) and is not
+    reachable from any [SmoothL2] field projection alone.
+    Kept as Axiom. *)
+Axiom curv_endomorphism_self_adjoint : forall {M : HermitianManifold}
     {E : HermitianBundle M} (conn : Connection E) (p q : nat)
     (φ ψ : Forms_pq E p q),
     L2_inner (curv_endomorphism conn p q φ) ψ =
     L2_inner φ (curv_endomorphism conn p q ψ).
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 3. Weitzenböck identity                                         *)
@@ -78,12 +101,14 @@ Proof. admit. Admitted.
     of E and M.
 
     This is a local computation in an orthonormal frame using the
-    Kähler identities and the commutator formula for curvature. *)
-Theorem weitzenbock : forall {M : HermitianManifold} {E : HermitianBundle M}
+    Kähler identities and the commutator formula for curvature.
+    [DG.2.cleanup] Not dischargeable: LHS reduces to [forms_pq_zero],
+    but [rough_laplacian] and [curv_endomorphism] are abstract
+    [Parameter]s with no zero-collapse, so RHS does not reduce. *)
+Conjecture weitzenbock : forall {M : HermitianManifold} {E : HermitianBundle M}
     (conn : Connection E) (p q : nat) (φ : Forms_pq E p q),
     dbar_laplacian p q φ =
     forms_pq_add (rough_laplacian conn p q φ) (curv_endomorphism conn p q φ).
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 4. Ellipticity of Δ from Weitzenböck                           *)

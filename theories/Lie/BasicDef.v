@@ -37,6 +37,119 @@ Arguments vsF_scale_mul  {F fld V} _ _ _ _.
 Arguments vsF_scale_add_v {F fld V} _ _ _ _.
 Arguments vsF_scale_add_s {F fld V} _ _ _ _.
 
+(** ** Derived vector-space lemmas *)
+
+(** scale 0 v = 0. Proof: scale 0 v = scale (0+0) v = scale 0 v + scale 0 v.
+    From x = x + x, deduce x = 0 (using neg). *)
+Lemma vsF_scale_zero {F : Type} {fld : Field F} {V : Type}
+    (vs : VectorSpaceF fld V) (v : V) :
+  vsF_scale vs (cr_zero fld) v = vsF_zero vs.
+Proof.
+  set (x := vsF_scale vs (cr_zero fld) v).
+  assert (Hxx : vsF_add vs x x = x).
+  { unfold x.
+    rewrite <- (vsF_scale_add_s vs (cr_zero fld) (cr_zero fld) v).
+    rewrite (cr_add_zero (fld_ring fld) (cr_zero fld)). reflexivity. }
+  (* Now: x + x = x. Add neg x to both sides. *)
+  assert (H : vsF_add vs (vsF_add vs x x) (vsF_neg vs x) = vsF_add vs x (vsF_neg vs x)).
+  { rewrite Hxx. reflexivity. }
+  rewrite <- (vsF_add_assoc vs) in H.
+  rewrite (vsF_add_neg_r vs x) in H.
+  rewrite (vsF_add_zero_r vs x) in H.
+  rewrite H. reflexivity.
+Qed.
+
+(** scale (-1) v = neg v. Proof: scale (-1) v + v = scale (-1+1) v = scale 0 v = 0.
+    Then by uniqueness of additive inverse, scale (-1) v = neg v. *)
+Lemma vsF_neg_eq_scale_neg_one {F : Type} {fld : Field F} {V : Type}
+    (vs : VectorSpaceF fld V) (v : V) :
+  vsF_neg vs v = vsF_scale vs (cr_neg fld (cr_one fld)) v.
+Proof.
+  (* Show: scale (-1) v + v = 0, so scale (-1) v = neg v. *)
+  assert (Hsum : vsF_add vs (vsF_scale vs (cr_neg fld (cr_one fld)) v) v
+               = vsF_zero vs).
+  { rewrite <- (vsF_scale_one vs v) at 2.
+    rewrite <- (vsF_scale_add_s vs (cr_neg fld (cr_one fld)) (cr_one fld) v).
+    rewrite (cr_add_neg_l (fld_ring fld) (cr_one fld)).
+    apply vsF_scale_zero. }
+  (* From a + v = 0 and v + neg v = 0, conclude a = neg v. *)
+  assert (Hsum' : vsF_add vs v (vsF_neg vs v) = vsF_zero vs)
+    by apply vsF_add_neg_r.
+  (* a = a + 0 = a + (v + neg v) = (a + v) + neg v = 0 + neg v = neg v *)
+  symmetry.
+  rewrite <- (vsF_add_zero_r vs (vsF_scale vs (cr_neg fld (cr_one fld)) v)).
+  rewrite <- Hsum'. rewrite (vsF_add_assoc vs).
+  rewrite Hsum.
+  rewrite (vsF_add_comm vs).
+  apply vsF_add_zero_r.
+Qed.
+
+(** Additive inverse is unique. *)
+Lemma vsF_add_inv_uniq {F : Type} {fld : Field F} {V : Type}
+    (vs : VectorSpaceF fld V) (v w : V) :
+  vsF_add vs v w = vsF_zero vs -> w = vsF_neg vs v.
+Proof.
+  intro Hvw.
+  symmetry.
+  rewrite <- (vsF_add_zero_r vs (vsF_neg vs v)).
+  rewrite <- Hvw.
+  rewrite (vsF_add_assoc vs).
+  rewrite (vsF_add_comm vs (vsF_neg vs v) v).
+  rewrite (vsF_add_neg_r vs v).
+  rewrite (vsF_add_comm vs).
+  apply vsF_add_zero_r.
+Qed.
+
+(** Double negation: neg (neg v) = v. *)
+Lemma vsF_neg_neg {F : Type} {fld : Field F} {V : Type}
+    (vs : VectorSpaceF fld V) (v : V) :
+  vsF_neg vs (vsF_neg vs v) = v.
+Proof.
+  symmetry. apply vsF_add_inv_uniq.
+  rewrite (vsF_add_comm vs).
+  apply vsF_add_neg_r.
+Qed.
+
+(** Add is left-neg: vsF_add (neg v) v = 0. *)
+Lemma vsF_add_neg_l {F : Type} {fld : Field F} {V : Type}
+    (vs : VectorSpaceF fld V) (v : V) :
+  vsF_add vs (vsF_neg vs v) v = vsF_zero vs.
+Proof. rewrite (vsF_add_comm vs). apply vsF_add_neg_r. Qed.
+
+(** neg distributes over add: -(u + v) = -u + -v. *)
+Lemma vsF_neg_add {F : Type} {fld : Field F} {V : Type}
+    (vs : VectorSpaceF fld V) (u v : V) :
+  vsF_neg vs (vsF_add vs u v) = vsF_add vs (vsF_neg vs u) (vsF_neg vs v).
+Proof.
+  symmetry. apply vsF_add_inv_uniq.
+  (* (u+v) + ((-u) + (-v)) = ... = 0 *)
+  rewrite (vsF_add_assoc vs).
+  rewrite (vsF_add_comm vs (vsF_add vs u v) (vsF_neg vs u)).
+  rewrite (vsF_add_assoc vs (vsF_neg vs u) u v).
+  rewrite (vsF_add_comm vs (vsF_neg vs u) u).
+  rewrite (vsF_add_neg_r vs u).
+  rewrite (vsF_add_comm vs (vsF_zero vs) v).
+  rewrite (vsF_add_zero_r vs v).
+  apply (vsF_add_neg_r vs v).
+Qed.
+
+(** Cancellation: u + w = v + w → u = v. *)
+Lemma vsF_add_cancel_r {F : Type} {fld : Field F} {V : Type}
+    (vs : VectorSpaceF fld V) (u v w : V) :
+  vsF_add vs u w = vsF_add vs v w -> u = v.
+Proof.
+  intro Heq.
+  assert (H : vsF_add vs (vsF_add vs u w) (vsF_neg vs w)
+            = vsF_add vs (vsF_add vs v w) (vsF_neg vs w)).
+  { rewrite Heq. reflexivity. }
+  rewrite <- (vsF_add_assoc vs u w (vsF_neg vs w)) in H.
+  rewrite <- (vsF_add_assoc vs v w (vsF_neg vs w)) in H.
+  rewrite (vsF_add_neg_r vs w) in H.
+  rewrite (vsF_add_zero_r vs u) in H.
+  rewrite (vsF_add_zero_r vs v) in H.
+  exact H.
+Qed.
+
 Record LieAlgebraF {F : Type} (fld : Field F) (L : Type) : Type := {
   laF_vs      :> VectorSpaceF fld L;
   laF_bracket : L -> L -> L;
@@ -351,3 +464,24 @@ Definition lie_isom_comp {F : Type} {fld : Field F} {L M N : Type}
        eq_trans (f_equal (li_inv f) (li_inv_fn g (lh_fn (li_hom f) x)))
                 (li_inv_fn f x);
   |}.
+
+(** Anticommutativity of bracket: [y, x] = -[x, y].
+    Derived from alternating + bilinearity. *)
+Lemma laF_bracket_anticomm {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (x y : L) :
+  laF_bracket la y x = vsF_neg (laF_vs la) (laF_bracket la x y).
+Proof.
+  apply vsF_add_inv_uniq.
+  (* Goal: vsF_add (laF_bracket la x y) (laF_bracket la y x) = vsF_zero. *)
+  (* Key fact: [x+y, x+y] = 0 expands to [x,x] + [x,y] + [y,x] + [y,y] = 0. *)
+  pose proof (laF_bracket_alt la (vsF_add (laF_vs la) x y)) as Halt.
+  rewrite (laF_bracket_add_l la x y (vsF_add (laF_vs la) x y)) in Halt.
+  rewrite (laF_bracket_add_r la x x y) in Halt.
+  rewrite (laF_bracket_add_r la y x y) in Halt.
+  rewrite (laF_bracket_alt la x) in Halt.
+  rewrite (laF_bracket_alt la y) in Halt.
+  (* Now: 0 + [x,y] + ([y,x] + 0) = 0 *)
+  rewrite (vsF_add_zero_l (laF_vs la)) in Halt.
+  rewrite (vsF_add_zero_r (laF_vs la)) in Halt.
+  exact Halt.
+Qed.

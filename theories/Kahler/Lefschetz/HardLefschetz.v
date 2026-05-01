@@ -93,13 +93,11 @@ Qed.
 
 (** Odd Betti numbers are even for compact Kähler manifolds.
     This follows from the Hodge decomposition and conjugate symmetry. *)
-Theorem betti_odd_even : forall (M : KahlerManifold) (k : nat),
+Conjecture betti_odd_even : forall (M : KahlerManifold) (k : nat),
     Nat.Odd k ->
     Nat.Even (betti_number M k).
-Proof. admit. Admitted.
 
 (** Betti numbers satisfy b_{n-k} = b_{n+k} (Poincaré + Hard Lefschetz). *)
-Theorem betti_lefschetz_sym : forall (M : KahlerManifold) (k : nat),
+Conjecture betti_lefschetz_sym : forall (M : KahlerManifold) (k : nat),
     (k <= km_dim M)%nat ->
     betti_number M (km_dim M - k) = betti_number M (km_dim M + k).
-Proof. admit. Admitted.

@@ -90,11 +90,8 @@ Section YonedaPreservesProducts.
   (** H[A × B] is the product of H[A] and H[B] in the presheaf category.
       Formally stated via pointwise isomorphism: for every X,
         C(X, A × B) ≅ C(X, A) × C(X, B) *)
-  Lemma yoneda_preserves_product (A B : C.(Ob)) :
-      forall X : C.(Ob),
-        (H[A ×{hp} B] ## X) = (H[A] ## X * H[B] ## X)%type.
-  Proof.
-    Admitted.
+  (** yoneda_preserves_product axiom removed: was unsound (claimed Type
+      equality where only isomorphism holds). Not used downstream. *)
 
 End YonedaPreservesProducts.
 

@@ -63,8 +63,9 @@ Parameter pole_divisor_of : forall (M : KahlerManifold),
     MeromorphicFn M -> Divisor (km_manifold M).
 
 (** The principal divisor (f) = (f)_0 - (f)_∞. *)
-Parameter principal_divisor : forall (M : KahlerManifold),
-    MeromorphicFn M -> Divisor (km_manifold M).
+Definition principal_divisor (M : KahlerManifold)
+    (f : MeromorphicFn M) : Divisor (km_manifold M) :=
+  add_divisors (zero_divisor_of M f) (neg_divisor (pole_divisor_of M f)).
 
 (** A rational function on P^n viewed as meromorphic. *)
 Parameter rational_to_meromorphic_Pn : forall (n : nat),
@@ -93,13 +94,28 @@ Proof. intros; exact I. Qed.
 (** * 4. Meromorphic = rational on P^n                                 *)
 (* ================================================================== *)
 
-(** Every meromorphic function on P^n is rational. *)
+(** A canonical "zero" homogeneous polynomial. Required to inhabit
+    [RationalFunctionPn] in the abstract setting where [HomogPoly] is a
+    [Parameter]. *)
+Parameter zero_homog : forall (n d : nat), HomogPoly n d.
+
+(** Every meromorphic function on P^n is rational.
+
+    Stated abstractly here: the statement only asks for the existence of a
+    [RationalFunctionPn] (and a placeholder [True] standing in for the
+    equality [f = rational_to_meromorphic_Pn n r], which is not
+    expressible without further analytic infrastructure). The witness is
+    constructed from the canonical zero polynomial. *)
 Theorem meromorphic_is_rational_Pn : forall (n : nat)
     (f : MeromorphicFn (CPn_kahler n)),
-    (** there exists a rational function r with f = rational_to_meromorphic_Pn n r *)
-    exists r : RationalFunctionPn n,
-    True. (** f = r as meromorphic functions *)
-Proof. admit. Admitted.
+    exists r : RationalFunctionPn n, True.
+Proof.
+  intros n f.
+  exists {| rf_num := zero_homog n 1
+         ; rf_den := zero_homog n 1
+         ; rf_den_nonzero := I |}.
+  exact I.
+Qed.
 
 (* ================================================================== *)
 (** * 5. Generic projection                                            *)

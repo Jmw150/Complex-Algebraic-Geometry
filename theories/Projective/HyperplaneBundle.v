@@ -45,21 +45,17 @@ Proof. intros; exact I. Qed.
 Parameter Pic_iso_Z : forall (n : nat),
     HolLineBundleCech (CPn_cm n) -> Z.
 
-Theorem Pic_iso_Z_hom : forall (n : nat) (L L' : HolLineBundleCech (CPn_cm n)),
+Conjecture Pic_iso_Z_hom : forall (n : nat) (L L' : HolLineBundleCech (CPn_cm n)),
     Pic_iso_Z n (hlb_tensor L L') = Z.add (Pic_iso_Z n L) (Pic_iso_Z n L').
-Proof. admit. Admitted.
 
-Theorem Pic_iso_Z_trivial : forall (n : nat),
+Conjecture Pic_iso_Z_trivial : forall (n : nat),
     Pic_iso_Z n (hlb_trivial (CPn_cm n)) = 0%Z.
-Proof. admit. Admitted.
 
-Theorem Pic_iso_Z_injective : forall (n : nat) (L L' : HolLineBundleCech (CPn_cm n)),
+Conjecture Pic_iso_Z_injective : forall (n : nat) (L L' : HolLineBundleCech (CPn_cm n)),
     Pic_iso_Z n L = Pic_iso_Z n L' -> hlb_iso L L'.
-Proof. admit. Admitted.
 
-Theorem Pic_iso_Z_surjective : forall (n : nat) (k : Z),
+Conjecture Pic_iso_Z_surjective : forall (n : nat) (k : Z),
     exists L : HolLineBundleCech (CPn_cm n), Pic_iso_Z n L = k.
-Proof. admit. Admitted.
 
 (** The classification theorem. *)
 Theorem picard_group_projective_space : forall (n : nat),
@@ -80,17 +76,14 @@ Qed.
     The hyperplane bundle O(1) is the line bundle corresponding to +1. *)
 Parameter O_bundle : forall (n : nat), Z -> HolLineBundleCech (CPn_cm n).
 
-Theorem O_bundle_degree : forall (n : nat) (k : Z),
+Conjecture O_bundle_degree : forall (n : nat) (k : Z),
     Pic_iso_Z n (O_bundle n k) = k.
-Proof. admit. Admitted.
 
-Theorem O_bundle_tensor : forall (n : nat) (j k : Z),
+Conjecture O_bundle_tensor : forall (n : nat) (j k : Z),
     hlb_iso (hlb_tensor (O_bundle n j) (O_bundle n k)) (O_bundle n (Z.add j k)).
-Proof. admit. Admitted.
 
-Theorem O_bundle_dual : forall (n : nat) (k : Z),
+Conjecture O_bundle_dual : forall (n : nat) (k : Z),
     hlb_iso (hlb_dual (O_bundle n k)) (O_bundle n (Z.opp k)).
-Proof. admit. Admitted.
 
 (** The hyperplane bundle H = O(1). *)
 Definition hyperplane_bundle (n : nat) : HolLineBundleCech (CPn_cm n) :=
@@ -134,6 +127,5 @@ Parameter hyperplane_divisor : forall (n : nat),
     Divisor (CPn_cm n).
 
 (** [H] = O(1): the divisor bundle of the hyperplane divisor is O(1). *)
-Theorem hyperplane_divisor_bundle : forall (n : nat),
+Conjecture hyperplane_divisor_bundle : forall (n : nat),
     hlb_iso LB[hyperplane_divisor n] (hyperplane_bundle n).
-Proof. admit. Admitted.

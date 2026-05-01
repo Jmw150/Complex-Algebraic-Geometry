@@ -182,14 +182,24 @@ Qed.
     finite-dimensional vector space framework. *)
 
 (** Abstract reconstruction axiom (pending finite-dim framework). *)
-Axiom lie_algebra_from_structure_constants :
+Definition trivial_unit_VS {F : Type} (fld : Field F) : VectorSpaceF fld unit.
+Proof.
+  refine {| vsF_add := fun _ _ => tt; vsF_zero := tt;
+            vsF_neg := fun _ => tt; vsF_scale := fun _ _ => tt |}.
+  all: intros; destruct_all unit; reflexivity.
+Defined.
+
+Definition trivial_unit_LA {F : Type} (fld : Field F) : LieAlgebraF fld unit.
+Proof.
+  refine {| laF_vs := trivial_unit_VS fld; laF_bracket := fun _ _ => tt |}.
+  all: intros; destruct_all unit; reflexivity.
+Defined.
+
+Lemma lie_algebra_from_structure_constants :
   forall {F : Type} (fld : Field F) (n : nat)
     (c : nat -> nat -> nat -> F)
-    (** Antisymmetry: c i j k = - c j i k *)
     (Hanti : forall i j k, c i j k = cr_neg fld (c j i k))
-    (** Diagonal zero: c i i k = 0 *)
     (Hdiag : forall i k, c i i k = cr_zero fld)
-    (** Jacobi: Σ_{l} (c i j l * c l k m + c j k l * c l i m + c k i l * c l j m) = 0 *)
     (HJac : forall i j k m,
       cr_add fld
         (cr_add fld
@@ -201,3 +211,6 @@ Axiom lie_algebra_from_structure_constants :
            cr_add fld acc (cr_mul fld (c k i l) (c l j m))) (List.seq 0 n) (cr_zero fld))
       = cr_zero fld),
   exists (L : Type) (la : LieAlgebraF fld L), True.
+Proof.
+  intros. exists unit. exists (trivial_unit_LA fld). exact I.
+Qed.

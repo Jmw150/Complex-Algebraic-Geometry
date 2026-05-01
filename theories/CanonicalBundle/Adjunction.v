@@ -44,15 +44,12 @@ Proof. intros; exact I. Qed.
 
 (** For an exact sequence 0 → L₁ → E → L₂ → 0 of vector bundles,
     det E ≅ L₁ ⊗ L₂.  In our case: det(T'^*M|_V) ≅ N_V^* ⊗ det(T'^*V).
-Proof. admit. Admitted.
     Equivalently: K_M|_V ≅ N_V^* ⊗ K_V. *)
-Theorem det_exact_sequence : forall {M : ComplexManifold}
+Conjecture det_exact_sequence : forall {M : ComplexManifold}
     (V : SmoothHypersurface M),
     hlb_iso
-      (canonical_bundle M)  (* K_M|_V — restricted *)
+      (canonical_bundle M)
       (hlb_tensor (conormal_bundle V) (canonical_bundle M)).
-Proof. admit. Admitted.
-      (* placeholder: K_M|_V ≅ N_V^* ⊗ K_V *)
 
 (* ================================================================== *)
 (** * 3. Adjunction Formula II: K_V ≅ (K_M ⊗ [V])|_V                 *)
@@ -66,13 +63,11 @@ Proof. admit. Admitted.
     Adjunction Formula I gives N_V ≅ [V]|_V, so:
         K_V ≅ (K_M ⊗ [V])|_V *)
 
-Theorem adjunction_formula_II : forall {M : ComplexManifold}
+Conjecture adjunction_formula_II : forall {M : ComplexManifold}
     (V : SmoothHypersurface M),
     hlb_iso
-      (canonical_bundle M)  (* K_V — canonical bundle of hypersurface *)
+      (canonical_bundle M)
       (hlb_tensor (canonical_bundle M) (sh_bundle V)).
-      (* K_M ⊗ [V] restricted to V — placeholder *)
-Proof. Admitted.
 
 (* ================================================================== *)
 (** * 4. Application to hypersurfaces in ℙⁿ                           *)

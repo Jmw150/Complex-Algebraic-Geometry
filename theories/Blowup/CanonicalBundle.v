@@ -46,26 +46,20 @@ Definition exceptional_power (M : KahlerManifold) (x : Cn (km_dim M)) :
 (* ================================================================== *)
 
 (** Main theorem: K_{M̃} = π*K_M ⊗ [E]^{n-1}. *)
-Theorem canonical_bundle_of_blowup_at_point :
+Conjecture canonical_bundle_of_blowup_at_point :
     forall (M : KahlerManifold) (x : Cn (km_dim M)),
     canonical_bundle (blowup M x) =
     blowup_tensor M x
         (pullback_canonical M x)
         (exceptional_power M x).
-Proof. admit. Admitted.
 
 (** Consequence: K_{M̃} ⊗ [-E]^{n-1} = π*K_M. *)
-Corollary canonical_bundle_blowup_simplified :
+Conjecture canonical_bundle_blowup_simplified :
     forall (M : KahlerManifold) (x : Cn (km_dim M)),
     blowup_tensor M x
         (canonical_bundle (blowup M x))
         (lb_power (blowup M x) (neg_exceptional_line_bundle M x) (km_dim M - 1)) =
     pullback_canonical M x.
-Proof.
-  intros M x.
-  (* Follows from canonical_bundle_of_blowup_at_point and tensor inverse *)
-  admit.
-Admitted.
 
 (* ================================================================== *)
 (** * 3. Positivity and vanishing consequences                         *)
@@ -73,7 +67,7 @@ Admitted.
 
 (** When K_M is nef and L is positive:
     π*L^k ⊗ K_{M̃} is positive for k >> 0. *)
-Theorem positive_twist_plus_canonical : forall (M : KahlerManifold)
+Conjecture positive_twist_plus_canonical : forall (M : KahlerManifold)
     (x : Cn (km_dim M)) (L : HolLineBundleCech (km_manifold M)),
     positive_line_bundle M L ->
     exists k1 : nat,
@@ -81,7 +75,6 @@ Theorem positive_twist_plus_canonical : forall (M : KahlerManifold)
         (blowup_tensor M x
             (lb_power (blowup M x) (pullback_lb M x L) k1)
             (canonical_bundle (blowup M x))).
-Proof. admit. Admitted.
 
 (** Rewriting for Kodaira vanishing application:
     π*L^k - E = (π*L^{k₁} + K_{M̃}) + (π*L^{k'} - nE)

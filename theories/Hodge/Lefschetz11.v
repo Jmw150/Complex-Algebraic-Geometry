@@ -62,12 +62,7 @@ Proof. intros; exact I. Qed.
 (* ================================================================== *)
 
 (** The kernel of c₁ is the image of H¹(M,O) → Pic(M) (topologically trivial bundles). *)
-Theorem c1_kernel_is_image_H1O : forall (M : KahlerManifold)
-    (L : HolLineBundleCech (km_manifold M)),
-    c1 M L = vs_zero (HdR_vs M 2) <->
-    (** L comes from a holomorphic function / is topologically trivial — axiomatized *)
-    True.
-Proof. admit. Admitted.
+(* c1_kernel_is_image_H1O axiom removed: was unsound. Not used. *)
 
 (** β ∘ c₁ = 0: for any line bundle L, β(c₁(L)) = 0. *)
 Theorem beta_c1_zero : forall (M : KahlerManifold)
@@ -77,27 +72,19 @@ Theorem beta_c1_zero : forall (M : KahlerManifold)
 Proof. intros; exact I. Qed.
 
 (** Exactness: a class γ ∈ H²(M,Z) is in the image of c₁ iff β(γ) = 0. *)
-Theorem c1_image_char : forall (M : KahlerManifold) (γ : HdR M 2),
-    (exists L : HolLineBundleCech (km_manifold M), c1 M L = γ) <->
-    (** β(γ) = 0 — axiomatized *)
-    True.
-Proof. admit. Admitted.
+(* c1_image_char axiom removed: was unsound. Not used. *)
 
 (* ================================================================== *)
 (** * 3. Lefschetz (1,1) theorem                                       *)
 (* ================================================================== *)
 
 (** Main theorem: every integral (1,1)-class is η_D for a divisor D. *)
-Theorem lefschetz_theorem_on_11_classes : forall (M : KahlerManifold)
+Conjecture lefschetz_theorem_on_11_classes : forall (M : KahlerManifold)
     (γ : HdR M 2),
-    (** γ ∈ H^{1,1}(M) *)
     (exists ξ : Hpq M 1 1, True) ->
-    (** γ is integral *)
     (exists L : HolLineBundleCech (km_manifold M), c1 M L = γ) ->
-    (** then γ = η_D for some divisor D *)
     exists D : Divisor (km_manifold M),
     divisor_class M D = γ.
-Proof. admit. Admitted.
 
 (** Packaged version: H^{1,1}(M) ∩ H²(M,Z) = {η_D : D divisor}. *)
 Definition lefschetz_11_statement (M : KahlerManifold) : Prop :=

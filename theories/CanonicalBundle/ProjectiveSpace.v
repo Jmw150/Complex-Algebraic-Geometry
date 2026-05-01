@@ -66,9 +66,8 @@ Parameter mero_form_div : forall (M : ComplexManifold),
 (** The canonical bundle equals O([div ω]) for any meromorphic n-form ω:
     K_M ≅ O(div ω) · (trivial correction).
     (This is the standard "divisor of a form" construction.) *)
-Theorem canonical_via_form_divisor : forall (M : ComplexManifold),
+Conjecture canonical_via_form_divisor : forall (M : ComplexManifold),
     hlb_iso (canonical_bundle M) LB[mero_form_div M].
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 3. K_{ℙⁿ} = O(-(n+1))                                           *)
@@ -78,8 +77,9 @@ Proof. admit. Admitted.
     In affine chart U₀ = {Z₀ ≠ 0} with coordinates (z₁,...,zₙ) = (Z₁/Z₀,...,Zₙ/Z₀):
         ω = dz₁ ∧ ... ∧ dzₙ
     This extends to a global meromorphic n-form on ℙⁿ. *)
-Parameter standard_mero_form_Pn : forall (n : nat),
-    True. (* the n-form dz₁ ∧ ... ∧ dzₙ on ℙⁿ *)
+Definition standard_mero_form_Pn (_ : nat) : True := I.
+(* the n-form dz₁ ∧ ... ∧ dzₙ on ℙⁿ; codomain is [True], so the
+   trivially-satisfied witness suffices. *)
 
 (** The form ω has simple poles along all n+1 coordinate hyperplanes
     {Zᵢ = 0}, i = 0,...,n. *)
@@ -90,10 +90,9 @@ Proof. intros; exact I. Qed.
 (** Consequently: div ω = -(hyperplane sum) = -(n+1)[H],
     so K_{ℙⁿ} = O(div ω) = O(-(n+1)). *)
 
-Theorem canonical_bundle_of_projective_space : forall (n : nat),
+Conjecture canonical_bundle_of_projective_space : forall (n : nat),
     hlb_iso (canonical_bundle (CPn_cm n))
             (O_bundle n (Z.opp (Z.of_nat (n + 1)))).
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 4. Consequences                                                  *)

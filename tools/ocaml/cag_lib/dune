@@ -1,0 +1,9 @@
+(library
+ (name cag_lib)
+ (libraries re unix)
+ (modules rocq_parse))
+
+(executable
+ (name test_parse)
+ (libraries cag_lib)
+ (modules test_parse))

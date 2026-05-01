@@ -45,15 +45,14 @@ Parameter garding_c : forall {M : HermitianManifold} {E : HermitianBundle M}
 Parameter garding_C0 : forall {M : HermitianManifold} {E : HermitianBundle M}
     (p q : nat) (conn : Connection E), CReal.
 
-Theorem garding_c_pos : forall {M : HermitianManifold} {E : HermitianBundle M}
+(** Specification axioms: Gårding constants from elliptic regularity. *)
+Conjecture garding_c_pos : forall {M : HermitianManifold} {E : HermitianBundle M}
     (p q : nat) (conn : Connection E),
     0 < garding_c p q conn.
-Proof. admit. Admitted.
 
-Theorem garding_C0_nonneg : forall {M : HermitianManifold} {E : HermitianBundle M}
+Conjecture garding_C0_nonneg : forall {M : HermitianManifold} {E : HermitianBundle M}
     (p q : nat) (conn : Connection E),
     0 <= garding_C0 p q conn.
-Proof. admit. Admitted.
 
 (** The Garding inequality. *)
 Theorem garding_inequality : forall {M : HermitianManifold} {E : HermitianBundle M}

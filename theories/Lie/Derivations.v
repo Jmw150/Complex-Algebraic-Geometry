@@ -8,7 +8,13 @@ Require Import CAG.Lie.Linear.
 
 (** ** Derivations of an F-algebra *)
 
-(** An F-algebra A is a vector space with an associative multiplication. *)
+(** An F-algebra A is a vector space with an associative multiplication.
+    The multiplication is F-bilinear: it distributes over [vsF_add] on
+    each side and commutes with [vsF_scale] on each side.  All five
+    laws (associativity, two add-distributivities, two scale-commutes)
+    are bundled as fields of this Record so that any [FAlgebra]
+    instance ships them with the carrier — they cannot drift into
+    floating Axioms (per the project's bundled-Records directive). *)
 Record FAlgebra {F : Type} (fld : Field F) (A : Type) : Type := {
   fa_vs     :> VectorSpaceF fld A;
   fa_mul    : A -> A -> A;
@@ -20,6 +26,12 @@ Record FAlgebra {F : Type} (fld : Field F) (A : Type) : Type := {
   fa_mul_add_r : forall x y z,
     fa_mul (fa_vs.(vsF_add) x y) z =
     fa_vs.(vsF_add) (fa_mul x z) (fa_mul y z);
+  fa_mul_scale_l_field : forall (a : F) (x y : A),
+    fa_mul (fa_vs.(vsF_scale) a x) y =
+    fa_vs.(vsF_scale) a (fa_mul x y);
+  fa_mul_scale_r_field : forall (a : F) (x y : A),
+    fa_mul x (fa_vs.(vsF_scale) a y) =
+    fa_vs.(vsF_scale) a (fa_mul x y);
 }.
 
 Arguments fa_mul      {F fld A} _ _ _.
@@ -27,6 +39,8 @@ Arguments fa_vs       {F fld A} _.
 Arguments fa_mul_add_l {F fld A} _ _ _ _.
 Arguments fa_mul_add_r {F fld A} _ _ _ _.
 Arguments fa_mul_assoc {F fld A} _ _ _ _.
+Arguments fa_mul_scale_l_field {F fld A} _ _ _ _.
+Arguments fa_mul_scale_r_field {F fld A} _ _ _ _.
 
 (** A derivation of A is a linear map δ : A → A satisfying δ(ab) = aδ(b) + δ(a)b. *)
 Record IsDerivation {F : Type} {fld : Field F} {A : Type}
@@ -48,18 +62,23 @@ Arguments deriv_add     {F fld A alg δ}.
 Arguments deriv_scale   {F fld A alg δ}.
 Arguments deriv_leibniz {F fld A alg δ}.
 
-(** F-algebra scalar compatibility: x·(a·v) = a·(x·v).
-    This is part of F-bilinearity of multiplication; not in the record
-    but axiomatically valid for any F-algebra. *)
-Axiom fa_mul_scale_r : forall {F : Type} {fld : Field F} {A : Type}
-    (alg : FAlgebra fld A) (a : F) (x v : A),
+(** F-algebra scalar compatibility: F-bilinearity of multiplication.
+    Now bundled into the [FAlgebra] Record as [fa_mul_scale_l_field]
+    and [fa_mul_scale_r_field]; re-exposed here as one-line Lemmas
+    via field projection so that every [FAlgebra] instance ships the
+    F-bilinearity laws with the carrier and they cannot drift into
+    floating Axioms (per [feedback_bundled_records.md]). *)
+Lemma fa_mul_scale_r {F : Type} {fld : Field F} {A : Type}
+    (alg : FAlgebra fld A) (a : F) (x v : A) :
     fa_mul alg x (alg.(fa_vs).(vsF_scale) a v) =
     alg.(fa_vs).(vsF_scale) a (fa_mul alg x v).
+Proof. exact (fa_mul_scale_r_field alg a x v). Qed.
 
-Axiom fa_mul_scale_l : forall {F : Type} {fld : Field F} {A : Type}
-    (alg : FAlgebra fld A) (a : F) (u y : A),
+Lemma fa_mul_scale_l {F : Type} {fld : Field F} {A : Type}
+    (alg : FAlgebra fld A) (a : F) (u y : A) :
     fa_mul alg (alg.(fa_vs).(vsF_scale) a u) y =
     alg.(fa_vs).(vsF_scale) a (fa_mul alg u y).
+Proof. exact (fa_mul_scale_l_field alg a u y). Qed.
 
 (** Der(A) = set of all derivations of A. *)
 Definition IsDer {F : Type} {fld : Field F} {A : Type}
@@ -294,12 +313,10 @@ Proof.
     rewrite Hcancel. apply vsF_add_zero_l.
 Qed.
 
-(** Product of derivations need not be a derivation. *)
-Lemma der_product_not_der {F : Type} {fld : Field F} {A : Type}
-    (alg : FAlgebra fld A) :
-    ~ (forall δ₁ δ₂, IsDerivation alg δ₁ -> IsDerivation alg δ₂ ->
-       IsDerivation alg (fun x => δ₁ (δ₂ x))).
-Proof. Admitted.
+(* der_product_not_der axiom removed: was FALSE-as-stated (false on the
+   trivial F-algebra). Intended counterexample is the polynomial F-algebra
+   F[x] with d/dx, which would need a concrete F-algebra parameterization.
+   Not used downstream. *)
 
 (** ** Inner and outer derivations *)
 
@@ -323,6 +340,14 @@ Definition IsOuterDerivation {F : Type} {fld : Field F} {L : Type}
 Definition ad {F : Type} {fld : Field F} {L : Type}
     (la : LieAlgebraF fld L) (x : L) : L -> L :=
   fun y => laF_bracket la x y.
+
+(** ad la_zero is the constant zero map. *)
+Lemma ad_zero_const_zero {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) :
+    forall y, ad la (la_zero la) y = la_zero la.
+Proof.
+  intro y. unfold ad. apply laF_bracket_zero_l.
+Qed.
 
 (** ad x is a derivation of the Lie algebra (viewed as an F-algebra via bracket). *)
 (** This is a direct reformulation of Jacobi. *)

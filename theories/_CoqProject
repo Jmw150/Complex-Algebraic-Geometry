@@ -12,6 +12,8 @@ Representation.v
 FreeGroup.v
 Character.v
 Sheaves.v
+Sheaves/PreSheaf.v
+Sheaves/Cech.v
 ManifoldTopology.v
 Category/Core.v
 Category/Functor.v

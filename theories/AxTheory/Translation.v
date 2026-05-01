@@ -191,12 +191,10 @@ Definition StransPreservesAxioms {Sg Sg' : Signature}
       [α]    ↦ std_extend_ty d α
       [M:α→β] ↦ std_extend_term d [α] M β *)
 
-Definition SynTrans_to_CCCFunctor {Th Th' : AxTheory}
+Parameter SynTrans_to_CCCFunctor : forall {Th Th' : AxTheory}
     (d : SynTranslationData Th.(ax_sig) Th'.(ax_sig))
-    (Hpres : StransPreservesAxioms d Th.(ax_ax) Th'.(ax_ax)) :
+    (Hpres : StransPreservesAxioms d Th.(ax_ax) Th'.(ax_ax)),
     AxTranslation Th Th'.
-Proof.
-  Admitted.
 
 (** ** Identity translation *)
 

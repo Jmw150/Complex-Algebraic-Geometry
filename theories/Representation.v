@@ -58,10 +58,15 @@ Lemma GL_mul_right_inv_aux : forall n (A B : GLMat n),
   = mident n.
 Proof.
   intros n A B.
-  rewrite <- mmul_assoc.
-  rewrite (mmul_assoc (gl_mat B) (gl_inv_mat B) (gl_inv_mat A) n).
+  rewrite <- (mmul_assoc_wf n n n n
+                (gl_mat A) (gl_mat B) (mmul (gl_inv_mat B) (gl_inv_mat A) n)
+                (gl_wf A) (gl_wf B)
+                (mmul_wf _ _ _ _ _ (gl_inv_wf B) (gl_inv_wf A))).
+  rewrite (mmul_assoc_wf n n n n
+             (gl_mat B) (gl_inv_mat B) (gl_inv_mat A)
+             (gl_wf B) (gl_inv_wf B) (gl_inv_wf A)).
   rewrite (gl_right_inv B).
-  rewrite (mmul_mident_left n (gl_inv_mat A) (gl_inv_wf A)).
+  rewrite (mmul_mident_left_wf n (gl_inv_mat A) (gl_inv_wf A)).
   exact (gl_right_inv A).
 Qed.
 
@@ -71,10 +76,15 @@ Lemma GL_mul_left_inv_aux : forall n (A B : GLMat n),
   = mident n.
 Proof.
   intros n A B.
-  rewrite <- mmul_assoc.
-  rewrite (mmul_assoc (gl_inv_mat A) (gl_mat A) (gl_mat B) n).
+  rewrite <- (mmul_assoc_wf n n n n
+                (gl_inv_mat B) (gl_inv_mat A) (mmul (gl_mat A) (gl_mat B) n)
+                (gl_inv_wf B) (gl_inv_wf A)
+                (mmul_wf _ _ _ _ _ (gl_wf A) (gl_wf B))).
+  rewrite (mmul_assoc_wf n n n n
+             (gl_inv_mat A) (gl_mat A) (gl_mat B)
+             (gl_inv_wf A) (gl_wf A) (gl_wf B)).
   rewrite (gl_left_inv A).
-  rewrite (mmul_mident_left n (gl_mat B) (gl_wf B)).
+  rewrite (mmul_mident_left_wf n (gl_mat B) (gl_wf B)).
   exact (gl_left_inv B).
 Qed.
 
@@ -95,8 +105,8 @@ Definition GL_id (n : nat) : GLMat n :=
     (mident n)
     (mident_wf n)
     (mident_wf n)
-    (mmul_mident_right n (mident n) (mident_wf n))
-    (mmul_mident_left  n (mident n) (mident_wf n)).
+    (mmul_mident_right_wf n (mident n) (mident_wf n))
+    (mmul_mident_left_wf  n (mident n) (mident_wf n)).
 
 (** Inverse: swap the matrix and its stored inverse *)
 Definition GL_inv {n : nat} (A : GLMat n) : GLMat n :=
@@ -116,9 +126,12 @@ Proof.
   intros n A B C.
   apply GLMat_eq; simpl.
   - (* (A·(B·C)) mat = ((A·B)·C) mat *)
-    apply mmul_assoc.
+    apply (mmul_assoc_wf n n n n (gl_mat A) (gl_mat B) (gl_mat C)
+             (gl_wf A) (gl_wf B) (gl_wf C)).
   - (* inv side: C⁻¹·(B⁻¹·A⁻¹) = (C⁻¹·B⁻¹)·A⁻¹ *)
-    symmetry. apply mmul_assoc.
+    symmetry.
+    apply (mmul_assoc_wf n n n n (gl_inv_mat C) (gl_inv_mat B) (gl_inv_mat A)
+             (gl_inv_wf C) (gl_inv_wf B) (gl_inv_wf A)).
 Qed.
 
 Lemma GL_id_right : forall n (A : GLMat n),
@@ -126,8 +139,8 @@ Lemma GL_id_right : forall n (A : GLMat n),
 Proof.
   intros n A.
   apply GLMat_eq; simpl.
-  - apply mmul_mident_right. exact (gl_wf A).
-  - apply mmul_mident_left.  exact (gl_inv_wf A).
+  - apply mmul_mident_right_wf. exact (gl_wf A).
+  - apply mmul_mident_left_wf.  exact (gl_inv_wf A).
 Qed.
 
 Lemma GL_id_left : forall n (A : GLMat n),
@@ -135,8 +148,8 @@ Lemma GL_id_left : forall n (A : GLMat n),
 Proof.
   intros n A.
   apply GLMat_eq; simpl.
-  - apply mmul_mident_left.  exact (gl_wf A).
-  - apply mmul_mident_right. exact (gl_inv_wf A).
+  - apply mmul_mident_left_wf.  exact (gl_wf A).
+  - apply mmul_mident_right_wf. exact (gl_inv_wf A).
 Qed.
 
 Lemma GL_inv_right : forall n (A : GLMat n),
@@ -248,8 +261,8 @@ Proof.
   unfold trivial_rep_fn. simpl.
   (* GL_mul (GL_id n) (GL_id n) = GL_id n *)
   apply GLMat_eq; simpl.
-  - symmetry. apply mmul_mident_left. exact (mident_wf n).
-  - symmetry. apply mmul_mident_right. exact (mident_wf n).
+  - symmetry. apply mmul_mident_left_wf. exact (mident_wf n).
+  - symmetry. apply mmul_mident_right_wf. exact (mident_wf n).
 Qed.
 
 Definition trivial_rep {G : Type} (sg : StrictGroup G) (n : nat)

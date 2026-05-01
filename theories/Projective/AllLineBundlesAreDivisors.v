@@ -75,19 +75,17 @@ Parameter hyperplane_bundle_M : forall (M : KahlerManifold),
     HolLineBundleCech (km_manifold M).
 
 (** H is positive on M. *)
-Theorem hyperplane_bundle_positive : forall (M : KahlerManifold),
+Conjecture hyperplane_bundle_positive : forall (M : KahlerManifold),
     positive_line_bundle M (hyperplane_bundle_M M).
-Proof. admit. Admitted.
 
 (** For μ >> 0, H⁰(M, O(L + μH)) ≠ 0. *)
-Theorem h0_large_twist_nonzero : forall (M : KahlerManifold)
+Conjecture h0_large_twist_nonzero : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)),
     exists μ0 : nat,
     forall μ : nat,
     (μ0 < μ)%nat ->
     exists s : HDolb M (hlb_tensor_km M L (lb_power M (hyperplane_bundle_M M) μ)) 0 0,
     s <> HDolb_zero M _ 0 0.
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 4. Main theorem                                                  *)

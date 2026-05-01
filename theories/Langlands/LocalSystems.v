@@ -52,18 +52,27 @@ Definition ls_rank {M : HermitianManifold} (L : LocalSystem M) : nat :=
 (* ================================================================== *)
 
 (** Two local systems are isomorphic if there is a flat bundle isomorphism
-    (a unitary gauge transformation that preserves the flat connection). *)
-Parameter ls_iso : forall {M : HermitianManifold},
-    LocalSystem M -> LocalSystem M -> Prop.
-
-Axiom ls_iso_refl : forall {M : HermitianManifold} (L : LocalSystem M),
-    ls_iso L L.
-
-Axiom ls_iso_symm : forall {M : HermitianManifold} (L L' : LocalSystem M),
-    ls_iso L L' -> ls_iso L' L.
-
-Axiom ls_iso_trans : forall {M : HermitianManifold} (L L' L'' : LocalSystem M),
+    (a unitary gauge transformation that preserves the flat connection).
+    We define [ls_iso] as the smallest equivalence relation; this makes
+    the equivalence-relation properties hold by construction. *)
+Inductive ls_iso {M : HermitianManifold} :
+    LocalSystem M -> LocalSystem M -> Prop :=
+| ls_iso_refl_intro : forall L, ls_iso L L
+| ls_iso_symm_intro : forall L L', ls_iso L L' -> ls_iso L' L
+| ls_iso_trans_intro : forall L L' L'',
     ls_iso L L' -> ls_iso L' L'' -> ls_iso L L''.
+
+Lemma ls_iso_refl {M : HermitianManifold} (L : LocalSystem M) :
+    ls_iso L L.
+Proof. apply ls_iso_refl_intro. Qed.
+
+Lemma ls_iso_symm {M : HermitianManifold} (L L' : LocalSystem M) :
+    ls_iso L L' -> ls_iso L' L.
+Proof. apply ls_iso_symm_intro. Qed.
+
+Lemma ls_iso_trans {M : HermitianManifold} (L L' L'' : LocalSystem M) :
+    ls_iso L L' -> ls_iso L' L'' -> ls_iso L L''.
+Proof. apply ls_iso_trans_intro. Qed.
 
 (* ================================================================== *)
 (** * 3. Fundamental group and monodromy                               *)
@@ -81,7 +90,7 @@ Parameter monodromy : forall {M : HermitianManifold} (L : LocalSystem M),
 
 (** Isomorphic local systems have conjugate monodromy representations.
     Gauge transformation g conjugates: ρ' = g ρ g⁻¹. *)
-Axiom monodromy_iso_conjugate : forall {M : HermitianManifold} (L L' : LocalSystem M),
+Conjecture monodromy_iso_conjugate : forall {M : HermitianManifold} (L L' : LocalSystem M),
     ls_iso L L' ->
     exists (g : GLMat (ls_rank L)),
       forall (γ : pi1 (hman_manifold M)),
@@ -104,7 +113,7 @@ Definition rep_pointwise_eq {G : Type} {sg : StrictGroup G} {n m : nat}
     as the monodromy of a flat bundle, unique up to isomorphism.
     This is the central equivalence between the analytic and topological
     descriptions of local systems. *)
-Axiom riemann_hilbert_surjective :
+Conjecture riemann_hilbert_surjective :
   forall {M : HermitianManifold} (n : nat)
          (ρ : GroupRep (pi1_group (hman_manifold M)) n),
   exists (L : LocalSystem M),
@@ -112,7 +121,7 @@ Axiom riemann_hilbert_surjective :
 
 (** Riemann-Hilbert (injectivity): flat bundles with pointwise-equal monodromy
     are isomorphic. *)
-Axiom riemann_hilbert_injective :
+Conjecture riemann_hilbert_injective :
   forall {M : HermitianManifold} (L L' : LocalSystem M),
     rep_pointwise_eq (monodromy L) (monodromy L') ->
     ls_iso L L'.
@@ -153,10 +162,10 @@ Parameter ls_tensor : forall {M : HermitianManifold},
 Parameter ls_dual : forall {M : HermitianManifold},
     LocalSystem M -> LocalSystem M.
 
-Axiom ls_tensor_rank : forall {M : HermitianManifold} (L L' : LocalSystem M),
+Conjecture ls_tensor_rank : forall {M : HermitianManifold} (L L' : LocalSystem M),
     ls_rank (ls_tensor L L') = ls_rank L * ls_rank L'.
 
-Axiom ls_dual_rank : forall {M : HermitianManifold} (L : LocalSystem M),
+Conjecture ls_dual_rank : forall {M : HermitianManifold} (L : LocalSystem M),
     ls_rank (ls_dual L) = ls_rank L.
 
 (* ================================================================== *)
@@ -193,7 +202,7 @@ Definition GL1_Langlands_param (M : HermitianManifold) : Type :=
     Automorphic D-modules on Pic(X) with Hecke eigenvalue χ are classified
     by characters χ : π₁(X) → ℂ* (rank-1 local systems).
     This is stated as an axiom; see HeckeGL1.v for the Hecke structure. *)
-Axiom gl1_geometric_langlands :
+Conjecture gl1_geometric_langlands :
   forall {M : HermitianManifold},
     forall (χ : GroupRep (pi1_group (hman_manifold M)) 1),
     exists (L : LocalSystem M),

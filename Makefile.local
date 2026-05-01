@@ -1,0 +1,103 @@
+# Makefile.local — auto-included by the main Makefile.
+#
+# Adds targets for the McReynolds OCaml extraction pipeline.
+#
+# Targets:
+#   extract-mc      — re-run the Coq extraction (rebuilds lib/free_group_ml.ml,
+#                     lib/sl2_ml.ml).
+#   ocaml-mc        — compile the OCaml drivers in lib/ (test_freegroup,
+#                     test_sl2, horowitz_search, test_pair_many).
+#   test-mc         — run all four OCaml drivers.
+#   horowitz-search — alias to run the search driver with optional max_len arg
+#                     (e.g.  make horowitz-search LEN=6).
+
+LEN ?= 5
+
+# Ensure rocq is on PATH for any sub-make.
+export PATH := /home/jmw150/.opam/rocq9/bin:$(PATH)
+
+.PHONY: extract-mc ocaml-mc test-mc horowitz-search horowitz-n-search positive-search f3-search clean-mc
+
+# Re-run the Coq → OCaml extraction. The .v files use Extraction commands
+# that write to lib/, so building these .vo files (re-)produces the .ml.
+extract-mc:
+	@$(MAKE) --no-print-directory \
+	    theories/DecisionProblems/ExtractFreeGroup.vo \
+	    theories/DecisionProblems/ExtractSL2.vo
+	@if [ ! -f lib/free_group_ml.ml ] || [ ! -f lib/sl2_ml.ml ]; then \
+	    echo "WARN: extraction did not produce expected .ml files; force-rebuilding"; \
+	    rm -f theories/DecisionProblems/ExtractFreeGroup.vo \
+	          theories/DecisionProblems/ExtractSL2.vo; \
+	    $(MAKE) --no-print-directory \
+	        theories/DecisionProblems/ExtractFreeGroup.vo \
+	        theories/DecisionProblems/ExtractSL2.vo; \
+	fi
+	@echo "Extraction completed. OCaml files in lib/:"
+	@ls -1 lib/free_group_ml.ml lib/sl2_ml.ml
+
+# Compile the OCaml drivers.
+ocaml-mc: extract-mc
+	@cd lib && \
+	  ocamlc -c free_group_ml.mli && \
+	  ocamlc -c free_group_ml.ml && \
+	  ocamlc -c sl2_ml.mli && \
+	  ocamlc -c sl2_ml.ml && \
+	  ocamlc -c matn.ml && \
+	  ocamlc free_group_ml.cmo test_freegroup.ml -o test_freegroup && \
+	  ocamlc free_group_ml.cmo sl2_ml.cmo test_sl2.ml -o test_sl2 && \
+	  ocamlc free_group_ml.cmo sl2_ml.cmo horowitz_search.ml -o horowitz_search && \
+	  ocamlc free_group_ml.cmo sl2_ml.cmo test_horowitz_pair.ml -o test_horowitz_pair && \
+	  ocamlc free_group_ml.cmo sl2_ml.cmo test_pair_many.ml -o test_pair_many && \
+	  ocamlc sl2_ml.cmo matn.cmo test_matn.ml -o test_matn && \
+	  ocamlc free_group_ml.cmo sl2_ml.cmo matn.cmo horowitz_n_search.ml -o horowitz_n_search && \
+	  ocamlc free_group_ml.cmo sl2_ml.cmo matn.cmo positive_search.ml -o positive_search && \
+	  ocamlc free_group_ml.cmo sl2_ml.cmo matn.cmo horowitz_f3_search.ml -o horowitz_f3_search && \
+	  ocamlc free_group_ml.cmo sl2_ml.cmo matn.cmo horowitz_f3_fast.ml -o horowitz_f3_fast && \
+	  ocamlc free_group_ml.cmo sl2_ml.cmo matn.cmo test_3gen_pair.ml -o test_3gen_pair && \
+	  ocamlc free_group_ml.cmo sl2_ml.cmo matn.cmo horowitz_f2_fast.ml -o horowitz_f2_fast
+	@echo "Built lib/test_freegroup, lib/test_sl2, lib/horowitz_search, lib/test_horowitz_pair, lib/test_pair_many, lib/test_matn, lib/horowitz_n_search, lib/positive_search, lib/horowitz_f3_search"
+
+# Run the test drivers.
+test-mc: ocaml-mc
+	@echo "=== test_freegroup ==="
+	@lib/test_freegroup
+	@echo
+	@echo "=== test_sl2 ==="
+	@lib/test_sl2
+	@echo
+	@echo "=== horowitz_search (length $(LEN)) ==="
+	@lib/horowitz_search $(LEN)
+
+horowitz-search: ocaml-mc
+	@lib/horowitz_search $(LEN)
+
+# SL(n) search — args: LEN, DIM, NUM_REPS
+DIM ?= 3
+NUM_REPS ?= 100
+horowitz-n-search: ocaml-mc
+	@lib/horowitz_n_search $(LEN) $(DIM) $(NUM_REPS)
+
+# Positive-word search (Conjecture 5.5 probe).
+positive-search: ocaml-mc
+	@lib/positive_search $(LEN) $(DIM) $(NUM_REPS)
+
+# F_3 positive-word search.
+f3-search: ocaml-mc
+	@lib/horowitz_f3_search $(LEN) $(DIM) $(NUM_REPS)
+
+# F_3 fast positive-word search (canonical-form hashing).
+f3-fast: ocaml-mc
+	@lib/horowitz_f3_fast $(LEN) $(DIM) $(NUM_REPS)
+
+# F_2 fast (full alphabet a, b, A, B with inverses).
+f2-fast: ocaml-mc
+	@lib/horowitz_f2_fast $(LEN) $(DIM) $(NUM_REPS)
+
+clean-mc:
+	@rm -f lib/free_group_ml.* lib/sl2_ml.* \
+	       lib/test_freegroup lib/test_sl2 lib/horowitz_search \
+	       lib/test_horowitz_pair lib/test_pair_many \
+	       lib/test_matn lib/horowitz_n_search \
+	       lib/positive_search lib/horowitz_f3_search \
+	       lib/*.cmo lib/*.cmi
+	@echo "Cleaned McReynolds extraction artifacts."

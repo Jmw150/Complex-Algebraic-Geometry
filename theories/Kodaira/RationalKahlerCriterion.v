@@ -52,12 +52,10 @@ Definition is_rational_class (M : KahlerManifold) (α : HdR M 2) : Prop :=
 (* ================================================================== *)
 
 (** From a rational positive (1,1)-class, construct an integral one. *)
-Theorem rational_class_to_integral : forall (M : KahlerManifold) (α : HdR M 2),
+Conjecture rational_class_to_integral : forall (M : KahlerManifold) (α : HdR M 2),
     is_rational_class M α ->
-    (** there exists k > 0 with k·α = c₁(L) for some positive L — axiomatized *)
     exists L : HolLineBundleCech (km_manifold M),
     positive_line_bundle M L.
-Proof. admit. Admitted.
 
 (** If M has a Hodge metric, then M is projective. *)
 Theorem hodge_metric_implies_projective : forall (M : KahlerManifold),

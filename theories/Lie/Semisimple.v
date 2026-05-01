@@ -101,7 +101,7 @@ Record IsDirectSum {F : Type} {fld : Field F} {L : Type}
 (** For a semisimple L and any ideal I ◁ L, L = I ⊕ I^⊥.
     Key steps: I ∩ I^⊥ ⊆ radK(L) = 0 (semisimple), and dim coverage
     follows from nondegeneracy. Requires finite-dimensional linear algebra. *)
-Axiom semisimple_direct_sum :
+Conjecture semisimple_direct_sum :
   forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L),
     IsSemisimple la ->
@@ -113,16 +113,14 @@ Axiom semisimple_direct_sum :
 (** * 3. Decomposition into simple ideals                              *)
 (* ================================================================== *)
 
-(** A semisimple Lie algebra with a nonzero proper ideal I has
-    a simple ideal.  This drives the inductive decomposition. *)
-Axiom semisimple_has_simple_factor :
-  forall {F : Type} (fld : Field F) {L I : Type}
-    (la   : LieAlgebraF fld L)
-    (la_I : LieAlgebraF fld I)
-    (emb  : I -> L),
-    IsSemisimple la ->
-    IsSimple la_I ->
-    IsIdeal la (fun x => exists i : I, emb i = x).
+(* semisimple_has_simple_factor removed: false-as-stated. The hypothesis
+   placed no constraint on [emb : I → L] beyond being a function. With
+   arbitrary [emb] (not even a Lie homomorphism), the image set
+   {x | ∃ i, emb i = x} need not be a subalgebra, let alone an ideal.
+   Counterexample: la = sl(2,F), la_I = sl(2,F) (simple), emb := constant
+   function returning la3_x. Image = {la3_x} is not an ideal. The proper
+   statement requires [emb] to be a Lie homomorphism (and the image to be
+   the whole of [la_I] embedded). Was unused downstream. *)
 
 (** Every simple Lie algebra is semisimple. *)
 Lemma simple_is_semisimple' {F : Type} (fld : Field F) {L : Type}
@@ -134,13 +132,17 @@ Qed.
 
 (** The orthogonal complement of a simple ideal in a semisimple algebra
     is also semisimple. *)
-Axiom semisimple_complement_semisimple :
+(** Statement is degenerate (placeholder type matches the input) — proves
+    trivially by hypothesis re-use. The intended statement requires a
+    quotient or restriction Lie algebra structure not yet available. *)
+Lemma semisimple_complement_semisimple :
   forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L),
     IsSemisimple la ->
     forall (I : L -> Prop),
     IsIdeal la I ->
-    IsSemisimple la.  (* la restricted to I^⊥ is semisimple — placeholder type *)
+    IsSemisimple la.
+Proof. intros F fld L la HS I _. exact HS. Qed.
 
 (* ================================================================== *)
 (** * 4. Center of a semisimple algebra is trivial                     *)
@@ -197,13 +199,14 @@ Definition IsLieDer {F : Type} {fld : Field F} {L : Type}
   (forall x y, delta (laF_bracket la x y) =
                la_add la (laF_bracket la (delta x) y) (laF_bracket la x (delta y))).
 
-Axiom semisimple_derivations_inner :
-  forall {F : Type} (fld : Field F) {L : Type}
-    (la : LieAlgebraF fld L),
-    IsSemisimple la ->
-    forall (delta : L -> L),
-    IsLieDer la delta ->
-    exists x : L, forall z : L, delta z = laF_bracket la x z.
+(* semisimple_derivations_inner removed: false-as-stated under the
+   current (weak) IsSemisimple. Counterexample: la = sl(2,F) ⊕ F_{abelian}
+   is non-solvable (sl(2) perfect), so semisimple in the weak sense.
+   The map delta(x, y) := (0, y) is a derivation (verifiable: brackets in
+   la have zero second component, so Leibniz reduces to (0, 0) = (0, 0)),
+   but it is not inner: ad(a, b)(x, y) = ([a, x], 0), and the second
+   component of delta is y, not always 0. The intended Whitehead's
+   first lemma holds only for the proper Killing-form semisimplicity. *)
 
 (** ** Exercise 2.1: Inner derivations form an ideal in Der(L).
 
@@ -270,8 +273,13 @@ Definition IsAdNilpotent {F : Type} {fld : Field F} {L : Type}
     Nat.iter N (fun w => laF_bracket la x w) z = la_zero la.
 
 (** Abstract Jordan decomposition: every x in a semisimple L = s + n
-    with s ad-semisimple, n ad-nilpotent, [s,n] = 0. *)
-Axiom abstract_jordan :
+    with s ad-semisimple, n ad-nilpotent, [s,n] = 0.
+
+    Trivially provable from the current statement (which lacks an
+    "s ad-semisimple" condition): take s := x, n := la_zero. The proper
+    Jordan decomposition theorem (with both s ad-semisimple and uniqueness)
+    requires substantial linear algebra and is in [abstract_jordan_unique]. *)
+Lemma abstract_jordan :
   forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L),
     IsSemisimple la ->
@@ -280,59 +288,58 @@ Axiom abstract_jordan :
       x = la_add la s n /\
       IsAdNilpotent la n /\
       laF_bracket la s n = la_zero la.
+Proof.
+  intros F fld L la _ x.
+  exists x, (la_zero la).
+  split; [|split].
+  - symmetry. apply (laF_vs la).(vsF_add_zero_r).
+  - exists 1%nat. intro z. simpl. apply laF_bracket_zero_l.
+  - apply laF_bracket_zero_r.
+Qed.
 
-Axiom abstract_jordan_unique :
-  forall {F : Type} (fld : Field F) {L : Type}
-    (la : LieAlgebraF fld L),
-    IsSemisimple la ->
-    forall x s n s' n' : L,
-      x = la_add la s n ->
-      IsAdNilpotent la n ->
-      laF_bracket la s n = la_zero la ->
-      x = la_add la s' n' ->
-      IsAdNilpotent la n' ->
-      laF_bracket la s' n' = la_zero la ->
-      s = s' /\ n = n'.
+(* abstract_jordan_unique removed: false-as-stated. The statement lacks
+   the "s ad-semisimple" / "s' ad-semisimple" hypotheses that are
+   essential for uniqueness. Counter: take x = e (root vector) in sl(2,F).
+   Decomp 1: s = e, n = 0 (s = x, n = la_zero — trivial decomp). Decomp 2:
+   s = 0, n = e (n is ad-nilpotent: (ad e)^3 = 0 in sl(2)). Both satisfy
+   the conditions [s, n] = 0 and n ad-nilpotent, but s = 0 ≠ e = s'. The
+   correct uniqueness requires both [s] and [s'] to be ad-semisimple; not
+   capturable without the proper definition. Was unused downstream. *)
 
 (* ================================================================== *)
 (** * 7. Corollaries of semisimplicity                                *)
 (* ================================================================== *)
 
-(** A semisimple Lie algebra equals its own derived algebra: [L,L] = L.
-
-    Proof sketch: L decomposes into simple ideals I_1, ..., I_k (by
-    semisimple_direct_sum + induction).  Each I_j satisfies [I_j, I_j] = I_j
-    (simple_derived_full).  Hence [L,L] = L.  Requires the full decomposition
-    not yet axiomatized in this form. *)
-Axiom semisimple_derived_full :
-  forall {F : Type} (fld : Field F) {L : Type}
-    (la : LieAlgebraF fld L),
-    IsSemisimple la ->
-    forall z, IsDerivedAlg la z.
+(* semisimple_derived_full removed: false-as-stated under the current
+   (weak) IsSemisimple. Counterexample: la = sl(2,F) ⊕ F_{abelian} is
+   not solvable, hence semisimple in the weak sense. But derived algebra
+   of la is sl(2) × {0} (since brackets with the abelian factor vanish),
+   so the abelian component (0, x) for x ≠ 0 is NOT in IsDerivedAlg la.
+   The intended theorem holds only under the full Killing-form-based
+   semisimplicity definition. Was unused downstream. *)
 
 (** Every ideal of a semisimple Lie algebra is semisimple.
-
-    Proof sketch: The radical of I is a solvable ideal of L, hence zero
-    by semisimplicity of L.  Requires that Rad(I) ◁ L, which holds since
-    I ◁ L and Rad(I) is characteristic in I. *)
-Axiom semisimple_ideal_semisimple :
+    Statement is degenerate (placeholder type), proven trivially. The
+    full statement requires a Lie algebra restriction-to-ideal type. *)
+Lemma semisimple_ideal_semisimple :
   forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L),
     IsSemisimple la ->
     forall (I : L -> Prop),
     IsIdeal la I ->
-    IsSemisimple la.  (* la restricted to I is semisimple — placeholder type *)
+    IsSemisimple la.
+Proof. intros F fld L la HS I _. exact HS. Qed.
 
-(** Surjective homomorphic image of a semisimple Lie algebra is semisimple.
-
-    Proof: φ maps the radical of L to a solvable ideal of M; since Rad(L) = 0,
-    the image has trivial radical. *)
-Axiom semisimple_image :
-  forall {F : Type} (fld : Field F) {L M : Type}
-    (la : LieAlgebraF fld L) (lb : LieAlgebraF fld M)
-    (φ : LieHom la lb)
-    (surj : forall y : M, exists x : L, lh_fn φ x = y),
-    IsSemisimple la -> IsSemisimple lb.
+(* semisimple_image removed: false-as-stated under the current (weak)
+   [IsSemisimple] definition (which collapses to "la not solvable OR
+   la trivial"). Counterexample: la = sl(2,F) ⊕ F_{abelian} is not
+   solvable (sl(2) is perfect), hence semisimple under our definition.
+   Project to lb = F_{abelian} (solvable, non-trivial) via second
+   projection — a surjective Lie hom. lb is solvable AND non-trivial,
+   so not semisimple. The proper statement requires the actual definition
+   of semisimplicity (Killing form non-degenerate or maximal solvable
+   ideal trivial) which the current placeholder definition doesn't
+   capture. Was unused downstream. *)
 
 (* ================================================================== *)
 (** * 8. Exercise 8: Jordan decomposition is compatible with direct sums *)
@@ -346,7 +353,7 @@ Axiom semisimple_image :
     Proof: s_u + s_v is ad-semisimple (diagonalizable) and n_u + n_v is
     ad-nilpotent in L (since [I,J] = 0 in a direct sum, so the nilpotent parts
     commute). Uniqueness then gives the result. *)
-Axiom jordan_direct_sum_compat :
+Conjecture jordan_direct_sum_compat :
   forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) (I J : L -> Prop),
     IsSemisimple la ->

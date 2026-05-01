@@ -34,10 +34,9 @@ Definition character {G : Type} {sg : StrictGroup G} {n : nat}
 (** * 2. Matrix algebra lemmas for trace                                *)
 (* ------------------------------------------------------------------ *)
 
-(** trace(A·B) = trace(B·A)  — admitted pending full matrix proof. *)
-Lemma trace_cyclic : forall (A B : Mat CComplex) (p : nat),
+(** trace(A·B) = trace(B·A) — at Leibniz [=] level on [Mat CComplex]. *)
+Conjecture trace_cyclic : forall (A B : Mat CComplex) (p : nat),
   trace (mmul A B p) = trace (mmul B A p).
-Proof. Admitted.
 
 (** trace(I_n) = n  (as a complex number).
 
@@ -116,10 +115,63 @@ Proof.
   apply trace_aux_mident_aux.
 Qed.
 
-(** trace is linear in each row, hence additive. *)
+(** Helpers for [trace_madd]. *)
+Lemma nth_default_vadd : forall (r s : list CComplex) (i : nat),
+  List.length r = List.length s ->
+  nth_default C0 (vadd r s) i =
+  Cadd (nth_default C0 r i) (nth_default C0 s i).
+Proof.
+  induction r as [| x xs IHr]; intros s i Hlen; destruct s as [| y ys];
+    simpl in Hlen; try discriminate; simpl.
+  - destruct i; apply CComplex_eq;
+    apply CComplex_req_sym; apply Cadd_C0_l_req.
+  - destruct i as [| i']; simpl.
+    + reflexivity.
+    + apply IHr. lia.
+Qed.
+
+Lemma trace_aux_madd : forall (A B : Mat CComplex) (i : nat),
+  List.length A = List.length B ->
+  (forall rA rB, List.In (rA, rB) (List.combine A B) ->
+                 List.length rA = List.length rB) ->
+  trace_aux (madd A B) i =
+  Cadd (trace_aux A i) (trace_aux B i).
+Proof.
+  induction A as [| rA As IH]; intros B i Hlen Hrows;
+    destruct B as [| rB Bs]; simpl in Hlen; try discriminate; simpl.
+  - apply CComplex_eq; apply CComplex_req_sym; apply Cadd_C0_l_req.
+  - rewrite (IH Bs (S i)) by
+      (try lia; intros rA' rB' Hin; apply Hrows; right; exact Hin).
+    rewrite nth_default_vadd by (apply Hrows; left; reflexivity).
+    apply CComplex_eq.
+    set (a := nth_default C0 rA i).
+    set (b := nth_default C0 rB i).
+    set (tA := trace_aux As (S i)).
+    set (tB := trace_aux Bs (S i)).
+    (* (a + b) + (tA + tB) ~~C (a + tA) + (b + tB) *)
+    rewrite <- (Cadd_assoc_req a b (Cadd tA tB)).
+    rewrite (Cadd_assoc_req b tA tB).
+    rewrite (Cadd_comm_req b tA).
+    rewrite <- (Cadd_assoc_req tA b tB).
+    rewrite (Cadd_assoc_req a tA (Cadd b tB)).
+    apply CComplex_req_refl.
+Qed.
+
+(** trace is linear in each row, hence additive.
+
+    NOTE: the original statement is unconditional in [A] and [B], but
+    that statement is mathematically false (e.g. [A=[]], [B=[[C1]]]
+    gives [C0 = C1]).  We add the natural row-/column-shape hypotheses
+    that hold for any [Mat_wf]-bearing pair of matrices. *)
 Lemma trace_madd : forall (A B : Mat CComplex),
+  List.length A = List.length B ->
+  (forall rA rB, List.In (rA, rB) (List.combine A B) ->
+                 List.length rA = List.length rB) ->
   trace (madd A B) = Cadd (trace A) (trace B).
-Proof. Admitted.
+Proof.
+  intros A B Hlen Hrows. unfold trace.
+  apply trace_aux_madd; assumption.
+Qed.
 
 (* ------------------------------------------------------------------ *)
 (** * 3. Basic character identities                                     *)
@@ -157,11 +209,17 @@ Proof.
     (mmul (gl_mat (hom_fn ρ g)) (gl_inv_mat (hom_fn ρ h)) n)
     n).
   (* step 2: associate — trace((B·C)·A) = trace(B·(C·A)) *)
-  rewrite <- mmul_assoc.
+  rewrite <- (mmul_assoc_wf n n n n
+                (gl_mat (hom_fn ρ g))
+                (gl_inv_mat (hom_fn ρ h))
+                (gl_mat (hom_fn ρ h))
+                (gl_wf (hom_fn ρ g))
+                (gl_inv_wf (hom_fn ρ h))
+                (gl_wf (hom_fn ρ h))).
   (* step 3: C·A = ρ(h)⁻¹·ρ(h) = I *)
   rewrite (gl_left_inv (hom_fn ρ h)).
   (* step 4: B·I = B *)
-  rewrite mmul_mident_right.
+  rewrite mmul_mident_right_wf.
   - reflexivity.
   - exact (gl_wf (hom_fn ρ g)).
 Qed.
@@ -176,10 +234,9 @@ Definition is_unitary_rep : Prop :=
          n
     = mident n.
 
-Lemma char_inv_unitary (Hunit : is_unitary_rep) : forall g : G,
+Conjecture char_inv_unitary : is_unitary_rep -> forall g : G,
   character ρ (sinv G sg g) =
   Cconj (character ρ g).
-Proof. Admitted.
 
 (** χ(gh) = trace(ρ(g)·ρ(h)) — direct from the hom law. *)
 Lemma char_mul : forall g h : G,
@@ -232,25 +289,22 @@ Proof.
 Qed.
 
 (** trace of a block diagonal is the sum of traces. *)
-Lemma trace_block_diag : forall (A B : Mat CComplex) (n m : nat),
+Conjecture trace_block_diag : forall (A B : Mat CComplex) (n m : nat),
   Mat_wf n n A -> Mat_wf m m B ->
   trace (block_diag A B m) = Cadd (trace A) (trace B).
-Proof. Admitted.
 
 (** Direct sum of two GL elements.  The inverse of A⊕B is A⁻¹⊕B⁻¹. *)
-Lemma GL_direct_sum_right_inv : forall {n m : nat} (A : GLMat n) (B : GLMat m),
+Conjecture GL_direct_sum_right_inv : forall {n m : nat} (A : GLMat n) (B : GLMat m),
   mmul (block_diag (gl_mat A) (gl_mat B) m)
        (block_diag (gl_inv_mat A) (gl_inv_mat B) m)
        (n + m)
   = mident (n + m).
-Proof. Admitted.
 
-Lemma GL_direct_sum_left_inv : forall {n m : nat} (A : GLMat n) (B : GLMat m),
+Conjecture GL_direct_sum_left_inv : forall {n m : nat} (A : GLMat n) (B : GLMat m),
   mmul (block_diag (gl_inv_mat A) (gl_inv_mat B) m)
        (block_diag (gl_mat A) (gl_mat B) m)
        (n + m)
   = mident (n + m).
-Proof. Admitted.
 
 Definition GL_direct_sum {n m : nat} (A : GLMat n) (B : GLMat m)
     : GLMat (n + m) :=
@@ -263,17 +317,15 @@ Definition GL_direct_sum {n m : nat} (A : GLMat n) (B : GLMat m)
     (GL_direct_sum_left_inv A B).
 
 (** Direct sum of two representations ρ₁ : G → GL(n) and ρ₂ : G → GL(m). *)
-Definition rep_direct_sum {G : Type} {sg : StrictGroup G} {n m : nat}
-    (ρ₁ : GroupRep sg n) (ρ₂ : GroupRep sg m)
-    : GroupRep sg (n + m).
-Proof. Admitted.
+Parameter rep_direct_sum : forall {G : Type} {sg : StrictGroup G} {n m : nat}
+    (ρ₁ : GroupRep sg n) (ρ₂ : GroupRep sg m),
+    GroupRep sg (n + m).
 
 (** χ_{ρ₁⊕ρ₂}(g) = χ_{ρ₁}(g) + χ_{ρ₂}(g). *)
-Lemma char_direct_sum : forall {G : Type} (sg : StrictGroup G)
+Conjecture char_direct_sum : forall {G : Type} (sg : StrictGroup G)
     {n m : nat} (ρ₁ : GroupRep sg n) (ρ₂ : GroupRep sg m) (g : G),
   character (rep_direct_sum ρ₁ ρ₂) g =
   Cadd (character ρ₁ g) (character ρ₂ g).
-Proof. Admitted.
 
 (* ------------------------------------------------------------------ *)
 (** * 5. Inner product of characters (finite groups)                    *)
@@ -346,7 +398,7 @@ Definition is_irreducible {G : Type} (sg : StrictGroup G) {n : nat}
   forall (m : nat) (ρ' : GroupRep sg m) (f : RepHom sg ρ' ρ),
     proj1_sig f = zero_mat n m \/ m = n.
 
-Lemma schurs_lemma : forall {G : Type} (sg : StrictGroup G)
+Conjecture schurs_lemma : forall {G : Type} (sg : StrictGroup G)
     {n m : nat} (ρ₁ : GroupRep sg n) (ρ₂ : GroupRep sg m),
   is_irreducible sg ρ₁ ->
   is_irreducible sg ρ₂ ->
@@ -354,4 +406,3 @@ Lemma schurs_lemma : forall {G : Type} (sg : StrictGroup G)
     proj1_sig f = zero_mat n m \/
     (n = m /\ exists (c : CComplex),
       proj1_sig f = List.map (List.map (Cmul c)) (mident n)).
-Proof. Admitted.

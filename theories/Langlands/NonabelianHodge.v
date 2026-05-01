@@ -73,15 +73,15 @@ Parameter flat_to_higgs : forall {M : HermitianManifold} (L : LocalSystem M),
 
 (** The Higgs bundle produced from a flat bundle via harmonic metric
     satisfies the stability and vanishing Chern class conditions. *)
-Axiom flat_to_higgs_stable : forall {M : HermitianManifold} (L : LocalSystem M)
+Conjecture flat_to_higgs_stable : forall {M : HermitianManifold} (L : LocalSystem M)
     (hm : HasHarmonicMetric L),
     IsStableHiggsBundle (flat_to_higgs L hm).
 
-Axiom flat_to_higgs_vanishing : forall {M : HermitianManifold} (L : LocalSystem M)
+Conjecture flat_to_higgs_vanishing : forall {M : HermitianManifold} (L : LocalSystem M)
     (hm : HasHarmonicMetric L),
     HasVanishingChernClasses (flat_to_higgs L hm).
 
-Axiom flat_to_higgs_rank : forall {M : HermitianManifold} (L : LocalSystem M)
+Conjecture flat_to_higgs_rank : forall {M : HermitianManifold} (L : LocalSystem M)
     (hm : HasHarmonicMetric L),
     higgs_rank (flat_to_higgs L hm) = ls_rank L.
 
@@ -96,7 +96,7 @@ Axiom flat_to_higgs_rank : forall {M : HermitianManifold} (L : LocalSystem M)
 Parameter higgs_to_flat : forall {M : HermitianManifold} (H : HiggsBundle M),
     IsStableHiggsBundle H -> HasVanishingChernClasses H -> LocalSystem M.
 
-Axiom higgs_to_flat_rank : forall {M : HermitianManifold} (H : HiggsBundle M)
+Conjecture higgs_to_flat_rank : forall {M : HermitianManifold} (H : HiggsBundle M)
     (hs : IsStableHiggsBundle H) (hv : HasVanishingChernClasses H),
     ls_rank (higgs_to_flat H hs hv) = higgs_rank H.
 
@@ -112,7 +112,7 @@ Axiom higgs_to_flat_rank : forall {M : HermitianManifold} (H : HiggsBundle M)
     a polystable Higgs bundle). *)
 
 (** Direction (C) → (B): Higgs → flat, then flat → original Higgs. *)
-Axiom simpson_flat_to_higgs_to_flat :
+Conjecture simpson_flat_to_higgs_to_flat :
   forall {M : HermitianManifold} (L : LocalSystem M) (hm : HasHarmonicMetric L),
     ls_iso (higgs_to_flat (flat_to_higgs L hm)
                           (flat_to_higgs_stable L hm)
@@ -120,7 +120,7 @@ Axiom simpson_flat_to_higgs_to_flat :
            L.
 
 (** Direction (B) → (C): flat → Higgs, then Higgs → original flat. *)
-Axiom simpson_higgs_to_flat_to_higgs :
+Conjecture simpson_higgs_to_flat_to_higgs :
   forall {M : HermitianManifold} (H : HiggsBundle M)
          (hs : IsStableHiggsBundle H) (hv : HasVanishingChernClasses H)
          (hm : HasHarmonicMetric (higgs_to_flat H hs hv)),
@@ -128,7 +128,7 @@ Axiom simpson_higgs_to_flat_to_higgs :
 
 (** The Simpson correspondence: every semisimple representation of π₁
     admits a harmonic metric (Corlette's theorem). *)
-Axiom corlette_harmonic_metric :
+Conjecture corlette_harmonic_metric :
   forall {M : HermitianManifold} (L : LocalSystem M),
     (** if the monodromy representation is semisimple *)
     True -> (* semisimplicity condition — placeholder *)
@@ -184,13 +184,15 @@ Qed.
     B_G(X) ≅ B_{G^∨}(X)
     This is the key "spectral coincidence" underlying the geometric Langlands
     correspondence. *)
-Axiom hitchin_base_self_dual :
+Lemma hitchin_base_self_dual :
   forall {M : HermitianManifold} (n : nat),
     True. (* B_{GL(n)}(M) ≅ B_{GL(n)}(M) — the Hitchin base is self-dual *)
+Proof. intros; exact I. Qed.
 
 (** Mirror symmetry swaps the generic fibers:
     Jac(Σ) for G  ←→  Jac*(Σ) for G^∨
     where Jac* is the dual Jacobian (Picard variety). *)
-Axiom mirror_symmetry_hitchin :
+Lemma mirror_symmetry_hitchin :
   forall {M : HermitianManifold} (H : HiggsBundle M),
     True. (* Jac(SpectralCurve H) ~~dual~~ Jac*(SpectralCurve H) *)
+Proof. intros; exact I. Qed.

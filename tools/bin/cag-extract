@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Entry point for cag-extract.
+# Prefers the native OCaml binary if built; falls back to the Python prototype.
+set -euo pipefail
+HERE="$(cd "$(dirname "$0")" && pwd)"
+TOOLS_ROOT="$(dirname "$HERE")"
+PROJECT_ROOT="$(dirname "$TOOLS_ROOT")"
+
+OCAML_BIN="$PROJECT_ROOT/_build/default/tools/ocaml/cag_extract/cag_extract.exe"
+if [ -x "$OCAML_BIN" ]; then
+  exec "$OCAML_BIN" "$@"
+fi
+
+# Fallback: Python prototype.
+exec env PYTHONPATH="$TOOLS_ROOT" python3 -m cag_extract.cli "$@"

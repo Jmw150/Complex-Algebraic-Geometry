@@ -77,20 +77,17 @@ Qed.
 
 (** Spectral projection at mode K approximates xs with error
     concentrated in the high-frequency components. *)
-Lemma spectral_proj_error (K_max : nat) (xs : list CComplex)
-    (hK : (K_max <= length xs)%nat) :
+Conjecture spectral_proj_error : forall (K_max : nat) (xs : list CComplex),
+    (K_max <= length xs)%nat ->
     let ys  := spectral_proj K_max xs in
     let neg1 := mkC (inject_Q (-1 # 1)) 0 in
     let err := List.map (fun '(x, y) => Cadd x (Cmul neg1 y))
                         (List.combine xs ys) in
-    (* The error is exactly the contribution from modes K_max..N-1. *)
     dft err =
     pad_to (length xs)
       (List.repeat C0 K_max ++
        List.firstn (length xs - K_max)%nat
          (List.skipn K_max (dft xs))).
-Proof.
-  Admitted.
   (* Sketch: By linearity of DFT and definition of spectral_proj,
      dft(xs - P_K(xs)) = dft(xs) - dft(P_K(xs)).
      dft(P_K(xs)) = low_pass N K_max (dft xs) by idft_dft_inv.
@@ -106,13 +103,11 @@ Qed.
 (** ** 3. Every circulant is an FNO *)
 
 (** Restate circulant_is_spectral in a more usable form. *)
-Theorem circulant_as_fno (c : list CComplex) (hN : length c <> 0%nat) :
+Conjecture circulant_as_fno : forall (c : list CComplex), length c <> 0%nat ->
     exists (p : FNOParams),
       p.(fno_layers) <> [] /\
       forall v, length v = length c ->
         fno_forward p v = circulant_op c v.
-Proof.
-  Admitted.
   (* Proof: circulant_is_spectral gives a layer lp representing the circulant.
      Wrap it in FNOParams with C1 lift/proj and identity nonlinearity.
      The forward pass reduces to spectral_conv lp v = circulant_op c v.
@@ -135,16 +130,14 @@ Definition apply_linear (M : list (list CComplex)) (v : list CComplex) : list CC
 (** Every N×N matrix is a linear combination of N circulant matrices.
     (This is the spectral/circulant decomposition: any matrix is a
     polynomial in the cyclic shift matrix.) *)
-Lemma matrix_is_circulant_sum (N : nat) (M : LinearMap N) :
-    exists (cs : list (list CComplex)),   (* at most N circulant generators *)
+Conjecture matrix_is_circulant_sum : forall (N : nat) (M : LinearMap N),
+    exists (cs : list (list CComplex)),
       (length cs <= N)%nat /\
       forall v, (length v = N)%nat ->
         apply_linear M v =
         List.fold_left (fun acc c => List.map (fun '(x, y) => Cadd x y)
                                               (List.combine acc (circulant_op c v)))
                        cs (List.repeat C0 N).
-Proof.
-  Admitted.
   (* Sketch: write M = Σ_k d_k · S^k where S is the cyclic shift and
      d_k is a diagonal matrix of eigenvalues.  Each S^k corresponds to
      the circulant with e_k as its first column.
@@ -157,13 +150,10 @@ Proof.
 
 (** For any tolerance ε > 0 and operator T : ℂ^N → ℂ^N, there exists
     an FNO p such that sup_{‖v‖=1} ‖T(v) - fno_forward p v‖ < ε. *)
-Theorem fno_dense_in_linear_ops (N : nat) (T : LinearMap N) :
-    (* In finite dimensions, exact representation is possible *)
+Conjecture fno_dense_in_linear_ops : forall (N : nat) (T : LinearMap N),
     exists (p : FNOParams),
       forall v, length v = N ->
         fno_forward p v = apply_linear T v.
-Proof.
-  Admitted.
   (* Proof outline:
      1. Decompose T = Σ c_i using matrix_is_circulant_sum.
      2. Each c_i can be represented as a spectral-conv layer (circulant_is_spectral).
@@ -203,19 +193,15 @@ Definition IsUniversalNonlin (σ : Nonlinearity) : Prop :=
         gives density in continuous functions.
     (3) The spectral truncation adds a controlled approximation error
         (see spectral_proj_error). *)
-Theorem fno_universal_approx (N M : nat) (σ : Nonlinearity)
+Conjecture fno_universal_approx : forall (N M : nat) (σ : Nonlinearity)
     (hσ : IsUniversalNonlin σ)
-    (F : ContOp N M)
-    (hF : forall v, length v = N -> length (F v) = M) :
-    (* For any ε and compact set (represented by a finite sample here): *)
-    forall (samples : list (list CComplex))
-           (hsamples : forall v, List.In v samples -> length v = N),
+    (F : ContOp N M),
+    (forall v, length v = N -> length (F v) = M) ->
+    forall (samples : list (list CComplex)),
+    (forall v, List.In v samples -> length v = N) ->
     exists (p : FNOParams),
-      (* The FNO matches F on all samples *)
       forall v, List.In v samples ->
         fno_forward p v = F v.
-Proof.
-  Admitted.
   (* The full analytic proof requires:
      (a) Extend fno_forward to handle different input/output dimensions N ≠ M
          via the lift/proj linear maps P and Q.
@@ -237,13 +223,11 @@ Definition tail_energy (K_max : nat) (xs : list CComplex) : CReal :=
   seq_energy (List.skipn K_max (dft xs)).
 
 (** Spectral projection error in terms of tail energy. *)
-Lemma spectral_approx_bound (K_max : nat) (xs : list CComplex)
-    (hK : (K_max <= length xs)%nat) :
+Conjecture spectral_approx_bound : forall (K_max : nat) (xs : list CComplex),
+    (K_max <= length xs)%nat ->
     norm_sq (List.map (fun '(x, y) => Cadd x (Cmul (mkC (inject_Q (-1 # 1)) 0) y))
                       (List.combine xs (spectral_proj K_max xs)))
     = inject_Q (1 # Pos.of_nat (length xs)) * tail_energy K_max xs.
-Proof.
-  Admitted.
   (* Proof: by Plancherel (plancherel in DFT.v),
      ‖xs - P_K(xs)‖² = (1/N) · ‖dft(xs - P_K(xs))‖²
                      = (1/N) · Σ_{k=K_max}^{N-1} |X_k|²

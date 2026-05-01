@@ -60,13 +60,12 @@ Parameter primitive_hodge_number : KahlerManifold -> nat -> nat -> nat.
 
 (** Hodge number is the sum of primitive Hodge numbers over Lefschetz orbits:
     h^{p,q} = Σ_{r >= 0} p^{p-r,q-r} *)
-Theorem hodge_number_from_primitive : forall (M : KahlerManifold) (p q : nat),
+Conjecture hodge_number_from_primitive : forall (M : KahlerManifold) (p q : nat),
     hodge_number M p q =
     List.fold_left Nat.add
       (List.map (fun r => primitive_hodge_number M (p-r)%nat (q-r)%nat)
                 (List.seq 0%nat (Nat.min p q + 1)%nat))
       0%nat.
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 3. Lefschetz decomposition                                       *)
@@ -113,8 +112,7 @@ Proof. intros; exact I. Qed.
 (* ================================================================== *)
 
 (** Dimension of primitive (p,q) from Hard Lefschetz and Hodge theory. *)
-Theorem primitive_dim_formula : forall (M : KahlerManifold) (p q : nat),
+Conjecture primitive_dim_formula : forall (M : KahlerManifold) (p q : nat),
     (p <= km_dim M)%nat -> (q <= km_dim M)%nat ->
     primitive_hodge_number M p q =
     Nat.sub (hodge_number M p q) (hodge_number M (p-1)%nat (q-1)%nat).
-Proof. admit. Admitted.

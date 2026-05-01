@@ -47,10 +47,8 @@ Open Scope cat_scope.
 
     where よ_{E'} is the Yoneda embedding and P(-∘I) is precomposition with I. *)
 
-Definition T_functor (Sg : Signature) :
+Parameter T_functor : forall (Sg : Signature),
     Functor (AxCl Sg) TypeCat.
-Proof.
-  Admitted.
 
 (** ** Full statement of the gluing setup
 
@@ -92,8 +90,7 @@ Record GluingData (Sg : Signature) : Type := {
 
 (** ** The gluing data exists (admitted — requires full development) *)
 
-Theorem gluing_data_exists : forall (Sg : Signature), GluingData Sg.
-Proof. admit. Admitted.
+Axiom gluing_data_exists : forall (Sg : Signature), GluingData Sg.
 
 (** ** Key corollary: I : E → E' is full and faithful
 
@@ -106,16 +103,12 @@ Proof. admit. Admitted.
 
     The formal proof requires the relative freeness of Cl(Th') and is admitted. *)
 
-Theorem I_is_full (Sg : Signature) :
-    forall (αs βs : list Sg.(sg_ty))
-           (g : AxCl Sg ⟦ I_obj αs, I_obj βs ⟧),
+Axiom I_is_full : forall (Sg : Signature)
+    (αs βs : list Sg.(sg_ty))
+    (g : AxCl Sg ⟦ I_obj αs, I_obj βs ⟧),
     exists f : Cl Sg ⟦ αs, βs ⟧, I_map αs βs f = g.
-Proof.
-  Admitted.
 
-Theorem I_is_faithful (Sg : Signature) :
-    forall (αs βs : list Sg.(sg_ty))
-           (f g : Cl Sg ⟦ αs, βs ⟧),
+Axiom I_is_faithful : forall (Sg : Signature)
+    (αs βs : list Sg.(sg_ty))
+    (f g : Cl Sg ⟦ αs, βs ⟧),
     I_map αs βs f = I_map αs βs g -> f = g.
-Proof.
-  Admitted.

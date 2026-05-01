@@ -68,7 +68,7 @@ Proof. intros; exact I. Qed.
 (* ================================================================== *)
 
 (** For k >> 0: H¹(M̃, O(π*L^k - 2E)) = 0 by Kodaira vanishing. *)
-Theorem h1_vanishes_single_blowup_twice : forall (M : KahlerManifold)
+Conjecture h1_vanishes_single_blowup_twice : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (x : Cn (km_dim M)),
     positive_line_bundle M L ->
     exists k0 : nat,
@@ -82,7 +82,6 @@ Theorem h1_vanishes_single_blowup_twice : forall (M : KahlerManifold)
                         (neg_exceptional_line_bundle M x))
                     0 1,
     α = HDolb_zero (blowup M x) _ 0 1.
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 4. Commutativity of restriction and differential                  *)

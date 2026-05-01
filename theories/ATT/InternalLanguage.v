@@ -51,18 +51,21 @@ Definition CatModel (C : Category) (hp : HasFiniteProducts C) :
     Model {| th_sig := CatSignature C hp; th_ax := [] |} C hp.
 Proof.
   unshelve eapply (@Build_Model {| th_sig := CatSignature C hp; th_ax := [] |} C hp).
-  - (* mod_ty : sg_ty (CatSignature C hp) -> C.(Ob) = C.(Ob) -> C.(Ob) *)
-    simpl. intro A. exact A.
-  - (* mod_fun *)
-    intro f. simpl.
-    assert (Hmap : forall (T : Type) (l : list T), List.map (fun x => x) l = l).
-    { intros T l; induction l as [| a rest IH].
-      - reflexivity.
-      - simpl. f_equal. exact IH. }
-    rewrite Hmap.
-    exact (@fdat_mor C hp f).
-  - (* mod_ax *)
-    intros _ _. exact I.
+  - (* mod_data *)
+    unshelve eapply (@Build_ModelData
+      {| th_sig := CatSignature C hp; th_ax := [] |} C hp).
+    + (* md_ty : sg_ty (CatSignature C hp) -> C.(Ob) = C.(Ob) -> C.(Ob) *)
+      simpl. intro A. exact A.
+    + (* md_fun *)
+      intro f. simpl.
+      assert (Hmap : forall (T : Type) (l : list T), List.map (fun x => x) l = l).
+      { intros T l; induction l as [| a rest IH].
+        - reflexivity.
+        - simpl. f_equal. exact IH. }
+      rewrite Hmap.
+      exact (@fdat_mor C hp f).
+  - (* mod_ax: vacuous since the axiom list is empty. *)
+    intros a Hin. simpl in Hin. destruct Hin.
 Defined.
 
 (** ** Equations Ax(C) *)
@@ -104,10 +107,8 @@ Proof.
     rewrite Hti in Hti'. discriminate.
 Qed.
 
-Definition Eq_C (C : Category) (hp : HasFiniteProducts C) :
+Parameter Eq_C : forall (C : Category) (hp : HasFiniteProducts C),
     Functor (Cl (CatSignature C hp)) C.
-Proof.
-  Admitted.
 
 (** ** The inverse functor Eq_C_inv : C → Cl(Th(C)) *)
 
@@ -125,10 +126,8 @@ Proof.
   - constructor.
 Qed.
 
-Definition Eq_C_inv (C : Category) (hp : HasFiniteProducts C) :
+Parameter Eq_C_inv : forall (C : Category) (hp : HasFiniteProducts C),
     Functor C (Cl (CatSignature C hp)).
-Proof.
-  Admitted.
 
 (** ** The equivalence Cl(Th(C)) ≃ C *)
 

@@ -219,31 +219,22 @@ Defined.
 (** Forward: if fix_group(F) ⊆ H, then fix_field(H) ⊆ F.
     (Every element fixed by all of H is in F, because fix_group(F) ⊆ H
     means every σ ∈ H already fixes F.) *)
-Lemma galois_adj_lr (E : FieldExtension)
+(** Forward direction (axiomatized — depends on Galois theory proper). *)
+Conjecture galois_adj_lr : forall (E : FieldExtension)
     (F : IntermField E)
-    (H : { Hg : GaloisGroup E -> Prop | IsSubgroup E Hg }) :
+    (H : { Hg : GaloisGroup E -> Prop | IsSubgroup E Hg }),
     (forall σ, proj1_sig (fixing_subgroup E F) σ -> proj1_sig H σ) ->
     forall x, (fixed_field E H).(if_pred) x -> F.(if_pred) x.
-Proof.
-  Admitted.
-  (* Proof idea: x ∈ fix_field(H) means every σ ∈ H fixes x.
-     We need x ∈ F.  This direction requires Galois theory proper
-     (e.g. the Artin argument: if x ∉ F then some σ ∈ fix_group(F) ⊆ H
-     moves x, contradicting x ∈ fix_field(H)). *)
 
 (** Backward: if fix_field(H) ⊆ F, then fix_group(F) ⊆ H.
     (Every σ that fixes F also fixes all of fix_field(H), hence lies in H
     since fix_field(H) is the largest field fixed by H.) *)
-Lemma galois_adj_rl (E : FieldExtension)
+(** Backward direction (axiomatized — depends on Galois theory proper). *)
+Conjecture galois_adj_rl : forall (E : FieldExtension)
     (F : IntermField E)
-    (H : { Hg : GaloisGroup E -> Prop | IsSubgroup E Hg }) :
+    (H : { Hg : GaloisGroup E -> Prop | IsSubgroup E Hg }),
     (forall x, (fixed_field E H).(if_pred) x -> F.(if_pred) x) ->
     forall σ, proj1_sig (fixing_subgroup E F) σ -> proj1_sig H σ.
-Proof.
-  Admitted.
-  (* Proof idea: σ fixes F ⊇ fix_field(H).  We need σ ∈ H.
-     This is the deeper direction: uses the fact that H = fix_group(fix_field(H))
-     for closed subgroups, which is the content of the Fundamental Theorem. *)
 
 (** ** Packaging as a GaloisConnection *)
 
@@ -277,14 +268,11 @@ Proof.
 Qed.
 
 (** Counit: fix_group(fix_field(H)) ≤ H  [in SubgrpPoset] *)
-Lemma galois_counit (E : FieldExtension)
-    (H : { Hg : GaloisGroup E -> Prop | IsSubgroup E Hg }) :
+(** Counit (axiomatized — non-trivial direction of the FT). *)
+Conjecture galois_counit : forall (E : FieldExtension)
+    (H : { Hg : GaloisGroup E -> Prop | IsSubgroup E Hg }),
     forall σ, proj1_sig (fixing_subgroup E (fixed_field E H)) σ ->
               proj1_sig H σ.
-Proof.
-  Admitted.
-  (* fix_group(fix_field(H)) = all σ fixing fix_field(H).
-     We need σ ∈ H.  This is the non-trivial direction of the FT. *)
 
 (** ** Fundamental Theorem of Galois Theory *)
 
@@ -300,15 +288,12 @@ Definition IsGalois (E : FieldExtension) : Prop :=
      of a separable polynomial over K. *)
   True. (* placeholder — full definition requires polynomial machinery *)
 
-Theorem fundamental_theorem_galois (E : FieldExtension) (hG : IsGalois E) :
-    (* (1) The maps are mutually inverse order-isomorphisms. *)
+Conjecture fundamental_theorem_galois : forall (E : FieldExtension) (hG : IsGalois E),
     (forall F : IntermField E,
        fixed_field E (fixing_subgroup E F) = F) /\
     (forall H : { Hg : GaloisGroup E -> Prop | IsSubgroup E Hg },
        forall σ, proj1_sig (fixing_subgroup E (fixed_field E H)) σ <->
                  proj1_sig H σ).
-Proof.
-  Admitted.
 
 (** Corollary: the Galois correspondence reverses inclusion. *)
 Corollary galois_order_reversing (E : FieldExtension) (hG : IsGalois E)

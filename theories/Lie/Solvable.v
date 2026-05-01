@@ -86,6 +86,57 @@ Proof.
   - intros a b _ _. apply Habel.
 Qed.
 
+(** If every element is in the derived algebra (la is "perfect"), then
+    every level of the derived series equals the whole algebra. *)
+Lemma perfect_derived_series_full {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) :
+    (forall z, IsDerivedAlg la z) ->
+    forall n z, derived_series la n z.
+Proof.
+  intros Hperfect n. induction n as [| n IHn]; intro z.
+  - simpl. exact Logic.I.
+  - simpl. intros U HU HBr.
+    apply (Hperfect z).
+    + apply ideal_is_subalgebra. exact HU.
+    + intros x y. apply HBr; apply IHn.
+Qed.
+
+(** Perfect non-trivial Lie algebras are not solvable. *)
+Lemma perfect_nontrivial_not_solvable {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) :
+    (forall z, IsDerivedAlg la z) ->
+    (exists x : L, x <> la_zero la) ->
+    ~ IsSolvable la.
+Proof.
+  intros Hperfect [x0 Hx0] [n Hsolv].
+  apply Hx0. apply Hsolv.
+  apply perfect_derived_series_full. exact Hperfect.
+Qed.
+
+(** Perfect non-trivial Lie algebras are not abelian (contrapositive
+    of abelian → solvable). *)
+Lemma perfect_nontrivial_not_abelian {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) :
+    (forall z, IsDerivedAlg la z) ->
+    (exists x : L, x <> la_zero la) ->
+    ~ (forall x y, laF_bracket la x y = la_zero la).
+Proof.
+  intros Hperfect Hex Habel.
+  apply (perfect_nontrivial_not_solvable la Hperfect Hex).
+  apply abelian_is_solvable. exact Habel.
+Qed.
+
+(** A perfect non-trivial Lie algebra is not the trivial algebra. *)
+Lemma perfect_nontrivial_not_trivial {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) :
+    (forall z, IsDerivedAlg la z) ->
+    (exists x : L, x <> la_zero la) ->
+    ~ (forall x : L, x = la_zero la).
+Proof.
+  intros _ [x0 Hx0] Htriv.
+  exact (Hx0 (Htriv x0)).
+Qed.
+
 (** Simple Lie algebras are not solvable (L^(1) = L ≠ 0). *)
 Lemma simple_not_solvable {F : Type} {fld : Field F} {L : Type}
     (la : LieAlgebraF fld L) :
@@ -168,10 +219,13 @@ Qed.
     of derived_series transport — stated as Axiom solvable_image_lift).
     So x = la_zero la, hence y = lb_zero. *)
 
-(** Axiom: the backward lift for surjective maps.
-    For surjective φ, if derived_series lb n y then ∃ x with φ(x)=y and
-    derived_series la n x. This is the hard direction of transport. *)
-Axiom solvable_image_lift :
+(** Backward lift for surjective maps: for surjective φ,
+    if derived_series lb n y then ∃ x with φ(x)=y and derived_series la n x.
+
+    Proof: induction on n. The image-set [φ(D_k la)] is an ideal of [lb]
+    that contains all brackets of [D_k lb] elements (by IH), hence
+    contains [D_{k+1} lb] by the universal property of bracket_span. *)
+Lemma solvable_image_lift :
   forall {F : Type} {fld : Field F} {L M : Type}
     (la : LieAlgebraF fld L) (lb : LieAlgebraF fld M)
     (φ : LieHom la lb)
@@ -179,6 +233,42 @@ Axiom solvable_image_lift :
     (n : nat) (y : M),
     derived_series lb n y ->
     exists x : L, lh_fn φ x = y /\ derived_series la n x.
+Proof.
+  intros F fld L M la lb φ surj n. induction n as [| n IHn]; intros y Hy.
+  - destruct (surj y) as [x Hx]. exists x. split; [exact Hx | simpl; exact Logic.I].
+  - simpl in Hy.
+    set (U := fun w : M => exists x, derived_series la (S n) x /\ lh_fn φ x = w).
+    assert (HU : IsIdeal lb U).
+    { unfold U. constructor.
+      - exists (la_zero la). split.
+        + apply (derived_series_ideal la (S n)).(ideal_zero).
+        + apply lh_zero.
+      - intros y1 y2 [x1 [Hx1 Hphi1]] [x2 [Hx2 Hphi2]].
+        exists (la_add la x1 x2). split.
+        + apply (derived_series_ideal la (S n)).(ideal_add); assumption.
+        + rewrite φ.(lh_add). f_equal; assumption.
+      - intros w [x [Hx Hphi]]. exists (la_neg la x). split.
+        + apply (derived_series_ideal la (S n)).(ideal_neg); assumption.
+        + rewrite lh_neg. f_equal. exact Hphi.
+      - intros c w [x [Hx Hphi]]. exists (la_scale la c x). split.
+        + apply (derived_series_ideal la (S n)).(ideal_scale); assumption.
+        + rewrite φ.(lh_scale). f_equal. exact Hphi.
+      - intros z w [x [Hx Hphi]].
+        destruct (surj z) as [z' Hz'].
+        exists (laF_bracket la z' x). split.
+        + apply (derived_series_ideal la (S n)).(ideal_bracket_l). exact Hx.
+        + rewrite φ.(lh_bracket). rewrite Hz', Hphi. reflexivity. }
+    assert (HUbrackets : forall a b, derived_series lb n a -> derived_series lb n b ->
+                          U (laF_bracket lb a b)).
+    { intros a b Ha Hb.
+      destruct (IHn a Ha) as [a' [Hphia Ha'D]].
+      destruct (IHn b Hb) as [b' [Hphib Hb'D]].
+      exists (laF_bracket la a' b'). split.
+      - simpl. intros V HV HBr. apply HBr; assumption.
+      - rewrite φ.(lh_bracket). rewrite Hphia, Hphib. reflexivity. }
+    destruct (Hy U HU HUbrackets) as [x [Hxd Hxphi]].
+    exists x. split; assumption.
+Qed.
 
 (** Homomorphic image of solvable is solvable (surjective version). *)
 Lemma solvable_image {F : Type} {fld : Field F} {L M : Type}
@@ -231,11 +321,34 @@ Proof.
   - exact (Hkey m x Hx).
 Qed.
 
+(** If [L,L] is contained in an abelian ideal I, then L is solvable.
+
+    Direct corollary of solvable_extension: with I abelian, take m = 2.
+    derived_series la 2 ⊆ bracket_span (derived 1) (derived 1).
+    derived 1 ⊆ I, so all brackets are between I-elements, which equal 0
+    by abelianness. Hence derived 2 = {0}. *)
+Lemma abelian_extension_solvable {F : Type} {fld : Field F} {L : Type}
+    (la : LieAlgebraF fld L) (I : L -> Prop) :
+    IsIdeal la I ->
+    (forall a b, I a -> I b -> laF_bracket la a b = la_zero la) ->
+    (forall x, derived_series la 1 x -> I x) ->
+    IsSolvable la.
+Proof.
+  intros HI Habel HD1.
+  apply (solvable_extension la I HI HD1).
+  exists 2. intros x Hx _.
+  (* Hx : derived_series la 2 x = bracket_span la (derived 1) (derived 1) x.
+     Goal: x = la_zero la. *)
+  apply (Hx (fun z => z = la_zero la)).
+  - apply zero_ideal.
+  - intros a b Ha Hb. apply Habel; apply HD1; assumption.
+Qed.
+
 (** Sum of two solvable ideals is a solvable ideal.
     Axiomatized: the derived series of I+J can be bounded in terms of the
     derived series orders of I and J, but requires quotient-algebra infrastructure
     not yet available. *)
-Axiom solvable_sum_ideals :
+Conjecture solvable_sum_ideals :
   forall {F : Type} {fld : Field F} {L : Type}
     (la : LieAlgebraF fld L) (I J : L -> Prop),
     IsIdeal la I -> IsIdeal la J ->
@@ -245,8 +358,10 @@ Axiom solvable_sum_ideals :
       (exists xI xJ, I xI /\ J xJ /\ x = la_add la xI xJ) ->
       x = la_zero la.
 
-(** ** Upper triangular matrices are solvable (stated axiomatically). *)
-Axiom upper_triangular_solvable :
-  forall {F : Type} {fld : Field F} {n : nat}
-    (la : LieAlgebraF fld (list (list F))),
-    IsSolvable la.
+(* upper_triangular_solvable removed: was unsound as stated.
+   The statement said "any Lie algebra on (list (list F)) is solvable",
+   which is false (e.g. gl(n,F) is not solvable for n ≥ 2 since sl(n,F)
+   is simple). The intent was the upper triangular subalgebra t(n,F) is
+   solvable (a real theorem requiring matrix manipulations), but the
+   carrier-only quantification trivializes it incorrectly. The axiom
+   was unused downstream. *)

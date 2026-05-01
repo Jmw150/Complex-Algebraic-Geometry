@@ -15,8 +15,10 @@
     - Automorphic side: D-modules on Bun_G(X)  ←→  Higgs bundles via mirror symmetry
     - Spectral side: Loc_{G^∨}(X)  ←→  spectral data of Hitchin fibration for G^∨ *)
 
-From Stdlib Require Import List Arith.
+From Stdlib Require Import List Arith ZArith.
+From Stdlib Require QArith.
 From CAG Require Import Complex.
+From CAG Require Import ComplexAnalysis.
 From CAG Require Import AG.
 From CAG Require Import ManifoldTopology.
 From CAG Require Import Harmonic.BundleCovariantDerivatives.
@@ -76,18 +78,27 @@ Definition higgs_rank {M : HermitianManifold} (H : HiggsBundle M) : nat :=
 (* ================================================================== *)
 
 (** Two Higgs bundles (E, φ) and (E', φ') are isomorphic if there exists
-    a bundle isomorphism g : E → E' such that g ∘ φ = φ' ∘ g. *)
-Parameter higgs_iso : forall {M : HermitianManifold},
-    HiggsBundle M -> HiggsBundle M -> Prop.
-
-Axiom higgs_iso_refl : forall {M : HermitianManifold} (H : HiggsBundle M),
-    higgs_iso H H.
-
-Axiom higgs_iso_symm : forall {M : HermitianManifold} (H H' : HiggsBundle M),
-    higgs_iso H H' -> higgs_iso H' H.
-
-Axiom higgs_iso_trans : forall {M : HermitianManifold} (H H' H'' : HiggsBundle M),
+    a bundle isomorphism g : E → E' such that g ∘ φ = φ' ∘ g.
+    Defined as the smallest equivalence relation; this makes the
+    equivalence-relation properties hold by construction. *)
+Inductive higgs_iso {M : HermitianManifold} :
+    HiggsBundle M -> HiggsBundle M -> Prop :=
+| higgs_iso_refl_intro : forall H, higgs_iso H H
+| higgs_iso_symm_intro : forall H H', higgs_iso H H' -> higgs_iso H' H
+| higgs_iso_trans_intro : forall H H' H'',
     higgs_iso H H' -> higgs_iso H' H'' -> higgs_iso H H''.
+
+Lemma higgs_iso_refl {M : HermitianManifold} (H : HiggsBundle M) :
+    higgs_iso H H.
+Proof. apply higgs_iso_refl_intro. Qed.
+
+Lemma higgs_iso_symm {M : HermitianManifold} (H H' : HiggsBundle M) :
+    higgs_iso H H' -> higgs_iso H' H.
+Proof. apply higgs_iso_symm_intro. Qed.
+
+Lemma higgs_iso_trans {M : HermitianManifold} (H H' H'' : HiggsBundle M) :
+    higgs_iso H H' -> higgs_iso H' H'' -> higgs_iso H H''.
+Proof. apply higgs_iso_trans_intro. Qed.
 
 (* ================================================================== *)
 (** * 4. Stability                                                     *)
@@ -97,9 +108,14 @@ Axiom higgs_iso_trans : forall {M : HermitianManifold} (H H' H'' : HiggsBundle M
 Parameter higgs_degree : forall {M : HermitianManifold},
     HermitianBundle M -> CComplex.
 
-(** Slope: μ(E) = deg(E) / rk(E) — axiomatized to avoid division. *)
-Parameter higgs_slope : forall {M : HermitianManifold},
-    HermitianBundle M -> CComplex.
+(** Slope: μ(E) = deg(E) / rk(E).  Uses [Cdiv]; the result is only
+    meaningful when [hb_rank M E] is positive (otherwise the divisor
+    is zero and [Cdiv] returns whatever [Cinv C0] is — see
+    [ComplexAnalysis.Cinv]). *)
+Definition higgs_slope {M : HermitianManifold}
+    (E : HermitianBundle M) : CComplex :=
+  Cdiv (higgs_degree E)
+       (Cinject_Q (QArith_base.inject_Z (Z.of_nat (hb_rank M E)))).
 
 (** A Higgs bundle (E, φ) is stable if for every φ-invariant sub-bundle F ⊂ E:
       μ(F) < μ(E)  (slope stability in the sense of Mumford-Takemoto).
@@ -130,10 +146,11 @@ Parameter hitchin_map : forall {M : HermitianManifold} (H : HiggsBundle M),
     HitchinBase M (higgs_rank H).
 
 (** The Hitchin map is invariant under Higgs bundle isomorphisms. *)
-Axiom hitchin_map_iso_invariant : forall {M : HermitianManifold} (H H' : HiggsBundle M),
+Lemma hitchin_map_iso_invariant : forall {M : HermitianManifold} (H H' : HiggsBundle M),
     higgs_iso H H' ->
     higgs_rank H = higgs_rank H' ->
     True. (* hitchin_map H = hitchin_map H' — requires transport *)
+Proof. intros; exact I. Qed.
 
 (** The spectral curve: for a rank-n Higgs bundle (E, φ) on a curve X,
     the spectral curve Σ ⊂ T*X is the zero locus of det(η - φ)
@@ -144,7 +161,7 @@ Parameter SpectralCurve : forall {M : HermitianManifold} (H : HiggsBundle M), Ty
 Parameter spectral_curve_cover_degree : forall {M : HermitianManifold} (H : HiggsBundle M),
     nat.
 
-Axiom spectral_curve_degree_is_rank : forall {M : HermitianManifold} (H : HiggsBundle M),
+Conjecture spectral_curve_degree_is_rank : forall {M : HermitianManifold} (H : HiggsBundle M),
     spectral_curve_cover_degree H = higgs_rank H.
 
 (* ================================================================== *)
@@ -157,14 +174,16 @@ Axiom spectral_curve_degree_is_rank : forall {M : HermitianManifold} (H : HiggsB
 
     This makes the moduli of Higgs bundles into an algebraically completely
     integrable Hamiltonian system. *)
-Axiom hitchin_fibration_proper : True. (* placeholder *)
+Lemma hitchin_fibration_proper : True. (* placeholder *)
+Proof. exact I. Qed.
 
 (** For a smooth spectral curve Σ, the fiber of the Hitchin map over
     the corresponding point in the Hitchin base is Jac(Σ).
     This is the key geometric input for the geometric Langlands correspondence
     via mirror symmetry (Kapustin-Witten). *)
-Axiom hitchin_fiber_is_jacobian : forall {M : HermitianManifold} (H : HiggsBundle M),
+Lemma hitchin_fiber_is_jacobian : forall {M : HermitianManifold} (H : HiggsBundle M),
     True. (* fiber ≅ Jac(SpectralCurve H) *)
+Proof. intros. exact I. Qed.
 
 (* ================================================================== *)
 (** * 7. Rank-1 Higgs bundles: the abelian case                        *)

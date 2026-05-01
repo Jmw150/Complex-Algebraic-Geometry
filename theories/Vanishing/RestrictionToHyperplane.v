@@ -38,7 +38,7 @@ Notation HDolb_twist M L p q := (HDolb M L p q).
 (** The restriction of Ω^p_M to V: the bundle Ω^p_M|_V on V. *)
 Parameter restriction_forms : forall (M : KahlerManifold)
     (V : smooth_hyperplane_section M) (p : nat),
-    HolLineBundleCech (km_manifold (shs_manifold M V)).
+    HolLineBundleCech (km_manifold (shs_manifold V)).
 
 (* ================================================================== *)
 (** * 2. First exact sequence (star)                                      *)
@@ -71,7 +71,7 @@ Parameter les_star_map : forall (M : KahlerManifold)
 (** Ω^{p-1}_V(-V) = Ω^{p-1}_V ⊗ [-V]|_V on V. *)
 Parameter forms_V_twisted : forall (M : KahlerManifold)
     (V : smooth_hyperplane_section M) (p : nat),
-    HolLineBundleCech (km_manifold (shs_manifold M V)).
+    HolLineBundleCech (km_manifold (shs_manifold V)).
 
 (** Exact sequence: 0 → Ω^{p-1}_V(-V) → Ω^p_M|_V → Ω^p_V → 0.
     Derived from the normal bundle sequence
@@ -87,26 +87,23 @@ Proof. intros; exact I. Qed.
 (* ================================================================== *)
 
 (** [-V] is negative on M (V is a positive divisor / hyperplane section). *)
-Theorem neg_V_is_negative : forall (M : KahlerManifold)
+Conjecture neg_V_is_negative : forall (M : KahlerManifold)
     (V : smooth_hyperplane_section M),
     negative_line_bundle M (forms_twisted_neg M V 0).
-Proof. admit. Admitted.
 
 (** By Kodaira vanishing: H^q(M, Ω^p_M(-V)) = 0 for p+q < n. *)
-Theorem kodaira_forms_twisted_vanish : forall (M : KahlerManifold)
+Conjecture kodaira_forms_twisted_vanish : forall (M : KahlerManifold)
     (V : smooth_hyperplane_section M) (p q : nat),
     (p + q < km_dim M)%nat ->
     forall α : HDolb M (forms_twisted_neg M V p) p q,
     α = HDolb_zero M _ p q.
-Proof. admit. Admitted.
 
 (** By Kodaira vanishing: H^q(V, Ω^{p-1}_V(-V)) = 0 for p+q < n-1. *)
-Theorem kodaira_V_forms_twisted_vanish : forall (M : KahlerManifold)
+Conjecture kodaira_V_forms_twisted_vanish : forall (M : KahlerManifold)
     (V : smooth_hyperplane_section M) (p q : nat),
     (p + q < km_dim M - 1)%nat ->
-    forall α : HDolb (shs_manifold M V) (forms_V_twisted M V p) (p-1) q,
-    α = HDolb_zero (shs_manifold M V) _ _ _.
-Proof. admit. Admitted.
+    forall α : HDolb (shs_manifold V) (forms_V_twisted M V p) (p-1) q,
+    α = HDolb_zero (shs_manifold V) _ _ _.
 
 (* ================================================================== *)
 (** * 5. Main theorem: restriction isomorphism                         *)
@@ -116,7 +113,7 @@ Proof. admit. Admitted.
 Parameter restriction_dolbeault : forall (M : KahlerManifold)
     (V : smooth_hyperplane_section M) (p q : nat),
     HDolb M (forms_twisted_neg M V 0) p q ->
-    HDolb (shs_manifold M V) (forms_V_twisted M V 0) p q.
+    HDolb (shs_manifold V) (forms_V_twisted M V 0) p q.
 
 (** Main theorem: H^q(M, Ω^p_M) → H^q(V, Ω^p_V) is iso for p+q < n-2. *)
 Theorem restriction_dolbeault_iso : forall (M : KahlerManifold)
@@ -127,13 +124,12 @@ Theorem restriction_dolbeault_iso : forall (M : KahlerManifold)
 Proof. intros; exact I. Qed.
 
 (** Main theorem: H^q(M, Ω^p_M) → H^q(V, Ω^p_V) is injective for p+q = n-1. *)
-Theorem restriction_dolbeault_injective : forall (M : KahlerManifold)
+Conjecture restriction_dolbeault_injective : forall (M : KahlerManifold)
     (V : smooth_hyperplane_section M) (p q : nat),
     (p + q = km_dim M - 1)%nat ->
     forall α : HDolb M (forms_twisted_neg M V 0) p q,
     restriction_dolbeault M V p q α = HDolb_zero _ _ _ _ ->
     α = HDolb_zero M _ p q.
-Proof. admit. Admitted.
 
 (** Packaged theorem. *)
 Definition restriction_on_holomorphic_form_cohomology_for_positive_hyperplane_section

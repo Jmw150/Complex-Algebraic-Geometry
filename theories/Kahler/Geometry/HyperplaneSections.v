@@ -54,10 +54,9 @@ Parameter hyperplane_class : forall (M : KahlerManifold) (N : nat)
     HdR M 2.
 
 (** [ω] = [V] under Poincaré duality / c1(O(1)) relationship. *)
-Theorem kahler_eq_hyperplane_class : forall (M : KahlerManifold) (N : nat)
+Conjecture kahler_eq_hyperplane_class : forall (M : KahlerManifold) (N : nat)
     (iota : ProjectiveEmbedding M N),
     kahler_class M = hyperplane_class M N iota.
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 3. Homological Hard Lefschetz                                    *)

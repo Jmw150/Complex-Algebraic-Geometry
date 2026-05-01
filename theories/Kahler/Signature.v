@@ -70,23 +70,17 @@ Proof. intros; exact I. Qed.
     I(M) = h^{0,0} - h^{1,0} + h^{2,0} - h^{1,1} + h^{0,2} + h^{2,2}
          ... simplified using Hodge symmetries. *)
 
-(** Index formula via Hodge numbers. *)
-Theorem index_formula : forall (M : KahlerManifold),
-    (** 2 | km_dim M  (Kähler manifold with even complex dimension) *)
-    True ->
-    signature M =
-    (** Σ_p,q (-1)^p h^{p,q} for p+q = km_dim M *)
-    0%Z. (* placeholder *)
-Proof. admit. Admitted.
+(* index_formula axiom removed: was unsound (asserted signature M = 0 for
+   all Kähler M). Not used downstream. The actual theorem (index_formula_surface)
+   is below. *)
 
 (** For the surface case with km_dim M = 2:
     I(M) = 2·h^{2,0} + 2·h^{0,2} - h^{1,1} + 1 + 1 = 2h^{2,0} - h^{1,1} + 2
     using h^{0,0} = h^{2,2} = 1. *)
-Theorem index_formula_surface : forall (M : KahlerManifold),
+Conjecture index_formula_surface : forall (M : KahlerManifold),
     is_kahler_surface M ->
     signature M = (2 * Z.of_nat (hodge_number M 2 0)
                    - Z.of_nat (hodge_number M 1 1) + 2)%Z.
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 4. Surface signature theorem                                     *)
@@ -115,8 +109,7 @@ Qed.
 
 (** CP^2 has h^{0,0} = h^{1,1} = h^{2,2} = 1, all others 0.
     So I(CP^2) = 1 - 1 + 1 = 1. *)
-Theorem signature_CP2 : signature {| km_manifold := CPn_manifold 2;
-                                   km_compact  := I;
-                                   km_dim      := 2;
-                                   km_dim_eq   := eq_refl |} = 1%Z.
-Proof. admit. Admitted.
+Conjecture signature_CP2 : signature {| km_manifold := CPn_manifold 2;
+                                  km_compact  := I;
+                                  km_dim      := 2;
+                                  km_dim_eq   := eq_refl |} = 1%Z.

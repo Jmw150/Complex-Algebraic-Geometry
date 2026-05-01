@@ -94,7 +94,7 @@ Theorem pullback_curvature_positive : forall (M : KahlerManifold)
 Proof. intros; exact I. Qed.
 
 (** Combining π*L and [-E]: for k >> 0, π*L^k ⊗ [-E]^n is positive. *)
-Theorem positivity_of_pullback_minus_exceptional_divisor :
+Conjecture positivity_of_pullback_minus_exceptional_divisor :
     forall (M : KahlerManifold) (x : Cn (km_dim M))
     (L : HolLineBundleCech (km_manifold M)) (n_copies : nat),
     positive_line_bundle M L ->
@@ -105,4 +105,3 @@ Theorem positivity_of_pullback_minus_exceptional_divisor :
         (blowup_tensor M x
             (lb_power (blowup M x) (pullback_lb M x L) k)
             (lb_power (blowup M x) (neg_exceptional_line_bundle M x) n_copies)).
-Proof. admit. Admitted.

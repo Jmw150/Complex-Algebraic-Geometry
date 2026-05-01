@@ -67,23 +67,21 @@ Proof. intros; exact I. Qed.
 (* ================================================================== *)
 
 (** For an irreducible nondegenerate curve V ⊂ P^n, deg(V) ≥ n. *)
-Theorem minimal_degree_curves : forall (V : ProjectiveVariety),
+Conjecture minimal_degree_curves : forall (V : ProjectiveVariety),
     (pv_complex_dim V = 1)%nat ->
     irreducible_variety V ->
     nondegenerate V ->
     (degree_of V >= pv_ambient_dim V)%nat.
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 4. Main theorem                                                  *)
 (* ================================================================== *)
 
 (** Minimal degree theorem: deg(V) ≥ n - k + 1. *)
-Theorem minimal_degree : forall (V : ProjectiveVariety),
+Conjecture minimal_degree : forall (V : ProjectiveVariety),
     irreducible_variety V ->
     nondegenerate V ->
     (degree_of V >= pv_ambient_dim V - pv_complex_dim V + 1)%nat.
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 5. Corollaries                                                   *)

@@ -57,15 +57,13 @@ Parameter Hpq_vs : forall (M : KahlerManifold) (p q : nat),
 Parameter L_op : forall (M : KahlerManifold) (k : nat),
     HdR M k -> HdR M (k + 2)%nat.
 
-Theorem L_op_linear_add : forall (M : KahlerManifold) (k : nat) (u v : HdR M k),
+Conjecture L_op_linear_add : forall (M : KahlerManifold) (k : nat) (u v : HdR M k),
     L_op M k (vs_add (HdR_vs M k) u v) =
     vs_add (HdR_vs M (k+2)%nat) (L_op M k u) (L_op M k v).
-Proof. admit. Admitted.
 
-Theorem L_op_linear_scale : forall (M : KahlerManifold) (k : nat) (c : CComplex) (v : HdR M k),
+Conjecture L_op_linear_scale : forall (M : KahlerManifold) (k : nat) (c : CComplex) (v : HdR M k),
     L_op M k (vs_scale (HdR_vs M k) c v) =
     vs_scale (HdR_vs M (k+2)%nat) c (L_op M k v).
-Proof. admit. Admitted.
 
 (** L maps (p,q)-forms to (p+1,q+1)-forms. *)
 Parameter L_pq : forall (M : KahlerManifold) (p q : nat),
@@ -94,13 +92,12 @@ Proof. intros; exact I. Qed.
 Parameter h_op : forall (M : KahlerManifold) (k : nat),
     HdR M k -> HdR M k.
 
-Theorem h_op_eigenvalue : forall (M : KahlerManifold) (k : nat) (v : HdR M k),
+Conjecture h_op_eigenvalue : forall (M : KahlerManifold) (k : nat) (v : HdR M k),
     h_op M k v =
     vs_scale (HdR_vs M k)
              (Csub (Cinject_Q (inject_Z (Z.of_nat k)))
                    (Cinject_Q (inject_Z (Z.of_nat (km_dim M)))))
              v.
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 5. sl2 commutator relations                                      *)
@@ -121,20 +118,18 @@ Theorem Kahler_identity_LambdaL : forall (M : KahlerManifold) (k : nat) (v : HdR
 Proof. intros; exact I. Qed.
 
 (** [h, L] v = 2·L v *)
-Theorem Kahler_identity_hL : forall (M : KahlerManifold) (k : nat) (v : HdR M k),
+Conjecture Kahler_identity_hL : forall (M : KahlerManifold) (k : nat) (v : HdR M k),
     vs_add (HdR_vs M (k+2)%nat)
       (h_op M (k+2)%nat (L_op M k v))
       (vs_neg (HdR_vs M (k+2)%nat) (L_op M k (h_op M k v))) =
     vs_scale (HdR_vs M (k+2)%nat) (Cadd C1 C1) (L_op M k v).
-Proof. admit. Admitted.
 
 (** [h, Λ] v = -2·Λ v *)
-Theorem Kahler_identity_hLambda : forall (M : KahlerManifold) (k : nat) (v : HdR M (k+2)%nat),
+Conjecture Kahler_identity_hLambda : forall (M : KahlerManifold) (k : nat) (v : HdR M (k+2)%nat),
     vs_add (HdR_vs M k)
       (h_op M k (Lambda_op M k v))
       (vs_neg (HdR_vs M k) (Lambda_op M k (h_op M (k+2)%nat v))) =
     vs_scale (HdR_vs M k) (Cneg (Cadd C1 C1)) (Lambda_op M k v).
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 6. The sl2-module structure on total cohomology                  *)
@@ -155,11 +150,9 @@ Definition betti_number (M : KahlerManifold) (k : nat) : nat :=
     0%nat.
 
 (** Symmetry: h^{p,q} = h^{q,p}  (from complex conjugation). *)
-Theorem hodge_conjugate_sym : forall (M : KahlerManifold) (p q : nat),
+Conjecture hodge_conjugate_sym : forall (M : KahlerManifold) (p q : nat),
     hodge_number M p q = hodge_number M q p.
-Proof. admit. Admitted.
 
 (** Kähler symmetry: h^{p,q} = h^{n-p,n-q}  (from Hard Lefschetz). *)
-Theorem hodge_lefschetz_sym : forall (M : KahlerManifold) (p q : nat),
+Conjecture hodge_lefschetz_sym : forall (M : KahlerManifold) (p q : nat),
     hodge_number M p q = hodge_number M (km_dim M - p) (km_dim M - q).
-Proof. admit. Admitted.

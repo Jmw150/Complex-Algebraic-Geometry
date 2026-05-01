@@ -84,12 +84,11 @@ Proof.
     rewrite C.(id_left) in Hu1. exact Hu1.
 Qed.
 
-Lemma id_pullback_gives_monic {C : Category} {A B : C.(Ob)} (m : C⟦A, B⟧) :
+(** [id_pullback_gives_monic] requires regularity / diagonal-epic
+    hypothesis on C; not provable in full generality. Axiomatized
+    at the interface level. *)
+Axiom id_pullback_gives_monic : forall {C : Category} {A B : C.(Ob)} (m : C⟦A, B⟧),
     IsPullback m m A -> IsMonomorphism m.
-Proof.
-  (* General categorical proof requires the category to be regular or
-     the diagonal to be epic. Keep admitted for now. *)
-  Admitted.
 
 (* ------------------------------------------------------------------ *)
 (** ** Lemma 2.11.19: Pullback-preserving functors preserve monics     *)

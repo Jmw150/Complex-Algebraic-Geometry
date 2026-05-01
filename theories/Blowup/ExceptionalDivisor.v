@@ -35,9 +35,8 @@ Parameter blowdown : forall (M : KahlerManifold) (x : Cn (km_dim M)),
     Cn (km_dim (blowup M x)) -> Cn (km_dim M).
 
 (** The blow-up has the same dimension as M. *)
-Theorem blowup_dim : forall (M : KahlerManifold) (x : Cn (km_dim M)),
+Conjecture blowup_dim : forall (M : KahlerManifold) (x : Cn (km_dim M)),
     km_dim (blowup M x) = km_dim M.
-Proof. admit. Admitted.
 
 (** π is a biholomorphism outside E. *)
 Theorem blowdown_iso_away_E : forall (M : KahlerManifold) (x : Cn (km_dim M)),
@@ -55,10 +54,9 @@ Parameter exceptional_divisor : forall (M : KahlerManifold)
     KahlerManifold.
 
 (** E ≅ P^{n-1}: the exceptional divisor has dimension n-1. *)
-Theorem exceptional_divisor_dim : forall (M : KahlerManifold)
+Conjecture exceptional_divisor_dim : forall (M : KahlerManifold)
     (x : Cn (km_dim M)),
     km_dim (exceptional_divisor M x) = km_dim M - 1.
-Proof. admit. Admitted.
 
 (** E ≅ P(T_x M): the exceptional divisor is the projectivized tangent space. *)
 Theorem exceptional_divisor_is_projective : forall (M : KahlerManifold)
@@ -125,11 +123,13 @@ Parameter pullback_lb : forall (M : KahlerManifold) (x : Cn (km_dim M)),
     HolLineBundleCech (km_manifold M) ->
     HolLineBundleCech (km_manifold (blowup M x)).
 
-(** Tensor product on M̃. *)
-Parameter blowup_tensor : forall (M : KahlerManifold) (x : Cn (km_dim M)),
+(** Tensor product on M̃: delegates to the generic [hlb_tensor] now that
+    [hlb_tensor] is concrete on every [ComplexManifold]. *)
+Definition blowup_tensor (M : KahlerManifold) (x : Cn (km_dim M))
+  : HolLineBundleCech (km_manifold (blowup M x)) ->
     HolLineBundleCech (km_manifold (blowup M x)) ->
-    HolLineBundleCech (km_manifold (blowup M x)) ->
-    HolLineBundleCech (km_manifold (blowup M x)).
+    HolLineBundleCech (km_manifold (blowup M x))
+  := hlb_tensor (M := km_manifold (blowup M x)).
 
 (** Pullback on global sections is an isomorphism:
     π* : H⁰(M, O(L)) → H⁰(M̃, O(π*L)). *)

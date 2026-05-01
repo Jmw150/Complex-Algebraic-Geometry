@@ -261,7 +261,32 @@ Proof.
 Definition circulant_op (c v : list CComplex) : list CComplex :=
   cyclic_conv c v.
 
-(** Every circulant is representable as a full-mode spectral conv. *)
+(** Helper: [length (dft xs) = length xs].  Pure list lemma. *)
+Lemma dft_length (xs : list CComplex) : length (dft xs) = length xs.
+Proof.
+  unfold dft. rewrite List.length_map, List.length_seq. reflexivity.
+Qed.
+
+(** Concrete witness: an [FNOLayerParams] encoding the circulant
+    operator with first column [c].  The spectral weights are the DFT
+    of [c] (per the convolution theorem), [K_max = length c] keeps all
+    modes, the skip connection is zero, and the nonlinearity is the
+    identity. *)
+Definition build_circulant_layer (c : list CComplex) : FNOLayerParams :=
+  {| fno_K_max     := length c
+   ; fno_weights   := dft c
+   ; fno_skip      := C0
+   ; fno_nonlin    := fun z => z
+   ; fno_weights_len := dft_length c
+  |}.
+
+(** Every circulant is representable as a full-mode spectral conv.
+
+    Proof reduces to [convolution_theorem] (DFT.v axiom — itself
+    DEEP-INFRA but available) and [idft_dft_inv] (DFT.v axiom).  We
+    supply the existential witness via [build_circulant_layer], which
+    flips the closure from existential-axiom to constructive existence
+    modulo the DFT axioms. *)
 Theorem circulant_is_spectral (c : list CComplex) :
     exists (p : FNOLayerParams),
       p.(fno_K_max) = length c /\
@@ -269,6 +294,30 @@ Theorem circulant_is_spectral (c : list CComplex) :
       forall v, length v = length c ->
         spectral_conv p v = circulant_op c v.
 Proof.
-  Admitted.
-  (* Proof: set p.(fno_weights) = DFT(c), then K[v] = IDFT(DFT(c) · DFT(v))
-     = IDFT(DFT(c ⊛ v)) = c ⊛ v  by the convolution theorem. *)
+  exists (build_circulant_layer c).
+  split; [reflexivity|]. split; [reflexivity|].
+  intros v Hv.
+  unfold spectral_conv, circulant_op, build_circulant_layer; simpl.
+  (* [fno_K_max = length c]; with [length v = length c], the
+     truncation [truncate_modes (length c) (dft v)] keeps all modes. *)
+  assert (Hdft_v : length (dft v) = length c).
+  { rewrite dft_length. exact Hv. }
+  unfold truncate_modes.
+  assert (Htrunc : List.firstn (length c) (dft v) = dft v).
+  { apply List.firstn_all2. rewrite Hdft_v. lia. }
+  rewrite Htrunc.
+  unfold apply_weights.
+  (* pad_to (length v) (pointwise_mul (dft c) (dft v)) = pointwise_mul ... since
+     its length is already (length v). *)
+  assert (Hpwm_len : length (pointwise_mul (dft c) (dft v)) = length v).
+  { unfold pointwise_mul. rewrite List.length_map.
+    rewrite List.length_combine, dft_length, dft_length, Hv.
+    apply PeanoNat.Nat.min_id. }
+  unfold pad_to.
+  rewrite Hpwm_len, PeanoNat.Nat.sub_diag.
+  simpl List.repeat. rewrite List.app_nil_r.
+  (* Goal: idft (pointwise_mul (dft c) (dft v)) = cyclic_conv c v *)
+  rewrite <- (convolution_theorem c v (eq_sym Hv)).
+  (* Goal: idft (dft (cyclic_conv c v)) = cyclic_conv c v *)
+  apply idft_dft_inv.
+Qed.

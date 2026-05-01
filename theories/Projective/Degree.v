@@ -37,17 +37,15 @@ Parameter linear_subspace_class : forall (n k : nat),
 (** The degree of V: [V] = deg(V) · [P^k] in H_{2k}(P^n, Z). *)
 Parameter degree_of : ProjectiveVariety -> nat.
 
-Theorem pv_dim_le_ambient : forall (V : ProjectiveVariety),
+Conjecture pv_dim_le_ambient : forall (V : ProjectiveVariety),
     (pv_complex_dim V <= pv_ambient_dim V)%nat.
-Proof. admit. Admitted.
 
-Theorem fundamental_class_multiple : forall (V : ProjectiveVariety),
+Conjecture fundamental_class_multiple : forall (V : ProjectiveVariety),
     fundamental_class V =
     vs_scale (HdR_vs (CPn_kahler (pv_ambient_dim V)) (2 * pv_complex_dim V))
              (Cinject_Q (QArith_base.inject_Z (Z.of_nat (degree_of V))))
              (linear_subspace_class (pv_ambient_dim V) (pv_complex_dim V)
                (pv_dim_le_ambient V)).
-Proof. admit. Admitted.
 
 (* ================================================================== *)
 (** * 2. Degree via generic linear sections                            *)
@@ -99,9 +97,8 @@ Definition hypersurface_variety (n d : nat) (F : HomogPoly n d) : ProjectiveVari
    |}.
 
 (** Degree of a hypersurface = degree of its defining polynomial. *)
-Theorem degree_hypersurface : forall (n d : nat) (F : HomogPoly n d),
+Conjecture degree_hypersurface : forall (n d : nat) (F : HomogPoly n d),
     degree_of (hypersurface_variety n d F) = d.
-Proof. admit. Admitted.
 
 (** Equivalence of all degree definitions. *)
 Theorem equivalent_definitions_of_degree : forall (V : ProjectiveVariety),
@@ -115,9 +112,8 @@ Proof. intros; exact I. Qed.
 (* ================================================================== *)
 
 (** Degree is always positive for irreducible varieties. *)
-Theorem degree_positive : forall (V : ProjectiveVariety),
+Conjecture degree_positive : forall (V : ProjectiveVariety),
     (0 < degree_of V)%nat.
-Proof. admit. Admitted.
 
 (** A linear subspace P^k ⊂ P^n has degree 1. *)
 Theorem degree_linear_subspace : forall (n k : nat) (H : (k <= n)%nat),
