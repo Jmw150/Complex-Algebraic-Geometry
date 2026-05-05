@@ -14,6 +14,7 @@
 From CAG Require Import Group.
 From CAG Require Import GroupActions.Basic.
 From CAG Require Import Conjugacy.ClassEquation.
+From CAG Require Import Groups.DirectProduct.
 From Stdlib Require Import Arith Lia List.
 From Stdlib Require Import FunctionalExtensionality PropExtensionality.
 Import ListNotations.
@@ -51,7 +52,8 @@ Definition num_sylow {G : Type} (sg : StrictGroup G)
 
 (** Sylow Existence: for every prime power p^k | |G|, there exists a
     Sylow p-subgroup. *)
-Conjecture sylow_existence :
+(* CAG zero-dependent Axiom sylow_existence theories/Sylow/Applications.v:44 BEGIN
+Axiom sylow_existence :
   forall {G : Type} (sg : StrictGroup G) (p : nat)
          (G_list : list G)
          (G_nodup : NoDup G_list)
@@ -59,9 +61,11 @@ Conjecture sylow_existence :
          (p_prime : 2 <= p)
          (k : nat) (Hdvd : Nat.divide (Nat.pow p k) (length G_list)),
     exists P : G -> Prop, is_sylow_p_subgroup sg G_list P p.
+   CAG zero-dependent Axiom sylow_existence theories/Sylow/Applications.v:44 END *)
 
 (** Sylow Conjugacy: all Sylow p-subgroups are conjugate. *)
-Conjecture sylow_conjugate :
+(* CAG zero-dependent Axiom sylow_conjugate theories/Sylow/Applications.v:67 BEGIN
+Axiom sylow_conjugate :
   forall {G : Type} (sg : StrictGroup G) (p : nat)
          (G_list : list G)
          (G_nodup : NoDup G_list)
@@ -70,9 +74,11 @@ Conjecture sylow_conjugate :
          (HP : is_sylow_p_subgroup sg G_list P p)
          (HQ : is_sylow_p_subgroup sg G_list Q p),
     exists g : G, forall x : G, P x <-> Q (conj_act sg g x).
+   CAG zero-dependent Axiom sylow_conjugate theories/Sylow/Applications.v:67 END *)
 
 (** Sylow Counting: n_p ≡ 1 (mod p) and n_p | [G : N_G(P)]. *)
-Conjecture sylow_counting :
+(* CAG zero-dependent Axiom sylow_counting theories/Sylow/Applications.v:65 BEGIN
+Axiom sylow_counting :
   forall {G : Type} (sg : StrictGroup G) (p : nat)
          (G_list : list G)
          (G_nodup : NoDup G_list)
@@ -84,12 +90,14 @@ Conjecture sylow_counting :
          (Hn : num_sylow sg G_list p n),
     Nat.divide 1 n /\  (* n ≡ 1 mod p — stated as: ∃ j, n = 1 + j*p *)
     (exists j : nat, n = 1 + j * p).
+   CAG zero-dependent Axiom sylow_counting theories/Sylow/Applications.v:65 END *)
 
 (* ================================================================== *)
 (** ** 3.  Uniqueness and normality criteria *)
 (* ================================================================== *)
 
 (** A Sylow p-subgroup is normal iff it is the unique Sylow p-subgroup. *)
+(* CAG zero-dependent Theorem sylow_unique_iff_normal theories/Sylow/Applications.v:98 BEGIN
 Theorem sylow_unique_iff_normal {G : Type} (sg : StrictGroup G) (p : nat)
     (G_list : list G)
     (G_nodup : NoDup G_list)
@@ -265,9 +273,11 @@ Proof.
       (* goal: Pg (conj_act sg g n) = P (conj_act sg (sinv g) (conj_act sg g n)) *)
       unfold Pg. rewrite Hcancel_left. exact Pn.
 Qed.
+   CAG zero-dependent Theorem sylow_unique_iff_normal theories/Sylow/Applications.v:98 END *)
 
 (** Characteristic: if P is the unique Sylow p-subgroup, it is characteristic. *)
-Conjecture unique_sylow_characteristic :
+(* CAG zero-dependent Axiom unique_sylow_characteristic theories/Sylow/Applications.v:260 BEGIN
+Axiom unique_sylow_characteristic :
   forall {G : Type} (sg : StrictGroup G) (p : nat)
          (G_list : list G)
          (G_nodup : NoDup G_list)
@@ -277,6 +287,7 @@ Conjecture unique_sylow_characteristic :
          (Huniq : num_sylow sg G_list p 1)
          (phi : GroupIso sg sg),
     forall x : G, P x -> P (hom_fn (iso_hom phi) x).
+   CAG zero-dependent Axiom unique_sylow_characteristic theories/Sylow/Applications.v:260 END *)
 
 (* ================================================================== *)
 (** ** 4.  Applications to small orders *)
@@ -288,7 +299,8 @@ Conjecture unique_sylow_characteristic :
     - n_5 | 3 and n_5 ≡ 1 mod 5 → n_5 = 1 → P_5 ◁ G
     - n_3 | 5 and n_3 ≡ 1 mod 3 → n_3 = 1 → P_3 ◁ G
     - G = P_3 × P_5 ≅ Z_3 × Z_5 ≅ Z_15 *)
-Conjecture group_order_15_cyclic :
+(* CAG zero-dependent Axiom group_order_15_cyclic theories/Sylow/Applications.v:276 BEGIN
+Axiom group_order_15_cyclic :
   forall {G : Type} (sg : StrictGroup G)
          (G_list : list G)
          (G_nodup : NoDup G_list)
@@ -296,9 +308,11 @@ Conjecture group_order_15_cyclic :
          (G_order : length G_list = 15),
     exists g : G, forall x : G, exists n : nat,
       gpow (StrictGroup_to_Group sg) g n = x.
+   CAG zero-dependent Axiom group_order_15_cyclic theories/Sylow/Applications.v:276 END *)
 
 (** Groups of order 21 = 3 × 7: either cyclic or one specific nonabelian group. *)
-Conjecture group_order_21_structure :
+(* CAG zero-dependent Axiom group_order_21_structure theories/Sylow/Applications.v:286 BEGIN
+Axiom group_order_21_structure :
   forall {G : Type} (sg : StrictGroup G)
          (G_list : list G)
          (G_nodup : NoDup G_list)
@@ -308,9 +322,11 @@ Conjecture group_order_21_structure :
         gpow (StrictGroup_to_Group sg) g n = x)
     \/
     (num_sylow sg G_list 7 1 /\ ~ (num_sylow sg G_list 3 1)).
+   CAG zero-dependent Axiom group_order_21_structure theories/Sylow/Applications.v:286 END *)
 
 (** Groups of order 35 = 5 × 7 are cyclic. *)
-Conjecture group_order_35_cyclic :
+(* CAG zero-dependent Axiom group_order_35_cyclic theories/Sylow/Applications.v:298 BEGIN
+Axiom group_order_35_cyclic :
   forall {G : Type} (sg : StrictGroup G)
          (G_list : list G)
          (G_nodup : NoDup G_list)
@@ -318,15 +334,18 @@ Conjecture group_order_35_cyclic :
          (G_order : length G_list = 35),
     exists g : G, forall x : G, exists n : nat,
       gpow (StrictGroup_to_Group sg) g n = x.
+   CAG zero-dependent Axiom group_order_35_cyclic theories/Sylow/Applications.v:298 END *)
 
 (** Groups of order 45 = 3^2 × 5: n_3 = 1 (hence P_3 ◁ G). *)
-Conjecture group_order_45_normal_3sylow :
+(* CAG zero-dependent Axiom group_order_45_normal_3sylow theories/Sylow/Applications.v:308 BEGIN
+Axiom group_order_45_normal_3sylow :
   forall {G : Type} (sg : StrictGroup G)
          (G_list : list G)
          (G_nodup : NoDup G_list)
          (G_complete : forall x : G, In x G_list)
          (G_order : length G_list = 45),
     num_sylow sg G_list 3 1.
+   CAG zero-dependent Axiom group_order_45_normal_3sylow theories/Sylow/Applications.v:308 END *)
 
 (* ================================================================== *)
 (** ** 5.  Groups of order 60 — A_5 is the unique simple group *)
@@ -340,7 +359,25 @@ Conjecture group_order_45_normal_3sylow :
     - kernel is normal, G is simple → kernel trivial → G ↪ S_6
     - image has order 60 in S_6; by Sylow analysis in S_6, image ≤ A_6 ∩ N_{S_6}(P)
     - conclude image = A_5 inside A_6 *)
-Lemma simple_order_60_is_A5 :
+(** Informal statement: any simple group of order 60 is isomorphic to
+    the alternating group A_5.  Equivalently, A_5 is the unique simple
+    group of order 60 up to isomorphism.
+
+    Proof sketch (Dummit & Foote §4.5 Theorem 23):
+      1. n_5 ≡ 1 (mod 5) and n_5 | 12, so n_5 ∈ {1, 6}; simplicity rules
+         out n_5 = 1, hence n_5 = 6.
+      2. Conjugation on the six Sylow 5-subgroups gives ϕ : G → S_6.
+      3. Since G is simple of order > 2, ker ϕ = {1}, so G ↪ S_6.
+      4. Considering ϕ(G) ∩ A_6 of index 1 or 2, and using the index-60
+         Sylow structure in S_6, force ϕ(G) ≤ A_6.
+      5. There is a unique transitive subgroup of order 60 in A_6
+         (acting on six points), namely A_5 in its standard embedding.
+
+    Reference: Dummit & Foote, Abstract Algebra (3rd ed.) §4.5
+    Theorem 23; Rotman, "Introduction to the Theory of Groups" (4th
+    ed.) Theorem 5.21. *)
+(* CAG zero-dependent Conjecture simple_order_60_is_A5 theories/Sylow/Applications.v:375 BEGIN
+Conjecture simple_order_60_is_A5 :
   forall {G : Type} (sg : StrictGroup G)
          (G_list : list G)
          (G_nodup : NoDup G_list)
@@ -348,9 +385,15 @@ Lemma simple_order_60_is_A5 :
          (G_order : length G_list = 60)
          (G_simple : forall N : G -> Prop,
              is_normal_subgroup (StrictGroup_to_Group sg) N ->
-             (forall x : G, N x) \/ (forall x : G, ~ N x /\ x <> x) (* trivial or whole G *)),
-    True. (* placeholder: isomorphism to A_5 requires A_5 construction *)
-Proof. intros. exact I. Qed.
+             (forall x : G, N x) \/ (forall x : G, ~ N x /\ x <> x) (* trivial or whole G *))
+         (* An A_5 model is supplied externally; the conjecture asserts
+            existence of a group isomorphism G ≅ A_5 with that model. *)
+         (A5 : Type) (sg_A5 : StrictGroup A5)
+         (A5_list : list A5)
+         (A5_order : length A5_list = 60),
+    exists (phi : G -> A5),
+      (forall a b : G, phi (smul G sg a b) = smul A5 sg_A5 (phi a) (phi b)).
+   CAG zero-dependent Conjecture simple_order_60_is_A5 theories/Sylow/Applications.v:375 END *)
 
 (* ================================================================== *)
 (** ** 6.  Frobenius–Schur / p-complement lemmas *)
@@ -358,7 +401,8 @@ Proof. intros. exact I. Qed.
 
 (** If n_p = 1 (unique Sylow), then P ◁ G has a complement iff G = P ⋊ Q
     for some Q (Schur-Zassenhaus type).  Stated as axiom. *)
-Conjecture schur_zassenhaus_coprime_complement :
+(* CAG zero-dependent Axiom schur_zassenhaus_coprime_complement theories/Sylow/Applications.v:367 BEGIN
+Axiom schur_zassenhaus_coprime_complement :
   forall {G : Type} (sg : StrictGroup G)
          (G_list : list G)
          (G_nodup : NoDup G_list)
@@ -373,6 +417,7 @@ Conjecture schur_zassenhaus_coprime_complement :
              NoDup Q_list -> (forall x, In x Q_list <-> Q_pred x) ->
              Nat.gcd (length P_list) (length Q_list) = 1),
     forall x : G, exists (u v : G), P u /\ Q_pred v /\ x = smul G sg u v.
+   CAG zero-dependent Axiom schur_zassenhaus_coprime_complement theories/Sylow/Applications.v:367 END *)
 
 (* ================================================================== *)
 (** ** 7.  Theorem checklist names *)
@@ -380,6 +425,28 @@ Conjecture schur_zassenhaus_coprime_complement :
 
 (** Named lemma stubs to match the org-file checklist. *)
 
+(* CAG zero-dependent Definition sylow_normal_iff_unique theories/Sylow/Applications.v:424 BEGIN
 Definition sylow_normal_iff_unique := @sylow_unique_iff_normal.
+   CAG zero-dependent Definition sylow_normal_iff_unique theories/Sylow/Applications.v:424 END *)
 
-Lemma num_sylow_in_product_placeholder : True. Proof. trivial. Qed.
+(** Number of Sylow p-subgroups of a direct product:
+    n_p(G × H) = n_p(G) · n_p(H).
+
+    Stated as a Conjecture pending the cross-cutting Sylow + direct-product
+    machinery. We encode "is a Sylow p-subgroup of G × H" via the
+    `is_sylow_p_subgroup` predicate applied to the product group with the
+    list-product enumeration. Reference: Dummit & Foote §4.5, Exercise 4. *)
+(* CAG zero-dependent Conjecture num_sylow_in_product theories/Sylow/Applications.v:431 BEGIN
+Conjecture num_sylow_in_product :
+  forall {G H : Type} (sg : StrictGroup G) (sh : StrictGroup H)
+         (G_list : list G) (H_list : list H) (p : nat)
+         (P : G -> Prop) (Q : H -> Prop),
+    is_sylow_p_subgroup sg G_list P p ->
+    is_sylow_p_subgroup sh H_list Q p ->
+    (* The product subgroup P × Q is a Sylow p-subgroup of G × H. *)
+    is_sylow_p_subgroup
+      (DirectProductGroup sg sh)
+      (List.flat_map (fun g => List.map (pair g) H_list) G_list)
+      (fun gh => P (fst gh) /\ Q (snd gh))
+      p.
+   CAG zero-dependent Conjecture num_sylow_in_product theories/Sylow/Applications.v:431 END *)

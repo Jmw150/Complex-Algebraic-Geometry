@@ -64,17 +64,25 @@ Local Open Scope CReal_scope.
 
 (** Mirrors [LieAlgebra.v]'s [Cadd_C0_l_lem].  Re-introduced locally
     so this file stays self-contained. *)
+(* CAG zero-dependent Lemma Cadd_C0_l_lem_int theories/Calc/Integration.v:67 BEGIN
 Local Lemma Cadd_C0_l_lem_int : forall a : CComplex, Cadd C0 a = a.
 Proof. intros. apply CComplex_eq, Cadd_C0_l_req. Qed.
+   CAG zero-dependent Lemma Cadd_C0_l_lem_int theories/Calc/Integration.v:67 END *)
 
+(* CAG zero-dependent Lemma Cadd_C0_r_lem_int theories/Calc/Integration.v:70 BEGIN
 Local Lemma Cadd_C0_r_lem_int : forall a : CComplex, Cadd a C0 = a.
 Proof. intros. apply CComplex_eq, Cadd_C0_r_req. Qed.
+   CAG zero-dependent Lemma Cadd_C0_r_lem_int theories/Calc/Integration.v:70 END *)
 
+(* CAG zero-dependent Lemma Cmul_C0_l_lem_int theories/Calc/Integration.v:73 BEGIN
 Local Lemma Cmul_C0_l_lem_int : forall a : CComplex, Cmul C0 a = C0.
 Proof. intros. apply CComplex_eq, Cmul_C0_l. Qed.
+   CAG zero-dependent Lemma Cmul_C0_l_lem_int theories/Calc/Integration.v:73 END *)
 
+(* CAG zero-dependent Lemma Cmul_C0_r_lem_int theories/Calc/Integration.v:76 BEGIN
 Local Lemma Cmul_C0_r_lem_int : forall a : CComplex, Cmul a C0 = C0.
 Proof. intros. apply CComplex_eq, Cmul_C0_r_req. Qed.
+   CAG zero-dependent Lemma Cmul_C0_r_lem_int theories/Calc/Integration.v:76 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 2. 1-D real-parameter sampling                                    *)
@@ -130,6 +138,7 @@ Definition riemann_sum_1d (f : Cn 1 -> CComplex) (N : nat) : CComplex :=
 (** When [f] is identically [C0], every increment [Cmul C0 h = C0],
     so the accumulator is unchanged at every step.  Hence the
     auxiliary returns its initial accumulator. *)
+(* CAG zero-dependent Lemma riemann_sum_1d_aux_zero_acc theories/Calc/Integration.v:133 BEGIN
 Lemma riemann_sum_1d_aux_zero_acc :
   forall (N k : nat) (acc : CComplex),
     riemann_sum_1d_aux (fun _ => C0) N k acc = acc.
@@ -140,19 +149,23 @@ Proof.
     rewrite Cadd_C0_r_lem_int.
     apply IH.
 Qed.
+   CAG zero-dependent Lemma riemann_sum_1d_aux_zero_acc theories/Calc/Integration.v:133 END *)
 
 (** Riemann sum of the zero function is [C0]. *)
+(* CAG zero-dependent Lemma riemann_sum_1d_zero theories/Calc/Integration.v:145 BEGIN
 Lemma riemann_sum_1d_zero :
   forall N, riemann_sum_1d (fun _ => C0) N = C0.
 Proof.
   intro N. unfold riemann_sum_1d.
   apply riemann_sum_1d_aux_zero_acc.
 Qed.
+   CAG zero-dependent Lemma riemann_sum_1d_zero theories/Calc/Integration.v:145 END *)
 
 (** The auxiliary is "accumulator-additive": running with
     accumulator [Cadd a b] gives the same as
     [Cadd a (running with accumulator b)] — provided we have
     associativity of [Cadd] and the right unit.  Stated cleanly: *)
+(* CAG zero-dependent Lemma riemann_sum_1d_aux_add_acc theories/Calc/Integration.v:156 BEGIN
 Lemma riemann_sum_1d_aux_add_acc :
   forall (f : Cn 1 -> CComplex) (N k : nat) (a b : CComplex),
     riemann_sum_1d_aux f N k (Cadd a b) =
@@ -166,10 +179,12 @@ Proof.
     apply CComplex_eq. unfold CComplex_req, Cadd; simpl.
     split; symmetry; rewrite <- CReal_plus_assoc; reflexivity.
 Qed.
+   CAG zero-dependent Lemma riemann_sum_1d_aux_add_acc theories/Calc/Integration.v:156 END *)
 
 (** Specializing the additivity to [a := the previous running sum,
     b := C0]: shifting an accumulator out is equivalent to running
     once and then adding. *)
+(* CAG zero-dependent Lemma riemann_sum_1d_aux_zero_init_eq theories/Calc/Integration.v:173 BEGIN
 Lemma riemann_sum_1d_aux_zero_init_eq :
   forall (f : Cn 1 -> CComplex) (N k : nat) (acc : CComplex),
     riemann_sum_1d_aux f N k acc =
@@ -179,6 +194,7 @@ Proof.
   rewrite <- (Cadd_C0_r_lem_int acc) at 1.
   apply riemann_sum_1d_aux_add_acc.
 Qed.
+   CAG zero-dependent Lemma riemann_sum_1d_aux_zero_init_eq theories/Calc/Integration.v:173 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 5. Linearity of the Riemann sum                                   *)
@@ -192,6 +208,7 @@ Qed.
 
 (** Riemann sum is additive in the integrand pointwise.  We prove the
     auxiliary form first. *)
+(* CAG zero-dependent Lemma riemann_sum_1d_aux_add_fn theories/Calc/Integration.v:195 BEGIN
 Lemma riemann_sum_1d_aux_add_fn :
   forall (f g : Cn 1 -> CComplex) (N k : nat) (af ag : CComplex),
     riemann_sum_1d_aux (fun v => Cadd (f v) (g v)) N k (Cadd af ag) =
@@ -223,8 +240,10 @@ Proof.
     rewrite Hreorg.
     apply IH.
 Qed.
+   CAG zero-dependent Lemma riemann_sum_1d_aux_add_fn theories/Calc/Integration.v:195 END *)
 
 (** Top-level additivity. *)
+(* CAG zero-dependent Lemma riemann_sum_1d_add theories/Calc/Integration.v:228 BEGIN
 Lemma riemann_sum_1d_add :
   forall (f g : Cn 1 -> CComplex) (N : nat),
     riemann_sum_1d (fun v => Cadd (f v) (g v)) N =
@@ -234,6 +253,7 @@ Proof.
   rewrite <- (Cadd_C0_r_lem_int C0) at 1.
   apply riemann_sum_1d_aux_add_fn.
 Qed.
+   CAG zero-dependent Lemma riemann_sum_1d_add theories/Calc/Integration.v:228 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 6. Scalar multiplication                                          *)
@@ -241,6 +261,7 @@ Qed.
 
 (** Riemann sum is multiplicative in a constant scalar (left
     multiplication). *)
+(* CAG zero-dependent Lemma riemann_sum_1d_aux_scale theories/Calc/Integration.v:244 BEGIN
 Lemma riemann_sum_1d_aux_scale :
   forall (c : CComplex) (f : Cn 1 -> CComplex) (N k : nat) (acc : CComplex),
     riemann_sum_1d_aux (fun v => Cmul c (f v)) N k (Cmul c acc) =
@@ -265,7 +286,9 @@ Proof.
     rewrite Hdist.
     apply IH.
 Qed.
+   CAG zero-dependent Lemma riemann_sum_1d_aux_scale theories/Calc/Integration.v:244 END *)
 
+(* CAG zero-dependent Lemma riemann_sum_1d_scale theories/Calc/Integration.v:269 BEGIN
 Lemma riemann_sum_1d_scale :
   forall (c : CComplex) (f : Cn 1 -> CComplex) (N : nat),
     riemann_sum_1d (fun v => Cmul c (f v)) N =
@@ -275,6 +298,7 @@ Proof.
   rewrite <- (Cmul_C0_r_lem_int c) at 1.
   apply riemann_sum_1d_aux_scale.
 Qed.
+   CAG zero-dependent Lemma riemann_sum_1d_scale theories/Calc/Integration.v:269 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 7. Riemann integral of a (p,q)-form on Cn 1                       *)
@@ -290,6 +314,7 @@ Definition integrate_pqf_1d_riemann
   riemann_sum_1d (fun v => pqf_coeff alpha v) N.
 
 (** Integrating the zero (p,q)-form returns [C0]. *)
+(* CAG zero-dependent Lemma integrate_pqf_1d_riemann_zero theories/Calc/Integration.v:293 BEGIN
 Lemma integrate_pqf_1d_riemann_zero :
   forall (p q N : nat),
     integrate_pqf_1d_riemann (pqf_zero 1 p q) N = C0.
@@ -313,8 +338,10 @@ Proof.
   rewrite Hfn.
   apply riemann_sum_1d_zero.
 Qed.
+   CAG zero-dependent Lemma integrate_pqf_1d_riemann_zero theories/Calc/Integration.v:293 END *)
 
 (** Additivity of the 1-D form integral. *)
+(* CAG zero-dependent Lemma integrate_pqf_1d_riemann_add theories/Calc/Integration.v:318 BEGIN
 Lemma integrate_pqf_1d_riemann_add :
   forall (p q : nat) (alpha beta : PQForm 1 p q) (N : nat),
     integrate_pqf_1d_riemann (pqf_add alpha beta) N =
@@ -340,8 +367,10 @@ Proof.
   rewrite Hfn.
   apply riemann_sum_1d_add.
 Qed.
+   CAG zero-dependent Lemma integrate_pqf_1d_riemann_add theories/Calc/Integration.v:318 END *)
 
 (** Scaling of the 1-D form integral. *)
+(* CAG zero-dependent Lemma integrate_pqf_1d_riemann_scale theories/Calc/Integration.v:345 BEGIN
 Lemma integrate_pqf_1d_riemann_scale :
   forall (p q : nat) (c : CComplex) (alpha : PQForm 1 p q) (N : nat),
     integrate_pqf_1d_riemann (pqf_scale c alpha) N =
@@ -362,6 +391,7 @@ Proof.
   rewrite Hfn.
   apply riemann_sum_1d_scale.
 Qed.
+   CAG zero-dependent Lemma integrate_pqf_1d_riemann_scale theories/Calc/Integration.v:345 END *)
 
 (* ================================================================== *)
 (** * 8. n-dimensional Riemann sum over a [CBox n] (LM.1)              *)
@@ -521,6 +551,7 @@ Definition riemann_sum_nd
 
 (** [sum_over_im] on a [recurse] continuation that is identically [C0]
     is itself [C0]. *)
+(* CAG zero-dependent Lemma sum_over_im_zero theories/Calc/Integration.v:524 BEGIN
 Lemma sum_over_im_zero :
   forall (lo hi : CReal) (N k : nat),
     sum_over_im lo hi N k (fun _ => C0) = C0.
@@ -529,8 +560,10 @@ Proof.
   - reflexivity.
   - rewrite IH. rewrite Cadd_C0_l_lem_int. reflexivity.
 Qed.
+   CAG zero-dependent Lemma sum_over_im_zero theories/Calc/Integration.v:524 END *)
 
 (** [sum_over_re_im] on an identically-[C0] continuation is [C0]. *)
+(* CAG zero-dependent Lemma sum_over_re_im_zero theories/Calc/Integration.v:534 BEGIN
 Lemma sum_over_re_im_zero :
   forall (lo_re hi_re lo_im hi_im : CReal) (N k : nat),
     sum_over_re_im lo_re hi_re lo_im hi_im N k (fun _ => C0) = C0.
@@ -540,8 +573,10 @@ Proof.
   - rewrite IH. rewrite sum_over_im_zero.
     rewrite Cadd_C0_l_lem_int. reflexivity.
 Qed.
+   CAG zero-dependent Lemma sum_over_re_im_zero theories/Calc/Integration.v:534 END *)
 
 (** Riemann sum of the zero function (over any box, any [N]) is [C0]. *)
+(* CAG zero-dependent Lemma riemann_sum_nd_zero theories/Calc/Integration.v:545 BEGIN
 Lemma riemann_sum_nd_zero :
   forall n (B : CBox n) (N : nat),
     riemann_sum_nd (fun _ : Cn n => C0) B N = C0.
@@ -585,6 +620,7 @@ Proof.
     rewrite Hext.
     apply sum_over_re_im_zero.
 Qed.
+   CAG zero-dependent Lemma riemann_sum_nd_zero theories/Calc/Integration.v:545 END *)
 
 (* ================================================================== *)
 (** * 9. Integration of a (p,q)-form over a [CBox n] (LM.1)            *)
@@ -616,6 +652,7 @@ Definition integrate_pqf_box
        (enum_MI n p)).
 
 (** [csum] over a concatenation distributes additively. *)
+(* CAG zero-dependent Lemma csum_app_int theories/Calc/Integration.v:619 BEGIN
 Local Lemma csum_app_int :
   forall l1 l2 : list CComplex,
     csum (l1 ++ l2) = Cadd (csum l1) (csum l2).
@@ -626,8 +663,10 @@ Proof.
     apply CComplex_eq. unfold CComplex_req, Cadd; simpl.
     split; rewrite CReal_plus_assoc; reflexivity.
 Qed.
+   CAG zero-dependent Lemma csum_app_int theories/Calc/Integration.v:619 END *)
 
 (** Auxiliary: if every term of a list is [C0], the [csum] is [C0]. *)
+(* CAG zero-dependent Lemma csum_all_zero theories/Calc/Integration.v:631 BEGIN
 Local Lemma csum_all_zero :
   forall l : list CComplex,
     (forall x, In x l -> x = C0) -> csum l = C0.
@@ -638,12 +677,14 @@ Proof.
     rewrite IH; [apply Cadd_C0_l_lem_int|].
     intros y Hin; apply Hall. right; exact Hin.
 Qed.
+   CAG zero-dependent Lemma csum_all_zero theories/Calc/Integration.v:631 END *)
 
 (** Auxiliary: every entry of [flat_map (fun I => map (fun J => ...) Js) Is]
     matches the form
     [riemann_sum_nd (fun z => pqf_at alpha I J z) B N] for some
     [I ∈ Is, J ∈ Js].  When [alpha = pqf_zero], every such entry is
     [C0]. *)
+(* CAG zero-dependent Lemma flat_map_pqf_zero_all_zero theories/Calc/Integration.v:647 BEGIN
 Local Lemma flat_map_pqf_zero_all_zero :
   forall n p q (B : CBox n) (N : nat)
          (Is : list (MultiIndex n p)) (Js : list (MultiIndex n q)),
@@ -670,8 +711,10 @@ Proof.
     unfold pqf_zero, pqf_at; simpl. reflexivity. }
   rewrite Hpt. apply riemann_sum_nd_zero.
 Qed.
+   CAG zero-dependent Lemma flat_map_pqf_zero_all_zero theories/Calc/Integration.v:647 END *)
 
 (** Integrating the zero form returns [C0]. *)
+(* CAG zero-dependent Lemma integrate_pqf_box_zero theories/Calc/Integration.v:675 BEGIN
 Lemma integrate_pqf_box_zero :
   forall n p q (B : CBox n) (N : nat),
     integrate_pqf_box (pqf_zero n p q) B N = C0.
@@ -681,6 +724,7 @@ Proof.
   apply (flat_map_pqf_zero_all_zero n p q B N
                                     (enum_MI n p) (enum_MI n q)).
 Qed.
+   CAG zero-dependent Lemma integrate_pqf_box_zero theories/Calc/Integration.v:675 END *)
 
 (* ================================================================== *)
 (** * 10. Convergence of the n-dim Riemann sum (LM.2)                  *)
@@ -763,6 +807,7 @@ Definition riemann_sum_nd_conv {n : nat}
 
 (** Helper: every entry of the canonical stream of the zero integrand
     is [C0]. *)
+(* CAG zero-dependent Lemma rapprox_nd_nth_zero_stream_aux theories/Calc/Integration.v:766 BEGIN
 Lemma rapprox_nd_nth_zero_stream_aux :
   forall (n : nat) (B : CBox n) (N k : nat),
     rapprox_nd_nth (riemann_stream_nd_aux (fun _ : Cn n => C0) B N) k = C0.
@@ -774,7 +819,9 @@ Proof.
   - (* k = S k' : peel the corecursive step *)
     simpl. apply IH.
 Qed.
+   CAG zero-dependent Lemma rapprox_nd_nth_zero_stream_aux theories/Calc/Integration.v:766 END *)
 
+(* CAG zero-dependent Lemma rapprox_nd_nth_zero_stream theories/Calc/Integration.v:778 BEGIN
 Lemma rapprox_nd_nth_zero_stream :
   forall (n : nat) (B : CBox n) (k : nat),
     rapprox_nd_nth (riemann_stream_nd (fun _ : Cn n => C0) B) k = C0.
@@ -782,6 +829,7 @@ Proof.
   intros n B k. unfold riemann_stream_nd.
   apply rapprox_nd_nth_zero_stream_aux.
 Qed.
+   CAG zero-dependent Lemma rapprox_nd_nth_zero_stream theories/Calc/Integration.v:778 END *)
 
 (** Helper: [Cdist2 C0 C0 = 0] in [CRealEq] (definitional in the Cauchy
     constructive reals after simplification of mkC and Cnorm2 of zero
@@ -800,6 +848,7 @@ Qed.
 
 (** The zero integrand has Riemann sum [C0] for every [N], so the
     constant-[C0] sequence trivially converges to [C0]. *)
+(* CAG zero-dependent Lemma riemann_sum_nd_conv_zero theories/Calc/Integration.v:803 BEGIN
 Lemma riemann_sum_nd_conv_zero :
   forall (n : nat) (B : CBox n),
     riemann_sum_nd_conv (fun _ : Cn n => C0) B C0.
@@ -815,6 +864,7 @@ Proof.
                             Hd eps eps (CRealEq_refl _)).
   exact Heps.
 Qed.
+   CAG zero-dependent Lemma riemann_sum_nd_conv_zero theories/Calc/Integration.v:803 END *)
 
 (* ------------------------------------------------------------------ *)
 (** ** 10.4 Existence and linearity (Conjectures)                       *)
@@ -831,25 +881,31 @@ Qed.
     naive-existential here to match the existing 1D convention.
     Downstream consumers needing a hypothesis-free version should
     add their own continuity precondition. *)
+(* CAG zero-dependent Conjecture riemann_sum_nd_conv_exists theories/Calc/Integration.v:834 BEGIN
 Conjecture riemann_sum_nd_conv_exists :
   forall (n : nat) (f : Cn n -> CComplex) (B : CBox n),
     exists L : CComplex, riemann_sum_nd_conv f B L.
+   CAG zero-dependent Conjecture riemann_sum_nd_conv_exists theories/Calc/Integration.v:834 END *)
 
 (** Additivity of the Riemann limit.  Mirror of
     [ComplexAnalysis.path_integral_add]. *)
+(* CAG zero-dependent Conjecture riemann_sum_nd_conv_add theories/Calc/Integration.v:840 BEGIN
 Conjecture riemann_sum_nd_conv_add :
   forall (n : nat) (f g : Cn n -> CComplex) (B : CBox n) (Lf Lg : CComplex),
     riemann_sum_nd_conv f B Lf ->
     riemann_sum_nd_conv g B Lg ->
     riemann_sum_nd_conv (fun v => Cadd (f v) (g v)) B (Cadd Lf Lg).
+   CAG zero-dependent Conjecture riemann_sum_nd_conv_add theories/Calc/Integration.v:840 END *)
 
 (** Scaling of the Riemann limit.  Mirror of
     [ComplexAnalysis.path_integral_scale]. *)
+(* CAG zero-dependent Conjecture riemann_sum_nd_conv_scale theories/Calc/Integration.v:848 BEGIN
 Conjecture riemann_sum_nd_conv_scale :
   forall (n : nat) (c : CComplex)
          (f : Cn n -> CComplex) (B : CBox n) (L : CComplex),
     riemann_sum_nd_conv f B L ->
     riemann_sum_nd_conv (fun v => Cmul c (f v)) B (Cmul c L).
+   CAG zero-dependent Conjecture riemann_sum_nd_conv_scale theories/Calc/Integration.v:848 END *)
 
 (* ------------------------------------------------------------------ *)
 (** ** 10.5 Convergence of the (p,q)-form integral on a box            *)
@@ -880,6 +936,7 @@ Definition integrate_pqf_box_conv {n p q : nat}
 
 (** The zero form's box-integral approximant is [C0] at every [N], so
     the limit exists and equals [C0]. *)
+(* CAG zero-dependent Lemma integrate_pqf_box_stream_aux_zero_nth theories/Calc/Integration.v:889 BEGIN
 Lemma integrate_pqf_box_stream_aux_zero_nth :
   forall (n p q : nat) (B : CBox n) (N k : nat),
     rapprox_nd_nth
@@ -890,7 +947,9 @@ Proof.
   - apply integrate_pqf_box_zero.
   - apply IH.
 Qed.
+   CAG zero-dependent Lemma integrate_pqf_box_stream_aux_zero_nth theories/Calc/Integration.v:889 END *)
 
+(* CAG zero-dependent Lemma integrate_pqf_box_stream_zero_nth theories/Calc/Integration.v:900 BEGIN
 Lemma integrate_pqf_box_stream_zero_nth :
   forall (n p q : nat) (B : CBox n) (k : nat),
     rapprox_nd_nth (integrate_pqf_box_stream (pqf_zero n p q) B) k = C0.
@@ -898,7 +957,9 @@ Proof.
   intros n p q B k. unfold integrate_pqf_box_stream.
   apply integrate_pqf_box_stream_aux_zero_nth.
 Qed.
+   CAG zero-dependent Lemma integrate_pqf_box_stream_zero_nth theories/Calc/Integration.v:900 END *)
 
+(* CAG zero-dependent Lemma integrate_pqf_box_conv_zero theories/Calc/Integration.v:908 BEGIN
 Lemma integrate_pqf_box_conv_zero :
   forall (n p q : nat) (B : CBox n),
     integrate_pqf_box_conv (pqf_zero n p q) B C0.
@@ -911,27 +972,34 @@ Proof.
                             Hd eps eps (CRealEq_refl _)).
   exact Heps.
 Qed.
+   CAG zero-dependent Lemma integrate_pqf_box_conv_zero theories/Calc/Integration.v:908 END *)
 
 (** Existence of the box-integral limit for an arbitrary form.
     Conjecture (parallel to [riemann_sum_nd_conv_exists]). *)
+(* CAG zero-dependent Conjecture integrate_pqf_box_conv_exists theories/Calc/Integration.v:917 BEGIN
 Conjecture integrate_pqf_box_conv_exists :
   forall (n p q : nat) (alpha : PQForm n p q) (B : CBox n),
     exists L : CComplex, integrate_pqf_box_conv alpha B L.
+   CAG zero-dependent Conjecture integrate_pqf_box_conv_exists theories/Calc/Integration.v:917 END *)
 
 (** Additivity of the box-integral limit. *)
+(* CAG zero-dependent Conjecture integrate_pqf_box_conv_add theories/Calc/Integration.v:922 BEGIN
 Conjecture integrate_pqf_box_conv_add :
   forall (n p q : nat) (alpha beta : PQForm n p q) (B : CBox n)
          (La Lb : CComplex),
     integrate_pqf_box_conv alpha B La ->
     integrate_pqf_box_conv beta B Lb ->
     integrate_pqf_box_conv (pqf_add alpha beta) B (Cadd La Lb).
+   CAG zero-dependent Conjecture integrate_pqf_box_conv_add theories/Calc/Integration.v:922 END *)
 
 (** Scaling of the box-integral limit. *)
+(* CAG zero-dependent Conjecture integrate_pqf_box_conv_scale theories/Calc/Integration.v:930 BEGIN
 Conjecture integrate_pqf_box_conv_scale :
   forall (n p q : nat) (c : CComplex)
          (alpha : PQForm n p q) (B : CBox n) (L : CComplex),
     integrate_pqf_box_conv alpha B L ->
     integrate_pqf_box_conv (pqf_scale c alpha) B (Cmul c L).
+   CAG zero-dependent Conjecture integrate_pqf_box_conv_scale theories/Calc/Integration.v:930 END *)
 
 (* ------------------------------------------------------------------ *)
 (** ** 10.6 Lebesgue convergence theorems (Conjectures)                *)
@@ -970,6 +1038,7 @@ Definition monotone_seq_on_box {n : nat}
     Stated as a Conjecture; a constructive proof requires the Riemann
     convergence machinery (existence step) plus a bounded-monotone-
     convergence lemma for [CReal] sequences. *)
+(* CAG zero-dependent Conjecture monotone_convergence theories/Calc/Integration.v:973 BEGIN
 Conjecture monotone_convergence :
   forall (n : nat)
          (f : nat -> Cn n -> CComplex) (g : Cn n -> CComplex)
@@ -986,6 +1055,7 @@ Conjecture monotone_convergence :
       exists N0 : nat,
         forall k, (N0 <= k)%nat ->
           CRealLtProp (Cdist2 (Lk k) L) eps.
+   CAG zero-dependent Conjecture monotone_convergence theories/Calc/Integration.v:973 END *)
 
 (** Pointwise dominated by a fixed function [h]. *)
 Definition dominated_by_on_box {n : nat}
@@ -998,6 +1068,7 @@ Definition dominated_by_on_box {n : nat}
 
     If [f_k → f] pointwise on [B] and [|f_k| ≤ h] for an integrable
     dominator [h], then the limit commutes with integration. *)
+(* CAG zero-dependent Conjecture dominated_convergence theories/Calc/Integration.v:1001 BEGIN
 Conjecture dominated_convergence :
   forall (n : nat)
          (f : nat -> Cn n -> CComplex) (g : Cn n -> CComplex)
@@ -1015,6 +1086,7 @@ Conjecture dominated_convergence :
       exists N0 : nat,
         forall k, (N0 <= k)%nat ->
           CRealLtProp (Cdist2 (Lk k) L) eps.
+   CAG zero-dependent Conjecture dominated_convergence theories/Calc/Integration.v:1001 END *)
 
 (* ------------------------------------------------------------------ *)
 (** Summary

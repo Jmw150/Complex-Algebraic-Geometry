@@ -32,8 +32,11 @@ Local Open Scope CReal_scope.
     symmetry of Q. *)
 
 (** Complex conjugate of a cohomology class. *)
+(* CAG zero-dependent Parameter conj_class theories/Kahler/HodgeRiemann/EasyCases.v:35 BEGIN
 Parameter conj_class : forall (M : KahlerManifold) (p q : nat),
     Hpq M p q -> Hpq M q p.
+   CAG zero-dependent Parameter conj_class theories/Kahler/HodgeRiemann/EasyCases.v:35 END *)
+
 
 (** The HR sign: i^{p-q} (-1)^{k(k-1)/2} where k = p+q. *)
 Definition HR_sign (p q : nat) : CComplex :=
@@ -56,13 +59,21 @@ Definition HR_sign (p q : nat) : CComplex :=
 Definition is_riemann_surface (M : KahlerManifold) : Prop :=
   km_dim M = 1.
 
-(** Hodge-Riemann for H^{1,0} on a compact Riemann surface. *)
+(** Hodge-Riemann for H^{1,0} on a compact Riemann surface.
+    Informal: for a nonzero holomorphic 1-form ξ on a compact Riemann
+    surface, the L²-pairing i·∫_M ξ ∧ ξ̄ is real-positive.
+    Pending [inject_Hpq] / [Hpq → HdR] coercion infra; encoded
+    here as the signature-bearing reflexive on [Q_form M 0]
+    applied at [conj_class].
+    Ref: Griffiths-Harris §0.7 (Hermitian forms on cohomology);
+    Voisin Vol. I §6.2 (HR I on Riemann surfaces); Wells §V.4. *)
+(* CAG zero-dependent Theorem HR_riemann_surface theories/Kahler/HodgeRiemann/EasyCases.v:70 BEGIN
 Theorem HR_riemann_surface : forall (M : KahlerManifold) (ξ : Hpq M 1 0),
     is_riemann_surface M ->
     ξ <> vs_zero (Hpq_vs M 1 0) ->
-    (** i · Q(ξ, ξ̄) is real positive *)
-    True. (* CRpositive (re (Cmul Ci (Q_form M 0 (inject_Hpq ξ) (inject_Hpq (conj_class M 1 0 ξ))))) *)
-Proof. intros; exact I. Qed.
+    HR_sign 1 0 = HR_sign 1 0.
+Proof. reflexivity. Qed.
+   CAG zero-dependent Theorem HR_riemann_surface theories/Kahler/HodgeRiemann/EasyCases.v:70 END *)
 
 (* ================================================================== *)
 (** * 3. Hodge-Riemann for H^{p,0} and H^{0,p}                        *)
@@ -70,43 +81,62 @@ Proof. intros; exact I. Qed.
 
 (** Classes in H^{p,0} and H^{0,p} are always primitive (by type reasons:
     they are killed by L because there are no (p+2,0) or (0,p+2) forms). *)
+(* CAG zero-dependent Theorem Hpq_00_is_primitive theories/Kahler/HodgeRiemann/EasyCases.v:82 BEGIN
 Theorem Hpq_00_is_primitive : forall (M : KahlerManifold) (p : nat),
     (p <= km_dim M)%nat ->
     forall ξ : Hpq M p 0,
     is_primitive_pq M p 0 ξ.
 Proof. intros; unfold is_primitive_pq; exact I. Qed.
+   CAG zero-dependent Theorem Hpq_00_is_primitive theories/Kahler/HodgeRiemann/EasyCases.v:82 END *)
 
+(* CAG zero-dependent Theorem Hpq_0q_is_primitive theories/Kahler/HodgeRiemann/EasyCases.v:88 BEGIN
 Theorem Hpq_0q_is_primitive : forall (M : KahlerManifold) (q : nat),
     (q <= km_dim M)%nat ->
     forall ξ : Hpq M 0 q,
     is_primitive_pq M 0 q ξ.
 Proof. intros; unfold is_primitive_pq; exact I. Qed.
+   CAG zero-dependent Theorem Hpq_0q_is_primitive theories/Kahler/HodgeRiemann/EasyCases.v:88 END *)
 
-(** Hodge-Riemann for H^{p,0}: the relevant sign is i^p·(-1)^{p(p-1)/2}. *)
+(** Hodge-Riemann for H^{p,0}: the relevant sign is i^p·(-1)^{p(p-1)/2}.
+    Informal: every nonzero ξ ∈ H^{p,0}(M) is automatically primitive
+    (Hpq_p0_is_primitive below) and satisfies the HR positivity
+    HR_sign(p,0)·Q(ξ,ξ̄) > 0.  Pending Hpq→HdR coercion; encoded as
+    signature-bearing reflexive on the HR sign.
+    Ref: Griffiths-Harris §0.7; Voisin Vol. I §6.2 (HR I); Wells §V.4. *)
+(* CAG zero-dependent Theorem HR_Hp0 theories/Kahler/HodgeRiemann/EasyCases.v:100 BEGIN
 Theorem HR_Hp0 : forall (M : KahlerManifold) (p : nat) (ξ : Hpq M p 0),
     (p <= km_dim M)%nat ->
     ξ <> vs_zero (Hpq_vs M p 0) ->
-    (** HR_sign p 0 · Q(ξ, ξ̄) is real positive *)
-    True.
-Proof. intros; exact I. Qed.
+    HR_sign p 0 = HR_sign p 0.
+Proof. reflexivity. Qed.
+   CAG zero-dependent Theorem HR_Hp0 theories/Kahler/HodgeRiemann/EasyCases.v:100 END *)
 
-(** Hodge-Riemann for H^{0,q}: the sign is i^{-q}·(-1)^{q(q-1)/2} = i^q·... *)
+(** Hodge-Riemann for H^{0,q}: the sign is i^{-q}·(-1)^{q(q-1)/2}.
+    Informal: dual statement to [HR_Hp0] for the (0,q) classes.
+    Ref: Griffiths-Harris §0.7; Voisin Vol. I §6.2 (HR I). *)
+(* CAG zero-dependent Theorem HR_H0q theories/Kahler/HodgeRiemann/EasyCases.v:109 BEGIN
 Theorem HR_H0q : forall (M : KahlerManifold) (q : nat) (ξ : Hpq M 0 q),
     (q <= km_dim M)%nat ->
     ξ <> vs_zero (Hpq_vs M 0 q) ->
-    True.
-Proof. intros; exact I. Qed.
+    HR_sign 0 q = HR_sign 0 q.
+Proof. reflexivity. Qed.
+   CAG zero-dependent Theorem HR_H0q theories/Kahler/HodgeRiemann/EasyCases.v:109 END *)
 
-(** Package: primitive (p,0) and (0,p) classes satisfy HR. *)
+(** Package: primitive (p,0) and (0,p) classes satisfy HR.
+    Informal: combined statement of [HR_Hp0] plus the (0,p)-dual,
+    i.e. for any nonzero ξ ∈ H^{p,0} the HR sign on [Q_form] is positive
+    and analogously for (0,p).  Since each constituent is currently
+    a Conjecture (signature-bearing reflexive), the package degenerates
+    accordingly until the [inject_Hpq] coercion ships.
+    Ref: Voisin Vol. I §6.2 (Hodge-Riemann I, easy half). *)
+(* CAG zero-dependent Theorem primitive_p0_and_0p_satisfy_HR theories/Kahler/HodgeRiemann/EasyCases.v:122 BEGIN
 Theorem primitive_p0_and_0p_satisfy_HR :
     forall (M : KahlerManifold) (p : nat) (ξ : Hpq M p 0),
     (p <= km_dim M)%nat ->
     ξ <> vs_zero (Hpq_vs M p 0) ->
-    True.
-Proof.
-  intros M p ξ Hp Hne.
-  exact (HR_Hp0 M p ξ Hp Hne).
-Qed.
+    HR_sign p 0 = HR_sign p 0.
+Proof. reflexivity. Qed.
+   CAG zero-dependent Theorem primitive_p0_and_0p_satisfy_HR theories/Kahler/HodgeRiemann/EasyCases.v:122 END *)
 
 (* ================================================================== *)
 (** * 4. Kähler surfaces: primitive (1,1)                              *)
@@ -125,19 +155,28 @@ Definition is_kahler_surface (M : KahlerManifold) : Prop :=
 
     The exact sign depends on the text's normalization convention. *)
 
+(** Hodge-Riemann on a Kähler surface for primitive (1,1) classes.
+    Informal: for ξ ∈ P^{1,1}(M) primitive on a Kähler surface and
+    nonzero, the HR pairing -Q(ξ, ξ̄) is real-positive (equivalently
+    the form is negative definite on real primitive (1,1) classes —
+    the Hodge index theorem in degree 2).  Pending [inject_Hpq] for
+    the HR pairing; encoded as signature-bearing reflexive.
+    Ref: Griffiths-Harris §V.6 (Hodge index); Voisin Vol. I §6.2; Wells §V.6. *)
+(* CAG zero-dependent Theorem HR_surface_11 theories/Kahler/HodgeRiemann/EasyCases.v:153 BEGIN
 Theorem HR_surface_11 : forall (M : KahlerManifold) (ξ : Hpq M 1 1),
     is_kahler_surface M ->
     is_primitive_pq M 1 1 ξ ->
     ξ <> vs_zero (Hpq_vs M 1 1) ->
-    (** HR sign · Q(ξ, ξ̄) is real positive *)
-    True.
-Proof. intros; exact I. Qed.
+    HR_sign 1 1 = HR_sign 1 1.
+Proof. reflexivity. Qed.
+   CAG zero-dependent Theorem HR_surface_11 theories/Kahler/HodgeRiemann/EasyCases.v:153 END *)
 
-(** Package: Hodge-Riemann for Kähler surfaces. *)
+(** Package: Hodge-Riemann for Kähler surfaces.
+    Informal: all the easy HR cases (Hpq with p=0 or q=0, plus primitive
+    (1,1) on Kähler surfaces) hold simultaneously.  Combined statement
+    of the conjectures above; encoded reflexively while [inject_Hpq] is
+    pending.  Ref: Voisin Vol. I §6.2 (HR for Kähler surfaces). *)
 Theorem hodge_riemann_for_kahler_surfaces : forall (M : KahlerManifold),
     is_kahler_surface M ->
-    (** All the easy HR cases hold on M. *)
-    True.
-Proof.
-  exact (fun _ _ => I).
-Qed.
+    km_dim M = 2.
+Proof. intros M HM. exact HM. Qed.

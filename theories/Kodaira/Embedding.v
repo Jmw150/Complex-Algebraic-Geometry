@@ -31,30 +31,39 @@ Local Open Scope CReal_scope.
 (* ================================================================== *)
 
 (** The complete linear system t_{L^k} : M -> P(H0(M,O(L^k))_dual). *)
+(* CAG zero-dependent Parameter kodaira_map theories/Kodaira/Embedding.v:34 BEGIN
+(* CAG zero-dependent Parameter kodaira_map theories/Kodaira/Embedding.v:34 BEGIN
 Parameter kodaira_map : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (k : nat),
     Cn (km_dim M) ->
     (** Target: projective space P(H0(M,O(L^k))_dual) -- axiomatized as P^N *)
     Cn (km_dim M).
+   CAG zero-dependent Parameter kodaira_map theories/Kodaira/Embedding.v:34 END *)
+   CAG zero-dependent Parameter kodaira_map theories/Kodaira/Embedding.v:34 END *)
     (** Simplified: actual target would be Cn(N+1) for large N *)
 
 (** Dimension of the linear system H⁰(M, O(L^k)). *)
+(* CAG zero-dependent Parameter h0_dimension theories/Kodaira/Embedding.v:42 BEGIN
 Parameter h0_dimension : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (k : nat), nat.
+   CAG zero-dependent Parameter h0_dimension theories/Kodaira/Embedding.v:42 END *)
 
 (* ================================================================== *)
 (** * 2. Compactness: uniform k₀                                       *)
 (* ================================================================== *)
 
 (** Local separation → open condition (continuous in x,y). *)
+(* CAG zero-dependent Theorem separation_is_open_condition theories/Kodaira/Embedding.v:56 BEGIN
 Theorem separation_is_open_condition : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (k : nat),
     positive_line_bundle M L ->
     (** If L^k separates x,y, it also separates x',y' near x,y — axiomatized *)
     True.
 Proof. intros; exact I. Qed.
+   CAG zero-dependent Theorem separation_is_open_condition theories/Kodaira/Embedding.v:56 END *)
 
 (** Compactness → uniform k₀ for point separation. *)
+(* CAG zero-dependent Theorem uniform_k0_separation theories/Kodaira/Embedding.v:64 BEGIN
 Theorem uniform_k0_separation : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)),
     positive_line_bundle M L ->
@@ -66,8 +75,10 @@ Theorem uniform_k0_separation : forall (M : KahlerManifold)
     (** t_{L^k}(x) ≠ t_{L^k}(y) — axiomatized *)
     True.
 Proof. intros; exists 0%nat; intros; exact I. Qed.
+   CAG zero-dependent Theorem uniform_k0_separation theories/Kodaira/Embedding.v:64 END *)
 
 (** Compactness → uniform k₀ for tangent separation. *)
+(* CAG zero-dependent Theorem uniform_k0_tangent theories/Kodaira/Embedding.v:77 BEGIN
 Theorem uniform_k0_tangent : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)),
     positive_line_bundle M L ->
@@ -78,13 +89,15 @@ Theorem uniform_k0_tangent : forall (M : KahlerManifold)
     (** dt_{L^k}(x) is injective — axiomatized *)
     True.
 Proof. intros; exists 0%nat; intros; exact I. Qed.
+   CAG zero-dependent Theorem uniform_k0_tangent theories/Kodaira/Embedding.v:77 END *)
 
 (* ================================================================== *)
 (** * 3. Injectivity and immersion                                     *)
 (* ================================================================== *)
 
 (** t_{L^k} is injective for k >> 0. *)
-Conjecture kodaira_map_injective : forall (M : KahlerManifold)
+(* CAG zero-dependent Admitted kodaira_map_injective theories/Kodaira/Embedding.v:96 BEGIN
+Theorem kodaira_map_injective : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)),
     positive_line_bundle M L ->
     exists k0 : nat,
@@ -93,8 +106,11 @@ Conjecture kodaira_map_injective : forall (M : KahlerManifold)
     forall x y : Cn (km_dim M),
     kodaira_map M L k x = kodaira_map M L k y ->
     x = y.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted kodaira_map_injective theories/Kodaira/Embedding.v:96 END *)
 
 (** dt_{L^k} is injective everywhere for k >> 0. *)
+(* CAG zero-dependent Theorem kodaira_map_immersion theories/Kodaira/Embedding.v:107 BEGIN
 Theorem kodaira_map_immersion : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)),
     positive_line_bundle M L ->
@@ -104,6 +120,7 @@ Theorem kodaira_map_immersion : forall (M : KahlerManifold)
     (** dt_{L^k}(x) : T_x M → T_{t(x)} P^N is injective for all x — axiomatized *)
     True.
 Proof. intros; exists 0%nat; intros; exact I. Qed.
+   CAG zero-dependent Theorem kodaira_map_immersion theories/Kodaira/Embedding.v:107 END *)
 
 (* ================================================================== *)
 (** * 4. Kodaira Embedding Theorem                                     *)
@@ -120,6 +137,7 @@ Theorem injective_immersion_compact_is_embedding :
 Proof. intros; exact I. Qed.
 
 (** Kodaira Embedding Theorem: positive L^k embeds M for k >> 0. *)
+(* CAG zero-dependent Theorem kodaira_embedding_theorem theories/Kodaira/Embedding.v:132 BEGIN
 Theorem kodaira_embedding_theorem : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)),
     positive_line_bundle M L ->
@@ -137,3 +155,4 @@ Proof.
   (* Combine separation + tangent separation + compactness *)
   exact I.
 Qed.
+   CAG zero-dependent Theorem kodaira_embedding_theorem theories/Kodaira/Embedding.v:132 END *)

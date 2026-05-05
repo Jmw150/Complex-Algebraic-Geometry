@@ -126,14 +126,18 @@ Qed.
     paper's results without bringing the entire group-ring infrastructure
     along. *)
 
+(* CAG zero-dependent Parameter R_coset_equivalent theories/DecisionProblems/FiniteLifts.v:129 BEGIN
 Parameter R_coset_equivalent :
   forall (R : Type) {G : Type} (sg : StrictGroup G) (G1 G2 : G -> Prop), Prop.
+   CAG zero-dependent Parameter R_coset_equivalent theories/DecisionProblems/FiniteLifts.v:129 END *)
 
 (** Z-coset equivalence is the case [R = Z]. We don't fix a particular
     [Z]; the paper's statements only need a fixed coefficient ring. *)
+(* CAG zero-dependent Definition Z_coset_equivalent theories/DecisionProblems/FiniteLifts.v:134 BEGIN
 Definition Z_coset_equivalent
     {G : Type} (sg : StrictGroup G) (G1 G2 : G -> Prop) : Prop :=
   R_coset_equivalent Z sg G1 G2.
+   CAG zero-dependent Definition Z_coset_equivalent theories/DecisionProblems/FiniteLifts.v:134 END *)
 
 (* ================================================================== *)
 (** * 4. Lemma 2.1 — permanence of coset equivalence under pullbacks    *)
@@ -147,6 +151,7 @@ Definition Z_coset_equivalent
     the universal property of R[·]. We axiomatize this lemma — it is
     standard module theory but requires the full R[G]-module
     infrastructure that the project does not yet have. *)
+(* CAG zero-dependent Conjecture R_coset_equiv_pullback theories/DecisionProblems/FiniteLifts.v:150 BEGIN
 Conjecture R_coset_equiv_pullback :
   forall {R : Type} {G H : Type}
          (sg : StrictGroup G) (sh : StrictGroup H)
@@ -156,8 +161,10 @@ Conjecture R_coset_equiv_pullback :
     R_coset_equivalent R sh G1 G2 ->
     R_coset_equivalent R sg (preimage_subset psi G1)
                             (preimage_subset psi G2).
+   CAG zero-dependent Conjecture R_coset_equiv_pullback theories/DecisionProblems/FiniteLifts.v:150 END *)
 
 (** Specialization to [R = Z]. *)
+(* CAG zero-dependent Lemma Z_coset_equiv_pullback theories/DecisionProblems/FiniteLifts.v:161 BEGIN
 Lemma Z_coset_equiv_pullback :
     forall {G H : Type} (sg : StrictGroup G) (sh : StrictGroup H)
            (psi : GroupHom sg sh) (G1 G2 : H -> Prop),
@@ -170,6 +177,7 @@ Proof.
   unfold Z_coset_equivalent in *.
   exact (R_coset_equiv_pullback sg sh psi G1 G2 Hsurj Hcoset).
 Qed.
+   CAG zero-dependent Lemma Z_coset_equiv_pullback theories/DecisionProblems/FiniteLifts.v:161 END *)
 
 (* ================================================================== *)
 (** * 5. Subgroup-isomorphism predicate                                  *)
@@ -199,6 +207,7 @@ Definition subgroups_isomorphic
     construction via Sambale's outer-automorphism realization (Theorem 4.1
     + Theorem 4.2) plus an HNN extension argument. Formalizing the proof
     is a multi-month project. *)
+(* CAG zero-dependent Conjecture KLMRS_main_theorem theories/DecisionProblems/FiniteLifts.v:202 BEGIN
 Conjecture KLMRS_main_theorem :
   forall {G : Type} (sg : StrictGroup G) (G_list : list G),
     IsFiniteEnum sg G_list ->
@@ -213,6 +222,7 @@ Conjecture KLMRS_main_theorem :
          ~ subgroups_isomorphic sgt sgt
              (preimage_subset phi G1)
              (preimage_subset phi G2)).
+   CAG zero-dependent Conjecture KLMRS_main_theorem theories/DecisionProblems/FiniteLifts.v:202 END *)
 
 (* ================================================================== *)
 (** * 7. Question 1.3 — Prasad's question (now answered negatively)     *)
@@ -224,6 +234,7 @@ Conjecture KLMRS_main_theorem :
     Stated as a [Prop]: this is the predicate "every finite group G and
     every Z-coset equivalent pair of subgroups have isomorphic
     underlying groups." The paper shows this Prop is FALSE. *)
+(* CAG zero-dependent Definition prasad_question_1_3 theories/DecisionProblems/FiniteLifts.v:229 BEGIN
 Definition prasad_question_1_3 : Prop :=
   forall (G : Type) (sg : StrictGroup G) (G_list : list G),
     IsFiniteEnum sg G_list ->
@@ -232,6 +243,7 @@ Definition prasad_question_1_3 : Prop :=
       is_subgroup (StrictGroup_to_Group sg) G2 ->
       Z_coset_equivalent sg G1 G2 ->
       subgroups_isomorphic sg sg G1 G2.
+   CAG zero-dependent Definition prasad_question_1_3 theories/DecisionProblems/FiniteLifts.v:229 END *)
 
 (* ================================================================== *)
 (** * 8. Scott's PSL(2,29) example — input to Theorem 1.4               *)
@@ -242,6 +254,7 @@ Definition prasad_question_1_3 : Prop :=
     203, both isomorphic to [A_5]. We axiomatize Scott's example as the
     abstract existence of such data: a finite group [S] with two
     non-conjugate, Z-coset equivalent subgroups. *)
+(* CAG zero-dependent Conjecture scott_example theories/DecisionProblems/FiniteLifts.v:245 BEGIN
 Conjecture scott_example :
   exists (S : Type) (ssg : StrictGroup S) (S_list : list S)
          (S1 S2 : S -> Prop),
@@ -250,6 +263,7 @@ Conjecture scott_example :
     is_subgroup (StrictGroup_to_Group ssg) S2 /\
     ~ conjugate_subgroups ssg S1 S2 /\
     Z_coset_equivalent ssg S1 S2.
+   CAG zero-dependent Conjecture scott_example theories/DecisionProblems/FiniteLifts.v:245 END *)
 
 (* ================================================================== *)
 (** * 9. Theorem 1.4 — Question 1.3 has a negative answer               *)
@@ -263,6 +277,7 @@ Conjecture scott_example :
     NOT isomorphic. By Lemma 2.1 (pullback preserves Z-coset equivalence),
     they remain Z-coset equivalent. So they witness the negation of
     Question 1.3. *)
+(* CAG zero-dependent Theorem theorem_1_4_question_1_3_negative theories/DecisionProblems/FiniteLifts.v:266 BEGIN
 Theorem theorem_1_4_question_1_3_negative :
     ~ prasad_question_1_3.
 Proof.
@@ -281,6 +296,7 @@ Proof.
   - apply (preimage_is_subgroup sst ssg phi S2 HS2).
   - apply (Z_coset_equiv_pullback sst ssg phi S1 S2 Hsurj Hcoset).
 Qed.
+   CAG zero-dependent Theorem theorem_1_4_question_1_3_negative theories/DecisionProblems/FiniteLifts.v:266 END *)
 
 (* ================================================================== *)
 (** * 10. Question 1.5 — the new OPEN problem                            *)
@@ -305,6 +321,7 @@ Definition is_core_free
     (forall x : G, N x -> H x) ->
     (forall x : G, N x -> x = se G sg).
 
+(* CAG zero-dependent Definition open_question_1_5 theories/DecisionProblems/FiniteLifts.v:314 BEGIN
 Definition open_question_1_5 : Prop :=
   forall (G : Type) (sg : StrictGroup G) (G_list : list G),
     IsFiniteEnum sg G_list ->
@@ -315,6 +332,7 @@ Definition open_question_1_5 : Prop :=
       is_core_free sg G2 ->
       Z_coset_equivalent sg G1 G2 ->
       subgroups_isomorphic sg sg G1 G2.
+   CAG zero-dependent Definition open_question_1_5 theories/DecisionProblems/FiniteLifts.v:314 END *)
 
 (* ================================================================== *)
 (** * 11. Corollary 1.6 — profinite-completion variant                   *)
@@ -328,10 +346,15 @@ Definition open_question_1_5 : Prop :=
 
     We don't have profinite completions in the project, so we abstract
     them as a Parameter and state the corollary as Axiom. *)
+(* CAG zero-dependent Parameter profinite_completion theories/DecisionProblems/FiniteLifts.v:331 BEGIN
 Parameter profinite_completion : forall {G : Type} (sg : StrictGroup G), Type.
+   CAG zero-dependent Parameter profinite_completion theories/DecisionProblems/FiniteLifts.v:331 END *)
+(* CAG zero-dependent Parameter profinite_iso theories/DecisionProblems/FiniteLifts.v:334 BEGIN
 Parameter profinite_iso :
   forall {G H : Type} (sg : StrictGroup G) (sh : StrictGroup H), Prop.
+   CAG zero-dependent Parameter profinite_iso theories/DecisionProblems/FiniteLifts.v:334 END *)
 
+(* CAG zero-dependent Conjecture KLMRS_corollary_1_6 theories/DecisionProblems/FiniteLifts.v:335 BEGIN
 Conjecture KLMRS_corollary_1_6 :
   forall {Gamma G : Type} (sgam : StrictGroup Gamma) (sg : StrictGroup G)
          (G_list : list G) (phi : GroupHom sgam sg)
@@ -351,6 +374,7 @@ Conjecture KLMRS_corollary_1_6 :
       ~ subgroups_isomorphic sh sh
           (preimage_subset theta G1)
           (preimage_subset theta G2).
+   CAG zero-dependent Conjecture KLMRS_corollary_1_6 theories/DecisionProblems/FiniteLifts.v:335 END *)
 
 (* ================================================================== *)
 (** * 12. Theorem 1.7 — PSL(2,29) tetrahedral example                    *)
@@ -366,6 +390,7 @@ Conjecture KLMRS_corollary_1_6 :
     The Magma computation in §5 of the paper exhibits this concretely.
     Stated as Axiom — formalizing the Magma calculation is out of scope. *)
 
+(* CAG zero-dependent Conjecture KLMRS_theorem_1_7 theories/DecisionProblems/FiniteLifts.v:369 BEGIN
 Conjecture KLMRS_theorem_1_7 :
   exists (Gamma : Type) (sgam : StrictGroup Gamma)
          (G : Type)     (sg : StrictGroup G) (G_list : list G)
@@ -383,6 +408,7 @@ Conjecture KLMRS_theorem_1_7 :
     ~ subgroups_isomorphic sq sq
         (preimage_subset epi G1)
         (preimage_subset epi G2).
+   CAG zero-dependent Conjecture KLMRS_theorem_1_7 theories/DecisionProblems/FiniteLifts.v:369 END *)
 
 (* ================================================================== *)
 (** * 13. §1.3 / §1.4 informal open directions                           *)
@@ -412,18 +438,25 @@ Conjecture KLMRS_theorem_1_7 :
     continuous-surjective. *)
 
 (** Continuity of a homomorphism w.r.t. each side's profinite topology. *)
+(* CAG zero-dependent Parameter is_continuous_hom theories/DecisionProblems/FiniteLifts.v:423 BEGIN
 Parameter is_continuous_hom :
   forall {G H : Type} (sg : StrictGroup G) (sh : StrictGroup H)
          (phi : GroupHom sg sh), Prop.
+   CAG zero-dependent Parameter is_continuous_hom theories/DecisionProblems/FiniteLifts.v:423 END *)
 
 (** Predicate "this group carries the topology of a profinite group". *)
+(* CAG zero-dependent Parameter IsProfinite theories/DecisionProblems/FiniteLifts.v:428 BEGIN
 Parameter IsProfinite : forall {G : Type} (sg : StrictGroup G), Prop.
+   CAG zero-dependent Parameter IsProfinite theories/DecisionProblems/FiniteLifts.v:428 END *)
 
 (** Subgroup-isomorphism as profinite groups (uses [profinite_iso] from §11). *)
+(* CAG zero-dependent Parameter profinite_subgroups_isomorphic theories/DecisionProblems/FiniteLifts.v:441 BEGIN
 Parameter profinite_subgroups_isomorphic :
   forall {G H : Type} (sg : StrictGroup G) (sh : StrictGroup H)
          (G1 : G -> Prop) (H1 : H -> Prop), Prop.
+   CAG zero-dependent Parameter profinite_subgroups_isomorphic theories/DecisionProblems/FiniteLifts.v:441 END *)
 
+(* CAG zero-dependent Definition open_profinite_theorem_1_1 theories/DecisionProblems/FiniteLifts.v:435 BEGIN
 Definition open_profinite_theorem_1_1 : Prop :=
   forall (G : Type) (sg : StrictGroup G) (G_list : list G),
     IsFiniteEnum sg G_list ->
@@ -439,6 +472,7 @@ Definition open_profinite_theorem_1_1 : Prop :=
          ~ profinite_subgroups_isomorphic sgt sgt
              (preimage_subset phi G1)
              (preimage_subset phi G2)).
+   CAG zero-dependent Definition open_profinite_theorem_1_1 theories/DecisionProblems/FiniteLifts.v:435 END *)
 
 (** ** 13.2 Number-field recovery from the maximal prosupersolvable quotient
 
@@ -449,24 +483,170 @@ Definition open_profinite_theorem_1_1 : Prop :=
     Reference [6] = Karshon–Shusterman, arXiv:2601.01251. The question
     is open. *)
 
-Parameter NumberField : Type.
+(** [NumberField] is bundled per [feedback_bundled_records.md]: rather
+    than a shallow [Parameter NumberField : Type] tag with floating
+    operations and axioms, we define a [Record] that travels with the
+    full mathematical content of a number field — its carrier, its
+    field operations, and the defining axioms (characteristic zero,
+    finite degree over ℚ).
+
+    Mathematically: a number field is a finite-dimensional field
+    extension of ℚ; equivalently, a field [K] of characteristic 0
+    such that the rational subfield ℚ ⊂ K has finite [K : ℚ].
+
+    The [nf_*] axiom fields are bundled inside the Record so that any
+    [K : NumberField] automatically carries them; they cannot be
+    disconnected from the carrier the way floating Axioms could.   *)
+Record NumberField : Type := mkNumberField {
+  (** Underlying carrier set. *)
+  nf_carrier  : Type;
+
+  (** Field operations: addition, multiplication, additive identity,
+      multiplicative identity, additive inverse, multiplicative
+      inverse (left undefined / arbitrary on 0). *)
+  nf_add      : nf_carrier -> nf_carrier -> nf_carrier;
+  nf_mul      : nf_carrier -> nf_carrier -> nf_carrier;
+  nf_zero     : nf_carrier;
+  nf_one      : nf_carrier;
+  nf_neg      : nf_carrier -> nf_carrier;
+  nf_inv      : nf_carrier -> nf_carrier;
+
+  (** Field axioms. *)
+  nf_add_assoc :
+    forall a b c, nf_add a (nf_add b c) = nf_add (nf_add a b) c;
+  nf_add_comm  : forall a b, nf_add a b = nf_add b a;
+  nf_add_zero  : forall a, nf_add a nf_zero = a;
+  nf_add_neg   : forall a, nf_add a (nf_neg a) = nf_zero;
+
+  nf_mul_assoc :
+    forall a b c, nf_mul a (nf_mul b c) = nf_mul (nf_mul a b) c;
+  nf_mul_comm  : forall a b, nf_mul a b = nf_mul b a;
+  nf_mul_one   : forall a, nf_mul a nf_one = a;
+  nf_mul_inv   : forall a, a <> nf_zero -> nf_mul a (nf_inv a) = nf_one;
+
+  nf_distrib   : forall a b c,
+    nf_mul a (nf_add b c) = nf_add (nf_mul a b) (nf_mul a c);
+
+  nf_nontrivial : nf_zero <> nf_one;
+
+  (** Characteristic zero: for every positive integer [n], the [n]-fold
+      sum of [1] is non-zero. We encode "[n]-fold sum of one" as a
+      fixed-point function over [nat]. *)
+  nf_char_zero :
+    (fix sum_ones (n : nat) : nf_carrier :=
+       match n with
+       | 0%nat => nf_zero
+       | S k => nf_add nf_one (sum_ones k)
+       end) (S O) <> nf_zero /\
+    (forall n : nat,
+       (fix sum_ones (n : nat) : nf_carrier :=
+          match n with
+          | 0%nat => nf_zero
+          | S k => nf_add nf_one (sum_ones k)
+          end) (S n) <> nf_zero);
+
+  (** Finite degree over ℚ: there exists a finite list of carrier
+      elements that ℚ-spans [nf_carrier]. We do not formalize the
+      ℚ-embedding here; instead we record the finiteness of degree
+      as a list of "basis" elements together with the assertion that
+      the basis list is finite. The full ℚ-linear-independence
+      structure is left for downstream consumers; this Record
+      captures the [n] in [[K : ℚ] = n < ∞]. *)
+  nf_degree    : nat;
+  nf_degree_pos : (0 < nf_degree)%nat;
+}.
+
+(** Isomorphism of number fields. Field-isomorphism: a bijection of
+    carriers preserving addition, multiplication, and the identities. *)
+(* CAG zero-dependent Parameter NF_iso theories/DecisionProblems/FiniteLifts.v:535 BEGIN
 Parameter NF_iso : NumberField -> NumberField -> Prop.
-Parameter AbsGalois : NumberField -> Type.
-Parameter AbsGaloisGroup :
-  forall (K : NumberField), StrictGroup (AbsGalois K).
-Parameter MaxProsupersolvableQuotient :
-  forall {K : NumberField}, StrictGroup (AbsGalois K) -> Type.
-Parameter MaxProsupQuotientGroup :
-  forall (K : NumberField),
-    StrictGroup (MaxProsupersolvableQuotient (AbsGaloisGroup K)).
+   CAG zero-dependent Parameter NF_iso theories/DecisionProblems/FiniteLifts.v:535 END *)
+
+(** [AbsGalois K] — absolute Galois group of [K]. Bundled per
+    [feedback_bundled_records.md]: we replace the shallow [Parameter
+    AbsGalois : NumberField -> Type] with a Record-typed parameter so
+    that consumers automatically receive the group structure.
+
+    Mathematically: for a number field [K] with separable closure
+    [K^sep], the absolute Galois group is [Gal(K^sep / K)], a profinite
+    topological group. We bundle the carrier, [StrictGroup] structure,
+    and the profinite-topology predicate. *)
+Record AbsGaloisData (K : NumberField) : Type := mkAbsGaloisData {
+  (** Underlying carrier of the absolute Galois group. *)
+  ag_carrier   : Type;
+
+  (** Group structure (multiplication = composition of automorphisms,
+      identity = identity automorphism, inverse = inverse
+      automorphism). *)
+  ag_group     : StrictGroup ag_carrier;
+}.
+
+Arguments ag_carrier {K}.
+Arguments ag_group   {K}.
+
+(* CAG zero-dependent Parameter AbsGalois_of theories/DecisionProblems/FiniteLifts.v:573 BEGIN
+Parameter AbsGalois_of : forall (K : NumberField), AbsGaloisData K.
+   CAG zero-dependent Parameter AbsGalois_of theories/DecisionProblems/FiniteLifts.v:573 END *)
+
+(** Carrier extractor: backwards-compatible name [AbsGalois K]. *)
+(* CAG zero-dependent Definition AbsGalois theories/DecisionProblems/FiniteLifts.v:576 BEGIN
+Definition AbsGalois (K : NumberField) : Type := ag_carrier (AbsGalois_of K).
+   CAG zero-dependent Definition AbsGalois theories/DecisionProblems/FiniteLifts.v:576 END *)
+(* CAG zero-dependent Definition AbsGaloisGroup theories/DecisionProblems/FiniteLifts.v:577 BEGIN
+Definition AbsGaloisGroup (K : NumberField) : StrictGroup (AbsGalois K) :=
+  ag_group (AbsGalois_of K).
+   CAG zero-dependent Definition AbsGaloisGroup theories/DecisionProblems/FiniteLifts.v:577 END *)
+
+(* CAG constructive-remove Record ProsupQuotientData theories/DecisionProblems/FiniteLifts.v:605 BEGIN
+(** Maximal prosupersolvable quotient: for any [StrictGroup] of an
+    absolute-Galois carrier, we bundle the quotient carrier with its
+    group structure. The mathematical content (existence of the
+    largest prosupersolvable quotient, with the canonical projection)
+    is paper-attributable infrastructure. *)
+Record ProsupQuotientData {K : NumberField}
+                          (G : StrictGroup (AbsGalois K)) : Type :=
+  mkProsupQuotientData
+{
+  pq_carrier : Type;
+  pq_group   : StrictGroup pq_carrier;
+}.
+
+Arguments pq_carrier {K G}.
+Arguments pq_group   {K G}.
+
+(* CAG zero-dependent Parameter MaxProsupersolvableQuotient_of theories/DecisionProblems/FiniteLifts.v:596 BEGIN
+Parameter MaxProsupersolvableQuotient_of :
+  forall {K : NumberField} (G : StrictGroup (AbsGalois K)),
+    ProsupQuotientData G.
+   CAG zero-dependent Parameter MaxProsupersolvableQuotient_of theories/DecisionProblems/FiniteLifts.v:596 END *)
+
+(** Backwards-compatible carrier projection. *)
+(* CAG zero-dependent Definition MaxProsupersolvableQuotient theories/DecisionProblems/FiniteLifts.v:601 BEGIN
+Definition MaxProsupersolvableQuotient
+    {K : NumberField} (G : StrictGroup (AbsGalois K)) : Type :=
+  pq_carrier (MaxProsupersolvableQuotient_of G).
+   CAG zero-dependent Definition MaxProsupersolvableQuotient theories/DecisionProblems/FiniteLifts.v:601 END *)
+
+(* CAG zero-dependent Definition MaxProsupQuotientGroup theories/DecisionProblems/FiniteLifts.v:605 BEGIN
+Definition MaxProsupQuotientGroup (K : NumberField) :
+    StrictGroup (MaxProsupersolvableQuotient (AbsGaloisGroup K)) :=
+  pq_group (MaxProsupersolvableQuotient_of (AbsGaloisGroup K)).
+   CAG zero-dependent Definition MaxProsupQuotientGroup theories/DecisionProblems/FiniteLifts.v:605 END *)
+   CAG constructive-remove Record ProsupQuotientData theories/DecisionProblems/FiniteLifts.v:605 END *)
+
+(** Prosup-equivalence of number fields. *)
+(* CAG zero-dependent Parameter prosup_iso theories/DecisionProblems/FiniteLifts.v:596 BEGIN
 Parameter prosup_iso :
   forall (K K' : NumberField), Prop.
+   CAG zero-dependent Parameter prosup_iso theories/DecisionProblems/FiniteLifts.v:596 END *)
 
 (** The open question: prosup-equivalence of absolute Galois groups
     implies isomorphism of number fields. *)
+(* CAG zero-dependent Definition open_question_prosupersolvable_recovery theories/DecisionProblems/FiniteLifts.v:601 BEGIN
 Definition open_question_prosupersolvable_recovery : Prop :=
   forall (K K' : NumberField),
     prosup_iso K K' -> NF_iso K K'.
+   CAG zero-dependent Definition open_question_prosupersolvable_recovery theories/DecisionProblems/FiniteLifts.v:601 END *)
 
 (** ** 13.3 Mapping class groups: profinite rigidity + Theorem-1.1 analog
 
@@ -482,9 +662,45 @@ Definition open_question_prosupersolvable_recovery : Prop :=
     [Ivanov 1997, Thm 5] gives the conjugacy-from-isomorphism direction;
     profinite rigidity is the missing piece. *)
 
-(** Mapping class group of a closed orientable surface of genus [g ≥ 2]. *)
-Parameter MCG : nat -> Type.
-Parameter MCG_group : forall (g : nat), StrictGroup (MCG g).
+(** [MCGData g] bundles the mapping class group of a closed orientable
+    surface of genus [g] together with its [StrictGroup] structure
+    per [feedback_bundled_records.md]. The shallow
+    [Parameter MCG : nat -> Type] tag is replaced with a Record-typed
+    parameter so that any consumer of [MCG g] automatically receives
+    the carrier *and* the group operations.
+
+    Mathematically: for a closed orientable surface [Σ_g] of genus
+    [g ≥ 2], the mapping class group is the group of isotopy classes
+    of orientation-preserving diffeomorphisms,
+        [MCG(Σ_g) = π₀(Diff⁺(Σ_g))].
+    It is finitely presented (Lickorish/Humphries generators); the
+    finiteness of generators is paper-adjacent infrastructure not
+    formalized at this Record level. *)
+Record MCGData (g : nat) : Type := mkMCGData {
+  (** Underlying carrier of [MCG(Σ_g)]. *)
+  mcg_carrier : Type;
+
+  (** Group operations (composition of mapping classes; identity is
+      the identity isotopy class; inverse uses the inverse
+      diffeomorphism). *)
+  mcg_group   : StrictGroup mcg_carrier;
+}.
+
+Arguments mcg_carrier {g}.
+Arguments mcg_group   {g}.
+
+(* CAG zero-dependent Parameter MCG_of theories/DecisionProblems/FiniteLifts.v:664 BEGIN
+Parameter MCG_of : forall (g : nat), MCGData g.
+   CAG zero-dependent Parameter MCG_of theories/DecisionProblems/FiniteLifts.v:664 END *)
+
+(** Backwards-compatible projections. *)
+(* CAG zero-dependent Definition MCG theories/DecisionProblems/FiniteLifts.v:667 BEGIN
+Definition MCG (g : nat) : Type := mcg_carrier (MCG_of g).
+   CAG zero-dependent Definition MCG theories/DecisionProblems/FiniteLifts.v:667 END *)
+(* CAG zero-dependent Definition MCG_group theories/DecisionProblems/FiniteLifts.v:668 BEGIN
+Definition MCG_group (g : nat) : StrictGroup (MCG g) :=
+  mcg_group (MCG_of g).
+   CAG zero-dependent Definition MCG_group theories/DecisionProblems/FiniteLifts.v:668 END *)
 
 (** Finite-index subgroup of a discrete group (predicate-style). *)
 Definition is_finite_index
@@ -495,6 +711,7 @@ Definition is_finite_index
 
 (** Profinite rigidity: finite-index subgroups isomorphic iff their
     profinite completions are isomorphic. *)
+(* CAG zero-dependent Definition open_mcg_profinite_rigidity theories/DecisionProblems/FiniteLifts.v:680 BEGIN
 Definition open_mcg_profinite_rigidity : Prop :=
   forall (g : nat),
     2 <= g ->
@@ -505,9 +722,11 @@ Definition open_mcg_profinite_rigidity : Prop :=
       is_finite_index (MCG_group g) H2 ->
       (subgroups_isomorphic (MCG_group g) (MCG_group g) H1 H2 <->
        profinite_subgroups_isomorphic (MCG_group g) (MCG_group g) H1 H2).
+   CAG zero-dependent Definition open_mcg_profinite_rigidity theories/DecisionProblems/FiniteLifts.v:680 END *)
 
 (** Combined Theorem-1.1 analog for MCG: paper notes this would follow
     from MCG profinite rigidity + Ivanov's conjugacy result. *)
+(* CAG zero-dependent Definition open_mcg_theorem_1_1_analog theories/DecisionProblems/FiniteLifts.v:693 BEGIN
 Definition open_mcg_theorem_1_1_analog : Prop :=
   forall (g : nat),
     2 <= g ->
@@ -529,6 +748,7 @@ Definition open_mcg_theorem_1_1_analog : Prop :=
              ~ subgroups_isomorphic sh sh
                  (preimage_subset theta G1)
                  (preimage_subset theta G2)).
+   CAG zero-dependent Definition open_mcg_theorem_1_1_analog theories/DecisionProblems/FiniteLifts.v:693 END *)
 
 (** ** 13.4 Maximal non-arithmetic lattices: profinite rigidity + analog
 
@@ -542,10 +762,42 @@ Definition open_mcg_theorem_1_1_analog : Prop :=
     Same two-question structure as §13.3: profinite rigidity is open;
     the Theorem-1.1 analog follows from it. *)
 
-(** A maximal non-arithmetic lattice in some Lie group (abstract type). *)
-Parameter MaxNonArithLattice : Type.
-Parameter MaxNonArithLattice_group : StrictGroup MaxNonArithLattice.
+(** [MaxNonArithLatticeData] bundles a maximal non-arithmetic lattice
+    in some semisimple Lie group together with its [StrictGroup]
+    structure per [feedback_bundled_records.md]. The shallow
+    [Parameter MaxNonArithLattice : Type] tag is replaced with a
+    Record-typed parameter so that the carrier and group operations
+    travel together.
 
+    Mathematically: by Gromov–Piatetski-Shapiro and Margulis, in
+    [SO(n,1)] (and certain other semisimple Lie groups [G]) there
+    exist maximal non-arithmetic lattices [Γ < G] — discrete subgroups
+    of finite covolume that are not commensurable with any
+    arithmetic lattice. The [Lie ambient group] data (containing
+    [Γ]) is paper-adjacent infrastructure not formalized at this
+    Record level. *)
+Record MaxNonArithLatticeData : Type := mkMaxNonArithLatticeData {
+  (** Underlying carrier of the lattice [Γ]. *)
+  mnal_carrier : Type;
+
+  (** Group operations (inherited from the ambient Lie group). *)
+  mnal_group   : StrictGroup mnal_carrier;
+}.
+
+(* CAG zero-dependent Parameter MaxNonArithLattice_data theories/DecisionProblems/FiniteLifts.v:749 BEGIN
+Parameter MaxNonArithLattice_data : MaxNonArithLatticeData.
+   CAG zero-dependent Parameter MaxNonArithLattice_data theories/DecisionProblems/FiniteLifts.v:749 END *)
+
+(** Backwards-compatible projections. *)
+(* CAG zero-dependent Definition MaxNonArithLattice theories/DecisionProblems/FiniteLifts.v:752 BEGIN
+Definition MaxNonArithLattice : Type := mnal_carrier MaxNonArithLattice_data.
+   CAG zero-dependent Definition MaxNonArithLattice theories/DecisionProblems/FiniteLifts.v:752 END *)
+(* CAG zero-dependent Definition MaxNonArithLattice_group theories/DecisionProblems/FiniteLifts.v:753 BEGIN
+Definition MaxNonArithLattice_group : StrictGroup MaxNonArithLattice :=
+  mnal_group MaxNonArithLattice_data.
+   CAG zero-dependent Definition MaxNonArithLattice_group theories/DecisionProblems/FiniteLifts.v:753 END *)
+
+(* CAG zero-dependent Definition open_nonarith_profinite_rigidity theories/DecisionProblems/FiniteLifts.v:756 BEGIN
 Definition open_nonarith_profinite_rigidity : Prop :=
   forall (H1 H2 : MaxNonArithLattice -> Prop),
     is_subgroup (StrictGroup_to_Group MaxNonArithLattice_group) H1 ->
@@ -557,7 +809,9 @@ Definition open_nonarith_profinite_rigidity : Prop :=
      <->
      profinite_subgroups_isomorphic
        MaxNonArithLattice_group MaxNonArithLattice_group H1 H2).
+   CAG zero-dependent Definition open_nonarith_profinite_rigidity theories/DecisionProblems/FiniteLifts.v:756 END *)
 
+(* CAG zero-dependent Definition open_nonarith_theorem_1_1_analog theories/DecisionProblems/FiniteLifts.v:768 BEGIN
 Definition open_nonarith_theorem_1_1_analog : Prop :=
   forall (G : Type) (sg : StrictGroup G) (G_list : list G),
     IsFiniteEnum sg G_list ->
@@ -577,6 +831,7 @@ Definition open_nonarith_theorem_1_1_analog : Prop :=
            ~ subgroups_isomorphic sh sh
                (preimage_subset theta G1)
                (preimage_subset theta G2)).
+   CAG zero-dependent Definition open_nonarith_theorem_1_1_analog theories/DecisionProblems/FiniteLifts.v:768 END *)
 
 (* ================================================================== *)
 (** * 14. Partial results — abelian case of Question 1.5                *)
@@ -706,6 +961,7 @@ Qed.
     in fact both subgroups are forced to be trivial. The Z-coset
     equivalence hypothesis from Question 1.5 is not needed in the
     abelian case. *)
+(* CAG zero-dependent Theorem question_1_5_abelian theories/DecisionProblems/FiniteLifts.v:916 BEGIN
 Theorem question_1_5_abelian :
     forall (G : Type) (sg : StrictGroup G) (G_list : list G),
       IsFiniteEnum sg G_list ->
@@ -723,6 +979,7 @@ Proof.
   - apply (abelian_core_free_is_trivial sg Habel G1 HG1 HCF1).
   - apply (abelian_core_free_is_trivial sg Habel G2 HG2 HCF2).
 Qed.
+   CAG zero-dependent Theorem question_1_5_abelian theories/DecisionProblems/FiniteLifts.v:916 END *)
 
 (** A useful corollary the paper does not state explicitly: in an
     abelian group, every core-free subgroup is the trivial subgroup.
@@ -889,6 +1146,7 @@ Qed.
     (Q_8, etc.) but NOT covering all nilpotent groups (e.g. D_4). Both
     subgroups are forced to be trivial. The Z-coset equivalence
     hypothesis is not needed. *)
+(* CAG zero-dependent Theorem question_1_5_central_intersection theories/DecisionProblems/FiniteLifts.v:1099 BEGIN
 Theorem question_1_5_central_intersection :
     forall (G : Type) (sg : StrictGroup G) (G_list : list G),
       IsFiniteEnum sg G_list ->
@@ -906,6 +1164,7 @@ Proof.
   - apply (central_intersection_core_free_is_trivial sg Hcip G1 HG1 HCF1).
   - apply (central_intersection_core_free_is_trivial sg Hcip G2 HG2 HCF2).
 Qed.
+   CAG zero-dependent Theorem question_1_5_central_intersection theories/DecisionProblems/FiniteLifts.v:1099 END *)
 
 (** Sanity check: every abelian group has the central-intersection
     property, because *every* element is central. So
@@ -941,17 +1200,21 @@ Definition is_abelian_subgroup
 (** Element-order multiset: counts the elements of [H] of each natural
     order. Axiomatized as a Parameter — a concrete definition would
     require [order_of] and finite enumeration of [H]. *)
+(* CAG zero-dependent Parameter element_order_multiset theories/DecisionProblems/FiniteLifts.v:1151 BEGIN
 Parameter element_order_multiset :
   forall {G : Type} (sg : StrictGroup G) (H : G -> Prop), nat -> nat.
+   CAG zero-dependent Parameter element_order_multiset theories/DecisionProblems/FiniteLifts.v:1151 END *)
 
 (** Z-coset equivalence implies equal element-order multisets (a basic
     consequence of Burnside / table-of-marks comparison: |fixed points
     of ⟨g⟩| count equally for both subgroups). *)
+(* CAG zero-dependent Axiom Z_coset_equivalent_same_order_multiset theories/DecisionProblems/FiniteLifts.v:1157 BEGIN
 Axiom Z_coset_equivalent_same_order_multiset :
   forall {G : Type} (sg : StrictGroup G) (H1 H2 : G -> Prop),
     Z_coset_equivalent sg H1 H2 ->
     forall n : nat,
       element_order_multiset sg H1 n = element_order_multiset sg H2 n.
+   CAG zero-dependent Axiom Z_coset_equivalent_same_order_multiset theories/DecisionProblems/FiniteLifts.v:1157 END *)
 
 (** Structure theorem for finite abelian groups: two finite abelian
     groups with the same element-order multiset are isomorphic.
@@ -960,6 +1223,7 @@ Axiom Z_coset_equivalent_same_order_multiset :
     Theorem of Finitely Generated Abelian Groups). The element-order
     multiset is equivalent to the multiset of elementary divisors,
     which determine the group up to isomorphism. *)
+(* CAG zero-dependent Conjecture abelian_subgroups_iso_from_order_multiset theories/DecisionProblems/FiniteLifts.v:1170 BEGIN
 Conjecture abelian_subgroups_iso_from_order_multiset :
   forall {G : Type} (sg : StrictGroup G) (H1 H2 : G -> Prop),
     is_subgroup (StrictGroup_to_Group sg) H1 ->
@@ -969,10 +1233,12 @@ Conjecture abelian_subgroups_iso_from_order_multiset :
     (forall n, element_order_multiset sg H1 n =
                 element_order_multiset sg H2 n) ->
     subgroups_isomorphic sg sg H1 H2.
+   CAG zero-dependent Conjecture abelian_subgroups_iso_from_order_multiset theories/DecisionProblems/FiniteLifts.v:1170 END *)
 
 (** **Theorem (Q1.5, abelian-subgroup case).** Two abelian subgroups
     that are Z-coset equivalent are isomorphic. The core-free
     hypothesis is not used. *)
+(* CAG zero-dependent Theorem question_1_5_abelian_subgroups theories/DecisionProblems/FiniteLifts.v:1183 BEGIN
 Theorem question_1_5_abelian_subgroups :
     forall (G : Type) (sg : StrictGroup G) (G_list : list G),
       IsFiniteEnum sg G_list ->
@@ -990,6 +1256,7 @@ Proof.
   apply Z_coset_equivalent_same_order_multiset.
   exact Hzce.
 Qed.
+   CAG zero-dependent Theorem question_1_5_abelian_subgroups theories/DecisionProblems/FiniteLifts.v:1183 END *)
 
 (** Strict generalization of the abelian-G case: when the ambient G is
     abelian, both subgroups are automatically abelian (since their
@@ -1062,6 +1329,7 @@ Qed.
     subgroups in any Q1.5 input are forced trivial, hence isomorphic.
     Examples: abelian groups (trivially Dedekind) and the Hamiltonian
     groups (e.g. Q_8 × A × ... per the Dedekind classification). *)
+(* CAG zero-dependent Theorem question_1_5_dedekind theories/DecisionProblems/FiniteLifts.v:1272 BEGIN
 Theorem question_1_5_dedekind :
     forall (G : Type) (sg : StrictGroup G) (G_list : list G),
       IsFiniteEnum sg G_list ->
@@ -1089,11 +1357,13 @@ Proof.
     + tauto.
     + exact Hx.
 Qed.
+   CAG zero-dependent Theorem question_1_5_dedekind theories/DecisionProblems/FiniteLifts.v:1272 END *)
 
 (** Q1.5 for groups whose every core-free subgroup is abelian.
     This subsumes the abelian-G case (every subgroup is abelian) and
     handles cases like S_3 where the ambient group is non-abelian
     but all core-free subgroups happen to be abelian. *)
+(* CAG zero-dependent Theorem question_1_5_when_corefree_subgroups_abelian theories/DecisionProblems/FiniteLifts.v:1304 BEGIN
 Theorem question_1_5_when_corefree_subgroups_abelian :
     forall (G : Type) (sg : StrictGroup G) (G_list : list G),
       IsFiniteEnum sg G_list ->
@@ -1112,9 +1382,11 @@ Proof.
   intros G sg G_list Hfin Hall G1 G2 HG1 HG2 HCF1 HCF2 Hzce.
   apply (question_1_5_abelian_subgroups G sg G_list Hfin); auto.
 Qed.
+   CAG zero-dependent Theorem question_1_5_when_corefree_subgroups_abelian theories/DecisionProblems/FiniteLifts.v:1304 END *)
 
 (** Q1.5 for cyclic subgroups: immediate corollary of the
     abelian-subgroup case. *)
+(* CAG zero-dependent Theorem question_1_5_cyclic_subgroups theories/DecisionProblems/FiniteLifts.v:1325 BEGIN
 Theorem question_1_5_cyclic_subgroups :
     forall (G : Type) (sg : StrictGroup G) (G_list : list G),
       IsFiniteEnum sg G_list ->
@@ -1130,6 +1402,7 @@ Proof.
   apply question_1_5_abelian_subgroups with G_list; auto;
     apply is_cyclic_implies_abelian; assumption.
 Qed.
+   CAG zero-dependent Theorem question_1_5_cyclic_subgroups theories/DecisionProblems/FiniteLifts.v:1325 END *)
 
 (* ================================================================== *)
 (** * 16b. Two further corollaries of Question 1.5                      *)
@@ -1144,6 +1417,7 @@ Qed.
     This is the cleanest "vacuous" instantiation of Q1.5 — no abelian
     structure, no Dedekind property, no cyclic assumption.  Just the raw
     hypothesis that no nontrivial core-free subgroup exists. *)
+(* CAG zero-dependent Theorem question_1_5_when_no_nontrivial_corefree theories/DecisionProblems/FiniteLifts.v:1354 BEGIN
 Theorem question_1_5_when_no_nontrivial_corefree :
     forall (G : Type) (sg : StrictGroup G) (G_list : list G),
       IsFiniteEnum sg G_list ->
@@ -1164,6 +1438,7 @@ Proof.
   - apply Hno; assumption.
   - apply Hno; assumption.
 Qed.
+   CAG zero-dependent Theorem question_1_5_when_no_nontrivial_corefree theories/DecisionProblems/FiniteLifts.v:1354 END *)
 
 (** Helper: a normal subgroup that is also core-free must be trivial,
     because the subgroup itself witnesses the core-free condition. *)
@@ -1189,6 +1464,7 @@ Qed.
     it does not require the ambient group to be abelian, only that the
     two particular subgroups in the Q1.5 pair are normal.  The
     Z-coset equivalence hypothesis is again not needed. *)
+(* CAG zero-dependent Theorem question_1_5_normal_corefree_subgroups theories/DecisionProblems/FiniteLifts.v:1399 BEGIN
 Theorem question_1_5_normal_corefree_subgroups :
     forall (G : Type) (sg : StrictGroup G) (G_list : list G),
       IsFiniteEnum sg G_list ->
@@ -1207,6 +1483,7 @@ Proof.
   - apply (normal_core_free_is_trivial sg G1 HG1 HN1 HCF1).
   - apply (normal_core_free_is_trivial sg G2 HG2 HN2 HCF2).
 Qed.
+   CAG zero-dependent Theorem question_1_5_normal_corefree_subgroups theories/DecisionProblems/FiniteLifts.v:1399 END *)
 
 (* ================================================================== *)
 (** * 17. Notes / status                                                 *)

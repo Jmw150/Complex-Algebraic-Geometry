@@ -33,65 +33,93 @@ Local Open Scope CReal_scope.
       - χ = 0 outside the disc of radius r2 around z0
       - 0 ≤ χ ≤ 1 everywhere
     Axiomatized; requires smooth partition of unity machinery. *)
+(* CAG zero-dependent Parameter cutoff theories/ComplexAnalysis2.v:36 BEGIN
 Parameter cutoff : CComplex -> CReal -> CReal -> (CComplex -> CReal).
+   CAG zero-dependent Parameter cutoff theories/ComplexAnalysis2.v:36 END *)
 
-(** Specification axioms for the [cutoff] [Parameter]: the cutoff is 1
-    inside the inner disc, 0 outside the outer disc, and nonnegative
-    everywhere. *)
-Conjecture cutoff_inner :
+(* CAG zero-dependent Admitted cutoff_inner theories/ComplexAnalysis2.v:38 BEGIN
+Theorem cutoff_inner :
   forall z0 r1 r2 z,
     open_disc z0 r1 z ->
     cutoff z0 r1 r2 z = inject_Q 1.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted cutoff_inner theories/ComplexAnalysis2.v:38 END *)
 
-Conjecture cutoff_outer :
+(* CAG zero-dependent Admitted cutoff_outer theories/ComplexAnalysis2.v:44 BEGIN
+Theorem cutoff_outer :
   forall z0 r1 r2 z,
     ~ open_disc z0 r2 z ->
     cutoff z0 r1 r2 z = inject_Q 0.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted cutoff_outer theories/ComplexAnalysis2.v:44 END *)
 
-Conjecture cutoff_range :
+(* CAG zero-dependent Admitted cutoff_range theories/ComplexAnalysis2.v:50 BEGIN
+Theorem cutoff_range :
   forall z0 r1 r2 z,
     CRealLtProp (inject_Q 0) (cutoff z0 r1 r2 z) \/
     cutoff z0 r1 r2 z = inject_Q 0.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted cutoff_range theories/ComplexAnalysis2.v:50 END *)
 
 (** The cutoff function as a complex-valued map (real part only). *)
+(* CAG zero-dependent Definition cutoff_C theories/ComplexAnalysis2.v:63 BEGIN
 Definition cutoff_C (z0 : CComplex) (r1 r2 : CReal) (w : CComplex) : CComplex :=
   mkC (cutoff z0 r1 r2 w) 0.
+   CAG zero-dependent Definition cutoff_C theories/ComplexAnalysis2.v:63 END *)
 
 (** Lift cutoff to a complex scalar: χ · g. *)
+(* CAG zero-dependent Definition cutoff_mul theories/ComplexAnalysis2.v:67 BEGIN
 Definition cutoff_mul (z0 : CComplex) (r1 r2 : CReal)
     (g : CComplex -> CComplex) (w : CComplex) : CComplex :=
   Cmul (cutoff_C z0 r1 r2 w) (g w).
+   CAG zero-dependent Definition cutoff_mul theories/ComplexAnalysis2.v:67 END *)
 
 (** Given g smooth on disc A(z0, 2ε), decompose g = g₁ + g₂ where:
       - g₁ has compact support in A(z0, 2ε)  [the "inner" piece]
       - g₂ vanishes in A(z0, ε)              [the "outer" piece] *)
+(* CAG zero-dependent Definition dbar_decomp_g1 theories/ComplexAnalysis2.v:74 BEGIN
 Definition dbar_decomp_g1 (z0 : CComplex) (eps : CReal)
     (g : CComplex -> CComplex) : CComplex -> CComplex :=
   cutoff_mul z0 eps (inject_Q 2 * eps) g.
+   CAG zero-dependent Definition dbar_decomp_g1 theories/ComplexAnalysis2.v:74 END *)
 
+(* CAG zero-dependent Definition dbar_decomp_g2 theories/ComplexAnalysis2.v:78 BEGIN
 Definition dbar_decomp_g2 (z0 : CComplex) (eps : CReal)
     (g : CComplex -> CComplex) : CComplex -> CComplex :=
   fun w => Csub (g w) (dbar_decomp_g1 z0 eps g w).
+   CAG zero-dependent Definition dbar_decomp_g2 theories/ComplexAnalysis2.v:78 END *)
 
-(** Specifications of the [dbar_decomp_*] / [dbar_poincare_localized]
-    construction; axiomatized at the Leibniz [=] level. *)
-Conjecture dbar_decomp_sum :
+(** The decomposition is correct: g = g₁ + g₂. *)
+(* CAG zero-dependent Admitted dbar_decomp_sum theories/ComplexAnalysis2.v:76 BEGIN
+Lemma dbar_decomp_sum :
   forall z0 eps g w,
     Cadd (dbar_decomp_g1 z0 eps g w) (dbar_decomp_g2 z0 eps g w) = g w.
+Proof. Admitted.
+   CAG zero-dependent Admitted dbar_decomp_sum theories/ComplexAnalysis2.v:76 END *)
 
-Conjecture dbar_decomp_g2_inner :
+(** g₂ vanishes inside A(z0, ε). *)
+(* CAG zero-dependent Admitted dbar_decomp_g2_inner theories/ComplexAnalysis2.v:84 BEGIN
+Lemma dbar_decomp_g2_inner :
   forall z0 eps g w,
     CRpositive eps ->
     open_disc z0 eps w ->
     dbar_decomp_g2 z0 eps g w = C0.
+Proof. Admitted.
+   CAG zero-dependent Admitted dbar_decomp_g2_inner theories/ComplexAnalysis2.v:84 END *)
 
-Conjecture dbar_poincare_localized :
+(** Localized ∂̄-Poincaré: using the g = g₁ + g₂ decomposition,
+    construct a solution on A(z0, ε). *)
+(* CAG zero-dependent Admitted dbar_poincare_localized theories/ComplexAnalysis2.v:96 BEGIN
+Lemma dbar_poincare_localized :
   forall (g : CComplex -> CComplex) (z0 : CComplex) (r eps : CReal),
     CRpositive eps ->
     CRealLtProp (inject_Q 2 * eps * (inject_Q 2 * eps)) (r * r) ->
-    (forall w, open_disc z0 r w -> True) ->
+    (* A(z0, 2ε) ⊂ A(z0, r) *)
+    (forall w, open_disc z0 r w -> True) ->  (* g smooth on A(z0,r): placeholder *)
     exists f : CComplex -> CComplex,
       forall w, open_disc z0 eps w -> dbar_at f w (g w).
+Proof. Admitted.
+   CAG zero-dependent Admitted dbar_poincare_localized theories/ComplexAnalysis2.v:96 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 2. Several complex variables: polydiscs and holomorphicity        *)
@@ -115,12 +143,15 @@ Definition holomorphic_Cn {n : nat} (U : Cn n -> Prop)
 (** Osgood's theorem: holomorphic in each variable separately implies
     jointly holomorphic (continuity is automatic).  This is a deep
     classical result; we state it and admit. *)
-Conjecture osgood :
+(* CAG zero-dependent Admitted osgood theories/ComplexAnalysis2.v:125 BEGIN
+Theorem osgood :
   forall {n : nat} (U : Cn n -> Prop) (f : Cn n -> CComplex),
     (forall v : Cn n, U v ->
       forall i : Fin.t n,
         holomorphic_at_CR (freeze_except f v i) (v i)) ->
     holomorphic_Cn U f.
+Proof. Admitted.
+   CAG zero-dependent Admitted osgood theories/ComplexAnalysis2.v:125 END *)
 
 (** The total differential of f decomposes as ∂f + ∂̄f.
     In coordinates: df = ∑_j (∂f/∂z_j) dz_j + ∑_j (∂f/∂z̄_j) dz̄_j.
@@ -132,11 +163,14 @@ Definition dbar_j_zero {n : nat} (f : Cn n -> CComplex) (v : Cn n)
   dbar_at (freeze_except f v j) (v j) C0.
 
 (** Holomorphic iff all ∂̄ components vanish. *)
-Conjecture holomorphic_Cn_iff_dbar_zero :
+(* CAG zero-dependent Admitted holomorphic_Cn_iff_dbar_zero theories/ComplexAnalysis2.v:142 BEGIN
+Lemma holomorphic_Cn_iff_dbar_zero :
   forall {n : nat} (U : Cn n -> Prop) (f : Cn n -> CComplex),
     holomorphic_Cn U f <->
     forall v : Cn n, U v ->
       forall j : Fin.t n, dbar_j_zero f v j.
+Proof. Admitted.
+   CAG zero-dependent Admitted holomorphic_Cn_iff_dbar_zero theories/ComplexAnalysis2.v:142 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 3. Coinductive double power series and analytic functions in ℂⁿ  *)
@@ -219,13 +253,16 @@ Definition cn_diffs {n : nat} (z z0 : Cn n) : list CComplex :=
   List.map (fun i => Csub (z i) (z0 i)) (fin_list n).
 
 (** Holomorphic iff analytic in ℂ² (via iterated Cauchy formula). *)
-Conjecture holomorphic_C2_iff_analytic :
+(* CAG zero-dependent Admitted holomorphic_C2_iff_analytic theories/ComplexAnalysis2.v:232 BEGIN
+Theorem holomorphic_C2_iff_analytic :
   forall (U : CComplex -> CComplex -> Prop)
          (f : CComplex -> CComplex -> CComplex),
     (forall z1 z2, U z1 z2 ->
       holomorphic_at_CR (fun w => f z1 w) z2 /\
       holomorphic_at_CR (fun w => f w z2) z1) <->
     (forall z10 z20, U z10 z20 -> analytic_C2 f z10 z20).
+Proof. Admitted.
+   CAG zero-dependent Admitted holomorphic_C2_iff_analytic theories/ComplexAnalysis2.v:232 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 4. Identity theorem and maximum principle                         *)
@@ -248,30 +285,39 @@ Definition is_domain {n : nat} (U : Cn n -> Prop) : Prop :=
 (** Identity Theorem for holomorphic functions in ℂⁿ.
     If f and g agree on a non-empty open subset of a connected domain U,
     they agree everywhere on U. *)
-Conjecture identity_theorem :
+(* CAG zero-dependent Admitted identity_theorem theories/ComplexAnalysis2.v:263 BEGIN
+Theorem identity_theorem :
   forall {n : nat} (U V : Cn n -> Prop) (f g : Cn n -> CComplex),
     is_domain U ->
     holomorphic_Cn U f ->
     holomorphic_Cn U g ->
+    (* V is a non-empty open subset of U *)
     (exists v, V v) ->
     (forall v, V v -> U v) ->
     (forall v, V v -> Cequal (f v) (g v)) ->
     forall v, U v -> Cequal (f v) (g v).
+Proof. Admitted.
+   CAG zero-dependent Admitted identity_theorem theories/ComplexAnalysis2.v:263 END *)
 
 (** Maximum Modulus Principle.
     If |f| attains an interior maximum on a connected domain, f is constant. *)
 Definition Cnorm2_fn {n : nat} (f : Cn n -> CComplex) : Cn n -> CReal :=
   fun v => Cnorm2 (f v).
 
-Conjecture maximum_principle :
+(* CAG zero-dependent Admitted maximum_principle theories/ComplexAnalysis2.v:280 BEGIN
+Theorem maximum_principle :
   forall {n : nat} (U : Cn n -> Prop) (f : Cn n -> CComplex),
     is_domain U ->
     holomorphic_Cn U f ->
+    (* |f| attains its maximum at some interior point v0 *)
     (exists v0 : Cn n, U v0 /\
       forall v : Cn n, U v ->
         CRealLtProp (Cnorm2_fn f v) (Cnorm2_fn f v0) \/
         Cnorm2_fn f v = Cnorm2_fn f v0) ->
+    (* then f is constant *)
     exists c : CComplex, forall v : Cn n, U v -> Cequal (f v) c.
+Proof. Admitted.
+   CAG zero-dependent Admitted maximum_principle theories/ComplexAnalysis2.v:280 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 5. Hartogs' Extension Theorem                                     *)
@@ -296,7 +342,8 @@ Definition full_polydisc (R1 R2 : CReal) : CComplex -> CComplex -> Prop :=
     we must have |z₂| > r₂).  Use the Cauchy integral in z₂ to define
     F(z₁, z₂) = (1/2πi) ∮ f(z₁,w)/(w−z₂) dw, then show ∂F/∂z̄₁ = 0
     by differentiating under the integral, and F = f on the overlap. *)
-Conjecture hartogs :
+(* CAG zero-dependent Admitted hartogs theories/ComplexAnalysis2.v:319 BEGIN
+Theorem hartogs :
   forall (R1 r1 R2 r2 : CReal) (f : CComplex -> CComplex -> CComplex),
     CRpositive r1 -> CRpositive r2 ->
     CRealLtProp (r1 * r1) (R1 * R1) ->
@@ -310,21 +357,26 @@ Conjecture hartogs :
         holomorphic_at_CR (fun w => F w z2) z1) /\
       (forall z1 z2, hartogs_figure R1 r1 R2 r2 z1 z2 ->
         Cequal (F z1 z2) (f z1 z2)).
+Proof. Admitted.
+   CAG zero-dependent Admitted hartogs theories/ComplexAnalysis2.v:319 END *)
 
 (** Corollary: for n > 1, isolated singularities of holomorphic functions
     are removable (Hartogs phenomenon). *)
-Conjecture hartogs_removable_singularity :
+(* CAG zero-dependent Admitted hartogs_removable_singularity theories/ComplexAnalysis2.v:335 BEGIN
+Corollary hartogs_removable_singularity :
   forall (R1 R2 : CReal) (f : CComplex -> CComplex -> CComplex),
     CRpositive R1 -> CRpositive R2 ->
     (forall z1 z2,
       (open_disc C0 R1 z1 /\ open_disc C0 R2 z2) ->
-      Cequal z1 C0 \/ Cequal z2 C0 \/ True ->
+      Cequal z1 C0 \/ Cequal z2 C0 \/ True ->  (* punctured at 0 *)
       holomorphic_at_CR (fun w => f z1 w) z2 /\
       holomorphic_at_CR (fun w => f w z2) z1) ->
     exists F : CComplex -> CComplex -> CComplex,
       forall z1 z2, full_polydisc R1 R2 z1 z2 ->
         holomorphic_at_CR (fun w => F z1 w) z2 /\
         holomorphic_at_CR (fun w => F w z2) z1.
+Proof. Admitted.
+   CAG zero-dependent Admitted hartogs_removable_singularity theories/ComplexAnalysis2.v:335 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 6. Weierstrass Theory                                             *)
@@ -392,26 +444,31 @@ Definition order_in_w (f : CComplex -> CComplex) : nat -> Prop :=
     Proof uses integral formulas for the symmetric functions of the roots
     b₁(z),…,b_d(z) of f(z,·) = 0, then shows these are holomorphic via
     the residue theorem, yielding the coefficients of g via Vieta's formulas. *)
-Conjecture weierstrass_preparation :
+(* CAG zero-dependent Admitted weierstrass_preparation theories/ComplexAnalysis2.v:415 BEGIN
+Theorem weierstrass_preparation :
   forall {n : nat} (f : Cn (S n) -> CComplex) (d : nat),
     holomorphic_Cn (fun _ => True) f ->
     f (fun _ => C0) = C0 ->
+    (* d is the order of vanishing in the last variable at the origin *)
     (forall k, (k < d)%nat ->
       ps_coeff (PSCons C0 (const_series C0)) k = C0) ->
     exists (g : WPoly n) (h : Cn (S n) -> CComplex),
       wp_deg g = d /\
       holomorphic_Cn (fun _ => True) h /\
-      CRpositive (Cnorm2 (h (fun _ => C0))) /\
+      CRpositive (Cnorm2 (h (fun _ => C0))) /\  (* h(0) ≠ 0, i.e., h is a unit *)
       forall z : Cn (S n),
         Cequal (f z)
                (Cmul (wp_eval g (fun i => z (Fin.FS i)) (z Fin.F1))
                      (h z)).
+Proof. Admitted.
+   CAG zero-dependent Admitted weierstrass_preparation theories/ComplexAnalysis2.v:415 END *)
 
 (** ** 6.3  Weierstrass Division Theorem *)
 
 (** Any holomorphic f can be divided by a Weierstrass polynomial g of
     degree d to give f = g·h + r with deg_w r < d. *)
-Conjecture weierstrass_division :
+(* CAG zero-dependent Admitted weierstrass_division theories/ComplexAnalysis2.v:434 BEGIN
+Theorem weierstrass_division :
   forall {n : nat} (f : Cn (S n) -> CComplex) (g : WPoly n),
     holomorphic_Cn (fun _ => True) f ->
     exists (h : Cn (S n) -> CComplex) (r_coeffs : list (Cn n -> CComplex)),
@@ -419,12 +476,14 @@ Conjecture weierstrass_division :
       holomorphic_Cn (fun _ => True) h /\
       (forall c, In c r_coeffs -> holomorphic_Cn (fun _ => True) c) /\
       forall z : Cn (S n),
-        let zn := fun i => z (Fin.FS i) in
-        let w  := z Fin.F1 in
+        let zn := fun i => z (Fin.FS i) in  (* z' = (z_2,...,z_{n+1}) *)
+        let w  := z Fin.F1 in               (* w  = z_1 *)
         Cequal (f z)
           (Cadd
             (Cmul (wp_eval g zn w) (h z))
             (monic_poly_eval (List.map (fun c => c zn) r_coeffs) w)).
+Proof. Admitted.
+   CAG zero-dependent Admitted weierstrass_division theories/ComplexAnalysis2.v:434 END *)
 
 (** ** 6.4  Geometry of zero sets *)
 
@@ -476,158 +535,89 @@ Definition germ_equiv {n : nat} (f g : Germ n) : Prop :=
       Polydisc (fun _ => C0) (fun _ => r) z ->
       Cequal (germ_fn f z) (germ_fn g z).
 
-(** Minimum radius (inner product of two germ domains).
-    Axiomatized; CReal min requires decidability not available here. *)
-Parameter CReal_min : CReal -> CReal -> CReal.
-Conjecture CReal_min_le_l : forall r s, CRealLtProp (CReal_min r s * CReal_min r s) (r * r).
-Conjecture CReal_min_le_r : forall r s, CRealLtProp (CReal_min r s * CReal_min r s) (s * s).
-Conjecture CReal_min_pos  : forall r s, CRpositive r -> CRpositive s -> CRpositive (CReal_min r s).
-
 (** germ_equiv is an equivalence relation. *)
+(* CAG zero-dependent Admitted germ_equiv_refl theories/ComplexAnalysis2.v:486 BEGIN
 Lemma germ_equiv_refl : forall {n} (f : Germ n), germ_equiv f f.
-Proof.
-  intros n f. unfold germ_equiv.
-  exists (CReal_min (germ_radius f) (germ_radius f)).
-  split; [apply CReal_min_pos; apply (germ_radius_pos f)|].
-  split; [apply CReal_min_le_l|].
-  split; [apply CReal_min_le_l|].
-  intros z _. unfold Cequal. split; reflexivity.
-Qed.
+Proof. Admitted.
+   CAG zero-dependent Admitted germ_equiv_refl theories/ComplexAnalysis2.v:486 END *)
 
+(* CAG zero-dependent Admitted germ_equiv_sym theories/ComplexAnalysis2.v:490 BEGIN
 Lemma germ_equiv_sym : forall {n} (f g : Germ n),
   germ_equiv f g -> germ_equiv g f.
-Proof.
-  intros n f g [r [Hpos [Hf [Hg Heq]]]].
-  exists r. split; [exact Hpos|]. split; [exact Hg|]. split; [exact Hf|].
-  intros z Hz. unfold Cequal in Heq |- *.
-  destruct (Heq z Hz) as [Hre Him]. split; symmetry; assumption.
-Qed.
+Proof. Admitted.
+   CAG zero-dependent Admitted germ_equiv_sym theories/ComplexAnalysis2.v:490 END *)
 
-Lemma CRealLtProp_trans : forall x y z,
-  CRealLtProp x y -> CRealLtProp y z -> CRealLtProp x z.
-Proof.
-  intros x y z Hxy Hyz.
-  apply CRealLtForget. eapply CReal_lt_trans.
-  - apply CRealLtEpsilon. exact Hxy.
-  - apply CRealLtEpsilon. exact Hyz.
-Qed.
-
+(* CAG zero-dependent Admitted germ_equiv_trans theories/ComplexAnalysis2.v:494 BEGIN
 Lemma germ_equiv_trans : forall {n} (f g h : Germ n),
   germ_equiv f g -> germ_equiv g h -> germ_equiv f h.
-Proof.
-  intros n f g h [r_fg [Hpos_fg [Hf [Hg Heq_fg]]]] [r_gh [Hpos_gh [Hg' [Hh Heq_gh]]]].
-  exists (CReal_min r_fg r_gh).
-  split. { apply CReal_min_pos; assumption. }
-  split. { eapply CRealLtProp_trans; [apply CReal_min_le_l|exact Hf]. }
-  split. { eapply CRealLtProp_trans; [apply CReal_min_le_r|exact Hh]. }
-  intros z Hz.
-  assert (Hz_fg : Polydisc (fun _ => C0) (fun _ => r_fg) z).
-  { intro i. unfold open_disc.
-    eapply CRealLtProp_trans; [apply (Hz i)|apply CReal_min_le_l]. }
-  assert (Hz_gh : Polydisc (fun _ => C0) (fun _ => r_gh) z).
-  { intro i. unfold open_disc.
-    eapply CRealLtProp_trans; [apply (Hz i)|apply CReal_min_le_r]. }
-  unfold Cequal in *.
-  destruct (Heq_fg z Hz_fg) as [Hre_fg Him_fg].
-  destruct (Heq_gh z Hz_gh) as [Hre_gh Him_gh].
-  split; etransitivity; eassumption.
-Qed.
+Proof. Admitted.
+   CAG zero-dependent Admitted germ_equiv_trans theories/ComplexAnalysis2.v:494 END *)
 
 (** ** 7.2  Ring operations *)
 
+(** Minimum radius (inner product of two germ domains).
+    Axiomatized; CReal min requires decidability not available here. *)
+(* CAG zero-dependent Parameter CReal_min theories/ComplexAnalysis2.v:550 BEGIN
+(* CAG zero-dependent Parameter CReal_min theories/ComplexAnalysis2.v:550 BEGIN
+Parameter CReal_min : CReal -> CReal -> CReal.
+   CAG zero-dependent Parameter CReal_min theories/ComplexAnalysis2.v:550 END *)
+   CAG zero-dependent Parameter CReal_min theories/ComplexAnalysis2.v:550 END *)
+(* CAG zero-dependent Admitted CReal_min_le_l theories/ComplexAnalysis2.v:502 BEGIN
+Theorem CReal_min_le_l : forall r s, CRealLtProp (CReal_min r s * CReal_min r s) (r * r).
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted CReal_min_le_l theories/ComplexAnalysis2.v:502 END *)
+(* CAG zero-dependent Admitted CReal_min_le_r theories/ComplexAnalysis2.v:504 BEGIN
+Theorem CReal_min_le_r : forall r s, CRealLtProp (CReal_min r s * CReal_min r s) (s * s).
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted CReal_min_le_r theories/ComplexAnalysis2.v:504 END *)
+(* CAG zero-dependent Admitted CReal_min_pos theories/ComplexAnalysis2.v:530 BEGIN
+Theorem CReal_min_pos  : forall r s, CRpositive r -> CRpositive s -> CRpositive (CReal_min r s).
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted CReal_min_pos theories/ComplexAnalysis2.v:530 END *)
+
 (** The ring O_n: germs under pointwise addition and multiplication. *)
 
-(** Germ ring operations — addition and multiplication remain Parameters
-    since constructing them requires proving holomorphicity of the
-    resulting function, which depends on several admitted analytic
-    facts.  The constant germs [germ_zero] and [germ_one] only need a
-    holomorphic-constant lemma, which we prove inline. *)
-Parameter germ_add : forall {n : nat} (f g : Germ n), Germ n.
-Parameter germ_mul : forall {n : nat} (f g : Germ n), Germ n.
-
-(** Helper: the constant CReal function has derivative 0 at every point. *)
-Lemma Rderiv_const_at_zero : forall (a x0 : CReal), Rderiv_at (fun _ => a) x0 0.
+(** Addition of germs (defined on the smaller domain). *)
+(* CAG constructive-remove Definition germ_add theories/ComplexAnalysis2.v:581 BEGIN
+Definition germ_add {n : nat} (f g : Germ n) : Germ n.
 Proof.
-  intros a x0 eps Heps.
-  exists (inject_Q 1). split.
-  - apply CRealLtForget. apply CRealLt_0_1.
-  - intros x Hapart Hlt.
-    apply CRealLtForget.
-    assert (Heq : (a - a) - 0 * (x - x0) == 0). { ring. }
-    assert (Habs : CReal_abs ((a - a) - 0 * (x - x0)) == 0).
-    { rewrite Heq. apply CReal_abs_right. apply CRealLe_refl. }
-    rewrite Habs.
-    apply CReal_mult_lt_0_compat.
-    + exact (CRealLtEpsilon _ _ Heps).
-    + destruct Hapart as [h | h].
-      * exfalso. exact (CRealLt_irrefl 0
-          (CReal_le_lt_trans _ _ _ (CReal_abs_pos (x - x0)) h)).
-      * exact h.
-Qed.
+  refine (mkGerm n (germ_radius f) (germ_radius_pos f)
+    (fun z => Cadd (germ_fn f z) (germ_fn g z)) _).
+  (* holomorphicity of sum: admitted *)
+  Admitted.
+   CAG constructive-remove Definition germ_add theories/ComplexAnalysis2.v:581 END *)
 
-Lemma Rderiv_const_at_neg_zero : forall (a x0 : CReal),
-    Rderiv_at (fun _ => a) x0 (- 0).
+(* CAG constructive-remove Definition germ_mul theories/ComplexAnalysis2.v:588 BEGIN
+Definition germ_mul {n : nat} (f g : Germ n) : Germ n.
 Proof.
-  intros a x0 eps Heps.
-  exists (inject_Q 1). split.
-  - apply CRealLtForget. apply CRealLt_0_1.
-  - intros x Hapart Hlt.
-    apply CRealLtForget.
-    assert (Heq : (a - a) - (- 0) * (x - x0) == 0). { ring. }
-    assert (Habs : CReal_abs ((a - a) - (- 0) * (x - x0)) == 0).
-    { rewrite Heq. apply CReal_abs_right. apply CRealLe_refl. }
-    rewrite Habs.
-    apply CReal_mult_lt_0_compat.
-    + exact (CRealLtEpsilon _ _ Heps).
-    + destruct Hapart as [h | h].
-      * exfalso. exact (CRealLt_irrefl 0
-          (CReal_le_lt_trans _ _ _ (CReal_abs_pos (x - x0)) h)).
-      * exact h.
-Qed.
+  refine (mkGerm n (germ_radius f) (germ_radius_pos f)
+    (fun z => Cmul (germ_fn f z) (germ_fn g z)) _).
+  Admitted.
+   CAG constructive-remove Definition germ_mul theories/ComplexAnalysis2.v:588 END *)
 
-(** Constant functions are holomorphic on any domain. *)
-Lemma holomorphic_Cn_const : forall {n : nat} (U : Cn n -> Prop) (c : CComplex),
-    holomorphic_Cn U (fun _ => c).
-Proof.
-  intros n U c.
-  unfold holomorphic_Cn, holomorphic_each_at.
-  intros v _ i.
-  unfold holomorphic_at_CR, freeze_except, cupd, CR_at, u_of, v_of.
-  cbn.
-  exists 0, (- 0), 0, 0.
-  repeat split.
-  - unfold partial_x_at. apply Rderiv_const_at_zero.
-  - unfold partial_y_at. apply Rderiv_const_at_neg_zero.
-  - unfold partial_x_at. apply Rderiv_const_at_zero.
-  - unfold partial_y_at. apply Rderiv_const_at_zero.
-Qed.
+(** Zero germ: constant 0. *)
+(* CAG constructive-remove Definition germ_zero theories/ComplexAnalysis2.v:595 BEGIN
+Definition germ_zero (n : nat) : Germ n.
+Proof. Admitted.
+   CAG constructive-remove Definition germ_zero theories/ComplexAnalysis2.v:595 END *)
 
-(** The zero germ: constant function 0, holomorphic on any polydisc. *)
-Definition germ_zero (n : nat) : Germ n :=
-  {| germ_radius     := inject_Q 1
-   ; germ_radius_pos := CRealLtForget _ _ CRealLt_0_1
-   ; germ_fn         := fun _ => C0
-   ; germ_hol        :=
-       holomorphic_Cn_const (Polydisc (fun _ => C0) (fun _ => inject_Q 1)) C0
-   |}.
-
-(** The unit germ: constant function 1, holomorphic on any polydisc. *)
-Definition germ_one (n : nat) : Germ n :=
-  {| germ_radius     := inject_Q 1
-   ; germ_radius_pos := CRealLtForget _ _ CRealLt_0_1
-   ; germ_fn         := fun _ => C1
-   ; germ_hol        :=
-       holomorphic_Cn_const (Polydisc (fun _ => C0) (fun _ => inject_Q 1)) C1
-   |}.
+(** One germ: constant 1. *)
+(* CAG constructive-remove Definition germ_one theories/ComplexAnalysis2.v:599 BEGIN
+Definition germ_one (n : nat) : Germ n.
+Proof. Admitted.
+   CAG constructive-remove Definition germ_one theories/ComplexAnalysis2.v:599 END *)
 
 (** ** 7.3  Algebraic properties of O_n *)
 
 (** O_n is an integral domain (no zero divisors), following from the
     Identity Theorem: if fg = 0 near 0 and f ≠ 0, then g = 0 near 0. *)
-Conjecture On_integral_domain :
+(* CAG zero-dependent Admitted On_integral_domain theories/ComplexAnalysis2.v:540 BEGIN
+Theorem On_integral_domain :
   forall {n : nat} (f g : Germ n),
     germ_equiv (germ_mul f g) (germ_zero n) ->
     germ_equiv f (germ_zero n) \/ germ_equiv g (germ_zero n).
+Proof. Admitted.
+   CAG zero-dependent Admitted On_integral_domain theories/ComplexAnalysis2.v:540 END *)
 
 (** O_n is a local ring.
     The unique maximal ideal is m_n = { f ∈ O_n | f(0) = 0 }.
@@ -638,62 +628,68 @@ Definition germ_is_unit {n : nat} (f : Germ n) : Prop :=
 Definition germ_maximal_ideal {n : nat} (f : Germ n) : Prop :=
   Cequal (germ_fn f (fun _ => C0)) C0.
 
-Conjecture On_local_ring :
+(* CAG zero-dependent Admitted On_local_ring theories/ComplexAnalysis2.v:554 BEGIN
+Theorem On_local_ring :
   forall {n : nat} (f : Germ n),
     germ_is_unit f \/ germ_maximal_ideal f.
+Proof. Admitted.
+   CAG zero-dependent Admitted On_local_ring theories/ComplexAnalysis2.v:554 END *)
 
 (** ** 7.4  O_n is a UFD *)
 
 (** An irreducible germ: non-unit, cannot be written as a product of
     two non-units. *)
+(* CAG constructive-remove Definition germ_irreducible theories/ComplexAnalysis2.v:642 BEGIN
 Definition germ_irreducible {n : nat} (f : Germ n) : Prop :=
   ~ germ_is_unit f /\
   forall g h : Germ n,
     germ_equiv (germ_mul g h) f ->
     germ_is_unit g \/ germ_is_unit h.
+   CAG constructive-remove Definition germ_irreducible theories/ComplexAnalysis2.v:642 END *)
 
 (** O_n is a UFD by induction on n, using Weierstrass Preparation to
     reduce to O_{n-1}[w] and Gauss' lemma to lift UFD from O_{n-1}. *)
-Lemma On_UFD :
+(* CAG zero-dependent Admitted On_UFD theories/ComplexAnalysis2.v:574 BEGIN
+Theorem On_UFD :
   forall {n : nat} (f : Germ n),
     ~ germ_equiv f (germ_zero n) ->
     ~ germ_is_unit f ->
     exists (irreducibles : list (Germ n)),
       (forall g, In g irreducibles -> germ_irreducible g) /\
-      True.
-Proof. intros. exists nil. split; [intros g []| exact I]. Qed.
+      (* f factors as the product of the irreducibles *)
+      True.  (* formal product: admitted due to quotient type complexity *)
+Proof. Admitted.
+   CAG zero-dependent Admitted On_UFD theories/ComplexAnalysis2.v:574 END *)
 
 (** ** 7.5  Relative primality *)
 
 (** f and g are relatively prime at the origin: they share no common
     non-unit factor in O_n. *)
+(* CAG constructive-remove Definition germ_coprime theories/ComplexAnalysis2.v:666 BEGIN
 Definition germ_coprime {n : nat} (f g : Germ n) : Prop :=
   forall h : Germ n,
     germ_irreducible h ->
     ~ (exists f' g' : Germ n,
         germ_equiv (germ_mul h f') f /\
         germ_equiv (germ_mul h g') g).
+   CAG constructive-remove Definition germ_coprime theories/ComplexAnalysis2.v:666 END *)
 
 (** Relative primality is an open condition: if f and g are coprime at
     the origin, they remain coprime on a punctured neighbourhood.
     Proof strategy: reduce via Weierstrass Preparation to polynomials
     in w; use the resultant to detect common factors; resultant ≠ 0 at
     origin implies the same on a neighbourhood by continuity. *)
-Lemma coprimality_open :
+(* CAG zero-dependent Admitted coprimality_open theories/ComplexAnalysis2.v:595 BEGIN
+Theorem coprimality_open :
   forall {n : nat} (f g : Germ n),
     germ_coprime f g ->
     exists r : CReal, CRpositive r /\
       forall z : Cn n,
         Polydisc (fun _ => C0) (fun _ => r) z ->
-        (exists i : Fin.t n, CRpositive (Cnorm2 (z i))) ->
-        True.
-Proof.
-  intros n f g _.
-  exists (inject_Q 1).
-  split.
-  - apply CRealLtForget. apply CRealLt_0_1.
-  - intros _ _ _. exact I.
-Qed.
+        (exists i : Fin.t n, CRpositive (Cnorm2 (z i))) -> (* z ≠ 0 *)
+        True.  (* placeholder: f and g remain coprime at z, stated abstractly *)
+Proof. Admitted.
+   CAG zero-dependent Admitted coprimality_open theories/ComplexAnalysis2.v:595 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 8. Weak Nullstellensatz                                           *)
@@ -712,15 +708,20 @@ Definition vanishes_on_zero_locus {n : nat} (f h : Germ n) : Prop :=
     Cequal (germ_fn f z) C0 ->
     Cequal (germ_fn h z) C0.
 
+(* CAG constructive-remove Definition germ_divides theories/ComplexAnalysis2.v:707 BEGIN
 Definition germ_divides {n : nat} (f h : Germ n) : Prop :=
   exists q : Germ n,
     germ_equiv (germ_mul f q) h.
+   CAG constructive-remove Definition germ_divides theories/ComplexAnalysis2.v:707 END *)
 
-Conjecture weak_nullstellensatz :
+(* CAG zero-dependent Admitted weak_nullstellensatz theories/ComplexAnalysis2.v:616 BEGIN
+Theorem weak_nullstellensatz :
   forall {n : nat} (f h : Germ n),
     germ_irreducible f ->
     vanishes_on_zero_locus f h ->
     germ_divides f h.
+Proof. Admitted.
+   CAG zero-dependent Admitted weak_nullstellensatz theories/ComplexAnalysis2.v:616 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * Summary of Part II                                                *)

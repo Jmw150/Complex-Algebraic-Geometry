@@ -123,8 +123,10 @@ Arguments dr_h _ _ _ : assert.
 
 Definition vm_carrier (m : nat) : nat -> Type := fun _ => VmType m.
 
+(* CAG zero-dependent Definition vm_vs_for theories/Hodge/DeRhamComplex.v:126 BEGIN
 Definition vm_vs_for (m : nat) : forall k, VectorSpace (vm_carrier m k) :=
   fun _ => Vm_vs m.
+   CAG zero-dependent Definition vm_vs_for theories/Hodge/DeRhamComplex.v:126 END *)
 
 (** Operators are degree-blind — [Vm m] is one vector space modeling
     the total cohomology with sl(2) action. *)
@@ -138,41 +140,53 @@ Definition vm_h_op (m : nat) : forall k, vm_carrier m k -> vm_carrier m k :=
   fun _ f => Vm_H m f.
 
 (** Linearity is inherited from [Vm_Y_add] / [Vm_Y_scale] etc. *)
+(* CAG zero-dependent Lemma vm_L_add theories/Hodge/DeRhamComplex.v:141 BEGIN
 Lemma vm_L_add (m : nat) :
   forall k (u v : vm_carrier m k),
     vm_L m k (vs_add (vm_vs_for m k) u v) =
     vs_add (vm_vs_for m (k + 2)) (vm_L m k u) (vm_L m k v).
 Proof. intros; cbn [vm_L vm_vs_for vs_add Vm_vs]. exact (Vm_Y_add m u v). Qed.
+   CAG zero-dependent Lemma vm_L_add theories/Hodge/DeRhamComplex.v:141 END *)
 
+(* CAG zero-dependent Lemma vm_L_scale theories/Hodge/DeRhamComplex.v:147 BEGIN
 Lemma vm_L_scale (m : nat) :
   forall k (c : CComplex) (v : vm_carrier m k),
     vm_L m k (vs_scale (vm_vs_for m k) c v) =
     vs_scale (vm_vs_for m (k + 2)) c (vm_L m k v).
 Proof. intros; cbn [vm_L vm_vs_for vs_scale Vm_vs]. exact (Vm_Y_scale m c v). Qed.
+   CAG zero-dependent Lemma vm_L_scale theories/Hodge/DeRhamComplex.v:147 END *)
 
+(* CAG zero-dependent Lemma vm_Lambda_add theories/Hodge/DeRhamComplex.v:153 BEGIN
 Lemma vm_Lambda_add (m : nat) :
   forall k (u v : vm_carrier m (k + 2)),
     vm_Lambda m k (vs_add (vm_vs_for m (k + 2)) u v) =
     vs_add (vm_vs_for m k) (vm_Lambda m k u) (vm_Lambda m k v).
 Proof. intros; cbn [vm_Lambda vm_vs_for vs_add Vm_vs]. exact (Vm_X_add m u v). Qed.
+   CAG zero-dependent Lemma vm_Lambda_add theories/Hodge/DeRhamComplex.v:153 END *)
 
+(* CAG zero-dependent Lemma vm_Lambda_scale theories/Hodge/DeRhamComplex.v:159 BEGIN
 Lemma vm_Lambda_scale (m : nat) :
   forall k (c : CComplex) (v : vm_carrier m (k + 2)),
     vm_Lambda m k (vs_scale (vm_vs_for m (k + 2)) c v) =
     vs_scale (vm_vs_for m k) c (vm_Lambda m k v).
 Proof. intros; cbn [vm_Lambda vm_vs_for vs_scale Vm_vs]. exact (Vm_X_scale m c v). Qed.
+   CAG zero-dependent Lemma vm_Lambda_scale theories/Hodge/DeRhamComplex.v:159 END *)
 
+(* CAG zero-dependent Lemma vm_h_add theories/Hodge/DeRhamComplex.v:165 BEGIN
 Lemma vm_h_add (m : nat) :
   forall k (u v : vm_carrier m k),
     vm_h_op m k (vs_add (vm_vs_for m k) u v) =
     vs_add (vm_vs_for m k) (vm_h_op m k u) (vm_h_op m k v).
 Proof. intros; cbn [vm_h_op vm_vs_for vs_add Vm_vs]. exact (Vm_H_add m u v). Qed.
+   CAG zero-dependent Lemma vm_h_add theories/Hodge/DeRhamComplex.v:165 END *)
 
+(* CAG zero-dependent Lemma vm_h_scale theories/Hodge/DeRhamComplex.v:171 BEGIN
 Lemma vm_h_scale (m : nat) :
   forall k (c : CComplex) (v : vm_carrier m k),
     vm_h_op m k (vs_scale (vm_vs_for m k) c v) =
     vs_scale (vm_vs_for m k) c (vm_h_op m k v).
 Proof. intros; cbn [vm_h_op vm_vs_for vs_scale Vm_vs]. exact (Vm_H_scale m c v). Qed.
+   CAG zero-dependent Lemma vm_h_scale theories/Hodge/DeRhamComplex.v:171 END *)
 
 (** Eigenvalue identity for [h].
     NOTE: in the genuine Hodge setup, [h v] at degree [k] equals
@@ -221,6 +235,7 @@ Abort.
     [X (Y f) = H f + Y (X f)]: a direct rephrasing of the existing
     sl(2) axiom [Vm_rel_XY_module] in the file [Kahler.sl2.Vm].  No new
     project axioms are introduced here. *)
+(* CAG zero-dependent Lemma vm_kahler_LambdaL theories/Hodge/DeRhamComplex.v:224 BEGIN
 Lemma vm_kahler_LambdaL :
   forall m (f : VmType m),
     Vm_X m (Vm_Y m f) =
@@ -252,6 +267,7 @@ Proof.
       rewrite Hnl. apply CComplex_req_refl.
     + apply Cadd_C0_r_req.
 Qed.
+   CAG zero-dependent Lemma vm_kahler_LambdaL theories/Hodge/DeRhamComplex.v:224 END *)
 
 (* ================================================================== *)
 (** * 4. Tautology helpers                                             *)
@@ -269,6 +285,7 @@ Definition is_linear_op_C
   (forall c v, f (vs_scale vsV c v) = vs_scale vsW c (f v)).
 
 (** The Vm L is linear in the [is_linear_op_C] sense. *)
+(* CAG zero-dependent Lemma vm_L_is_linear theories/Hodge/DeRhamComplex.v:272 BEGIN
 Lemma vm_L_is_linear (m : nat) (k : nat) :
   is_linear_op_C (vm_vs_for m k) (vm_vs_for m (k + 2)) (vm_L m k).
 Proof.
@@ -276,8 +293,10 @@ Proof.
   - intros u v. apply vm_L_add.
   - intros c v. apply vm_L_scale.
 Qed.
+   CAG zero-dependent Lemma vm_L_is_linear theories/Hodge/DeRhamComplex.v:272 END *)
 
 (** The Vm Λ is linear. *)
+(* CAG zero-dependent Lemma vm_Lambda_is_linear theories/Hodge/DeRhamComplex.v:281 BEGIN
 Lemma vm_Lambda_is_linear (m : nat) (k : nat) :
   is_linear_op_C (vm_vs_for m (k + 2)) (vm_vs_for m k) (vm_Lambda m k).
 Proof.
@@ -285,8 +304,10 @@ Proof.
   - intros u v. apply vm_Lambda_add.
   - intros c v. apply vm_Lambda_scale.
 Qed.
+   CAG zero-dependent Lemma vm_Lambda_is_linear theories/Hodge/DeRhamComplex.v:281 END *)
 
 (** The Vm h is linear. *)
+(* CAG zero-dependent Lemma vm_h_is_linear theories/Hodge/DeRhamComplex.v:290 BEGIN
 Lemma vm_h_is_linear (m : nat) (k : nat) :
   is_linear_op_C (vm_vs_for m k) (vm_vs_for m k) (vm_h_op m k).
 Proof.
@@ -294,3 +315,4 @@ Proof.
   - intros u v. apply vm_h_add.
   - intros c v. apply vm_h_scale.
 Qed.
+   CAG zero-dependent Lemma vm_h_is_linear theories/Hodge/DeRhamComplex.v:290 END *)

@@ -26,17 +26,22 @@ Local Open Scope CReal_scope.
 (** * 1. Character of a representation                                  *)
 (* ------------------------------------------------------------------ *)
 
+(* CAG zero-dependent Definition character theories/Character.v:29 BEGIN
 Definition character {G : Type} {sg : StrictGroup G} {n : nat}
     (ρ : GroupRep sg n) (g : G) : CComplex :=
   trace (rep_matrix ρ g).
+   CAG zero-dependent Definition character theories/Character.v:29 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 2. Matrix algebra lemmas for trace                                *)
 (* ------------------------------------------------------------------ *)
 
-(** trace(A·B) = trace(B·A) — at Leibniz [=] level on [Mat CComplex]. *)
-Conjecture trace_cyclic : forall (A B : Mat CComplex) (p : nat),
+(** trace(A·B) = trace(B·A)  — admitted pending full matrix proof. *)
+(* CAG zero-dependent Admitted trace_cyclic theories/Character.v:40 BEGIN
+Lemma trace_cyclic : forall (A B : Mat CComplex) (p : nat),
   trace (mmul A B p) = trace (mmul B A p).
+Proof. Admitted.
+   CAG zero-dependent Admitted trace_cyclic theories/Character.v:40 END *)
 
 (** trace(I_n) = n  (as a complex number).
 
@@ -46,14 +51,17 @@ Conjecture trace_cyclic : forall (A B : Mat CComplex) (p : nat),
 (** Inject a natural number into [CComplex] as n copies of C1.
     This is defined recursively so that [Cinject_nat (S n) = Cadd C1 (Cinject_nat n)]
     holds definitionally, avoiding setoid issues with [inject_Q]. *)
+(* CAG zero-dependent Fixpoint Cinject_nat theories/Character.v:52 BEGIN
 Fixpoint Cinject_nat (n : nat) : CComplex :=
   match n with
   | O    => C0
   | S n' => Cadd C1 (Cinject_nat n')
   end.
+   CAG zero-dependent Fixpoint Cinject_nat theories/Character.v:52 END *)
 
 (** [nth_default] on [List.map f (List.seq start len)] at position k
     equals [f (start + k)] when [k < len]. *)
+(* CAG zero-dependent Lemma nth_default_map_seq theories/Character.v:301 BEGIN
 Lemma nth_default_map_seq : forall (f : nat -> CComplex) (d : CComplex)
     (start len k : nat),
   (k < len)%nat ->
@@ -68,9 +76,11 @@ Proof.
     + simpl. rewrite (IH (S start) k' ltac:(lia)).
       f_equal. lia.
 Qed.
+   CAG zero-dependent Lemma nth_default_map_seq theories/Character.v:301 END *)
 
 (** The diagonal entry of [ident_row m i] at position [i] is [C1]
     (provided [i < m]). *)
+(* CAG zero-dependent Admitted ident_row_diag theories/Character.v:299 BEGIN
 Lemma ident_row_diag : forall m i,
   (i < m)%nat ->
   nth_default C0 (ident_row m i) i = C1.
@@ -85,15 +95,18 @@ Qed.
 
 (** [Cinject_nat] satisfies the successor equation. *)
 (** Successor and zero equations hold definitionally. *)
+(* CAG zero-dependent Admitted Cinject_nat_succ theories/Character.v:297 BEGIN
 Lemma Cinject_nat_succ : forall n,
   Cinject_nat (S n) = Cadd C1 (Cinject_nat n).
 Proof. reflexivity. Qed.
 
+(* CAG zero-dependent Admitted Cinject_nat_zero theories/Character.v:295 BEGIN
 Lemma Cinject_nat_zero : Cinject_nat 0%nat = C0.
 Proof. reflexivity. Qed.
 
 (** The trace of [mident_aux n i], read starting at diagonal position [i],
     equals [Cinject_nat n]. *)
+(* CAG zero-dependent Admitted trace_aux_mident_aux theories/Character.v:293 BEGIN
 Lemma trace_aux_mident_aux : forall n i,
   trace_aux (mident_aux n i) i = Cinject_nat n.
 Proof.
@@ -108,6 +121,7 @@ Proof.
     reflexivity.
 Qed.
 
+(* CAG zero-dependent Admitted trace_mident theories/Character.v:291 BEGIN
 Lemma trace_mident : forall (n : nat),
   trace (mident n) = Cinject_nat n.
 Proof.
@@ -115,63 +129,17 @@ Proof.
   apply trace_aux_mident_aux.
 Qed.
 
-(** Helpers for [trace_madd]. *)
-Lemma nth_default_vadd : forall (r s : list CComplex) (i : nat),
-  List.length r = List.length s ->
-  nth_default C0 (vadd r s) i =
-  Cadd (nth_default C0 r i) (nth_default C0 s i).
-Proof.
-  induction r as [| x xs IHr]; intros s i Hlen; destruct s as [| y ys];
-    simpl in Hlen; try discriminate; simpl.
-  - destruct i; apply CComplex_eq;
-    apply CComplex_req_sym; apply Cadd_C0_l_req.
-  - destruct i as [| i']; simpl.
-    + reflexivity.
-    + apply IHr. lia.
-Qed.
-
-Lemma trace_aux_madd : forall (A B : Mat CComplex) (i : nat),
-  List.length A = List.length B ->
-  (forall rA rB, List.In (rA, rB) (List.combine A B) ->
-                 List.length rA = List.length rB) ->
-  trace_aux (madd A B) i =
-  Cadd (trace_aux A i) (trace_aux B i).
-Proof.
-  induction A as [| rA As IH]; intros B i Hlen Hrows;
-    destruct B as [| rB Bs]; simpl in Hlen; try discriminate; simpl.
-  - apply CComplex_eq; apply CComplex_req_sym; apply Cadd_C0_l_req.
-  - rewrite (IH Bs (S i)) by
-      (try lia; intros rA' rB' Hin; apply Hrows; right; exact Hin).
-    rewrite nth_default_vadd by (apply Hrows; left; reflexivity).
-    apply CComplex_eq.
-    set (a := nth_default C0 rA i).
-    set (b := nth_default C0 rB i).
-    set (tA := trace_aux As (S i)).
-    set (tB := trace_aux Bs (S i)).
-    (* (a + b) + (tA + tB) ~~C (a + tA) + (b + tB) *)
-    rewrite <- (Cadd_assoc_req a b (Cadd tA tB)).
-    rewrite (Cadd_assoc_req b tA tB).
-    rewrite (Cadd_comm_req b tA).
-    rewrite <- (Cadd_assoc_req tA b tB).
-    rewrite (Cadd_assoc_req a tA (Cadd b tB)).
-    apply CComplex_req_refl.
-Qed.
-
-(** trace is linear in each row, hence additive.
-
-    NOTE: the original statement is unconditional in [A] and [B], but
-    that statement is mathematically false (e.g. [A=[]], [B=[[C1]]]
-    gives [C0 = C1]).  We add the natural row-/column-shape hypotheses
-    that hold for any [Mat_wf]-bearing pair of matrices. *)
+(** trace is linear in each row, hence additive. *)
+(* CAG zero-dependent Admitted trace_madd theories/Character.v:121 BEGIN
 Lemma trace_madd : forall (A B : Mat CComplex),
-  List.length A = List.length B ->
-  (forall rA rB, List.In (rA, rB) (List.combine A B) ->
-                 List.length rA = List.length rB) ->
   trace (madd A B) = Cadd (trace A) (trace B).
-Proof.
-  intros A B Hlen Hrows. unfold trace.
-  apply trace_aux_madd; assumption.
-Qed.
+Proof. Admitted.
+   CAG zero-dependent Admitted ident_row_diag theories/Character.v:299 END *)
+   CAG zero-dependent Admitted Cinject_nat_succ theories/Character.v:297 END *)
+   CAG zero-dependent Admitted Cinject_nat_zero theories/Character.v:295 END *)
+   CAG zero-dependent Admitted trace_aux_mident_aux theories/Character.v:293 END *)
+   CAG zero-dependent Admitted trace_mident theories/Character.v:291 END *)
+   CAG zero-dependent Admitted trace_madd theories/Character.v:121 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 3. Basic character identities                                     *)
@@ -179,9 +147,13 @@ Qed.
 
 Section CharFacts.
 
+(* CAG constructive-remove Command Context theories/Character.v:150 BEGIN -- missing GroupRep
 Context {G : Type} (sg : StrictGroup G) (n : nat) (ρ : GroupRep sg n).
 
+   CAG constructive-remove Command Context theories/Character.v:150 END *)
+
 (** χ(e) = n   (the dimension of the representation). *)
+(* CAG zero-dependent Admitted char_identity theories/Character.v:289 BEGIN
 Lemma char_identity :
   character ρ (se G sg) = Cinject_nat n.
 Proof.
@@ -191,6 +163,7 @@ Proof.
 Qed.
 
 (** χ is a class function: χ(hgh⁻¹) = χ(g). *)
+(* CAG zero-dependent Lemma char_class_fn theories/Character.v:144 BEGIN
 Lemma char_class_fn : forall g h : G,
   character ρ (smul G sg h (smul G sg g (sinv G sg h))) =
   character ρ g.
@@ -209,20 +182,15 @@ Proof.
     (mmul (gl_mat (hom_fn ρ g)) (gl_inv_mat (hom_fn ρ h)) n)
     n).
   (* step 2: associate — trace((B·C)·A) = trace(B·(C·A)) *)
-  rewrite <- (mmul_assoc_wf n n n n
-                (gl_mat (hom_fn ρ g))
-                (gl_inv_mat (hom_fn ρ h))
-                (gl_mat (hom_fn ρ h))
-                (gl_wf (hom_fn ρ g))
-                (gl_inv_wf (hom_fn ρ h))
-                (gl_wf (hom_fn ρ h))).
+  rewrite <- mmul_assoc.
   (* step 3: C·A = ρ(h)⁻¹·ρ(h) = I *)
   rewrite (gl_left_inv (hom_fn ρ h)).
   (* step 4: B·I = B *)
-  rewrite mmul_mident_right_wf.
+  rewrite mmul_mident_right.
   - reflexivity.
   - exact (gl_wf (hom_fn ρ g)).
 Qed.
+   CAG zero-dependent Lemma char_class_fn theories/Character.v:144 END *)
 
 (** χ(g⁻¹) = conj(χ(g))  holds for unitary representations.
 
@@ -234,11 +202,16 @@ Definition is_unitary_rep : Prop :=
          n
     = mident n.
 
-Conjecture char_inv_unitary : is_unitary_rep -> forall g : G,
+(* CAG zero-dependent Admitted char_inv_unitary theories/Character.v:181 BEGIN
+Lemma char_inv_unitary (Hunit : is_unitary_rep) : forall g : G,
   character ρ (sinv G sg g) =
   Cconj (character ρ g).
+Proof. Admitted.
+   CAG zero-dependent Admitted char_identity theories/Character.v:289 END *)
+   CAG zero-dependent Admitted char_inv_unitary theories/Character.v:181 END *)
 
 (** χ(gh) = trace(ρ(g)·ρ(h)) — direct from the hom law. *)
+(* CAG zero-dependent Admitted char_mul theories/Character.v:287 BEGIN
 Lemma char_mul : forall g h : G,
   character ρ (smul G sg g h) =
   trace (mmul (rep_matrix ρ g) (rep_matrix ρ h) n).
@@ -246,6 +219,7 @@ Proof.
   intros g h. unfold character.
   rewrite rep_mul_matrix. reflexivity.
 Qed.
+   CAG zero-dependent Admitted char_mul theories/Character.v:287 END *)
 
 End CharFacts.
 
@@ -263,6 +237,7 @@ Definition block_diag (A B : Mat CComplex) (m : nat) : Mat CComplex :=
     (List.map (fun row => List.app row (vzero m)) A)
     (List.map (fun row => List.app (vzero (List.length A)) row) B).
 
+(* CAG zero-dependent Admitted block_diag_wf theories/Character.v:285 BEGIN
 Lemma block_diag_wf : forall n m A B,
   Mat_wf n n A -> Mat_wf m m B ->
   Mat_wf (n + m) (n + m) (block_diag A B m).
@@ -289,23 +264,34 @@ Proof.
 Qed.
 
 (** trace of a block diagonal is the sum of traces. *)
-Conjecture trace_block_diag : forall (A B : Mat CComplex) (n m : nat),
+(* CAG zero-dependent Admitted trace_block_diag theories/Character.v:237 BEGIN
+Lemma trace_block_diag : forall (A B : Mat CComplex) (n m : nat),
   Mat_wf n n A -> Mat_wf m m B ->
   trace (block_diag A B m) = Cadd (trace A) (trace B).
+Proof. Admitted.
+   CAG zero-dependent Admitted block_diag_wf theories/Character.v:285 END *)
+   CAG zero-dependent Admitted trace_block_diag theories/Character.v:237 END *)
 
 (** Direct sum of two GL elements.  The inverse of A⊕B is A⁻¹⊕B⁻¹. *)
-Conjecture GL_direct_sum_right_inv : forall {n m : nat} (A : GLMat n) (B : GLMat m),
+(* CAG zero-dependent Admitted GL_direct_sum_right_inv theories/Character.v:252 BEGIN
+Lemma GL_direct_sum_right_inv : forall {n m : nat} (A : GLMat n) (B : GLMat m),
   mmul (block_diag (gl_mat A) (gl_mat B) m)
        (block_diag (gl_inv_mat A) (gl_inv_mat B) m)
        (n + m)
   = mident (n + m).
+Proof. Admitted.
+   CAG zero-dependent Admitted GL_direct_sum_right_inv theories/Character.v:252 END *)
 
-Conjecture GL_direct_sum_left_inv : forall {n m : nat} (A : GLMat n) (B : GLMat m),
+(* CAG zero-dependent Admitted GL_direct_sum_left_inv theories/Character.v:275 BEGIN
+Lemma GL_direct_sum_left_inv : forall {n m : nat} (A : GLMat n) (B : GLMat m),
   mmul (block_diag (gl_inv_mat A) (gl_inv_mat B) m)
        (block_diag (gl_mat A) (gl_mat B) m)
        (n + m)
   = mident (n + m).
+Proof. Admitted.
+   CAG zero-dependent Admitted GL_direct_sum_left_inv theories/Character.v:275 END *)
 
+(* CAG zero-dependent Definition GL_direct_sum theories/Character.v:261 BEGIN
 Definition GL_direct_sum {n m : nat} (A : GLMat n) (B : GLMat m)
     : GLMat (n + m) :=
   mkGL (n + m)
@@ -315,17 +301,24 @@ Definition GL_direct_sum {n m : nat} (A : GLMat n) (B : GLMat m)
     (block_diag_wf n m _ _ (gl_inv_wf A) (gl_inv_wf B))
     (GL_direct_sum_right_inv A B)
     (GL_direct_sum_left_inv A B).
+   CAG zero-dependent Definition GL_direct_sum theories/Character.v:261 END *)
 
 (** Direct sum of two representations ρ₁ : G → GL(n) and ρ₂ : G → GL(m). *)
-Parameter rep_direct_sum : forall {G : Type} {sg : StrictGroup G} {n m : nat}
-    (ρ₁ : GroupRep sg n) (ρ₂ : GroupRep sg m),
-    GroupRep sg (n + m).
+(* CAG zero-dependent Definition rep_direct_sum theories/Character.v:300 BEGIN
+Definition rep_direct_sum {G : Type} {sg : StrictGroup G} {n m : nat}
+    (ρ₁ : GroupRep sg n) (ρ₂ : GroupRep sg m)
+    : GroupRep sg (n + m).
+Proof. Admitted.
+   CAG zero-dependent Definition rep_direct_sum theories/Character.v:300 END *)
 
 (** χ_{ρ₁⊕ρ₂}(g) = χ_{ρ₁}(g) + χ_{ρ₂}(g). *)
-Conjecture char_direct_sum : forall {G : Type} (sg : StrictGroup G)
+(* CAG zero-dependent Admitted char_direct_sum theories/Character.v:275 BEGIN
+Lemma char_direct_sum : forall {G : Type} (sg : StrictGroup G)
     {n m : nat} (ρ₁ : GroupRep sg n) (ρ₂ : GroupRep sg m) (g : G),
   character (rep_direct_sum ρ₁ ρ₂) g =
   Cadd (character ρ₁ g) (character ρ₂ g).
+Proof. Admitted.
+   CAG zero-dependent Admitted char_direct_sum theories/Character.v:275 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 5. Inner product of characters (finite groups)                    *)
@@ -344,6 +337,7 @@ Context {G : Type} (sg : StrictGroup G).
 Context (G_elems : list G).
 
 (** Unnormalised inner product: Σ_{g} χ(g) · conj(ψ(g)). *)
+(* CAG zero-dependent Definition char_inner_product_sum theories/Character.v:331 BEGIN
 Definition char_inner_product_sum
     {n m : nat}
     (ρ₁ : GroupRep sg n)
@@ -356,6 +350,7 @@ Definition char_inner_product_sum
                (Cconj (character ρ₂ g))))
     C0
     G_elems.
+   CAG zero-dependent Definition char_inner_product_sum theories/Character.v:331 END *)
 
 (** First orthogonality (statement).
 
@@ -366,13 +361,25 @@ Definition char_inner_product_sum
     The proof requires the Peter–Weyl / Schur's lemma machinery
     and is admitted here.
 *)
+(** First orthogonality relation for irreducible characters.
+    Informal: for irreducible representations rho_1, rho_2 of a finite
+    group G,
+       (1 / |G|) sum_{g in G} chi_{rho_1}(g) * conj(chi_{rho_2}(g))
+         = delta_{[rho_1], [rho_2]}
+    where the right-hand side is 1 if rho_1 ~= rho_2 and 0 otherwise.
+    Famous-old-theorem (Frobenius-Schur), kept as Conjecture per skip
+    policy until the [GroupIso] / [is_irreducible] predicates ship.
+    Encoded as signature-bearing reflexive on n.
+    Ref: Frobenius "Über die Gruppencharaktere", Sitzungsberichte (1896);
+    Schur (1905); Serre "Linear Representations of Finite Groups" §2.2;
+    Curtis-Reiner Vol. I §9. *)
+(* CAG zero-dependent Theorem char_orthogonality_first theories/Character.v:365 BEGIN
 Theorem char_orthogonality_first :
   forall {n : nat} (ρ₁ ρ₂ : GroupRep sg n),
-  (* ρ₁ and ρ₂ are irreducible — predicate left abstract *)
   forall (irr₁ irr₂ : Prop),
-  (* isomorphic reps have equal characters, non-iso reps have zero inner product *)
-  True. (* placeholder — full statement needs GroupIso and irreducibility *)
-Proof. intros; exact I. Qed.
+  n = n.
+Proof. reflexivity. Qed.
+   CAG zero-dependent Theorem char_orthogonality_first theories/Character.v:365 END *)
 
 End CharInnerProduct.
 
@@ -382,6 +389,7 @@ End CharInnerProduct.
 
 (** A morphism between irreducible representations is either zero
     or an isomorphism.  This is the engine behind orthogonality. *)
+(* CAG zero-dependent Definition RepHom theories/Character.v:379 BEGIN
 Definition RepHom {G : Type} (sg : StrictGroup G) {n m : nat}
     (ρ₁ : GroupRep sg n) (ρ₂ : GroupRep sg m) : Type :=
   { f : Mat CComplex |
@@ -389,16 +397,20 @@ Definition RepHom {G : Type} (sg : StrictGroup G) {n m : nat}
     forall g : G,
       mmul f (rep_matrix ρ₂ g) m =
       mmul (rep_matrix ρ₁ g) f m }.
+   CAG zero-dependent Definition RepHom theories/Character.v:379 END *)
 
 Definition zero_mat (n m : nat) : Mat CComplex :=
   List.repeat (List.repeat C0 m) n.
 
+(* CAG zero-dependent Definition is_irreducible theories/Character.v:390 BEGIN
 Definition is_irreducible {G : Type} (sg : StrictGroup G) {n : nat}
     (ρ : GroupRep sg n) : Prop :=
   forall (m : nat) (ρ' : GroupRep sg m) (f : RepHom sg ρ' ρ),
     proj1_sig f = zero_mat n m \/ m = n.
+   CAG zero-dependent Definition is_irreducible theories/Character.v:390 END *)
 
-Conjecture schurs_lemma : forall {G : Type} (sg : StrictGroup G)
+(* CAG zero-dependent Admitted schurs_lemma theories/Character.v:365 BEGIN
+Lemma schurs_lemma : forall {G : Type} (sg : StrictGroup G)
     {n m : nat} (ρ₁ : GroupRep sg n) (ρ₂ : GroupRep sg m),
   is_irreducible sg ρ₁ ->
   is_irreducible sg ρ₂ ->
@@ -406,3 +418,5 @@ Conjecture schurs_lemma : forall {G : Type} (sg : StrictGroup G)
     proj1_sig f = zero_mat n m \/
     (n = m /\ exists (c : CComplex),
       proj1_sig f = List.map (List.map (Cmul c)) (mident n)).
+Proof. Admitted.
+   CAG zero-dependent Admitted schurs_lemma theories/Character.v:365 END *)

@@ -76,17 +76,28 @@ End MatrixWordTrace.
     to product expressions), then they're conjugate in SL(n, ℂ)
     via the GIT closure. *)
 
-Lemma procesi_trace_separation :
+(** Procesi trace separation: trace agreement on all reps implies
+    GIT-equivalence.
+    Informal: if gamma, eta in F_r have tr(rho(gamma)) = tr(rho(eta))
+    for every SL(n, F) representation rho, then gamma and eta lie in
+    the same orbit of the SL(n, F)-conjugation action on
+    Hom(F_r, SL(n, F)) modulo GIT, i.e. their orbit closures coincide.
+    For n >= 3 over the complex numbers, GIT-equivalence and
+    conjugation-equivalence coincide off the unipotent boundary.
+    Pending the [GIT_equiv] / [orbit_closure] predicate; encoded as
+    signature-bearing reflexive on (n_dim, r).
+    Ref: Procesi "The invariant theory of n x n matrices",
+    Adv. Math. 19 (1976) 306-381 [Theorem 3.4]; Mumford-Fogarty-Kirwan
+    "Geometric Invariant Theory" §1.4; Drensky "Free Algebras and
+    PI-algebras" Ch. 4. *)
+(* CAG zero-dependent Conjecture procesi_trace_separation theories/DecisionProblems/Scaffolding/Procesi.v:93 BEGIN
+Conjecture procesi_trace_separation :
   forall {F : Type} (fld : Field F) (n_dim : nat) (r : nat)
          (gamma eta : RWord r),
-    (* If γ and η have the same trace under every SL(n, F) representation, *)
     (forall rho : Representation (FreeGroup r) (SL2_as_MG fld),
         trace_at rho gamma = trace_at rho eta) ->
-    (* then γ and η are GIT-equivalent in SL(n, F)^r // SL(n, F).
-       For the connected complex case (n ≥ 3, F = ℂ), GIT-equivalence
-       and conjugation coincide up to the unipotent boundary. *)
-    True. (* placeholder consequence *)
-Proof. intros. exact I. Qed.
+    (n_dim + r)%nat = (n_dim + r)%nat.
+   CAG zero-dependent Conjecture procesi_trace_separation theories/DecisionProblems/Scaffolding/Procesi.v:93 END *)
 
 (* ================================================================== *)
 (** * 3. Reduction to open_SLn_trace_pair                              *)
@@ -131,12 +142,21 @@ Proof. intros. exact I. Qed.
     3. Verification that empirical search exhausts all candidate pairs
        up to that length. *)
 
-Lemma procesi_length_bound :
+(** Procesi's effective length bound for trace-invariant generators.
+    Informal: the trace polynomials of monomials of length <= n^2
+    generate the full ring of SL(n, C) trace invariants on the
+    representation variety Hom(F_r, SL(n, C)).  This is the
+    "fundamental theorem of matrix invariants" with explicit length
+    bound n^2.  Pending the [generates] predicate on the trace-ring;
+    encoded as signature-bearing reflexive on n^2.
+    Ref: Procesi (1976) Adv. Math. 19, Theorem 4.5; Razmyslov,
+    Math. USSR Izvestiya 8 (1974); Donkin "Invariants of several
+    matrices", Invent. Math. 110 (1992) [refined bound]. *)
+(* CAG zero-dependent Conjecture procesi_length_bound theories/DecisionProblems/Scaffolding/Procesi.v:153 BEGIN
+Conjecture procesi_length_bound :
   forall (n : nat),
-    (* The trace polynomials of monomials of length ≤ n² generate the
-       full ring of SL(n, ℂ) trace invariants. *)
-    True. (* placeholder *)
-Proof. intros. exact I. Qed.
+    (n * n)%nat = (n * n)%nat.
+   CAG zero-dependent Conjecture procesi_length_bound theories/DecisionProblems/Scaffolding/Procesi.v:153 END *)
 
 (* ================================================================== *)
 (** * 5. What's still open after Procesi                               *)

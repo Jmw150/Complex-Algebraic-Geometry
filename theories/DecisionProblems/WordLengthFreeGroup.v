@@ -281,6 +281,99 @@ Proof.
   rewrite (free_word_length_id n) in Hlen. discriminate.
 Qed.
 
+(** Conjugacy is reflexive: every element is conjugate to itself,
+    witnessed by g := se (the identity). *)
+Lemma are_conjugate_refl :
+  forall {G : Type} {sg : StrictGroup G} (gamma : G),
+    are_conjugate sg gamma gamma.
+Proof.
+  intros G sg gamma. exists (se G sg).
+  rewrite (sid_left G sg gamma).
+  (* goal: smul gamma (sinv se) = gamma *)
+  (* sinv se = se in any group; use sinv_left to derive it. *)
+  assert (Hse : sinv G sg (se G sg) = se G sg).
+  { rewrite <- (sid_left G sg (sinv G sg (se G sg))).
+    apply (sinv_right G sg (se G sg)). }
+  rewrite Hse. apply (sid_right G sg gamma).
+Qed.
+
+(** Conjugacy is symmetric: if [a ~ b] then [b ~ a].
+    Witness: if [g·a·g⁻¹ = b] then [g⁻¹·b·g = a], i.e., conjugation
+    by [g⁻¹] (whose own inverse is [g], by [double_inverse]) takes [b] to [a]. *)
+Lemma are_conjugate_sym :
+  forall {G : Type} {sg : StrictGroup G} (a b : G),
+    are_conjugate sg a b -> are_conjugate sg b a.
+Proof.
+  intros G sg a b [g Hg].
+  exists (sinv G sg g).
+  (* Goal: smul (smul g⁻¹ b) (sinv g⁻¹) = a, i.e.
+           (g⁻¹ · b) · (g⁻¹)⁻¹ = a. *)
+  rewrite (double_inverse sg g).
+  (* Goal: (g⁻¹ · b) · g = a. *)
+  rewrite <- Hg.
+  (* Goal: (g⁻¹ · ((g·a)·g⁻¹)) · g = a. *)
+  rewrite (sassoc G sg (sinv G sg g) (smul G sg g a) (sinv G sg g)).
+  (* Goal: ((g⁻¹ · (g·a)) · g⁻¹) · g = a. *)
+  rewrite (sassoc G sg (sinv G sg g) g a).
+  (* Goal: (((g⁻¹ · g) · a) · g⁻¹) · g = a. *)
+  rewrite (sinv_left G sg g).
+  (* Goal: ((1 · a) · g⁻¹) · g = a. *)
+  rewrite (sid_left G sg a).
+  (* Goal: (a · g⁻¹) · g = a. *)
+  rewrite <- (sassoc G sg a (sinv G sg g) g).
+  rewrite (sinv_left G sg g).
+  apply (sid_right G sg a).
+Qed.
+
+(** Conjugacy is transitive: if [a ~ b] and [b ~ c] then [a ~ c].
+    Witness: composing the two conjugating elements; uses
+    [inv_mul] to expand [(g₂·g₁)⁻¹ = g₁⁻¹·g₂⁻¹]. *)
+Lemma are_conjugate_trans :
+  forall {G : Type} (sg : StrictGroup G) (a b c : G),
+    are_conjugate sg a b -> are_conjugate sg b c -> are_conjugate sg a c.
+Proof.
+  intros G sg a b c [g1 Hg1] [g2 Hg2].
+  exists (smul G sg g2 g1).
+  (* Goal: ((g2·g1)·a)·(g2·g1)⁻¹ = c. *)
+  rewrite (inv_mul sg g2 g1).
+  (* Goal: ((g2·g1)·a)·(g1⁻¹·g2⁻¹) = c. *)
+  rewrite <- (sassoc G sg (smul G sg g2 g1) a
+                     (smul G sg (sinv G sg g1) (sinv G sg g2))).
+  rewrite (sassoc G sg a (sinv G sg g1) (sinv G sg g2)).
+  rewrite <- (sassoc G sg g2 g1
+                     (smul G sg (smul G sg a (sinv G sg g1)) (sinv G sg g2))).
+  rewrite (sassoc G sg g1
+                  (smul G sg a (sinv G sg g1)) (sinv G sg g2)).
+  rewrite (sassoc G sg g1 a (sinv G sg g1)).
+  (* Now inner is (g1·a)·g1⁻¹, but Hg1 has g1·a as smul g1 a; the
+     above unfolds to ((g1·a)·g1⁻¹)·g2⁻¹ inside, then
+     overall g2 · (((g1·a)·g1⁻¹) · g2⁻¹). *)
+  rewrite Hg1.
+  (* Goal: g2 · (b · g2⁻¹) = c. *)
+  rewrite (sassoc G sg g2 b (sinv G sg g2)).
+  exact Hg2.
+Qed.
+
+(** In any group, an element is conjugate to the identity iff it equals
+    the identity. The forward direction is the only nontrivial half:
+    [are_conjugate sg e gamma] says [exists g, g·e·g⁻¹ = gamma], which
+    collapses to [g·g⁻¹ = gamma], i.e., [se = gamma]. *)
+Lemma are_conjugate_id_iff :
+  forall {G : Type} (sg : StrictGroup G) (gamma : G),
+    are_conjugate sg (se G sg) gamma <-> gamma = se G sg.
+Proof.
+  intros G sg gamma. split.
+  - intros [g Hg].
+    rewrite (sid_right G sg g) in Hg.
+    rewrite (sinv_right G sg g) in Hg.
+    symmetry. exact Hg.
+  - intros ->.
+    exists (se G sg).
+    rewrite (sid_right G sg (se G sg)).
+    rewrite (sinv_right G sg (se G sg)).
+    reflexivity.
+Qed.
+
 (** Generators are not conjugate to the identity.
     In any group, an element is conjugate to the identity iff it is
     the identity (`are_conjugate_id_iff`). Generators are non-identity. *)
@@ -673,5 +766,7 @@ Definition free_conjugacy_decidable (n : nat) : Type :=
     The full algorithm: cyclically reduce both x and y, then test
     whether one is a cyclic permutation of the other. Axiomatized
     here; the theorem itself is well-known (Magnus-Karass-Solitar). *)
+(* CAG zero-dependent Axiom free_conjugacy_decision_thm theories/DecisionProblems/WordLengthFreeGroup.v:769 BEGIN
 Axiom free_conjugacy_decision_thm :
   forall (n : nat), free_conjugacy_decidable n.
+   CAG zero-dependent Axiom free_conjugacy_decision_thm theories/DecisionProblems/WordLengthFreeGroup.v:769 END *)

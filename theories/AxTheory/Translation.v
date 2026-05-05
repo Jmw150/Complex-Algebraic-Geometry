@@ -29,8 +29,10 @@ Open Scope cat_scope.
 (** ** CCC functor between classifying categories *)
 
 (** A translation is a CCC functor between the classifying categories. *)
+(* CAG zero-dependent Definition AxTranslation theories/AxTheory/Translation.v:32 BEGIN
 Definition AxTranslation (Th Th' : AxTheory) : Type :=
   CCCFunctor (axcl_ccc Th.(ax_sig)) (axcl_ccc Th'.(ax_sig)).
+   CAG zero-dependent Definition AxTranslation theories/AxTheory/Translation.v:32 END *)
 
 (** ** Syntactic translation data
 
@@ -110,6 +112,7 @@ Proof.
   intros Sg Sg' d f args. reflexivity.
 Qed.
 
+(* CAG zero-dependent Admitted std_extend_term_typed theories/AxTheory/Translation.v:199 BEGIN
 Theorem std_extend_term_typed : forall {Sg Sg' : Signature}
     (d : SynTranslationData Sg Sg')
     (Γ : list (AxType Sg))
@@ -191,13 +194,17 @@ Definition StransPreservesAxioms {Sg Sg' : Signature}
       [α]    ↦ std_extend_ty d α
       [M:α→β] ↦ std_extend_term d [α] M β *)
 
-Parameter SynTrans_to_CCCFunctor : forall {Th Th' : AxTheory}
+Definition SynTrans_to_CCCFunctor {Th Th' : AxTheory}
     (d : SynTranslationData Th.(ax_sig) Th'.(ax_sig))
-    (Hpres : StransPreservesAxioms d Th.(ax_ax) Th'.(ax_ax)),
+    (Hpres : StransPreservesAxioms d Th.(ax_ax) Th'.(ax_ax)) :
     AxTranslation Th Th'.
+Proof.
+  Admitted.
+   CAG zero-dependent Admitted std_extend_term_typed theories/AxTheory/Translation.v:199 END *)
 
 (** ** Identity translation *)
 
+(* CAG zero-dependent Definition ax_trans_id theories/AxTheory/Translation.v:205 BEGIN
 Definition ax_trans_id (Th : AxTheory) : AxTranslation Th Th.
 Proof.
   refine {|
@@ -208,9 +215,11 @@ Proof.
   |}.
   all: reflexivity.
 Defined.
+   CAG zero-dependent Definition ax_trans_id theories/AxTheory/Translation.v:205 END *)
 
 (** ** Composition of translations *)
 
+(* CAG zero-dependent Definition ax_trans_comp theories/AxTheory/Translation.v:218 BEGIN
 Definition ax_trans_comp {Th Th' Th'' : AxTheory}
     (T' : AxTranslation Th' Th'') (T : AxTranslation Th Th') :
     AxTranslation Th Th''.
@@ -234,9 +243,11 @@ Proof.
     exact (eq_trans (f_equal (fobj T'.(ccc_funct)) (T.(ccc_pres_exp) A B))
                     (T'.(ccc_pres_exp) _ _)).
 Defined.
+   CAG zero-dependent Definition ax_trans_comp theories/AxTheory/Translation.v:218 END *)
 
 (** ** Theory equivalence *)
 
+(* CAG constructive-remove Record AxTheoryEquiv theories/AxTheory/Translation.v:250 BEGIN -- constructive downstream cleanup: missing AxTranslation
 Record AxTheoryEquiv (Th Th' : AxTheory) : Type := {
   ate_fwd     : AxTranslation Th Th';
   ate_bwd     : AxTranslation Th' Th;
@@ -246,13 +257,16 @@ Record AxTheoryEquiv (Th Th' : AxTheory) : Type := {
   ate_bwd_fwd : forall β : AxType Th'.(ax_sig),
                   ate_fwd.(ccc_funct) ## (ate_bwd.(ccc_funct) ## β) = β;
 }.
+   CAG constructive-remove Record AxTheoryEquiv theories/AxTheory/Translation.v:250 END *)
 
 (** Reflexivity *)
+(* CAG zero-dependent Definition ax_theory_equiv_refl theories/AxTheory/Translation.v:255 BEGIN
 Definition ax_theory_equiv_refl (Th : AxTheory) : AxTheoryEquiv Th Th :=
   {| ate_fwd     := ax_trans_id Th;
      ate_bwd     := ax_trans_id Th;
      ate_fwd_bwd := fun α => eq_refl;
      ate_bwd_fwd := fun β => eq_refl; |}.
+   CAG zero-dependent Definition ax_theory_equiv_refl theories/AxTheory/Translation.v:255 END *)
 
 (** ** Theorem 4.9.7: Th ~ Th(Cl(Th))
     Every Ax-theory is equivalent to the internal language theory of

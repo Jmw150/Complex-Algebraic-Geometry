@@ -106,6 +106,7 @@ Definition chart_partial_zbar
 
 (** A constant function has zero chart-Wirtinger partial in every
     chart, at every point, in every coordinate. *)
+(* CAG zero-dependent Lemma chart_partial_z_const theories/Calc/Manifold.v:109 BEGIN
 Lemma chart_partial_z_const :
   forall (M : ComplexManifold)
          (c : ComplexChart (cm_carrier M) (cm_topology M) (cm_dim M))
@@ -118,8 +119,10 @@ Proof.
   unfold chart_partial_z.
   apply partial_z_at_const.
 Qed.
+   CAG zero-dependent Lemma chart_partial_z_const theories/Calc/Manifold.v:109 END *)
 
 (** Symmetric version for the antiholomorphic partial. *)
+(* CAG zero-dependent Lemma chart_partial_zbar_const theories/Calc/Manifold.v:123 BEGIN
 Lemma chart_partial_zbar_const :
   forall (M : ComplexManifold)
          (c : ComplexChart (cm_carrier M) (cm_topology M) (cm_dim M))
@@ -132,6 +135,7 @@ Proof.
   unfold chart_partial_zbar.
   apply partial_zbar_at_const.
 Qed.
+   CAG zero-dependent Lemma chart_partial_zbar_const theories/Calc/Manifold.v:123 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 3. Manifold-level Wirtinger partial                               *)
@@ -169,6 +173,7 @@ Definition manifold_partial_zbar
 
 (** Constants have zero manifold-Wirtinger partial at every point.
     Witnessed by the chart guaranteed by [cm_cover]. *)
+(* CAG zero-dependent Lemma manifold_partial_z_const theories/Calc/Manifold.v:172 BEGIN
 Lemma manifold_partial_z_const :
   forall (M : ComplexManifold)
          (a : CComplex)
@@ -181,7 +186,9 @@ Proof.
   exists c. split; [exact Hin|]. split; [exact Hp|].
   apply chart_partial_z_const.
 Qed.
+   CAG zero-dependent Lemma manifold_partial_z_const theories/Calc/Manifold.v:172 END *)
 
+(* CAG zero-dependent Lemma manifold_partial_zbar_const theories/Calc/Manifold.v:185 BEGIN
 Lemma manifold_partial_zbar_const :
   forall (M : ComplexManifold)
          (a : CComplex)
@@ -194,6 +201,7 @@ Proof.
   exists c. split; [exact Hin|]. split; [exact Hp|].
   apply chart_partial_zbar_const.
 Qed.
+   CAG zero-dependent Lemma manifold_partial_zbar_const theories/Calc/Manifold.v:185 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 4. Chart-invariance (DG.1.6: bridging axiom + Lemma)              *)
@@ -318,6 +326,7 @@ Qed.
     formula and is the only ingredient needed by chart-invariance
     consumers (they reason existentially / per-chart, never about
     a canonical Jacobian image at the manifold level). *)
+(* CAG zero-dependent Axiom chart_partial_z_chain_existence theories/Calc/Manifold.v:321 BEGIN
 Axiom chart_partial_z_chain_existence :
   forall (M : ComplexManifold)
          (c1 c2 : ComplexChart (cm_carrier M) (cm_topology M) (cm_dim M))
@@ -332,6 +341,7 @@ Axiom chart_partial_z_chain_existence :
     chart_partial_z M c1 f p j L1 ->
     exists L2 : CComplex,
       chart_partial_z M c2 f p j L2.
+   CAG zero-dependent Axiom chart_partial_z_chain_existence theories/Calc/Manifold.v:321 END *)
 
 (** Antiholomorphic chart-language counterpart, same paper
     attribution (cf. Krantz §1.1, Range §1.2): the antiholomorphic
@@ -340,6 +350,7 @@ Axiom chart_partial_z_chain_existence :
     holomorphic τ the Cauchy-Riemann equations make ∂̄τ = 0 except
     in the antiholomorphic direction, giving an existence statement
     of the same shape. *)
+(* CAG zero-dependent Axiom chart_partial_zbar_chain_existence theories/Calc/Manifold.v:343 BEGIN
 Axiom chart_partial_zbar_chain_existence :
   forall (M : ComplexManifold)
          (c1 c2 : ComplexChart (cm_carrier M) (cm_topology M) (cm_dim M))
@@ -354,9 +365,11 @@ Axiom chart_partial_zbar_chain_existence :
     chart_partial_zbar M c1 f p j L1 ->
     exists L2 : CComplex,
       chart_partial_zbar M c2 f p j L2.
+   CAG zero-dependent Axiom chart_partial_zbar_chain_existence theories/Calc/Manifold.v:343 END *)
 
 (** Chart-invariance, holomorphic version — DISCHARGED in DG.1.6
     via the [chart_partial_z_chain_existence] bridging axiom. *)
+(* CAG zero-dependent Lemma chart_partial_z_invariance theories/Calc/Manifold.v:360 BEGIN
 Lemma chart_partial_z_invariance :
   forall (M : ComplexManifold)
          (c1 c2 : ComplexChart (cm_carrier M) (cm_topology M) (cm_dim M))
@@ -375,9 +388,11 @@ Proof.
   intros M c1 c2 f p j L1 Hc1 Hc2 Hp1 Hp2 H1.
   exact (chart_partial_z_chain_existence M c1 c2 f p j L1 Hc1 Hc2 Hp1 Hp2 H1).
 Qed.
+   CAG zero-dependent Lemma chart_partial_z_invariance theories/Calc/Manifold.v:360 END *)
 
 (** Antiholomorphic counterpart, DISCHARGED in DG.1.6 via
     [chart_partial_zbar_chain_existence]. *)
+(* CAG zero-dependent Lemma chart_partial_zbar_invariance theories/Calc/Manifold.v:381 BEGIN
 Lemma chart_partial_zbar_invariance :
   forall (M : ComplexManifold)
          (c1 c2 : ComplexChart (cm_carrier M) (cm_topology M) (cm_dim M))
@@ -396,6 +411,7 @@ Proof.
   intros M c1 c2 f p j L1 Hc1 Hc2 Hp1 Hp2 H1.
   exact (chart_partial_zbar_chain_existence M c1 c2 f p j L1 Hc1 Hc2 Hp1 Hp2 H1).
 Qed.
+   CAG zero-dependent Lemma chart_partial_zbar_invariance theories/Calc/Manifold.v:381 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 5. Bridge: [chart_partial_z] specialises [partial_z_at]           *)

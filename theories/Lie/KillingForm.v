@@ -17,7 +17,6 @@ Require Import CAG.Lie.Derivations.
 Require Import CAG.Lie.Nilpotent.
 Require Import CAG.Lie.Solvable.
 Require Import CAG.Lie.Radical.
-From Stdlib Require Import FunctionalExtensionality.
 
 (* ================================================================== *)
 (** * 1. Field arithmetic helpers                                      *)
@@ -79,124 +78,46 @@ Qed.
 (** * 2. Trace on endomorphisms                                        *)
 (* ================================================================== *)
 
-(** Trace functional on endomorphisms of L.
+(** Axiomatized trace functional on endomorphisms of L. *)
+(* CAG zero-dependent Parameter trace_end theories/Lie/KillingForm.v:82 BEGIN
+Parameter trace_end : forall {F : Type} (fld : Field F) {L : Type}
+    (la : LieAlgebraF fld L), (L -> L) -> F.
+   CAG zero-dependent Parameter trace_end theories/Lie/KillingForm.v:82 END *)
 
-    NOTE: Without finite-dimensional / basis infrastructure, no canonical
-    nontrivial trace can be defined uniformly over arbitrary [L]. We use
-    the trivial (constant-zero) trace, which satisfies the abstract trace
-    axioms (additivity, scalar-linearity, cyclicity) vacuously. Concrete
-    instances on specific Lie algebras (e.g. [trace_end_la3] in
-    [LinAlg/TraceEndLa3.v]) provide the real linear-algebra trace.
-
-    Downstream consequence: the [killing_form] defined here vanishes
-    identically, which makes the radical maximal. This is consistent
-    (just degenerate) and lets us discharge the structural axioms below. *)
-(** Concrete witness for the abstract [trace_end] interface.
-    The trivial constant-zero "trace" trivially satisfies additivity,
-    scalar-linearity, and cyclicity. We package it as a sigma-type sealed
-    by [Qed], so that downstream proofs see [trace_end] as opaque (the
-    kernel cannot reduce it to [cr_zero]) — preserving compatibility
-    with proof scripts written against the original [Parameter].
-
-    We additionally record the (degenerate) fact that the witness is the
-    zero functional. This is exposed as the lemma [trace_end_const_zero]
-    below and is used to discharge [killing_nilpotent_zero]. *)
-Definition trace_end_witness :
-    { tr : forall (F : Type) (fld : Field F) (L : Type)
-              (la : LieAlgebraF fld L), (L -> L) -> F |
-      (forall (F : Type) (fld : Field F) (L : Type)
-              (la : LieAlgebraF fld L) (f g : L -> L),
-         tr F fld L la (fun z => vsF_add (laF_vs la) (f z) (g z)) =
-         fld.(cr_add) (tr F fld L la f) (tr F fld L la g)) /\
-      (forall (F : Type) (fld : Field F) (L : Type)
-              (la : LieAlgebraF fld L) (c : F) (f : L -> L),
-         tr F fld L la (fun z => vsF_scale (laF_vs la) c (f z)) =
-         fld.(cr_mul) c (tr F fld L la f)) /\
-      (forall (F : Type) (fld : Field F) (L : Type)
-              (la : LieAlgebraF fld L) (f g : L -> L),
-         tr F fld L la (fun z => f (g z)) =
-         tr F fld L la (fun z => g (f z))) /\
-      (forall (F : Type) (fld : Field F) (L : Type)
-              (la : LieAlgebraF fld L) (f : L -> L),
-         tr F fld L la f = fld.(cr_zero)) }.
-Proof.
-  exists (fun (F : Type) (fld : Field F) (L : Type)
-              (_ : LieAlgebraF fld L) (_ : L -> L) => fld.(cr_zero)).
-  split; [| split; [| split]].
-  - intros F fld L la f g. symmetry. apply fld.(cr_add_zero).
-  - intros F fld L la c f. symmetry. apply ring_mul_zero_r.
-  - intros F fld L la f g. reflexivity.
-  - intros F fld L la f. reflexivity.
-Qed.
-
-Definition trace_end {F : Type} (fld : Field F) {L : Type}
-    (la : LieAlgebraF fld L) (f : L -> L) : F :=
-  proj1_sig trace_end_witness F fld L la f.
-
-Lemma trace_end_add : forall {F : Type} (fld : Field F) {L : Type}
+(* CAG zero-dependent Axiom trace_end_add theories/Lie/KillingForm.v:85 BEGIN
+Axiom trace_end_add : forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) (f g : L -> L),
     trace_end fld la (fun z => vsF_add (laF_vs la) (f z) (g z)) =
     fld.(cr_add) (trace_end fld la f) (trace_end fld la g).
-Proof.
-  intros F fld L la f g. unfold trace_end.
-  exact (proj1 (proj2_sig trace_end_witness) F fld L la f g).
-Qed.
+   CAG zero-dependent Axiom trace_end_add theories/Lie/KillingForm.v:85 END *)
 
-Lemma trace_end_scale : forall {F : Type} (fld : Field F) {L : Type}
+(* CAG zero-dependent Axiom trace_end_scale theories/Lie/KillingForm.v:90 BEGIN
+Axiom trace_end_scale : forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) (c : F) (f : L -> L),
     trace_end fld la (fun z => vsF_scale (laF_vs la) c (f z)) =
     fld.(cr_mul) c (trace_end fld la f).
-Proof.
-  intros F fld L la c f. unfold trace_end.
-  exact (proj1 (proj2 (proj2_sig trace_end_witness)) F fld L la c f).
-Qed.
+   CAG zero-dependent Axiom trace_end_scale theories/Lie/KillingForm.v:90 END *)
 
-(* trace_end_neg moved below; proved using trace_end_scale + vsF_neg_eq_scale_neg_one. *)
-
-Lemma trace_end_cyclic : forall {F : Type} (fld : Field F) {L : Type}
-    (la : LieAlgebraF fld L) (f g : L -> L),
-    trace_end fld la (fun z => f (g z)) =
-    trace_end fld la (fun z => g (f z)).
-Proof.
-  intros F fld L la f g. unfold trace_end.
-  exact (proj1 (proj2 (proj2 (proj2_sig trace_end_witness))) F fld L la f g).
-Qed.
-
-(** Degenerate property of our witness: the realization is identically zero.
-    This is NOT in the abstract trace interface — it is specific to this
-    instance. Used to discharge [killing_nilpotent_zero] below. *)
-Lemma trace_end_const_zero : forall {F : Type} (fld : Field F) {L : Type}
-    (la : LieAlgebraF fld L) (f : L -> L),
-    trace_end fld la f = fld.(cr_zero).
-Proof.
-  intros F fld L la f. unfold trace_end.
-  exact (proj2 (proj2 (proj2 (proj2_sig trace_end_witness))) F fld L la f).
-Qed.
-
-Lemma trace_end_ext : forall {F : Type} (fld : Field F) {L : Type}
-    (la : LieAlgebraF fld L) (f g : L -> L),
-    (forall z, f z = g z) ->
-    trace_end fld la f = trace_end fld la g.
-Proof.
-  intros F fld L la f g Hext.
-  apply functional_extensionality in Hext.
-  rewrite Hext. reflexivity.
-Qed.
-
-(** trace_end_neg: trace(neg ∘ f) = -trace(f). Follows from trace_end_scale
-    plus the identity neg = scale (-1). *)
-Lemma trace_end_neg : forall {F : Type} (fld : Field F) {L : Type}
+(* CAG zero-dependent Axiom trace_end_neg theories/Lie/KillingForm.v:95 BEGIN
+Axiom trace_end_neg : forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) (f : L -> L),
     trace_end fld la (fun z => vsF_neg (laF_vs la) (f z)) =
     fld.(cr_neg) (trace_end fld la f).
-Proof.
-  intros F fld L la f.
-  rewrite (trace_end_ext fld la _
-    (fun z => vsF_scale (laF_vs la) (cr_neg fld (cr_one fld)) (f z))).
-  - rewrite trace_end_scale.
-    rewrite cr_neg_mul_l. rewrite cr_one_mul. reflexivity.
-  - intro z. apply vsF_neg_eq_scale_neg_one.
-Qed.
+   CAG zero-dependent Axiom trace_end_neg theories/Lie/KillingForm.v:95 END *)
+
+(* CAG zero-dependent Axiom trace_end_cyclic theories/Lie/KillingForm.v:100 BEGIN
+Axiom trace_end_cyclic : forall {F : Type} (fld : Field F) {L : Type}
+    (la : LieAlgebraF fld L) (f g : L -> L),
+    trace_end fld la (fun z => f (g z)) =
+    trace_end fld la (fun z => g (f z)).
+   CAG zero-dependent Axiom trace_end_cyclic theories/Lie/KillingForm.v:100 END *)
+
+(* CAG zero-dependent Axiom trace_end_ext theories/Lie/KillingForm.v:105 BEGIN
+Axiom trace_end_ext : forall {F : Type} (fld : Field F) {L : Type}
+    (la : LieAlgebraF fld L) (f g : L -> L),
+    (forall z, f z = g z) ->
+    trace_end fld la f = trace_end fld la g.
+   CAG zero-dependent Axiom trace_end_ext theories/Lie/KillingForm.v:105 END *)
 
 (** scale 0_F v = 0_V (scale by zero scalar). *)
 Lemma vsF_scale_zero_s : forall {F : Type} (fld : Field F) {V : Type}
@@ -212,6 +133,7 @@ Proof.
 Qed.
 
 (** Tr(const 0) = 0. *)
+(* CAG zero-dependent Lemma trace_end_zero theories/Lie/KillingForm.v:124 BEGIN
 Lemma trace_end_zero : forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L),
     trace_end fld la (fun _ => vsF_zero (laF_vs la)) = fld.(cr_zero).
@@ -221,19 +143,23 @@ Proof.
   - rewrite trace_end_scale. apply ring_mul_zero_l.
   - intro z. symmetry. apply vsF_scale_zero_s.
 Qed.
+   CAG zero-dependent Lemma trace_end_zero theories/Lie/KillingForm.v:124 END *)
 
 (* ================================================================== *)
 (** * 3. The Killing form                                              *)
 (* ================================================================== *)
 
+(* CAG zero-dependent Definition killing_form theories/Lie/KillingForm.v:138 BEGIN
 Definition killing_form {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) (x y : L) : F :=
   trace_end fld la (fun z => ad la x (ad la y z)).
+   CAG zero-dependent Definition killing_form theories/Lie/KillingForm.v:138 END *)
 
 (* ================================================================== *)
 (** * 4. Bilinearity of K                                             *)
 (* ================================================================== *)
 
+(* CAG zero-dependent Lemma killing_linear_l theories/Lie/KillingForm.v:146 BEGIN
 Lemma killing_linear_l : forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) (a : F) (x y z : L),
     killing_form fld la (vsF_add (laF_vs la) (vsF_scale (laF_vs la) a x) y) z =
@@ -249,7 +175,9 @@ Proof.
   - rewrite trace_end_add, trace_end_scale. reflexivity.
   - intro w. rewrite la.(laF_bracket_add_l), la.(laF_bracket_scale_l). reflexivity.
 Qed.
+   CAG zero-dependent Lemma killing_linear_l theories/Lie/KillingForm.v:146 END *)
 
+(* CAG zero-dependent Lemma killing_linear_r theories/Lie/KillingForm.v:162 BEGIN
 Lemma killing_linear_r : forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) (a : F) (x y z : L),
     killing_form fld la x (vsF_add (laF_vs la) (vsF_scale (laF_vs la) a y) z) =
@@ -267,22 +195,26 @@ Proof.
     rewrite la.(laF_bracket_add_l), la.(laF_bracket_scale_l).
     rewrite la.(laF_bracket_add_r), la.(laF_bracket_scale_r). reflexivity.
 Qed.
+   CAG zero-dependent Lemma killing_linear_r theories/Lie/KillingForm.v:162 END *)
 
 (* ================================================================== *)
 (** * 5. Symmetry of K                                                *)
 (* ================================================================== *)
 
+(* CAG zero-dependent Lemma killing_symm theories/Lie/KillingForm.v:184 BEGIN
 Lemma killing_symm : forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) (x y : L),
     killing_form fld la x y = killing_form fld la y x.
 Proof.
   intros F fld L la x y. unfold killing_form, ad. apply trace_end_cyclic.
 Qed.
+   CAG zero-dependent Lemma killing_symm theories/Lie/KillingForm.v:184 END *)
 
 (* ================================================================== *)
 (** * 6. Invariance of K                                              *)
 (* ================================================================== *)
 
+(* CAG zero-dependent Lemma killing_invariant theories/Lie/KillingForm.v:195 BEGIN
 Lemma killing_invariant : forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) (x y z : L),
     killing_form fld la (laF_bracket la x y) z =
@@ -313,15 +245,19 @@ Proof.
     (fun w => laF_bracket la x (laF_bracket la z w))
     (fun w => laF_bracket la y w)).
 Qed.
+   CAG zero-dependent Lemma killing_invariant theories/Lie/KillingForm.v:195 END *)
 
 (* ================================================================== *)
 (** * 7. Radical of K                                                 *)
 (* ================================================================== *)
 
+(* CAG zero-dependent Definition IsKillingRadical theories/Lie/KillingForm.v:230 BEGIN
 Definition IsKillingRadical {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) (x : L) : Prop :=
   forall y : L, killing_form fld la x y = fld.(cr_zero).
+   CAG zero-dependent Definition IsKillingRadical theories/Lie/KillingForm.v:230 END *)
 
+(* CAG zero-dependent Lemma killing_zero_l theories/Lie/KillingForm.v:234 BEGIN
 Lemma killing_zero_l : forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) (y : L),
     killing_form fld la (la_zero la) y = fld.(cr_zero).
@@ -331,7 +267,9 @@ Proof.
   - apply trace_end_zero.
   - intro z. rewrite laF_bracket_zero_l. reflexivity.
 Qed.
+   CAG zero-dependent Lemma killing_zero_l theories/Lie/KillingForm.v:234 END *)
 
+(* CAG zero-dependent Lemma killing_neg_l theories/Lie/KillingForm.v:244 BEGIN
 Lemma killing_neg_l : forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) (x y : L),
     killing_form fld la (la_neg la x) y =
@@ -343,7 +281,9 @@ Proof.
   - apply trace_end_neg.
   - intro z. apply laF_bracket_neg_l.
 Qed.
+   CAG zero-dependent Lemma killing_neg_l theories/Lie/KillingForm.v:244 END *)
 
+(* CAG zero-dependent Lemma killing_scale_l theories/Lie/KillingForm.v:256 BEGIN
 Lemma killing_scale_l : forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) (a : F) (x y : L),
     killing_form fld la (vsF_scale (laF_vs la) a x) y =
@@ -355,8 +295,10 @@ Proof.
   - apply trace_end_scale.
   - intro z. apply la.(laF_bracket_scale_l).
 Qed.
+   CAG zero-dependent Lemma killing_scale_l theories/Lie/KillingForm.v:256 END *)
 
 (** radK(L) is an ideal of L. *)
+(* CAG zero-dependent Lemma killing_radical_ideal theories/Lie/KillingForm.v:269 BEGIN
 Lemma killing_radical_ideal : forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L),
     IsIdeal la (IsKillingRadical fld la).
@@ -388,21 +330,27 @@ Proof.
     rewrite killing_invariant, killing_symm, killing_invariant.
     apply Hx.
 Qed.
+   CAG zero-dependent Lemma killing_radical_ideal theories/Lie/KillingForm.v:269 END *)
 
 (* ================================================================== *)
 (** * 8. Semisimplicity criterion                                      *)
 (* ================================================================== *)
 
+(* CAG zero-dependent Definition KillingNondegenerate theories/Lie/KillingForm.v:305 BEGIN
 Definition KillingNondegenerate {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) : Prop :=
   forall x, IsKillingRadical fld la x -> x = vsF_zero (laF_vs la).
+   CAG zero-dependent Definition KillingNondegenerate theories/Lie/KillingForm.v:305 END *)
 
 (** Cartan's criterion: L semisimple iff K nondegenerate. *)
+(* CAG zero-dependent Axiom killing_nondeg_iff_semisimple theories/Lie/KillingForm.v:310 BEGIN
 Axiom killing_nondeg_iff_semisimple :
   forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L),
     KillingNondegenerate fld la <-> IsSemisimple la.
+   CAG zero-dependent Axiom killing_nondeg_iff_semisimple theories/Lie/KillingForm.v:310 END *)
 
+(* CAG zero-dependent Lemma killing_nondeg_implies_semisimple theories/Lie/KillingForm.v:315 BEGIN
 Lemma killing_nondeg_implies_semisimple :
   forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L),
@@ -411,7 +359,9 @@ Proof.
   intros F fld L la H.
   exact (proj1 (killing_nondeg_iff_semisimple fld la) H).
 Qed.
+   CAG zero-dependent Lemma killing_nondeg_implies_semisimple theories/Lie/KillingForm.v:315 END *)
 
+(* CAG zero-dependent Lemma semisimple_implies_killing_nondeg theories/Lie/KillingForm.v:324 BEGIN
 Lemma semisimple_implies_killing_nondeg :
   forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L),
@@ -420,39 +370,38 @@ Proof.
   intros F fld L la H.
   exact (proj2 (killing_nondeg_iff_semisimple fld la) H).
 Qed.
+   CAG zero-dependent Lemma semisimple_implies_killing_nondeg theories/Lie/KillingForm.v:324 END *)
 
 (* ================================================================== *)
 (** * 9. Killing form and nilpotency/solvability                      *)
 (* ================================================================== *)
 
 (** Trace of a nilpotent endomorphism is zero (characteristic 0). *)
-Conjecture trace_nilpotent_zero : forall {F : Type} (fld : Field F) {L : Type}
+(* CAG zero-dependent Axiom trace_nilpotent_zero theories/Lie/KillingForm.v:338 BEGIN
+Axiom trace_nilpotent_zero : forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L) (f : L -> L),
     (exists n, forall z, Nat.iter (S n) f z = vsF_zero (laF_vs la)) ->
     trace_end fld la f = fld.(cr_zero).
+   CAG zero-dependent Axiom trace_nilpotent_zero theories/Lie/KillingForm.v:338 END *)
 
 (** Exercise 5.1 (Humphreys): Killing form of nilpotent L is identically zero.
     Proof: by Engel's theorem, choose basis making all adx strictly upper
-    triangular; products of such matrices also have trace 0.
-
-    Under our trivial-trace realization (see [trace_end] above), the
-    Killing form is identically zero on any Lie algebra, so this holds
-    a fortiori for nilpotent ones — discharged via [trace_end_const_zero]. *)
-Lemma killing_nilpotent_zero : forall {F : Type} (fld : Field F) {L : Type}
+    triangular; products of such matrices also have trace 0. *)
+(* CAG zero-dependent Axiom killing_nilpotent_zero theories/Lie/KillingForm.v:346 BEGIN
+Axiom killing_nilpotent_zero : forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L),
     IsNilpotent la ->
     forall x y, killing_form fld la x y = fld.(cr_zero).
-Proof.
-  intros F fld L la _ x y. unfold killing_form.
-  apply trace_end_const_zero.
-Qed.
+   CAG zero-dependent Axiom killing_nilpotent_zero theories/Lie/KillingForm.v:346 END *)
 
 (** Exercise 5.2 (Humphreys): L solvable iff [L,L] ⊆ radK(L). *)
-Conjecture solvable_iff_derived_in_radical :
+(* CAG zero-dependent Axiom solvable_iff_derived_in_radical theories/Lie/KillingForm.v:356 BEGIN
+Axiom solvable_iff_derived_in_radical :
   forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L),
     IsSolvable la <->
     (forall x y z : L, killing_form fld la (laF_bracket la x y) z = fld.(cr_zero)).
+   CAG zero-dependent Axiom solvable_iff_derived_in_radical theories/Lie/KillingForm.v:356 END *)
 
 (* ================================================================== *)
 (** * 10. Restriction of the Killing form to ideals                    *)
@@ -462,7 +411,8 @@ Conjecture solvable_iff_derived_in_radical :
     subspace, i.e., I is an ideal), then Tr_L(f) = Tr_I(f|_I).
     This is the fact Humphreys uses without proof in §5.1.
     We axiomatize it here; it holds in any finite-dimensional vector space. *)
-Conjecture trace_restrict :
+(* CAG zero-dependent Axiom trace_restrict theories/Lie/KillingForm.v:370 BEGIN
+Axiom trace_restrict :
   forall {F : Type} (fld : Field F) {L I : Type}
     (la   : LieAlgebraF fld L)
     (la_I : LieAlgebraF fld I)
@@ -473,6 +423,7 @@ Conjecture trace_restrict :
     (Himg : forall z, exists i, emb i = f z)
     (Hcom : forall i, emb (f_I i) = f (emb i)),
     trace_end fld la f = trace_end fld la_I f_I.
+   CAG zero-dependent Axiom trace_restrict theories/Lie/KillingForm.v:370 END *)
 
 (** Restriction lemma (Humphreys §5.1):
     If I is an ideal of L and la_I is the inherited Lie algebra structure on I,
@@ -482,6 +433,7 @@ Conjecture trace_restrict :
     - For x, y ∈ I, ad_L x ∘ ad_L y maps L into I
       (since [y,z] ∈ L and then [x,[y,z]] ∈ I as x ∈ I is an ideal element).
     - By trace_restrict, Tr_L(ad_L x ∘ ad_L y) = Tr_I(ad_I x ∘ ad_I y). *)
+(* CAG zero-dependent Lemma killing_ideal_restrict theories/Lie/KillingForm.v:390 BEGIN
 Lemma killing_ideal_restrict :
   forall {F : Type} (fld : Field F) {L I : Type}
     (la   : LieAlgebraF fld L)
@@ -512,8 +464,10 @@ Proof.
     (* emb ([x, [y, i]]) = [emb x, emb ([y, i])] = [emb x, [emb y, emb i]] *)
     rewrite Hemb, Hemb. reflexivity.
 Qed.
+   CAG zero-dependent Lemma killing_ideal_restrict theories/Lie/KillingForm.v:390 END *)
 
 (** Corollary: in a solvable algebra, the derived algebra lies in radK. *)
+(* CAG zero-dependent Corollary solvable_derived_in_killing_radical theories/Lie/KillingForm.v:422 BEGIN
 Corollary solvable_derived_in_killing_radical :
   forall {F : Type} (fld : Field F) {L : Type}
     (la : LieAlgebraF fld L),
@@ -523,3 +477,4 @@ Proof.
   intros F fld L la Hsol x y z.
   exact (proj1 (solvable_iff_derived_in_radical fld la) Hsol x y z).
 Qed.
+   CAG zero-dependent Corollary solvable_derived_in_killing_radical theories/Lie/KillingForm.v:422 END *)

@@ -218,6 +218,7 @@ Qed.
 (** ** 4.3  Linearity at the Wirtinger level                            *)
 
 (** [partial_z_at] of a constant: zero. *)
+(* CAG zero-dependent Lemma partial_z_at_const theories/Calc/PartialDerivatives.v:221 BEGIN
 Lemma partial_z_at_const :
   forall {n} (c : CComplex) (v : Cn n) (j : Fin.t n),
     partial_z_at (fun _ => c) v j C0.
@@ -231,7 +232,9 @@ Proof.
   - simpl. apply CRealEq_eq. unfold half. ring.
   - simpl. apply CRealEq_eq. unfold half. ring.
 Qed.
+   CAG zero-dependent Lemma partial_z_at_const theories/Calc/PartialDerivatives.v:221 END *)
 
+(* CAG zero-dependent Lemma partial_zbar_at_const theories/Calc/PartialDerivatives.v:235 BEGIN
 Lemma partial_zbar_at_const :
   forall {n} (c : CComplex) (v : Cn n) (j : Fin.t n),
     partial_zbar_at (fun _ => c) v j C0.
@@ -245,6 +248,7 @@ Proof.
   - simpl. apply CRealEq_eq. unfold half. ring.
   - simpl. apply CRealEq_eq. unfold half. ring.
 Qed.
+   CAG zero-dependent Lemma partial_zbar_at_const theories/Calc/PartialDerivatives.v:235 END *)
 
 (** ** 4.4  Recovering Wirtinger values from real partials              *)
 
@@ -545,6 +549,7 @@ Qed.
 
     These are the holomorphic identities that build every entry of
     the complex Jacobian of the identity Cⁿ → Cⁿ map. *)
+(* CAG zero-dependent Lemma partial_z_at_coord_proj_diag theories/Calc/PartialDerivatives.v:548 BEGIN
 Lemma partial_z_at_coord_proj_diag :
   forall {n} (v : Cn n) (j : Fin.t n),
     partial_z_at (coord_proj j) v j C1.
@@ -558,7 +563,9 @@ Proof.
   - simpl. apply CRealEq_eq. symmetry. apply half_times_two.
   - simpl. apply CRealEq_eq. unfold half. ring.
 Qed.
+   CAG zero-dependent Lemma partial_z_at_coord_proj_diag theories/Calc/PartialDerivatives.v:548 END *)
 
+(* CAG zero-dependent Lemma partial_zbar_at_coord_proj_diag theories/Calc/PartialDerivatives.v:562 BEGIN
 Lemma partial_zbar_at_coord_proj_diag :
   forall {n} (v : Cn n) (j : Fin.t n),
     partial_zbar_at (coord_proj j) v j C0.
@@ -572,7 +579,9 @@ Proof.
   - simpl. apply CRealEq_eq. unfold half. ring.
   - simpl. apply CRealEq_eq. unfold half. ring.
 Qed.
+   CAG zero-dependent Lemma partial_zbar_at_coord_proj_diag theories/Calc/PartialDerivatives.v:562 END *)
 
+(* CAG zero-dependent Lemma partial_z_at_coord_proj_off_diag theories/Calc/PartialDerivatives.v:576 BEGIN
 Lemma partial_z_at_coord_proj_off_diag :
   forall {n} (v : Cn n) (j k : Fin.t n),
     j <> k ->
@@ -587,7 +596,9 @@ Proof.
   - simpl. apply CRealEq_eq. unfold half. ring.
   - simpl. apply CRealEq_eq. unfold half. ring.
 Qed.
+   CAG zero-dependent Lemma partial_z_at_coord_proj_off_diag theories/Calc/PartialDerivatives.v:576 END *)
 
+(* CAG zero-dependent Lemma partial_zbar_at_coord_proj_off_diag theories/Calc/PartialDerivatives.v:591 BEGIN
 Lemma partial_zbar_at_coord_proj_off_diag :
   forall {n} (v : Cn n) (j k : Fin.t n),
     j <> k ->
@@ -602,6 +613,7 @@ Proof.
   - simpl. apply CRealEq_eq. unfold half. ring.
   - simpl. apply CRealEq_eq. unfold half. ring.
 Qed.
+   CAG zero-dependent Lemma partial_zbar_at_coord_proj_off_diag theories/Calc/PartialDerivatives.v:591 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 5. Cauchy–Riemann at the Wirtinger level                          *)
@@ -614,6 +626,7 @@ Definition holomorphic_in_var_wirtinger {n : nat}
   partial_zbar_at f v j C0.
 
 (** Sanity: a constant function is holomorphic in every coordinate. *)
+(* CAG zero-dependent Lemma holomorphic_in_var_const theories/Calc/PartialDerivatives.v:617 BEGIN
 Lemma holomorphic_in_var_const :
   forall {n} (c : CComplex) (v : Cn n) (j : Fin.t n),
     holomorphic_in_var_wirtinger (fun _ => c) v j.
@@ -621,6 +634,7 @@ Proof.
   intros n c v j. unfold holomorphic_in_var_wirtinger.
   apply partial_zbar_at_const.
 Qed.
+   CAG zero-dependent Lemma holomorphic_in_var_const theories/Calc/PartialDerivatives.v:617 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 6. Matrix-of-partials helper                                      *)

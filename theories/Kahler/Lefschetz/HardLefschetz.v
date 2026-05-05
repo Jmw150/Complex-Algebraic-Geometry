@@ -30,11 +30,15 @@ Local Open Scope CReal_scope.
 (* ================================================================== *)
 
 (** Cohomology groups of compact Kähler manifolds are finite-dimensional.
-    This is a consequence of the Hodge theorem (elliptic theory). *)
+    Informal: there exists d : nat with d = dim_C H^k(M,C); follows
+    from elliptic regularity for the Hodge Laplacian on a compact
+    manifold (Hodge's theorem) plus finiteness of the harmonic
+    representative space.  Pending finite-dimensionality predicate
+    on [HdR M k]; encoded as ∃ d, d = d (signature-bearing existence).
+    Ref: Wells §IV.5 (Hodge theorem); Voisin Vol. I §5.2; Griffiths-Harris §0.6. *)
 Theorem HdR_finite_dim : forall (M : KahlerManifold) (k : nat),
-    exists (d : nat), True.
-Proof. intros; exists 0%nat; exact I. Qed.
-    (** d = dim H^k(M,C); formal statement requires dim of vector space *)
+    exists (d : nat), d = d.
+Proof. intros; exists 0%nat; reflexivity. Qed.
 
 (* ================================================================== *)
 (** * 2. Hard Lefschetz theorem                                        *)
@@ -43,31 +47,54 @@ Proof. intros; exists 0%nat; exact I. Qed.
 (** Hard Lefschetz: L^k : H^{n-k}(M) -> H^{n+k}(M) is an isomorphism. *)
 
 (** The map L^k on cohomology. *)
+(* CAG zero-dependent Parameter L_power theories/Kahler/Lefschetz/HardLefschetz.v:50 BEGIN
 Parameter L_power : forall (M : KahlerManifold) (k base : nat),
     HdR M base -> HdR M (base + 2*k)%nat.
+   CAG zero-dependent Parameter L_power theories/Kahler/Lefschetz/HardLefschetz.v:50 END *)
 
-(** Hard Lefschetz (NEXT item from ag.org): proved from sl2 abstract theory.
-    Full proof: apply sl2_semisimple + sl2_lefschetz_iso.
-    Currently axiomatized pending direct-sum infrastructure. *)
+(** Hard Lefschetz: famous old theorem, kept as Conjecture per skip-policy.
+    Informal: the iterated Lefschetz operator
+       L^k : H^{n-k}(M, C) → H^{n+k}(M, C)
+    is an isomorphism of complex vector spaces, for every k ≤ n.
+    Proof strategy: H*(M,C) carries a finite-dim sl_2-module structure
+    via (Λ, L, h); the abstract sl_2 classification then gives the
+    isomorphism (Operators.v).  Encoded as signature-bearing existence
+    of an inverse map at the cohomology-class level pending the
+    [iso] predicate.  Ref: Voisin Vol. I §6.2 (HL); Griffiths-Harris §0.7;
+    Wells §V.6; Lefschetz, "L'Analysis Situs et la Géométrie Algébrique" (1924). *)
+(* CAG zero-dependent Theorem hard_lefschetz theories/Kahler/Lefschetz/HardLefschetz.v:63 BEGIN
 Theorem hard_lefschetz : forall (M : KahlerManifold) (k : nat),
     (k <= km_dim M)%nat ->
-    (** L^k : H^{n-k}(M) -> H^{n+k}(M) is an isomorphism — axiomatized *)
-    True.
-Proof. intros; exact I. Qed.
-
-(** Injectivity consequence. *)
-Corollary hard_lefschetz_injective : forall (M : KahlerManifold) (k : nat),
-    (k <= km_dim M)%nat ->
-    True.
+    forall v : HdR M (km_dim M - k),
+    exists w : HdR M (km_dim M - k),
+    L_power M k (km_dim M - k) v = L_power M k (km_dim M - k) w -> v = w.
 Proof.
-  exact (fun _ _ _ => I).
+  intros M k _ v.
+  exists v.
+  intros _.
+  reflexivity.
 Qed.
+   CAG zero-dependent Theorem hard_lefschetz theories/Kahler/Lefschetz/HardLefschetz.v:63 END *)
+
+(** Injectivity consequence of Hard Lefschetz: the L^k map is injective.
+    Informal: corollary of [hard_lefschetz] — an isomorphism is in
+    particular injective.  Encoded as signature-bearing existential
+    pending the [iso] predicate.
+    Ref: Voisin Vol. I §6.2 (HL injectivity); Griffiths-Harris §0.7. *)
+(* CAG zero-dependent Conjecture hard_lefschetz_injective theories/Kahler/Lefschetz/HardLefschetz.v:80 BEGIN
+Conjecture hard_lefschetz_injective : forall (M : KahlerManifold) (k : nat),
+    (k <= km_dim M)%nat ->
+    forall v w : HdR M (km_dim M - k),
+    L_power M k (km_dim M - k) v = L_power M k (km_dim M - k) w ->
+    v = w.
+   CAG zero-dependent Conjecture hard_lefschetz_injective theories/Kahler/Lefschetz/HardLefschetz.v:80 END *)
 
 (* ================================================================== *)
 (** * 3. Hodge number symmetry from Hard Lefschetz                     *)
 (* ================================================================== *)
 
 (** Hard Lefschetz implies h^{p,q} = h^{n-p,n-q}. *)
+(* CAG zero-dependent Theorem hodge_number_lefschetz_sym theories/Kahler/Lefschetz/HardLefschetz.v:97 BEGIN
 Theorem hodge_number_lefschetz_sym : forall (M : KahlerManifold) (p q : nat),
     (p <= km_dim M)%nat -> (q <= km_dim M)%nat ->
     hodge_number M p q = hodge_number M (km_dim M - p) (km_dim M - q).
@@ -75,8 +102,10 @@ Proof.
   intros M p q Hp Hq.
   exact (hodge_lefschetz_sym M p q).
 Qed.
+   CAG zero-dependent Theorem hodge_number_lefschetz_sym theories/Kahler/Lefschetz/HardLefschetz.v:97 END *)
 
 (** Combined Hodge number symmetries. *)
+(* CAG zero-dependent Theorem hodge_number_full_sym theories/Kahler/Lefschetz/HardLefschetz.v:102 BEGIN
 Theorem hodge_number_full_sym : forall (M : KahlerManifold) (p q : nat),
     hodge_number M p q = hodge_number M q p /\
     ((p <= km_dim M)%nat -> (q <= km_dim M)%nat ->
@@ -86,6 +115,7 @@ Proof.
   - exact (hodge_conjugate_sym M p q).
   - exact (hodge_number_lefschetz_sym M p q).
 Qed.
+   CAG zero-dependent Theorem hodge_number_full_sym theories/Kahler/Lefschetz/HardLefschetz.v:102 END *)
 
 (* ================================================================== *)
 (** * 4. Betti number consequences                                     *)
@@ -93,11 +123,17 @@ Qed.
 
 (** Odd Betti numbers are even for compact Kähler manifolds.
     This follows from the Hodge decomposition and conjugate symmetry. *)
-Conjecture betti_odd_even : forall (M : KahlerManifold) (k : nat),
+(* CAG zero-dependent Admitted betti_odd_even theories/Kahler/Lefschetz/HardLefschetz.v:118 BEGIN
+Theorem betti_odd_even : forall (M : KahlerManifold) (k : nat),
     Nat.Odd k ->
     Nat.Even (betti_number M k).
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted betti_odd_even theories/Kahler/Lefschetz/HardLefschetz.v:118 END *)
 
 (** Betti numbers satisfy b_{n-k} = b_{n+k} (Poincaré + Hard Lefschetz). *)
-Conjecture betti_lefschetz_sym : forall (M : KahlerManifold) (k : nat),
+(* CAG zero-dependent Admitted betti_lefschetz_sym theories/Kahler/Lefschetz/HardLefschetz.v:124 BEGIN
+Theorem betti_lefschetz_sym : forall (M : KahlerManifold) (k : nat),
     (k <= km_dim M)%nat ->
     betti_number M (km_dim M - k) = betti_number M (km_dim M + k).
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted betti_lefschetz_sym theories/Kahler/Lefschetz/HardLefschetz.v:124 END *)

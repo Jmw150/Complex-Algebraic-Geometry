@@ -50,9 +50,14 @@ Definition sh_divisor {M : ComplexManifold} (V : SmoothHypersurface M) :
   [(1%Z, sh_to_dc V)].
 
 (** The line bundle [V]. *)
+(* CAG constructive-remove Definition sh_bundle theories/Hypersurface/NormalBundle.v:53 BEGIN -- repair partial command cleanup after removing LB
 Definition sh_bundle {M : ComplexManifold} (V : SmoothHypersurface M) :
     HolLineBundleCech M :=
-  LB[sh_divisor V].
+  (* CAG constructive-remove Command LB[sh_divisor theories/Hypersurface/NormalBundle.v:55 BEGIN -- missing LB
+LB[sh_divisor V].
+
+   CAG constructive-remove Command LB[sh_divisor theories/Hypersurface/NormalBundle.v:55 END *)
+   CAG constructive-remove Definition sh_bundle theories/Hypersurface/NormalBundle.v:53 END *)
 
 (* ================================================================== *)
 (** * 2. Normal and conormal bundles                                   *)
@@ -62,41 +67,45 @@ Definition sh_bundle {M : ComplexManifold} (V : SmoothHypersurface M) :
     We represent bundles as line bundles here (since V is a hypersurface,
     the normal bundle is a line bundle). *)
 
-(** The normal bundle N_V of V in M: a holomorphic line bundle on V.
-
-    Concrete witness (Infra-6): set [normal_bundle V := sh_bundle V].
-    This is the *content* of the adjunction formula
-    [N_V ≅ [V]|_V] (Adjunction Formula I), packaged as a definitional
-    equality rather than an axiom-level isomorphism.  Mathematically
-    sound modulo the Phase-E-2 degenerate model: [sh_bundle V] is
-    [LB[sh_divisor V] = hlb_trivial M] under the current
-    [divisor_bundle] definition, and the genuine N_V on a non-trivial
-    cover would require analytic infrastructure (df_α local sections,
-    cocycle [f_α / f_β]) beyond the current scope. *)
-Definition normal_bundle {M : ComplexManifold}
-    (V : SmoothHypersurface M) : HolLineBundleCech M :=
-  sh_bundle V.
+(** The normal bundle N_V of V in M: a holomorphic line bundle on V. *)
+(* CAG zero-dependent Parameter normal_bundle theories/Hypersurface/NormalBundle.v:66 BEGIN
+Parameter normal_bundle : forall {M : ComplexManifold},
+    SmoothHypersurface M -> HolLineBundleCech M.
+   CAG zero-dependent Parameter normal_bundle theories/Hypersurface/NormalBundle.v:66 END *)
 
 (** The conormal bundle N_V^* = (N_V)^*. *)
+(* CAG zero-dependent Definition conormal_bundle theories/Hypersurface/NormalBundle.v:70 BEGIN
 Definition conormal_bundle {M : ComplexManifold} (V : SmoothHypersurface M) :
     HolLineBundleCech M :=
   hlb_dual (normal_bundle V).
+   CAG zero-dependent Definition conormal_bundle theories/Hypersurface/NormalBundle.v:70 END *)
 
 (** Local defining sections: on U_α, df_α is a nonzero section of N_V^*.
-    These define a nowhere-zero global section of N_V^* ⊗ [V]. *)
-Theorem df_sections_nonzero : forall {M : ComplexManifold}
+    These define a nowhere-zero global section of N_V^* ⊗ [V].
+
+    Stated as a Conjecture pending the introduction of cotangent-bundle
+    section infrastructure (df as a 1-form, restriction to V, nowhere-zero
+    predicate). Reference: ag.org Part IX, Conormal Bundle §1. *)
+(* CAG zero-dependent Conjecture df_sections_nonzero theories/Hypersurface/NormalBundle.v:80 BEGIN
+Conjecture df_sections_nonzero : forall {M : ComplexManifold}
     (V : SmoothHypersurface M) (z : Cn (cm_dim M)),
     sh_variety V z ->
-    True. (* df_α is a nonzero section of N_V* at smooth points *)
-Proof. intros; exact I. Qed.
+    smooth_point (fun _ => True) (sh_variety V) z.
+   CAG zero-dependent Conjecture df_sections_nonzero theories/Hypersurface/NormalBundle.v:80 END *)
+(* The smoothness witness is the structural fact that df_α ≠ 0 at z. *)
 
 (** Transition relation: df_α = g_{αβ} · df_β where g_{αβ} = f_α/f_β.
     This means N_V^* has the same transition functions as [V],
-    so N_V^* ≅ [V]|_V. *)
-Theorem conormal_transition : forall {M : ComplexManifold}
+    so N_V^* ≅ [V]|_V.
+
+    Stated as a Conjecture pending overlap-cocycle infrastructure for
+    holomorphic line bundles. Reference: ag.org Part IX, Conormal Bundle §1
+    (Adjunction Formula derivation). *)
+(* CAG zero-dependent Conjecture conormal_transition theories/Hypersurface/NormalBundle.v:93 BEGIN
+Conjecture conormal_transition : forall {M : ComplexManifold}
     (V : SmoothHypersurface M),
-    True. (* df_α = g_{αβ} · df_β on overlaps *)
-Proof. intros; exact I. Qed.
+    hlb_iso (hlb_tensor (conormal_bundle V) (sh_bundle V)) (hlb_trivial M).
+   CAG zero-dependent Conjecture conormal_transition theories/Hypersurface/NormalBundle.v:93 END *)
 
 (* ================================================================== *)
 (** * 3. Adjunction Formula I: N_V^* ≅ [-V]|_V                        *)
@@ -109,22 +118,33 @@ Proof. intros; exact I. Qed.
     Proof: the df_α trivialize N_V* ⊗ [V]|_V, so this tensor product
     is trivial. Hence N_V^* ≅ [-V]|_V. *)
 
+(* CAG zero-dependent Admitted adjunction_formula_I theories/Hypersurface/NormalBundle.v:115 BEGIN
 Theorem adjunction_formula_I : forall {M : ComplexManifold}
     (V : SmoothHypersurface M),
     hlb_iso (conormal_bundle V) (hlb_dual (sh_bundle V)).
-Proof.
-  intros M V. unfold conormal_bundle, normal_bundle. apply hlb_iso_refl.
-Qed.
+Proof. Admitted.
+   CAG zero-dependent Admitted adjunction_formula_I theories/Hypersurface/NormalBundle.v:115 END *)
 
 (** Equivalently: N_V ≅ [V]|_V. *)
+(* CAG zero-dependent Theorem normal_bundle_iso_divisor_bundle theories/Hypersurface/NormalBundle.v:118 BEGIN
 Theorem normal_bundle_iso_divisor_bundle : forall {M : ComplexManifold}
     (V : SmoothHypersurface M),
     hlb_iso (normal_bundle V) (sh_bundle V).
 Proof.
-  intros M V. unfold normal_bundle. apply hlb_iso_refl.
+  intros M V.
+  (* normal_bundle V ≅ (normal_bundle V)** ≅ (sh_bundle V)** ≅ sh_bundle V *)
+  apply hlb_iso_trans with (hlb_dual (hlb_dual (normal_bundle V))).
+  - apply hlb_iso_symm. apply hlb_dual_dual.
+  - apply hlb_iso_trans with (hlb_dual (hlb_dual (sh_bundle V))).
+    + (* (conormal_bundle V = hlb_dual (normal_bundle V)) ≅ hlb_dual (sh_bundle V)
+         so apply hlb_dual_cong to adjunction_formula_I *)
+      apply hlb_dual_cong. apply adjunction_formula_I.
+    + apply hlb_dual_dual.
 Qed.
+   CAG zero-dependent Theorem normal_bundle_iso_divisor_bundle theories/Hypersurface/NormalBundle.v:118 END *)
 
 (** Corollary: N_V* ⊗ [V]|_V is trivial. *)
+(* CAG zero-dependent Theorem conormal_tensor_divisor_trivial theories/Hypersurface/NormalBundle.v:134 BEGIN
 Theorem conormal_tensor_divisor_trivial : forall {M : ComplexManifold}
     (V : SmoothHypersurface M),
     hlb_iso (hlb_tensor (conormal_bundle V) (sh_bundle V))
@@ -140,14 +160,21 @@ Proof.
     + apply hlb_tensor_comm.
     + apply hlb_tensor_dual.
 Qed.
+   CAG zero-dependent Theorem conormal_tensor_divisor_trivial theories/Hypersurface/NormalBundle.v:134 END *)
 
 (* ================================================================== *)
 (** * 4. Application: N_{V_d}^* for hypersurface in ℙⁿ                *)
 (* ================================================================== *)
 
 (** For a smooth hypersurface V_d of degree d in ℙⁿ,
-    N_{V_d} ≅ O(d)|_{V_d}. *)
-Theorem normal_bundle_degree_d_hypersurface :
-    forall (n d : nat) (V : SmoothHypersurface (CPn_manifold n)),
-    True. (* N_{V_d} ≅ O(d)|_{V_d} — needs O_bundle infrastructure *)
-Proof. intros; exact I. Qed.
+    N_{V_d} ≅ O(d)|_{V_d}.
+
+    Stated as a Conjecture: needs O(d) (twisting sheaf / hyperplane bundle
+    powers) infrastructure as a HolLineBundleCech, plus the hypersurface
+    degree function `sh_degree_Pn`. Reference: ag.org Part IX, Adjunction
+    Formula corollary for projective hypersurfaces. *)
+(* CAG zero-dependent Conjecture normal_bundle_degree_d_hypersurface theories/Hypersurface/NormalBundle.v:157 BEGIN
+Conjecture normal_bundle_degree_d_hypersurface :
+    forall (n : nat) (V : SmoothHypersurface (CPn_manifold n)),
+    hlb_iso (normal_bundle V) (sh_bundle V).
+   CAG zero-dependent Conjecture normal_bundle_degree_d_hypersurface theories/Hypersurface/NormalBundle.v:157 END *)

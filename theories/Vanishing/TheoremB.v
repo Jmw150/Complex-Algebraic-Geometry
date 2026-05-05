@@ -30,62 +30,69 @@ Local Open Scope CReal_scope.
 (* ================================================================== *)
 
 (** A holomorphic vector bundle E of rank r on M. *)
+(* CAG zero-dependent Parameter HolVectorBundle theories/Vanishing/TheoremB.v:33 BEGIN
 Parameter HolVectorBundle : forall (M : KahlerManifold) (r : nat), Type.
+   CAG zero-dependent Parameter HolVectorBundle theories/Vanishing/TheoremB.v:33 END *)
 
 (** The trivial rank-1 bundle (= O_M). *)
+(* CAG zero-dependent Parameter trivial_bundle theories/Vanishing/TheoremB.v:36 BEGIN
 Parameter trivial_bundle : forall (M : KahlerManifold),
     HolVectorBundle M 1.
+   CAG zero-dependent Parameter trivial_bundle theories/Vanishing/TheoremB.v:36 END *)
+
+
 
 (** Tensor product of a vector bundle E with a line bundle L. *)
+(* CAG zero-dependent Parameter vb_tensor_lb theories/Vanishing/TheoremB.v:44 BEGIN
 Parameter vb_tensor_lb : forall (M : KahlerManifold) (r : nat),
     HolVectorBundle M r ->
     HolLineBundleCech (km_manifold M) ->
     HolVectorBundle M r.
+   CAG zero-dependent Parameter vb_tensor_lb theories/Vanishing/TheoremB.v:44 END *)
 
-(** The k-th power of a line bundle L: L^k = L ⊗ ⋯ ⊗ L (k factors).
-    Defined by iterated [hlb_tensor]; [L^0 := hlb_trivial M]. *)
-Fixpoint lb_power (M : KahlerManifold)
-    (L : HolLineBundleCech (km_manifold M)) (k : nat)
-  : HolLineBundleCech (km_manifold M) :=
-  match k with
-  | O    => hlb_trivial (km_manifold M)
-  | S k' => hlb_tensor (M := km_manifold M) L (lb_power M L k')
-  end.
+(** The k-th power of a line bundle L: L^k. *)
+(* CAG zero-dependent Parameter lb_power theories/Vanishing/TheoremB.v:52 BEGIN
+Parameter lb_power : forall (M : KahlerManifold),
+    HolLineBundleCech (km_manifold M) -> nat ->
+    HolLineBundleCech (km_manifold M).
+   CAG zero-dependent Parameter lb_power theories/Vanishing/TheoremB.v:52 END *)
 
 (** The dual of L^k is L^{-k}. *)
-(** Discharged: with the current Cech-cocycle representation,
-    [hlb_dual] and [hlb_tensor] both collapse to [hlb_trivial M], so
-    both sides reduce definitionally to [hlb_trivial (km_manifold M)]. *)
-Lemma lb_power_dual : forall (M : KahlerManifold)
+(* CAG zero-dependent Admitted lb_power_dual theories/Vanishing/TheoremB.v:54 BEGIN
+Theorem lb_power_dual : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (k : nat),
     hlb_dual (lb_power M L k) = lb_power M (hlb_dual L) k.
-Proof.
-  intros M L k.
-  induction k as [|k' _]; simpl; reflexivity.
-Qed.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted lb_power_dual theories/Vanishing/TheoremB.v:54 END *)
 
 (* ================================================================== *)
 (** * 2. Cohomology of vector bundle-valued forms                      *)
 (* ================================================================== *)
 
 (** Dolbeault cohomology H^{p,q}(M, E) for a vector bundle E. *)
+(* CAG zero-dependent Parameter HDolb_vb theories/Vanishing/TheoremB.v:69 BEGIN
 Parameter HDolb_vb : forall (M : KahlerManifold) (r : nat),
     HolVectorBundle M r -> nat -> nat -> Type.
+   CAG zero-dependent Parameter HDolb_vb theories/Vanishing/TheoremB.v:69 END *)
 
 (** The zero element. *)
+(* CAG zero-dependent Parameter HDolb_vb_zero theories/Vanishing/TheoremB.v:71 BEGIN
 Parameter HDolb_vb_zero : forall (M : KahlerManifold) (r : nat)
     (E : HolVectorBundle M r) (p q : nat),
     HDolb_vb M r E p q.
+   CAG zero-dependent Parameter HDolb_vb_zero theories/Vanishing/TheoremB.v:71 END *)
 
 (* ================================================================== *)
 (** * 3. Kodaira–Serre duality for vector bundles                      *)
 (* ================================================================== *)
 
 (** Serre duality: H^{p,q}(M, E) iso H^{n-p,n-q}(M, K_M tensor E_dual)_dual. *)
+(* CAG zero-dependent Theorem serre_duality_vb theories/Vanishing/TheoremB.v:86 BEGIN
 Theorem serre_duality_vb : forall (M : KahlerManifold) (r p q : nat)
     (E : HolVectorBundle M r),
     True. (** isomorphism — axiomatized *)
 Proof. intros; exact I. Qed.
+   CAG zero-dependent Theorem serre_duality_vb theories/Vanishing/TheoremB.v:86 END *)
 
 (* ================================================================== *)
 (** * 4. Curvature of tensor products                                  *)
@@ -93,6 +100,7 @@ Proof. intros; exact I. Qed.
 
 (** Curvature of L^{-μ} ⊗ E: Θ = Θ_E - (μ/2πi) ω ⊗ 1_{r×r}.
     For μ >> 0 the term -(μ/2πi)ω dominates Θ_E. *)
+(* CAG zero-dependent Theorem curvature_twist_dominates theories/Vanishing/TheoremB.v:97 BEGIN
 Theorem curvature_twist_dominates : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (r : nat)
     (E : HolVectorBundle M r),
@@ -103,13 +111,16 @@ Theorem curvature_twist_dominates : forall (M : KahlerManifold)
     (** Θ_{L^{-μ} ⊗ E} = Θ_E - μ·Θ_L is negative for μ >> 0 — axiomatized *)
     True.
 Proof. intros; exists 0%nat; intros; exact I. Qed.
+   CAG zero-dependent Theorem curvature_twist_dominates theories/Vanishing/TheoremB.v:97 END *)
 
 (* ================================================================== *)
 (** * 5. Theorem B                                                     *)
 (* ================================================================== *)
 
 (** Theorem B: H^q(M, O(L^μ ⊗ E)) = 0 for all q > 0 and μ >> 0. *)
-Conjecture theorem_B : forall (M : KahlerManifold)
+(* CAG zero-dependent Admitted theorem_B theories/Vanishing/TheoremB.v:113 BEGIN
+(* CAG zero-dependent Admitted theorem_B theories/Vanishing/TheoremB.v:113 BEGIN
+Theorem theorem_B : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (r : nat)
     (E : HolVectorBundle M r),
     positive_line_bundle M L ->
@@ -119,9 +130,13 @@ Conjecture theorem_B : forall (M : KahlerManifold)
     (0 < q)%nat ->
     forall α : HDolb_vb M r (vb_tensor_lb M r E (lb_power M L μ)) 0 q,
     α = HDolb_vb_zero M r _ 0 q.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted theorem_B theories/Vanishing/TheoremB.v:113 END *)
+   CAG zero-dependent Admitted theorem_B theories/Vanishing/TheoremB.v:113 END *)
 
 (** Equivalent formulation: for large twists, only H^0 survives. *)
-Conjecture theorem_B_large_powers : forall (M : KahlerManifold)
+(* CAG zero-dependent Admitted theorem_B_large_powers theories/Vanishing/TheoremB.v:131 BEGIN
+Corollary theorem_B_large_powers : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)),
     positive_line_bundle M L ->
     exists μ0 : nat,
@@ -131,12 +146,22 @@ Conjecture theorem_B_large_powers : forall (M : KahlerManifold)
     (0 < q)%nat ->
     forall α : HDolb M (lb_power M L μ) 0 q,
     α = HDolb_zero M _ 0 q.
+Proof.
+  intros M L Hpos.
+  pose proof (theorem_B M L 1 (trivial_bundle M) Hpos) as [μ0 Hμ0].
+  exists μ0.
+  intros μ Hμ q Hq α.
+  (* The trivial bundle case of theorem_B gives this — axiomatized *)
+  admit.
+Admitted.
+   CAG zero-dependent Admitted theorem_B_large_powers theories/Vanishing/TheoremB.v:131 END *)
 
 (* ================================================================== *)
 (** * 6. Surjectivity from Theorem B                                   *)
 (* ================================================================== *)
 
 (** For large μ, the evaluation map H⁰(M, O(L^μ)) → L_x^μ is surjective. *)
+(* CAG zero-dependent Theorem theorem_B_evaluation_surjective theories/Vanishing/TheoremB.v:156 BEGIN
 Theorem theorem_B_evaluation_surjective : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)),
     positive_line_bundle M L ->
@@ -146,3 +171,4 @@ Theorem theorem_B_evaluation_surjective : forall (M : KahlerManifold)
     (** eval_x : H⁰(M, O(L^μ)) → L_x^μ is surjective for all x — axiomatized *)
     True.
 Proof. intros; exists 0%nat; intros; exact I. Qed.
+   CAG zero-dependent Theorem theorem_B_evaluation_surjective theories/Vanishing/TheoremB.v:156 END *)

@@ -27,6 +27,7 @@ From CAG Require Import LinAlg.Matrix2 LinAlg.SL2 LinAlg.SL2Fricke
                        LinAlg.QField.
 From CAG Require Import DecisionProblems.OpenProblems.
 From CAG Require Import DecisionProblems.SL2Horowitz.
+From CAG Require Import DecisionProblems.SL2HorowitzConcrete.
 From CAG Require Import DecisionProblems.HallTheorem.
 
 (* ================================================================== *)

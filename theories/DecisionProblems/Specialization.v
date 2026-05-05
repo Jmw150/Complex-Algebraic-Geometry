@@ -67,6 +67,7 @@ Record FGRing : Type := mkFGR
     have a maximal ideal m with R/m a finite field, and one can choose
     m to avoid r. *)
 
+(* CAG zero-dependent Conjecture bass_lubotzky_specialization theories/DecisionProblems/Specialization.v:70 BEGIN
 Conjecture bass_lubotzky_specialization :
   forall (R : FGRing) (r : fgr_carrier R),
     r <> rzero (fgr_carrier R) (fgr_ring R) ->
@@ -75,6 +76,7 @@ Conjecture bass_lubotzky_specialization :
            (Q_complete : forall x : Q, In x Q_list)
            (phi : RingHom (fgr_ring R) rq),
       rhom_fn phi r <> rzero Q rq.
+   CAG zero-dependent Conjecture bass_lubotzky_specialization theories/DecisionProblems/Specialization.v:70 END *)
 
 (* ================================================================== *)
 (** * 3. From representation to specialization                          *)
@@ -91,6 +93,7 @@ Section SpecializationOfTraceDiff.
   (** Hypothesis: the trace difference tr(ρ(γ)) - tr(ρ(η)) is a
       non-zero element of R for some ρ. We package this as an
       explicit input. *)
+(* CAG zero-dependent Definition trace_diff_specializable theories/DecisionProblems/Specialization.v:94 BEGIN
   Definition trace_diff_specializable
       (gamma eta : G)
       (trace_diff : fgr_carrier R)
@@ -101,6 +104,7 @@ Section SpecializationOfTraceDiff.
            (phi : RingHom (fgr_ring R) rq),
       rhom_fn phi trace_diff <> rzero Q rq :=
     bass_lubotzky_specialization R trace_diff Hnz.
+   CAG zero-dependent Definition trace_diff_specializable theories/DecisionProblems/Specialization.v:94 END *)
 
 End SpecializationOfTraceDiff.
 

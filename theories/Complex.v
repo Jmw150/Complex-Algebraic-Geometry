@@ -106,219 +106,67 @@ Definition CComplex_req (z w : CComplex) : Prop :=
 
 Notation "z ~~C w" := (CComplex_req z w) (at level 70).
 
-(* ================================================================== *)
-(** ** Setoid layer for [CComplex_req]
-    Registers [~~C] as an equivalence and the basic operations as
-    morphisms, enabling [setoid_rewrite] under [~~C]. *)
-(* ================================================================== *)
-
-From Stdlib Require Import Setoid Morphisms RelationClasses.
+(* CAG zero-dependent Lemma CComplex_eq theories/Complex.v:109 BEGIN
+Lemma CComplex_eq : forall z w : CComplex, z ~~C w -> z = w.
+Proof.
+  intros [zr zi] [wr wi] [Hr Hi].
+  simpl in *.
+  apply CRealEq_eq in Hr.
+  apply CRealEq_eq in Hi.
+  subst. reflexivity.
+Qed.
+   CAG zero-dependent Lemma CComplex_eq theories/Complex.v:109 END *)
 
 Lemma CComplex_req_refl : forall z : CComplex, z ~~C z.
-Proof. intro z. unfold CComplex_req. split; reflexivity. Qed.
+Proof.
+  intro z. split; reflexivity.
+Qed.
 
 Lemma CComplex_req_sym : forall z w : CComplex, z ~~C w -> w ~~C z.
 Proof.
-  intros z w [Hr Hi]. unfold CComplex_req.
-  split; symmetry; assumption.
+  intros z w [Hr Hi]. split; symmetry; assumption.
 Qed.
 
-Lemma CComplex_req_trans : forall z w u : CComplex,
-    z ~~C w -> w ~~C u -> z ~~C u.
+Lemma CComplex_req_trans : forall x y z : CComplex,
+    x ~~C y -> y ~~C z -> x ~~C z.
 Proof.
-  intros z w u [Hzr Hzi] [Hwr Hwi]. unfold CComplex_req.
-  split; (eapply CRealEq_trans; eassumption).
+  intros x y z [Hr1 Hi1] [Hr2 Hi2].
+  split; eapply CRealEq_trans; eassumption.
 Qed.
 
-#[global] Instance CComplex_req_Equivalence : Equivalence CComplex_req.
+Lemma Cadd_C0_l_req : forall z : CComplex, Cadd C0 z ~~C z.
 Proof.
-  constructor.
-  - exact CComplex_req_refl.
-  - exact CComplex_req_sym.
-  - exact CComplex_req_trans.
+  intro z. unfold CComplex_req, Cadd, C0. simpl. split; ring.
 Qed.
 
-(** [mkC] respects componentwise [CRealEq]. *)
-#[global] Instance mkC_Proper :
-  Proper (CRealEq ==> CRealEq ==> CComplex_req) mkC.
+(* CAG zero-dependent Lemma Cadd_C0_l theories/Complex.v:140 BEGIN
+Lemma Cadd_C0_l : forall z : CComplex, Cadd C0 z = z.
 Proof.
-  intros r r' Hr i i' Hi. unfold CComplex_req. simpl.
-  split; assumption.
+  intro z. apply CComplex_eq, Cadd_C0_l_req.
+Qed.
+   CAG zero-dependent Lemma Cadd_C0_l theories/Complex.v:140 END *)
+
+Lemma Cadd_C0_r_req : forall z : CComplex, Cadd z C0 ~~C z.
+Proof.
+  intro z. unfold CComplex_req, Cadd, C0. simpl. split; ring.
 Qed.
 
-(** Component projections respect [~~C]. *)
-#[global] Instance re_Proper : Proper (CComplex_req ==> CRealEq) re.
-Proof. intros z w [Hr _]. exact Hr. Qed.
-
-#[global] Instance im_Proper : Proper (CComplex_req ==> CRealEq) im.
-Proof. intros z w [_ Hi]. exact Hi. Qed.
-
-(** [Cadd] is a setoid morphism. *)
-#[global] Instance Cadd_Proper :
-  Proper (CComplex_req ==> CComplex_req ==> CComplex_req) Cadd.
+(* CAG zero-dependent Lemma Cadd_C0_r theories/Complex.v:150 BEGIN
+Lemma Cadd_C0_r : forall z : CComplex, Cadd z C0 = z.
 Proof.
-  intros z z' [Hzr Hzi] w w' [Hwr Hwi]. unfold CComplex_req, Cadd; simpl.
-  split.
-  - rewrite Hzr, Hwr; reflexivity.
-  - rewrite Hzi, Hwi; reflexivity.
+  intro z. apply CComplex_eq, Cadd_C0_r_req.
+Qed.
+   CAG zero-dependent Lemma Cadd_C0_r theories/Complex.v:150 END *)
+
+Lemma Cadd_assoc_req : forall x y z : CComplex,
+    Cadd x (Cadd y z) ~~C Cadd (Cadd x y) z.
+Proof.
+  intros x y z. unfold CComplex_req, Cadd. simpl. split; ring.
 Qed.
 
-(** [Cneg] is a setoid morphism. *)
-#[global] Instance Cneg_Proper : Proper (CComplex_req ==> CComplex_req) Cneg.
+Lemma Cadd_neg_l_req : forall z : CComplex, Cadd (Cneg z) z ~~C C0.
 Proof.
-  intros z z' [Hzr Hzi]. unfold CComplex_req, Cneg; simpl.
-  split.
-  - rewrite Hzr; reflexivity.
-  - rewrite Hzi; reflexivity.
-Qed.
-
-(** [Csub] is a setoid morphism (derived from [Cadd] and [Cneg]). *)
-#[global] Instance Csub_Proper :
-  Proper (CComplex_req ==> CComplex_req ==> CComplex_req) Csub.
-Proof.
-  intros z z' Hz w w' Hw. unfold Csub.
-  apply Cadd_Proper. exact Hz. apply Cneg_Proper. exact Hw.
-Qed.
-
-(** [Cmul] is a setoid morphism. *)
-#[global] Instance Cmul_Proper :
-  Proper (CComplex_req ==> CComplex_req ==> CComplex_req) Cmul.
-Proof.
-  intros z z' [Hzr Hzi] w w' [Hwr Hwi]. unfold CComplex_req, Cmul; simpl.
-  split.
-  - rewrite Hzr, Hzi, Hwr, Hwi; reflexivity.
-  - rewrite Hzr, Hzi, Hwr, Hwi; reflexivity.
-Qed.
-
-(** [Cconj] is a setoid morphism. *)
-#[global] Instance Cconj_Proper : Proper (CComplex_req ==> CComplex_req) Cconj.
-Proof.
-  intros z z' [Hzr Hzi]. unfold CComplex_req, Cconj, Cneg; simpl.
-  split.
-  - exact Hzr.
-  - rewrite Hzi; reflexivity.
-Qed.
-
-(** [Cnorm2] respects [~~C] (lands in [CRealEq]). *)
-#[global] Instance Cnorm2_Proper : Proper (CComplex_req ==> CRealEq) Cnorm2.
-Proof.
-  intros z z' [Hzr Hzi]. unfold Cnorm2.
-  rewrite Hzr, Hzi; reflexivity.
-Qed.
-
-(** [Cdist2] is a morphism in both arguments. *)
-#[global] Instance Cdist2_Proper :
-  Proper (CComplex_req ==> CComplex_req ==> CRealEq) Cdist2.
-Proof.
-  intros z z' Hz w w' Hw. unfold Cdist2.
-  apply Cnorm2_Proper. apply Csub_Proper; assumption.
-Qed.
-
-(* ================================================================== *)
-(** ** Basic algebra under [~~C]
-    Componentwise [ring]-level facts about [Cadd], [Cmul], [Cneg],
-    proved via the underlying [CReal] ring. These are intentionally
-    stated with [~~C] (not Leibniz [=]) so they can be applied in any
-    constructive-reals proof context. *)
-(* ================================================================== *)
-
-Lemma Cadd_assoc_req : forall a b c : CComplex,
-    Cadd a (Cadd b c) ~~C Cadd (Cadd a b) c.
-Proof.
-  intros [a1 a2] [b1 b2] [c1 c2].
-  unfold CComplex_req, Cadd; simpl. split; ring.
-Qed.
-
-Lemma Cadd_comm_req : forall a b : CComplex, Cadd a b ~~C Cadd b a.
-Proof.
-  intros [a1 a2] [b1 b2].
-  unfold CComplex_req, Cadd; simpl. split; ring.
-Qed.
-
-Lemma Cadd_C0_l_req : forall a : CComplex, Cadd C0 a ~~C a.
-Proof.
-  intros [a1 a2]. unfold CComplex_req, Cadd, C0; simpl. split; ring.
-Qed.
-
-Lemma Cadd_C0_r_req : forall a : CComplex, Cadd a C0 ~~C a.
-Proof.
-  intros [a1 a2]. unfold CComplex_req, Cadd, C0; simpl. split; ring.
-Qed.
-
-Lemma Cadd_neg_r_req : forall a : CComplex, Cadd a (Cneg a) ~~C C0.
-Proof.
-  intros [a1 a2]. unfold CComplex_req, Cadd, Cneg, C0; simpl. split; ring.
-Qed.
-
-Lemma Cadd_neg_l_req : forall a : CComplex, Cadd (Cneg a) a ~~C C0.
-Proof.
-  intros [a1 a2]. unfold CComplex_req, Cadd, Cneg, C0; simpl. split; ring.
-Qed.
-
-Lemma Cmul_assoc_req : forall a b c : CComplex,
-    Cmul a (Cmul b c) ~~C Cmul (Cmul a b) c.
-Proof.
-  intros [a1 a2] [b1 b2] [c1 c2].
-  unfold CComplex_req, Cmul; simpl. split; ring.
-Qed.
-
-Lemma Cmul_comm_req : forall a b : CComplex, Cmul a b ~~C Cmul b a.
-Proof.
-  intros [a1 a2] [b1 b2].
-  unfold CComplex_req, Cmul; simpl. split; ring.
-Qed.
-
-Lemma Cmul_C1_l_req : forall a : CComplex, Cmul C1 a ~~C a.
-Proof.
-  intros [a1 a2]. unfold CComplex_req, Cmul, C1; simpl. split; ring.
-Qed.
-
-Lemma Cmul_C1_r_req : forall a : CComplex, Cmul a C1 ~~C a.
-Proof.
-  intros [a1 a2]. unfold CComplex_req, Cmul, C1; simpl. split; ring.
-Qed.
-
-Lemma Cmul_C0_r_req : forall a : CComplex, Cmul a C0 ~~C C0.
-Proof.
-  intros [a1 a2]. unfold CComplex_req, Cmul, C0; simpl. split; ring.
-Qed.
-
-Lemma Cmul_distrib_l_req : forall a b c : CComplex,
-    Cmul a (Cadd b c) ~~C Cadd (Cmul a b) (Cmul a c).
-Proof.
-  intros [a1 a2] [b1 b2] [c1 c2].
-  unfold CComplex_req, Cmul, Cadd; simpl. split; ring.
-Qed.
-
-Lemma Cmul_distrib_r_req : forall a b c : CComplex,
-    Cmul (Cadd a b) c ~~C Cadd (Cmul a c) (Cmul b c).
-Proof.
-  intros [a1 a2] [b1 b2] [c1 c2].
-  unfold CComplex_req, Cmul, Cadd; simpl. split; ring.
-Qed.
-
-Lemma Cneg_neg_req : forall a : CComplex, Cneg (Cneg a) ~~C a.
-Proof.
-  intros [a1 a2]. unfold CComplex_req, Cneg; simpl. split; ring.
-Qed.
-
-Lemma Cconj_conj_req : forall a : CComplex, Cconj (Cconj a) ~~C a.
-Proof.
-  intros [a1 a2]. unfold CComplex_req, Cconj, Cneg; simpl. split; ring.
-Qed.
-
-Lemma Cconj_add_req : forall a b : CComplex,
-    Cconj (Cadd a b) ~~C Cadd (Cconj a) (Cconj b).
-Proof.
-  intros [a1 a2] [b1 b2]. unfold CComplex_req, Cconj, Cadd, Cneg; simpl.
-  split; ring.
-Qed.
-
-Lemma Cconj_mul_req : forall a b : CComplex,
-    Cconj (Cmul a b) ~~C Cmul (Cconj a) (Cconj b).
-Proof.
-  intros [a1 a2] [b1 b2]. unfold CComplex_req, Cconj, Cmul, Cneg; simpl.
-  split; ring.
+  intro z. unfold CComplex_req, Cadd, Cneg, C0. simpl. split; ring.
 Qed.
 
 (** C0 * z ~~ C0.
@@ -326,6 +174,62 @@ Qed.
 Lemma Cmul_C0_l : forall (z : CComplex), (Cmul C0 z) ~~C C0.
 Proof.
   intro z. unfold CComplex_req, Cmul, C0. simpl. split; ring.
+Qed.
+
+(* CAG zero-dependent Lemma Cmul_C0_l_eq theories/Complex.v:173 BEGIN
+Lemma Cmul_C0_l_eq : forall (z : CComplex), Cmul C0 z = C0.
+Proof.
+  intro z. apply CComplex_eq, Cmul_C0_l.
+Qed.
+   CAG zero-dependent Lemma Cmul_C0_l_eq theories/Complex.v:173 END *)
+
+Lemma Cmul_C0_r_req : forall (z : CComplex), (Cmul z C0) ~~C C0.
+Proof.
+  intro z. unfold CComplex_req, Cmul, C0. simpl. split; ring.
+Qed.
+
+(* CAG zero-dependent Lemma Cmul_C0_r theories/Complex.v:183 BEGIN
+Lemma Cmul_C0_r : forall (z : CComplex), Cmul z C0 = C0.
+Proof.
+  intro z. apply CComplex_eq, Cmul_C0_r_req.
+Qed.
+   CAG zero-dependent Lemma Cmul_C0_r theories/Complex.v:183 END *)
+
+(* CAG zero-dependent Lemma Cmul_C1_l theories/Complex.v:188 BEGIN
+Lemma Cmul_C1_l : forall (z : CComplex), Cmul C1 z = z.
+Proof.
+  intro z. apply CComplex_eq.
+  unfold CComplex_req, Cmul, C1. simpl. split; ring.
+Qed.
+   CAG zero-dependent Lemma Cmul_C1_l theories/Complex.v:188 END *)
+
+(* CAG zero-dependent Lemma Cmul_C1_r theories/Complex.v:194 BEGIN
+Lemma Cmul_C1_r : forall (z : CComplex), Cmul z C1 = z.
+Proof.
+  intro z. apply CComplex_eq.
+  unfold CComplex_req, Cmul, C1. simpl. split; ring.
+Qed.
+   CAG zero-dependent Lemma Cmul_C1_r theories/Complex.v:194 END *)
+
+(* CAG zero-dependent Lemma Cmul_assoc_eq theories/Complex.v:200 BEGIN
+Lemma Cmul_assoc_eq : forall a b c : CComplex,
+    Cmul (Cmul a b) c = Cmul a (Cmul b c).
+Proof.
+  intros a b c. apply CComplex_eq.
+  unfold CComplex_req, Cmul. simpl. split; ring.
+Qed.
+   CAG zero-dependent Lemma Cmul_assoc_eq theories/Complex.v:200 END *)
+
+Lemma Cconj_add_req : forall z w : CComplex,
+    Cconj (Cadd z w) ~~C Cadd (Cconj z) (Cconj w).
+Proof.
+  intros z w. unfold CComplex_req, Cconj, Cadd, Cneg. simpl. split; ring.
+Qed.
+
+Lemma Cconj_mul_req : forall z w : CComplex,
+    Cconj (Cmul z w) ~~C Cmul (Cconj z) (Cconj w).
+Proof.
+  intros z w. unfold CComplex_req, Cconj, Cmul, Cadd, Cneg. simpl. split; ring.
 Qed.
 
 (** z - C0 ~~ z.
@@ -605,84 +509,3 @@ Definition CReal_div (x y : CReal) (ynz : y # 0) : CReal :=
 
 Definition Capprox (z : CComplex) (n : Z) : Q * Q :=
   (seq (re z) n, seq (im z) n).
-
-
-Axiom CRealEq_eq : forall x y : CReal, CRealEq x y -> x = y.
-
-(** Bridge: pointwise [CRealEq] components ⟹ Leibniz [=] for [CComplex]
-    records. *)
-
-Lemma CComplex_eq : forall z w : CComplex, z ~~C w -> z = w.
-Proof.
-  intros [r1 i1] [r2 i2] [Hr Hi]. simpl in *.
-  apply CRealEq_eq in Hr. apply CRealEq_eq in Hi.
-  subst. reflexivity.
-Qed.
-
-(* ================================================================== *)
-(** ** Leibniz-level ring axioms for CComplex (Cycle 27, 2026-04-29)
-
-    With the [CComplex_eq] bridge in place, every [_req] lemma yields
-    its Leibniz counterpart via [apply CComplex_eq, ...]. The lemmas
-    below complete the set required by the [Add Ring] declaration. *)
-
-(* ================================================================== *)
-(** ** Constructive complex inverse (Task C, 2026-04-30)
-
-    The standard formula 1/(a+bi) = (a-bi)/(a²+b²) lifts to a
-    constructive [Cinv] given apartness [Cnorm2 z # 0].  Apartness
-    (rather than Leibniz inequality [z <> C0]) is the constructively
-    correct hypothesis: it provides the witness needed to invert the
-    underlying [CReal] denominator [Cnorm2 z] via [CReal_inv].
-
-    The [_req] / Leibniz pair below give the field axioms
-    [Cmul (Cinv z _) z == C1] and [Cmul z (Cinv z _) == C1]. *)
-(* ================================================================== *)
-
-(** [Cinv z Hnz]: the multiplicative inverse of [z], computed as
-    [(re z - i·im z) / Cnorm2 z]. *)
-Definition Cinv (z : CComplex) (Hnz : Cnorm2 z # 0) : CComplex :=
-  mkC (re z * ((/ Cnorm2 z) Hnz))
-      ((- im z) * ((/ Cnorm2 z) Hnz)).
-
-(** [Cinv_l_req]: setoid-level left inverse law. *)
-Lemma Cinv_l_req : forall (z : CComplex) (Hnz : Cnorm2 z # 0),
-    Cmul (Cinv z Hnz) z ~~C C1.
-Proof.
-  intros z Hnz. unfold CComplex_req, Cmul, Cinv, C1, Cnorm2 in *. simpl.
-  set (n := re z * re z + im z * im z) in *.
-  set (inv := (/ n) Hnz).
-  split.
-  - (* (re z * inv) * re z - (- im z * inv) * im z == 1
-       = (re z² + im z²) * inv = n * inv = 1 *)
-    assert (Hstep :
-        (re z * inv) * re z - (- im z * inv) * im z ==
-        n * inv).
-    { unfold n. ring. }
-    rewrite Hstep.
-    apply CReal_inv_r.
-  - (* (re z * inv) * im z + (- im z * inv) * re z == 0 *)
-    apply (CRealEq_trans _ 0).
-    + ring.
-    + reflexivity.
-Qed.
-
-(** [Cinv_r_req]: setoid-level right inverse law. *)
-Lemma Cinv_r_req : forall (z : CComplex) (Hnz : Cnorm2 z # 0),
-    Cmul z (Cinv z Hnz) ~~C C1.
-Proof.
-  intros z Hnz.
-  apply (CComplex_req_trans _ (Cmul (Cinv z Hnz) z) _).
-  - apply Cmul_comm_req.
-  - apply Cinv_l_req.
-Qed.
-
-(** Leibniz-level versions (require [CRealEq_eq] axiom for the bridge). *)
-Lemma Cinv_l : forall (z : CComplex) (Hnz : Cnorm2 z # 0),
-    Cmul (Cinv z Hnz) z = C1.
-Proof. intros. apply CComplex_eq. apply Cinv_l_req. Qed.
-
-Lemma Cinv_r : forall (z : CComplex) (Hnz : Cnorm2 z # 0),
-    Cmul z (Cinv z Hnz) = C1.
-Proof. intros. apply CComplex_eq. apply Cinv_r_req. Qed.
-

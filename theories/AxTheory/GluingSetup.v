@@ -47,18 +47,24 @@ Open Scope cat_scope.
 
     where よ_{E'} is the Yoneda embedding and P(-∘I) is precomposition with I. *)
 
-Parameter T_functor : forall (Sg : Signature),
+(* CAG zero-dependent Definition T_functor theories/AxTheory/GluingSetup.v:50 BEGIN
+Definition T_functor (Sg : Signature) :
     Functor (AxCl Sg) TypeCat.
+Proof.
+  Admitted.
+   CAG zero-dependent Definition T_functor theories/AxTheory/GluingSetup.v:50 END *)
 
 (** ** Full statement of the gluing setup
 
     We package the key data as a record. *)
 
+(* CAG constructive-remove Record GluingData theories/AxTheory/GluingSetup.v:61 BEGIN -- repair partial command cleanup after removing AxCl
 Record GluingData (Sg : Signature) : Type := {
 
   (** The categories *)
   gd_E  : Category := Cl Sg;
-  gd_Ep : Category := AxCl Sg;
+  (* CAG constructive-remove Command gd_Ep theories/AxTheory/GluingSetup.v:65 BEGIN -- missing AxCl
+gd_Ep : Category := AxCl Sg;
 
   (** Structures *)
   gd_hE  : HasFiniteProducts gd_E  := cl_finite_products Sg;
@@ -88,9 +94,15 @@ Record GluingData (Sg : Signature) : Type := {
 
 }.
 
+   CAG constructive-remove Command gd_Ep theories/AxTheory/GluingSetup.v:65 END *)
+   CAG constructive-remove Record GluingData theories/AxTheory/GluingSetup.v:61 END *)
+
 (** ** The gluing data exists (admitted — requires full development) *)
 
-Axiom gluing_data_exists : forall (Sg : Signature), GluingData Sg.
+(* CAG zero-dependent Admitted gluing_data_exists theories/AxTheory/GluingSetup.v:96 BEGIN
+Theorem gluing_data_exists : forall (Sg : Signature), GluingData Sg.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted gluing_data_exists theories/AxTheory/GluingSetup.v:96 END *)
 
 (** ** Key corollary: I : E → E' is full and faithful
 
@@ -103,12 +115,20 @@ Axiom gluing_data_exists : forall (Sg : Signature), GluingData Sg.
 
     The formal proof requires the relative freeness of Cl(Th') and is admitted. *)
 
-Axiom I_is_full : forall (Sg : Signature)
-    (αs βs : list Sg.(sg_ty))
-    (g : AxCl Sg ⟦ I_obj αs, I_obj βs ⟧),
+(* CAG zero-dependent Admitted I_is_full theories/AxTheory/GluingSetup.v:114 BEGIN
+Theorem I_is_full (Sg : Signature) :
+    forall (αs βs : list Sg.(sg_ty))
+           (g : AxCl Sg ⟦ I_obj αs, I_obj βs ⟧),
     exists f : Cl Sg ⟦ αs, βs ⟧, I_map αs βs f = g.
+Proof.
+  Admitted.
+   CAG zero-dependent Admitted I_is_full theories/AxTheory/GluingSetup.v:114 END *)
 
-Axiom I_is_faithful : forall (Sg : Signature)
-    (αs βs : list Sg.(sg_ty))
-    (f g : Cl Sg ⟦ αs, βs ⟧),
+(* CAG zero-dependent Admitted I_is_faithful theories/AxTheory/GluingSetup.v:121 BEGIN
+Theorem I_is_faithful (Sg : Signature) :
+    forall (αs βs : list Sg.(sg_ty))
+           (f g : Cl Sg ⟦ αs, βs ⟧),
     I_map αs βs f = I_map αs βs g -> f = g.
+Proof.
+  Admitted.
+   CAG zero-dependent Admitted I_is_faithful theories/AxTheory/GluingSetup.v:121 END *)

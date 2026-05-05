@@ -173,21 +173,32 @@ End SchreierGenerators.
     - γ is part of a free generating set for Δ (so ⟨γ⟩ is a free
       factor of Δ). *)
 
-(** Note: the FULL Hall free-factor theorem requires a non-trivial
-    statement that cannot be expressed as just [True]. We provide the
-    placeholder version (vacuously true) so callers can wire up the
-    chain without an axiom; the deep work is captured separately in
-    DecisionProblems.HallTheorem and the Stallings infrastructure
-    above. *)
+(** Predicate: a list of [RWord]s is a /Schreier generating set/
+    containing [gamma] as a free generator (axiomatized at this layer;
+    the full predicate refers to [DecisionProblems.HallTheorem]'s
+    finite-index-subgroup machinery and is wired up there). *)
+(* CAG zero-dependent Parameter is_hall_schreier_gen theories/HallFreeGroup/SchreierTransversal.v:180 BEGIN
+Parameter is_hall_schreier_gen : forall (r : nat) (gamma : RWord r),
+    list (RWord r) -> Prop.
+   CAG zero-dependent Parameter is_hall_schreier_gen theories/HallFreeGroup/SchreierTransversal.v:180 END *)
 
-Lemma hall_finite_index_via_stallings :
+(** Hall's free-factor theorem (famous old, M. Hall 1949;
+    Conjecture per skip policy):
+    for any non-identity [gamma ∈ F_r], there exist a finite-index
+    subgroup [Δ ≤ F_r] and an explicit Schreier generating set of [Δ]
+    realising [gamma] as one of the free generators (a free factor).
+
+    γ R37 — replaces the earlier [Lemma … True] busywork form per
+    [feedback_trivial_collapse_busywork.md].  The deep work is in
+    [DecisionProblems.HallTheorem]; this top-level statement carries
+    the standalone existential. *)
+(* CAG zero-dependent Conjecture hall_finite_index_via_stallings theories/HallFreeGroup/SchreierTransversal.v:193 BEGIN
+Conjecture hall_finite_index_via_stallings :
   forall (r : nat) (gamma : RWord r),
     gamma <> @rword_e r ->
-    (* There exist a finite-index subgroup Δ ≤ F_r and explicit
-       Schreier generators of Δ such that gamma is one of the
-       generators (hence a free factor). *)
-    True. (* placeholder: full statement would refer to FiniteIndexSubgroup *)
-Proof. intros. exact I. Qed.
+    exists (gens : list (RWord r)),
+      is_hall_schreier_gen r gamma gens.
+   CAG zero-dependent Conjecture hall_finite_index_via_stallings theories/HallFreeGroup/SchreierTransversal.v:193 END *)
 
 (* ================================================================== *)
 (** * 5. Basic structural facts about spanning trees and paths        *)

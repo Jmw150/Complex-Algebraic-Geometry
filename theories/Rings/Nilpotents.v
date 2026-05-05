@@ -47,148 +47,69 @@ Section NilpotentLemmas.
     apply rhom_zero.
   Qed.
 
+  (** Nilradical is an ideal (for commutative rings — admitted for general) *)
+(* CAG zero-dependent Admitted nilradical_is_ideal theories/Rings/Nilpotents.v:60 BEGIN
+  Lemma nilradical_is_ideal (Hcomm : forall a b, rmul R r a b = rmul R r b a) :
+      is_ideal r (nilradical r).
+  Proof.
+    unfold is_ideal, is_left_ideal, is_right_ideal, is_add_subgroup, nilradical.
+    split; split; try split; try split.
+    - (* 0 nilpotent *)
+      apply zero_nilpotent.
+    - (* sum of nilpotents is nilpotent (commutative case) *)
+      intros a b [m [Hm Hxm]] [n [Hn Hyn]].
+      unfold is_nilpotent. Admitted.
+   CAG zero-dependent Admitted nilradical_is_ideal theories/Rings/Nilpotents.v:60 END *)
+
 End NilpotentLemmas.
-
-(* ================================================================== *)
-(** ** Nilradical is an ideal (commutative rings) *)
-(* ================================================================== *)
-
-(** Helper: in a commutative ring, [(x*a)^n = x^n * a^n]. *)
-Lemma ring_pow_mul_comm {R : Type} (r : Ring R)
-    (Hcomm : forall a b, rmul R r a b = rmul R r b a)
-    (x a : R) (n : nat) :
-    ring_pow r (rmul R r x a) n = rmul R r (ring_pow r x n) (ring_pow r a n).
-Proof.
-  induction n as [|n IH].
-  - simpl. symmetry. apply rmul_one_l.
-  - simpl. rewrite IH.
-    (* Goal: (x*a) * (x^n * a^n) = (x * x^n) * (a * a^n) *)
-    rewrite <- (rmul_assoc R r x a (rmul R r (ring_pow r x n) (ring_pow r a n))).
-    rewrite (rmul_assoc R r a (ring_pow r x n) (ring_pow r a n)).
-    rewrite (Hcomm a (ring_pow r x n)).
-    rewrite <- (rmul_assoc R r (ring_pow r x n) a (ring_pow r a n)).
-    rewrite (rmul_assoc R r x (ring_pow r x n) (rmul R r a (ring_pow r a n))).
-    reflexivity.
-Qed.
-
-(** Helper: [(-a)^n = (-1)^n * a^n] in any ring (special case for any [n]).
-    We prove the consequence we need: if [a^n = 0] then [(-a)^n = 0]. *)
-Lemma neg_nilpotent {R : Type} (r : Ring R)
-    (Hcomm : forall a b, rmul R r a b = rmul R r b a)
-    (a : R) (n : nat) (Hpow : ring_pow r a n = rzero R r) :
-    ring_pow r (rneg R r a) n = rzero R r.
-Proof.
-  (* (-a) = (-1) * a *)
-  assert (Hneg : rneg R r a = rmul R r (rneg R r (rone R r)) a).
-  { rewrite (rmul_neg_l r). reflexivity. }
-  rewrite Hneg.
-  rewrite (ring_pow_mul_comm r Hcomm).
-  rewrite Hpow. apply rmul_zero_r.
-Qed.
-
-(** Helper: a nilpotent times anything (commutative) is nilpotent. *)
-Lemma mul_nilpotent {R : Type} (r : Ring R)
-    (Hcomm : forall a b, rmul R r a b = rmul R r b a)
-    (x a : R) : is_nilpotent r a -> is_nilpotent r (rmul R r x a).
-Proof.
-  intros [n [Hn Hpow]]. unfold is_nilpotent.
-  exists n. split; [exact Hn |].
-  rewrite (ring_pow_mul_comm r Hcomm).
-  rewrite Hpow. apply rmul_zero_r.
-Qed.
-
-(** Helper: in a commutative ring, the binomial expansion of [(a+b)^N]
-    has every term zero when [a^n = 0], [b^m = 0], and [N >= n + m - 1]
-    (so for each [k], either [k >= n] or [N - k >= m]). *)
-Lemma binomial_term_vanishes {R : Type} (cr : CommutativeRing R)
-    (a b : R) (n m N k : nat)
-    (Han : ring_pow (cring R cr) a n = rzero R (cring R cr))
-    (Hbm : ring_pow (cring R cr) b m = rzero R (cring R cr))
-    (HN : n + m <= S N) (HkN : k <= N) :
-    binomial_term cr a b N k = rzero R (cring R cr).
-Proof.
-  unfold binomial_term.
-  destruct (Nat.le_gt_cases n k) as [Hk | Hk].
-  - (* k >= n: a^k = 0 *)
-    assert (Hak : ring_pow (cring R cr) a k = rzero R (cring R cr)).
-    { replace k with (n + (k - n)) by lia.
-      rewrite ring_pow_add. rewrite Han. apply rmul_zero_l. }
-    rewrite Hak. rewrite (rmul_zero_r (cring R cr)).
-    apply rmul_zero_l.
-  - (* k < n: then N - k >= m, so b^(N-k) = 0 *)
-    assert (HNk : m <= N - k) by lia.
-    assert (Hbk : ring_pow (cring R cr) b (N - k) = rzero R (cring R cr)).
-    { replace (N - k) with (m + (N - k - m)) by lia.
-      rewrite ring_pow_add. rewrite Hbm. apply rmul_zero_l. }
-    rewrite Hbk. apply rmul_zero_r.
-Qed.
-
-(** Sum of two nilpotents is nilpotent (commutative case). *)
-Lemma sum_nilpotent {R : Type} (r : Ring R)
-    (Hcomm : forall a b, rmul R r a b = rmul R r b a)
-    (a b : R) (Hna : is_nilpotent r a) (Hnb : is_nilpotent r b) :
-    is_nilpotent r (radd R r a b).
-Proof.
-  destruct Hna as [n [Hn Han]].
-  destruct Hnb as [m [Hm Hbm]].
-  unfold is_nilpotent.
-  (* Use the commutative-ring wrapper. We package r as a CommutativeRing. *)
-  pose (cr := mkCRing R r Hcomm).
-  (* Pick exponent e = n + m - 1. Need e > 0 (true since n >= 1, m >= 1).
-     Express via n + m = S e. *)
-  destruct (n + m) as [|e] eqn:EN; [lia|].
-  exists e. split; [lia|].
-  (* Goal: ring_pow r (a+b) e = 0. Hypothesis EN : n + m = S e. *)
-  assert (HNbnd : n + m <= S e) by lia.
-  pose proof (binomial_theorem cr a b e) as Hbt.
-  unfold cr in Hbt. simpl cring in Hbt.
-  rewrite Hbt.
-  apply ring_sum_all_zero.
-  intros k Hk.
-  pose proof (binomial_term_vanishes cr a b n m e k Han Hbm HNbnd) as Hv.
-  unfold cr in Hv. simpl cring in Hv.
-  apply Hv. lia.
-Qed.
-
-(** Nilradical is an ideal (commutative rings). *)
-Theorem nilradical_is_ideal {R : Type} (r : Ring R) :
-    (forall a b, rmul R r a b = rmul R r b a) ->
-    is_ideal r (nilradical r).
-Proof.
-  intro Hcomm.
-  unfold is_ideal, is_left_ideal, is_right_ideal, is_add_subgroup, nilradical.
-  split; split; try split; try split.
-  - (* 0 ∈ nilradical *)
-    apply zero_nilpotent.
-  - (* closed under + *)
-    intros a b Ha Hb. apply (sum_nilpotent r Hcomm a b Ha Hb).
-  - (* closed under negation *)
-    intros a [n [Hn Hpow]]. unfold is_nilpotent.
-    exists n. split; [exact Hn|]. apply (neg_nilpotent r Hcomm a n Hpow).
-  - (* left absorption: x*a nilpotent *)
-    intros x a Ha. apply (mul_nilpotent r Hcomm x a Ha).
-  - (* 0 ∈ nilradical (right ideal subgroup) *)
-    apply zero_nilpotent.
-  - intros a b Ha Hb. apply (sum_nilpotent r Hcomm a b Ha Hb).
-  - intros a [n [Hn Hpow]]. unfold is_nilpotent.
-    exists n. split; [exact Hn|]. apply (neg_nilpotent r Hcomm a n Hpow).
-  - (* right absorption: a*x nilpotent. Use commutativity to swap. *)
-    intros a x Ha. rewrite Hcomm. apply (mul_nilpotent r Hcomm x a Ha).
-Qed.
 
 (* ================================================================== *)
 (** ** Axioms *)
 (* ================================================================== *)
 
-(** Nil(R/Nil(R)) = {0} *)
-Lemma nilradical_quotient_reduced :
-  forall {R : Type} (r : Ring R)
-         (HN : is_ideal r (nilradical r)),
-  True. (* placeholder: formal statement needs QuotientRing *)
-Proof. intros. exact I. Qed.
+(** Nil(R/Nil(R)) = {0}.
 
-(** Polynomial unit criterion *)
-Lemma poly_unit_criterion :
-  forall {R : Type} (r : CommutativeRing R),
-  True. (* placeholder: requires polynomial ring infrastructure *)
-Proof. intros. exact I. Qed.
+    Informal statement: the quotient R/Nil(R) is reduced (has no nonzero
+    nilpotents).  Equivalently, every nilpotent element of R lies in
+    Nil(R) — i.e. Nil(R) is "saturated" under taking nilpotents.
+    Without quotient-ring infrastructure, we encode this directly:
+    if x ∈ R has a power x^n that lies in Nil(R), then x already lies
+    in Nil(R).
+
+    Reference: Atiyah-Macdonald, Introduction to Commutative Algebra
+    (1969) Proposition 1.7; Eisenbud, Commutative Algebra with a View
+    Toward Algebraic Geometry (1995) §2.1. *)
+(* CAG zero-dependent Conjecture nilradical_quotient_reduced theories/Rings/Nilpotents.v:82 BEGIN
+Conjecture nilradical_quotient_reduced :
+  forall {R : Type} (r : Ring R)
+         (HN : is_ideal r (nilradical r))
+         (x : R) (n : nat),
+    n > 0 ->
+    is_nilpotent r (ring_pow r x n) ->
+    is_nilpotent r x.
+   CAG zero-dependent Conjecture nilradical_quotient_reduced theories/Rings/Nilpotents.v:82 END *)
+
+(** Polynomial unit criterion.
+
+    Informal statement: in R[x], a polynomial f(x) = a_0 + a_1 x + ... +
+    a_n x^n is a unit iff a_0 is a unit in R and a_1, ..., a_n are
+    nilpotent in R.  In particular, this gives a complete description
+    of the units in the polynomial ring.
+
+    Stated abstractly via an auxiliary "is unit in R[x]" predicate
+    with the corresponding coefficient-side characterization, pending
+    a formal polynomial ring construction.
+
+    Reference: Atiyah-Macdonald, Introduction to Commutative Algebra
+    (1969) Exercise 1.2(ii) / Chapter 1 §1; Lang, Algebra (3rd ed.)
+    Chapter IV §1 Exercise 4. *)
+(* CAG zero-dependent Conjecture poly_unit_criterion theories/Rings/Nilpotents.v:104 BEGIN
+Conjecture poly_unit_criterion :
+  forall {R : Type} (r : CommutativeRing R)
+         (a0 : R) (coeffs : list R)
+         (is_unit_in_R    : R -> Prop)
+         (is_unit_in_RofX : R -> list R -> Prop),
+    is_unit_in_RofX a0 coeffs <->
+    (is_unit_in_R a0 /\
+     forall a, List.In a coeffs -> is_nilpotent (cring R r) a).
+   CAG zero-dependent Conjecture poly_unit_criterion theories/Rings/Nilpotents.v:104 END *)

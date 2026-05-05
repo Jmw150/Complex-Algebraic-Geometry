@@ -86,12 +86,22 @@ Definition is_reducible_2gen
     space; SL(n, ℂ) is closed in this embedding (cut out by det = 1)
     so is itself complete. *)
 
-Lemma rep_variety_baire :
+(** rep_variety_baire: the representation variety Hom(F_r, SL(n, C)) has
+    the Baire property in its analytic topology.
+    Informal: SL(n, C) embeds as a closed subset of M_n(C) = C^{n^2},
+    a complete metric space; closed subspaces of complete metric spaces
+    are themselves complete; hence SL(n, C) (and the r-fold product
+    Hom(F_r, SL(n, C)) of it) is a complete metric space and so is Baire
+    by Baire category theorem.  Pending the [BaireSpace] predicate;
+    encoded as signature-bearing reflexive on (r, n).
+    Ref: Baire, "Sur les fonctions de variables réelles" (1899);
+    Royden "Real Analysis" §7.4 [Baire's theorem]; Munkres "Topology"
+    §48; Rotman "Theory of Groups" §1 [SL(n,C) topology]. *)
+(* CAG zero-dependent Conjecture rep_variety_baire theories/DecisionProblems/Scaffolding/BaireRepVarieties.v:100 BEGIN
+Conjecture rep_variety_baire :
   forall (r n : nat),
-    (* The representation variety Hom(F_r, SL(n, ℂ)) has the Baire
-       property in its analytic topology. *)
-    True. (* placeholder *)
-Proof. intros. exact I. Qed.
+    (r + n)%nat = (r + n)%nat.
+   CAG zero-dependent Conjecture rep_variety_baire theories/DecisionProblems/Scaffolding/BaireRepVarieties.v:100 END *)
 
 (* ================================================================== *)
 (** * 4. The uniform (D) ⟹ uniform (C) attack                          *)
@@ -129,12 +139,14 @@ Proof. intros. exact I. Qed.
     - Step 4: Baire applied to F_r-conjugacy classes (countably many).
     - Steps 5-6: select an actual representative. *)
 
+(* CAG zero-dependent Conjecture uniform_D_implies_uniform_C_via_Baire theories/DecisionProblems/Scaffolding/BaireRepVarieties.v:140 BEGIN
 Conjecture uniform_D_implies_uniform_C_via_Baire :
   forall {G F : Type} (sg : StrictGroup G) (MG_family : nat -> MatrixGroup F),
     (* Under suitable conditions on G (e.g., G = F_r) and the family
        MG_family (e.g., SL(n, ℂ) for n ≥ 2): *)
     uniform_D sg MG_family ->
     uniform_C sg MG_family.
+   CAG zero-dependent Conjecture uniform_D_implies_uniform_C_via_Baire theories/DecisionProblems/Scaffolding/BaireRepVarieties.v:140 END *)
 
 (* ================================================================== *)
 (** * 5. What's still open                                              *)

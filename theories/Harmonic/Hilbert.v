@@ -41,6 +41,7 @@ From Stdlib Require Import Reals.Cauchy.ConstructiveCauchyRealsMult.
 From Stdlib Require Import Reals.Cauchy.ConstructiveCauchyAbs.
 
 From CAG Require Import Complex.
+From CAG Require Import Reals_extra.
 
 Local Open Scope CReal_scope.
 
@@ -196,6 +197,7 @@ Section HilbertLemmas.
 
   (** [hs_inner x hs_zero = C0] — right-side companion to the
       [hs_inner_zero_l] field. *)
+(* CAG zero-dependent Lemma hs_inner_zero_r theories/Harmonic/Hilbert.v:200 BEGIN
   Lemma hs_inner_zero_r : forall x : hs_carrier H,
       hs_inner x (hs_zero) = C0.
   Proof.
@@ -210,9 +212,11 @@ Section HilbertLemmas.
     - reflexivity.
     - apply CReal_opp_0.
   Qed.
+   CAG zero-dependent Lemma hs_inner_zero_r theories/Harmonic/Hilbert.v:200 END *)
 
   (** Right-additivity of inner product: derived from left-additivity +
       conjugate symmetry. *)
+(* CAG zero-dependent Lemma hs_inner_add_r theories/Harmonic/Hilbert.v:217 BEGIN
   Lemma hs_inner_add_r : forall x y z : hs_carrier H,
       hs_inner x (hs_add y z) =
       Cadd (hs_inner x y) (hs_inner x z).
@@ -225,8 +229,10 @@ Section HilbertLemmas.
     apply CComplex_eq.
     apply Cconj_add_req.
   Qed.
+   CAG zero-dependent Lemma hs_inner_add_r theories/Harmonic/Hilbert.v:217 END *)
 
   (** Right-scalar law: [<x, a y> = conj(a) <x, y>]. *)
+(* CAG zero-dependent Lemma hs_inner_scale_r theories/Harmonic/Hilbert.v:231 BEGIN
   Lemma hs_inner_scale_r : forall (a : CComplex) (x y : hs_carrier H),
       hs_inner x (hs_scale a y) =
       Cmul (Cconj a) (hs_inner x y).
@@ -238,6 +244,7 @@ Section HilbertLemmas.
     apply CComplex_eq.
     apply Cconj_mul_req.
   Qed.
+   CAG zero-dependent Lemma hs_inner_scale_r theories/Harmonic/Hilbert.v:231 END *)
 
   (** [<x, x>] has zero imaginary part — conjugate symmetry forces
       [<x, x> = conj <x, x>], hence [im <x, x> = 0]. *)
@@ -303,6 +310,7 @@ Section HilbertLemmas.
       [ring] handles directly.  Downstream consumers needing the
       [2 *] form can rewrite with the trivial [a + a = 2 * a]
       identity at their use site. *)
+(* CAG zero-dependent Lemma hs_parallelogram theories/Harmonic/Hilbert.v:307 BEGIN
   Lemma hs_parallelogram :
       forall x y : hs_carrier H,
         re (hs_inner (hs_add x y) (hs_add x y))
@@ -431,6 +439,7 @@ Section HilbertLemmas.
     generalize (im yy); intro f.
     ring.
   Qed.
+   CAG zero-dependent Lemma hs_parallelogram theories/Harmonic/Hilbert.v:307 END *)
 
 End HilbertLemmas.
 
@@ -444,9 +453,11 @@ End HilbertLemmas.
     DEFERRED to SP.1, where the concrete model (probably the L^2
     completion of smooth sections [Forms_pq E p q] from [Sobolev.v])
     will provide a constructive completion. *)
+(* CAG zero-dependent Conjecture hs_complete theories/Harmonic/Hilbert.v:448 BEGIN
 Conjecture hs_complete : forall (H : HilbertSpace) (xn : nat -> hs_carrier H),
     Cauchy_seq xn ->
     exists L : hs_carrier H, convergent xn L.
+   CAG zero-dependent Conjecture hs_complete theories/Harmonic/Hilbert.v:448 END *)
 
 (** Cauchy-Schwarz inequality (squared form).
 
@@ -461,9 +472,11 @@ Conjecture hs_complete : forall (H : HilbertSpace) (xn : nat -> hs_carrier H),
     through the inner product, which is straightforward but volumetric.
     Both are clean SP.1 work.  We state the Conjecture in its
     natural CReal form. *)
+(* CAG zero-dependent Conjecture hs_cauchy_schwarz theories/Harmonic/Hilbert.v:465 BEGIN
 Conjecture hs_cauchy_schwarz : forall (H : HilbertSpace) (x y : hs_carrier H),
     Cnorm2 (hs_inner x y) <=
       (re (hs_inner x x)) * (re (hs_inner y y)).
+   CAG zero-dependent Conjecture hs_cauchy_schwarz theories/Harmonic/Hilbert.v:465 END *)
 
 (** Norm-zero ⇒ vector-zero.
 
@@ -473,10 +486,12 @@ Conjecture hs_cauchy_schwarz : forall (H : HilbertSpace) (x y : hs_carrier H),
     model (smooth sections, [Forms_pq]) has decidable equality at
     every chart-level coefficient, so SP.1 will discharge this on the
     concrete carrier. *)
+(* CAG zero-dependent Conjecture hs_norm2_zero_implies_zero theories/Harmonic/Hilbert.v:477 BEGIN
 Conjecture hs_norm2_zero_implies_zero :
     forall (H : HilbertSpace) (x : hs_carrier H),
       hs_norm2 x = 0 ->
       x = hs_zero.
+   CAG zero-dependent Conjecture hs_norm2_zero_implies_zero theories/Harmonic/Hilbert.v:477 END *)
 
 (* ================================================================== *)
 (** * 5. Operators on a HilbertSpace (SP.1)                            *)
@@ -698,6 +713,7 @@ Section SelfAdjointEigenvalues.
       For a self-adjoint operator, every eigenvalue is real (zero
       imaginary part).  Depends on no Conjectures — purely algebraic
       from [SelfAdjoint] + [hs_inner_pos].  *)
+(* CAG zero-dependent Theorem eigenvalues_real theories/Harmonic/Hilbert.v:708 BEGIN
   Theorem eigenvalues_real :
       forall (T : BoundedLinearOp H) (lam : CComplex),
         SelfAdjoint T ->
@@ -745,6 +761,7 @@ Section SelfAdjointEigenvalues.
     (* Step 4: apply the algebraic core. *)
     apply (im_zero_of_mul_eq_conj lam xx Hsym Him_xx Hre_xx_pos).
   Qed.
+   CAG zero-dependent Theorem eigenvalues_real theories/Harmonic/Hilbert.v:708 END *)
 
 End SelfAdjointEigenvalues.
 
@@ -787,6 +804,7 @@ Definition eigenvalues_converge_to_zero (lams : nat -> CComplex) : Prop :=
         (N <= n)%nat ->
         CRealLtProp (Cnorm2 (lams n)) eps.
 
+(* CAG zero-dependent Conjecture compact_self_adjoint_spectral theories/Harmonic/Hilbert.v:791 BEGIN
 Conjecture compact_self_adjoint_spectral :
     forall (H : HilbertSpace) (T : CompactOperator H),
       SelfAdjoint (co_op T) ->
@@ -798,6 +816,7 @@ Conjecture compact_self_adjoint_spectral :
             blo_fn (co_op T) (eigenvectors n)
             = hs_scale (eigenvalues n) (eigenvectors n)) /\
         eigenvalues_converge_to_zero eigenvalues.
+   CAG zero-dependent Conjecture compact_self_adjoint_spectral theories/Harmonic/Hilbert.v:791 END *)
 
 (* ================================================================== *)
 (** * 7. Trivial-collapse singleton instance — REMOVED [γ R26]         *)

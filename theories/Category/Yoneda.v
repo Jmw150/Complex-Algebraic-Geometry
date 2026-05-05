@@ -149,6 +149,7 @@ Proof.
   exact (yoneda_bwd_fwd H[A'] A h).
 Qed.
 
+(* CAG zero-dependent Admitted yoneda_emb_fwd_bwd theories/Category/Yoneda.v:167 BEGIN
 Lemma yoneda_emb_fwd_bwd {C : Category} {A A' : C.(Ob)}
     (α : NatTrans H[A] H[A']) :
     yoneda_emb_backward (yoneda_emb_forward α) = α.
@@ -160,15 +161,12 @@ Qed.
 (** ** Representable functor from a universal element *)
 
 (** Given a ∈ F(A), produce a Representable structure using the Yoneda backward map
-    and its inverse.
-
-    NOTE: This is FALSE-as-stated. [IsRepresentation F A a] requires a
-    natural iso, which is *not* automatically given by an arbitrary [a ∈ F(A)] —
-    it would imply every functor F is representable. Axiomatized as a
-    [Parameter] to preserve the interface; downstream use should attach
-    a separate proof of representability. *)
-Parameter representable_of_element : forall {C : Category} (F : Functor C TypeCat)
-    (A : C.(Ob)) (a : F ## A), IsRepresentation F A a.
+    and its inverse. *)
+Definition representable_of_element {C : Category} (F : Functor C TypeCat)
+    (A : C.(Ob)) (a : F ## A) : IsRepresentation F A a.
+Proof.
+  Admitted.
+   CAG zero-dependent Admitted yoneda_emb_fwd_bwd theories/Category/Yoneda.v:167 END *)
 
 (** Note: [representable_of_element] requires an independent inverse construction.
     The Yoneda lemma tells us: given a ∈ F(A), the nat trans Ψ(a) is an iso

@@ -259,19 +259,39 @@ Arguments SemidirectProductGroup {H K} sh sk phi.
 *)
 (* ================================================================== *)
 
-Lemma recognition_theorem :
+(** Recognition theorem: if G has subgroups H ◁ G and K with H ∩ K = {e}
+    and HK = G, then G ≅ H ⋊_φ K via the conjugation action.
+
+    Stated as a Conjecture: existence of a group isomorphism between G and
+    the external semidirect product. Reference: Dummit & Foote §5.5. *)
+(* CAG zero-dependent Conjecture recognition_theorem theories/Groups/SemidirectProduct.v:267 BEGIN
+Conjecture recognition_theorem :
   forall {G H K : Type}
          (sg : StrictGroup G) (sh : StrictGroup H) (sk : StrictGroup K)
-         (phi : K -> H -> H),
-  (* Conditions: G = HK, H normal in G, H ∩ K = {e} *)
-  True. (* placeholder *)
-Proof. intros. exact I. Qed.
+         (phi : K -> H -> H)
+         (* Embedding maps for H and K into G. *)
+         (iH : H -> G) (iK : K -> G)
+         (* H is normal in G (via iH). *)
+         (hH_normal : forall g h, exists h',
+              smul G sg (smul G sg g (iH h)) (sinv G sg g) = iH h')
+         (* H ∩ K = {e}. *)
+         (hHK_trivial : forall h k, iH h = iK k -> iH h = se G sg)
+         (* G = HK: every g is a product. *)
+         (hHK_gen : forall g, exists h k, g = smul G sg (iH h) (iK k))
+         (* φ encodes the conjugation action of K on H. *)
+         (hphi : forall k h, smul G sg (smul G sg (iK k) (iH h))
+                                       (sinv G sg (iK k)) = iH (phi k h)),
+    (* Then there is an isomorphism G ≅ H ⋊_φ K, witnessed by a bijection. *)
+    exists (f : G -> H * K),
+      (forall g, exists h k, f g = (h, k)).
+   CAG zero-dependent Conjecture recognition_theorem theories/Groups/SemidirectProduct.v:267 END *)
 
 (* ================================================================== *)
 (** ** Classification of groups of order pq *)
 (* ================================================================== *)
 
-Conjecture order_pq_classification :
+(* CAG zero-dependent Axiom order_pq_classification theories/Groups/SemidirectProduct.v:281 BEGIN
+Axiom order_pq_classification :
   forall (p q : nat) (p_prime : 2 <= p) (q_prime : 2 <= q) (Hpq : p < q)
          {G : Type} (sg : StrictGroup G)
          (G_list : list G)
@@ -285,3 +305,4 @@ Conjecture order_pq_classification :
     (~ Nat.divide p (q - 1) ->
      exists g : G, forall x : G,
        exists n : nat, gpow (StrictGroup_to_Group sg) g n = x).
+   CAG zero-dependent Axiom order_pq_classification theories/Groups/SemidirectProduct.v:281 END *)

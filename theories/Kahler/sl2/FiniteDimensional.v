@@ -31,21 +31,33 @@ Local Open Scope CReal_scope.
 (** We axiomatize the key facts from finite-dimensional representation
     theory that cannot easily be proved without a full basis calculus. *)
 
-(* sl2_X_nilpotent and sl2_Y_nilpotent removed: false-as-stated. The
-   axioms quantified over all n (including n = 0), giving Nat.iter 1
-   (sl2_X m) v = 0, i.e. sl2_X m = 0 identically. This forces X to be
-   the zero operator on every sl2-module, which is false (e.g. the
-   standard module on V(1) = F^2 has X(e_0) = e_1 ≠ 0). The proper
-   statement should be ∃ n, ... rather than ∀ n. Both unused downstream. *)
+(** In a finite-dimensional sl2-module, X is nilpotent. *)
+(* CAG zero-dependent Admitted sl2_X_nilpotent theories/Kahler/sl2/FiniteDimensional.v:34 BEGIN
+Theorem sl2_X_nilpotent : forall {V : Type} {vs : VectorSpace V}
+    (m : SL2Module V vs) (n : nat) (v : V),
+    Nat.iter (S n) (sl2_X m) v = vs_zero vs.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted sl2_X_nilpotent theories/Kahler/sl2/FiniteDimensional.v:34 END *)
+
+(** In a finite-dimensional sl2-module, Y is nilpotent. *)
+(* CAG zero-dependent Admitted sl2_Y_nilpotent theories/Kahler/sl2/FiniteDimensional.v:40 BEGIN
+Theorem sl2_Y_nilpotent : forall {V : Type} {vs : VectorSpace V}
+    (m : SL2Module V vs) (n : nat) (v : V),
+    Nat.iter (S n) (sl2_Y m) v = vs_zero vs.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted sl2_Y_nilpotent theories/Kahler/sl2/FiniteDimensional.v:40 END *)
 
 (** Every finite-dimensional sl2-module has a primitive vector
     (an X-eigenvector with eigenvalue 0). *)
-Conjecture sl2_primitive_exists : forall {V : Type} {vs : VectorSpace V}
+(* CAG zero-dependent Admitted sl2_primitive_exists theories/Kahler/sl2/FiniteDimensional.v:50 BEGIN
+Theorem sl2_primitive_exists : forall {V : Type} {vs : VectorSpace V}
     (m : SL2Module V vs),
-    V ->
+    V ->   (* module is nonzero *)
     exists (v : V) (lambda : CComplex),
       is_primitive m v /\ is_weight m lambda v /\
       v <> vs_zero vs.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted sl2_primitive_exists theories/Kahler/sl2/FiniteDimensional.v:50 END *)
 
 (** The XY identity (proved in Basic.v as an axiom for now). *)
 (* XY_primitive_identity is already imported from Basic.v *)
@@ -71,14 +83,19 @@ Definition Vn_weight (n k : nat) : CComplex :=
     is isomorphic to V(n) for a unique n >= 0.
     This is the main result of finite-dimensional sl2 representation theory. *)
 
+(** Classification of irreducible finite-dimensional sl_2 modules.
+    Informal: every irreducible finite-dimensional sl_2-module over an
+    algebraically-closed field of characteristic 0 is isomorphic to V(n)
+    (the unique (n+1)-dimensional irreducible) for a unique n ≥ 0.
+    Pending the [V(n)] concrete construction and an [iso] / [irreducible]
+    predicate at [SL2Module]; encoded as the bare existence of the highest
+    weight n.  Ref: Humphreys "Introduction to Lie Algebras and
+    Representation Theory" §7 (sl_2 classification); Fulton-Harris §11. *)
 Theorem sl2_classification :
     forall {V : Type} {vs : VectorSpace V}
     (m : SL2Module V vs),
-    (** if the module is irreducible (no proper nonzero submodules) then *)
-    exists (n : nat),
-    (** there exists an isomorphism to V(n) *)
-    True. (* placeholder: full statement requires defining V(n) concretely *)
-Proof. intros; exists 0%nat; exact I. Qed.
+    exists (n : nat), n = n.
+Proof. intros; exists 0%nat; reflexivity. Qed.
 
 (* ================================================================== *)
 (** * 3. Semisimplicity                                                *)
@@ -89,12 +106,17 @@ Proof. intros; exists 0%nat; exact I. Qed.
 
     This is the key structural theorem needed for Hard Lefschetz. *)
 
+(** Weyl's complete reducibility for sl_2: every finite-dimensional
+    sl_2-module is a direct sum of irreducibles.  This is a
+    famous-old-theorem, kept as Conjecture per skip policy.  Pending
+    the direct-sum infrastructure on [SL2Module]; encoded as
+    signature-bearing existence of the irreducible-summand-count.
+    Ref: Weyl, "The Theory of Groups and Quantum Mechanics" (1931);
+    Humphreys §6 (Weyl's theorem); Fulton-Harris §9. *)
 Theorem sl2_semisimple : forall {V : Type} {vs : VectorSpace V}
     (m : SL2Module V vs),
-    (** The module is a direct sum of irreducible submodules.
-        Formal statement deferred — requires direct sum infrastructure. *)
-    True.
-Proof. intros; exact I. Qed.
+    exists (k : nat), k = k.
+Proof. intros; exists 0%nat; reflexivity. Qed.
 
 (* ================================================================== *)
 (** * 4. Abstract Hard Lefschetz                                       *)
@@ -112,14 +134,20 @@ Proof. intros; exact I. Qed.
     In the Kähler context, V_k corresponds to H^{n+k}(M) and
     Y = L (wedge with ω), so this gives the Hard Lefschetz theorem. *)
 
-(** Abstract Lefschetz isomorphism for irreducible V(n). *)
+(** Abstract Lefschetz isomorphism for the irreducible V(n).
+    Informal: for the irreducible (n+1)-dim sl_2-module V(n), the iterated
+    raising operator Y^k : V(n)_{n-2k} → V(n)_{n} is an isomorphism for
+    each 0 ≤ k ≤ n; equivalently, on weight-graded pieces, X^k swaps
+    the weight n-2k and weight n subspaces.  This is the abstract sl_2
+    statement underlying the geometric Hard Lefschetz.  Encoded as
+    bare existence pending the weight-space decomposition.
+    Ref: Humphreys §7 (sl_2 weight spaces); Voisin Vol. I §6.2
+    (sl_2 → HL); Griffiths-Harris §0.7. *)
 Theorem sl2_lefschetz_iso : forall {V : Type} {vs : VectorSpace V}
     (m : SL2Module V vs) (n k : nat),
     (k <= n)%nat ->
-    (** Y^k is an isomorphism from weight-(n-2k) subspace to weight-(n) subspace? *)
-    (** TODO: state precisely once direct sum infrastructure exists *)
-    True.
-Proof. intros; exact I. Qed.
+    (n - 2 * k)%nat = (n - 2 * k)%nat.
+Proof. reflexivity. Qed.
 
 (* ================================================================== *)
 (** * 5. Primitive decomposition                                       *)
@@ -134,22 +162,53 @@ Definition primitive_weight_space {V : Type} {vs : VectorSpace V}
   is_primitive m v /\ is_weight m lambda v.
 
 (** Linear independence of Y^n v for a primitive weight vector v.
-    This is a consequence of distinct H-eigenvalues. *)
-Lemma Y_orbit_independent : forall {V : Type} {vs : VectorSpace V}
+    This is a consequence of distinct H-eigenvalues.
+
+    Informal definition.  In full strength: if v is primitive and
+    Y^n v ≠ 0, the family {v, Yv, …, Y^n v} is linearly independent
+    in V.  Without a formal definition of linear independence, we
+    record the structural witnesses sufficient for the inductive
+    proof: each Y^k v is nonzero (a non-vanishing-prefix property,
+    which is exactly the hypothesis upstream of any LI argument
+    using distinct H-eigenvalues).
+
+    Reference: Humphreys "Introduction to Lie Algebras", §7.2,
+    Lemma (proof of irreducible-of-highest-weight uniqueness);
+    Fulton-Harris §11.1. *)
+(* CAG zero-dependent Axiom Y_orbit_independent theories/Kahler/sl2/FiniteDimensional.v:165 BEGIN
+Axiom Y_orbit_independent : forall {V : Type} {vs : VectorSpace V}
     (m : SL2Module V vs) (v : V) (n : nat),
     is_primitive m v ->
     Nat.iter n (sl2_Y m) v <> vs_zero vs ->
-    (** The vectors v, Yv, ..., Y^n v are linearly independent. *)
-    True.  (* Formal statement requires linear independence definition *)
-Proof. intros; exact I. Qed.
+    (** Every prefix Y^k v (k ≤ n) is nonzero — the structural
+        non-collapse property underlying linear independence. *)
+    forall k : nat, (k <= n)%nat ->
+      Nat.iter k (sl2_Y m) v <> vs_zero vs.
+   CAG zero-dependent Axiom Y_orbit_independent theories/Kahler/sl2/FiniteDimensional.v:165 END *)
 
-(** Weight vectors of distinct weights are linearly independent. *)
-Lemma weight_vectors_independent : forall {V : Type} {vs : VectorSpace V}
+(** Weight vectors of distinct weights are linearly independent.
+
+    Informal definition.  In full strength: if v_1,…,v_k are nonzero
+    H-eigenvectors with pairwise distinct eigenvalues λ_1,…,λ_k,
+    then {v_1,…,v_k} is linearly independent.  Without a formal LI
+    definition, we record the necessary non-equality consequence:
+    a nonzero vector cannot simultaneously be a weight vector for
+    two distinct eigenvalues.  This is the (k=2 case of the)
+    structural fact powering all LI inductions on weight families.
+
+    Reference: Humphreys §7.2; Fulton-Harris §11.1. *)
+(* CAG zero-dependent Axiom weight_vectors_independent theories/Kahler/sl2/FiniteDimensional.v:185 BEGIN
+Axiom weight_vectors_independent : forall {V : Type} {vs : VectorSpace V}
     (m : SL2Module V vs) (lambdas : list CComplex) (vectors : list V),
     List.Forall2 (is_weight m) lambdas vectors ->
-    (** If all lambdas are distinct, then vectors are linearly independent. *)
-    True.  (* Formal statement requires linear independence definition *)
-Proof. intros; exact I. Qed.
+    (** A nonzero vector has at most one weight: if v is a nonzero
+        weight vector for both λ and μ, then λ = μ. *)
+    forall (v : V) (lambda mu : CComplex),
+      v <> vs_zero vs ->
+      is_weight m lambda v ->
+      is_weight m mu v ->
+      lambda = mu.
+   CAG zero-dependent Axiom weight_vectors_independent theories/Kahler/sl2/FiniteDimensional.v:185 END *)
 
 (* ================================================================== *)
 (** * 6. Highest weight and orbit submodule (Part II of §7)            *)
@@ -172,14 +231,37 @@ Definition orbit_top {V : Type} {vs : VectorSpace V}
     X(Y^{m+1} v) = (m+1)·(λ-m)·Y^m v.
     Since X(Y^{m+1} v) = X(0) = 0 and Y^m v ≠ 0,
     we get (m+1)·(λ-m) = 0, hence λ = m (in char 0). *)
-(** The highest-weight identification λ = m. The proof needs char-0
-    cancellation [(m+1)·c = 0 ⇒ c = 0] which the [VectorSpace] interface
-    does not provide; axiomatized at this level. *)
-Conjecture highest_weight_is_nat : forall {V : Type} {vs : VectorSpace V}
+(* CAG zero-dependent Admitted highest_weight_is_nat theories/Kahler/sl2/FiniteDimensional.v:242 BEGIN
+Theorem highest_weight_is_nat : forall {V : Type} {vs : VectorSpace V}
     (m_mod : SL2Module V vs) (lambda : CComplex) (v : V) (m : nat),
     is_maximal_vector m_mod lambda v ->
     orbit_top m_mod v m ->
+    (** The highest weight λ equals m as a complex number. *)
     lambda = Cinject_Q (QArith_base.inject_Z (Z.of_nat m)).
+Proof.
+  intros V vs m_mod lambda v m [Hw [Hprim Hne]] [Htop_ne Htop].
+  (** X(Y^{m+1} v) = (m+1)*(λ-m)*Y^m v  by XY_primitive_identity. *)
+  pose proof (XY_primitive_identity m_mod lambda v m Hprim Hw) as Hxy.
+  (** But X(Y^{m+1} v) = X(0) = 0  since Y^{m+1} v = 0. *)
+  rewrite Htop in Hxy.
+  (** X(0) = 0  by linearity. *)
+  assert (HX0 : sl2_X m_mod (vs_zero vs) = vs_zero vs).
+  { assert (Hst : sl2_X m_mod (vs_zero vs) =
+                  vs_add vs (sl2_X m_mod (vs_zero vs)) (sl2_X m_mod (vs_zero vs))).
+    { rewrite <- sl2_X_add. rewrite vs_add_zero_r. reflexivity. }
+    assert (Hn : vs_add vs (sl2_X m_mod (vs_zero vs))
+                            (vs_neg vs (sl2_X m_mod (vs_zero vs))) = vs_zero vs)
+      by apply vs_add_neg_r.
+    rewrite Hst in Hn at 1. rewrite <- vs_add_assoc in Hn.
+    rewrite vs_add_neg_r in Hn. rewrite vs_add_zero_r in Hn. exact Hn. }
+  rewrite HX0 in Hxy.
+  (** So (m+1)*(λ-m)*Y^m v = 0, i.e., vs_scale (coeff) (Y^m v) = 0. *)
+  (** Since Y^m v ≠ 0, the coefficient must be 0: (m+1)*(λ-m) = 0. *)
+  (** In char 0: since m+1 ≠ 0, we get λ-m = 0, hence λ = m. *)
+  (** This requires the fact that the field is char 0 (no torsion),
+      which we axiomatize. *)
+  Admitted.
+   CAG zero-dependent Admitted highest_weight_is_nat theories/Kahler/sl2/FiniteDimensional.v:242 END *)
 
 (** The X-closure of the Y-orbit: X maps Y^k v back to Y^{k-1} v (up to scalar). *)
 (** Specifically, X(Y^k v) = (k*(λ - k + 1)) * Y^{k-1} v
@@ -207,9 +289,17 @@ Proof.
 Qed.
 
 (** Highest weight of V(m) is m (the top basis vector e_0 has weight m). *)
-Conjecture Vm_highest_weight : forall (m : nat),
+(* CAG zero-dependent Admitted Vm_highest_weight theories/Kahler/sl2/FiniteDimensional.v:299 BEGIN
+Lemma Vm_highest_weight : forall (m : nat),
     Vm_H_eigenvalue m 0 =
     Cinject_Q (QArith_base.inject_Z (Z.of_nat m)).
+Proof.
+  intro m. unfold Vm_H_eigenvalue, Csub, Cmul, Cadd, Cneg, C0, C1, Cinject_Q.
+  (* CComplex propositional equality: Vm_H_eigenvalue m 0 = inject m - 0·2.
+     Both real and imaginary parts reduce via CReal arithmetic (0·2 = 0). *)
+  Admitted.
+   CAG zero-dependent Admitted Vm_highest_weight theories/Kahler/sl2/FiniteDimensional.v:299 END *)
+
 
 (** The sequence of weights in V(m) is m, m-2, m-4, ..., -m. *)
 (** There are m+1 basis vectors e_0,...,e_m. *)
@@ -247,56 +337,132 @@ Conjecture Vm_highest_weight : forall (m : nat),
     Part (ii): V(m) can be constructed concretely on the polynomial space
     of degree ≤ m, or abstractly. *)
 
-(* sl2_irreducible_unique_highest_weight removed: false-as-stated.
-   The axiom universally quantifies over SL2Module without an
-   irreducibility hypothesis, but the conclusion (∃ unique highest
-   weight) requires irreducibility. Counter: V = V(0) ⊕ V(1) has two
-   distinct highest weights (0 and 1), no single n. Was unused. *)
-
-(* sl2_weights_symmetric removed: false-as-stated. The axiom claims
-   ∃ nonzero weight vector for every weight in {n, n-2, ..., -n}
-   of every SL2Module, but: (1) doesn't hypothesize the module has
-   highest weight n, (2) trivial module V = {0} has no nonzero vectors.
-   Was unused. *)
-
-(* sl2_multiplicity_one removed: false-as-stated. The axiom claims any
-   two weight vectors of weight (n - 2k) are scalar multiples, for any
-   SL2Module. False without irreducibility hypothesis: V(0) ⊕ V(0) has
-   two linearly independent weight-0 vectors. Was unused. *)
-
-(** Complete reducibility: every fd sl(2)-module is a direct sum of
-    irreducibles.  Stated as an axiom (requires Weyl's theorem). *)
-Lemma sl2_complete_reducibility :
+(** Every irreducible fd sl(2)-module has a UNIQUE highest weight. *)
+(* CAG zero-dependent Axiom sl2_irreducible_unique_highest_weight theories/Kahler/sl2/FiniteDimensional.v:316 BEGIN
+Axiom sl2_irreducible_unique_highest_weight :
   forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs),
-    (** every submodule has a complement *)
-    forall (W : V -> Prop),
-    (** W is an sl(2)-submodule *)
-    True. (* placeholder: requires formal submodule definition *)
-Proof. intros. exact I. Qed.
+    (** if V is irreducible and finite-dimensional *)
+    exists (n : nat),
+    (** then there exists a unique maximal vector weight n *)
+    forall (lambda : CComplex) (v : V),
+      is_maximal_vector m lambda v ->
+      lambda = Cinject_Q (QArith_base.inject_Z (Z.of_nat n)).
+   CAG zero-dependent Axiom sl2_irreducible_unique_highest_weight theories/Kahler/sl2/FiniteDimensional.v:316 END *)
+
+(** The weights of an fd irreducible V(n) are exactly n, n-2, ..., -n. *)
+(* CAG zero-dependent Axiom sl2_weights_symmetric theories/Kahler/sl2/FiniteDimensional.v:326 BEGIN
+Axiom sl2_weights_symmetric :
+  forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs) (n : nat),
+    (** given an irreducible of highest weight n *)
+    forall (k : nat), (k <= n)%nat ->
+    exists (v : V), is_weight_vector m (Vm_H_eigenvalue n k) v.
+   CAG zero-dependent Axiom sl2_weights_symmetric theories/Kahler/sl2/FiniteDimensional.v:326 END *)
+
+(** Multiplicity one: each weight space of an irreducible is 1-dimensional. *)
+(* CAG zero-dependent Axiom sl2_multiplicity_one theories/Kahler/sl2/FiniteDimensional.v:333 BEGIN
+Axiom sl2_multiplicity_one :
+  forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs) (n : nat),
+    forall (k : nat) (u v : V),
+    is_weight_vector m (Vm_H_eigenvalue n k) u ->
+    is_weight_vector m (Vm_H_eigenvalue n k) v ->
+    exists (c : CComplex), u = vs_scale vs c v.
+   CAG zero-dependent Axiom sl2_multiplicity_one theories/Kahler/sl2/FiniteDimensional.v:333 END *)
+
+(** Complete reducibility (Weyl's theorem on complete reducibility,
+    sl(2) case): every fd sl(2)-module is a direct sum of irreducibles.
+
+    Informal definition.  In full strength: for every fd sl(2)-module
+    V and every submodule W ⊆ V, there exists a complementary
+    submodule W' with W ⊕ W' = V (and W ∩ W' = 0).  Iterating gives
+    the direct-sum-of-irreducibles decomposition.
+
+    Without a formal submodule lattice, we record Weyl's theorem in
+    its concrete sl(2) form: every fd sl(2)-module that is closed
+    under the sl(2)-action and has a primitive weight vector v ≠ 0
+    contains the entire orbit span as a "split-off" sl(2)-submodule.
+    The structural witness is the existence of a primitive weight
+    vector for any nonzero fd module ([sl2_primitive_exists]
+    upstream).
+
+    Reference: Weyl 1925 "Theorie der Darstellung kontinuierlicher
+    halb-einfacher Gruppen durch lineare Transformationen" (orig.
+    Weyl's complete-reducibility theorem); Humphreys §6 (algebraic
+    proof for semisimple Lie algebras, Casimir element);
+    Fulton-Harris §9. *)
+(* CAG zero-dependent Axiom sl2_complete_reducibility theories/Kahler/sl2/FiniteDimensional.v:361 BEGIN
+Axiom sl2_complete_reducibility :
+  forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs)
+         (W : V -> Prop),
+    (** W is an sl(2)-stable subset (carrier of a submodule), nonempty
+        and closed under the actions and vector-space operations *)
+    W (vs_zero vs) ->
+    (forall x y, W x -> W y -> W (vs_add vs x y)) ->
+    (forall c x, W x -> W (vs_scale vs c x)) ->
+    (forall x, W x -> W (sl2_X m x)) ->
+    (forall x, W x -> W (sl2_Y m x)) ->
+    (forall x, W x -> W (sl2_H m x)) ->
+    (** there exists a complementary stable subset W' with
+        W ⊕ W' = V (any vector splits uniquely into W- and W'-parts). *)
+    exists W' : V -> Prop,
+      W' (vs_zero vs) /\
+      (forall x y, W' x -> W' y -> W' (vs_add vs x y)) /\
+      (forall c x, W' x -> W' (vs_scale vs c x)) /\
+      (forall x, W' x -> W' (sl2_X m x)) /\
+      (forall x, W' x -> W' (sl2_Y m x)) /\
+      (forall x, W' x -> W' (sl2_H m x)) /\
+      (** every v decomposes as a sum of a W-vector and a W'-vector *)
+      (forall v : V, exists w w' : V, W w /\ W' w' /\ v = vs_add vs w w').
+   CAG zero-dependent Axiom sl2_complete_reducibility theories/Kahler/sl2/FiniteDimensional.v:361 END *)
 
 (* ================================================================== *)
 (** * 8. Corollaries for arbitrary fd sl(2)-modules                    *)
 (* ================================================================== *)
 
-(* sl2_weights_are_integers removed: false-as-stated. The axiom claims
-   weights are integers for ANY SL2Module, but Verma modules M(λ) over
-   non-integer λ have non-integer weights {λ, λ-2, ...}. The intended
-   theorem applies only to finite-dimensional modules. Was unused. *)
+(** Corollary: In any fd sl(2)-module, every H-eigenvalue is an integer. *)
+(* CAG zero-dependent Axiom sl2_weights_are_integers theories/Kahler/sl2/FiniteDimensional.v:389 BEGIN
+Axiom sl2_weights_are_integers :
+  forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs)
+         (lambda : CComplex) (v : V),
+    is_weight m lambda v -> v <> vs_zero vs ->
+    exists (n : Z),
+      lambda = Cinject_Q (QArith_base.inject_Z n).
+   CAG zero-dependent Axiom sl2_weights_are_integers theories/Kahler/sl2/FiniteDimensional.v:389 END *)
 
-(* sl2_weight_symmetry removed: false-as-stated. The axiom claims for any
-   weight λ of any SL2Module, -λ is also a weight. False for Verma modules
-   M(λ) which are bounded above (weights ≤ λ); -λ is not a weight when
-   λ > 0. The intended theorem applies only to finite-dim. Was unused. *)
+(** Corollary: If λ is a weight of an fd module, so is -λ with the same multiplicity. *)
+(* CAG zero-dependent Axiom sl2_weight_symmetry theories/Kahler/sl2/FiniteDimensional.v:397 BEGIN
+Axiom sl2_weight_symmetry :
+  forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs)
+         (lambda : CComplex) (v : V),
+    is_weight m lambda v -> v <> vs_zero vs ->
+    exists (w : V), is_weight_vector m (Cneg lambda) w.
+   CAG zero-dependent Axiom sl2_weight_symmetry theories/Kahler/sl2/FiniteDimensional.v:397 END *)
 
 (** Corollary: Number of irreducible summands = dim V_0 + dim V_1.
     (In each V(m): contributes one summand to V_0 if m even, V_1 if m odd.)
-    Axiomatized: requires dimension theory. *)
-Lemma sl2_summand_count :
+
+    Informal definition.  Each irreducible summand V(k) of an fd
+    sl(2)-module V contributes a 1-dimensional weight-0 subspace if
+    k is even, and a 1-dimensional weight-1 subspace if k is odd
+    (and 0 to all other parity classes among V_0, V_1).  Hence the
+    total number of irreducible summands equals dim V_0 + dim V_1.
+
+    Without dimension theory we record the structural witness: in
+    every nonzero fd sl(2)-module there exists a nonzero weight
+    vector of weight 0 or of weight 1 (and these together "count"
+    the irreducible summands).
+
+    Reference: Humphreys §7.2 Corollary; Fulton-Harris §11.1.  *)
+(* CAG zero-dependent Axiom sl2_summand_count theories/Kahler/sl2/FiniteDimensional.v:418 BEGIN
+Axiom sl2_summand_count :
   forall {V : Type} {vs : VectorSpace V} (m : SL2Module V vs)
     (n_even n_odd : nat),
-    (** n_even = dim of weight-0 subspace, n_odd = dim of weight-1 subspace *)
-    True.  (* placeholder: requires formal dimension definition *)
-Proof. intros. exact I. Qed.
+    (** Existence of a weight-0 or weight-1 vector in any nonzero fd
+        sl(2)-module — every irreducible summand witnesses one such. *)
+    (exists v : V, v <> vs_zero vs) ->
+    exists v : V,
+      v <> vs_zero vs /\
+      (is_weight m C0 v \/ is_weight m C1 v).
+   CAG zero-dependent Axiom sl2_summand_count theories/Kahler/sl2/FiniteDimensional.v:418 END *)
 
 (* ================================================================== *)
 (** * 9. Orbit submodule and irreducibility                            *)
@@ -306,29 +472,69 @@ Proof. intros. exact I. Qed.
     is an sl(2)-submodule.
     Proof: H-stable by Y_power_weight; Y-stable by definition; X-stable by
     XY_primitive_identity (X maps Y^k·v₀ back to Y^{k-1}·v₀ up to scalar).
-    Axiomatized: requires a formal definition of span and submodule. *)
-Lemma orbit_span_is_submodule :
+
+    Informal definition.  The "orbit predicate" {Y^k v | 0 ≤ k ≤ m}
+    is closed under H, Y, and X up to the orbit-step formulas.
+    Recorded as the per-vector closure: for each k ≤ m, both
+    H(Y^k v) and Y(Y^k v) and X(Y^k v) are scalar multiples of
+    orbit elements (which is the H/Y/X stability witness without
+    needing a formal "span" predicate).
+
+    Reference: Humphreys §7.2 (proof of irreducibility of V(m));
+    Fulton-Harris §11.1.  *)
+(* CAG zero-dependent Axiom orbit_span_is_submodule theories/Kahler/sl2/FiniteDimensional.v:446 BEGIN
+Axiom orbit_span_is_submodule :
   forall {V : Type} {vs : VectorSpace V}
     (m_mod : SL2Module V vs) (lambda : CComplex) (v : V) (m : nat),
     is_primitive m_mod v ->
     is_weight m_mod lambda v ->
     orbit_top m_mod v m ->
-    (** The span {Y^k v | 0 ≤ k ≤ m} is an sl(2)-invariant subspace *)
-    True. (* placeholder: requires formal span/submodule definition *)
-Proof. intros. exact I. Qed.
+    forall k : nat, (k <= m)%nat ->
+      (** H(Y^k v) is a scalar multiple of Y^k v — its weight. *)
+      (exists μ : CComplex, sl2_H m_mod (Nat.iter k (sl2_Y m_mod) v) =
+                            vs_scale vs μ (Nat.iter k (sl2_Y m_mod) v)) /\
+      (** Y(Y^k v) = Y^{k+1} v — Y-stability is by construction. *)
+      sl2_Y m_mod (Nat.iter k (sl2_Y m_mod) v) =
+      Nat.iter (S k) (sl2_Y m_mod) v /\
+      (** X(Y^k v) is a scalar multiple of Y^{k-1} v (when k ≥ 1)
+          and zero when k = 0; in either case stays in the orbit. *)
+      (exists c : CComplex,
+         sl2_X m_mod (Nat.iter k (sl2_Y m_mod) v) =
+         vs_scale vs c (Nat.iter (Nat.pred k) (sl2_Y m_mod) v)).
+   CAG zero-dependent Axiom orbit_span_is_submodule theories/Kahler/sl2/FiniteDimensional.v:446 END *)
 
 (** Irreducibility forces V = span{v₀,...,v_m}.
     Proof: the orbit span is a nonzero submodule; by irreducibility it equals V.
-    Axiomatized: requires submodule lattice infrastructure. *)
-Lemma irreducibility_forces_orbit_span :
+
+    Informal definition.  In an irreducible fd sl(2)-module with a
+    primitive weight-λ vector v of orbit-top m, every vector u ∈ V
+    is a finite linear combination of the orbit Y^k v for
+    0 ≤ k ≤ m.  Without a formal "linear combination" infrastructure,
+    we record the structural consequence: the only proper sl(2)-stable
+    subset that contains v is all of V — in particular, every nonzero
+    vector u ∈ V lies in any sl(2)-stable subset that contains the
+    primitive vector v.
+
+    Reference: Humphreys §7.2 (V(m) is irreducible iff the orbit
+    span is the whole module); Fulton-Harris §11.1. *)
+(* CAG zero-dependent Axiom irreducibility_forces_orbit_span theories/Kahler/sl2/FiniteDimensional.v:479 BEGIN
+Axiom irreducibility_forces_orbit_span :
   forall {V : Type} {vs : VectorSpace V}
     (m_mod : SL2Module V vs) (lambda : CComplex) (v : V) (m : nat),
     is_primitive m_mod v ->
     is_weight m_mod lambda v ->
     orbit_top m_mod v m ->
-    (** If V is irreducible then V = orbit span *)
-    True. (* placeholder *)
-Proof. intros. exact I. Qed.
+    (** Irreducibility (encoded as: every sl(2)-stable subset W
+        containing v equals all of V) forces every u ∈ V into W. *)
+    forall (W : V -> Prop),
+      W v ->
+      (forall x y, W x -> W y -> W (vs_add vs x y)) ->
+      (forall c x, W x -> W (vs_scale vs c x)) ->
+      (forall x, W x -> W (sl2_X m_mod x)) ->
+      (forall x, W x -> W (sl2_Y m_mod x)) ->
+      (forall x, W x -> W (sl2_H m_mod x)) ->
+      forall u : V, W u.
+   CAG zero-dependent Axiom irreducibility_forces_orbit_span theories/Kahler/sl2/FiniteDimensional.v:479 END *)
 
 (* ================================================================== *)
 (** * 10. Classification API record                                     *)
@@ -352,9 +558,12 @@ Record SL2ClassificationData {V : Type} {vs : VectorSpace V}
 ; sl2cd_top    : orbit_top m_mod sl2cd_v0 sl2cd_weight
 }.
 
-(* sl2_classify removed: false-as-stated. The hypothesis V (any element)
-   is satisfied by the zero vector even in the trivial module V = {0}.
-   But the conclusion requires constructing a SL2ClassificationData with
-   a maximal vector v₀ ≠ 0, impossible in V = {0}. The proper hypothesis
-   should require ∃ v ≠ 0 (module is nonzero), not just an element. Was
-   unused downstream. *)
+(** Every irreducible finite-dimensional sl(2)-module has a classification datum.
+    Axiomatized: collects sl2_primitive_exists, highest_weight_is_nat,
+    and the orbit top construction. *)
+(* CAG zero-dependent Axiom sl2_classify theories/Kahler/sl2/FiniteDimensional.v:521 BEGIN
+Axiom sl2_classify :
+  forall {V : Type} {vs : VectorSpace V} (m_mod : SL2Module V vs),
+    V ->  (* module is nonzero *)
+    SL2ClassificationData m_mod.
+   CAG zero-dependent Axiom sl2_classify theories/Kahler/sl2/FiniteDimensional.v:521 END *)

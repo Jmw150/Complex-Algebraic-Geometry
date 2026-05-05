@@ -34,42 +34,53 @@ Local Open Scope CReal_scope.
 (* ================================================================== *)
 
 (** A Hodge metric on M: a Kähler metric whose associated form is rational. *)
+(* CAG zero-dependent Definition hodge_metric theories/Kodaira/RationalKahlerCriterion.v:37 BEGIN
 Definition hodge_metric (M : KahlerManifold) : Prop :=
   exists ω : HdR M 2,
   (** ω is closed, positive (1,1), and [ω] ∈ H²(M,Q) — axiomatized *)
   True.
+   CAG zero-dependent Definition hodge_metric theories/Kodaira/RationalKahlerCriterion.v:37 END *)
 
 (** A class α ∈ H²(M,R) is rational if it's a rational combination of
     integral classes. *)
+(* CAG zero-dependent Definition is_rational_class theories/Kodaira/RationalKahlerCriterion.v:44 BEGIN
 Definition is_rational_class (M : KahlerManifold) (α : HdR M 2) : Prop :=
   exists L : HolLineBundleCech (km_manifold M), exists k : nat,
   (0 < k)%nat /\
   (** k · α = c₁(L) — axiomatized *)
   True.
+   CAG zero-dependent Definition is_rational_class theories/Kodaira/RationalKahlerCriterion.v:44 END *)
 
 (* ================================================================== *)
 (** * 2. "If" direction: rational positive class → algebraic           *)
 (* ================================================================== *)
 
 (** From a rational positive (1,1)-class, construct an integral one. *)
-Conjecture rational_class_to_integral : forall (M : KahlerManifold) (α : HdR M 2),
+(* CAG zero-dependent Admitted rational_class_to_integral theories/Kodaira/RationalKahlerCriterion.v:60 BEGIN
+Theorem rational_class_to_integral : forall (M : KahlerManifold) (α : HdR M 2),
     is_rational_class M α ->
+    (** there exists k > 0 with k·α = c₁(L) for some positive L — axiomatized *)
     exists L : HolLineBundleCech (km_manifold M),
     positive_line_bundle M L.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted rational_class_to_integral theories/Kodaira/RationalKahlerCriterion.v:60 END *)
 
 (** If M has a Hodge metric, then M is projective. *)
+(* CAG zero-dependent Theorem hodge_metric_implies_projective theories/Kodaira/RationalKahlerCriterion.v:65 BEGIN
 Theorem hodge_metric_implies_projective : forall (M : KahlerManifold),
     hodge_metric M ->
     (** M embeds into P^N for some N — follows from rational_class_to_integral
         + Kodaira embedding theorem — axiomatized *)
     True.
 Proof. intros; exact I. Qed.
+   CAG zero-dependent Theorem hodge_metric_implies_projective theories/Kodaira/RationalKahlerCriterion.v:65 END *)
 
 (* ================================================================== *)
 (** * 3. "Only if" direction: projective → Hodge metric                *)
 (* ================================================================== *)
 
 (** A projective embedding gives a rational Kähler class. *)
+(* CAG zero-dependent Theorem projective_has_hodge_metric theories/Kodaira/RationalKahlerCriterion.v:77 BEGIN
 Theorem projective_has_hodge_metric : forall (M : KahlerManifold),
     (** M ⊂ P^N for some N *)
     True ->
@@ -80,12 +91,14 @@ Proof.
   exists (vs_zero (HdR_vs M 2)).
   exact I.
 Qed.
+   CAG zero-dependent Theorem projective_has_hodge_metric theories/Kodaira/RationalKahlerCriterion.v:77 END *)
 
 (* ================================================================== *)
 (** * 4. Main criterion                                                *)
 (* ================================================================== *)
 
 (** Kodaira's criterion: M is projective iff M has a Hodge metric. *)
+(* CAG zero-dependent Theorem kodaira_algebraicity_criterion theories/Kodaira/RationalKahlerCriterion.v:93 BEGIN
 Theorem kodaira_algebraicity_criterion : forall (M : KahlerManifold),
     hodge_metric M <->
     (** M is a projective algebraic manifold — axiomatized *)
@@ -95,3 +108,4 @@ Proof.
   - exact (hodge_metric_implies_projective M H).
   - exact (projective_has_hodge_metric M I).
 Qed.
+   CAG zero-dependent Theorem kodaira_algebraicity_criterion theories/Kodaira/RationalKahlerCriterion.v:93 END *)

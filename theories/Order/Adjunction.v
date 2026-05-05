@@ -48,12 +48,50 @@ Proof.
   apply gc.(gc_adj_rl). apply X.(le_refl).
 Qed.
 
-(** Right adjoint preserves meets *)
-Lemma gc_right_preserves_inf {X Y : Poset} (gc : GaloisConnection X Y)
-    (L : CompleteLattice) (hY : L.(cl_poset) = Y)
-    (S : Y.(carrier) -> Prop) :
-    True. (* placeholder *)
-Proof. trivial. Qed.
+(** Right adjoint preserves meets.
+
+    Informal definition: if [LX], [LY] are complete lattices realising
+    [X] and [Y] as posets, and [gc : l ⊣ r] is a Galois connection,
+    then for any subset [S ⊂ Y] the right adjoint sends the meet of
+    [S] to the meet of [r '' S].  Stated as the [≤]-equivalent
+    "[r(⊓ S)] is a glb of [r '' S]" using the project's
+    [cl_inf]-via-[cl_sup] formulation in [Order.Lattice].
+
+    Source: Mac Lane, "Categories for the Working Mathematician"
+    Ch. IV §1 (RAPL — Right Adjoints Preserve Limits); Davey–Priestley,
+    "Introduction to Lattices and Order" §7.31. *)
+Lemma gc_right_preserves_inf
+    (LX LY : CompleteLattice)
+    (gc : GaloisConnection LX.(cl_poset) LY.(cl_poset))
+    (S : LY.(carrier) -> Prop) :
+    (** [r(⊓Y S) ≤ r(s)] for every [s ∈ S] — i.e. [r(⊓Y S)] is a lower
+        bound of [r '' S].  This is the easy half (monotonicity), the
+        full preserves-meets statement is the conjunction with the
+        glb property below. *)
+    forall s : LY.(carrier), S s ->
+      gc.(gc_right) (cl_inf LY S) ≤[LX.(cl_poset)] gc.(gc_right) s.
+Proof.
+  intros s Hs.
+  apply (mono_apply gc.(gc_right)).
+  apply (cl_inf_lb (L := LY) S s Hs).
+Qed.
+
+(** Companion glb statement: every [LX]-lower-bound of [r '' S] lies
+    below [r(⊓Y S)]. *)
+Lemma gc_right_preserves_inf_glb
+    (LX LY : CompleteLattice)
+    (gc : GaloisConnection LX.(cl_poset) LY.(cl_poset))
+    (S : LY.(carrier) -> Prop) (x : LX.(carrier)) :
+    (forall s, S s -> x ≤[LX.(cl_poset)] gc.(gc_right) s) ->
+    x ≤[LX.(cl_poset)] gc.(gc_right) (cl_inf LY S).
+Proof.
+  intros Hx.
+  apply gc.(gc_adj_lr).
+  apply (cl_inf_glb (L := LY)).
+  intros s Hs.
+  apply gc.(gc_adj_rl).
+  apply Hx; exact Hs.
+Qed.
 
 (** Right adjoint is monotone (already in record) *)
 Lemma gc_right_mono {X Y : Poset} (gc : GaloisConnection X Y) :

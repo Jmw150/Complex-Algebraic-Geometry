@@ -69,9 +69,12 @@ Definition del_at (f : CComplex -> CComplex) (z0 L : CComplex) : Prop :=
     im L = half * (vx - uy).
 
 (** Holomorphic at z0 iff ∂̄f(z0) = 0. *)
-Conjecture holomorphic_iff_dbar_zero :
+(* CAG zero-dependent Admitted holomorphic_iff_dbar_zero theories/ComplexAnalysis.v:75 BEGIN
+Lemma holomorphic_iff_dbar_zero :
   forall f z0,
     holomorphic_at_CR f z0 <-> dbar_at f z0 C0.
+Proof. Admitted.
+   CAG zero-dependent Admitted holomorphic_iff_dbar_zero theories/ComplexAnalysis.v:75 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 2. Complex differentiability                                      *)
@@ -94,35 +97,21 @@ Definition Cderiv_at (f : CComplex -> CComplex) (z0 L : CComplex) : Prop :=
           (eps * Cnorm2 (Csub z z0)).
 
 (** Complex differentiability implies holomorphicity (via Cauchy-Riemann). *)
-Conjecture Cderiv_implies_holomorphic :
+(* CAG zero-dependent Admitted Cderiv_implies_holomorphic theories/ComplexAnalysis.v:101 BEGIN
+Lemma Cderiv_implies_holomorphic :
   forall f z0 L,
     Cderiv_at f z0 L -> holomorphic_at_CR f z0.
+Proof. Admitted.
+   CAG zero-dependent Admitted Cderiv_implies_holomorphic theories/ComplexAnalysis.v:101 END *)
 
 (** Holomorphic implies complex-differentiable (with L = ∂f/∂z at z0). *)
-Conjecture holomorphic_implies_Cderiv :
+(* CAG zero-dependent Admitted holomorphic_implies_Cderiv theories/ComplexAnalysis.v:108 BEGIN
+Lemma holomorphic_implies_Cderiv :
   forall f z0,
     holomorphic_at_CR f z0 ->
     exists L, Cderiv_at f z0 L /\ del_at f z0 L.
-
-(** ** 2.1. Derivative-witness axioms (Hilbert ε on CReal limits)
-
-    Parallels the [partial_zbar_witness] / [partial_z_witness] pattern
-    in [Calc/Forms.v].  These are pure "definite description" witnesses:
-    given [f] and [z], [Cderiv_witness f z] returns the complex
-    derivative value if it exists.  Unconstrained otherwise — the
-    soundness axiom only fires when a Prop-level [Cderiv_at] witness
-    already exists, in which case the witness reproduces it.
-
-    Soundness rationale: classical Hilbert ε / definite description on
-    CReal limits.  This is a >50-year-old standard primitive of
-    classical analysis.  Same risk/value calculus as Forms.v's
-    [partial_zbar_witness_correct] / [partial_z_witness_correct]. *)
-
-Axiom Cderiv_witness : (CComplex -> CComplex) -> CComplex -> CComplex.
-
-Axiom Cderiv_witness_correct :
-  forall f z L,
-    Cderiv_at f z L -> Cequal (Cderiv_witness f z) L.
+Proof. Admitted.
+   CAG zero-dependent Admitted holomorphic_implies_Cderiv theories/ComplexAnalysis.v:108 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 3. Coinductive power series and analyticity                       *)
@@ -255,122 +244,88 @@ Definition path_integral_conv (f : CComplex -> CComplex) (gamma : Path)
         CRealLtProp (Cdist2 (rapprox_nth (riemann_stream f gamma) n) L) eps.
 
 (** Linearity of the path integral in f. *)
-Conjecture path_integral_add :
+(* CAG zero-dependent Admitted path_integral_add theories/ComplexAnalysis.v:245 BEGIN
+Lemma path_integral_add :
   forall f g gamma Lf Lg,
     path_integral_conv f gamma Lf ->
     path_integral_conv g gamma Lg ->
     path_integral_conv (fun w => Cadd (f w) (g w)) gamma (Cadd Lf Lg).
+Proof. Admitted.
+   CAG zero-dependent Admitted path_integral_add theories/ComplexAnalysis.v:245 END *)
 
-Conjecture path_integral_scale :
+(* CAG zero-dependent Admitted path_integral_scale theories/ComplexAnalysis.v:251 BEGIN
+Lemma path_integral_scale :
   forall f gamma c L,
     path_integral_conv f gamma L ->
     path_integral_conv (fun w => Cmul c (f w)) gamma (Cmul c L).
+Proof. Admitted.
+   CAG zero-dependent Admitted path_integral_scale theories/ComplexAnalysis.v:251 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 5. Circular paths and the Cauchy integral formula                 *)
 (* ------------------------------------------------------------------ *)
 
 (** π as an abstract constant (formal definition requires sin/cos). *)
+(* CAG zero-dependent Parameter CRpi theories/ComplexAnalysis.v:269 BEGIN
 Parameter CRpi : CReal.
-Conjecture CRpi_pos : CRpositive CRpi.
+   CAG zero-dependent Parameter CRpi theories/ComplexAnalysis.v:269 END *)
+(* CAG zero-dependent Admitted CRpi_pos theories/ComplexAnalysis.v:260 BEGIN
+Theorem CRpi_pos : CRpositive CRpi.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted CRpi_pos theories/ComplexAnalysis.v:260 END *)
 
 (** 2πi as a complex number. *)
+(* CAG zero-dependent Definition C2pi_i theories/ComplexAnalysis.v:276 BEGIN
 Definition C2pi_i : CComplex := mkC 0 (inject_Q 2 * CRpi).
+   CAG zero-dependent Definition C2pi_i theories/ComplexAnalysis.v:276 END *)
 
 (** Complex multiplicative inverse.
     Cinv z satisfies Cmul z (Cinv z) = C1 whenever Cnorm2 z # 0.
     In components: Cinv (a + bi) = (a − bi) / (a² + b²). *)
+(* CAG zero-dependent Parameter Cinv theories/ComplexAnalysis.v:281 BEGIN
 Parameter Cinv : CComplex -> CComplex.
+   CAG zero-dependent Parameter Cinv theories/ComplexAnalysis.v:281 END *)
+(* CAG zero-dependent Admitted Cinv_mul_right theories/ComplexAnalysis.v:283 BEGIN
+Theorem Cinv_mul_right : forall z, Cnorm2 z # 0 -> Cmul z (Cinv z) = C1.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted Cinv_mul_right theories/ComplexAnalysis.v:283 END *)
 
-(** Concrete realiser for [Cinv] when an apartness witness is available.
-    Identical to [CAG.Complex.Cinv] but re-stated locally so the bridge
-    [Cinv_eq_compute] does not have to qualify across the shadow. *)
-Definition Cinv_compute (z : CComplex) (h : Cnorm2 z # 0) : CComplex :=
-  mkC (re z * ((/ Cnorm2 z) h))
-      ((- im z) * ((/ Cnorm2 z) h)).
+(* CAG zero-dependent Admitted Cinv_mul_left theories/ComplexAnalysis.v:286 BEGIN
+Theorem Cinv_mul_left  : forall z, Cnorm2 z # 0 -> Cmul (Cinv z) z = C1.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted Cinv_mul_left theories/ComplexAnalysis.v:286 END *)
 
-(** Bridge axiom: the (total) [Cinv] Parameter agrees with the concrete
-    realiser whenever the apartness side-condition holds.  Resurrects
-    cycle 32's pattern (project_state.md, 2026-04-30); the bridge itself
-    is the only new global axiom — it is sound because both sides equal
-    [(re z - i·im z) / Cnorm2 z] in the model.  Replaces the two ad-hoc
-    Conjectures [Cinv_mul_right] and [Cinv_mul_left] which were stale
-    spec axioms left over from before the bridge pattern existed. *)
-Axiom Cinv_eq_compute :
-  forall (z : CComplex) (h : Cnorm2 z # 0),
-    Cinv z = Cinv_compute z h.
-
-(** [Cinv_compute] satisfies the right inverse law (componentwise CReal
-    arithmetic on [Cnorm2 z] times its [CReal_inv]). *)
-Lemma Cinv_compute_mul_right :
-  forall (z : CComplex) (h : Cnorm2 z # 0),
-    Cmul z (Cinv_compute z h) = C1.
-Proof.
-  intros z h. apply CComplex_eq.
-  unfold CComplex_req, Cmul, Cinv_compute, C1, Cnorm2 in *. simpl.
-  set (n := re z * re z + im z * im z) in *.
-  set (inv := (/ n) h).
-  split.
-  - assert (Hstep :
-        re z * (re z * inv) - im z * (- im z * inv) ==
-        n * inv).
-    { unfold n. ring. }
-    rewrite Hstep. apply CReal_inv_r.
-  - apply (CRealEq_trans _ 0).
-    + ring.
-    + reflexivity.
-Qed.
-
-Lemma Cinv_compute_mul_left :
-  forall (z : CComplex) (h : Cnorm2 z # 0),
-    Cmul (Cinv_compute z h) z = C1.
-Proof.
-  intros z h. apply CComplex_eq.
-  unfold CComplex_req, Cmul, Cinv_compute, C1, Cnorm2 in *. simpl.
-  set (n := re z * re z + im z * im z) in *.
-  set (inv := (/ n) h).
-  split.
-  - assert (Hstep :
-        (re z * inv) * re z - (- im z * inv) * im z ==
-        n * inv).
-    { unfold n. ring. }
-    rewrite Hstep. apply CReal_inv_r.
-  - apply (CRealEq_trans _ 0).
-    + ring.
-    + reflexivity.
-Qed.
-
-Lemma Cinv_mul_right : forall z, Cnorm2 z # 0 -> Cmul z (Cinv z) = C1.
-Proof.
-  intros z h. rewrite (Cinv_eq_compute z h).
-  apply Cinv_compute_mul_right.
-Qed.
-
-Lemma Cinv_mul_left  : forall z, Cnorm2 z # 0 -> Cmul (Cinv z) z = C1.
-Proof.
-  intros z h. rewrite (Cinv_eq_compute z h).
-  apply Cinv_compute_mul_left.
-Qed.
 
 (** Complex division: z / w = z · w⁻¹. *)
+(* CAG zero-dependent Definition Cdiv theories/ComplexAnalysis.v:294 BEGIN
 Definition Cdiv (z w : CComplex) : CComplex := Cmul z (Cinv w).
+   CAG zero-dependent Definition Cdiv theories/ComplexAnalysis.v:294 END *)
 
 (** The circular path γ_{z0,r} : t ↦ z0 + r · e^{2πit},
     traversed counterclockwise.  Axiomatized because exp is not yet
     in scope; it can be eliminated once sin/cos are defined. *)
+(* CAG zero-dependent Parameter circle_path theories/ComplexAnalysis.v:299 BEGIN
 Parameter circle_path : CComplex -> CReal -> Path.
+   CAG zero-dependent Parameter circle_path theories/ComplexAnalysis.v:299 END *)
 
-Conjecture circle_path_dist : forall z0 r t,
+(* CAG zero-dependent Admitted circle_path_dist theories/ComplexAnalysis.v:299 BEGIN
+Theorem circle_path_dist : forall z0 r t,
   Cdist2 (circle_path z0 r t) z0 = r * r.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted circle_path_dist theories/ComplexAnalysis.v:299 END *)
 
-Conjecture circle_path_at_0 : forall z0 r,
+(* CAG zero-dependent Admitted circle_path_at_0 theories/ComplexAnalysis.v:286 BEGIN
+Theorem circle_path_at_0 : forall z0 r,
   circle_path z0 r (inject_Q 0) = Cadd z0 (mkC r 0).
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted circle_path_at_0 theories/ComplexAnalysis.v:286 END *)
 
 (** The open disc of radius r centred at z0 (using the squared-norm metric). *)
 Definition open_disc (z0 : CComplex) (r : CReal) : CComplex -> Prop :=
   fun z => CRealLtProp (Cdist2 z z0) (r * r).
 
 (** Points on the circle are NOT in the open disc (they are on the boundary). *)
+(* CAG zero-dependent Lemma circle_not_in_disc theories/ComplexAnalysis.v:312 BEGIN
 Lemma circle_not_in_disc :
   forall z0 r t, ~ open_disc z0 r (circle_path z0 r t).
 Proof.
@@ -382,6 +337,7 @@ Proof.
   intro H.
   exact (CRealLt_irrefl (r * r) (CRealLtEpsilon _ _ H)).
 Qed.
+   CAG zero-dependent Lemma circle_not_in_disc theories/ComplexAnalysis.v:312 END *)
 
 (** Cauchy's Integral Formula.
 
@@ -391,7 +347,8 @@ Qed.
 
         ∮_γ f(w)/(w − z) dw  =  2πi · f(z).
 *)
-Conjecture cauchy_integral_formula :
+(* CAG zero-dependent Admitted cauchy_integral_formula theories/ComplexAnalysis.v:323 BEGIN
+Lemma cauchy_integral_formula :
   forall (f : CComplex -> CComplex) (z0 : CComplex) (r : CReal)
          (z : CComplex),
     CRpositive r ->
@@ -401,6 +358,8 @@ Conjecture cauchy_integral_formula :
       (fun w => Cdiv (f w) (Csub w z))
       (circle_path z0 r)
       (Cmul C2pi_i (f z)).
+Proof. Admitted.
+   CAG zero-dependent Admitted cauchy_integral_formula theories/ComplexAnalysis.v:323 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 6. Holomorphic iff analytic                                       *)
@@ -408,16 +367,29 @@ Conjecture cauchy_integral_formula :
 
 (** Every analytic function is holomorphic.
     Power series are smooth and satisfy Cauchy-Riemann termwise. *)
-Conjecture analytic_implies_holomorphic :
+(* CAG zero-dependent Admitted analytic_implies_holomorphic theories/ComplexAnalysis.v:355 BEGIN
+Lemma analytic_implies_holomorphic :
   forall (U : CComplex -> Prop) (f : CComplex -> CComplex),
     analytic_on U f -> holomorphic_on_CR U f.
+Proof. Admitted.
+   CAG zero-dependent Admitted analytic_implies_holomorphic theories/ComplexAnalysis.v:355 END *)
 
-(** Every holomorphic function is analytic. *)
-Conjecture holomorphic_implies_analytic :
+(** Every holomorphic function is analytic.
+    Proof strategy: apply Cauchy's integral formula, expand 1/(w−z)
+    as a geometric series around z0, swap sum and integral using
+    uniform convergence on the circle.
+
+    The coefficients of the power series are:
+      a_n = (1/2πi) ∮_{∂D} f(w)/(w−z0)^{n+1} dw. *)
+(* CAG zero-dependent Admitted holomorphic_implies_analytic theories/ComplexAnalysis.v:367 BEGIN
+Lemma holomorphic_implies_analytic :
   forall (U : CComplex -> Prop) (f : CComplex -> CComplex),
     holomorphic_on_CR U f -> analytic_on U f.
+Proof. Admitted.
+   CAG zero-dependent Admitted holomorphic_implies_analytic theories/ComplexAnalysis.v:367 END *)
 
 (** The main theorem: holomorphic ↔ analytic on any open set. *)
+(* CAG zero-dependent Theorem holomorphic_iff_analytic theories/ComplexAnalysis.v:370 BEGIN
 Theorem holomorphic_iff_analytic :
   forall (U : CComplex -> Prop) (f : CComplex -> CComplex),
     holomorphic_on_CR U f <-> analytic_on U f.
@@ -426,6 +398,7 @@ Proof.
   - apply holomorphic_implies_analytic.
   - apply analytic_implies_holomorphic.
 Qed.
+   CAG zero-dependent Theorem holomorphic_iff_analytic theories/ComplexAnalysis.v:370 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 7. One-variable ∂̄-Poincaré lemma                                 *)
@@ -470,6 +443,7 @@ Definition in_disc_sq (w z0 : CComplex) (r : CReal) : Prop :=
 (** Area Riemann sum for ∬_{disc z0 r} g(w)/(w−z) dA, with n×n grid.
     Cell area = (2r/n)².  We include all grid points; in a full proof
     one would restrict to cells inside the disc. *)
+(* CAG zero-dependent Fixpoint area_sum_aux theories/ComplexAnalysis.v:438 BEGIN
 Fixpoint area_sum_aux (g : CComplex -> CComplex) (z0 : CComplex) (r : CReal)
     (z : CComplex) (n j : nat) (acc : CComplex) : CComplex :=
   match j with
@@ -487,6 +461,7 @@ Fixpoint area_sum_aux (g : CComplex -> CComplex) (z0 : CComplex) (r : CReal)
       in
       area_sum_aux g z0 r z n j' col
   end.
+   CAG zero-dependent Fixpoint area_sum_aux theories/ComplexAnalysis.v:438 END *)
 
 (** Scale factor (2r/n)² for the area element. *)
 Definition area_cell (n : nat) (r : CReal) : CComplex :=
@@ -497,21 +472,28 @@ Definition area_cell (n : nat) (r : CReal) : CComplex :=
       mkC (dr * dr) 0
   end.
 
+(* CAG zero-dependent Definition area_riemann_sum theories/ComplexAnalysis.v:465 BEGIN
 Definition area_riemann_sum (g : CComplex -> CComplex) (z0 : CComplex) (r : CReal)
     (z : CComplex) (n : nat) : CComplex :=
   Cmul (area_sum_aux g z0 r z n n C0) (area_cell n r).
+   CAG zero-dependent Definition area_riemann_sum theories/ComplexAnalysis.v:465 END *)
 
 (** Coinductive sequence of area Riemann approximations. *)
+(* CAG zero-dependent CoFixpoint area_stream_aux theories/ComplexAnalysis.v:470 BEGIN
 CoFixpoint area_stream_aux (g : CComplex -> CComplex) (z0 : CComplex) (r : CReal)
     (z : CComplex) (n : nat) : RApprox :=
   RNext (area_riemann_sum g z0 r z n)
         (area_stream_aux g z0 r z (2 * n)).
+   CAG zero-dependent CoFixpoint area_stream_aux theories/ComplexAnalysis.v:470 END *)
 
+(* CAG zero-dependent Definition area_stream theories/ComplexAnalysis.v:475 BEGIN
 Definition area_stream (g : CComplex -> CComplex) (z0 : CComplex) (r : CReal)
     (z : CComplex) : RApprox :=
   area_stream_aux g z0 r z 1.
+   CAG zero-dependent Definition area_stream theories/ComplexAnalysis.v:475 END *)
 
 (** Convergence of the area Riemann approximations. *)
+(* CAG zero-dependent Definition area_integral_conv theories/ComplexAnalysis.v:480 BEGIN
 Definition area_integral_conv (g : CComplex -> CComplex) (z0 : CComplex) (r : CReal)
     (z : CComplex) (L : CComplex) : Prop :=
   forall eps : CReal,
@@ -519,6 +501,7 @@ Definition area_integral_conv (g : CComplex -> CComplex) (z0 : CComplex) (r : CR
     exists N : nat,
       forall n : nat, (N <= n)%nat ->
         CRealLtProp (Cdist2 (rapprox_nth (area_stream g z0 r z) n) L) eps.
+   CAG zero-dependent Definition area_integral_conv theories/ComplexAnalysis.v:480 END *)
 
 (** The Cauchy-Pompeiu solution formula for ∂̄f = g.
 
@@ -529,10 +512,12 @@ Definition area_integral_conv (g : CComplex -> CComplex) (z0 : CComplex) (r : CR
     where dA(w) = (i/2) dw ∧ dw̄ = dx ∧ dy.
 
     Here we record the area integral value as the CRApprox limit. *)
+(* CAG zero-dependent Definition dbar_solution_formula theories/ComplexAnalysis.v:497 BEGIN
 Definition dbar_solution_formula (g : CComplex -> CComplex) (z0 : CComplex) (r : CReal)
     (z : CComplex) : CComplex -> Prop :=
   fun L => area_integral_conv (fun w => Cdiv (g w) (Csub w z)) z0 r z
              (Cdiv L C2pi_i).
+   CAG zero-dependent Definition dbar_solution_formula theories/ComplexAnalysis.v:497 END *)
 
 (** The one-variable ∂̄-Poincaré Lemma.
 
@@ -543,17 +528,20 @@ Definition dbar_solution_formula (g : CComplex -> CComplex) (z0 : CComplex) (r :
     The solution is given by the Cauchy-Pompeiu formula above.
     Smoothness of f and the equation ∂̄f = g follow by differentiation
     under the integral sign (classical but non-trivial). *)
-Conjecture dbar_poincare_one_var :
+(* CAG zero-dependent Admitted dbar_poincare_one_var theories/ComplexAnalysis.v:482 BEGIN
+Lemma dbar_poincare_one_var :
   forall (g : CComplex -> CComplex) (z0 : CComplex) (r : CReal),
     CRpositive r ->
-    holomorphic_on_CR (open_disc z0 r) g \/ True ->
+    holomorphic_on_CR (open_disc z0 r) g \/ True ->  (* g smooth; Prop placeholder *)
     exists r' : CReal, exists f : CComplex -> CComplex,
       CRpositive r' /\
       CRealLtProp (r' * r') (r * r) /\
-      holomorphic_on_CR (open_disc z0 r') (fun z => f z) /\
+      holomorphic_on_CR (open_disc z0 r') (fun z => f z) /\ (* f is smooth *)
       forall z : CComplex,
         open_disc z0 r' z ->
         dbar_at f z C0 \/ dbar_at f z (g z).
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted dbar_poincare_one_var theories/ComplexAnalysis.v:482 END *)
         (* The actual statement: dbar_at f z (g z). Disjunction is a placeholder
            for the smoothness side condition. The proved version is:
              dbar_at f z (g z)

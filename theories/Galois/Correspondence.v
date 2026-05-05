@@ -219,27 +219,43 @@ Defined.
 (** Forward: if fix_group(F) ⊆ H, then fix_field(H) ⊆ F.
     (Every element fixed by all of H is in F, because fix_group(F) ⊆ H
     means every σ ∈ H already fixes F.) *)
-(** Forward direction (axiomatized — depends on Galois theory proper). *)
-Conjecture galois_adj_lr : forall (E : FieldExtension)
+(* CAG zero-dependent Admitted galois_adj_lr theories/Galois/Correspondence.v:228 BEGIN
+Lemma galois_adj_lr (E : FieldExtension)
     (F : IntermField E)
-    (H : { Hg : GaloisGroup E -> Prop | IsSubgroup E Hg }),
+    (H : { Hg : GaloisGroup E -> Prop | IsSubgroup E Hg }) :
     (forall σ, proj1_sig (fixing_subgroup E F) σ -> proj1_sig H σ) ->
     forall x, (fixed_field E H).(if_pred) x -> F.(if_pred) x.
+Proof.
+  Admitted.
+   CAG zero-dependent Admitted galois_adj_lr theories/Galois/Correspondence.v:228 END *)
+  (* Proof idea: x ∈ fix_field(H) means every σ ∈ H fixes x.
+     We need x ∈ F.  This direction requires Galois theory proper
+     (e.g. the Artin argument: if x ∉ F then some σ ∈ fix_group(F) ⊆ H
+     moves x, contradicting x ∈ fix_field(H)). *)
 
 (** Backward: if fix_field(H) ⊆ F, then fix_group(F) ⊆ H.
     (Every σ that fixes F also fixes all of fix_field(H), hence lies in H
     since fix_field(H) is the largest field fixed by H.) *)
-(** Backward direction (axiomatized — depends on Galois theory proper). *)
-Conjecture galois_adj_rl : forall (E : FieldExtension)
+(* CAG zero-dependent Admitted galois_adj_rl theories/Galois/Correspondence.v:243 BEGIN
+Lemma galois_adj_rl (E : FieldExtension)
     (F : IntermField E)
-    (H : { Hg : GaloisGroup E -> Prop | IsSubgroup E Hg }),
+    (H : { Hg : GaloisGroup E -> Prop | IsSubgroup E Hg }) :
     (forall x, (fixed_field E H).(if_pred) x -> F.(if_pred) x) ->
     forall σ, proj1_sig (fixing_subgroup E F) σ -> proj1_sig H σ.
+Proof.
+  Admitted.
+   CAG zero-dependent Admitted galois_adj_rl theories/Galois/Correspondence.v:243 END *)
+  (* Proof idea: σ fixes F ⊇ fix_field(H).  We need σ ∈ H.
+     This is the deeper direction: uses the fact that H = fix_group(fix_field(H))
+     for closed subgroups, which is the content of the Fundamental Theorem. *)
 
 (** ** Packaging as a GaloisConnection *)
 
+(* CAG zero-dependent Definition galois_connection theories/Galois/Correspondence.v:250 BEGIN
 Definition galois_connection (E : FieldExtension) :
     GaloisConnection ((IntermPoset E)^op) (SubgrpPoset E).
+   CAG zero-dependent Definition galois_connection theories/Galois/Correspondence.v:250 END *)
+(* CAG zero-dependent dependent-proof Definition galois_connection theories/Galois/Correspondence.v:250 BEGIN
 Proof.
   refine {|
     gc_left   := fix_group_mono E;
@@ -250,6 +266,7 @@ Proof.
   - exact (galois_adj_lr E).
   - exact (galois_adj_rl E).
 Defined.
+   CAG zero-dependent dependent-proof Definition galois_connection theories/Galois/Correspondence.v:250 END *)
 
 (** Notation: using the l ⊣ r convention from Adjunction.v
     (gc_left ⊣ gc_right):
@@ -268,11 +285,16 @@ Proof.
 Qed.
 
 (** Counit: fix_group(fix_field(H)) ≤ H  [in SubgrpPoset] *)
-(** Counit (axiomatized — non-trivial direction of the FT). *)
-Conjecture galois_counit : forall (E : FieldExtension)
-    (H : { Hg : GaloisGroup E -> Prop | IsSubgroup E Hg }),
+(* CAG zero-dependent Admitted galois_counit theories/Galois/Correspondence.v:285 BEGIN
+Lemma galois_counit (E : FieldExtension)
+    (H : { Hg : GaloisGroup E -> Prop | IsSubgroup E Hg }) :
     forall σ, proj1_sig (fixing_subgroup E (fixed_field E H)) σ ->
               proj1_sig H σ.
+Proof.
+  Admitted.
+   CAG zero-dependent Admitted galois_counit theories/Galois/Correspondence.v:285 END *)
+  (* fix_group(fix_field(H)) = all σ fixing fix_field(H).
+     We need σ ∈ H.  This is the non-trivial direction of the FT. *)
 
 (** ** Fundamental Theorem of Galois Theory *)
 
@@ -283,19 +305,46 @@ Conjecture galois_counit : forall (E : FieldExtension)
     additional machinery (algebraic closure, degree arguments, Artin's
     theorem) that we leave admitted. *)
 
-Definition IsGalois (E : FieldExtension) : Prop :=
-  (* The extension is normal and separable, i.e. L is the splitting field
-     of a separable polynomial over K. *)
-  True. (* placeholder — full definition requires polynomial machinery *)
+(** Predicate: a field extension is /normal/ — every irreducible
+    polynomial over [K] that has a root in [L] splits completely
+    in [L]. *)
+(* CAG zero-dependent Parameter is_normal_extension theories/Galois/Correspondence.v:311 BEGIN
+Parameter is_normal_extension : FieldExtension -> Prop.
+   CAG zero-dependent Parameter is_normal_extension theories/Galois/Correspondence.v:311 END *)
 
-Conjecture fundamental_theorem_galois : forall (E : FieldExtension) (hG : IsGalois E),
+(** Predicate: a field extension is /separable/ — every element of [L]
+    is a root of a separable polynomial over [K]. *)
+(* CAG zero-dependent Parameter is_separable_extension theories/Galois/Correspondence.v:315 BEGIN
+Parameter is_separable_extension : FieldExtension -> Prop.
+   CAG zero-dependent Parameter is_separable_extension theories/Galois/Correspondence.v:315 END *)
+
+(** [E = (K ↪ L)] is a /Galois extension/ when it is both normal and
+    separable.  Equivalently, [L] is the splitting field of a separable
+    polynomial over [K] (Lang, "Algebra" §VI.1, Cor. 1.16; Dummit–Foote
+    §14.1).  γ R37 — replaces the earlier
+    [Definition IsGalois := True] busywork (per
+    [feedback_trivial_collapse_busywork.md]) with a real conjunction
+    using paper-attributable Parameters for [is_normal_extension] /
+    [is_separable_extension]. *)
+(* CAG zero-dependent Definition IsGalois theories/Galois/Correspondence.v:325 BEGIN
+Definition IsGalois (E : FieldExtension) : Prop :=
+  is_normal_extension E /\ is_separable_extension E.
+   CAG zero-dependent Definition IsGalois theories/Galois/Correspondence.v:325 END *)
+
+(* CAG zero-dependent Admitted fundamental_theorem_galois theories/Galois/Correspondence.v:328 BEGIN
+Theorem fundamental_theorem_galois (E : FieldExtension) (hG : IsGalois E) :
+    (* (1) The maps are mutually inverse order-isomorphisms. *)
     (forall F : IntermField E,
        fixed_field E (fixing_subgroup E F) = F) /\
     (forall H : { Hg : GaloisGroup E -> Prop | IsSubgroup E Hg },
        forall σ, proj1_sig (fixing_subgroup E (fixed_field E H)) σ <->
                  proj1_sig H σ).
+Proof.
+  Admitted.
+   CAG zero-dependent Admitted fundamental_theorem_galois theories/Galois/Correspondence.v:328 END *)
 
 (** Corollary: the Galois correspondence reverses inclusion. *)
+(* CAG zero-dependent Corollary galois_order_reversing theories/Galois/Correspondence.v:331 BEGIN
 Corollary galois_order_reversing (E : FieldExtension) (hG : IsGalois E)
     (F1 F2 : IntermField E) :
     (forall x, F1.(if_pred) x -> F2.(if_pred) x) <->
@@ -315,3 +364,4 @@ Proof.
     (* x ∈ F1 = fix_field(fix_group(F1)) by FT *)
     rewrite (Hff F1). exact Hx.
 Qed.
+   CAG zero-dependent Corollary galois_order_reversing theories/Galois/Correspondence.v:331 END *)

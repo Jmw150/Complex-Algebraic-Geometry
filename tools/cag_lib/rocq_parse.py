@@ -52,10 +52,6 @@ _DECL_RE = re.compile(
     re.MULTILINE,
 )
 
-# Comment-stripping regex: handles nested (* ... *) comments by repeated pass.
-_COMMENT_OUTER = re.compile(r"\(\*[^()]*?\*\)", re.DOTALL)
-
-
 @dataclasses.dataclass
 class Declaration:
     name: str
@@ -67,13 +63,40 @@ class Declaration:
 
 
 def strip_comments(src: str) -> str:
-    """Strip Rocq (* ... *) comments. Repeated pass handles nesting."""
-    prev = None
-    cur = src
-    while prev != cur:
-        prev = cur
-        cur = _COMMENT_OUTER.sub(" ", cur)
-    return cur
+    """Strip nested Rocq (* ... *) comments while preserving line numbers."""
+    out: list[str] = []
+    i = 0
+    depth = 0
+    in_string = False
+    while i < len(src):
+        if depth == 0 and not in_string and src.startswith("(*", i):
+            depth = 1
+            out.append("  ")
+            i += 2
+            continue
+        if depth > 0:
+            if src.startswith("(*", i):
+                depth += 1
+                out.append("  ")
+                i += 2
+            elif src.startswith("*)", i):
+                depth -= 1
+                out.append("  ")
+                i += 2
+            else:
+                out.append("\n" if src[i] == "\n" else " ")
+                i += 1
+            continue
+        c = src[i]
+        out.append(c)
+        if c == '"':
+            if in_string and i + 1 < len(src) and src[i + 1] == '"':
+                out.append(src[i + 1])
+                i += 2
+                continue
+            in_string = not in_string
+        i += 1
+    return "".join(out)
 
 
 def _line_of(src: str, offset: int) -> int:

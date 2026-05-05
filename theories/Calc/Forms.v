@@ -78,31 +78,40 @@ From CAG Require Import Calc.MultiIndex.
     Wirtinger-CR bridge flagged by γ R18 — i.e. a real-partial
     [Rderiv]-witness foundation — which has not yet been built. *)
 
+(* CAG zero-dependent Axiom partial_wirtinger_witness theories/Calc/Forms.v:81 BEGIN
 Axiom partial_wirtinger_witness :
   forall {n : nat}, bool -> (Cn n -> CComplex) -> Fin.t n -> Cn n -> CComplex.
+   CAG zero-dependent Axiom partial_wirtinger_witness theories/Calc/Forms.v:81 END *)
 
 (** Soundness: when the Prop-level Wirtinger value exists at [v], the
     witness equals it.  In CReal-valued mathematics this holds
     vacuously when no derivative exists; when the derivative exists as
     a unique value, the witness reproduces it. *)
+(* CAG zero-dependent Axiom partial_wirtinger_witness_correct theories/Calc/Forms.v:88 BEGIN
 Axiom partial_wirtinger_witness_correct :
   forall {n} (s : bool) (f : Cn n -> CComplex) (j : Fin.t n)
          (v : Cn n) (L : CComplex),
     (if s then partial_z_at f v j L else partial_zbar_at f v j L) ->
     Cequal (partial_wirtinger_witness s f j v) L.
+   CAG zero-dependent Axiom partial_wirtinger_witness_correct theories/Calc/Forms.v:88 END *)
 
 (** Holomorphic ∂_j witness — unchanged downstream API. *)
+(* CAG zero-dependent Definition partial_z_witness theories/Calc/Forms.v:95 BEGIN
 Definition partial_z_witness {n : nat}
     (f : Cn n -> CComplex) (j : Fin.t n) (v : Cn n) : CComplex :=
   partial_wirtinger_witness true f j v.
+   CAG zero-dependent Definition partial_z_witness theories/Calc/Forms.v:95 END *)
 
 (** Anti-holomorphic ∂̄_j witness — unchanged downstream API. *)
+(* CAG zero-dependent Definition partial_zbar_witness theories/Calc/Forms.v:100 BEGIN
 Definition partial_zbar_witness {n : nat}
     (f : Cn n -> CComplex) (j : Fin.t n) (v : Cn n) : CComplex :=
   partial_wirtinger_witness false f j v.
+   CAG zero-dependent Definition partial_zbar_witness theories/Calc/Forms.v:100 END *)
 
 (** Soundness for the holomorphic ∂_j projection — derived from the
     parametric correctness axiom by specialising [s := true]. *)
+(* CAG zero-dependent Lemma partial_z_witness_correct theories/Calc/Forms.v:106 BEGIN
 Lemma partial_z_witness_correct :
   forall {n} (f : Cn n -> CComplex) (j : Fin.t n) (v : Cn n) (L : CComplex),
     partial_z_at f v j L ->
@@ -111,9 +120,11 @@ Proof.
   intros n f j v L H. unfold partial_z_witness.
   exact (partial_wirtinger_witness_correct true f j v L H).
 Qed.
+   CAG zero-dependent Lemma partial_z_witness_correct theories/Calc/Forms.v:106 END *)
 
 (** Soundness for the anti-holomorphic ∂̄_j projection — derived from
     the parametric correctness axiom by specialising [s := false]. *)
+(* CAG zero-dependent Lemma partial_zbar_witness_correct theories/Calc/Forms.v:117 BEGIN
 Lemma partial_zbar_witness_correct :
   forall {n} (f : Cn n -> CComplex) (j : Fin.t n) (v : Cn n) (L : CComplex),
     partial_zbar_at f v j L ->
@@ -122,6 +133,7 @@ Proof.
   intros n f j v L H. unfold partial_zbar_witness.
   exact (partial_wirtinger_witness_correct false f j v L H).
 Qed.
+   CAG zero-dependent Lemma partial_zbar_witness_correct theories/Calc/Forms.v:117 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 2. Conversion: nat → Fin.t n with default                         *)
@@ -230,6 +242,7 @@ Fixpoint csum_index_aux
 
 (** ∂̄ of a (p,q)-form: produces a (p, q+1)-form.  The [(I, J')]
     coefficient is [Σ_r (-1)^r ∂̄_{J'_r} α_{I, J' ∖ J'_r}]. *)
+(* CAG zero-dependent Definition pqf_dbar theories/Calc/Forms.v:233 BEGIN
 Definition pqf_dbar {n p q : nat} (alpha : PQForm n p q) : PQForm n p (S q) :=
   {| pqf_at :=
        fun (I : MultiIndex n p) (Jp : MultiIndex n (S q)) (z : Cn n) =>
@@ -251,9 +264,11 @@ Definition pqf_dbar {n p q : nat} (alpha : PQForm n p q) : PQForm n p (S q) :=
               | right _ => C0
               end)
   |}.
+   CAG zero-dependent Definition pqf_dbar theories/Calc/Forms.v:233 END *)
 
 (** ∂ of a (p,q)-form: produces a (p+1, q)-form.  The [(I', J)]
     coefficient is [Σ_r (-1)^r ∂_{I'_r} α_{I' ∖ I'_r, J}]. *)
+(* CAG zero-dependent Definition pqf_del theories/Calc/Forms.v:257 BEGIN
 Definition pqf_del {n p q : nat} (alpha : PQForm n p q) : PQForm n (S p) q :=
   {| pqf_at :=
        fun (Ip : MultiIndex n (S p)) (J : MultiIndex n q) (z : Cn n) =>
@@ -275,6 +290,7 @@ Definition pqf_del {n p q : nat} (alpha : PQForm n p q) : PQForm n (S p) q :=
               | right _ => C0
               end)
   |}.
+   CAG zero-dependent Definition pqf_del theories/Calc/Forms.v:257 END *)
 
 (* ------------------------------------------------------------------ *)
 (** * 6. Pullback                                                       *)

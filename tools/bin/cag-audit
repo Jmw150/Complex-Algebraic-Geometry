@@ -7,6 +7,10 @@ TOOLS_ROOT="$(dirname "$HERE")"
 PROJECT_ROOT="$(dirname "$TOOLS_ROOT")"
 
 OCAML_BIN="$PROJECT_ROOT/_build/default/tools/ocaml/cag_audit/cag_audit.exe"
+if [ "${1:-}" = "label" ] || [ "${1:-}" = "deps" ]; then
+  exec env PYTHONPATH="$TOOLS_ROOT" python3 -m cag_audit.cli "$@"
+fi
+
 if [ -x "$OCAML_BIN" ]; then
   exec "$OCAML_BIN" "$@"
 fi

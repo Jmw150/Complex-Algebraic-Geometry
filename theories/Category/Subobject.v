@@ -84,17 +84,21 @@ Proof.
     rewrite C.(id_left) in Hu1. exact Hu1.
 Qed.
 
-(** [id_pullback_gives_monic] requires regularity / diagonal-epic
-    hypothesis on C; not provable in full generality. Axiomatized
-    at the interface level. *)
-Axiom id_pullback_gives_monic : forall {C : Category} {A B : C.(Ob)} (m : C⟦A, B⟧),
+(* CAG zero-dependent Admitted id_pullback_gives_monic theories/Category/Subobject.v:92 BEGIN
+Lemma id_pullback_gives_monic {C : Category} {A B : C.(Ob)} (m : C⟦A, B⟧) :
     IsPullback m m A -> IsMonomorphism m.
+Proof.
+  (* General categorical proof requires the category to be regular or
+     the diagonal to be epic. Keep admitted for now. *)
+  Admitted.
+   CAG zero-dependent Admitted id_pullback_gives_monic theories/Category/Subobject.v:92 END *)
 
 (* ------------------------------------------------------------------ *)
 (** ** Lemma 2.11.19: Pullback-preserving functors preserve monics     *)
 (* ------------------------------------------------------------------ *)
 
 (** A functor that preserves pullbacks also preserves monomorphisms. *)
+(* CAG zero-dependent Lemma preserves_pullbacks_preserves_monics theories/Category/Subobject.v:99 BEGIN
 Lemma preserves_pullbacks_preserves_monics {C D : Category}
     (F : Functor C D)
     (hpb : forall {A B E : C.(Ob)} (f : C⟦A, E⟧) (g : C⟦B, E⟧) (P : C.(Ob)),
@@ -107,6 +111,7 @@ Proof.
   apply id_pullback_gives_monic.
   exact (@hpb A A B m m A (monic_gives_id_pullback m Hm)).
 Qed.
+   CAG zero-dependent Lemma preserves_pullbacks_preserves_monics theories/Category/Subobject.v:99 END *)
 
 (* ------------------------------------------------------------------ *)
 (** ** Subobjects                                                       *)

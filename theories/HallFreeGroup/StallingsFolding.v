@@ -1955,6 +1955,7 @@ Proof. intros r G Hwf Hnd. apply fold_iterate_folded_wf_nodup; assumption. Qed.
     [v2] in the folded graph can correspond to either [v1] or [v2] in
     the original). Stated below as a conditional axiom for now. *)
 
+(* CAG zero-dependent Conjecture fold_preserves_subgroup_backward theories/HallFreeGroup/StallingsFolding.v:1958 BEGIN
 Conjecture fold_preserves_subgroup_backward :
   forall {r : nat} (G : LGraph r) (w : list (Letter r)),
     wf_graph G ->
@@ -1963,9 +1964,11 @@ Conjecture fold_preserves_subgroup_backward :
             w
             (fold_iterate (num_vertices G) G).(lg_base) ->
     path_in G G.(lg_base) w G.(lg_base).
+   CAG zero-dependent Conjecture fold_preserves_subgroup_backward theories/HallFreeGroup/StallingsFolding.v:1958 END *)
 
 (** Combined iff version: forward direction is proven, backward is the
     remaining axiom. *)
+(* CAG zero-dependent Lemma fold_preserves_subgroup theories/HallFreeGroup/StallingsFolding.v:1969 BEGIN
 Lemma fold_preserves_subgroup :
   forall {r : nat} (G : LGraph r) (w : list (Letter r)),
     wf_graph G ->
@@ -1979,3 +1982,4 @@ Proof.
   - apply fold_preserves_subgroup_forward, Hwf.
   - apply fold_preserves_subgroup_backward, Hwf.
 Qed.
+   CAG zero-dependent Lemma fold_preserves_subgroup theories/HallFreeGroup/StallingsFolding.v:1969 END *)

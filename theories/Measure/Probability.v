@@ -169,34 +169,42 @@ Definition rv_nonneg {Omega : ProbSpace} (X : RandomVariable Omega) : Prop :=
     abstract expectation operator pending the integration construction.
 
     Source: Williams §6, Durrett §1.4. *)
+(* CAG zero-dependent Parameter expectation_nonneg theories/Measure/Probability.v:172 BEGIN
 Parameter expectation_nonneg :
   forall (Omega : ProbSpace) (X : RandomVariable Omega), NNExtCReal.
+   CAG zero-dependent Parameter expectation_nonneg theories/Measure/Probability.v:172 END *)
 
 (** Axiom: E[c] = c for constants. *)
+(* CAG zero-dependent Conjecture expectation_const theories/Measure/Probability.v:176 BEGIN
 Conjecture expectation_const :
   forall (Omega : ProbSpace) (c : CReal),
     ~ CRealLtProp c (inject_Q 0) ->
     expectation_nonneg Omega (const_rv Omega c) = NNFin c.
+   CAG zero-dependent Conjecture expectation_const theories/Measure/Probability.v:176 END *)
 
 (** Axiom: E is monotone — if X ≤ Y pointwise (and both non-negative),
     then E[X] ≤ E[Y]. *)
+(* CAG zero-dependent Conjecture expectation_monotone theories/Measure/Probability.v:183 BEGIN
 Conjecture expectation_monotone :
   forall (Omega : ProbSpace) (X Y : RandomVariable Omega),
     rv_nonneg X -> rv_nonneg Y ->
     (forall omega, ~ CRealLtProp (rv_fn Y omega) (rv_fn X omega)) ->
     nne_le (expectation_nonneg Omega X) (expectation_nonneg Omega Y).
+   CAG zero-dependent Conjecture expectation_monotone theories/Measure/Probability.v:183 END *)
 
 (** Axiom: linearity (additivity) of expectation for non-negative RVs. *)
 Definition rv_add {Omega : ProbSpace} (X Y : RandomVariable Omega) : Prop :=
   True.  (* placeholder: building (X+Y) as a random variable requires showing
             measurability of pointwise sum; left as future work *)
 
+(* CAG zero-dependent Conjecture expectation_additive theories/Measure/Probability.v:194 BEGIN
 Conjecture expectation_additive :
   forall (Omega : ProbSpace) (X Y XY : RandomVariable Omega),
     rv_nonneg X -> rv_nonneg Y ->
     (forall omega, rv_fn XY omega = CReal_plus (rv_fn X omega) (rv_fn Y omega)) ->
     expectation_nonneg Omega XY =
     nne_add (expectation_nonneg Omega X) (expectation_nonneg Omega Y).
+   CAG zero-dependent Conjecture expectation_additive theories/Measure/Probability.v:194 END *)
 
 (* ================================================================== *)
 (** ** 6. Markov's inequality                                           *)
@@ -217,11 +225,14 @@ Definition rv_ge_event {Omega : ProbSpace} (X : RandomVariable Omega)
 (** Measurability of {X ≥ a} = complement of {X < a}.
     For now: treated as an axiom pending the full strict-less-than
     measurability infrastructure. *)
+(* CAG zero-dependent Conjecture rv_ge_event_measurable theories/Measure/Probability.v:226 BEGIN
 Conjecture rv_ge_event_measurable :
   forall {Omega : ProbSpace} (X : RandomVariable Omega) (a : CReal),
     sigma_in (ps_sigma Omega) (rv_ge_event X a).
+   CAG zero-dependent Conjecture rv_ge_event_measurable theories/Measure/Probability.v:226 END *)
 
 (** Markov's inequality as a deferred axiom. *)
+(* CAG zero-dependent Conjecture markov_inequality theories/Measure/Probability.v:225 BEGIN
 Conjecture markov_inequality :
   forall (Omega : ProbSpace) (X : RandomVariable Omega) (a : CReal),
     rv_nonneg X ->
@@ -230,6 +241,7 @@ Conjecture markov_inequality :
       (nne_add (Pr Omega (rv_ge_event X a) (rv_ge_event_measurable X a))
                nne_zero)  (* "Pr(X ≥ a) · a" with explicit reformulation *)
       (expectation_nonneg Omega X).
+   CAG zero-dependent Conjecture markov_inequality theories/Measure/Probability.v:225 END *)
 
 (* ================================================================== *)
 (** ** 7. Variance and Chebyshev's inequality                           *)
@@ -261,20 +273,29 @@ Conjecture markov_inequality :
     Chebyshev statement, whose body is [True]), the trivial discharge
     added no mathematical content.  Restoring the [Parameter] keeps
     the abstract operator honest. *)
+(* CAG zero-dependent Parameter variance theories/Measure/Probability.v:272 BEGIN
 Parameter variance :
   forall (Omega : ProbSpace), RandomVariable Omega -> NNExtCReal.
+   CAG zero-dependent Parameter variance theories/Measure/Probability.v:272 END *)
 
 (** Chebyshev's inequality:
-       Pr(|X - μ| ≥ a) ≤ Var(X) / a^2.
+       Pr(|X − μ| ≥ a) ≤ Var(X) / a².
 
-    Body is a [True] placeholder; converted to [Lemma] (Infra-4)
-    since the body is trivially provable.  The substantive
-    Chebyshev statement is NOT captured by the [True] body. *)
-Lemma chebyshev_inequality :
+    Famous old; Conjecture per skip policy (γ R37 — replaces the
+    earlier [Lemma … True] busywork form per
+    [feedback_trivial_collapse_busywork.md]).  Source: Chebyshev 1867;
+    Williams §6.4; Durrett §1.6.  Stated as
+    [Pr(X ≥ a) · a² ≤ variance Omega X], the standard side-formulation
+    avoiding NNExtCReal division — see also [markov_inequality]. *)
+(* CAG zero-dependent Conjecture chebyshev_inequality theories/Measure/Probability.v:276 BEGIN
+Conjecture chebyshev_inequality :
   forall (Omega : ProbSpace) (X : RandomVariable Omega) (a : CReal),
     CRpositive a ->
-    True. (* placeholder for the full statement *)
-Proof. intros; exact I. Qed.
+    nne_le
+      (nne_add (Pr Omega (rv_ge_event X a) (rv_ge_event_measurable X a))
+               nne_zero)
+      (variance Omega X).
+   CAG zero-dependent Conjecture chebyshev_inequality theories/Measure/Probability.v:276 END *)
 
 (* ================================================================== *)
 (** ** 8. Borel–Cantelli lemma (statement)                              *)
@@ -286,6 +307,7 @@ Definition limsup_events {Omega : ProbSpace}
   (A : nat -> Subset (ps_carrier Omega)) : Subset (ps_carrier Omega) :=
   fun omega => forall N : nat, exists n : nat, (n >= N)%nat /\ A n omega.
 
+(* CAG zero-dependent Conjecture borel_cantelli_1 theories/Measure/Probability.v:294 BEGIN
 Conjecture borel_cantelli_1 :
   forall (Omega : ProbSpace)
          (A : nat -> Subset (ps_carrier Omega))
@@ -294,19 +316,43 @@ Conjecture borel_cantelli_1 :
          (sumF : CReal),
     nne_series_converges_to (fun n => Pr Omega (A n) (HA n)) (NNFin sumF) ->
     Pr Omega (limsup_events A) Hlimsup_meas = nne_zero.
+   CAG zero-dependent Conjecture borel_cantelli_1 theories/Measure/Probability.v:294 END *)
 
 (* ================================================================== *)
 (** ** 9. Kolmogorov 0-1 law (statement)                                *)
 (* ================================================================== *)
 
-(** Tail σ-algebra of an independent sequence of RVs has only events of
-    probability 0 or 1. Source: Williams §3.6.  Body is a [True]
-    placeholder; converted from [Conjecture] to [Lemma] (Infra-4).
-    Full mathematical content is NOT captured by the trivial body;
-    a real formalization needs the tail σ-algebra construction. *)
-Lemma kolmogorov_0_1_law :
-  forall (Omega : ProbSpace), True. (* placeholder *)
-Proof. intros; exact I. Qed.
+(** Predicate: the probability of an event is either 0 or 1
+    (a "trivial" event under the given probability measure). *)
+Definition is_zero_or_one_event {Omega : ProbSpace}
+    (A : Subset (ps_carrier Omega)) (HA : sigma_in (ps_sigma Omega) A) : Prop :=
+  Pr Omega A HA = nne_zero \/
+  Pr Omega A HA = NNFin (inject_Q 1).
+
+(** Predicate: an event is "tail-measurable" with respect to a sequence
+    of independent random variables (axiomatized — full formalization
+    requires the tail σ-algebra construction).  Source: Williams §3.6. *)
+(* CAG zero-dependent Parameter is_tail_event theories/Measure/Probability.v:329 BEGIN
+Parameter is_tail_event :
+  forall (Omega : ProbSpace) (X : nat -> RandomVariable Omega)
+         (A : Subset (ps_carrier Omega)),
+    sigma_in (ps_sigma Omega) A -> Prop.
+   CAG zero-dependent Parameter is_tail_event theories/Measure/Probability.v:329 END *)
+
+(** Kolmogorov 0-1 law (famous old; Conjecture per skip policy):
+    every tail event of an independent sequence of random variables has
+    probability 0 or 1.  Source: Kolmogorov 1933 §III.5; Williams §3.6;
+    Durrett §2.5.  γ R37 — replaces the earlier [Lemma … True]
+    busywork. *)
+(* CAG zero-dependent Conjecture kolmogorov_0_1_law theories/Measure/Probability.v:327 BEGIN
+Conjecture kolmogorov_0_1_law :
+  forall (Omega : ProbSpace) (X : nat -> RandomVariable Omega)
+         (A : Subset (ps_carrier Omega))
+         (HA : sigma_in (ps_sigma Omega) A),
+    (forall i j : nat, i <> j -> rv_independent (X i) (X j)) ->
+    is_tail_event Omega X A HA ->
+    is_zero_or_one_event A HA.
+   CAG zero-dependent Conjecture kolmogorov_0_1_law theories/Measure/Probability.v:327 END *)
 
 (** *** Summary of axioms in this file (compliance):
 

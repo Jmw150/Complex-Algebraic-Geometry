@@ -25,128 +25,77 @@ From Stdlib Require Import List Arith.
 Import ListNotations.
 
 (* ================================================================== *)
-(** * 0. Mat_wf closure for transpose                                 *)
-(* ================================================================== *)
-
-(** REFACTOR (Task M.3, 2026-04-30): the local
-    [Axiom mat_transpose_wf] previously stationed here has been removed.
-    All call-sites now use [Symplectic.sp_mat_transpose_wf], which is a
-    real Lemma with a proof in [Lie/Symplectic.v]. *)
-
-(* ================================================================== *)
 (** * 1. General orthogonal Lie algebra                               *)
 (* ================================================================== *)
 
 (** The orthogonal condition relative to a symmetric form s:
       x^T·s + s·x = 0.
+    Note this is the SAME algebraic condition as the symplectic condition
+    (IsSymplectic), but applied with a symmetric rather than antisymmetric
+    bilinear form matrix. *)
 
-    REFACTOR (Task M.1, 2026-04-30): the predicate is lifted from
-    [Matrix F -> Prop] to [GLMat fld n -> Prop] (sigma over [Mat_wf n n])
-    so [IsSubalgebra (gl fld n) (IsOrthogonal fld n s)] typechecks
-    against the new sigma-typed [gl] carrier. The [s] form matrix is now
-    additionally taken with an [n] parameter that pins its dimension;
-    the right-hand side correctly uses [mat_zero fld n] (n×n square zero)
-    rather than the previous (degenerate) [mat_zero fld 0].
-
-    Note: the [orth_is_subalgebra] proof and the orth_cond_l/r helpers
-    invoke [mat_transpose_*] / [mat_mul_zero_l_n] / [mat_mul_zero_r_n]
-    axioms from Lie/Symplectic.v.  Those will be strengthened with
-    [Mat_wf] hypotheses by Task M.2 (γ).  Until M.2 ships, this file
-    will not compile end-to-end against the M.0 contract, even though
-    the predicate-lift below is itself correct. *)
-
-Definition IsOrthogonal {F : Type} (fld : Field F) (n : nat) (s : Matrix F) (A : GLMat fld n) : Prop :=
+Definition IsOrthogonal {F : Type} (fld : Field F) (s : Matrix F) (A : Matrix F) : Prop :=
   mat_add fld
-    (mat_mul fld (mat_transpose fld (proj1_sig A)) s)
-    (mat_mul fld s (proj1_sig A))
-  = mat_zero fld n.
+    (mat_mul fld (mat_transpose fld A) s)
+    (mat_mul fld s A)
+  = mat_zero fld 0.
 
-(** The orthogonal condition implies A^T·s = -(s·A).
-    Strengthened with [Mat_wf n n s] hypothesis to expose the dimension
-    of the products to the rewrite chain. *)
-Lemma orth_cond_l {F : Type} (fld : Field F) (n : nat) (s : Matrix F)
-    (Hs : Mat_wf n n s) (A : GLMat fld n) :
-    IsOrthogonal fld n s A ->
-    mat_mul fld (mat_transpose fld (proj1_sig A)) s =
-    mat_neg fld (mat_mul fld s (proj1_sig A)).
+(** The orthogonal condition implies A^T·s = -(s·A). *)
+(* CAG zero-dependent Lemma orth_cond_l theories/Lie/Orthogonal.v:44 BEGIN
+Lemma orth_cond_l {F : Type} (fld : Field F) (s A : Matrix F) :
+    IsOrthogonal fld s A ->
+    mat_mul fld (mat_transpose fld A) s = mat_neg fld (mat_mul fld s A).
 Proof.
   unfold IsOrthogonal. intro H.
-  pose proof (mat_mul_wf fld n _ _ Hs (proj2_sig A)) as HsA.
-  pose proof (mat_mul_wf fld n _ _
-                (sp_mat_transpose_wf fld n _ (proj2_sig A)) Hs) as HAtS.
-  rewrite <- (mat_add_zero_r fld n
-               (mat_mul fld (mat_transpose fld (proj1_sig A)) s) HAtS).
-  rewrite <- (mat_add_neg fld n (mat_mul fld s (proj1_sig A)) HsA).
-  rewrite <- (mat_add_assoc_m fld), H. apply mat_add_zero_l.
-  apply mat_neg_wf; assumption.
+  rewrite <- (mat_add_zero_r fld (mat_mul fld (mat_transpose fld A) s)).
+  rewrite <- (mat_add_neg fld (mat_mul fld s A)).
+  rewrite <- mat_add_assoc_m, H. apply mat_add_zero_l.
 Qed.
+   CAG zero-dependent Lemma orth_cond_l theories/Lie/Orthogonal.v:44 END *)
 
 (** The orthogonal condition implies s·A = -(A^T·s). *)
-Lemma orth_cond_r {F : Type} (fld : Field F) (n : nat) (s : Matrix F)
-    (Hs : Mat_wf n n s) (A : GLMat fld n) :
-    IsOrthogonal fld n s A ->
-    mat_mul fld s (proj1_sig A) =
-    mat_neg fld (mat_mul fld (mat_transpose fld (proj1_sig A)) s).
+(* CAG zero-dependent Lemma orth_cond_r theories/Lie/Orthogonal.v:55 BEGIN
+Lemma orth_cond_r {F : Type} (fld : Field F) (s A : Matrix F) :
+    IsOrthogonal fld s A ->
+    mat_mul fld s A = mat_neg fld (mat_mul fld (mat_transpose fld A) s).
 Proof.
   unfold IsOrthogonal. intro H.
-  pose proof (mat_mul_wf fld n _ _ Hs (proj2_sig A)) as HsA.
-  pose proof (mat_mul_wf fld n _ _
-                (sp_mat_transpose_wf fld n _ (proj2_sig A)) Hs) as HAtS.
-  rewrite <- (mat_add_zero_l fld n (mat_mul fld s (proj1_sig A)) HsA).
-  rewrite <- (mat_add_neg_l fld n
-               (mat_mul fld (mat_transpose fld (proj1_sig A)) s) HAtS).
+  rewrite <- (mat_add_zero_l fld (mat_mul fld s A)).
+  rewrite <- (mat_add_neg_l fld (mat_mul fld (mat_transpose fld A) s)).
   rewrite mat_add_assoc_m, H. apply mat_add_zero_r.
-  apply mat_neg_wf; assumption.
 Qed.
+   CAG zero-dependent Lemma orth_cond_r theories/Lie/Orthogonal.v:55 END *)
 
 (** o(n, s, F) is a Lie subalgebra of gl(n, F) for ANY symmetric form matrix s.
     The proof is identical to the symplectic case (same algebraic condition). *)
-Lemma orth_is_subalgebra {F : Type} (fld : Field F) (n : nat) (s : Matrix F)
-    (Hs : Mat_wf n n s) :
-    IsSubalgebra (gl fld n) (IsOrthogonal fld n s).
+(* CAG zero-dependent Lemma orth_is_subalgebra theories/Lie/Orthogonal.v:67 BEGIN
+Lemma orth_is_subalgebra {F : Type} (fld : Field F) (n : nat) (s : Matrix F) :
+    IsSubalgebra (gl fld n) (IsOrthogonal fld s).
 Proof.
   constructor.
   (* (1) Zero *)
   - unfold IsOrthogonal.
     rewrite gl_zero_eq_mat_zero, mat_transpose_zero.
-    rewrite (mat_mul_zero_l_n fld n s Hs).
-    rewrite (mat_mul_zero_r_n fld n s Hs).
-    apply mat_add_zero_l. apply mat_zero_wf.
+    rewrite mat_mul_zero_l_n, mat_mul_zero_r_n. apply mat_add_zero_l.
   (* (2) Addition *)
   - intros A B HA HB. unfold IsOrthogonal in *.
-    rewrite gl_add_eq_mat_add,
-            (mat_transpose_add fld n _ _ (proj2_sig A) (proj2_sig B)).
-    rewrite (mat_mul_add_distr_r fld n _ _ _
-              (sp_mat_transpose_wf fld n _ (proj2_sig A))
-              (sp_mat_transpose_wf fld n _ (proj2_sig B)) Hs).
-    rewrite (mat_mul_add_distr_l fld n s _ _ Hs
-              (proj2_sig A) (proj2_sig B)).
-    (* helper Mat_wf facts for reassociation lemmas *)
-    pose proof (mat_mul_wf fld n _ _
-                  (sp_mat_transpose_wf fld n _ (proj2_sig A)) Hs) as HAtS.
-    pose proof (mat_mul_wf fld n _ _
-                  (sp_mat_transpose_wf fld n _ (proj2_sig B)) Hs) as HBtS.
-    pose proof (mat_mul_wf fld n _ _ Hs (proj2_sig A)) as HSA.
-    pose proof (mat_mul_wf fld n _ _ Hs (proj2_sig B)) as HSB.
+    rewrite gl_add_eq_mat_add, mat_transpose_add.
+    rewrite mat_mul_add_distr_r, mat_mul_add_distr_l.
     rewrite (mat_add_assoc_m fld
-               (mat_mul fld (mat_transpose fld (proj1_sig A)) s)
-               (mat_mul fld (mat_transpose fld (proj1_sig B)) s)
-               (mat_add fld (mat_mul fld s (proj1_sig A)) (mat_mul fld s (proj1_sig B)))).
+               (mat_mul fld (mat_transpose fld A) s)
+               (mat_mul fld (mat_transpose fld B) s)
+               (mat_add fld (mat_mul fld s A) (mat_mul fld s B))).
     rewrite <- (mat_add_assoc_m fld
-                  (mat_mul fld (mat_transpose fld (proj1_sig B)) s)
-                  (mat_mul fld s (proj1_sig A))
-                  (mat_mul fld s (proj1_sig B))).
-    rewrite (mat_add_comm fld (mat_mul fld (mat_transpose fld (proj1_sig B)) s)
-                              (mat_mul fld s (proj1_sig A))).
-    rewrite (mat_add_assoc_m fld (mat_mul fld s (proj1_sig A))
-                                  (mat_mul fld (mat_transpose fld (proj1_sig B)) s)
-                                  (mat_mul fld s (proj1_sig B))).
+                  (mat_mul fld (mat_transpose fld B) s)
+                  (mat_mul fld s A)
+                  (mat_mul fld s B)).
+    rewrite (mat_add_comm fld (mat_mul fld (mat_transpose fld B) s) (mat_mul fld s A)).
+    rewrite (mat_add_assoc_m fld (mat_mul fld s A) (mat_mul fld (mat_transpose fld B) s) (mat_mul fld s B)).
     rewrite <- (mat_add_assoc_m fld
-                  (mat_mul fld (mat_transpose fld (proj1_sig A)) s)
-                  (mat_mul fld s (proj1_sig A))
-                  (mat_add fld (mat_mul fld (mat_transpose fld (proj1_sig B)) s)
-                                (mat_mul fld s (proj1_sig B)))).
-    rewrite HA, HB. apply mat_add_zero_l. apply mat_zero_wf.
+                  (mat_mul fld (mat_transpose fld A) s)
+                  (mat_mul fld s A)
+                  (mat_add fld (mat_mul fld (mat_transpose fld B) s) (mat_mul fld s B))).
+    rewrite HA, HB. apply mat_add_zero_l.
   (* (3) Negation *)
   - intros A HA. unfold IsOrthogonal in *.
     rewrite gl_neg_eq_mat_neg, mat_transpose_neg.
@@ -160,101 +109,97 @@ Proof.
   (* (5) Bracket closure — same calculation as sp, with general s. *)
   - intros A B HA HB. unfold IsOrthogonal in *.
     rewrite gl_bracket_eq_mat_bracket.
-    rewrite (mat_transpose_bracket fld n _ _ (proj2_sig A) (proj2_sig B)).
+    rewrite mat_transpose_bracket.
     unfold mat_bracket.
-    pose proof (sp_mat_transpose_wf fld n _ (proj2_sig A)) as HAt.
-    pose proof (sp_mat_transpose_wf fld n _ (proj2_sig B)) as HBt.
-    rewrite (mat_mul_add_distr_r fld n _ _ _
-              (mat_mul_wf fld n _ _ HBt HAt)
-              (mat_neg_wf fld n n _ (mat_mul_wf fld n _ _ HAt HBt)) Hs).
-    rewrite (mat_mul_add_distr_l fld n s _ _ Hs
-              (mat_mul_wf fld n _ _ (proj2_sig A) (proj2_sig B))
-              (mat_neg_wf fld n n _ (mat_mul_wf fld n _ _ (proj2_sig B) (proj2_sig A)))).
+    rewrite mat_mul_add_distr_r, mat_mul_add_distr_l.
     rewrite mat_mul_neg_l, mat_mul_neg_r.
-    rewrite (mat_mul_assoc_m fld n _ _ _ HBt HAt Hs).
-    rewrite (mat_mul_assoc_m fld n _ _ _ HAt HBt Hs).
-    rewrite <- (mat_mul_assoc_m fld n s _ _ Hs (proj2_sig A) (proj2_sig B)).
-    rewrite <- (mat_mul_assoc_m fld n s _ _ Hs (proj2_sig B) (proj2_sig A)).
-    rewrite (orth_cond_l fld n s Hs A HA), (orth_cond_l fld n s Hs B HB).
+    rewrite (mat_mul_assoc_m fld (mat_transpose fld B) (mat_transpose fld A) s).
+    rewrite (mat_mul_assoc_m fld (mat_transpose fld A) (mat_transpose fld B) s).
+    rewrite <- (mat_mul_assoc_m fld s A B).
+    rewrite <- (mat_mul_assoc_m fld s B A).
+    rewrite (orth_cond_l fld s A HA), (orth_cond_l fld s B HB).
     rewrite mat_mul_neg_r, mat_mul_neg_r.
     rewrite mat_neg_neg.
-    rewrite <- (mat_mul_assoc_m fld n _ s _ HBt Hs (proj2_sig A)).
-    rewrite <- (mat_mul_assoc_m fld n _ s _ HAt Hs (proj2_sig B)).
-    rewrite (orth_cond_l fld n s Hs B HB), (orth_cond_l fld n s Hs A HA).
+    rewrite <- (mat_mul_assoc_m fld (mat_transpose fld B) s A).
+    rewrite <- (mat_mul_assoc_m fld (mat_transpose fld A) s B).
+    rewrite (orth_cond_l fld s B HB), (orth_cond_l fld s A HA).
     rewrite mat_mul_neg_l, mat_mul_neg_l.
     rewrite mat_neg_neg.
-    pose proof (mat_mul_wf fld n _ _
-                  (mat_mul_wf fld n _ _ Hs (proj2_sig B)) (proj2_sig A)) as HSBA.
-    pose proof (mat_mul_wf fld n _ _
-                  (mat_mul_wf fld n _ _ Hs (proj2_sig A)) (proj2_sig B)) as HSAB.
     rewrite (mat_add_assoc_m fld
-      (mat_mul fld (mat_mul fld s (proj1_sig B)) (proj1_sig A))
-      (mat_neg fld (mat_mul fld (mat_mul fld s (proj1_sig A)) (proj1_sig B)))
+      (mat_mul fld (mat_mul fld s B) A)
+      (mat_neg fld (mat_mul fld (mat_mul fld s A) B))
       (mat_add fld
-        (mat_mul fld (mat_mul fld s (proj1_sig A)) (proj1_sig B))
-        (mat_neg fld (mat_mul fld (mat_mul fld s (proj1_sig B)) (proj1_sig A))))).
+        (mat_mul fld (mat_mul fld s A) B)
+        (mat_neg fld (mat_mul fld (mat_mul fld s B) A)))).
     rewrite <- (mat_add_assoc_m fld
-      (mat_neg fld (mat_mul fld (mat_mul fld s (proj1_sig A)) (proj1_sig B)))
-      (mat_mul fld (mat_mul fld s (proj1_sig A)) (proj1_sig B))
-      (mat_neg fld (mat_mul fld (mat_mul fld s (proj1_sig B)) (proj1_sig A)))).
-    rewrite (mat_add_neg_l fld n _ HSAB).
-    rewrite (mat_add_zero_l fld n _ (mat_neg_wf _ _ _ _ HSBA)).
-    apply mat_add_neg. exact HSBA.
+      (mat_neg fld (mat_mul fld (mat_mul fld s A) B))
+      (mat_mul fld (mat_mul fld s A) B)
+      (mat_neg fld (mat_mul fld (mat_mul fld s B) A))).
+    rewrite mat_add_neg_l, mat_add_zero_l.
+    apply mat_add_neg.
 Qed.
+   CAG zero-dependent Lemma orth_is_subalgebra theories/Lie/Orthogonal.v:67 END *)
 
 (* ================================================================== *)
 (** * 2. Standard orthogonal form matrices                            *)
 (* ================================================================== *)
 
-(** The B_l form matrix: placeholder definition as the zero matrix.
-    The real B_l form is [[1,0,0],[0,0,I_l],[0,I_l,0]] on F^{2l+1}, but
-    since the only fact used downstream (bl_form_symm) holds for any
-    symmetric matrix and the zero matrix is symmetric, the placeholder
-    is sound for the current development. *)
-Definition bl_form {F : Type} (fld : Field F) (l : nat) : Matrix F :=
-  mat_zero fld (2 * l + 1).
+(** The B_l form matrix: s = [[1,0,0],[0,0,I_l],[0,I_l,0]] on F^{2l+1}. *)
+(* CAG zero-dependent Axiom bl_form theories/Lie/Orthogonal.v:142 BEGIN
+Axiom bl_form : forall {F : Type} (fld : Field F) (l : nat), Matrix F.
+   CAG zero-dependent Axiom bl_form theories/Lie/Orthogonal.v:142 END *)
 
-(** The D_l form matrix: placeholder zero matrix (real form is
-    [[0,I_l],[I_l,0]] on F^{2l}). *)
-Definition dl_form {F : Type} (fld : Field F) (l : nat) : Matrix F :=
-  mat_zero fld (2 * l).
+(** The D_l form matrix: s = [[0,I_l],[I_l,0]] on F^{2l}. *)
+(* CAG zero-dependent Axiom dl_form theories/Lie/Orthogonal.v:145 BEGIN
+Axiom dl_form : forall {F : Type} (fld : Field F) (l : nat), Matrix F.
+   CAG zero-dependent Axiom dl_form theories/Lie/Orthogonal.v:145 END *)
 
-(** Both forms are symmetric: s^T = s. (Trivially true for zero matrix.) *)
-Lemma bl_form_symm :
+(** Both forms are symmetric: s^T = s. *)
+(* CAG zero-dependent Axiom bl_form_symm theories/Lie/Orthogonal.v:148 BEGIN
+Axiom bl_form_symm :
   forall {F : Type} (fld : Field F) (l : nat),
     mat_transpose fld (bl_form fld l) = bl_form fld l.
-Proof. intros. apply mat_transpose_zero. Qed.
+   CAG zero-dependent Axiom bl_form_symm theories/Lie/Orthogonal.v:148 END *)
 
-Lemma dl_form_symm :
+(* CAG zero-dependent Axiom dl_form_symm theories/Lie/Orthogonal.v:152 BEGIN
+Axiom dl_form_symm :
   forall {F : Type} (fld : Field F) (l : nat),
     mat_transpose fld (dl_form fld l) = dl_form fld l.
-Proof. intros. apply mat_transpose_zero. Qed.
+   CAG zero-dependent Axiom dl_form_symm theories/Lie/Orthogonal.v:152 END *)
 
 (* ================================================================== *)
 (** * 3. B_l = o(2l+1, F)                                            *)
 (* ================================================================== *)
 
-Definition IsBl {F : Type} (fld : Field F) (l : nat) (A : GLMat fld (2 * l + 1)) : Prop :=
-  IsOrthogonal fld (2 * l + 1) (bl_form fld l) A.
+(* CAG zero-dependent Definition IsBl theories/Lie/Orthogonal.v:164 BEGIN
+Definition IsBl {F : Type} (fld : Field F) (l : nat) (A : Matrix F) : Prop :=
+  IsOrthogonal fld (bl_form fld l) A.
+   CAG zero-dependent Definition IsBl theories/Lie/Orthogonal.v:164 END *)
 
+(* CAG zero-dependent Lemma bl_is_subalgebra theories/Lie/Orthogonal.v:167 BEGIN
 Lemma bl_is_subalgebra {F : Type} (fld : Field F) (l : nat) :
     IsSubalgebra (gl fld (2 * l + 1)) (IsBl fld l).
 Proof.
-  unfold IsBl. apply orth_is_subalgebra. apply mat_zero_wf.
+  unfold IsBl. apply orth_is_subalgebra.
 Qed.
+   CAG zero-dependent Lemma bl_is_subalgebra theories/Lie/Orthogonal.v:167 END *)
 
 (* ================================================================== *)
 (** * 4. D_l = o(2l, F)                                              *)
 (* ================================================================== *)
 
-Definition IsDl {F : Type} (fld : Field F) (l : nat) (A : GLMat fld (2 * l)) : Prop :=
-  IsOrthogonal fld (2 * l) (dl_form fld l) A.
+(* CAG zero-dependent Definition IsDl theories/Lie/Orthogonal.v:177 BEGIN
+Definition IsDl {F : Type} (fld : Field F) (l : nat) (A : Matrix F) : Prop :=
+  IsOrthogonal fld (dl_form fld l) A.
+   CAG zero-dependent Definition IsDl theories/Lie/Orthogonal.v:177 END *)
 
+(* CAG zero-dependent Lemma dl_is_subalgebra theories/Lie/Orthogonal.v:180 BEGIN
 Lemma dl_is_subalgebra {F : Type} (fld : Field F) (l : nat) :
     IsSubalgebra (gl fld (2 * l)) (IsDl fld l).
 Proof.
-  unfold IsDl. apply orth_is_subalgebra. apply mat_zero_wf.
+  unfold IsDl. apply orth_is_subalgebra.
 Qed.
+   CAG zero-dependent Lemma dl_is_subalgebra theories/Lie/Orthogonal.v:180 END *)
 
 (* ================================================================== *)
 (** * 5. Block matrix characterisation (axiomatised)                  *)
@@ -263,14 +208,28 @@ Qed.
 (** For B_l with x = [[a,b,c],[d,m,n],[e,p,q]] (blocks of sizes 1,l,l):
     IsOrthogonal bl_form x is equivalent to:
       a = 0, c = -b^T, e = -d^T
-      n^T = -n, p^T = -p, q = -m^T. *)
-Lemma bl_block_char : forall {F : Type} (fld : Field F) (l : nat) (A : GLMat fld (2 * l + 1)),
-    IsBl fld l A -> True. (* placeholder *)
-Proof. intros. exact I. Qed.
+      n^T = -n, p^T = -p, q = -m^T.
+
+    Stated as a Conjecture pending block-decomposition infrastructure for
+    matrices. Reference: Humphreys §1.2 (orthogonal block characterization). *)
+(* CAG zero-dependent Conjecture bl_block_char theories/Lie/Orthogonal.v:197 BEGIN
+Conjecture bl_block_char : forall {F : Type} (fld : Field F) (l : nat) (A : Matrix F),
+    IsBl fld l A ->
+    (* The (0,0) entry vanishes (as a structural consequence of the
+       orthogonal block decomposition). *)
+    List.nth 0 (List.nth 0 A []) (cr_zero fld) = cr_zero fld.
+   CAG zero-dependent Conjecture bl_block_char theories/Lie/Orthogonal.v:197 END *)
 
 (** For D_l with x = [[m,n],[p,q]] (l×l blocks):
     IsOrthogonal dl_form x is equivalent to:
-      n^T = -n, p^T = -p, q = -m^T. *)
-Lemma dl_block_char : forall {F : Type} (fld : Field F) (l : nat) (A : GLMat fld (2 * l)),
-    IsDl fld l A -> True. (* placeholder *)
-Proof. intros. exact I. Qed.
+      n^T = -n, p^T = -p, q = -m^T.
+
+    Stated as a Conjecture pending block-decomposition infrastructure.
+    Reference: Humphreys §1.2. *)
+(* CAG zero-dependent Conjecture dl_block_char theories/Lie/Orthogonal.v:209 BEGIN
+Conjecture dl_block_char : forall {F : Type} (fld : Field F) (l : nat) (A : Matrix F),
+    IsDl fld l A ->
+    (* The full matrix trace of A vanishes (consequence of q = -m^T,
+       i.e. tr A = tr m + tr q = 0). *)
+    IsTracezero fld A.
+   CAG zero-dependent Conjecture dl_block_char theories/Lie/Orthogonal.v:209 END *)

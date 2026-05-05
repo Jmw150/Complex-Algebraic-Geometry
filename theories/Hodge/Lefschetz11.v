@@ -41,28 +41,41 @@ Local Open Scope CReal_scope.
 (* ================================================================== *)
 
 (** The composition H²(M,Z) → H²(M,C) → H^{0,2}(M). *)
+(* CAG zero-dependent Parameter beta_H2_to_H02 theories/Hodge/Lefschetz11.v:44 BEGIN
 Parameter beta_H2_to_H02 : forall (M : KahlerManifold),
     HdR M 2 -> Hpq M 0 2.
+   CAG zero-dependent Parameter beta_H2_to_H02 theories/Hodge/Lefschetz11.v:44 END *)
 
 (** β is the (0,2)-projection of the de Rham class. *)
+(* CAG zero-dependent Theorem beta_is_02_projection theories/Hodge/Lefschetz11.v:50 BEGIN
 Theorem beta_is_02_projection : forall (M : KahlerManifold) (γ : HdR M 2),
     (** beta_H2_to_H02 M γ = (0,2)-component of γ in Hodge decomposition — axiomatized *)
     True.
 Proof. intros; exact I. Qed.
+   CAG zero-dependent Theorem beta_is_02_projection theories/Hodge/Lefschetz11.v:50 END *)
 
 (** For γ ∈ H^{1,1}(M), β(γ) = 0 since γ has no (0,2)-component. *)
+(* CAG zero-dependent Theorem beta_vanishes_on_11 theories/Hodge/Lefschetz11.v:56 BEGIN
 Theorem beta_vanishes_on_11 : forall (M : KahlerManifold)
     (γ : HdR M 2) (ξ : Hpq M 1 1),
     (** if γ has only (1,1)-component then β(γ) = 0 — axiomatized *)
     True.
 Proof. intros; exact I. Qed.
+   CAG zero-dependent Theorem beta_vanishes_on_11 theories/Hodge/Lefschetz11.v:56 END *)
 
 (* ================================================================== *)
 (** * 2. Exactness of the exponential sequence at Pic(M)               *)
 (* ================================================================== *)
 
 (** The kernel of c₁ is the image of H¹(M,O) → Pic(M) (topologically trivial bundles). *)
-(* c1_kernel_is_image_H1O axiom removed: was unsound. Not used. *)
+(* CAG zero-dependent Admitted c1_kernel_is_image_H1O theories/Hodge/Lefschetz11.v:70 BEGIN
+Theorem c1_kernel_is_image_H1O : forall (M : KahlerManifold)
+    (L : HolLineBundleCech (km_manifold M)),
+    c1 M L = vs_zero (HdR_vs M 2) <->
+    (** L comes from a holomorphic function / is topologically trivial — axiomatized *)
+    True.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted c1_kernel_is_image_H1O theories/Hodge/Lefschetz11.v:70 END *)
 
 (** β ∘ c₁ = 0: for any line bundle L, β(c₁(L)) = 0. *)
 Theorem beta_c1_zero : forall (M : KahlerManifold)
@@ -72,27 +85,41 @@ Theorem beta_c1_zero : forall (M : KahlerManifold)
 Proof. intros; exact I. Qed.
 
 (** Exactness: a class γ ∈ H²(M,Z) is in the image of c₁ iff β(γ) = 0. *)
-(* c1_image_char axiom removed: was unsound. Not used. *)
+(* CAG zero-dependent Admitted c1_image_char theories/Hodge/Lefschetz11.v:84 BEGIN
+Theorem c1_image_char : forall (M : KahlerManifold) (γ : HdR M 2),
+    (exists L : HolLineBundleCech (km_manifold M), c1 M L = γ) <->
+    (** β(γ) = 0 — axiomatized *)
+    True.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted c1_image_char theories/Hodge/Lefschetz11.v:84 END *)
 
 (* ================================================================== *)
 (** * 3. Lefschetz (1,1) theorem                                       *)
 (* ================================================================== *)
 
 (** Main theorem: every integral (1,1)-class is η_D for a divisor D. *)
-Conjecture lefschetz_theorem_on_11_classes : forall (M : KahlerManifold)
+(* CAG zero-dependent Admitted lefschetz_theorem_on_11_classes theories/Hodge/Lefschetz11.v:100 BEGIN
+Theorem lefschetz_theorem_on_11_classes : forall (M : KahlerManifold)
     (γ : HdR M 2),
+    (** γ ∈ H^{1,1}(M) *)
     (exists ξ : Hpq M 1 1, True) ->
+    (** γ is integral *)
     (exists L : HolLineBundleCech (km_manifold M), c1 M L = γ) ->
+    (** then γ = η_D for some divisor D *)
     exists D : Divisor (km_manifold M),
     divisor_class M D = γ.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted lefschetz_theorem_on_11_classes theories/Hodge/Lefschetz11.v:100 END *)
 
 (** Packaged version: H^{1,1}(M) ∩ H²(M,Z) = {η_D : D divisor}. *)
+(* CAG zero-dependent Definition lefschetz_11_statement theories/Hodge/Lefschetz11.v:111 BEGIN
 Definition lefschetz_11_statement (M : KahlerManifold) : Prop :=
   forall γ : HdR M 2,
   (** γ has pure type (1,1) and is integral *)
   True ->
   exists D : Divisor (km_manifold M),
   divisor_class M D = γ.
+   CAG zero-dependent Definition lefschetz_11_statement theories/Hodge/Lefschetz11.v:111 END *)
 
 (* ================================================================== *)
 (** * 4. Nondegeneracy of divisor-curve pairing                        *)

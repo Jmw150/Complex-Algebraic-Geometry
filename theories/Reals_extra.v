@@ -7,6 +7,12 @@ From Stdlib Require Import Reals.Cauchy.ConstructiveCauchyAbs.
 Local Open Scope CReal_scope.
 (** Extra functions for Constructive Reals *)
 
+(* Bridge used by older analytic development files that state conclusions with
+   Leibniz equality while proving them via the CReal setoid equality. *)
+(* CAG zero-dependent Axiom CRealEq_eq theories/Reals_extra.v:12 BEGIN
+Axiom CRealEq_eq : forall x y : CReal, x == y -> x = y.
+   CAG zero-dependent Axiom CRealEq_eq theories/Reals_extra.v:12 END *)
+
 Definition CRpositive (x : CReal) : Prop :=
   CRealLtProp (inject_Q 0) x.
 

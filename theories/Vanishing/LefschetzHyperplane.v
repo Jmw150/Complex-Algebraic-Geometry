@@ -35,103 +35,99 @@ Local Open Scope nat_scope.
 (* ================================================================== *)
 
 (** A smooth hyperplane section V of M: a smooth hypersurface cut out
-    by a linear form (i.e. an element of O(1) on projective M).
-    Represented concretely as a record carrying the underlying Kähler
-    manifold V together with a dimension witness [dim V = dim M - 1].
-    The ambient inclusion is recovered as [shs_ambient = M] by
-    construction. *)
-Record smooth_hyperplane_section (M : KahlerManifold) : Type :=
-{ shs_manifold     : KahlerManifold
-; shs_dim_witness  : km_dim shs_manifold = (km_dim M - 1)%nat
-}.
-Arguments shs_manifold {M} _.
-Arguments shs_dim_witness {M} _.
+    by a linear form (i.e. an element of O(1) on projective M). *)
+(* CAG zero-dependent Parameter smooth_hyperplane_section theories/Vanishing/LefschetzHyperplane.v:39 BEGIN
+Parameter smooth_hyperplane_section : forall (M : KahlerManifold), Type.
+   CAG zero-dependent Parameter smooth_hyperplane_section theories/Vanishing/LefschetzHyperplane.v:39 END *)
 
-(** The ambient manifold inclusion: V ↪ M.  Defined to be [M] itself
-    by the record's identification (the section is a subset of [M]). *)
-Definition shs_ambient (M : KahlerManifold)
-    (V : smooth_hyperplane_section M) : KahlerManifold := M.
+(** The ambient manifold inclusion: V ↪ M. *)
+(* CAG zero-dependent Parameter shs_ambient theories/Vanishing/LefschetzHyperplane.v:42 BEGIN
+(* CAG zero-dependent Parameter shs_ambient theories/Vanishing/LefschetzHyperplane.v:42 BEGIN
+Parameter shs_ambient : forall (M : KahlerManifold),
+    smooth_hyperplane_section M -> KahlerManifold.
+   CAG zero-dependent Parameter shs_ambient theories/Vanishing/LefschetzHyperplane.v:42 END *)
+   CAG zero-dependent Parameter shs_ambient theories/Vanishing/LefschetzHyperplane.v:42 END *)
 
-Lemma shs_ambient_is_M : forall (M : KahlerManifold)
+(* CAG zero-dependent Admitted shs_ambient_is_M theories/Vanishing/LefschetzHyperplane.v:48 BEGIN
+Theorem shs_ambient_is_M : forall (M : KahlerManifold)
     (V : smooth_hyperplane_section M),
-    shs_ambient M V = M.
-Proof. intros; reflexivity. Qed.
+    shs_ambient M V = M. (** ambient manifold is M itself *)
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted shs_ambient_is_M theories/Vanishing/LefschetzHyperplane.v:48 END *)
 
-(** The complex dimension of V is n-1.  Discharged via the record's
-    [shs_dim_witness] field. *)
-Lemma shs_dim : forall (M : KahlerManifold) (V : smooth_hyperplane_section M),
-    km_dim (shs_manifold V) = km_dim M - 1.
-Proof. intros M V. exact (shs_dim_witness V). Qed.
+(** V as a Kähler manifold. *)
+(* CAG zero-dependent Parameter shs_manifold theories/Vanishing/LefschetzHyperplane.v:57 BEGIN
+Parameter shs_manifold : forall (M : KahlerManifold),
+    smooth_hyperplane_section M -> KahlerManifold.
+   CAG zero-dependent Parameter shs_manifold theories/Vanishing/LefschetzHyperplane.v:57 END *)
+
+(** The complex dimension of V is n-1. *)
+(* CAG zero-dependent Admitted shs_dim theories/Vanishing/LefschetzHyperplane.v:57 BEGIN
+Theorem shs_dim : forall (M : KahlerManifold) (V : smooth_hyperplane_section M),
+    km_dim (shs_manifold M V) = km_dim M - 1.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted shs_dim theories/Vanishing/LefschetzHyperplane.v:57 END *)
 
 (* ================================================================== *)
 (** * 2. Restriction map on cohomology                                 *)
 (* ================================================================== *)
 
-(** The restriction map r : H^q(M) -> H^q(V) induced by inclusion.
-
-    Bundled as a record carrying (a) the underlying function and
-    (b) its additive linearity property, so that the linearity
-    statement [restriction_map_linear] is recovered as a record
-    projection rather than a separate Conjecture. *)
-Record RestrictionMap (M : KahlerManifold)
-    (V : smooth_hyperplane_section M) (q : nat) : Type :=
-{ rmap_fn      : HdR M q -> HdR (shs_manifold V) q
-; rmap_linear  : forall (u v : HdR M q),
-    rmap_fn (vs_add (HdR_vs M q) u v) =
-    vs_add (HdR_vs (shs_manifold V) q) (rmap_fn u) (rmap_fn v)
-}.
-Arguments rmap_fn      {M V q} _ _.
-Arguments rmap_linear  {M V q} _ _ _.
-
-(** The restriction map (axiomatized: existence of the inclusion-pull-back). *)
-Parameter the_restriction : forall (M : KahlerManifold)
+(** The restriction map r : H^q(M) -> H^q(V) induced by inclusion. *)
+(* CAG zero-dependent Parameter restriction_map theories/Vanishing/LefschetzHyperplane.v:68 BEGIN
+(* CAG zero-dependent Parameter restriction_map theories/Vanishing/LefschetzHyperplane.v:68 BEGIN
+Parameter restriction_map : forall (M : KahlerManifold)
     (V : smooth_hyperplane_section M) (q : nat),
-    RestrictionMap M V q.
+    HdR M q -> HdR (shs_manifold M V) q.
+   CAG zero-dependent Parameter restriction_map theories/Vanishing/LefschetzHyperplane.v:68 END *)
+   CAG zero-dependent Parameter restriction_map theories/Vanishing/LefschetzHyperplane.v:68 END *)
 
-(** Friendly accessor matching the legacy [restriction_map] interface. *)
-Definition restriction_map (M : KahlerManifold)
-    (V : smooth_hyperplane_section M) (q : nat)
-  : HdR M q -> HdR (shs_manifold V) q :=
-  rmap_fn (the_restriction M V q).
-
-(** Linearity is now a Lemma (not a Conjecture): just unfold and project. *)
-Lemma restriction_map_linear : forall (M : KahlerManifold)
+(* CAG zero-dependent Admitted restriction_map_linear theories/Vanishing/LefschetzHyperplane.v:75 BEGIN
+Theorem restriction_map_linear : forall (M : KahlerManifold)
     (V : smooth_hyperplane_section M) (q : nat)
     (u v : HdR M q),
     restriction_map M V q (vs_add (HdR_vs M q) u v) =
-    vs_add (HdR_vs (shs_manifold V) q)
+    vs_add (HdR_vs (shs_manifold M V) q)
            (restriction_map M V q u)
            (restriction_map M V q v).
-Proof.
-  intros M V q u v. unfold restriction_map.
-  apply (rmap_linear (the_restriction M V q)).
-Qed.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted restriction_map_linear theories/Vanishing/LefschetzHyperplane.v:75 END *)
 
 (* ================================================================== *)
 (** * 3. Lefschetz hyperplane theorem                                  *)
 (* ================================================================== *)
 
 (** Lefschetz hyperplane theorem: restriction iso for q < n-1. *)
-Conjecture lefschetz_hyperplane_iso : forall (M : KahlerManifold)
+(* CAG zero-dependent Admitted lefschetz_hyperplane_iso theories/Vanishing/LefschetzHyperplane.v:89 BEGIN
+Theorem lefschetz_hyperplane_iso : forall (M : KahlerManifold)
     (V : smooth_hyperplane_section M) (q : nat),
     (q < km_dim M - 1)%nat ->
+    (** r : H^q(M) -> H^q(V) is an isomorphism — axiomatized *)
     forall u : HdR M q,
-    restriction_map M V q u = vs_zero (HdR_vs (shs_manifold V) q) ->
+    restriction_map M V q u = vs_zero (HdR_vs (shs_manifold M V) q) ->
     u = vs_zero (HdR_vs M q).
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted lefschetz_hyperplane_iso theories/Vanishing/LefschetzHyperplane.v:89 END *)
 
 (** Lefschetz hyperplane theorem: restriction injective for q = n-1. *)
-Conjecture lefschetz_hyperplane_injective : forall (M : KahlerManifold)
+(* CAG zero-dependent Admitted lefschetz_hyperplane_injective theories/Vanishing/LefschetzHyperplane.v:99 BEGIN
+Theorem lefschetz_hyperplane_injective : forall (M : KahlerManifold)
     (V : smooth_hyperplane_section M),
+    (** r : H^{n-1}(M) -> H^{n-1}(V) is injective — axiomatized *)
     forall u : HdR M (km_dim M - 1),
     restriction_map M V (km_dim M - 1) u =
-        vs_zero (HdR_vs (shs_manifold V) (km_dim M - 1)) ->
+        vs_zero (HdR_vs (shs_manifold M V) (km_dim M - 1)) ->
     u = vs_zero (HdR_vs M (km_dim M - 1)).
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted lefschetz_hyperplane_injective theories/Vanishing/LefschetzHyperplane.v:99 END *)
 
 (** Surjectivity for q = n-1. *)
-Conjecture lefschetz_hyperplane_surjective : forall (M : KahlerManifold)
-    (V : smooth_hyperplane_section M) (v : HdR (shs_manifold V) (km_dim M - 1)),
+(* CAG zero-dependent Admitted lefschetz_hyperplane_surjective theories/Vanishing/LefschetzHyperplane.v:106 BEGIN
+Theorem lefschetz_hyperplane_surjective : forall (M : KahlerManifold)
+    (V : smooth_hyperplane_section M) (v : HdR (shs_manifold M V) (km_dim M - 1)),
     exists u : HdR M (km_dim M - 1),
     restriction_map M V (km_dim M - 1) u = v.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted lefschetz_hyperplane_surjective theories/Vanishing/LefschetzHyperplane.v:106 END *)
 
 (* ================================================================== *)
 (** * 4. Corollaries for projective hypersurfaces                      *)

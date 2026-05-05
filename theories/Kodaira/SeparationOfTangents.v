@@ -35,9 +35,11 @@ Local Open Scope CReal_scope.
 (* ================================================================== *)
 
 (** The subspace H⁰(M, O_x(L^k)) of sections vanishing at x. *)
+(* CAG zero-dependent Parameter sections_vanishing_at theories/Kodaira/SeparationOfTangents.v:38 BEGIN
 Parameter sections_vanishing_at : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (x : Cn (km_dim M)) (k : nat),
     Type.
+   CAG zero-dependent Parameter sections_vanishing_at theories/Kodaira/SeparationOfTangents.v:38 END *)
 
 (** Identification with H⁰(M̃, O(π*L^k - E)) via pullback. *)
 Theorem pullback_iso_vanishing_sections : forall (M : KahlerManifold)
@@ -68,7 +70,8 @@ Proof. intros; exact I. Qed.
 (* ================================================================== *)
 
 (** For k >> 0: H¹(M̃, O(π*L^k - 2E)) = 0 by Kodaira vanishing. *)
-Conjecture h1_vanishes_single_blowup_twice : forall (M : KahlerManifold)
+(* CAG zero-dependent Admitted h1_vanishes_single_blowup_twice theories/Kodaira/SeparationOfTangents.v:85 BEGIN
+Theorem h1_vanishes_single_blowup_twice : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (x : Cn (km_dim M)),
     positive_line_bundle M L ->
     exists k0 : nat,
@@ -82,6 +85,8 @@ Conjecture h1_vanishes_single_blowup_twice : forall (M : KahlerManifold)
                         (neg_exceptional_line_bundle M x))
                     0 1,
     α = HDolb_zero (blowup M x) _ 0 1.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted h1_vanishes_single_blowup_twice theories/Kodaira/SeparationOfTangents.v:85 END *)
 
 (* ================================================================== *)
 (** * 4. Commutativity of restriction and differential                  *)
@@ -101,11 +106,14 @@ Proof. intros; exact I. Qed.
 (* ================================================================== *)
 
 (** The differential map d_x : H⁰(M, O(L^k)) → T_x*M ⊗ L_x^k. *)
+(* CAG zero-dependent Parameter differential_map theories/Kodaira/SeparationOfTangents.v:104 BEGIN
 Parameter differential_map : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (x : Cn (km_dim M)) (k : nat),
     HDolb M (lb_power M L k) 0 0 -> Cn (km_dim M) -> CComplex.
+   CAG zero-dependent Parameter differential_map theories/Kodaira/SeparationOfTangents.v:104 END *)
 
 (** For k >> 0, d_x is surjective for all x. *)
+(* CAG zero-dependent Theorem sections_of_large_positive_power_separate_tangent_vectors theories/Kodaira/SeparationOfTangents.v:116 BEGIN
 Theorem sections_of_large_positive_power_separate_tangent_vectors :
     forall (M : KahlerManifold) (L : HolLineBundleCech (km_manifold M)),
     positive_line_bundle M L ->
@@ -116,3 +124,4 @@ Theorem sections_of_large_positive_power_separate_tangent_vectors :
     (** d_x : H⁰(M,O(L^k)) → T_x*M ⊗ L_x^k is surjective — axiomatized *)
     True.
 Proof. intros; exists 0%nat; intros; exact I. Qed.
+   CAG zero-dependent Theorem sections_of_large_positive_power_separate_tangent_vectors theories/Kodaira/SeparationOfTangents.v:116 END *)

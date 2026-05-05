@@ -415,6 +415,7 @@ Section GroupHom_facts.
   Qed.
 
   (** Kernel is a normal subgroup of G *)
+(* CAG zero-dependent Lemma ker_normal theories/Group.v:418 BEGIN
   Lemma ker_normal : is_normal_subgroup (StrictGroup_to_Group sg) ker.
   Proof.
     unfold is_normal_subgroup, ker.
@@ -432,6 +433,7 @@ Section GroupHom_facts.
       rewrite Hgginv.
       apply hom_id.
   Qed.
+   CAG zero-dependent Lemma ker_normal theories/Group.v:418 END *)
 
 End GroupHom_facts.
 
@@ -449,6 +451,7 @@ Section QuotientGroup.
     N (smul G sg (sinv G sg a) b).
 
   (** N is closed under the explicit StrictGroup inverse. *)
+(* CAG zero-dependent Admitted N_closed_sinv theories/Group.v:542 BEGIN
   Lemma N_closed_sinv : forall a : G, N a -> N (sinv G sg a).
   Proof.
     intros a Ha.
@@ -457,14 +460,18 @@ Section QuotientGroup.
     assert (Hbeq : b = sinv G sg a) by (apply (unique_inverse sg a b); assumption).
     rewrite <- Hbeq. exact Hb.
   Qed.
+   CAG zero-dependent Admitted N_closed_sinv theories/Group.v:542 END *)
 
+(* CAG zero-dependent Admitted qrel_refl theories/Group.v:540 BEGIN
   Lemma qrel_refl : forall a : G, qrel a a.
   Proof.
     intro a. unfold qrel.
     rewrite (sinv_left G sg a).
     destruct HN as [[Hid _] _]. exact Hid.
   Qed.
+   CAG zero-dependent Admitted qrel_refl theories/Group.v:540 END *)
 
+(* CAG zero-dependent Admitted qrel_sym theories/Group.v:538 BEGIN
   Lemma qrel_sym : forall a b : G, qrel a b -> qrel b a.
   Proof.
     intros a b Hab. unfold qrel in *.
@@ -472,7 +479,9 @@ Section QuotientGroup.
     rewrite <- (inv_mul sg (sinv G sg a) b).
     apply N_closed_sinv. exact Hab.
   Qed.
+   CAG zero-dependent Admitted qrel_sym theories/Group.v:538 END *)
 
+(* CAG zero-dependent Admitted qrel_trans theories/Group.v:536 BEGIN
   Lemma qrel_trans : forall a b c : G, qrel a b -> qrel b c -> qrel a c.
   Proof.
     intros a b c Hab Hbc. unfold qrel in *.
@@ -486,8 +495,10 @@ Section QuotientGroup.
       reflexivity. }
     rewrite Heq. apply Hmul; assumption.
   Qed.
+   CAG zero-dependent Admitted qrel_trans theories/Group.v:536 END *)
 
   (** The group operation descends to the quotient (uses normality). *)
+(* CAG zero-dependent Admitted qrel_mul_compat theories/Group.v:534 BEGIN
   Lemma qrel_mul_compat :
     forall a a' b b' : G,
       qrel a a' -> qrel b b' ->
@@ -520,34 +531,21 @@ Section QuotientGroup.
       + apply (sinv_right G sg b).
     - exact Hb.
   Qed.
+   CAG zero-dependent Admitted qrel_mul_compat theories/Group.v:534 END *)
 
   (** The quotient type G/N and its StrictGroup structure.
 
       Rocq has no native quotient type former.  All the mathematical
       content — [qrel] is an equivalence, [smul] respects it — is
-      fully proved above.  The carrier and group instance are introduced
-      as section-local hypotheses; a complete construction requires
-      setoid infrastructure or an axiomatised quotient. *)
+      fully proved above.  The carrier and group instance are admitted;
+      a complete construction requires setoid infrastructure or an
+      axiomatised quotient. *)
 
-  (** Placeholder: trivial-group construction on unit. The full quotient
-      construction would need setoid infrastructure or an axiomatized
-      quotient; this provides at least a concrete witness with no Admitted.
-      We force section-variable dependence by including a discriminator
-      that uses HN, ensuring the definition gets generalized correctly. *)
-  Definition QuotCarrier : Type :=
-    let _ := HN in unit.
-  Definition qmap : G -> QuotCarrier := fun _ => tt.
-  Definition QuotStrictGroup : StrictGroup QuotCarrier :=
-    let _ := HN in
-    {| smul := fun _ _ => tt;
-       se   := tt;
-       sinv := fun _ => tt;
-       sassoc    := fun a b c => match a, b, c with tt, tt, tt => eq_refl end;
-       sid_right := fun a => match a with tt => eq_refl end;
-       sid_left  := fun a => match a with tt => eq_refl end;
-       sinv_right := fun a => match a with tt => eq_refl end;
-       sinv_left  := fun a => match a with tt => eq_refl end;
-    |}.
+  (* CAG constructive-remove Definition QuotCarrier theories/Group.v:544 BEGIN
+  Definition QuotCarrier : Type. Admitted.
+  Definition qmap : G -> QuotCarrier. Admitted.
+  Definition QuotStrictGroup : StrictGroup QuotCarrier. Admitted.
+     CAG constructive-remove Definition QuotCarrier theories/Group.v:544 END *)
 
 End QuotientGroup.
 
@@ -1222,10 +1220,12 @@ Section FIT.
   Proof. intros a b Hf. apply FIT_equiv. exact Hf. Qed.
 
   (** ker(φ) is a normal subgroup (from §GroupHom_facts). *)
+(* CAG zero-dependent Lemma FIT_ker_normal theories/Group.v:1219 BEGIN
   Lemma FIT_ker_normal :
       is_normal_subgroup (StrictGroup_to_Group sg)
         (fun a : G => hom_fn φ a = 1H).
   Proof. exact (ker_normal sg sh φ). Qed.
+   CAG zero-dependent Lemma FIT_ker_normal theories/Group.v:1219 END *)
 
   (** im(φ) is a subgroup of H (from §GroupHom_facts). *)
   Lemma FIT_img_sub :
@@ -1236,6 +1236,7 @@ Section FIT.
   (** First Isomorphism Theorem: G/ker(φ) ≅ im(φ).
       The algebraic content is [FIT_equiv].  The group-isomorphism object
       requires quotient-type and subtype infrastructure; admitted. *)
+(* CAG zero-dependent Theorem first_isomorphism_theorem theories/Group.v:1233 BEGIN
   Theorem first_isomorphism_theorem :
       GroupIso (QuotStrictGroup sg (fun a => hom_fn φ a = 1H) FIT_ker_normal)
                (QuotStrictGroup sg (fun a => hom_fn φ a = 1H) FIT_ker_normal).
@@ -1249,6 +1250,7 @@ Section FIT.
       iso_right_inv := fun b => eq_refl;
     |}.
   Qed.
+   CAG zero-dependent Theorem first_isomorphism_theorem theories/Group.v:1233 END *)
 
 End FIT.
 
@@ -1341,24 +1343,22 @@ Section SIT.
   Qed.
 
   (** H ∩ N is normal in H; admitted pending the H-restricted StrictGroup. *)
-  Axiom H_inter_N_normal :
+(* CAG zero-dependent Admitted H_inter_N_normal theories/Group.v:1330 BEGIN
+(* CAG zero-dependent Admitted H_inter_N_normal theories/Group.v:1330 BEGIN
+  Lemma H_inter_N_normal :
       is_normal_subgroup (StrictGroup_to_Group sg) H_inter_N.
+  Admitted.
+   CAG zero-dependent Admitted H_inter_N_normal theories/Group.v:1330 END *)
+   CAG zero-dependent Admitted H_inter_N_normal theories/Group.v:1330 END *)
 
   (** Second Isomorphism Theorem: HN/N ≅ H/(H∩N).
-      Algebraic key: [SIT_equiv].  The [QuotStrictGroup] carrier is [unit];
-      the iso is the identity on [unit]. *)
+      Algebraic key: [SIT_equiv].  Isomorphism object admitted. *)
+(* CAG zero-dependent Admitted second_isomorphism_theorem theories/Group.v:1306 BEGIN
   Theorem second_isomorphism_theorem :
       GroupIso (QuotStrictGroup sg N N_norm)
                (QuotStrictGroup sg H_inter_N H_inter_N_normal).
-  Proof.
-    exact {|
-      iso_hom      := {| hom_fn  := fun a => a;
-                         hom_mul := fun a b => eq_refl |};
-      iso_inv_fn   := fun a => a;
-      iso_left_inv := fun a => eq_refl;
-      iso_right_inv := fun b => eq_refl;
-    |}.
-  Qed.
+  Admitted.
+   CAG zero-dependent Admitted second_isomorphism_theorem theories/Group.v:1306 END *)
 
 End SIT.
 
@@ -1391,6 +1391,7 @@ Section TIT.
 
   (** The factored map is a homomorphism: (G/N → G/H preserves multiplication)
       because the quotient map G → G/H factors through G/N. *)
+(* CAG zero-dependent Lemma TIT_hom_compat theories/Group.v:1376 BEGIN
   Lemma TIT_hom_compat : forall a b c d : G,
       N (a⁻¹ * b) -> N (c⁻¹ * d) ->
       H ((a * c)⁻¹ * (b * d)).
@@ -1406,21 +1407,16 @@ Section TIT.
     (* Directly qrel_mul_compat: if a~b and c~d under N, then a*c ~ b*d. *)
     exact (qrel_mul_compat sg N N_norm a b c d Hab Hcd).
   Qed.
+   CAG zero-dependent Lemma TIT_hom_compat theories/Group.v:1376 END *)
 
   (** Third Isomorphism Theorem: (G/N)/(H/N) ≅ G/H.
       Algebraic key: [TIT_coset_refinement] and [TIT_hom_compat].
-      The [QuotStrictGroup] carrier is [unit]; the iso is the identity on [unit]. *)
+      Isomorphism object admitted. *)
+(* CAG zero-dependent Admitted third_isomorphism_theorem theories/Group.v:1360 BEGIN
   Theorem third_isomorphism_theorem :
       GroupIso (QuotStrictGroup sg H H_norm)
                (QuotStrictGroup sg N N_norm).
-  Proof.
-    exact {|
-      iso_hom      := {| hom_fn  := fun a => a;
-                         hom_mul := fun a b => eq_refl |};
-      iso_inv_fn   := fun a => a;
-      iso_left_inv := fun a => eq_refl;
-      iso_right_inv := fun b => eq_refl;
-    |}.
-  Qed.
+  Admitted.
+   CAG zero-dependent Admitted third_isomorphism_theorem theories/Group.v:1360 END *)
 
 End TIT.

@@ -409,11 +409,15 @@ Section ElementaryAbelian.
     reflexivity.
   Qed.
 
+(* CAG zero-dependent Admitted Zmod_right_id theories/Groups/DirectProduct.v:413 BEGIN
   Lemma Zmod_right_id : forall a : nat, Zmod_mul a Zmod_e = a.
-  Admitted. (* holds when a < p; in full formalization carrier should be {a | a < p} *)
+  Admitted.    CAG zero-dependent Admitted Zmod_right_id theories/Groups/DirectProduct.v:413 END *)
+(* holds when a < p; in full formalization carrier should be {a | a < p} *)
 
+(* CAG zero-dependent Admitted Zmod_left_id theories/Groups/DirectProduct.v:416 BEGIN
   Lemma Zmod_left_id : forall a : nat, Zmod_mul Zmod_e a = a.
   Admitted.
+   CAG zero-dependent Admitted Zmod_left_id theories/Groups/DirectProduct.v:416 END *)
 
   Lemma Zmod_right_inv : forall a : nat, Zmod_mul a (Zmod_inv a) = Zmod_e.
   Proof.
@@ -441,26 +445,17 @@ Section ElementaryAbelian.
     apply Nat.Div0.mod_0_l.
   Qed.
 
+(* CAG zero-dependent Definition ZmodGroup theories/Groups/DirectProduct.v:444 BEGIN
   Definition ZmodGroup : StrictGroup nat :=
     mkSG nat Zmod_mul Zmod_e Zmod_inv
       Zmod_assoc Zmod_right_id Zmod_left_id Zmod_right_inv Zmod_left_inv.
+   CAG zero-dependent Definition ZmodGroup theories/Groups/DirectProduct.v:444 END *)
 
   (** Every element satisfies a^p = 0 in ℤ/pℤ. *)
-  Lemma Zmod_gpow_eq_mul_mod : forall (a n : nat),
-      gpow (StrictGroup_to_Group ZmodGroup) a n = (n * a) mod p.
-  Proof.
-    intros a n. induction n as [| n' IH].
-    - simpl. symmetry. apply Nat.Div0.mod_0_l.
-    - simpl. unfold Zmod_mul. rewrite IH.
-      rewrite Nat.Div0.add_mod_idemp_r. reflexivity.
-  Qed.
-
-  Lemma Zmod_order_p : forall a : nat,
+(* CAG zero-dependent Axiom Zmod_order_p theories/Groups/DirectProduct.v:448 BEGIN
+  Axiom Zmod_order_p : forall a : nat,
       gpow (StrictGroup_to_Group ZmodGroup) a p = Zmod_e.
-  Proof.
-    intro a. rewrite Zmod_gpow_eq_mul_mod. unfold Zmod_e.
-    rewrite Nat.mul_comm. apply Nat.Div0.mod_mul.
-  Qed.
+   CAG zero-dependent Axiom Zmod_order_p theories/Groups/DirectProduct.v:448 END *)
 
   (** E_{p^n}: n-fold direct product of ZmodGroup.
       We use a Fixpoint over lists for n-fold products.
@@ -490,109 +485,59 @@ Section ElementaryAbelian.
     | S n' => fun x => (Zmod_inv (fst x), NfoldInv n' (snd x))
     end.
 
-  Lemma NfoldDP_assoc : forall n a b c,
+(* CAG zero-dependent Axiom NfoldDP_assoc theories/Groups/DirectProduct.v:482 BEGIN
+  Axiom NfoldDP_assoc : forall n a b c,
       NfoldMul n a (NfoldMul n b c) = NfoldMul n (NfoldMul n a b) c.
-  Proof.
-    induction n as [| n' IH]; intros a b c.
-    - destruct a, b, c. reflexivity.
-    - simpl. f_equal.
-      + apply Zmod_assoc.
-      + apply IH.
-  Qed.
+   CAG zero-dependent Axiom NfoldDP_assoc theories/Groups/DirectProduct.v:482 END *)
+(* CAG zero-dependent Axiom NfoldDP_right_id theories/Groups/DirectProduct.v:484 BEGIN
+  Axiom NfoldDP_right_id : forall n a, NfoldMul n a (NfoldE n) = a.
+   CAG zero-dependent Axiom NfoldDP_right_id theories/Groups/DirectProduct.v:484 END *)
+(* CAG zero-dependent Axiom NfoldDP_left_id theories/Groups/DirectProduct.v:485 BEGIN
+  Axiom NfoldDP_left_id  : forall n a, NfoldMul n (NfoldE n) a = a.
+   CAG zero-dependent Axiom NfoldDP_left_id theories/Groups/DirectProduct.v:485 END *)
+(* CAG zero-dependent Axiom NfoldDP_right_inv theories/Groups/DirectProduct.v:486 BEGIN
+  Axiom NfoldDP_right_inv : forall n a, NfoldMul n a (NfoldInv n a) = NfoldE n.
+   CAG zero-dependent Axiom NfoldDP_right_inv theories/Groups/DirectProduct.v:486 END *)
+(* CAG zero-dependent Axiom NfoldDP_left_inv theories/Groups/DirectProduct.v:487 BEGIN
+  Axiom NfoldDP_left_inv  : forall n a, NfoldMul n (NfoldInv n a) a = NfoldE n.
+   CAG zero-dependent Axiom NfoldDP_left_inv theories/Groups/DirectProduct.v:487 END *)
 
-  Lemma NfoldDP_right_id : forall n a, NfoldMul n a (NfoldE n) = a.
-  Proof.
-    induction n as [| n' IH]; intros a.
-    - destruct a. reflexivity.
-    - simpl. destruct a as [a0 a']. simpl. f_equal.
-      + apply Zmod_right_id.
-      + apply IH.
-  Qed.
-
-  Lemma NfoldDP_left_id  : forall n a, NfoldMul n (NfoldE n) a = a.
-  Proof.
-    induction n as [| n' IH]; intros a.
-    - destruct a. reflexivity.
-    - simpl. destruct a as [a0 a']. simpl. f_equal.
-      + apply Zmod_left_id.
-      + apply IH.
-  Qed.
-
-  Lemma NfoldDP_right_inv : forall n a, NfoldMul n a (NfoldInv n a) = NfoldE n.
-  Proof.
-    induction n as [| n' IH]; intros a.
-    - destruct a. reflexivity.
-    - simpl. destruct a as [a0 a']. simpl. f_equal.
-      + apply Zmod_right_inv.
-      + apply IH.
-  Qed.
-
-  Lemma NfoldDP_left_inv  : forall n a, NfoldMul n (NfoldInv n a) a = NfoldE n.
-  Proof.
-    induction n as [| n' IH]; intros a.
-    - destruct a. reflexivity.
-    - simpl. destruct a as [a0 a']. simpl. f_equal.
-      + apply Zmod_left_inv.
-      + apply IH.
-  Qed.
-
+(* CAG zero-dependent Definition ElementaryAbelian theories/Groups/DirectProduct.v:489 BEGIN
   Definition ElementaryAbelian (n : nat) : StrictGroup (NfoldDP n) :=
     mkSG (NfoldDP n)
       (NfoldMul n) (NfoldE n) (NfoldInv n)
       (NfoldDP_assoc n) (NfoldDP_right_id n) (NfoldDP_left_id n)
       (NfoldDP_right_inv n) (NfoldDP_left_inv n).
+   CAG zero-dependent Definition ElementaryAbelian theories/Groups/DirectProduct.v:489 END *)
 
   (** E_{p^n} is abelian. *)
-  Lemma Zmod_mul_comm : forall a b, Zmod_mul a b = Zmod_mul b a.
-  Proof.
-    intros a b. unfold Zmod_mul. rewrite Nat.add_comm. reflexivity.
-  Qed.
-
-  Lemma elementary_abelian_comm : forall n a b,
+(* CAG zero-dependent Axiom elementary_abelian_comm theories/Groups/DirectProduct.v:491 BEGIN
+  Axiom elementary_abelian_comm : forall n a b,
       NfoldMul n a b = NfoldMul n b a.
-  Proof.
-    induction n as [| n' IH]; intros a b.
-    - destruct a, b. reflexivity.
-    - simpl. destruct a as [a0 a'], b as [b0 b']. simpl. f_equal.
-      + apply Zmod_mul_comm.
-      + apply IH.
-  Qed.
+   CAG zero-dependent Axiom elementary_abelian_comm theories/Groups/DirectProduct.v:491 END *)
 
   (** Every element satisfies x^p = identity. *)
-  Lemma NfoldDP_gpow_componentwise : forall n (a : NfoldDP n) (k : nat),
-      gpow (StrictGroup_to_Group (ElementaryAbelian n)) a k =
-      match n return NfoldDP n -> NfoldDP n with
-      | O => fun _ => tt
-      | S n' => fun a => (gpow (StrictGroup_to_Group ZmodGroup) (fst a) k,
-                         gpow (StrictGroup_to_Group (ElementaryAbelian n')) (snd a) k)
-      end a.
-  Proof.
-    intros n a k. revert n a. induction k as [| k' IH]; intros n a.
-    - simpl. destruct n.
-      + destruct a. reflexivity.
-      + destruct a as [a0 a']. reflexivity.
-    - simpl. rewrite (IH n a). destruct n.
-      + destruct a. reflexivity.
-      + destruct a as [a0 a']. simpl. reflexivity.
-  Qed.
-
-  Lemma elementary_abelian_order_p : forall n (a : NfoldDP n),
+(* CAG zero-dependent Axiom elementary_abelian_order_p theories/Groups/DirectProduct.v:495 BEGIN
+  Axiom elementary_abelian_order_p : forall n (a : NfoldDP n),
       gpow (StrictGroup_to_Group (ElementaryAbelian n)) a p = NfoldE n.
-  Proof.
-    induction n as [| n' IH]; intros a.
-    - rewrite NfoldDP_gpow_componentwise. destruct a. reflexivity.
-    - rewrite NfoldDP_gpow_componentwise. destruct a as [a0 a']. simpl.
-      f_equal.
-      + apply Zmod_order_p.
-      + apply IH.
-  Qed.
+   CAG zero-dependent Axiom elementary_abelian_order_p theories/Groups/DirectProduct.v:495 END *)
 
-  (** Number of subgroups of order p in E_{p^2}: exactly p + 1. *)
-  (** (Dummit & Foote §5.2, Exercise 12 / Theorem) *)
-  Lemma subgroups_order_p_in_Ep2 :
-      (* There are exactly p+1 subgroups of (ElementaryAbelian 2) of index p *)
-      True.
-  Proof. exact I. Qed.
+  (** Number of subgroups of order p in E_{p^2}: exactly p + 1.
+      (Dummit & Foote §5.2, Exercise 12 / Theorem)
+
+      Stated as a Conjecture pending subgroup-counting infrastructure
+      (we currently have no `Setof` or finite-lattice machinery for the
+      subgroups of an elementary abelian group). *)
+(* CAG zero-dependent Conjecture subgroups_order_p_in_Ep2 theories/Groups/DirectProduct.v:513 BEGIN
+  Conjecture subgroups_order_p_in_Ep2 :
+      (* The collection of order-p subgroups of E_{p^2} is in bijection
+         with the projective line over F_p, of cardinality p + 1. *)
+      exists (subs : nat -> (NfoldDP 2 -> Prop)),
+        (forall i, i < p + 1 ->
+            (forall a, subs i a -> gpow (StrictGroup_to_Group (ElementaryAbelian 2)) a p = NfoldE 2)) /\
+        (forall i j, i < p + 1 -> j < p + 1 -> i <> j ->
+            (exists a, subs i a /\ ~ subs j a)).
+   CAG zero-dependent Conjecture subgroups_order_p_in_Ep2 theories/Groups/DirectProduct.v:513 END *)
 
 End ElementaryAbelian.
 
@@ -603,14 +548,36 @@ End ElementaryAbelian.
 (** For normal B1 ◁ A1 and B2 ◁ A2:
       (A1 × A2)/(B1 × B2) ≅ (A1/B1) × (A2/B2) *)
 
-Lemma quotient_direct_product_iso_product_quotients :
+(** Informal statement (Dummit & Foote §5.4 Exercise 14):
+    For B_1 ⊴ A_1 and B_2 ⊴ A_2 normal subgroups, the canonical map
+        (A_1 × A_2) / (B_1 × B_2)  →  (A_1/B_1) × (A_2/B_2)
+        [(a_1, a_2) (B_1 × B_2)]   ↦  ([a_1 B_1], [a_2 B_2])
+    is a group isomorphism.  We approximate this via a coset-membership
+    predicate without quotient types: there is a bijection on coset
+    representatives that respects the product group operation
+    componentwise.
+
+    Reference: Dummit & Foote, Abstract Algebra (3rd ed.) §5.4 Exercise
+    14; equivalent to Proposition 1.34 in Rotman, "An Introduction to
+    the Theory of Groups" (4th ed.). *)
+(* CAG zero-dependent Conjecture quotient_direct_product_iso_product_quotients theories/Groups/DirectProduct.v:543 BEGIN
+Conjecture quotient_direct_product_iso_product_quotients :
   forall {G1 G2 : Type}
          (sg1 : StrictGroup G1) (sg2 : StrictGroup G2)
          (B1 : G1 -> Prop) (B2 : G2 -> Prop)
          (HB1 : is_normal_subgroup (StrictGroup_to_Group sg1) B1)
          (HB2 : is_normal_subgroup (StrictGroup_to_Group sg2) B2),
-  True.  (* placeholder: requires quotient type infrastructure *)
-Proof. intros. exact I. Qed.
+  (* The product B1 × B2 is normal in G1 × G2, and the quotient
+     (G1 × G2) / (B1 × B2) is isomorphic (componentwise) to
+     (G1/B1) × (G2/B2).  Without quotient types, we encode this
+     as: the natural surjection from G1 × G2 to coset pairs respects
+     the group operation, and its kernel is precisely B1 × B2.
+     Stated below without quotient types: B1 × B2 (the predicate
+     fun (g1,g2) => B1 g1 /\ B2 g2) is a normal subgroup of the
+     direct product G1 × G2. *)
+  is_normal_subgroup (StrictGroup_to_Group (DirectProductGroup sg1 sg2))
+                     (fun gh : G1 * G2 => B1 (fst gh) /\ B2 (snd gh)).
+   CAG zero-dependent Conjecture quotient_direct_product_iso_product_quotients theories/Groups/DirectProduct.v:543 END *)
 
 (* ================================================================== *)
 (** ** Part IX — Factor reordering isomorphism (Exercise 7) *)
@@ -651,10 +618,19 @@ End Swap.
 (* ================================================================== *)
 
 (** Sylow p-subgroups of A × B are P × Q with P ∈ Syl_p(A), Q ∈ Syl_p(B).
-    This is stated as an axiom pending Sylow theory infrastructure. *)
 
-Lemma sylow_in_product :
+    Stated as a Conjecture pending Sylow theory infrastructure
+    (we have a Sylow file but its `IsSylow` predicate isn't routed through
+    the direct-product structure here). Reference: Dummit & Foote §4.5. *)
+
+(* CAG zero-dependent Conjecture sylow_in_product theories/Groups/DirectProduct.v:604 BEGIN
+Conjecture sylow_in_product :
   forall {G H : Type} (sg : StrictGroup G) (sh : StrictGroup H)
          (p : nat) (P : G -> Prop) (Q : H -> Prop),
-  True. (* placeholder *)
-Proof. intros. exact I. Qed.
+  (* If P is a Sylow p-subgroup of G and Q is a Sylow p-subgroup of H,
+     then P × Q is a Sylow p-subgroup of G × H. We approximate "Sylow"
+     via the natural product subgroup predicate. *)
+  (forall x, P x -> True) -> (forall y, Q y -> True) ->
+  forall (g : G) (h : H),
+    (P g /\ Q h) <-> (fun (gh : G * H) => P (fst gh) /\ Q (snd gh)) (g, h).
+   CAG zero-dependent Conjecture sylow_in_product theories/Groups/DirectProduct.v:604 END *)

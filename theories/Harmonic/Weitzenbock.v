@@ -31,37 +31,29 @@ Local Open Scope CReal_scope.
 
 (** The rough (Bochner) Laplacian ∇*∇ associated to a connection.
     ∇*∇ = - Σ_i ∇_i ∇_i  (in a local orthonormal frame). *)
+(* CAG zero-dependent Parameter rough_laplacian theories/Harmonic/Weitzenbock.v:34 BEGIN
 Parameter rough_laplacian : forall {M : HermitianManifold} {E : HermitianBundle M}
     (conn : Connection E) (p q : nat),
     Forms_pq E p q -> Forms_pq E p q.
+   CAG zero-dependent Parameter rough_laplacian theories/Harmonic/Weitzenbock.v:34 END *)
 
-(** Non-negativity of the rough Laplacian under the L² pairing:
-      ⟨∇*∇φ, φ⟩_{L²} ≥ 0.
-    Equivalently, ⟨∇*∇φ, φ⟩_{L²} = ⟨∇φ, ∇φ⟩_{L²} ≥ 0 by adjointness
-    of ∇* and the L² positivity axiom on the bundle Ω^{p,q}(M, E ⊗ T*M).
-    [γ R25, 2026-05-01] Reverted from a trivial-collapse Lemma.
-    [γ R27, 2026-05-01] Bundled-Record refactor of [L2_inner] in
-    Sobolev.v leaves [L2_inner]'s 5 laws as field projections of
-    [SmoothL2 E p q] (instance [L2_struct E p q]).  This Axiom
-    states a property of [rough_laplacian] (an abstract [Parameter]
-    with no reduction), so it does NOT follow from any single
-    [SmoothL2] field projection.  Kept as Axiom. *)
-Axiom rough_laplacian_nonneg : forall {M : HermitianManifold} {E : HermitianBundle M}
+(** The rough Laplacian is non-negative: (∇*∇φ, φ) ≥ 0. *)
+(* CAG zero-dependent Admitted rough_laplacian_nonneg theories/Harmonic/Weitzenbock.v:42 BEGIN
+Theorem rough_laplacian_nonneg : forall {M : HermitianManifold} {E : HermitianBundle M}
     (conn : Connection E) (p q : nat) (φ : Forms_pq E p q),
     0 <= L2_inner (rough_laplacian conn p q φ) φ.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted rough_laplacian_nonneg theories/Harmonic/Weitzenbock.v:42 END *)
 
-(** Self-adjointness of the rough Laplacian under the L² pairing:
-      ⟨∇*∇φ, ψ⟩_{L²} = ⟨φ, ∇*∇ψ⟩_{L²}.
-    Two applications of the formal-adjoint identity for ∇/∇*.
-    [γ R25, 2026-05-01] Reverted from a trivial-collapse Lemma.
-    [γ R27, 2026-05-01] As above, this depends on [rough_laplacian]
-    (an abstract [Parameter]) and is not reachable from any
-    [SmoothL2] field projection alone.  Kept as Axiom. *)
-Axiom rough_laplacian_self_adjoint : forall {M : HermitianManifold}
+(** The rough Laplacian is self-adjoint. *)
+(* CAG zero-dependent Admitted rough_laplacian_self_adjoint theories/Harmonic/Weitzenbock.v:50 BEGIN
+Theorem rough_laplacian_self_adjoint : forall {M : HermitianManifold}
     {E : HermitianBundle M} (conn : Connection E) (p q : nat)
     (φ ψ : Forms_pq E p q),
     L2_inner (rough_laplacian conn p q φ) ψ =
     L2_inner φ (rough_laplacian conn p q ψ).
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted rough_laplacian_self_adjoint theories/Harmonic/Weitzenbock.v:50 END *)
 
 (* ================================================================== *)
 (** * 2. Curvature endomorphism                                       *)
@@ -70,26 +62,21 @@ Axiom rough_laplacian_self_adjoint : forall {M : HermitianManifold}
 (** The curvature endomorphism R_{p,q} acting on E-valued (p,q)-forms.
     This is a zeroth-order operator built from the curvature of E
     and the Riemann curvature of M. *)
+(* CAG zero-dependent Parameter curv_endomorphism theories/Harmonic/Weitzenbock.v:63 BEGIN
 Parameter curv_endomorphism : forall {M : HermitianManifold} {E : HermitianBundle M}
     (conn : Connection E) (p q : nat),
     Forms_pq E p q -> Forms_pq E p q.
+   CAG zero-dependent Parameter curv_endomorphism theories/Harmonic/Weitzenbock.v:63 END *)
 
-(** Self-adjointness of the curvature endomorphism under the L²
-    pairing:
-      ⟨R_{p,q}φ, ψ⟩_{L²} = ⟨φ, R_{p,q}ψ⟩_{L²}.
-    The curvature endomorphism is the contraction of a hermitian
-    [(1,1)]-form against the form-valued indices and is hermitian
-    pointwise; this carries to L² self-adjointness.
-    [γ R25, 2026-05-01] Reverted from a trivial-collapse Lemma.
-    [γ R27, 2026-05-01] As with [rough_laplacian_*], depends on
-    [curv_endomorphism] (an abstract [Parameter]) and is not
-    reachable from any [SmoothL2] field projection alone.
-    Kept as Axiom. *)
-Axiom curv_endomorphism_self_adjoint : forall {M : HermitianManifold}
+(** The curvature endomorphism is self-adjoint. *)
+(* CAG zero-dependent Admitted curv_endomorphism_self_adjoint theories/Harmonic/Weitzenbock.v:69 BEGIN
+Theorem curv_endomorphism_self_adjoint : forall {M : HermitianManifold}
     {E : HermitianBundle M} (conn : Connection E) (p q : nat)
     (φ ψ : Forms_pq E p q),
     L2_inner (curv_endomorphism conn p q φ) ψ =
     L2_inner φ (curv_endomorphism conn p q ψ).
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted curv_endomorphism_self_adjoint theories/Harmonic/Weitzenbock.v:69 END *)
 
 (* ================================================================== *)
 (** * 3. Weitzenböck identity                                         *)
@@ -101,14 +88,14 @@ Axiom curv_endomorphism_self_adjoint : forall {M : HermitianManifold}
     of E and M.
 
     This is a local computation in an orthonormal frame using the
-    Kähler identities and the commutator formula for curvature.
-    [DG.2.cleanup] Not dischargeable: LHS reduces to [forms_pq_zero],
-    but [rough_laplacian] and [curv_endomorphism] are abstract
-    [Parameter]s with no zero-collapse, so RHS does not reduce. *)
-Conjecture weitzenbock : forall {M : HermitianManifold} {E : HermitianBundle M}
+    Kähler identities and the commutator formula for curvature. *)
+(* CAG zero-dependent Admitted weitzenbock theories/Harmonic/Weitzenbock.v:90 BEGIN
+Theorem weitzenbock : forall {M : HermitianManifold} {E : HermitianBundle M}
     (conn : Connection E) (p q : nat) (φ : Forms_pq E p q),
     dbar_laplacian p q φ =
     forms_pq_add (rough_laplacian conn p q φ) (curv_endomorphism conn p q φ).
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted weitzenbock theories/Harmonic/Weitzenbock.v:90 END *)
 
 (* ================================================================== *)
 (** * 4. Ellipticity of Δ from Weitzenböck                           *)
@@ -117,14 +104,28 @@ Conjecture weitzenbock : forall {M : HermitianManifold} {E : HermitianBundle M}
 (** The rough Laplacian ∇*∇ is elliptic of order 2 in any local frame.
     Since the difference Δ_{∂̄} - ∇*∇ = R_{p,q} is zeroth order,
     Δ_{∂̄} is also elliptic of order 2. *)
+(* CAG constructive-remove Theorem dbar_laplacian_elliptic_via_weitzenbock theories/Harmonic/Weitzenbock.v:107 BEGIN -- repair partially commented declaration
 Theorem dbar_laplacian_elliptic_via_weitzenbock :
     forall {M : HermitianManifold} {E : HermitianBundle M}
-    (conn : Connection E) (p q : nat),
+    (* CAG constructive-remove Command (conn theories/Harmonic/Weitzenbock.v:109 BEGIN -- missing Connection
+(conn : Connection E) (p q : nat),
     (** Δ_{∂̄} is an elliptic operator of order 2 *)
     True.
+
+   CAG constructive-remove Command (conn theories/Harmonic/Weitzenbock.v:109 END *)
+(* CAG constructive-remove Command Proof. theories/Harmonic/Weitzenbock.v:115 BEGIN -- compile error
 Proof.
-  exact (fun _ _ _ _ _ => I).
+
+   CAG constructive-remove Command Proof. theories/Harmonic/Weitzenbock.v:115 END *)
+  (* CAG constructive-remove Command exact theories/Harmonic/Weitzenbock.v:119 BEGIN -- compile error
+exact (fun _ _ _ _ _ => I).
+
+   CAG constructive-remove Command exact theories/Harmonic/Weitzenbock.v:119 END *)
+(* CAG constructive-remove Command Qed. theories/Harmonic/Weitzenbock.v:123 BEGIN -- compile error
 Qed.
+
+   CAG constructive-remove Command Qed. theories/Harmonic/Weitzenbock.v:123 END *)
+   CAG constructive-remove Theorem dbar_laplacian_elliptic_via_weitzenbock theories/Harmonic/Weitzenbock.v:107 END *)
 
 (* ================================================================== *)
 (** * 5. Bochner-Kodaira vanishing (setup)                           *)
@@ -135,6 +136,7 @@ Qed.
     then Harm^{p,q}(M,E) = 0.
     Proof: 0 = (Δφ,φ) = (∇*∇φ,φ) + (Rφ,φ); since (∇*∇φ,φ) ≥ 0, we get
     (Rφ,φ) ≤ 0, hence φ = 0 by the positivity hypothesis. *)
+(* CAG zero-dependent Theorem bochner_vanishing_setup theories/Harmonic/Weitzenbock.v:117 BEGIN
 Theorem bochner_vanishing_setup : forall {M : HermitianManifold}
     {E : HermitianBundle M} (conn : Connection E) (p q : nat),
     (** curvature is strictly positive: (Rφ,φ) ≤ 0 implies φ = 0 *)
@@ -159,3 +161,4 @@ Proof.
   (** Step 4: (Rφ,φ) ≤ 0 and strict positivity → φ = 0 *)
   exact (Hcurv_pos φ Hcurv_le).
 Qed.
+   CAG zero-dependent Theorem bochner_vanishing_setup theories/Harmonic/Weitzenbock.v:117 END *)

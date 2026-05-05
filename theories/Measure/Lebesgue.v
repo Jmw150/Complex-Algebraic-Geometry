@@ -624,35 +624,47 @@ Qed.
     (in Re/Im coordinates), completed by all subsets of Lebesgue
     null sets.  Concretely this is the Borel σ-algebra on
     [R^{2n} ≃ Cn n], extended by null-set completion (Folland §2.5). *)
+(* CAG zero-dependent Parameter lebesgue_sigma_alg theories/Measure/Lebesgue.v:627 BEGIN
 Parameter lebesgue_sigma_alg : forall n : nat, SigmaAlgebra (Cn n).
+   CAG zero-dependent Parameter lebesgue_sigma_alg theories/Measure/Lebesgue.v:627 END *)
 
 (** The Lebesgue measure on [Cn n].  Informally: the unique
     translation-invariant σ-additive measure on [lebesgue_sigma_alg n]
     that assigns to each axis-aligned box the product of its
     side lengths.  See e.g. Folland Theorem 1.16 or Bogachev §1.3. *)
+(* CAG zero-dependent Parameter LebesgueMeasure theories/Measure/Lebesgue.v:633 BEGIN
 Parameter LebesgueMeasure : forall n : nat, Measure (lebesgue_sigma_alg n).
+   CAG zero-dependent Parameter LebesgueMeasure theories/Measure/Lebesgue.v:633 END *)
 
 (** Inclusion of [CBox n] into the Lebesgue σ-algebra: the
     axis-aligned box determined by [B] (the set of all
     [z : Cn n] whose Re and Im parts of each coordinate lie in
     the corresponding [[lo, hi]] intervals) is Lebesgue-measurable. *)
+(* CAG zero-dependent Parameter box_subset theories/Measure/Lebesgue.v:639 BEGIN
 Parameter box_subset : forall {n : nat}, CBox n -> Subset (Cn n).
+   CAG zero-dependent Parameter box_subset theories/Measure/Lebesgue.v:639 END *)
 
 (** [box_subset B] is in the Lebesgue σ-algebra. *)
+(* CAG zero-dependent Axiom box_in_sigma theories/Measure/Lebesgue.v:642 BEGIN
 Axiom box_in_sigma :
   forall n (B : CBox n),
     sigma_in (lebesgue_sigma_alg n) (box_subset B).
+   CAG zero-dependent Axiom box_in_sigma theories/Measure/Lebesgue.v:642 END *)
 
 (** Set translation: shift every point of [A] by [v].
       [set_translate A v := { x + v : x ∈ A }]
     Concretely [set_translate A v x := A (x − v)] (preimage form). *)
+(* CAG zero-dependent Parameter set_translate theories/Measure/Lebesgue.v:651 BEGIN
 Parameter set_translate : forall {n : nat}, Subset (Cn n) -> Cn n -> Subset (Cn n).
+   CAG zero-dependent Parameter set_translate theories/Measure/Lebesgue.v:651 END *)
 
 (** Translates of measurable sets are measurable. *)
+(* CAG zero-dependent Axiom translate_in_sigma theories/Measure/Lebesgue.v:652 BEGIN
 Axiom translate_in_sigma :
   forall n (A : Subset (Cn n)) (v : Cn n),
     sigma_in (lebesgue_sigma_alg n) A ->
     sigma_in (lebesgue_sigma_alg n) (set_translate A v).
+   CAG zero-dependent Axiom translate_in_sigma theories/Measure/Lebesgue.v:652 END *)
 
 (** *** Defining axioms for the Lebesgue measure. *)
 
@@ -663,32 +675,38 @@ Axiom translate_in_sigma :
     captured by [lebesgue_box_volume B] (see §3).  This is
     the defining property of Lebesgue measure on rectangles
     (Folland Theorem 1.16). *)
+(* CAG zero-dependent Axiom Lebesgue_box_volume theories/Measure/Lebesgue.v:666 BEGIN
 Axiom Lebesgue_box_volume :
   forall n (B : CBox n),
     meas_fn (LebesgueMeasure n) (box_subset B) (box_in_sigma n B)
     = NNFin (lebesgue_box_volume B).
+   CAG zero-dependent Axiom Lebesgue_box_volume theories/Measure/Lebesgue.v:666 END *)
 
 (** **Translation invariance**: the Lebesgue measure is invariant
     under translation by any vector — μ(A + v) = μ(A) for every
     measurable [A] and every [v : Cn n].  This is the unique
     characterising property of Lebesgue measure up to a scalar
     (Folland Theorem 2.42 / Bogachev Theorem 1.4.4). *)
+(* CAG zero-dependent Axiom Lebesgue_translation_invariant theories/Measure/Lebesgue.v:676 BEGIN
 Axiom Lebesgue_translation_invariant :
   forall n (A : Subset (Cn n)) (v : Cn n)
          (HA : sigma_in (lebesgue_sigma_alg n) A),
     meas_fn (LebesgueMeasure n) (set_translate A v)
             (translate_in_sigma n A v HA)
     = meas_fn (LebesgueMeasure n) A HA.
+   CAG zero-dependent Axiom Lebesgue_translation_invariant theories/Measure/Lebesgue.v:676 END *)
 
 (** **Total mass on the full carrier is +∞**: matches the classical
     fact that the Lebesgue measure of all of R^{2n} is +∞ (the
     full space is a countable union of unit boxes, each of
     measure 1, hence the total measure is unbounded). *)
+(* CAG zero-dependent Axiom Lebesgue_full_is_inf theories/Measure/Lebesgue.v:687 BEGIN
 Axiom Lebesgue_full_is_inf :
   forall n,
     meas_fn (LebesgueMeasure n) full_set
             (sigma_full (lebesgue_sigma_alg n))
     = NNInf.
+   CAG zero-dependent Axiom Lebesgue_full_is_inf theories/Measure/Lebesgue.v:687 END *)
 
 (** *** Generic Measure-record laws specialised to Lebesgue (β R15).
 
@@ -704,12 +722,14 @@ Axiom Lebesgue_full_is_inf :
     bundled instance [LebesgueMeasure n]: no Lebesgue-specific
     content here.  Was an Axiom in β R13; converted to a Lemma
     via field projection in β R15. *)
+(* CAG zero-dependent Lemma Lebesgue_empty_zero theories/Measure/Lebesgue.v:721 BEGIN
 Lemma Lebesgue_empty_zero :
   forall n,
     meas_fn (LebesgueMeasure n) empty_set
             (sigma_empty (lebesgue_sigma_alg n))
     = nne_zero.
 Proof. intro n. exact (meas_empty (LebesgueMeasure n)). Qed.
+   CAG zero-dependent Lemma Lebesgue_empty_zero theories/Measure/Lebesgue.v:721 END *)
 
 (** Non-negativity: every Lebesgue-measurable set has a non-negative
     measure value.  Was an Axiom in β R13/R15 (the [Measure] Record
@@ -719,10 +739,12 @@ Proof. intro n. exact (meas_empty (LebesgueMeasure n)). Qed.
     out of the bundled [LebesgueMeasure n] instance.  No
     Lebesgue-specific content; consequence of the generic measure
     law. *)
+(* CAG zero-dependent Lemma Lebesgue_nonneg theories/Measure/Lebesgue.v:736 BEGIN
 Lemma Lebesgue_nonneg :
   forall n (A : Subset (Cn n)) (HA : sigma_in (lebesgue_sigma_alg n) A),
     nne_le nne_zero (meas_fn (LebesgueMeasure n) A HA).
 Proof. intros n A HA. exact (meas_nonneg (LebesgueMeasure n) A HA). Qed.
+   CAG zero-dependent Lemma Lebesgue_nonneg theories/Measure/Lebesgue.v:736 END *)
 
 (* ================================================================== *)
 (** ** 6. Print-Assumptions sanity (documentation)                     *)

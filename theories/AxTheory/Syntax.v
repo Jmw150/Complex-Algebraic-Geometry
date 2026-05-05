@@ -413,12 +413,14 @@ Qed.
     The correct statement requires M to be typed in a context matching sub2's domain.
     We state this restricted (typed) version as an axiom; a formal proof would proceed
     by induction on the typing derivation. *)
+(* CAG zero-dependent Axiom ax_subst_comp theories/AxTheory/Syntax.v:416 BEGIN
 Axiom ax_subst_comp : forall (Sg : Signature) (Γ : list (AxType Sg))
     (sub1 sub2 : list (AxTerm Sg)) (M : AxTerm Sg) (α : AxType Sg),
     List.length sub2 = List.length Γ ->
     AxHasType Sg Γ M α ->
     ax_subst sub1 (ax_subst sub2 M) =
     ax_subst (List.map (ax_subst sub1) sub2) M.
+   CAG zero-dependent Axiom ax_subst_comp theories/AxTheory/Syntax.v:416 END *)
 
 (** Substituting a singleton list for variable 0. *)
 Theorem ax_subst_singleton_var_0 : forall (Sg : Signature) (t : AxTerm Sg),
@@ -488,16 +490,6 @@ Inductive AxThEq (Sg : Signature) (ax : list (AxAxiom Sg))
       AxHasType Sg Γ M (α ×ax β) ->
       AxThEq Sg ax Γ (ax_pair (ax_fst M) (ax_snd M)) M (α ×ax β)
 
-  (** Eta rule for unit (terminal): every term of type [ax_unit] is
-      provably equal to [ax_tt].  This is the categorical counterpart
-      of unit being terminal in the syntactic CCC.  Sound in any
-      model where [ax_unit] is interpreted as a terminal object;
-      analogous to [axeq_eta_prod] for binary products.  Added in
-      Task A.1 to discharge [axcl_terminal_unique]. *)
-  | axeq_eta_unit : forall M,
-      AxHasType Sg Γ M ax_unit ->
-      AxThEq Sg ax Γ M ax_tt ax_unit
-
   (** Beta/eta rules for exponentials *)
   | axeq_beta_lam : forall M N α β,
       AxHasType Sg (α :: Γ) M β -> AxHasType Sg Γ N α ->
@@ -505,28 +497,6 @@ Inductive AxThEq (Sg : Signature) (ax : list (AxAxiom Sg))
   | axeq_eta_lam  : forall M α β,
       AxHasType Sg Γ M (α ⇒ax β) ->
       AxThEq Sg ax Γ (ax_lam (ax_ap (ax_subst (List.map (fun t => ax_subst [ax_var 1] t) (ax_id_sub Sg (length Γ))) M) (ax_var 0))) M (α ⇒ax β)
-
-  (** Congruence for basic function-symbol applications.
-
-      Sound: if each argument is well-typed at the corresponding ground
-      sort and pointwise AxThEq-equivalent at that sort, then
-      [ax_app_fn f args ~~ ax_app_fn f args'] at sort
-      [ax_ground (Sg.(sg_cod) f)]. Paralleling [theq_cong] from
-      ATT/Syntax.v's algebraic [ThEq]. Added in Task A.4 to discharge
-      [conservativity_uniqueness] (the [theq_cong] case lifts directly).
-
-      We express the pointwise side-condition by an indexed [forall]
-      over the domain types (same shape as [ax_subst_cong]), avoiding a
-      tri-indexed [Forall3]. *)
-  | axeq_app_fn_cong : forall (f : Sg.(sg_fun)) (args args' : list (AxTerm Sg)),
-      List.Forall2 (fun M τ => AxHasType Sg Γ M (ax_ground τ)) args  (Sg.(sg_dom) f) ->
-      List.Forall2 (fun M τ => AxHasType Sg Γ M (ax_ground τ)) args' (Sg.(sg_dom) f) ->
-      (forall (i : nat) (τ : Sg.(sg_ty)) (M M' : AxTerm Sg),
-          List.nth_error (Sg.(sg_dom) f) i = Some τ ->
-          List.nth_error args  i = Some M ->
-          List.nth_error args' i = Some M' ->
-          AxThEq Sg ax Γ M M' (ax_ground τ)) ->
-      AxThEq Sg ax Γ (ax_app_fn f args) (ax_app_fn f args') (ax_ground (Sg.(sg_cod) f))
 
   (** Axiom instantiation *)
   | axeq_ax : forall (a : AxAxiom Sg) (sub : list (AxTerm Sg)),
@@ -536,55 +506,3 @@ Inductive AxThEq (Sg : Signature) (ax : list (AxAxiom Sg))
         (ax_subst sub a.(axax_lhs))
         (ax_subst sub a.(axax_rhs))
         a.(axax_sort).
-
-(** Substitution congruence for AxThEq.
-
-    If [sub] and [sub'] are pointwise AxThEq-equivalent substitutions
-    (each [sub_i ~~ sub'_i] at type [Γ'_i]) and [M ~~ M'] in context [Γ']
-    at sort [α], then [ax_subst sub M ~~ ax_subst sub' M'] in context [Γ]
-    at sort [α].
-
-    Sound by induction on the [AxThEq Sg ax Γ' M M' α] derivation,
-    paralleling the standard STLC meta-theorem (substitution preserves
-    convertibility under pointwise-equivalent substitutions). Axiomatized
-    here in the same spirit as [ax_subst_comp]: the formal proof would
-    require a lengthy mutual induction, but the meta-theory is well-known
-    (~50 years of literature on STLC).
-
-    Pointwise equivalence of [sub], [sub'] is expressed by an indexed
-    side-condition: at each position [i] where [Γ'] supplies type [α_i]
-    and both substitutions supply terms [s], [s'], we have
-    [AxThEq Sg ax Γ s s' α_i]. The two [Forall2] premises ensure that
-    [sub] and [sub'] are well-typed substitutions [Γ -> Γ']. *)
-Axiom ax_subst_cong : forall (Sg : Signature) (ax : list (AxAxiom Sg))
-                            (Γ Γ' : list (AxType Sg))
-                            (sub sub' : list (AxTerm Sg))
-                            (M M' : AxTerm Sg) (α : AxType Sg),
-    List.Forall2 (AxHasType Sg Γ) sub  Γ' ->
-    List.Forall2 (AxHasType Sg Γ) sub' Γ' ->
-    (forall (i : nat) (α_i : AxType Sg) (s s' : AxTerm Sg),
-        List.nth_error Γ'  i = Some α_i ->
-        List.nth_error sub  i = Some s ->
-        List.nth_error sub' i = Some s' ->
-        AxThEq Sg ax Γ s s' α_i) ->
-    AxThEq Sg ax Γ' M M' α ->
-    AxThEq Sg ax Γ (ax_subst sub M) (ax_subst sub' M') α.
-
-(** Function-side congruence for lambda-style application.
-
-    A specialization of [axeq_ap] where the argument is held fixed (at a
-    specific typing witness) and only the function-position term varies.
-    Derivable from [axeq_ap] + [axeq_refl] in one line; named for ease of
-    reference and parallelism with the bidirectional [axeq_ap]. Added in
-    Task A.4. *)
-Lemma axeq_cong_app_fn : forall (Sg : Signature) (ax : list (AxAxiom Sg))
-                                (Γ : list (AxType Sg))
-                                (M M' N : AxTerm Sg) (α β : AxType Sg),
-    AxThEq Sg ax Γ M M' (α ⇒ax β) ->
-    AxHasType Sg Γ N α ->
-    AxThEq Sg ax Γ (ax_ap M N) (ax_ap M' N) β.
-Proof.
-  intros Sg ax Γ M M' N α β HM HN.
-  apply (axeq_ap Sg ax Γ M M' N N α β HM (axeq_refl Sg ax Γ N α HN)).
-Qed.
-

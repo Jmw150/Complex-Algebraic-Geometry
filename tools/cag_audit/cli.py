@@ -5,6 +5,8 @@ Subcommands:
     diff       — compare current state against the last snapshot
     snapshot   — write a fresh snapshot to .cag/audit-snapshot.json
     suspect    — flag suspicious axioms (placeholder bodies, True-type, etc.)
+    label      — label assumptions/proof holes and write .cag reports
+    deps       — build a dependency graph and flag assumptions with no dependents
     check NAME — run `rocq` Print Assumptions on a theorem and display its deps
 """
 
@@ -19,6 +21,16 @@ import sys
 import time
 from pathlib import Path
 
+from cag_audit.dependency_graph import (
+    assumption_keys,
+    collect_nodes,
+    parse_glob_edges,
+    project_vfiles,
+    write_dot,
+    write_json as write_deps_json,
+    write_markdown as write_deps_markdown,
+)
+from cag_audit.label_assumptions import collect_sites, write_json, write_markdown
 from cag_lib.rocq_parse import Declaration, walk_theories
 
 
@@ -164,6 +176,59 @@ def cmd_suspect(root: Path, args) -> int:
     return 1
 
 
+def cmd_label(root: Path, args) -> int:
+    sites = collect_sites(root)
+    markdown = root / args.markdown
+    json_path = root / args.json
+    write_markdown(root, sites, markdown)
+    write_json(root, sites, json_path)
+
+    by_kind: dict[str, int] = {}
+    by_label: dict[str, int] = {}
+    for s in sites:
+        by_kind[s.kind] = by_kind.get(s.kind, 0) + 1
+        by_label[s.label] = by_label.get(s.label, 0) + 1
+
+    print(f"labeled sites: {len(sites)}")
+    print(f"markdown: {markdown}")
+    print(f"json: {json_path}")
+    print("counts by kind:")
+    for kind, count in sorted(by_kind.items(), key=lambda kv: -kv[1]):
+        print(f"  {kind:14} {count}")
+    print("counts by label:")
+    for label, count in sorted(by_label.items(), key=lambda kv: -kv[1]):
+        print(f"  {label:20} {count}")
+    return 0
+
+
+def cmd_deps(root: Path, args) -> int:
+    allowed_files = project_vfiles(root)
+    nodes = collect_nodes(root, allowed_files)
+    edges = parse_glob_edges(root, nodes, allowed_files)
+    assumptions = assumption_keys(root, allowed_files)
+
+    markdown = root / args.markdown
+    json_path = root / args.json
+    dot_path = root / args.dot
+    write_deps_markdown(root, nodes, edges, assumptions, markdown)
+    write_deps_json(root, nodes, edges, assumptions, json_path)
+    write_dot(root, nodes, edges, assumptions, dot_path)
+
+    dependents: dict[str, set[str]] = {}
+    for src, dst in edges:
+        dependents.setdefault(dst, set()).add(src)
+    zero = [k for k in assumptions if len(dependents.get(k, set())) == 0]
+
+    print(f"nodes: {len(nodes)}")
+    print(f"edges: {len(edges)}")
+    print(f"assumptions: {len(assumptions)}")
+    print(f"zero-dependent assumptions: {len(zero)}")
+    print(f"markdown: {markdown}")
+    print(f"json: {json_path}")
+    print(f"dot: {dot_path}")
+    return 0
+
+
 # ----- Print Assumptions runner ---------------------------------------------
 
 
@@ -230,6 +295,15 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("diff", help="Compare current state vs snapshot")
     sub.add_parser("suspect", help="Flag suspicious-shape axioms")
 
+    p_label = sub.add_parser("label", help="Label assumptions/proof holes into .cag reports")
+    p_label.add_argument("--markdown", default=".cag/ASSUMPTION_LABELS.md")
+    p_label.add_argument("--json", default=".cag/assumption-labels.json")
+
+    p_deps = sub.add_parser("deps", help="Build dependency graph and assumption dependent report")
+    p_deps.add_argument("--markdown", default=".cag/ASSUMPTION_DEPENDENCIES.md")
+    p_deps.add_argument("--json", default=".cag/dependency-graph.json")
+    p_deps.add_argument("--dot", default=".cag/assumption-dependencies.dot")
+
     p_check = sub.add_parser("check", help="Run `Print Assumptions` on a theorem")
     p_check.add_argument("name", help="Theorem/Lemma name to inspect")
 
@@ -244,6 +318,8 @@ def main(argv: list[str] | None = None) -> int:
         "snapshot": cmd_snapshot,
         "diff": cmd_diff,
         "suspect": cmd_suspect,
+        "label": cmd_label,
+        "deps": cmd_deps,
         "check": cmd_check,
     }[args.cmd](root, args)
 

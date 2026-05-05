@@ -22,6 +22,7 @@ From CAG Require Import NeuralOp.FNO.
 
 Extraction Language OCaml.
 
+(* CAG constructive-remove Extraction NeuralOpExtract theories/NeuralOp/Extract.v:25 BEGIN
 (** Map the axiomatized exp_i to an OCaml implementation in Fno_impl. *)
 Extract Constant exp_i => "Fno_impl.exp_i_impl".
 
@@ -50,3 +51,4 @@ Extraction "lib/fnorocq.ml"
   skip_connection
   lift
   circulant_op.
+   CAG constructive-remove Extraction NeuralOpExtract theories/NeuralOp/Extract.v:25 END *)

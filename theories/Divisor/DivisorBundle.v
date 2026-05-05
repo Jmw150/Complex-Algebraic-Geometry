@@ -70,70 +70,80 @@ Definition neg_divisor {M : ComplexManifold} (D : Divisor M) : Divisor M :=
 (** The line bundle [D] associated to a divisor D.
     Locally: if f_α is the defining equation for D on U_α, then
     the transition function is g_{αβ} = f_α / f_β (a nonzero holomorphic
-    function on U_α ∩ U_β since f_α / f_β has no zeroes or poles there).
+    function on U_α ∩ U_β since f_α / f_β has no zeroes or poles there). *)
+(* CAG zero-dependent Parameter divisor_bundle theories/Divisor/DivisorBundle.v:74 BEGIN
+Parameter divisor_bundle : forall {M : ComplexManifold},
+    Divisor M -> HolLineBundleCech M.
+   CAG zero-dependent Parameter divisor_bundle theories/Divisor/DivisorBundle.v:74 END *)
 
-    Concrete witness (Infra-6): we set [divisor_bundle D := hlb_trivial M].
-    This is the same Phase-E-2 strategy already used for the [hlb_*] line
-    bundle algebra in [LineBundleCech.v]: pick a degenerate carrier so
-    the abstract identities collapse to facts about the trivial bundle.
-    The genuine construction (transitions [f_α / f_β] on a non-empty
-    cover) requires Cech infrastructure beyond the current scope. *)
-Definition divisor_bundle {M : ComplexManifold}
-    (_ : Divisor M) : HolLineBundleCech M :=
-  hlb_trivial M.
 
+
+
+
+
+(* CAG constructive-remove Command Notation theories/Divisor/DivisorBundle.v:84 BEGIN -- missing divisor_bundle
 Notation "'LB[' D ']'" := (divisor_bundle D) (at level 0).
 
-(** [D + E] ≅ [D] ⊗ [E]. *)
-Theorem divisor_bundle_add : forall {M : ComplexManifold} (D E : Divisor M),
+   CAG constructive-remove Command Notation theories/Divisor/DivisorBundle.v:84 END *)
+
+(** [D + E] ≅ [D] ⊗ [E]: addition of divisors corresponds to
+    tensor product of associated line bundles.  The fundamental
+    homomorphism property of the divisor-to-Pic map; reference:
+    Griffiths–Harris §I.3 "The map [D] from Div(M) to Pic(M) is a
+    homomorphism", Hartshorne II.6.13. *)
+(* CAG zero-dependent Axiom divisor_bundle_add theories/Divisor/DivisorBundle.v:84 BEGIN
+Axiom divisor_bundle_add :
+  forall {M : ComplexManifold} (D E : Divisor M),
     hlb_iso LB[add_divisors D E] (hlb_tensor LB[D] LB[E]).
-Proof.
-  intros M D E. unfold divisor_bundle, hlb_tensor. apply hlb_iso_refl.
-Qed.
+   CAG zero-dependent Axiom divisor_bundle_add theories/Divisor/DivisorBundle.v:84 END *)
+(** [LB[D + E] ≅ LB[D] ⊗ LB[E]]. *)
 
-(** [-D] ≅ [D]^*. *)
-Theorem divisor_bundle_neg : forall {M : ComplexManifold} (D : Divisor M),
+(** [-D] ≅ [D]^*: divisor negation corresponds to bundle dualization.
+    Direct corollary of [divisor_bundle_add] applied to [D + (-D) = 0]
+    plus [divisor_bundle_zero]; recorded as a paper-attributable
+    Axiom (Griffiths–Harris §I.3, Hartshorne II.6.13). *)
+(* CAG zero-dependent Axiom divisor_bundle_neg theories/Divisor/DivisorBundle.v:93 BEGIN
+Axiom divisor_bundle_neg :
+  forall {M : ComplexManifold} (D : Divisor M),
     hlb_iso LB[neg_divisor D] (hlb_dual LB[D]).
-Proof.
-  intros M D. unfold divisor_bundle, hlb_dual. apply hlb_iso_refl.
-Qed.
+   CAG zero-dependent Axiom divisor_bundle_neg theories/Divisor/DivisorBundle.v:93 END *)
+(** [LB[-D] ≅ (LB[D])^*]. *)
 
-(** [0] ≅ trivial bundle. *)
-Theorem divisor_bundle_zero : forall (M : ComplexManifold),
+(** [0] ≅ trivial bundle: the zero divisor's bundle is trivial.
+    Reference: Griffiths–Harris §I.3 "Identity element of the
+    Picard group". *)
+(* CAG zero-dependent Axiom divisor_bundle_zero theories/Divisor/DivisorBundle.v:101 BEGIN
+Axiom divisor_bundle_zero :
+  forall (M : ComplexManifold),
     hlb_iso LB[zero_divisor M] (hlb_trivial M).
-Proof.
-  intros M. unfold divisor_bundle. apply hlb_iso_refl.
-Qed.
+   CAG zero-dependent Axiom divisor_bundle_zero theories/Divisor/DivisorBundle.v:101 END *)
+(** [LB[0] ≅ trivial line bundle]. *)
 
 (* ================================================================== *)
 (** * 3. Fundamental class / Poincaré dual                            *)
 (* ================================================================== *)
 
 (** The fundamental class η_V ∈ H²(M,Z) of an irreducible hypersurface V.
-    This is the Poincaré dual of the cycle [V] ∈ H_{2n-2}(M,Z).
-
-    Concrete witness (Infra-6): set [fundamental_class V := H2Z_zero].
-    Mathematically degenerate (the genuine class depends on the
-    homology of [V]) but consistent with the rest of the
-    Phase-E-2 degenerate model: [c1_map] is also constant via
-    [c1_trivial] applied at every [hlb_trivial], and [divisor_bundle]
-    sends every divisor to [hlb_trivial].  The genuine fundamental
-    class would require Poincaré duality / homology infrastructure
-    beyond the current scope. *)
-Definition fundamental_class {M : ComplexManifold}
-    (_ : DivisorComponent M) : H2Z M :=
-  H2Z_zero.
+    This is the Poincaré dual of the cycle [V] ∈ H_{2n-2}(M,Z). *)
+(* CAG zero-dependent Parameter fundamental_class theories/Divisor/DivisorBundle.v:123 BEGIN
+Parameter fundamental_class : forall {M : ComplexManifold},
+    DivisorComponent M -> H2Z M.
+   CAG zero-dependent Parameter fundamental_class theories/Divisor/DivisorBundle.v:123 END *)
 
 (** Linearity: η_{a·V} = a · η_V. *)
-Definition H2Z_scalar_mult {M : ComplexManifold}
-  : Z -> H2Z M -> H2Z M := Z.mul.
+(* CAG zero-dependent Parameter H2Z_scalar_mult theories/Divisor/DivisorBundle.v:127 BEGIN
+Parameter H2Z_scalar_mult : forall {M : ComplexManifold},
+    Z -> H2Z M -> H2Z M.
+   CAG zero-dependent Parameter H2Z_scalar_mult theories/Divisor/DivisorBundle.v:127 END *)
 
 (** The fundamental class of a divisor D = Σ a_i V_i is η_D = Σ a_i η_{V_i}. *)
+(* CAG zero-dependent Definition divisor_fundamental_class theories/Divisor/DivisorBundle.v:131 BEGIN
 Definition divisor_fundamental_class {M : ComplexManifold} (D : Divisor M) : H2Z M :=
   List.fold_left
     (fun acc '(n, V) => H2Z_add (H2Z_scalar_mult n (fundamental_class V)) acc)
     D
     H2Z_zero.
+   CAG zero-dependent Definition divisor_fundamental_class theories/Divisor/DivisorBundle.v:131 END *)
 
 (* ================================================================== *)
 (** * 4. Main theorem: c₁([D]) = η_D                                  *)
@@ -152,39 +162,16 @@ Definition divisor_fundamental_class {M : ComplexManifold} (D : Divisor M) : H2Z
     C. Conclude: ∫_M (i/2π) Θ ∧ ψ = ∫_V ψ for all test forms ψ,
        which is the defining property of η_V. *)
 
-(** Helper: with [fundamental_class V = H2Z_zero] and
-    [H2Z_scalar_mult n 0 = 0], the running sum stays at the initial
-    accumulator. *)
-Lemma divisor_fundamental_class_helper :
-    forall {M : ComplexManifold} (D : Divisor M) (init : H2Z M),
-    List.fold_left
-      (fun acc '(n, V) => H2Z_add (H2Z_scalar_mult n (fundamental_class V)) acc)
-      D
-      init = init.
-Proof.
-  induction D as [| [n V] D IH]; intro init.
-  - reflexivity.
-  - simpl. unfold fundamental_class, H2Z_scalar_mult, H2Z_add, H2Z_zero.
-    rewrite Z.mul_0_r. rewrite Z.add_0_l. apply IH.
-Qed.
-
-Lemma divisor_fundamental_class_zero :
-    forall {M : ComplexManifold} (D : Divisor M),
-    divisor_fundamental_class D = H2Z_zero.
-Proof.
-  intros M D. unfold divisor_fundamental_class.
-  apply divisor_fundamental_class_helper.
-Qed.
-
-Theorem chern_class_of_divisor_bundle_is_poincare_dual :
+(** First Chern class of a divisor bundle = Poincaré dual of the
+    divisor: [c₁([D]) = η_D] in [H²(M, ℤ)].  Famous-old classical
+    identity (Griffiths–Harris §I.3 "Fundamental class of a
+    divisor", Hartshorne app. C, Lelong's formula).  Recorded as
+    a Conjecture per "famous-old". *)
+(* CAG zero-dependent Axiom chern_class_of_divisor_bundle_is_poincare_dual theories/Divisor/DivisorBundle.v:156 BEGIN
+Axiom chern_class_of_divisor_bundle_is_poincare_dual :
     forall {M : ComplexManifold} (D : Divisor M),
     c1_map LB[D] = divisor_fundamental_class D.
-Proof.
-  intros M D.
-  rewrite divisor_fundamental_class_zero.
-  unfold divisor_bundle.
-  apply c1_trivial.
-Qed.
+   CAG zero-dependent Axiom chern_class_of_divisor_bundle_is_poincare_dual theories/Divisor/DivisorBundle.v:156 END *)
 
 (* ================================================================== *)
 (** * 5. Principal divisors                                            *)
@@ -192,18 +179,28 @@ Qed.
 
 (** A principal divisor: div(f) for a global meromorphic function f.
     We axiomatize the order-of-vanishing data. *)
+(* CAG zero-dependent Parameter meromorphic_fn theories/Divisor/DivisorBundle.v:169 BEGIN
 Parameter meromorphic_fn : ComplexManifold -> Type.
+   CAG zero-dependent Parameter meromorphic_fn theories/Divisor/DivisorBundle.v:169 END *)
+(* CAG zero-dependent Parameter div_fn theories/Divisor/DivisorBundle.v:169 BEGIN
 Parameter div_fn : forall {M : ComplexManifold}, meromorphic_fn M -> Divisor M.
+   CAG zero-dependent Parameter div_fn theories/Divisor/DivisorBundle.v:169 END *)
 
-(** The line bundle of a principal divisor is trivial. *)
-Theorem principal_divisor_trivial_bundle : forall {M : ComplexManifold}
-    (f : meromorphic_fn M),
+(** The line bundle of a principal divisor is trivial:
+    [LB[div(f)] ≅ trivial] for any meromorphic [f].
+    Reference: Griffiths–Harris §I.3 "Principal divisors are
+    trivial in Pic(M)" — the meromorphic function [f] itself
+    trivializes the cocycle. *)
+(* CAG zero-dependent Axiom principal_divisor_trivial_bundle theories/Divisor/DivisorBundle.v:174 BEGIN
+Axiom principal_divisor_trivial_bundle :
+  forall {M : ComplexManifold} (f : meromorphic_fn M),
     hlb_iso LB[div_fn f] (hlb_trivial M).
-Proof.
-  intros M f. unfold divisor_bundle. apply hlb_iso_refl.
-Qed.
+   CAG zero-dependent Axiom principal_divisor_trivial_bundle theories/Divisor/DivisorBundle.v:174 END *)
+(** [LB[div(f)] ≅ trivial]: principal divisors give the identity
+    in the Picard group. *)
 
 (** Consequence: a principal divisor has zero fundamental class. *)
+(* CAG zero-dependent Theorem principal_divisor_has_zero_fundamental_class theories/Divisor/DivisorBundle.v:181 BEGIN
 Theorem principal_divisor_has_zero_fundamental_class :
     forall {M : ComplexManifold} (f : meromorphic_fn M),
     divisor_fundamental_class (div_fn f) = H2Z_zero.
@@ -213,3 +210,4 @@ Proof.
   rewrite (c1_iso_invariant _ _ (principal_divisor_trivial_bundle f)).
   apply c1_trivial.
 Qed.
+   CAG zero-dependent Theorem principal_divisor_has_zero_fundamental_class theories/Divisor/DivisorBundle.v:181 END *)

@@ -24,6 +24,7 @@ From CAG Require Import DecisionProblems.TraceProperties.
 From CAG Require Import DecisionProblems.InducedRep.
 From CAG Require Import DecisionProblems.OpenProblems.
 From CAG Require Import DecisionProblems.HallTheorem.
+From CAG Require Import DecisionProblems.WordLengthFreeGroup.
 From Stdlib Require Import List Arith Lia.
 Import ListNotations.
 
@@ -667,6 +668,49 @@ Proof.
   rewrite <- (sassoc G sg) in Hgh.
   (* Hgh: t_ghi · (h_{g,σ_h i}·h_{h,i}) = t_ghi · h_{gh,i} *)
   apply (left_cancel sg t_ghi). symmetry. exact Hgh.
+Qed.
+
+(** Conjugates have equal trace under any representation into a MatrixGroup
+    whose trace satisfies the cyclic property [tr(xy) = tr(yx)].
+    No appeal to a specific trace formula — only group axioms +
+    homomorphism + cyclicity. *)
+Lemma trace_at_conjugate :
+  forall {G F : Type} (sg : StrictGroup G) (MG : MatrixGroup F)
+         (rho : Representation sg MG)
+         (Hcyc : forall x y : mg_carrier MG,
+             mg_trace MG (smul (mg_carrier MG) (mg_sg MG) x y) =
+             mg_trace MG (smul (mg_carrier MG) (mg_sg MG) y x))
+         (a b : G),
+    are_conjugate sg a b -> trace_at rho a = trace_at rho b.
+Proof.
+  intros G F sg MG rho Hcyc a b [g Hg].
+  unfold trace_at.
+  (* Goal: mg_trace MG (rep_fn rho a) = mg_trace MG (rep_fn rho b). *)
+  rewrite <- Hg.
+  (* Goal: ... = mg_trace MG (rep_fn rho ((g·a)·g^{-1})). *)
+  rewrite (rep_hom rho (smul G sg g a) (sinv G sg g)).
+  rewrite (rep_hom rho g a).
+  (* Goal: mg_trace (rep a) =
+           mg_trace ((rep g · rep a) · rep g^{-1}). *)
+  rewrite Hcyc.
+  (* Goal: mg_trace (rep a) =
+           mg_trace (rep g^{-1} · (rep g · rep a)). *)
+  rewrite (sassoc (mg_carrier MG) (mg_sg MG)
+                  (rep_fn rho (sinv G sg g))
+                  (rep_fn rho g)
+                  (rep_fn rho a)).
+  (* Goal: mg_trace (rep a) =
+           mg_trace ((rep g^{-1} · rep g) · rep a). *)
+  rewrite <- (rep_hom rho (sinv G sg g) g).
+  (* Goal: mg_trace (rep a) =
+           mg_trace (rep (g^{-1}·g) · rep a). *)
+  rewrite (sinv_left G sg g).
+  (* Goal: mg_trace (rep a) =
+           mg_trace (rep e · rep a). *)
+  rewrite <- (rep_hom rho (se G sg) a).
+  (* Goal: mg_trace (rep a) = mg_trace (rep (e·a)). *)
+  rewrite (sid_left G sg a).
+  reflexivity.
 Qed.
 
 (** Conjugates have equal SL2 trace under any representation. *)
@@ -1432,22 +1476,41 @@ Qed.
     representation Ind ρ : G → SL(k·d, F). Specifically, for g ∈ G,
     [induced_trace g] = tr(Ind ρ(g)). *)
 
-(** Note: the FULL Frobenius statement (induced_trace = trace of induced
-    representation) requires constructing the block-matrix representation
-    and showing equal traces. The placeholder True version is provable; a
-    full version remains future work. *)
+(** The /trace of the induced representation/ at [g], as it would be
+    computed once the block-matrix representation [Ind ρ : G → SL(k·d, F)]
+    is built (axiomatized — full construction is future work, requires
+    block-matrix linear algebra over [F]). *)
+(* CAG zero-dependent Parameter induced_rep_trace theories/HallFreeGroup/InducedRepresentation.v:1483 BEGIN
+Parameter induced_rep_trace : forall {G F : Type} (sg : StrictGroup G)
+    (FIS : FiniteIndexSubgroup sg) (fld : Field F)
+    (rho_H : G -> mg_carrier (SL2_as_MG fld)) (g : G), F.
+   CAG zero-dependent Parameter induced_rep_trace theories/HallFreeGroup/InducedRepresentation.v:1483 END *)
 
-Lemma induced_trace_eq_rep_trace :
+(** Frobenius's character formula:
+    [induced_trace g] equals the trace of the induced representation
+    [Ind ρ(g)].
+
+    Source: Frobenius 1898, "Über Gruppencharaktere"; Serre,
+    "Linear Representations of Finite Groups" §3.3 (induced
+    characters); Curtis–Reiner §10.
+
+    γ R37 — replaces the earlier [Lemma … True] busywork form per
+    [feedback_trivial_collapse_busywork.md].  The deeper fact is
+    classical (Frobenius reciprocity); we encode it as a paper-
+    attributable Axiom relating the explicit [induced_trace]
+    Fixpoint to the abstract [induced_rep_trace] target. *)
+(* CAG zero-dependent Axiom induced_trace_eq_rep_trace theories/HallFreeGroup/InducedRepresentation.v:1500 BEGIN
+Axiom induced_trace_eq_rep_trace :
   forall {G F : Type} (sg : StrictGroup G) (FIS : FiniteIndexSubgroup sg)
          (fld : Field F)
          (rho_H : G -> mg_carrier (SL2_as_MG fld))
          (g : G),
-    (* induced_trace sg FIS fld rho_H g equals the trace of Ind ρ(g)
-       in the abstract sense. *)
-    True. (* placeholder *)
-Proof. intros. exact I. Qed.
+    induced_trace sg FIS fld rho_H g =
+    induced_rep_trace sg FIS fld rho_H g.
+   CAG zero-dependent Axiom induced_trace_eq_rep_trace theories/HallFreeGroup/InducedRepresentation.v:1500 END *)
 
 (** Frobenius reciprocity: induced_trace is conjugation-invariant. *)
+(* CAG zero-dependent Conjecture induced_trace_class_function theories/HallFreeGroup/InducedRepresentation.v:1509 BEGIN
 Conjecture induced_trace_class_function :
   forall {G F : Type} (sg : StrictGroup G) (FIS : FiniteIndexSubgroup sg)
          (fld : Field F)
@@ -1456,6 +1519,7 @@ Conjecture induced_trace_class_function :
     induced_trace sg FIS fld rho_H
       (smul G sg (smul G sg g h) (sinv G sg g)) =
     induced_trace sg FIS fld rho_H h.
+   CAG zero-dependent Conjecture induced_trace_class_function theories/HallFreeGroup/InducedRepresentation.v:1509 END *)
 
 (* ================================================================== *)
 (** * 4. The McReynolds theorem-1.6 chain                               *)
@@ -1478,6 +1542,7 @@ Conjecture induced_trace_class_function :
     This is what's already in HallTheorem.hall_construction_separates,
     refined by the Stallings/Schreier infrastructure above. *)
 
+(* CAG zero-dependent Theorem theorem_1_6_via_hall theories/HallFreeGroup/InducedRepresentation.v:1545 BEGIN
 Theorem theorem_1_6_via_hall :
   forall {F : Type} (MG_family : nat -> MatrixGroup F) (r : nat),
     property_B (FreeGroup r) MG_family.
@@ -1486,6 +1551,7 @@ Proof.
   (* Defer to the existing chain in HallTheorem. *)
   apply (free_groups_property_B r F MG_family).
 Qed.
+   CAG zero-dependent Theorem theorem_1_6_via_hall theories/HallFreeGroup/InducedRepresentation.v:1545 END *)
 
 (** SL2 reps fail to distinguish γ^k from (γ^{-1})^k in F_1: their traces
     are always equal. Concretely: tr(ρ(gen i^k)) = tr(ρ((gen i^{-1})^k)). *)

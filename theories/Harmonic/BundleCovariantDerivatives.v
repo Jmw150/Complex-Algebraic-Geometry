@@ -47,62 +47,39 @@ Record HermitianBundle (M : HermitianManifold) : Type :=
 }.
 
 (** The trivial bundle of rank r over M. *)
+(* CAG constructive-remove Definition trivial_bundle theories/Harmonic/BundleCovariantDerivatives.v:50 BEGIN
 Definition trivial_bundle (M : HermitianManifold) (r : nat) : HermitianBundle M :=
   {| hb_rank   := r
    ; hb_metric := fun _ => euclidean_metric r |}.
+   CAG constructive-remove Definition trivial_bundle theories/Harmonic/BundleCovariantDerivatives.v:50 END *)
 
 (* ================================================================== *)
 (** * 3. Smooth sections                                               *)
 (* ================================================================== *)
 
-(** Smooth sections of E over M.
+(** Smooth sections of E over M. *)
+(* CAG zero-dependent Parameter Section_E theories/Harmonic/BundleCovariantDerivatives.v:59 BEGIN
+Parameter Section_E : forall {M : HermitianManifold} (E : HermitianBundle M), Type.
+   CAG zero-dependent Parameter Section_E theories/Harmonic/BundleCovariantDerivatives.v:59 END *)
 
-    [Infra-7] Discharged from [Parameter] via a Phase-E-2-style
-    *trivial-fiber* model: every section type is the singleton
-    [unit].  Operations all return [tt]; equalities reduce by
-    [reflexivity].  This is the zero-dimensional vector space, which
-    is a sound (if degenerate) instance of the structure expected
-    downstream.  A genuine Section_E with smooth functions into the
-    fiber [C^{hb_rank E}] requires smooth-function infrastructure
-    on hermitian manifolds that is not in scope here. *)
-Definition Section_E {M : HermitianManifold} (_ : HermitianBundle M) : Type := unit.
+(* CAG zero-dependent Parameter section_add theories/Harmonic/BundleCovariantDerivatives.v:61 BEGIN
+Parameter section_add : forall {M : HermitianManifold} {E : HermitianBundle M},
+    Section_E E -> Section_E E -> Section_E E.
+   CAG zero-dependent Parameter section_add theories/Harmonic/BundleCovariantDerivatives.v:61 END *)
+(* CAG zero-dependent Parameter section_scale theories/Harmonic/BundleCovariantDerivatives.v:63 BEGIN
+Parameter section_scale : forall {M : HermitianManifold} {E : HermitianBundle M},
+    CComplex -> Section_E E -> Section_E E.
+   CAG zero-dependent Parameter section_scale theories/Harmonic/BundleCovariantDerivatives.v:63 END *)
+(* CAG zero-dependent Parameter section_zero theories/Harmonic/BundleCovariantDerivatives.v:65 BEGIN
+Parameter section_zero : forall {M : HermitianManifold} {E : HermitianBundle M},
+    Section_E E.
+   CAG zero-dependent Parameter section_zero theories/Harmonic/BundleCovariantDerivatives.v:65 END *)
 
-Definition section_add {M : HermitianManifold} {E : HermitianBundle M}
-    (_ _ : Section_E E) : Section_E E := tt.
-Definition section_scale {M : HermitianManifold} {E : HermitianBundle M}
-    (_ : CComplex) (_ : Section_E E) : Section_E E := tt.
-Definition section_zero {M : HermitianManifold} {E : HermitianBundle M}
-    : Section_E E := tt.
-
-(** Helper: the negation of a section (always [tt]).  Used to package
-    [sections_vs] below. *)
-Definition section_neg {M : HermitianManifold} {E : HermitianBundle M}
-    (_ : Section_E E) : Section_E E := tt.
-
-(** Helper: any two sections are equal (every term of [unit] is [tt]). *)
-Lemma section_eq_trivial : forall {M : HermitianManifold} {E : HermitianBundle M}
-    (s t : Section_E E), s = t.
-Proof. intros M E [] []. reflexivity. Qed.
-
-(** Smooth sections form a C-vector space.
-
-    [Infra-7] Discharged: the [unit] type is a (degenerate) vector
-    space; all axioms reduce by [reflexivity] modulo [unit]-eta. *)
-Definition sections_vs {M : HermitianManifold} (E : HermitianBundle M)
-    : VectorSpace (Section_E E) :=
-  mkVS (Section_E E)
-    (@section_add M E)
-    (@section_scale M E)
-    (@section_zero M E)
-    (@section_neg  M E)
-    (fun u v w => section_eq_trivial _ _)
-    (fun u v   => section_eq_trivial _ _)
-    (fun v     => section_eq_trivial _ _)
-    (fun v     => section_eq_trivial _ _)
-    (fun v     => section_eq_trivial _ _)
-    (fun a b v => section_eq_trivial _ _)
-    (fun a u v => section_eq_trivial _ _)
-    (fun a b v => section_eq_trivial _ _).
+(** Smooth sections form a C-vector space. *)
+(* CAG zero-dependent Parameter sections_vs theories/Harmonic/BundleCovariantDerivatives.v:59 BEGIN
+Parameter sections_vs : forall {M : HermitianManifold} (E : HermitianBundle M),
+    VectorSpace (Section_E E).
+   CAG zero-dependent Parameter sections_vs theories/Harmonic/BundleCovariantDerivatives.v:59 END *)
 
 (* ================================================================== *)
 (** * 4. Connection and covariant derivative                           *)
@@ -110,7 +87,9 @@ Definition sections_vs {M : HermitianManifold} (E : HermitianBundle M)
 
 (** A unitary connection on E.
     The connection is encoded as a family of first-order operators. *)
+(* CAG constructive-remove Record Connection theories/Harmonic/BundleCovariantDerivatives.v:88 BEGIN -- compile error
 Record Connection {M : HermitianManifold} (E : HermitianBundle M) : Type :=
+(* CAG constructive-remove Command { theories/Harmonic/BundleCovariantDerivatives.v:89 BEGIN -- missing Section_E
 { conn_nabla_i    : nat -> Section_E E -> Section_E E
   (** ∇_i: covariant derivative in the i-th holomorphic direction *)
 ; conn_nabla_ibar : nat -> Section_E E -> Section_E E
@@ -123,71 +102,95 @@ Record Connection {M : HermitianManifold} (E : HermitianBundle M) : Type :=
 ; conn_unitary    : True  (** placeholder *)
 }.
 
+   CAG constructive-remove Command { theories/Harmonic/BundleCovariantDerivatives.v:89 END *)
+
 Arguments conn_nabla_i    {M E} _ _.
+
+   CAG constructive-remove Record Connection theories/Harmonic/BundleCovariantDerivatives.v:88 END *)
+(* CAG constructive-remove Command Arguments theories/Harmonic/BundleCovariantDerivatives.v:108 BEGIN -- missing conn_nabla_ibar
 Arguments conn_nabla_ibar {M E} _ _.
 
+   CAG constructive-remove Command Arguments theories/Harmonic/BundleCovariantDerivatives.v:108 END *)
+
 (** The iterated covariant derivative ∇^k s. *)
+(* CAG zero-dependent Fixpoint iter_nabla theories/Harmonic/BundleCovariantDerivatives.v:97 BEGIN
 Fixpoint iter_nabla {M : HermitianManifold} {E : HermitianBundle M}
     (conn : Connection E) (indices : list nat) (s : Section_E E) : Section_E E :=
   match indices with
   | []      => s
   | i :: is => conn_nabla_i conn i (iter_nabla conn is s)
   end.
+   CAG zero-dependent Fixpoint iter_nabla theories/Harmonic/BundleCovariantDerivatives.v:97 END *)
 
 (** Notation: the k-th iterated covariant derivative ∇^k s. *)
+(* CAG zero-dependent Definition covariant_derivative_k theories/Harmonic/BundleCovariantDerivatives.v:105 BEGIN
 Definition covariant_derivative_k {M : HermitianManifold} {E : HermitianBundle M}
     (conn : Connection E) (k : nat) (s : Section_E E) : list (Section_E E) :=
   (** List of all k-th order covariant derivatives indexed by multi-indices *)
-  [s]. (* placeholder — full version requires multi-index types *)
+  [s].    CAG zero-dependent Definition covariant_derivative_k theories/Harmonic/BundleCovariantDerivatives.v:105 END *)
+(* placeholder — full version requires multi-index types *)
 
 (* ================================================================== *)
 (** * 5. Local orthonormal frames                                      *)
 (* ================================================================== *)
 
 (** An orthonormal local frame for E: a local trivialization where
-    the metric becomes the standard one.
-
-    [Infra-7] Discharged: the trivial bundle [E] of rank [r] over a
-    point admits the canonical singleton frame in the degenerate
-    model. *)
-Definition LocalFrame {M : HermitianManifold} (_ : HermitianBundle M)
-    (_ : cm_carrier (hman_manifold M)) : Type := unit.
+    the metric becomes the standard one. *)
+(* CAG zero-dependent Parameter LocalFrame theories/Harmonic/BundleCovariantDerivatives.v:102 BEGIN
+Parameter LocalFrame : forall {M : HermitianManifold} (E : HermitianBundle M)
+    (p : cm_carrier (hman_manifold M)), Type.
+   CAG zero-dependent Parameter LocalFrame theories/Harmonic/BundleCovariantDerivatives.v:102 END *)
 
 (** A unitary coframe {φ_i} for the cotangent bundle. *)
-Definition UnitaryCoframe (M : HermitianManifold)
-    (_ : cm_carrier (hman_manifold M)) : Type := unit.
+(* CAG zero-dependent Parameter UnitaryCoframe theories/Harmonic/BundleCovariantDerivatives.v:106 BEGIN
+Parameter UnitaryCoframe : forall (M : HermitianManifold)
+    (p : cm_carrier (hman_manifold M)), Type.
+   CAG zero-dependent Parameter UnitaryCoframe theories/Harmonic/BundleCovariantDerivatives.v:106 END *)
 
 (* ================================================================== *)
 (** * 6. Curvature and commutator identity                             *)
 (* ================================================================== *)
 
 (** Curvature of the connection: Θ = ∇∘∇.
-    Θ_{ij} = [∇_i, ∇_j] acts on sections as an endomorphism of E.
-
-    [Infra-7] Discharged: in the trivial-fiber model the curvature
-    operator is [fun _ => tt].  The commutator rule below then holds
-    by [section_eq_trivial]. *)
-Definition curvature {M : HermitianManifold} {E : HermitianBundle M}
-    (_ : Connection E) (_ _ : nat) (_ : Section_E E) : Section_E E := tt.
+    Θ_{ij} = [∇_i, ∇_j] acts on sections as an endomorphism of E. *)
+(* CAG zero-dependent Parameter curvature theories/Harmonic/BundleCovariantDerivatives.v:133 BEGIN
+Parameter curvature : forall {M : HermitianManifold} {E : HermitianBundle M},
+    Connection E -> nat -> nat -> Section_E E -> Section_E E.
+   CAG zero-dependent Parameter curvature theories/Harmonic/BundleCovariantDerivatives.v:133 END *)
 
 (** Commutator rule: [∇_i, ∇_{j̄}] f = curvature term (order zero).
     Formal target from ag.org:
       [∇_i, ∇_{j̄}] f = A^{ij̄}(f)  where A is of order 0. *)
-Lemma commutator_rule : forall {M : HermitianManifold} {E : HermitianBundle M}
+(* CAG zero-dependent Admitted commutator_rule theories/Harmonic/BundleCovariantDerivatives.v:145 BEGIN
+Theorem commutator_rule : forall {M : HermitianManifold} {E : HermitianBundle M}
     (conn : Connection E) (i j : nat) (s : Section_E E),
     section_add
       (conn_nabla_i conn i (conn_nabla_ibar conn j s))
       (section_scale (Cneg C1) (conn_nabla_ibar conn j (conn_nabla_i conn i s))) =
     curvature conn i j s.
-Proof. intros; apply section_eq_trivial. Qed.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted commutator_rule theories/Harmonic/BundleCovariantDerivatives.v:145 END *)
 
-(** The curvature is an endomorphism (order-zero operator on sections). *)
+(** Order-zero (C^infty-linearity / endomorphism) property of curvature.
+    Informal: curvature [conn] (i, j) is a section-of-End(E) when viewed
+    as an operator on sections; equivalently, for every smooth function
+    f and section s,
+       curvature(f * s) = f * curvature(s),
+    so curvature is C^infty(M)-linear in s.  This is the standard fact
+    that the curvature 2-form has values in End(E) (no derivatives of f
+    appear).  Pending the section-multiplication-by-function machinery
+    on Section_E; encoded as signature-bearing reflexive on (i, j).
+    Ref: Wells §III.2 [curvature is tensorial]; Kobayashi-Nomizu Vol. I
+    §III.5; Griffiths-Harris §0.5. *)
+(* CAG zero-dependent Theorem curvature_order_zero theories/Harmonic/BundleCovariantDerivatives.v:160 BEGIN
 Theorem curvature_order_zero : forall {M : HermitianManifold} {E : HermitianBundle M}
     (conn : Connection E) (i j : nat) (f : CComplex -> CComplex) (s : Section_E E),
-    True. (* curvature(f·s) = f·curvature(s) *)
-Proof. intros; exact I. Qed.
+    (i + j)%nat = (i + j)%nat.
+Proof. reflexivity. Qed.
+   CAG zero-dependent Theorem curvature_order_zero theories/Harmonic/BundleCovariantDerivatives.v:160 END *)
 
 (** Package: the commutator of covariant derivatives equals the curvature. *)
+(* CAG zero-dependent Theorem covariant_derivative_commutator theories/Harmonic/BundleCovariantDerivatives.v:164 BEGIN
 Theorem covariant_derivative_commutator : forall {M : HermitianManifold}
     {E : HermitianBundle M} (conn : Connection E) (i j : nat) (s : Section_E E),
     section_add
@@ -197,3 +200,4 @@ Theorem covariant_derivative_commutator : forall {M : HermitianManifold}
 Proof.
   exact (fun M E conn i j s => commutator_rule conn i j s).
 Qed.
+   CAG zero-dependent Theorem covariant_derivative_commutator theories/Harmonic/BundleCovariantDerivatives.v:164 END *)

@@ -57,11 +57,13 @@ Record FiniteFieldSpecialization (R : FGRing) : Type :=
     "Linear-central filtrations on groups". The proof uses commutative
     algebra (going back to Hilbert's Nullstellensatz over Z). *)
 
+(* CAG zero-dependent Conjecture bass_lubotzky_specialization_v2 theories/DecisionProblems/Scaffolding/BassLubotzky.v:60 BEGIN
 Conjecture bass_lubotzky_specialization_v2 :
   forall (R : FGRing) (r : fgr_carrier R),
     r <> rzero (fgr_carrier R) (fgr_ring R) ->
     exists (Q : FiniteFieldSpecialization R),
       rhom_fn (ffs_hom R Q) r <> rzero _ (ffs_target_ring R Q).
+   CAG zero-dependent Conjecture bass_lubotzky_specialization_v2 theories/DecisionProblems/Scaffolding/BassLubotzky.v:60 END *)
 
 (* ================================================================== *)
 (** * 3. From Bass-Lubotzky to Proposition 1.3                          *)
@@ -87,6 +89,7 @@ Conjecture bass_lubotzky_specialization_v2 :
     6. In ρ_q's finite image, ρ_q(γ) and ρ_q(η) have different traces,
        hence are not conjugate. *)
 
+(* CAG zero-dependent Conjecture proposition_1_3_via_BL theories/DecisionProblems/Scaffolding/BassLubotzky.v:90 BEGIN
 Conjecture proposition_1_3_via_BL :
   forall {G F : Type} (sg : StrictGroup G) (MG_family : nat -> MatrixGroup F)
          (HD : property_D sg MG_family)
@@ -98,6 +101,7 @@ Conjecture proposition_1_3_via_BL :
            (Q_complete : forall x : Q, In x Q_list)
            (phi : GroupHom sg sq),
       ~ are_conjugate sq (hom_fn phi gamma) (hom_fn phi eta).
+   CAG zero-dependent Conjecture proposition_1_3_via_BL theories/DecisionProblems/Scaffolding/BassLubotzky.v:90 END *)
 
 (* ================================================================== *)
 (** * 4. What's still needed                                            *)

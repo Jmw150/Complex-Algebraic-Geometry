@@ -112,10 +112,12 @@ Definition Z_EuclideanDomain : EuclideanDomain Z_IntegralDomain :=
     The proof goes via [euclidean_is_pid] from Domains.PID_UFD,
     which constructs the principal generator of an ideal as the element
     of minimum (Euclidean) norm in the ideal. *)
+(* CAG zero-dependent Theorem Z_is_pid theories/NumberTheory/ZPID.v:115 BEGIN
 Theorem Z_is_pid : is_pid Z_IntegralDomain.
 Proof.
   apply (euclidean_is_pid Z_IntegralDomain). exact Z_EuclideanDomain.
 Qed.
+   CAG zero-dependent Theorem Z_is_pid theories/NumberTheory/ZPID.v:115 END *)
 
 (* ================================================================== *)
 (** ** Bezout via Stdlib's Zis_gcd *)

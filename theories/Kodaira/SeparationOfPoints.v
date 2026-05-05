@@ -30,9 +30,11 @@ From CAG Require Import Kahler.Lefschetz.Operators.
 Local Open Scope CReal_scope.
 
 (** Pullback of a line bundle L on M to the two-point blowup M̃. *)
+(* CAG zero-dependent Parameter pullback_lb2 theories/Kodaira/SeparationOfPoints.v:33 BEGIN
 Parameter pullback_lb2 : forall (M : KahlerManifold) (x y : Cn (km_dim M)),
     HolLineBundleCech (km_manifold M) ->
     HolLineBundleCech (km_manifold (blowup2 M x y)).
+   CAG zero-dependent Parameter pullback_lb2 theories/Kodaira/SeparationOfPoints.v:33 END *)
 
 (* ================================================================== *)
 (** * 1. Restriction to the exceptional divisors                       *)
@@ -58,18 +60,21 @@ Proof. intros; exact I. Qed.
 
 (** For k >> 0: H¹(M̃, O(π*L^k - E_x - E_y)) = 0 by Kodaira vanishing
     using the decomposition from CanonicalBundle. *)
+(* CAG zero-dependent Theorem h1_vanishes_two_point_blowup theories/Kodaira/SeparationOfPoints.v:63 BEGIN
 Theorem h1_vanishes_two_point_blowup : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (x y : Cn (km_dim M)),
     positive_line_bundle M L ->
     (** H1(M_tilde, O(pi*L^k tensor E_dual)) = 0 for k >> 0 -- axiomatized *)
     True.
 Proof. intros; exact I. Qed.
+   CAG zero-dependent Theorem h1_vanishes_two_point_blowup theories/Kodaira/SeparationOfPoints.v:63 END *)
 
 (* ================================================================== *)
 (** * 3. Surjectivity of restriction                                   *)
 (* ================================================================== *)
 
 (** By the long exact sequence + H¹=0: restriction to E is surjective. *)
+(* CAG zero-dependent Theorem restriction_to_E_surjective theories/Kodaira/SeparationOfPoints.v:75 BEGIN
 Theorem restriction_to_E_surjective : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (x y : Cn (km_dim M)),
     positive_line_bundle M L ->
@@ -79,6 +84,7 @@ Theorem restriction_to_E_surjective : forall (M : KahlerManifold)
     (** H⁰(M̃, O(π*L^k)) → H⁰(E, O_E(π*L^k)) is surjective — axiomatized *)
     True.
 Proof. intros; exists 0%nat; intros; exact I. Qed.
+   CAG zero-dependent Theorem restriction_to_E_surjective theories/Kodaira/SeparationOfPoints.v:75 END *)
 
 (* ================================================================== *)
 (** * 4. Main theorem: sections separate points                         *)
@@ -86,6 +92,7 @@ Proof. intros; exists 0%nat; intros; exact I. Qed.
 
 (** For k >> 0, the evaluation map H⁰(M, O(L^k)) → L_x^k ⊕ L_y^k
     is surjective for all x ≠ y. *)
+(* CAG zero-dependent Theorem sections_of_large_positive_power_separate_points theories/Kodaira/SeparationOfPoints.v:91 BEGIN
 Theorem sections_of_large_positive_power_separate_points :
     forall (M : KahlerManifold) (L : HolLineBundleCech (km_manifold M)),
     positive_line_bundle M L ->
@@ -97,3 +104,4 @@ Theorem sections_of_large_positive_power_separate_points :
     (** ev_{x,y} : H⁰(M,O(L^k)) → L_x^k ⊕ L_y^k is surjective — axiomatized *)
     True.
 Proof. intros; exists 0%nat; intros; exact I. Qed.
+   CAG zero-dependent Theorem sections_of_large_positive_power_separate_points theories/Kodaira/SeparationOfPoints.v:91 END *)

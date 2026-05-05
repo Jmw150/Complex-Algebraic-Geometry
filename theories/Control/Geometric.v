@@ -58,13 +58,17 @@ Definition cs_num_controls {M : SmoothManifold} (S : ControlSystem M) : nat :=
 
     Axiomatized here as a predicate; concrete combinations have to be
     verified case-by-case in any actual application. *)
+(* CAG zero-dependent Parameter LieAlgRankCondition theories/Control/Geometric.v:61 BEGIN
 Parameter LieAlgRankCondition :
   forall {M : SmoothManifold} (S : ControlSystem M) (p : sm_carrier M), Prop.
+   CAG zero-dependent Parameter LieAlgRankCondition theories/Control/Geometric.v:61 END *)
 
 (** Bracket-generating distribution: the smallest involutive distribution
     containing the control vector fields. *)
+(* CAG zero-dependent Parameter bracket_generating_distribution theories/Control/Geometric.v:66 BEGIN
 Parameter bracket_generating_distribution :
   forall {M : SmoothManifold} (S : ControlSystem M), Distribution M.
+   CAG zero-dependent Parameter bracket_generating_distribution theories/Control/Geometric.v:66 END *)
 
 (* ================================================================== *)
 (** * 3. Reachable sets and orbits                                      *)
@@ -73,24 +77,30 @@ Parameter bracket_generating_distribution :
 (** The set of states reachable from [p] in arbitrary nonnegative time
     using piecewise-constant controls in U. Axiomatized; concrete
     descriptions depend on the control set. *)
+(* CAG zero-dependent Parameter reachable_set theories/Control/Geometric.v:80 BEGIN
 Parameter reachable_set :
   forall {M : SmoothManifold}
          (S : ControlSystem M)
          (U : list R -> Prop)        (* admissible control values *)
          (p : sm_carrier M),
     sm_carrier M -> Prop.
+   CAG zero-dependent Parameter reachable_set theories/Control/Geometric.v:80 END *)
 
 (** A control system is *(globally) controllable* if every point can
     reach every other point. *)
+(* CAG zero-dependent Definition is_globally_controllable theories/Control/Geometric.v:89 BEGIN
 Definition is_globally_controllable
     {M : SmoothManifold} (S : ControlSystem M) (U : list R -> Prop) : Prop :=
   forall p q : sm_carrier M, reachable_set S U p q.
+   CAG zero-dependent Definition is_globally_controllable theories/Control/Geometric.v:89 END *)
 
 (** A system is *small-time locally controllable at p* if [p] is in
     the interior of its reachable set in arbitrarily small time. *)
+(* CAG zero-dependent Parameter is_STLC theories/Control/Geometric.v:95 BEGIN
 Parameter is_STLC :
   forall {M : SmoothManifold}
          (S : ControlSystem M) (U : list R -> Prop) (p : sm_carrier M), Prop.
+   CAG zero-dependent Parameter is_STLC theories/Control/Geometric.v:95 END *)
 
 (* ================================================================== *)
 (** * 4. Chow–Rashevskii theorem                                        *)
@@ -101,25 +111,31 @@ Parameter is_STLC :
     controllability with unrestricted controls.
 
     Stated as Axiom — a 50+ page proof in Agrachev–Sachkov. *)
+(* CAG zero-dependent Conjecture chow_rashevskii theories/Control/Geometric.v:104 BEGIN
 Conjecture chow_rashevskii :
   forall {M : SmoothManifold}
          (S : ControlSystem M),
     is_driftless S ->
     (forall p : sm_carrier M, LieAlgRankCondition S p) ->
     is_globally_controllable S (fun _ => True).
+   CAG zero-dependent Conjecture chow_rashevskii theories/Control/Geometric.v:104 END *)
 
 (** Sussmann's small-time local controllability sufficient condition:
     if the LARC holds at [p] and certain bracket symmetry conditions are
     satisfied, then the system is STLC at [p]. Stated as Axiom. *)
+(* CAG zero-dependent Parameter sussmann_brackets_balanced theories/Control/Geometric.v:118 BEGIN
 Parameter sussmann_brackets_balanced :
   forall {M : SmoothManifold} (S : ControlSystem M) (p : sm_carrier M), Prop.
+   CAG zero-dependent Parameter sussmann_brackets_balanced theories/Control/Geometric.v:118 END *)
 
+(* CAG zero-dependent Conjecture sussmann_stlc theories/Control/Geometric.v:117 BEGIN
 Conjecture sussmann_stlc :
   forall {M : SmoothManifold}
          (S : ControlSystem M) (U : list R -> Prop) (p : sm_carrier M),
     LieAlgRankCondition S p ->
     sussmann_brackets_balanced S p ->
     is_STLC S U p.
+   CAG zero-dependent Conjecture sussmann_stlc theories/Control/Geometric.v:117 END *)
 
 (* ================================================================== *)
 (** * 5. Open problems                                                  *)
@@ -134,6 +150,7 @@ Conjecture sussmann_stlc :
     has asked: is there a clean *necessary and sufficient* condition for
     STLC of a control-affine system at an equilibrium of the drift?
     Status: open in general; resolved only for restricted classes. *)
+(* CAG zero-dependent Definition open_question_STLC_characterization theories/Control/Geometric.v:147 BEGIN
 Definition open_question_STLC_characterization : Prop :=
   exists (P : forall {M : SmoothManifold} (S : ControlSystem M)
               (U : list R -> Prop) (p : sm_carrier M), Prop),
@@ -141,6 +158,7 @@ Definition open_question_STLC_characterization : Prop :=
            (U : list R -> Prop) (p : sm_carrier M),
       vf_fn (cs_drift S) p = ts_zero ->
       P S U p <-> is_STLC S U p.
+   CAG zero-dependent Definition open_question_STLC_characterization theories/Control/Geometric.v:147 END *)
 
 (** ** Open question (sub-Riemannian geodesics: smoothness).
 

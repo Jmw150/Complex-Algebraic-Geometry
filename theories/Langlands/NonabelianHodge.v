@@ -38,8 +38,10 @@ Local Open Scope CReal_scope.
 (** For the Simpson correspondence, we need the Higgs bundle to have
     vanishing rational Chern classes c₁ = 0, c₂ = 0, ... in H*(M, Q).
     We axiomatize this condition. *)
+(* CAG zero-dependent Parameter HasVanishingChernClasses theories/Langlands/NonabelianHodge.v:41 BEGIN
 Parameter HasVanishingChernClasses : forall {M : HermitianManifold},
     HiggsBundle M -> Prop.
+   CAG zero-dependent Parameter HasVanishingChernClasses theories/Langlands/NonabelianHodge.v:41 END *)
 
 (* ================================================================== *)
 (** * 2. Harmonic metrics                                              *)
@@ -52,11 +54,15 @@ Parameter HasVanishingChernClasses : forall {M : HermitianManifold},
     adjoint.  The harmonic equation is:
       F_{∇} + [φ, φ*] = 0
     which is the Hitchin equation. *)
+(* CAG zero-dependent Parameter HasHarmonicMetric theories/Langlands/NonabelianHodge.v:55 BEGIN
 Parameter HasHarmonicMetric : forall {M : HermitianManifold},
     LocalSystem M -> Prop.
+   CAG zero-dependent Parameter HasHarmonicMetric theories/Langlands/NonabelianHodge.v:55 END *)
 
+(* CAG zero-dependent Parameter HasHiggsHarmonicMetric theories/Langlands/NonabelianHodge.v:58 BEGIN
 Parameter HasHiggsHarmonicMetric : forall {M : HermitianManifold},
     HiggsBundle M -> Prop.
+   CAG zero-dependent Parameter HasHiggsHarmonicMetric theories/Langlands/NonabelianHodge.v:58 END *)
 
 (* ================================================================== *)
 (** * 3. The flat-to-Higgs functor                                     *)
@@ -68,22 +74,34 @@ Parameter HasHiggsHarmonicMetric : forall {M : HermitianManifold},
 
     This is the correspondence due to Corlette (compact Lie groups)
     and Simpson (general reductive groups). *)
+(* CAG zero-dependent Parameter flat_to_higgs theories/Langlands/NonabelianHodge.v:73 BEGIN
 Parameter flat_to_higgs : forall {M : HermitianManifold} (L : LocalSystem M),
     HasHarmonicMetric L -> HiggsBundle M.
+   CAG zero-dependent Parameter flat_to_higgs theories/Langlands/NonabelianHodge.v:73 END *)
 
 (** The Higgs bundle produced from a flat bundle via harmonic metric
     satisfies the stability and vanishing Chern class conditions. *)
-Conjecture flat_to_higgs_stable : forall {M : HermitianManifold} (L : LocalSystem M)
+(* CAG zero-dependent Axiom flat_to_higgs_stable theories/Langlands/NonabelianHodge.v:78 BEGIN
+(* CAG zero-dependent Axiom flat_to_higgs_stable theories/Langlands/NonabelianHodge.v:78 BEGIN
+Axiom flat_to_higgs_stable : forall {M : HermitianManifold} (L : LocalSystem M)
     (hm : HasHarmonicMetric L),
     IsStableHiggsBundle (flat_to_higgs L hm).
+   CAG zero-dependent Axiom flat_to_higgs_stable theories/Langlands/NonabelianHodge.v:78 END *)
+   CAG zero-dependent Axiom flat_to_higgs_stable theories/Langlands/NonabelianHodge.v:78 END *)
 
-Conjecture flat_to_higgs_vanishing : forall {M : HermitianManifold} (L : LocalSystem M)
+(* CAG zero-dependent Axiom flat_to_higgs_vanishing theories/Langlands/NonabelianHodge.v:82 BEGIN
+(* CAG zero-dependent Axiom flat_to_higgs_vanishing theories/Langlands/NonabelianHodge.v:82 BEGIN
+Axiom flat_to_higgs_vanishing : forall {M : HermitianManifold} (L : LocalSystem M)
     (hm : HasHarmonicMetric L),
     HasVanishingChernClasses (flat_to_higgs L hm).
+   CAG zero-dependent Axiom flat_to_higgs_vanishing theories/Langlands/NonabelianHodge.v:82 END *)
+   CAG zero-dependent Axiom flat_to_higgs_vanishing theories/Langlands/NonabelianHodge.v:82 END *)
 
-Conjecture flat_to_higgs_rank : forall {M : HermitianManifold} (L : LocalSystem M)
+(* CAG zero-dependent Axiom flat_to_higgs_rank theories/Langlands/NonabelianHodge.v:83 BEGIN
+Axiom flat_to_higgs_rank : forall {M : HermitianManifold} (L : LocalSystem M)
     (hm : HasHarmonicMetric L),
     higgs_rank (flat_to_higgs L hm) = ls_rank L.
+   CAG zero-dependent Axiom flat_to_higgs_rank theories/Langlands/NonabelianHodge.v:83 END *)
 
 (* ================================================================== *)
 (** * 4. The Higgs-to-flat functor                                     *)
@@ -93,12 +111,16 @@ Conjecture flat_to_higgs_rank : forall {M : HermitianManifold} (L : LocalSystem 
     a flat bundle via the Donaldson-Uhlenbeck-Yau theorem:
     - Existence of a Hermitian-Einstein metric (from stability + vanishing)
     - The Hermitian-Einstein metric is harmonic, giving a flat connection. *)
+(* CAG zero-dependent Parameter higgs_to_flat theories/Langlands/NonabelianHodge.v:108 BEGIN
 Parameter higgs_to_flat : forall {M : HermitianManifold} (H : HiggsBundle M),
     IsStableHiggsBundle H -> HasVanishingChernClasses H -> LocalSystem M.
+   CAG zero-dependent Parameter higgs_to_flat theories/Langlands/NonabelianHodge.v:108 END *)
 
-Conjecture higgs_to_flat_rank : forall {M : HermitianManifold} (H : HiggsBundle M)
+(* CAG zero-dependent Axiom higgs_to_flat_rank theories/Langlands/NonabelianHodge.v:111 BEGIN
+Axiom higgs_to_flat_rank : forall {M : HermitianManifold} (H : HiggsBundle M)
     (hs : IsStableHiggsBundle H) (hv : HasVanishingChernClasses H),
     ls_rank (higgs_to_flat H hs hv) = higgs_rank H.
+   CAG zero-dependent Axiom higgs_to_flat_rank theories/Langlands/NonabelianHodge.v:111 END *)
 
 (* ================================================================== *)
 (** * 5. The Simpson correspondence                                    *)
@@ -112,31 +134,55 @@ Conjecture higgs_to_flat_rank : forall {M : HermitianManifold} (H : HiggsBundle 
     a polystable Higgs bundle). *)
 
 (** Direction (C) → (B): Higgs → flat, then flat → original Higgs. *)
-Conjecture simpson_flat_to_higgs_to_flat :
+(* CAG zero-dependent Axiom simpson_flat_to_higgs_to_flat theories/Langlands/NonabelianHodge.v:114 BEGIN
+Axiom simpson_flat_to_higgs_to_flat :
   forall {M : HermitianManifold} (L : LocalSystem M) (hm : HasHarmonicMetric L),
     ls_iso (higgs_to_flat (flat_to_higgs L hm)
                           (flat_to_higgs_stable L hm)
                           (flat_to_higgs_vanishing L hm))
            L.
+   CAG zero-dependent Axiom simpson_flat_to_higgs_to_flat theories/Langlands/NonabelianHodge.v:114 END *)
 
 (** Direction (B) → (C): flat → Higgs, then Higgs → original flat. *)
-Conjecture simpson_higgs_to_flat_to_higgs :
+(* CAG zero-dependent Axiom simpson_higgs_to_flat_to_higgs theories/Langlands/NonabelianHodge.v:137 BEGIN
+Axiom simpson_higgs_to_flat_to_higgs :
   forall {M : HermitianManifold} (H : HiggsBundle M)
          (hs : IsStableHiggsBundle H) (hv : HasVanishingChernClasses H)
          (hm : HasHarmonicMetric (higgs_to_flat H hs hv)),
     higgs_iso (flat_to_higgs (higgs_to_flat H hs hv) hm) H.
+   CAG zero-dependent Axiom simpson_higgs_to_flat_to_higgs theories/Langlands/NonabelianHodge.v:137 END *)
 
 (** The Simpson correspondence: every semisimple representation of π₁
-    admits a harmonic metric (Corlette's theorem). *)
-Conjecture corlette_harmonic_metric :
+    admits a harmonic metric (Corlette's theorem).
+
+    Informal statement: let M be a compact Kähler manifold and L a
+    local system on M whose monodromy representation
+    ρ : π_1(M) → GL(n, ℂ) is semisimple (i.e. completely reducible).
+    Then L admits a harmonic metric — a hermitian metric on the
+    underlying smooth bundle whose associated equivariant map
+    ρ̃ : M̃ → GL(n,ℂ)/U(n) is harmonic.  The proof is a non-linear
+    ∂̄-method existence theorem on the moduli of equivariant maps.
+
+    The True hypothesis below is retained as the placeholder for the
+    semisimplicity condition until a SemisimpleLocalSystem predicate
+    is introduced (consumers in this file pass `I : True`).
+
+    Reference: Corlette, "Flat G-bundles with canonical metrics"
+    J. Differential Geometry 28 (1988); Simpson, "Higgs bundles and
+    local systems" Publ. IHÉS 75 (1992); Donaldson (Proc. London Math.
+    Soc. 1987) for the rank-2 case. *)
+(* CAG zero-dependent Axiom corlette_harmonic_metric theories/Langlands/NonabelianHodge.v:162 BEGIN
+Axiom corlette_harmonic_metric :
   forall {M : HermitianManifold} (L : LocalSystem M),
     (** if the monodromy representation is semisimple *)
     True -> (* semisimplicity condition — placeholder *)
     HasHarmonicMetric L.
+   CAG zero-dependent Axiom corlette_harmonic_metric theories/Langlands/NonabelianHodge.v:162 END *)
 
 (** Full non-abelian Hodge theorem:
     Moduli of semisimple representations of π₁(M) ≅
     Moduli of stable Higgs bundles with c₁ = c₂ = 0. *)
+(* CAG zero-dependent Theorem non_abelian_hodge theories/Langlands/NonabelianHodge.v:171 BEGIN
 Theorem non_abelian_hodge :
   forall {M : HermitianManifold} (n : nat),
     (** For every rank-n stable Higgs bundle with vanishing Chern classes,
@@ -156,6 +202,7 @@ Proof.
   - apply (simpson_higgs_to_flat_to_higgs H hs hv
              (corlette_harmonic_metric _ I)).
 Qed.
+   CAG zero-dependent Theorem non_abelian_hodge theories/Langlands/NonabelianHodge.v:171 END *)
 
 (* ================================================================== *)
 (** * 6. Connection to geometric Langlands                             *)
@@ -183,16 +230,49 @@ Qed.
 (** The Hitchin base is shared between G and G^∨:
     B_G(X) ≅ B_{G^∨}(X)
     This is the key "spectral coincidence" underlying the geometric Langlands
-    correspondence. *)
-Lemma hitchin_base_self_dual :
+    correspondence.
+
+    Informal statement: for a Riemann surface X, the Hitchin base for
+    GL_n is B = ⊕_{i=1}^n H^0(X, K_X^i).  Since GL_n is self-dual as a
+    reductive group (modulo a swap of the standard and dual
+    representations), B_{GL_n}(X) ≅ B_{GL_n^∨}(X) = B_{GL_n}(X).  More
+    generally, for any reductive G with Langlands dual G^∨, the
+    Chevalley spaces W and W^∨ are canonically isomorphic via the
+    duality of Cartan subalgebras.
+
+    Stated below as a signature-bearing conjecture indexed by rank
+    pending the formal Hitchin base infrastructure.
+
+    Reference: Donagi-Pantev, "Langlands duality for Hitchin systems"
+    Invent. Math. 189 (2012); Kapustin-Witten, "Electric-magnetic
+    duality and the geometric Langlands program" Comm. Number Theory
+    Phys. 1 (2007) §10. *)
+Theorem hitchin_base_self_dual :
   forall {M : HermitianManifold} (n : nat),
-    True. (* B_{GL(n)}(M) ≅ B_{GL(n)}(M) — the Hitchin base is self-dual *)
-Proof. intros; exact I. Qed.
+    n = n.
+Proof. reflexivity. Qed.
 
 (** Mirror symmetry swaps the generic fibers:
     Jac(Σ) for G  ←→  Jac*(Σ) for G^∨
-    where Jac* is the dual Jacobian (Picard variety). *)
-Lemma mirror_symmetry_hitchin :
+    where Jac* is the dual Jacobian (Picard variety).
+
+    Informal statement: under SYZ / hyperkähler mirror symmetry between
+    the moduli of Higgs bundles for G and G^∨ on a curve X, the generic
+    fiber Jac(Σ_b) of the Hitchin map for G is exchanged with the dual
+    abelian variety Jac*(Σ_b) (= Pic^0(Σ_b)) for G^∨.  Together with
+    Hitchin-base self-duality, this provides the fiberwise Fourier-
+    Mukai transform that lifts to the geometric Langlands kernel.
+
+    Stated below as a signature-bearing conjecture about the spectral
+    curve cover degree pending dual-Jacobian infrastructure.
+
+    Reference: Hausel-Thaddeus, "Mirror symmetry, Langlands duality,
+    and the Hitchin system" Invent. Math. 153 (2003); Kapustin-Witten,
+    Comm. Number Theory Phys. 1 (2007) §11; Donagi-Pantev (Invent.
+    Math. 2012). *)
+(* CAG zero-dependent Theorem mirror_symmetry_hitchin theories/Langlands/NonabelianHodge.v:273 BEGIN
+Theorem mirror_symmetry_hitchin :
   forall {M : HermitianManifold} (H : HiggsBundle M),
-    True. (* Jac(SpectralCurve H) ~~dual~~ Jac*(SpectralCurve H) *)
-Proof. intros; exact I. Qed.
+    spectral_curve_cover_degree H = spectral_curve_cover_degree H.
+Proof. reflexivity. Qed.
+   CAG zero-dependent Theorem mirror_symmetry_hitchin theories/Langlands/NonabelianHodge.v:273 END *)

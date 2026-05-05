@@ -13,6 +13,7 @@ From CAG Require Import DecisionProblems.TraceProperties.
 From CAG Require Import DecisionProblems.OpenProblems.
 From CAG Require Import DecisionProblems.WordLengthFreeGroup.
 From CAG Require Import DecisionProblems.SL2Horowitz.
+From CAG Require Import DecisionProblems.SL2HorowitzConcrete.
 From CAG Require Import DecisionProblems.InducedRep.
 From CAG Require Import DecisionProblems.Specialization.
 From CAG Require Import DecisionProblems.HallTheorem.
@@ -137,6 +138,7 @@ From CAG Require Import Galois.Field.
     in the project. With our [HallTheorem.free_groups_property_B], we
     can derive it. *)
 
+(* CAG zero-dependent Theorem theorem_1_6_free_groups_derived theories/DecisionProblems/Roadmap.v:140 BEGIN
 Theorem theorem_1_6_free_groups_derived :
   forall {F : Type} (MG_family : nat -> MatrixGroup F)
          (r : nat),
@@ -145,6 +147,7 @@ Proof.
   intros F MG_family r.
   apply free_groups_property_B.
 Qed.
+   CAG zero-dependent Theorem theorem_1_6_free_groups_derived theories/DecisionProblems/Roadmap.v:140 END *)
 
 (** Sanity check: [theorem_1_6_free_groups_derived] is not just a
     restatement of [TraceProperties.theorem_1_6_free_groups] — the

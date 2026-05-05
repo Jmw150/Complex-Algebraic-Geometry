@@ -80,17 +80,57 @@ Section FunctionPresheaf.
       fn_res U W HU HW (fun x h => hVW x (hUV x h)) s.
   Proof.
     intros U V W HU HV HW hUV hVW s.
+	    extensionality p. destruct p as [x hx]. reflexivity.
+	  Qed.
+
+  Lemma fn_res_add : forall (U V : set X)
+        (HU : is_open TX U) (HV : is_open TX V)
+        (hUV : forall x, U x -> V x)
+        (s t : fn_sec V HV),
+      fn_res U V HU HV hUV (ag_add (fn_group V HV) s t) =
+      ag_add (fn_group U HU)
+        (fn_res U V HU HV hUV s)
+        (fn_res U V HU HV hUV t).
+  Proof.
+    intros U V HU HV hUV s t.
     extensionality p. destruct p as [x hx]. reflexivity.
   Qed.
 
-  (** The presheaf of A-valued functions. *)
-  Definition fn_presheaf : Presheaf X TX :=
-    {| psf_sec      := fn_sec
-     ; psf_group    := fn_group
-     ; psf_res      := fn_res
-     ; psf_res_id   := fn_res_id
-     ; psf_res_comp := fn_res_comp
-    |}.
+  Lemma fn_res_neg : forall (U V : set X)
+        (HU : is_open TX U) (HV : is_open TX V)
+        (hUV : forall x, U x -> V x)
+        (s : fn_sec V HV),
+      fn_res U V HU HV hUV (ag_neg (fn_group V HV) s) =
+      ag_neg (fn_group U HU) (fn_res U V HU HV hUV s).
+  Proof.
+    intros U V HU HV hUV s.
+    extensionality p. destruct p as [x hx]. reflexivity.
+  Qed.
+
+  Lemma fn_res_irrel : forall (U V : set X)
+        (HU : is_open TX U) (HV : is_open TX V)
+        (hUV hUV' : forall x, U x -> V x)
+        (s : fn_sec V HV),
+      fn_res U V HU HV hUV s = fn_res U V HU HV hUV' s.
+  Proof.
+    intros U V HU HV hUV hUV' s.
+    extensionality p. destruct p as [x hx].
+    unfold fn_res.
+    destruct (proof_irrelevance _ (hUV x hx) (hUV' x hx)).
+    reflexivity.
+  Qed.
+
+	  (** The presheaf of A-valued functions. *)
+	  Definition fn_presheaf : Presheaf X TX :=
+	    {| psf_sec      := fn_sec
+	     ; psf_group    := fn_group
+	     ; psf_res      := fn_res
+	     ; psf_res_add  := fn_res_add
+	     ; psf_res_neg  := fn_res_neg
+	     ; psf_res_irrel := fn_res_irrel
+	     ; psf_res_id   := fn_res_id
+	     ; psf_res_comp := fn_res_comp
+	    |}.
 
 End FunctionPresheaf.
 

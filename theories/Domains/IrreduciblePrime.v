@@ -121,40 +121,35 @@ Section IrrPrime.
   Lemma prime_associate_prime : forall p q : R,
       is_prime p -> is_associate d p q -> is_prime q.
   Proof.
-    intros p q [Hp0 [Hpu Hpdivides]] Hassoc.
-    destruct Hassoc as [u [Hu Hq]].
-    split; [|split].
-    - (* q ≠ 0: q = u·p, in a domain u·p = 0 ⇒ u = 0 ∨ p = 0; but u is a unit
-         hence nonzero, and p ≠ 0. *)
-      intro Hq0. rewrite Hq in Hq0.
-      destruct (id_no_zero_div d _ _ Hq0) as [Hu0 | Hp0'].
-      + destruct Hu as [uinv [Huu _]].
-        apply (id_nontrivial d).
-        rewrite <- Huu, Hu0. apply rmul_zero_l.
-      + contradiction.
-    - (* ~ is_unit q: if q is a unit, then p = u⁻¹·q is a product of units,
-         hence a unit, contradicting Hpu. *)
-      intro Hquint. apply Hpu.
-      destruct Hu as [uinv [Hur Hul]].
-      assert (Hp_eq : p = rmul R r uinv q).
-      { rewrite Hq, rmul_assoc, Hul, rmul_one_l. reflexivity. }
-      rewrite Hp_eq.
-      apply unit_mul.
-      + unfold is_unit. exists u. split; [exact Hul | exact Hur].
-      + exact Hquint.
-    - (* divides q (a·b) ⇒ divides q a ∨ divides q b.
-         Use the fact that p ~ q ⇒ same divisors. *)
-      intros a b Hdivab.
-      assert (Hassoc' : is_associate d p q).
-      { unfold is_associate. exists u. split.
-        - exact Hu.
-        - exact Hq. }
-      (* Convert divides q (a·b) to divides p (a·b) via associate_divides_iff. *)
-      pose proof (associate_divides_iff d p q (rmul R r a b) Hassoc') as Hiff.
-      apply (proj2 Hiff) in Hdivab.
-      destruct (Hpdivides a b Hdivab) as [Hpa | Hpb].
-      + left. exact (proj1 (associate_divides_iff d p q a Hassoc') Hpa).
-      + right. exact (proj1 (associate_divides_iff d p q b Hassoc') Hpb).
+    intros p q [Hp0 [Hpu Hprime]] Hassoc.
+    assert (Hdivs : divides r p q /\ divides r q p).
+    { apply associated_iff_mutual_divides.
+      exact Hp0.
+      exact Hassoc. }
+    destruct Hdivs as [_ Hqdivp].
+    split.
+    - intro Hq0.
+      apply Hp0.
+      apply zero_divides with (r := r).
+      rewrite <- Hq0.
+      exact Hqdivp.
+    - split.
+      + intros Hqu.
+        apply Hpu.
+        destruct (associate_sym d p q Hassoc) as [u [Hu Hp]].
+        rewrite Hp.
+        apply unit_mul; assumption.
+      + intros a b Hqab.
+        assert (Hpab : divides r p (rmul R r a b)).
+        { apply (proj2 (associate_divides_iff d p q (rmul R r a b) Hassoc)).
+          exact Hqab. }
+        destruct (Hprime a b Hpab) as [Hpa | Hpb].
+        * left.
+          apply (proj1 (associate_divides_iff d p q a Hassoc)).
+          exact Hpa.
+        * right.
+          apply (proj1 (associate_divides_iff d p q b Hassoc)).
+          exact Hpb.
   Qed.
 
 End IrrPrime.

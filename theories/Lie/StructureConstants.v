@@ -181,25 +181,35 @@ Qed.
     We state the abstract theorem as an axiom, pending a concrete
     finite-dimensional vector space framework. *)
 
-(** Abstract reconstruction axiom (pending finite-dim framework). *)
-Definition trivial_unit_VS {F : Type} (fld : Field F) : VectorSpaceF fld unit.
-Proof.
-  refine {| vsF_add := fun _ _ => tt; vsF_zero := tt;
-            vsF_neg := fun _ => tt; vsF_scale := fun _ _ => tt |}.
-  all: intros; destruct_all unit; reflexivity.
-Defined.
+(** Abstract reconstruction conjecture (pending finite-dim framework).
 
-Definition trivial_unit_LA {F : Type} (fld : Field F) : LieAlgebraF fld unit.
-Proof.
-  refine {| laF_vs := trivial_unit_VS fld; laF_bracket := fun _ _ => tt |}.
-  all: intros; destruct_all unit; reflexivity.
-Defined.
+    Informal statement: given scalars (c_{ij}^k) ∈ F (1 ≤ i,j,k ≤ n)
+    satisfying
+        antisymmetry:  c_{ij}^k = -c_{ji}^k,
+        diagonal zero: c_{ii}^k = 0,
+        Jacobi:        Σ_l (c_{ij}^l c_{lk}^m + c_{jk}^l c_{li}^m
+                            + c_{ki}^l c_{lj}^m) = 0  for all i,j,k,m,
+    there exists an n-dimensional Lie algebra L over F with basis
+    e_1,...,e_n such that [e_i, e_j] = Σ_k c_{ij}^k e_k.  Concretely,
+    L can be taken as F^n with the bracket defined componentwise from
+    the c_{ij}^k.
 
-Lemma lie_algebra_from_structure_constants :
+    The strengthened conclusion below requires the bracket of any two
+    basis vectors to expand correctly via the structure constants —
+    not the trivial existential `exists L la, True`.
+
+    Reference: Humphreys, Introduction to Lie Algebras and
+    Representation Theory (1972) §1; Jacobson, Lie Algebras (1962)
+    Chapter 1 §2. *)
+(* CAG zero-dependent Conjecture lie_algebra_from_structure_constants theories/Lie/StructureConstants.v:204 BEGIN
+Conjecture lie_algebra_from_structure_constants :
   forall {F : Type} (fld : Field F) (n : nat)
     (c : nat -> nat -> nat -> F)
+    (** Antisymmetry: c i j k = - c j i k *)
     (Hanti : forall i j k, c i j k = cr_neg fld (c j i k))
+    (** Diagonal zero: c i i k = 0 *)
     (Hdiag : forall i k, c i i k = cr_zero fld)
+    (** Jacobi: Σ_{l} (c i j l * c l k m + c j k l * c l i m + c k i l * c l j m) = 0 *)
     (HJac : forall i j k m,
       cr_add fld
         (cr_add fld
@@ -210,7 +220,9 @@ Lemma lie_algebra_from_structure_constants :
         (List.fold_left (fun acc l =>
            cr_add fld acc (cr_mul fld (c k i l) (c l j m))) (List.seq 0 n) (cr_zero fld))
       = cr_zero fld),
-  exists (L : Type) (la : LieAlgebraF fld L), True.
-Proof.
-  intros. exists unit. exists (trivial_unit_LA fld). exact I.
-Qed.
+  exists (L : Type) (la : LieAlgebraF fld L) (basis : nat -> L)
+         (cs : CoordSystem la),
+    (* The chosen basis has the prescribed structure constants. *)
+    forall i j k : nat,
+      cs_coord cs (laF_bracket la (basis i) (basis j)) k = c i j k.
+   CAG zero-dependent Conjecture lie_algebra_from_structure_constants theories/Lie/StructureConstants.v:204 END *)

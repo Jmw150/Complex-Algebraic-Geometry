@@ -43,15 +43,32 @@ Record FPFunctor {C D : Category} (hC : HasFiniteProducts C) (hD : HasFiniteProd
       [α]_{F∗G} := F([α]_G) = F([α])
       [f]_{F∗G} := F([f]_G) (the morphism in V interpreting f) *)
 
-(** NOTE: Pre-L.0, this was a [Definition] whose [mod_ax] field used the
-    [True]-placeholder.  After L.0 promoted [mod_ax] to a real obligation,
-    the construction requires the Cl(Th) quotient (Task L.1) to discharge
-    [mod_ax] from the corresponding equality of morphisms in Cl(Th).
-    Until L.1 lands, [Ap_G] is stated as a [Parameter] so the build still
-    closes; the construction itself is unchanged in spirit. *)
-Parameter Ap_G : forall {Th : Theory} {V : Category} {hV : HasFiniteProducts V}
-    (F : FPFunctor (cl_finite_products Th.(th_sig)) hV),
+Definition Ap_G {Th : Theory} {V : Category} {hV : HasFiniteProducts V}
+    (F : FPFunctor (cl_finite_products Th.(th_sig)) hV) :
     Model Th V hV.
+Proof.
+  set (Sg := Th.(th_sig)).
+  set (hp_cl := cl_finite_products Sg).
+  destruct F as [FF Hterm Hprod_F].
+  (* FF preserves iterated products: fp_prod hV (map FF objs) = FF (fp_prod hp_cl objs) *)
+  assert (Hprod : forall (objs : list (Cl Sg).(Ob)),
+    fp_prod hV (List.map (fun ob => FF ## ob) objs) =
+    FF ## (fp_prod hp_cl objs)).
+  { intro objs. induction objs as [| A rest IH].
+    - simpl. symmetry. exact Hterm.
+    - destruct rest as [| B rest'].
+      + simpl. reflexivity.
+      + simpl in IH. simpl. rewrite IH.
+        symmetry. exact (Hprod_F A (fp_prod hp_cl (B :: rest'))). }
+  refine {| mod_ty := fun α => FF ## [α];
+            mod_fun := fun f => _;
+            mod_ax := fun _ _ => I |}.
+  simpl.
+  rewrite <- (List.map_map (fun α => [α]) (fun ob => FF ## ob)).
+  rewrite Hprod.
+  rewrite fp_prod_singleton_list.
+  exact (FF #> (G_fun (th_sig Th) f)).
+Qed.
 
 (** ** Ap_G_inv: the unique FP-functor from a model *)
 
@@ -62,7 +79,7 @@ Parameter Ap_G : forall {Th : Theory} {V : Category} {hV : HasFiniteProducts V}
 
 Definition Ap_G_inv_obj {Th : Theory} {V : Category} {hV : HasFiniteProducts V}
     (M : Model Th V hV) (α : (Cl Th.(th_sig)).(Ob)) : V.(Ob) :=
-  fp_prod hV (List.map (mod_ty M) α).
+  fp_prod hV (List.map M.(mod_ty) α).
 
 (** On morphisms, we use the term interpretation. *)
 Definition Ap_G_inv_map {Th : Theory} {V : Category} {hV : HasFiniteProducts V}
@@ -85,9 +102,13 @@ Proof.
 Qed.
 
 (** The functor Ap_G_inv(M) : Cl(Th) → V. *)
-Parameter Ap_G_inv : forall {Th : Theory} {V : Category} {hV : HasFiniteProducts V}
-    (M : Model Th V hV),
+(* CAG constructive-remove Definition Ap_G_inv theories/ATT/ClassifyingEquivalence.v:105 BEGIN
+Definition Ap_G_inv {Th : Theory} {V : Category} {hV : HasFiniteProducts V}
+    (M : Model Th V hV) :
     FPFunctor (cl_finite_products Th.(th_sig)) hV.
+Proof.
+  Admitted.
+   CAG constructive-remove Definition Ap_G_inv theories/ATT/ClassifyingEquivalence.v:105 END *)
 
 (** ** The equivalence *)
 

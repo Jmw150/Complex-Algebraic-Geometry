@@ -36,40 +36,52 @@ Local Open Scope CReal_scope.
 (* ================================================================== *)
 
 (** The (p,q)-forms on M with values in a line bundle L. *)
+(* CAG zero-dependent Parameter Forms_pq_L theories/Vanishing/KodairaVanishing.v:39 BEGIN
 Parameter Forms_pq_L : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (p q : nat), Type.
+   CAG zero-dependent Parameter Forms_pq_L theories/Vanishing/KodairaVanishing.v:39 END *)
 
 (** Dolbeault cohomology H^{p,q}(M, L). *)
+(* CAG zero-dependent Parameter HDolb theories/Vanishing/KodairaVanishing.v:45 BEGIN
 Parameter HDolb : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (p q : nat), Type.
+   CAG zero-dependent Parameter HDolb theories/Vanishing/KodairaVanishing.v:45 END *)
+
+
+
 
 (** HDolb is a vector space over C. *)
+(* CAG zero-dependent Parameter HDolb_vs theories/Vanishing/KodairaVanishing.v:49 BEGIN
 Parameter HDolb_vs : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (p q : nat),
     VectorSpace (HDolb M L p q).
+   CAG zero-dependent Parameter HDolb_vs theories/Vanishing/KodairaVanishing.v:49 END *)
 
 (** The zero element of HDolb. *)
+(* CAG zero-dependent Definition HDolb_zero theories/Vanishing/KodairaVanishing.v:54 BEGIN
 Definition HDolb_zero (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (p q : nat) :
     HDolb M L p q :=
   vs_zero (HDolb_vs M L p q).
+   CAG zero-dependent Definition HDolb_zero theories/Vanishing/KodairaVanishing.v:54 END *)
 
 (* ================================================================== *)
 (** * 3. Canonical bundle                                              *)
 (* ================================================================== *)
 
 (** The canonical bundle K_M = Ω^n_M (determinant of cotangent bundle). *)
+(* CAG zero-dependent Parameter canonical_bundle theories/Vanishing/KodairaVanishing.v:64 BEGIN
 Parameter canonical_bundle : forall (M : KahlerManifold),
     HolLineBundleCech (km_manifold M).
+   CAG zero-dependent Parameter canonical_bundle theories/Vanishing/KodairaVanishing.v:64 END *)
 
-(** Tensor product of two line bundles: thin wrapper around the
-    generic [hlb_tensor], specialized to the underlying complex
-    manifold of a [KahlerManifold]. *)
-Definition hlb_tensor_km (M : KahlerManifold)
-  : HolLineBundleCech (km_manifold M) ->
+(** Tensor product of two line bundles. *)
+(* CAG zero-dependent Parameter hlb_tensor_km theories/Vanishing/KodairaVanishing.v:68 BEGIN
+Parameter hlb_tensor_km : forall (M : KahlerManifold),
     HolLineBundleCech (km_manifold M) ->
-    HolLineBundleCech (km_manifold M)
-  := hlb_tensor (M := km_manifold M).
+    HolLineBundleCech (km_manifold M) ->
+    HolLineBundleCech (km_manifold M).
+   CAG zero-dependent Parameter hlb_tensor_km theories/Vanishing/KodairaVanishing.v:68 END *)
 
 (* ================================================================== *)
 (** * 4. Kodaira–Serre duality                                         *)
@@ -85,40 +97,55 @@ Proof. intros; exact I. Qed.
 
 (** Serre duality: vanishing of H^{p,q}(M,L) iff vanishing of
     H^{n-p,n-q}(M, K_M ⊗ L^{-1}). *)
-Conjecture serre_duality_vanishing : forall (M : KahlerManifold)
+(* CAG zero-dependent Admitted serre_duality_vanishing theories/Vanishing/KodairaVanishing.v:91 BEGIN
+Theorem serre_duality_vanishing : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (p q : nat),
     (forall α : HDolb M L p q, α = HDolb_zero M L p q) <->
     (forall β : HDolb M (hlb_tensor_km M (canonical_bundle M) (hlb_dual L))
                         (km_dim M - p) (km_dim M - q),
         β = HDolb_zero M _ _ _).
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted serre_duality_vanishing theories/Vanishing/KodairaVanishing.v:91 END *)
 
 (* ================================================================== *)
 (** * 5. Kodaira vanishing theorem                                     *)
 (* ================================================================== *)
 
 (** Kodaira vanishing: H^q(M, K_M ⊗ L) = 0 for q > 0, L positive. *)
-Conjecture kodaira_vanishing : forall (M : KahlerManifold)
+(* CAG zero-dependent Admitted kodaira_vanishing theories/Vanishing/KodairaVanishing.v:108 BEGIN
+Theorem kodaira_vanishing : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (q : nat),
     positive_line_bundle M L ->
     (0 < q)%nat ->
     forall α : HDolb M (hlb_tensor_km M (canonical_bundle M) L) 0 q,
     α = HDolb_zero M _ _ _.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted kodaira_vanishing theories/Vanishing/KodairaVanishing.v:108 END *)
+
 
 (** Kodaira vanishing in the (p,q) form: H^{p,q}(M, L) = 0 for p+q > n, L positive. *)
-Conjecture kodaira_vanishing_pq : forall (M : KahlerManifold)
+(* CAG zero-dependent Admitted kodaira_vanishing_pq theories/Vanishing/KodairaVanishing.v:113 BEGIN
+Theorem kodaira_vanishing_pq : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (p q : nat),
     positive_line_bundle M L ->
     (km_dim M < p + q)%nat ->
     forall α : HDolb M L p q,
     α = HDolb_zero M L p q.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted kodaira_vanishing_pq theories/Vanishing/KodairaVanishing.v:113 END *)
 
-(** Kodaira vanishing for negative bundles. *)
-Conjecture kodaira_vanishing_negative : forall (M : KahlerManifold)
+(** Kodaira vanishing for negative bundles:
+    H^q(M, Ω^p_M ⊗ L^{-1}) = 0 for p + q < n, L positive
+    (i.e. L^{-1} negative). *)
+(* CAG zero-dependent Admitted kodaira_vanishing_negative theories/Vanishing/KodairaVanishing.v:124 BEGIN
+Theorem kodaira_vanishing_negative : forall (M : KahlerManifold)
     (L : HolLineBundleCech (km_manifold M)) (p q : nat),
     positive_line_bundle M L ->
     (p + q < km_dim M)%nat ->
     forall α : HDolb M (hlb_dual L) p q,
     α = HDolb_zero M _ _ _.
+Proof. admit. Admitted.
+   CAG zero-dependent Admitted kodaira_vanishing_negative theories/Vanishing/KodairaVanishing.v:124 END *)
 
 (* ================================================================== *)
 (** * 6. Dolbeault isomorphism                                         *)

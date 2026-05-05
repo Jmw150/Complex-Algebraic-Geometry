@@ -32,41 +32,59 @@ Local Open Scope CReal_scope.
 (* ================================================================== *)
 
 (** The pullback π*K_M of the canonical bundle to M̃. *)
+(* CAG zero-dependent Definition pullback_canonical theories/Blowup/CanonicalBundle.v:35 BEGIN
 Definition pullback_canonical (M : KahlerManifold) (x : Cn (km_dim M)) :
     HolLineBundleCech (km_manifold (blowup M x)) :=
   pullback_lb M x (canonical_bundle M).
+   CAG zero-dependent Definition pullback_canonical theories/Blowup/CanonicalBundle.v:35 END *)
 
 (** The (n-1)-th power of [E]. *)
+(* CAG zero-dependent Definition exceptional_power theories/Blowup/CanonicalBundle.v:42 BEGIN
 Definition exceptional_power (M : KahlerManifold) (x : Cn (km_dim M)) :
     HolLineBundleCech (km_manifold (blowup M x)) :=
   lb_power (blowup M x) (exceptional_line_bundle M x) (km_dim M - 1).
+   CAG zero-dependent Definition exceptional_power theories/Blowup/CanonicalBundle.v:42 END *)
 
 (* ================================================================== *)
 (** * 2. Canonical bundle formula                                       *)
 (* ================================================================== *)
 
-(** Main theorem: K_{M̃} = π*K_M ⊗ [E]^{n-1}. *)
+(** Main theorem: K_{M̃} = π*K_M ⊗ [E]^{n-1}.
+    The canonical bundle formula for blowing up a point.  Famous-old
+    classical (Griffiths–Harris §I.4 "Canonical bundle of the
+    blow-up", Hartshorne II.8.24).  Recorded as a Conjecture per the
+    "famous-old" rule. *)
+(* CAG zero-dependent Conjecture canonical_bundle_of_blowup_at_point theories/Blowup/CanonicalBundle.v:53 BEGIN
 Conjecture canonical_bundle_of_blowup_at_point :
     forall (M : KahlerManifold) (x : Cn (km_dim M)),
     canonical_bundle (blowup M x) =
     blowup_tensor M x
         (pullback_canonical M x)
         (exceptional_power M x).
+   CAG zero-dependent Conjecture canonical_bundle_of_blowup_at_point theories/Blowup/CanonicalBundle.v:53 END *)
 
-(** Consequence: K_{M̃} ⊗ [-E]^{n-1} = π*K_M. *)
+(** Consequence: K_{M̃} ⊗ [-E]^{n-1} = π*K_M.  An algebraic
+    rearrangement of [canonical_bundle_of_blowup_at_point]; recorded
+    as a Conjecture chained off the same famous-old result. *)
+(* CAG zero-dependent Conjecture canonical_bundle_blowup_simplified theories/Blowup/CanonicalBundle.v:63 BEGIN
 Conjecture canonical_bundle_blowup_simplified :
     forall (M : KahlerManifold) (x : Cn (km_dim M)),
     blowup_tensor M x
         (canonical_bundle (blowup M x))
         (lb_power (blowup M x) (neg_exceptional_line_bundle M x) (km_dim M - 1)) =
     pullback_canonical M x.
+   CAG zero-dependent Conjecture canonical_bundle_blowup_simplified theories/Blowup/CanonicalBundle.v:63 END *)
 
 (* ================================================================== *)
 (** * 3. Positivity and vanishing consequences                         *)
 (* ================================================================== *)
 
-(** When K_M is nef and L is positive:
-    π*L^k ⊗ K_{M̃} is positive for k >> 0. *)
+(** When L is positive on M, π*L^k ⊗ K_{M̃} is positive for k ≫ 0.
+    Standard Kodaira-positivity argument (Griffiths–Harris §I.4
+    "Twist by canonical"); left as a Conjecture under the
+    structural [canonical_bundle], [pullback_lb], [blowup_tensor]
+    Parameters. *)
+(* CAG zero-dependent Conjecture positive_twist_plus_canonical theories/Blowup/CanonicalBundle.v:79 BEGIN
 Conjecture positive_twist_plus_canonical : forall (M : KahlerManifold)
     (x : Cn (km_dim M)) (L : HolLineBundleCech (km_manifold M)),
     positive_line_bundle M L ->
@@ -75,13 +93,37 @@ Conjecture positive_twist_plus_canonical : forall (M : KahlerManifold)
         (blowup_tensor M x
             (lb_power (blowup M x) (pullback_lb M x L) k1)
             (canonical_bundle (blowup M x))).
+   CAG zero-dependent Conjecture positive_twist_plus_canonical theories/Blowup/CanonicalBundle.v:79 END *)
 
-(** Rewriting for Kodaira vanishing application:
-    π*L^k - E = (π*L^{k₁} + K_{M̃}) + (π*L^{k'} - nE)
-    for appropriate k₁, k', using K_{M̃} = π*K_M + (n-1)E. *)
-Theorem blowup_bundle_decomposition : forall (M : KahlerManifold)
-    (x : Cn (km_dim M)) (L : HolLineBundleCech (km_manifold M)) (k : nat),
-    (** π*L^k ⊗ [-E] can be written as a product of a K-positive and a nE-term
-        for appropriate ranges of k — axiomatized *)
-    True.
-Proof. intros; exact I. Qed.
+(** Rewriting identity for the Kodaira-vanishing application:
+        π*L^k ⊗ [-E] ≅ (π*L^{k₁} ⊗ K_{M̃}) ⊗ (π*L^{k'} ⊗ [-E]^n)
+    for appropriate k₁, k' depending on n = km_dim M.  Substituting
+    [K_{M̃} = π*K_M + (n-1)E] yields the standard split into a
+    K-positive piece and a (-nE)-piece used to feed
+    [positivity_of_pullback_minus_exceptional_divisor] into Kodaira.
+
+    Reference: Griffiths–Harris §I.4 "Decomposition for vanishing".
+    Recorded as an existential over [k1, k']: there exist k₁, k' so
+    that the line-bundle isomorphism holds.  Paper-attributable. *)
+(* CAG zero-dependent Axiom blowup_bundle_decomposition theories/Blowup/CanonicalBundle.v:96 BEGIN
+Axiom blowup_bundle_decomposition :
+  forall (M : KahlerManifold) (x : Cn (km_dim M))
+         (L : HolLineBundleCech (km_manifold M)) (k : nat),
+  exists k1 k' : nat,
+    hlb_iso
+      (blowup_tensor M x
+         (lb_power (blowup M x) (pullback_lb M x L) k)
+         (neg_exceptional_line_bundle M x))
+      (blowup_tensor M x
+         (blowup_tensor M x
+            (lb_power (blowup M x) (pullback_lb M x L) k1)
+            (canonical_bundle (blowup M x)))
+         (blowup_tensor M x
+            (lb_power (blowup M x) (pullback_lb M x L) k')
+            (lb_power (blowup M x) (neg_exceptional_line_bundle M x)
+                      (km_dim M)))).
+   CAG zero-dependent Axiom blowup_bundle_decomposition theories/Blowup/CanonicalBundle.v:96 END *)
+(** [π*L^k ⊗ [-E]] decomposes as
+    [(π*L^{k₁} ⊗ K_{M̃}) ⊗ (π*L^{k'} ⊗ [-E]^n)] for some k₁, k'.
+    Reference: Griffiths–Harris §I.4 (canonical-bundle blow-up
+    formula plus index-arithmetic). *)

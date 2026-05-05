@@ -813,6 +813,21 @@ Proof.
   rewrite trivial_FIS_trans. simpl. reflexivity.
 Qed.
 
+(** Trivial representation in any [MatrixGroup F]: sends every group
+    element to the StrictGroup identity [se] of the matrix group. The
+    homomorphism law follows from [sid_left]. This generalizes
+    [trivial_rep_SL2] from [InducedRepresentation.v] to any
+    [MatrixGroup], at the cost of not providing a specific trace
+    formula (none is needed for the F_0 use sites, since
+    [F_0_trivial] collapses every word to [rword_e]). *)
+Definition trivial_rep_general {G F : Type}
+    (sg : StrictGroup G) (MG : MatrixGroup F)
+  : Representation sg MG :=
+  mkRep G F sg MG
+    (fun _ : G => se (mg_carrier MG) (mg_sg MG))
+    (fun g h => eq_sym (sid_left (mg_carrier MG) (mg_sg MG)
+                                  (se (mg_carrier MG) (mg_sg MG)))).
+
 (** Property B for F_0: trivially holds since F_0 is the trivial group. *)
 Theorem F_0_property_B :
   forall (F : Type) (MG_family : nat -> MatrixGroup F),
@@ -1744,6 +1759,7 @@ Qed.
 
     ✅ COMPLIANCE: Sound (deferred). Discharged for r=0 and r=1 in
     [hall_finite_index_free_factor_r0] and [hall_finite_index_free_factor_r1]. *)
+(* CAG zero-dependent Conjecture hall_finite_index_free_factor theories/DecisionProblems/HallTheorem.v:1762 BEGIN
 Conjecture hall_finite_index_free_factor :
   forall (r : nat) (gamma : RWord r),
     gamma <> @rword_e r ->
@@ -1751,9 +1767,11 @@ Conjecture hall_finite_index_free_factor :
       fis_index FIS >= 1 /\
       fis_pred FIS gamma /\
       fis_pred FIS (@rword_e r).
+   CAG zero-dependent Conjecture hall_finite_index_free_factor theories/DecisionProblems/HallTheorem.v:1762 END *)
 
 (** Stronger version: the FIS has index at least 2 when r ≥ 2. *)
 
+(* CAG zero-dependent Conjecture hall_construction_separates theories/DecisionProblems/HallTheorem.v:1774 BEGIN
 Conjecture hall_construction_separates :
   forall (r : nat) (F : Type) (MG_family : nat -> MatrixGroup F)
          (gamma : RWord r),
@@ -1762,6 +1780,7 @@ Conjecture hall_construction_separates :
       forall eta : RWord r,
         ~ are_conjugate (FreeGroup r) gamma eta ->
         trace_at rho gamma <> trace_at rho eta.
+   CAG zero-dependent Conjecture hall_construction_separates theories/DecisionProblems/HallTheorem.v:1774 END *)
 
 (* ================================================================== *)
 (** * 4. Theorem 1.6 (free groups have property B) — derived            *)
@@ -1811,12 +1830,14 @@ Qed.
     which discharges the result conditional on existence of a hyperbolic
     generator image. *)
 
+(* CAG zero-dependent Conjecture free_id_separating_rep theories/DecisionProblems/HallTheorem.v:1831 BEGIN
 Conjecture free_id_separating_rep :
   forall (r : nat) (F : Type) (MG_family : nat -> MatrixGroup F),
     exists (n : nat) (rho : Representation (FreeGroup r) (MG_family n)),
       forall eta : RWord r,
         ~ are_conjugate (FreeGroup r) (@rword_e r) eta ->
         trace_at rho (@rword_e r) <> trace_at rho eta.
+   CAG zero-dependent Conjecture free_id_separating_rep theories/DecisionProblems/HallTheorem.v:1831 END *)
 
 (** Decidability of equality with identity in F_r — proven via
     decidable equality of the underlying Word + proof irrelevance for
@@ -1838,6 +1859,7 @@ Proof.
 Defined.
 
 (** Theorem 1.6 (free groups have property B), now derivable. *)
+(* CAG zero-dependent Theorem free_groups_property_B theories/DecisionProblems/HallTheorem.v:1858 BEGIN
 Theorem free_groups_property_B :
   forall (r : nat) (F : Type) (MG_family : nat -> MatrixGroup F),
     property_B (FreeGroup r) MG_family.
@@ -1850,6 +1872,7 @@ Proof.
   - (* gamma ≠ e *)
     apply (hall_construction_separates r F MG_family gamma Hne).
 Qed.
+   CAG zero-dependent Theorem free_groups_property_B theories/DecisionProblems/HallTheorem.v:1858 END *)
 
 (** Conjugacy in F_1 is decidable (= equality which is decidable). *)
 Lemma F_1_conjugacy_decidable :
@@ -2512,6 +2535,7 @@ Proof.
     right. exists k. exact Heq.
 Qed.
 
+(* CAG zero-dependent Conjecture hall_M_strong_free_factor theories/DecisionProblems/HallTheorem.v:2530 BEGIN
 Conjecture hall_M_strong_free_factor :
   forall (r : nat) (gamma : RWord r),
     r >= 2 ->
@@ -2520,6 +2544,7 @@ Conjecture hall_M_strong_free_factor :
       fis_index FIS >= 2 /\
       fis_pred FIS gamma /\
       fis_pred FIS (@rword_e r).
+   CAG zero-dependent Conjecture hall_M_strong_free_factor theories/DecisionProblems/HallTheorem.v:2530 END *)
 
 (** The free factor theorem in the decomposition form:
     for any γ ≠ e there is Δ ≤ F_r such that F_r = ⟨γ⟩ * Δ. *)
